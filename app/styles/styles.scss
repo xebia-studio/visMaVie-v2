@@ -1,28 +1,32 @@
-// Main entry point, all styles are imported here
-// Except directives styles that are imported directly in their module
-
 @import 'variables';
 @import 'mixins';
 
-// Import other CSS here
 @import '../pages/homePage/homePage';
 
-// Global CSS
+/********************************/
+/*        Global css            */
+/********************************/
 body{
   font-family: 'Roboto', sans-serif;
+  font-size: $default-font-size;
 }
 
-// Global classes
+/********************************/
+/*          Main classes        */
+/********************************/
+
+// Structure and positioning
 .inline-block{
   display: inline-block;
 }
 
-a.xebia-grey-button{
+
+// Main Components styles
+.xebia-grey-button{
   color: white;
   background-color: $xebia-medium-grey;
   text-decoration: none;
-
-  &:hover{
-    background-color: $xebia-purple;
-  }
+}
+a.xebia-grey-button:hover{
+  background-color: $xebia-purple;
 }

@@ -4,7 +4,7 @@ import 'expose?angular!angular';
 
 import 'bootstrap/dist/css/bootstrap.css';
 
-// Main entry point for the css
+// Import the main module css here
 import './styles/styles.scss';
 
 // Import polyfill for browsers compatibility
@@ -21,7 +21,6 @@ import appServices from './components/services/services.module';
 
 // Import the project files here
 import HomeController from './pages/homePage/homePage.ctrl';
-
 
 export default angular
   .module('visMaVieApp', [
