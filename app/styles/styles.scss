@@ -1,0 +1,28 @@
+// Main entry point, all styles are imported here
+// Except directives styles that are imported directly in their module
+
+@import 'variables';
+@import 'mixins';
+
+// Import other CSS here
+@import '../pages/homePage/homePage';
+
+// Global CSS
+body{
+  font-family: 'Roboto', sans-serif;
+}
+
+// Global classes
+.inline-block{
+  display: inline-block;
+}
+
+a.xebia-grey-button{
+  color: white;
+  background-color: $xebia-medium-grey;
+  text-decoration: none;
+
+  &:hover{
+    background-color: $xebia-purple;
+  }
+}
