@@ -1,0 +1,11 @@
+@import '../../../styles/variables';
+
+.xebia-header{
+  img{
+    width: 100px;
+  }
+}
+
+.xebia-header .navbar-nav .nav-link{
+  color: $xebia-purple;
+}

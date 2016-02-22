@@ -1,0 +1,59 @@
+@import '../../../styles/styles';
+
+.xebia-footer {
+  text-align: center;
+}
+
+.xebia-footer-social{
+  line-height: 100px;
+
+  a{
+    width: 40px;
+    height: 40px;
+    padding: 12px;
+    margin: 0 10px;
+    @extend .xebia-grey-button;
+    @include border-radius(50%)
+  }
+}
+
+.xebia-footer-address {
+  padding: 20px 0 10px;
+  background-color: $xebia-purple;
+  a {
+    color: white;
+    padding: 0 10px;
+  }
+}
+.tagline-xebia{
+  height: 100px;
+  width: 300px;
+  margin: auto;
+  background: url($footer-logo-xebia) no-repeat;
+  background-size: 100%;
+}
+.tagline-alliance{
+  width: 700px;
+  margin: auto;
+  padding: 20px 0;
+  border-top: 1px solid #bebab8;
+}
+.alliance-logo{
+  height: 42px;
+  width: 130px;
+  background: url($logo-alliance-xebia-long) 0 5px no-repeat #ffffff;
+}
+
+.alliance-members{
+  font-size: 0.8em;
+  text-transform: uppercase;
+  margin: 14px 0;
+  vertical-align: top;
+  
+  a{
+    color: $xebia-medium-grey;
+  }
+}
+.alliance-members-item:last-child span {
+  display: none;
+}
