@@ -1,5 +1,5 @@
 # visMaVie-v2
-Rewriting of the website http://vismavie.xebia.fr
+Rewriting of the website http://vismavie.xebia.fr 
 ```sh
 # Clone the repository
 git clone https://github.com/charesbast/visMaVie-v2.git
