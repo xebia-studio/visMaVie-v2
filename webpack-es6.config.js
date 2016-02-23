@@ -35,10 +35,7 @@ export default {
       { test: /\.html$/, loader: "html-loader"},
       { test: /\.(png|jpg|gif)$/, loader: "file-loader?name=img/[name].[ext]"},
       { test: /\.css$/, exclude:'/app/', loader: vendorCSS.extract(['css']) },
-      { test: /\.less$/, exclude:'/node_modules/', loader: appCSS.extract(['css', 'less']) },
-
-      // Bootstrap 4
-      { test: /bootstrap\/dist\/js\/umd\//, loader: 'imports?jQuery=jquery' }
+      { test: /\.less$/, exclude:'/node_modules/', loader: appCSS.extract(['css', 'less']) }
     ]
   }
 };
