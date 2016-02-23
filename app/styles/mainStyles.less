@@ -1,14 +1,11 @@
 @import 'variables';
-@import 'mixins';
-
-@import '../pages/homePage/homePage';
 
 /********************************/
 /*        Global css            */
 /********************************/
 body{
   font-family: 'Roboto', sans-serif;
-  font-size: $default-font-size;
+  font-size: @default-font-size;
 }
 
 /********************************/
@@ -24,9 +21,9 @@ body{
 // Main Components styles
 .xebia-grey-button{
   color: white;
-  background-color: $xebia-medium-grey;
+  background-color: @xebia-medium-grey;
   text-decoration: none;
-}
-a.xebia-grey-button:hover{
-  background-color: $xebia-purple;
+  &:hover{
+    background-color: @xebia-purple;
+  }
 }

@@ -30,8 +30,8 @@ export default {
       { test: /\.(woff2?|ttf|eot|svg)$/, loader: 'url?limit=10000' },
       { test: /\.html$/, loader: "html-loader"},
       { test: /\.(png|jpg|gif)$/, loader: "file-loader?name=img/[name].[ext]"},
-      { test: /\.css/, exclude:'/app/', loader: vendorCSS.extract(['css', 'resolve-url']) },
-      { test: /\.scss/, exclude:'/node_modules/', loader: appCSS.extract(['css', 'resolve-url', 'sass?sourceMap']) },
+      { test: /\.css$/, exclude:'/app/', loader: vendorCSS.extract(['css']) },
+      { test: /\.less$/, exclude:'/node_modules/', loader: appCSS.extract(['css', 'less']) },
 
       // Bootstrap 4
       { test: /bootstrap\/dist\/js\/umd\//, loader: 'imports?jQuery=jquery' }

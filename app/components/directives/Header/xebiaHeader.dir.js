@@ -1,4 +1,4 @@
-import './xebiaHeader.scss';
+import './xebiaHeader.less';
 
 let XebiaHeader = function(){
   return {

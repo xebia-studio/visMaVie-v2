@@ -1,4 +1,4 @@
-import './xebiaFooter.scss';
+import './xebiaFooter.less';
 import '../../../../assets/images/footer-logo-xebia.png';
 import '../../../../assets/images/logo-alliance-xebia-long.png';
 
