@@ -1,11 +1,12 @@
 @import 'variables';
+@import 'mixins';
 
 /********************************/
 /*        Global css            */
 /********************************/
-body{
+html, body{
   font-family: 'Roboto', sans-serif;
-  font-size: @default-font-size;
+  font-size: @default-size;
 }
 
 /********************************/
@@ -26,4 +27,16 @@ body{
   &:hover{
     background-color: @xebia-purple;
   }
+}
+
+.xebia-link{
+  text-decoration: none;
+}
+.xebia-brown-link{
+  .xebia-link;
+  ._link-color(@xebia-brown, @xebia-purple);
+}
+.xebia-purple-link{
+  .xebia-link;
+  ._link-color(@xebia-purple, @xebia-medium-grey);
 }
