@@ -27,6 +27,7 @@
     "babel-register": "^6.5.1",
     "bootstrap": "^4.0.0-alpha.2",
     "express": "^4.13.4",
+    "font-awesome": "^4.5.0",
     "jquery": "^2.2.0",
     "lodash": "^4.3.0",
     "path": "^0.12.7"

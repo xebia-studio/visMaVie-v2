@@ -2,6 +2,7 @@
 import 'expose?jQuery!expose?$!jquery';
 import 'expose?angular!angular';
 
+import 'font-awesome/css/font-awesome.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
 // Import polyfill for browsers compatibility
