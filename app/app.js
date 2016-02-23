@@ -10,6 +10,7 @@ import 'babel-polyfill';
 
 // Import modules dependencies here
 import uiRouter from 'angular-ui-router';
+import uiBootstrap from 'angular-ui-bootstrap';
 import appDirectives from './components/directives/directives.module';
 import appFilters from './components/filters/filters.module';
 import appServices from './components/services/services.module';
@@ -26,6 +27,7 @@ import HomeController from './pages/homePage/homePage.ctrl';
 export default angular
   .module('visMaVieApp', [
     uiRouter,
+    uiBootstrap,
     appDirectives,
     appFilters,
     appServices
