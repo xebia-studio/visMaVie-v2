@@ -1,8 +1,9 @@
 export default class HomeController {
-  constructor($uibModal){
+  constructor($uibModal, ExampleSvc){
     this._$uibModal = $uibModal;
     this.pageName = "Vis-ma-vie";
     this.aVariable = "Initial value";
+    this.names = ExampleSvc.getNames();
   }
 
   openModal(){
@@ -22,4 +23,4 @@ export default class HomeController {
   }
 }
 
-HomeController.$inject = ['$uibModal'];
+HomeController.$inject = ['$uibModal', 'ExampleSvc'];

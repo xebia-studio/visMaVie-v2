@@ -1,5 +1,7 @@
+// This module includes all the app services
+import ExampleSvc from './Example/example.svc';
 
-// This module includes all the app services and factories
 export default angular
   .module('visMaVieAppServices', [])
+  .service('ExampleSvc', ExampleSvc)
   .name;
