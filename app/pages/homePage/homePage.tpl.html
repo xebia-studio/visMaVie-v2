@@ -7,9 +7,9 @@
     <button class="btn btn-primary" ng-click="home.openModal()">Open modal</button>
 
     <div>
-        Liste de noms retournés par le service:
+        Liste de noms retournés par le service et mis en majuscules par le filtre:
         <ul>
-            <li ng-repeat="name in home.names">{{name}}</li>
+            <li ng-repeat="name in home.names | ExampleFilter">{{name}}</li>
         </ul>
 
     </div>
