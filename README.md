@@ -2,7 +2,7 @@
 Rewriting of the website http://vismavie.xebia.fr
 ```sh
 # Clone the repository
-git clone https://github.com/charesbast/visMaVie-v2.git
+git clone https://github.com/xebia-studio/visMaVie-v2
 # Install dependencies
 npm install
 # Build in development mode
