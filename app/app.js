@@ -18,6 +18,9 @@ import appServices from './components/services/services.module';
 // Import the main module css here
 import './pages/homePage/homePage.less';
 
+// Import the css here and use import (reference) in the other stylesheeets to avoid duplicates
+import './styles/mainStyles.less';
+
 // Import the routes config
 import routes from './app.routes.js';
 
