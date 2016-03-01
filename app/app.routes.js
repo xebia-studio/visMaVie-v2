@@ -7,7 +7,7 @@ export default function routes($urlRouterProvider, $locationProvider, $stateProv
   // Defining the routes here
   $stateProvider.state('home', {
     url: '/',
-    template: require('./pages/homePage/homePage.tpl.html'),
+    template: require('./pages/home/home.tpl.html'),
     controller: 'HomeController as home'
   });
 

@@ -16,7 +16,7 @@ import appFilters from './components/filters/filters.module';
 import appServices from './components/services/services.module';
 
 // Import the main module css here
-import './pages/homePage/homePage.less';
+import './pages/home/home.less';
 
 // Import the css here and use import (reference) in the other stylesheeets to avoid duplicates
 import './styles/mainStyles.less';
@@ -25,7 +25,7 @@ import './styles/mainStyles.less';
 import routes from './app.routes.js';
 
 // Import the project files here
-import HomeController from './pages/homePage/homePage.ctrl';
+import HomeController from './pages/home/home.ctrl.js';
 
 export default angular
   .module('visMaVieApp', [
