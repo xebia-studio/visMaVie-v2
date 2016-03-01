@@ -11,4 +11,10 @@ export default function routes($urlRouterProvider, $locationProvider, $stateProv
     controller: 'HomeController as home'
   });
 
+  $stateProvider.state('join', {
+     url: '/joinUs',
+     template: require('./pages/joinUs/joinUs.tpl.html'),
+     controller: 'JoinUsController as join'
+  });
+
 }

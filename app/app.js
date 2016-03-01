@@ -15,17 +15,19 @@ import appDirectives from './components/directives/directives.module';
 import appFilters from './components/filters/filters.module';
 import appServices from './components/services/services.module';
 
+// Common styles
+import './styles/mainStyles.less';
+
 // Import the main module css here
 import './pages/home/home.less';
-
-// Import the css here and use import (reference) in the other stylesheeets to avoid duplicates
-import './styles/mainStyles.less';
+import './pages/joinUs/joinUs.less';
 
 // Import the routes config
 import routes from './app.routes.js';
 
 // Import the project files here
-import HomeController from './pages/home/home.ctrl.js';
+import HomeController from './pages/home/home.ctrl';
+import JoinUsController from './pages/joinUs/joinUs.ctrl';
 
 export default angular
   .module('visMaVieApp', [
@@ -36,4 +38,5 @@ export default angular
     appServices
   ])
   .config(routes)
-  .controller('HomeController', HomeController);
+  .controller('HomeController', HomeController)
+  .controller('JoinUsController', JoinUsController);
