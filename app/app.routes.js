@@ -12,9 +12,15 @@ export default function routes($urlRouterProvider, $locationProvider, $stateProv
   });
 
   $stateProvider.state('join', {
-     url: '/joinUs',
+     url: '/join',
      template: require('./pages/joinUs/joinUs.tpl.html'),
      controller: 'JoinUsController as join'
+  });
+
+  $stateProvider.state('creations', {
+     url: '/creations',
+     template: require('./pages/ourCreations/ourCreations.tpl.html'),
+     controller: 'CreationsController as creations'
   });
 
 }

@@ -21,6 +21,7 @@ import './styles/mainStyles.less';
 // Import the main module css here
 import './pages/home/home.less';
 import './pages/joinUs/joinUs.less';
+import './pages/ourCreations/ourCreations.less';
 
 // Import the routes config
 import routes from './app.routes.js';
@@ -28,6 +29,7 @@ import routes from './app.routes.js';
 // Import the project files here
 import HomeController from './pages/home/home.ctrl';
 import JoinUsController from './pages/joinUs/joinUs.ctrl';
+import CreationsController from './pages/ourCreations/ourCreations.ctrl';
 
 export default angular
   .module('visMaVieApp', [
@@ -39,4 +41,5 @@ export default angular
   ])
   .config(routes)
   .controller('HomeController', HomeController)
-  .controller('JoinUsController', JoinUsController);
+  .controller('JoinUsController', JoinUsController)
+  .controller('CreationsController', CreationsController);
