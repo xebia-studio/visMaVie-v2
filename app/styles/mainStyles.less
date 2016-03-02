@@ -17,26 +17,28 @@ html, body{
 .inline-block{
   display: inline-block;
 }
-
+.no-decoration{
+  text-decoration: none;
+  &:hover{
+    text-decoration: none;
+  }
+}
 
 // Main Components styles
 .xebia-grey-button{
   color: white;
   background-color: @xebia-medium-grey;
-  text-decoration: none;
+  .no-decoration
   &:hover{
     background-color: @xebia-purple;
   }
 }
 
-.xebia-link{
-  text-decoration: none;
-}
 .xebia-brown-link{
-  .xebia-link;
+  .no-decoration;
   ._link-color(@xebia-brown, @xebia-purple);
 }
 .xebia-purple-link{
-  .xebia-link;
+  .no-decoration;
   ._link-color(@xebia-purple, @xebia-medium-grey);
 }
