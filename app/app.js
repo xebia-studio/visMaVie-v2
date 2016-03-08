@@ -2,9 +2,6 @@
 import 'expose?jQuery!expose?$!jquery';
 import 'expose?angular!angular';
 
-import 'font-awesome/css/font-awesome.css';
-import 'bootstrap/dist/css/bootstrap.css';
-
 // Import polyfill for browsers compatibility
 import 'babel-polyfill';
 
@@ -16,6 +13,8 @@ import appFilters from './components/filters/filters.module';
 import appServices from './components/services/services.module';
 
 // Common styles
+import 'font-awesome/css/font-awesome.css';
+import 'bootstrap/dist/css/bootstrap.css';
 import './styles/mainStyles.less';
 
 // Import the main module css here
@@ -24,6 +23,7 @@ import './pages/home/home.less';
 import './pages/joinUs/joinUs.less';
 import './pages/ourCreations/ourCreations.less';
 import './pages/ourPassions/ourPassions.less';
+import './pages/ourValues/ourValues.less';
 
 // Import the routes config
 import routes from './app.routes.js';
@@ -33,7 +33,8 @@ import BoostYourCareerController from './pages/boostYourCareer/boostYourCareer.c
 import HomeController from './pages/home/home.ctrl';
 import JoinUsController from './pages/joinUs/joinUs.ctrl';
 import CreationsController from './pages/ourCreations/ourCreations.ctrl';
-import OurPassions from './pages/ourPassions/ourPassions.ctrl';
+import OurPassionsController from './pages/ourPassions/ourPassions.ctrl';
+import OurValuesController from './pages/ourValues/ourValues.ctrl';
 
 export default angular
   .module('visMaVieApp', [
@@ -48,4 +49,5 @@ export default angular
   .controller('HomeController', HomeController)
   .controller('JoinUsController', JoinUsController)
   .controller('CreationsController', CreationsController)
-  .controller('OurPassionsController', OurPassions);
+  .controller('OurPassionsController', OurPassionsController)
+  .controller('OurValuesController', OurValuesController);
