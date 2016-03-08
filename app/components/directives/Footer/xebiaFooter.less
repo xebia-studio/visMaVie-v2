@@ -1,63 +1,64 @@
-@import (reference) '../../../styles/mainStyles';
 @import '../../../styles/variables';
 @import '../../../styles/mixins';
+@import (reference) '../../../styles/mainStyles';
 
-.xebia-footer {
+.XebiaFooter {
   text-align: center;
   border-top: 1px solid #bebab8;;
 }
 
-  .xebia-footer-social {
-    line-height: 125px;
+.XebiaFooter-social {
+  line-height: 125px;
 
-    a{
-      width: 40px;
-      height: 40px;
-      padding: 12px;
-      margin: 0 10px;
-      .xebia-grey-button;
-      ._border-radius(50%);
-    }
+  a {
+    width: 40px;
+    height: 40px;
+    padding: 12px;
+    margin: 0 10px;
+    .XebiaButton--grey;
+    ._border-radius(50%);
   }
+}
 
-  .tagline-xebia{
-    height: 100px;
-    width: 300px;
-    margin: auto;
-    background: url('../../../../assets/images/footer-logo-xebia.png') no-repeat;
-    background-size: 100%;
+.XebiaFooter-alliance{}
+.XebiaFooter-alliance-taglineXebia {
+  height: 100px;
+  width: 300px;
+  margin: auto;
+  background: url('../../../../assets/images/footer-logo-xebia.png') no-repeat;
+  background-size: 100%;
+}
+
+.XebiaFooter-alliance-taglineAlliance {
+  max-width: 700px;
+  margin: auto;
+  padding: 20px 0;
+  border-top: 1px solid #bebab8;
+}
+.XebiaFooter-alliance-taglineAlliance-logo {
+  height: 42px;
+  width: 130px;
+  background: url('../../../../assets/images/logo-alliance-xebia-long.png') 0 5px no-repeat #ffffff;
+}
+.XebiaFooter-alliance-taglineAlliance-members {
+  font-size: @small-size;
+  text-transform: uppercase;
+  margin: 14px 0;
+  vertical-align: top;
+
+  a {
+    .XebiaLink--brown;
   }
-  .tagline-alliance{
-    max-width: 700px;
-    margin: auto;
-    padding: 20px 0;
-    border-top: 1px solid #bebab8;
+}
+.XebiaFooter-alliance-taglineAlliance-members-item:last-child span {
+  display: none;
+}
+
+.XebiaFooter-address {
+  padding: 20px 0 10px;
+  background-color: @xebia-purple;
+  a {
+    color: white;
+    padding: 0 10px;
   }
-    .alliance-logo{
-      height: 42px;
-      width: 130px;
-      background: url('../../../../assets/images/logo-alliance-xebia-long.png') 0 5px no-repeat #ffffff;
-    }
-
-    .alliance-members{
-      font-size: @small-size;
-      text-transform: uppercase;
-      margin: 14px 0;
-      vertical-align: top;
-
-      a{
-        .xebia-brown-link;
-      }
-    }
-      .alliance-members-item:last-child span {
-        display: none;
-      }
-
-  .xebia-footer-address {
-    padding: 20px 0 10px;
-    background-color: @xebia-purple;
-    a {
-      color: white;
-      padding: 0 10px;
-    }
-  }
+}
