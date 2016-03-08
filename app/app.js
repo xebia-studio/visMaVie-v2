@@ -24,6 +24,7 @@ import './pages/joinUs/joinUs.less';
 import './pages/ourCreations/ourCreations.less';
 import './pages/ourPassions/ourPassions.less';
 import './pages/ourValues/ourValues.less';
+import './pages/visit3D/visit3D.less';
 
 // Import the routes config
 import routes from './app.routes.js';
@@ -35,6 +36,7 @@ import JoinUsController from './pages/joinUs/joinUs.ctrl';
 import CreationsController from './pages/ourCreations/ourCreations.ctrl';
 import OurPassionsController from './pages/ourPassions/ourPassions.ctrl';
 import OurValuesController from './pages/ourValues/ourValues.ctrl';
+import Visit3DController from './pages/visit3D/visit3D.ctrl';
 
 export default angular
   .module('visMaVieApp', [
@@ -50,4 +52,5 @@ export default angular
   .controller('JoinUsController', JoinUsController)
   .controller('CreationsController', CreationsController)
   .controller('OurPassionsController', OurPassionsController)
-  .controller('OurValuesController', OurValuesController);
+  .controller('OurValuesController', OurValuesController)
+  .controller('Visit3DController', Visit3DController);

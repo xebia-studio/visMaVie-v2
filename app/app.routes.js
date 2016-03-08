@@ -40,4 +40,10 @@ export default function routes($urlRouterProvider, $locationProvider, $stateProv
      template: require('./pages/ourValues/ourValues.tpl.html'),
      controller: 'OurValuesController as values'
   });
+
+  $stateProvider.state('visit3D', {
+     url: '/visit3D',
+     template: require('./pages/visit3D/visit3D.tpl.html'),
+     controller: 'Visit3DController as visit3D'
+  });
 }
