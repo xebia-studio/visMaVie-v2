@@ -1,4 +1,4 @@
-import './xebiaHeader.less';
+import './XebiaHeader.less';
 
 let XebiaHeader = function(){
   return {

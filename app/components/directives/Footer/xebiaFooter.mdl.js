@@ -1,5 +1,5 @@
-import xebiaFooterDir from './xebiaFooter.dir.js';
-import XebiaFooterController from './xebiaFooter.ctrl.js';
+import xebiaFooterDir from './XebiaFooter.dir.js';
+import XebiaFooterController from './XebiaFooter.ctrl.js';
 
 export default angular
   .module('xebiaFooterMdl', [])
