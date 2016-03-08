@@ -29,4 +29,10 @@ export default function routes($urlRouterProvider, $locationProvider, $stateProv
      controller: 'CreationsController as creations'
   });
 
+  $stateProvider.state('passions', {
+     url: '/ourPassions',
+     template: require('./pages/ourPassions/ourPassions.tpl.html'),
+     controller: 'OurPassionsController as passions'
+  });
+
 }

@@ -23,7 +23,7 @@ import './pages/boostYourCareer/boostYourCareer.less';
 import './pages/home/home.less';
 import './pages/joinUs/joinUs.less';
 import './pages/ourCreations/ourCreations.less';
-
+import './pages/ourPassions/ourPassions.less';
 
 // Import the routes config
 import routes from './app.routes.js';
@@ -33,6 +33,7 @@ import BoostYourCareerController from './pages/boostYourCareer/boostYourCareer.c
 import HomeController from './pages/home/home.ctrl';
 import JoinUsController from './pages/joinUs/joinUs.ctrl';
 import CreationsController from './pages/ourCreations/ourCreations.ctrl';
+import OurPassions from './pages/ourPassions/ourPassions.ctrl';
 
 export default angular
   .module('visMaVieApp', [
@@ -46,4 +47,5 @@ export default angular
   .controller('BoostYourCareerController', BoostYourCareerController)
   .controller('HomeController', HomeController)
   .controller('JoinUsController', JoinUsController)
-  .controller('CreationsController', CreationsController);
+  .controller('CreationsController', CreationsController)
+  .controller('OurPassionsController', OurPassions);
