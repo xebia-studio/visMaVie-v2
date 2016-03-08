@@ -10,6 +10,12 @@ export default function routes($urlRouterProvider, $locationProvider, $stateProv
     template: require('./pages/home/home.tpl.html'),
     controller: 'HomeController as home'
   });
+  
+  $stateProvider.state('boostYourCareer', {
+     url: '/boostYourCareer',
+     template: require('./pages/boostYourCareer/boostYourCareer.tpl.html'),
+     controller: 'BoostYourCareerController as boostYourCareer'
+  });
 
   $stateProvider.state('join', {
      url: '/join',

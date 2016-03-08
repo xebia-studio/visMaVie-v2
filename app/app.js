@@ -19,14 +19,17 @@ import appServices from './components/services/services.module';
 import './styles/mainStyles.less';
 
 // Import the main module css here
+import './pages/boostYourCareer/boostYourCareer.less';
 import './pages/home/home.less';
 import './pages/joinUs/joinUs.less';
 import './pages/ourCreations/ourCreations.less';
+
 
 // Import the routes config
 import routes from './app.routes.js';
 
 // Import the project files here
+import BoostYourCareerController from './pages/boostYourCareer/boostYourCareer.ctrl';
 import HomeController from './pages/home/home.ctrl';
 import JoinUsController from './pages/joinUs/joinUs.ctrl';
 import CreationsController from './pages/ourCreations/ourCreations.ctrl';
@@ -40,6 +43,7 @@ export default angular
     appServices
   ])
   .config(routes)
+  .controller('BoostYourCareerController', BoostYourCareerController)
   .controller('HomeController', HomeController)
   .controller('JoinUsController', JoinUsController)
   .controller('CreationsController', CreationsController);
