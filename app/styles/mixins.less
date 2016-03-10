@@ -34,25 +34,31 @@
   transform: @arguments;
 }
 
-.transition(@property: all, @duration:0.2s, @ease:ease-out) {
+._transition(@property: all, @duration:0.2s, @ease:ease-out) {
   -webkit-transition: @property @duration @ease;
   -moz-transition: @property @duration @ease;
   -o-transition: @property @duration @ease;
   transition: @property @duration @ease;
 }
 
-.opacity (@opacity: 0.5) {
+._opacity (@opacity: 0.5) {
   -webkit-opacity: 	@opacity;
-  -moz-opacity: 		@opacity;
-  opacity: 		@opacity;
+  -moz-opacity: @opacity;
+  opacity: @opacity;
 }
 
 /********************************/
 /*       Custom mixins          */
 /********************************/
-._link-color(@color, @hoverColor: @color){
+._linkColor-withHover(@color, @hoverColor: @color){
   color: @color;
   &:hover{
     color: @hoverColor;
+  }
+}
+._backgroundColor-withHover(@color, @hoverColor:@color){
+  background-color: @color;
+  &:hover{
+    background-color: @hoverColor;
   }
 }

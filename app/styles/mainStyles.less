@@ -4,7 +4,7 @@
 /********************************/
 /*        Global css            */
 /********************************/
-html, body{
+html, body {
   font-family: 'Roboto', sans-serif;
   font-size: @default-size;
 }
@@ -14,31 +14,31 @@ html, body{
 /********************************/
 
 // Structure and positioning
-.inline-block{
+.inline-block {
   display: inline-block;
 }
-.no-decoration{
+.no-decoration {
   text-decoration: none;
-  &:hover{
+  &:hover {
     text-decoration: none;
   }
 }
 
 // Main Components styles
-.XebiaButton--grey{
-  color: white;
-  background-color: @xebia-medium-grey;
+.xebiaRoundButton {
+  width: 40px;
+  height: 40px;
+  padding: 12px;
+  margin: 0 10px;
   .no-decoration;
-  &:hover{
-    background-color: @xebia-purple;
-  }
+  ._border-radius(50%);
 }
 
-.XebiaLink--brown{
+.xebiaLink--brown {
+  ._linkColor-withHover(@xebia-brown, @xebia-purple);
   .no-decoration;
-  ._link-color(@xebia-brown, @xebia-purple);
 }
-.XebiaLink--purple{
+.xebiaLink--purple {
+  ._linkColor-withHover(@xebia-purple, @xebia-medium-grey);
   .no-decoration;
-  ._link-color(@xebia-purple, @xebia-medium-grey);
 }
