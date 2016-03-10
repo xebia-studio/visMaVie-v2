@@ -10,13 +10,9 @@
 .XebiaFooter-social {
   line-height: 125px;
 
-  a {
-    width: 40px;
-    height: 40px;
-    padding: 12px;
-    margin: 0 10px;
-    .XebiaButton--grey;
-    ._border-radius(50%);
+  a:extend(.xebiaRoundButton) {
+    color: white;
+    ._backgroundColor-withHover(@xebia-medium-grey, @xebia-purple);
   }
 }
 
@@ -47,7 +43,7 @@
   vertical-align: top;
 
   a {
-    .XebiaLink--brown;
+    .xebiaLink--brown;
   }
 }
 .XebiaFooter-alliance-taglineAlliance-members-item:last-child span {
