@@ -34,11 +34,17 @@ html, body {
   ._border-radius(50%);
 }
 
-.xebiaLink--brown {
-  ._linkColor-withHover(@xebia-brown, @xebia-purple);
+.xebiaLink(@color: @xebia-purple, @hoverColor: @color){
   .no-decoration;
+  ._linkColor-withHover(@color, @hoverColor);
+}
+
+.xebiaLink--white{
+  .xebiaLink(white);
+}
+.xebiaLink--brown {
+  .xebiaLink(@xebia-brown, @xebia-purple);
 }
 .xebiaLink--purple {
-  ._linkColor-withHover(@xebia-purple, @xebia-medium-grey);
-  .no-decoration;
+  .xebiaLink(@xebia-purple, @xebia-medium-grey);
 }
