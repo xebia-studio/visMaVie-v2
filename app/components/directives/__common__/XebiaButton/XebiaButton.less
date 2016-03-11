@@ -1,0 +1,68 @@
+@import '../../../../styles/variables';
+@import '../../../../styles/mixins';
+@import (reference) '../../../../styles/mainStyles';
+
+// Local variables
+@round-button-width: 42px;
+
+// Local mixins
+._roundButton(@width, @font-size: @default-size){
+  @ratio: @font-size / @default-size;
+
+  width: @width * @ratio;
+  height: @width * @ratio;
+  font-size: @font-size;
+  padding:0;
+  ._border-radius(50%);
+
+  i{
+    padding:12px * @ratio;
+  }
+}
+
+.XebiaButton{
+  font-weight: 300;
+}
+//Colors
+.XebiaButton--purple{
+  .xebiaLink--white;
+  ._backgroundColor-withHover(@xebia-purple, @xebia-medium-grey);
+}
+.XebiaButton--grey{
+  .xebiaLink--white;
+  ._backgroundColor-withHover(@xebia-medium-grey, @xebia-purple);
+}
+
+//Shapes
+.XebiaButton--round{
+  ._roundButton(@round-button-width);
+}
+.XebiaButton--link{
+  background-color: transparent !important;
+}
+.XebiaButton--link.XebiaButton--purple{
+  .xebiaLink--purple;
+}
+.XebiaButton--link.XebiaButton--grey{
+  .xebiaLink-grey;
+}
+
+// Sizes
+.XebiaButton--big{
+  font-size: @big-size;
+}
+.XebiaButton--small{
+  font-size: @small-size;
+}
+.XebiaButton--extraSmall{
+  font-size: @extra-small-size;
+}
+.XebiaButton--round.XebiaButton--big{
+  ._roundButton(@round-button-width, @big-size);
+}
+.XebiaButton--round.XebiaButton--small{
+  ._roundButton(@round-button-width, @small-size);
+}
+.XebiaButton--round.XebiaButton--extraSmall{
+  ._roundButton(@round-button-width, @extra-small-size);
+}
