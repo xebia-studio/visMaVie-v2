@@ -2,10 +2,9 @@
 @import '../../../../styles/mixins';
 @import (reference) '../../../../styles/mainStyles';
 
-// Local variables
+// Local variables & mixins
 @round-button-width: 42px;
 
-// Local mixins
 ._roundButton(@width, @font-size: @default-size){
   @ratio: @font-size / @default-size;
 
@@ -19,10 +18,12 @@
     padding:12px * @ratio;
   }
 }
+// End variables & mixins
 
 .XebiaButton{
   font-weight: 300;
 }
+
 //Colors
 .XebiaButton--purple{
   .xebiaLink--white;

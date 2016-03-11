@@ -7,7 +7,8 @@ let XebiaButton = {
     color: '@', // values: [default(purple), grey]
     shape: '@', // values: [default, round, link]
     size: '@', // values: [default, big, small, extraSmall]
-    click: '<?'
+    onClick: '&?',
+    isDisabled: "=?"
   },
   controller: function(){
     let prefix = 'XebiaButton--';
