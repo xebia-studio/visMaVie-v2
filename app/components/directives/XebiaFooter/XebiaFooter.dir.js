@@ -4,6 +4,7 @@ import '../../../../assets/images/logo-alliance-xebia-long.png';
 
 let XebiaFooter = function(){
   return {
+    restrict: 'AE',
     template: require('./XebiaFooter.tpl.html'),
     controller: 'XebiaFooterController as footer',
     replace: true
