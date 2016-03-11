@@ -1,18 +1,3 @@
-<!--<button class="btn XebiaButton"-->
-        <!--ng-class="{-->
-            <!--'XebiaButton&#45;&#45;purple': $ctrl.color == undefined || $ctrl.color == 'purple',-->
-            <!--'XebiaButton&#45;&#45;grey': $ctrl.color == 'grey',-->
-
-            <!--'XebiaButton&#45;&#45;round': $ctrl.shape == 'round',-->
-            <!--'XebiaButton&#45;&#45;link': $ctrl.shape == 'link',-->
-
-            <!--'XebiaButton&#45;&#45;big': $ctrl.size == 'big',-->
-            <!--'XebiaButton&#45;&#45;small': $ctrl.size == 'small',-->
-            <!--'XebiaButton&#45;&#45;extraSmall': $ctrl.size == 'extra-small'-->
-        <!--}"-->
-        <!--ng-transclude>-->
-<!--</button>-->
-
 <button class="btn XebiaButton"
         ng-class="[$ctrl.colorClass, $ctrl.shapeCLass, $ctrl.sizeClass]"
         ng-transclude>
