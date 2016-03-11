@@ -38,13 +38,11 @@
 }
 .XebiaFooter-alliance-taglineAlliance-members {
   font-size: @small-size;
-  text-transform: uppercase;
   margin: 14px 0;
+  text-transform: uppercase;
   vertical-align: top;
 
-  a {
-    .xebiaLink--brown;
-  }
+  a:extend(.xebiaLink--brown) {}
 }
 .XebiaFooter-alliance-taglineAlliance-members-item:last-child span {
   display: none;
@@ -53,8 +51,8 @@
 .XebiaFooter-address {
   padding: 20px 0 10px;
   background-color: @xebia-purple;
-  a {
-    .xebiaLink--white;
+
+  a:extend(.xebiaLink--white) {
     padding: 0 10px;
   }
 }
