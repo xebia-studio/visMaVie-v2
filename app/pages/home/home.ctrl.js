@@ -6,6 +6,8 @@ export default class HomeController {
     this.pageName = "Vis-ma-vie";
     this.names = ExampleSvc.getNames();
     this.websitePages = websitePages;
+
+    this.buttonDisabled = true;
   }
 
   openModal(){
