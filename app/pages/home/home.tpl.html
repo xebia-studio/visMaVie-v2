@@ -20,6 +20,38 @@
         <ul>
             <li ng-repeat="name in home.names | ExampleFilter">{{name}}</li>
         </ul>
+    </div>
+
+    <div class="showcase">
+        <h1>Xebia Components Showcase</h1>
+
+        <h2>Buttons</h2>
+        <h3>Colors</h3>
+        <xebia-button color="purple">Purple button</xebia-button>
+        <xebia-button color="grey">Grey button</xebia-button>
+
+        <div style="padding: 15px;"></div>
+
+        <h3>Shapes</h3>
+        <xebia-button color="grey">Default</xebia-button>
+        <xebia-button color="grey" shape="round"><i class="fa fa-google-plus"></i></xebia-button>
+        <xebia-button shape="link" color="purple">Link</xebia-button>
+
+        <div style="padding: 15px;"></div>
+
+        <h3>Sizes</h3>
+        <div>
+            <xebia-button color="purple" size="big">Big size</xebia-button>
+            <xebia-button color="purple">Default size</xebia-button>
+            <xebia-button color="purple" size="small">Small size</xebia-button>
+            <xebia-button color="purple" size="extraSmall">Extra-small size</xebia-button>
+        </div>
+        <div style="margin-top: 5px;">
+            <xebia-button color="purple" shape="round" size="big">L</xebia-button>
+            <xebia-button color="purple" shape="round" >M</xebia-button>
+            <xebia-button color="purple" shape="round" size="small">S</xebia-button>
+            <xebia-button color="purple" shape="round" size="extraSmall">XS</xebia-button>
+        </div>
 
     </div>
 
