@@ -27,11 +27,20 @@
 //Colors
 .XebiaButton--purple{
   .xebiaLink--white;
-  ._backgroundColor-withHover(@xebia-purple, @xebia-medium-grey);
+  ._backgroundColor-withHover(@xebia-purple, @xebia-dark-purple);
 }
 .XebiaButton--grey{
   .xebiaLink--white;
   ._backgroundColor-withHover(@xebia-medium-grey, @xebia-purple);
+}
+.XebiaButton--white{
+  .xebiaLink--black;
+  background-color: white;
+  border: 1px solid @xebia-light-grey;
+
+  &:hover{
+    border-color: @xebia-dark-grey;
+  }
 }
 
 //Shapes
