@@ -50,7 +50,7 @@
 /********************************/
 /*       Custom mixins          */
 /********************************/
-._linkColor-withHover(@color, @hoverColor: @color){
+._color-withHover(@color, @hoverColor: @color){
   color: @color;
   &:hover{
     color: @hoverColor;
@@ -61,4 +61,13 @@
   &:hover{
     background-color: @hoverColor;
   }
+}
+
+// Shapes
+._roundShape(@width, @height, @padding, @margin, @radius){
+  width: @width;
+  height: @height;
+  padding: @padding;
+  margin: @margin;
+  ._border-radius(@radius);
 }

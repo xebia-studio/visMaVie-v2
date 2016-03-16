@@ -1,4 +1,3 @@
-//Main css
 import './styles/main.less';
 
 //Elements

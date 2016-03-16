@@ -5,7 +5,7 @@ let xuiButton = {
   transclude: true,
   bindings: {
     color: '@', // values: [default(purple), grey]
-    shape: '@', // values: [default, round, link]
+    type: '@', // values: [default, round, link]
     size: '@', // values: [default, big, small, extraSmall]
     onClick: '&?',
     isDisabled: "=?"
@@ -14,7 +14,7 @@ let xuiButton = {
     let prefix = 'xuiButton--';
 
     this.colorClass = this.color ? prefix + this.color : 'xuiButton--purple';
-    this.shapeCLass = this.shape ? prefix + this.shape : '';
+    this.typeCLass = this.type ? prefix + this.type : '';
     this.sizeClass = this.size ? prefix + this.size : '';
   }
 };

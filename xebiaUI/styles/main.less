@@ -16,19 +16,18 @@
   }
 }
 
-// Main Components styles
-.xuiRoundButton { //TODO à enlever (obsolète)
+// Shape classes
+.xuiShape--round {
   width: 40px;
   height: 40px;
   padding: 12px;
   margin: 0 10px;
-  .no-decoration;
   ._border-radius(50%);
 }
 
 .xuiLink(@color: @xui-purple, @hoverColor: @color){
   .no-decoration;
-  ._linkColor-withHover(@color, @hoverColor);
+  ._color-withHover(@color, @hoverColor);
 }
 
 .xuiLink--white{
