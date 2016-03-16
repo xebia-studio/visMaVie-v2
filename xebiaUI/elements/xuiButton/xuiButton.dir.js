@@ -1,7 +1,7 @@
-import './XebiaButton.less';
+import './xuiButton.less';
 
-let XebiaButton = {
-  template: require('./XebiaButton.tpl.html'),
+let xuiButton = {
+  template: require('./xuiButton.tpl.html'),
   transclude: true,
   bindings: {
     color: '@', // values: [default(purple), grey]
@@ -11,12 +11,12 @@ let XebiaButton = {
     isDisabled: "=?"
   },
   controller: function(){
-    let prefix = 'XebiaButton--';
+    let prefix = 'xuiButton--';
 
-    this.colorClass = this.color ? prefix + this.color : 'XebiaButton--purple';
+    this.colorClass = this.color ? prefix + this.color : 'xuiButton--purple';
     this.shapeCLass = this.shape ? prefix + this.shape : '';
     this.sizeClass = this.size ? prefix + this.size : '';
   }
 };
 
-export default XebiaButton;
+export default xuiButton;

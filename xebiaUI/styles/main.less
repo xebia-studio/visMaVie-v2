@@ -1,0 +1,48 @@
+@import 'variables';
+@import 'mixins';
+
+/********************************/
+/*          Main classes        */
+/********************************/
+
+// Structure and positioning
+.inline-block {
+  display: inline-block;
+}
+.no-decoration {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+// Main Components styles
+.xuiRoundButton { //TODO à enlever (obsolète)
+  width: 40px;
+  height: 40px;
+  padding: 12px;
+  margin: 0 10px;
+  .no-decoration;
+  ._border-radius(50%);
+}
+
+.xuiLink(@color: @xui-purple, @hoverColor: @color){
+  .no-decoration;
+  ._linkColor-withHover(@color, @hoverColor);
+}
+
+.xuiLink--white{
+  .xuiLink(white);
+}
+.xuiLink--brown {
+  .xuiLink(@xui-brown, @xui-purple);
+}
+.xuiLink--purple {
+  .xuiLink(@xui-purple, @xui-medium-grey);
+}
+.xuiLink-grey{
+  .xuiLink(@xui-medium-grey, @xui-purple);
+}
+.xuiLink--black{
+  .xuiLink(@xui-dark-grey, @xui-black);
+}

@@ -1,0 +1,78 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+@import (reference) '../../styles/main';
+
+// Local variables & mixins
+@round-button-width: 42px;
+
+._roundButton(@width, @font-size: @default-size){
+  @ratio: @font-size / @default-size;
+
+  width: @width * @ratio;
+  height: @width * @ratio;
+  font-size: @font-size;
+  padding:0;
+  ._border-radius(50%);
+
+  i{
+    padding:12px * @ratio;
+  }
+}
+// End variables & mixins
+
+.xuiButton{
+  font-weight: 300;
+}
+
+//Colors
+.xuiButton--purple{
+  .xuiLink--white;
+  ._backgroundColor-withHover(@xui-purple, @xui-dark-purple);
+}
+.xuiButton--grey{
+  .xuiLink--white;
+  ._backgroundColor-withHover(@xui-medium-grey, @xui-purple);
+}
+.xuiButton--white{
+  .xuiLink--black;
+  background-color: white;
+  border: 1px solid @xui-light-grey;
+
+  &:hover{
+    border-color: @xui-dark-grey;
+  }
+}
+
+//Shapes
+.xuiButton--round{
+  ._roundButton(@round-button-width);
+}
+.xuiButton--link{
+  background-color: transparent !important;
+}
+.xuiButton--link.xuiButton--purple{
+  .xuiLink--purple;
+}
+.xuiButton--link.xuiButton--grey{
+  .xuiLink-grey;
+}
+
+// Sizes
+.xuiButton--big{
+  font-size: @big-size;
+}
+.xuiButton--small{
+  font-size: @small-size;
+}
+.xuiButton--extraSmall{
+  font-size: @extra-small-size;
+}
+.xuiButton--round.xuiButton--big{
+  ._roundButton(@round-button-width, @big-size);
+}
+.xuiButton--round.xuiButton--small{
+  ._roundButton(@round-button-width, @small-size);
+}
+.xuiButton--round.xuiButton--extraSmall{
+  ._roundButton(@round-button-width, @extra-small-size);
+}
