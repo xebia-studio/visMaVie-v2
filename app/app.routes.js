@@ -1,7 +1,7 @@
 routes.$inject = ['$urlRouterProvider', '$locationProvider', '$stateProvider'];
 
 export default function routes($urlRouterProvider, $locationProvider, $stateProvider){
-  $locationProvider.html5Mode(true);
+  //$locationProvider.html5Mode(true);
   $urlRouterProvider.otherwise('/home');
 
   // Defining the routes here
