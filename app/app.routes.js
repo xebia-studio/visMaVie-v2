@@ -1,12 +1,12 @@
 routes.$inject = ['$urlRouterProvider', '$locationProvider', '$stateProvider'];
 
 export default function routes($urlRouterProvider, $locationProvider, $stateProvider){
-  //$locationProvider.html5Mode(true);
-  $urlRouterProvider.otherwise('/');
+  $locationProvider.html5Mode(true);
+  $urlRouterProvider.otherwise('/home');
 
   // Defining the routes here
   $stateProvider.state('home', {
-    url: '/',
+    url: '/home',
     template: require('./pages/home/home.tpl.html'),
     controller: 'HomeController as home'
   });
@@ -51,5 +51,10 @@ export default function routes($urlRouterProvider, $locationProvider, $stateProv
      url: '/yourDebut',
      template: require('./pages/yourDebut/yourDebut.tpl.html'),
      controller: 'YourDebutController as yourDebut'
+  });
+
+  $stateProvider.state('showcase', {
+    url: '/showcase',
+    template: require('./pages/componentsShowcase/componentsShowcase.tpl.html')
   });
 }

@@ -12,6 +12,9 @@ import appDirectives from './components/directives/directives.module';
 import appFilters from './components/filters/filters.module';
 import appServices from './components/services/services.module';
 
+// Future dependency when xebiaUI will be a full project
+import xebiaUI from '../xebiaUI/xebiaUI.mdl';
+
 // Common styles
 import 'font-awesome/css/font-awesome.css';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -44,6 +47,7 @@ export default angular
   .module('visMaVieApp', [
     uiRouter,
     uiBootstrap,
+    xebiaUI,
     appDirectives,
     appFilters,
     appServices

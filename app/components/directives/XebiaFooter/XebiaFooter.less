@@ -1,18 +1,20 @@
-@import '../../../styles/variables';
-@import '../../../styles/mixins';
-@import (reference) '../../../styles/mainStyles';
+@import '../../../../xebiaUI/styles/variables';
+@import '../../../../xebiaUI/styles/mixins';
+@import (reference) '../../../../xebiaUI/styles/main';
 
 .XebiaFooter {
   text-align: center;
-  border-top: 1px solid #bebab8;;
+  border-top: 1px solid #bebab8;
 }
 
 .XebiaFooter-social {
   line-height: 125px;
 
-  a:extend(.xebiaRoundButton) {
+  >a{
     color: white;
-    ._backgroundColor-withHover(@xebia-medium-grey, @xebia-purple);
+    ._roundShape(40px, 40px, 12px, 0 10px, 50%);
+    ._backgroundColor-withHover(@xui-medium-grey, @xui-purple);
+    .no-decoration;
   }
 }
 
@@ -43,7 +45,7 @@
   vertical-align: top;
 }
 .XebiaFooter-alliance-taglineAlliance-members-item > a{
-  .xebiaLink--brown
+  .xuiLink--brown
 }
 .XebiaFooter-alliance-taglineAlliance-members-item:last-child span {
   display: none;
@@ -51,10 +53,10 @@
 
 .XebiaFooter-address {
   padding: 20px 0 10px;
-  background-color: @xebia-purple;
+  background-color: @xui-purple;
 
   a{
-    .xebiaLink--white;
+    .xuiLink--white;
     padding: 0 10px;
   }
 }

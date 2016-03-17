@@ -1,9 +1,9 @@
-@import (reference) '../../../styles/mainStyles';
-@import '../../../styles/mixins';
-@import '../../../styles/variables';
+@import '../../../../xebiaUI/styles/mixins';
+@import '../../../../xebiaUI/styles/variables';
+@import (reference) '../../../../xebiaUI/styles/main';
 
 .CardLink{
-  background-color: @xebia-purple;
+  background-color: @xui-purple;
   padding:10px;
   margin: 5px 0;
   text-align: center;
@@ -11,5 +11,5 @@
 
 .CardLink-body-link{
   .no-decoration;
-  ._linkColor-withHover(white, @xebia-medium-grey);
+  ._color-withHover(white, @xui-medium-grey);
 }
