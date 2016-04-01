@@ -22,7 +22,7 @@ export default {
   output: {
     path: path.resolve(DIRNAME, "dist"),
     publicPath: '/',
-    filename: 'js/bundle.js'
+    filename: 'bundle.js'
   },
   module: {
     loaders: [
