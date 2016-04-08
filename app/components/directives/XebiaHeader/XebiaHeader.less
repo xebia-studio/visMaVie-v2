@@ -1,11 +1,49 @@
 @import (reference) '../../../../xebiaUI/styles/main';
+@import '../../../../xebiaUI/styles/variables';
 
-.XebiaHeader{
-  img{
-    width: 100px;
+.XebiaHeader {
+  img {
+    width: 130px;
   }
 }
 
-.XebiaHeader-navbar .navbar-nav .nav-link{
-  .xuiLink--purple;
+.XebiaHeader-country {
+  background-color: #6c1d5f;
+  color: white;
+  text-align: right;
+  padding: 4px 10%;
+  font-size: @small-size;
+}
+
+.XebiaHeader-social {
+  padding: 30px 0;
+}
+
+.XebiaHeader-social-links {
+
+  .nav-link {
+    color: @xui-cyan;
+  }
+
+  .navbar-divider {
+    height: 20px;
+    margin: 8px 16px;
+    border-right: 1px solid;
+    color: @xui-cyan;
+  }
+}
+
+.XebiaHeader-navbar-links {
+  .nav-link {
+    .xuiLink-grey;
+    padding: .425rem .6rem;
+  }
+}
+
+.XebiaHeader-navbar-links-join {
+  background-color: @xui-cyan;
+  .nav-link {
+    .xuiLink--white;
+    padding: .425rem 1rem;
+  }
 }
