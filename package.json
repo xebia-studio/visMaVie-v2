@@ -16,7 +16,7 @@
     "build": "npm run build:dev",
     "build:dev": "webpack -d",
     "build:prod": "webpack -p",
-    "start:dev": "export NODE_ENV=development && webpack-dev-server --port=9000 --content-base app/",
+    "start": "export NODE_ENV=development && webpack-dev-server --port=9000 --content-base app/",
     "phantom": "phantomjs --webdriver=4444",
     "codecept": "codeceptjs run --steps",
     "test": "concurrently \"npm run phantom\" \"npm run codecept\" "
