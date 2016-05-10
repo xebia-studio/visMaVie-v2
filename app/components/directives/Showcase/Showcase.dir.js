@@ -5,7 +5,7 @@ let CardLink = {
   bindings: {
     title: '<',
     description: '<',
-    linkText: '<'
+    rightPanelTemplateUrl: '<'
   }
 };
 
