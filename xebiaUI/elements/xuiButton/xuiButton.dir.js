@@ -4,7 +4,7 @@ let xuiButton = {
   template: require('./xuiButton.tpl.html'),
   transclude: true,
   bindings: {
-    color: '@', // values: [default(purple), grey]
+    color: '@', // values: [default(purple), cyan]
     type: '@', // values: [default, round, link]
     size: '@', // values: [default, big, small, extraSmall]
     onClick: '&?',

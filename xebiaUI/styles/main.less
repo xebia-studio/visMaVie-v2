@@ -4,6 +4,44 @@
 /********************************/
 /*          Main classes        */
 /********************************/
+.display1{
+  font-size: @display-size;
+  font-family: 'Roboto Bold', sans-serif;
+  color: white;
+}
+.headline1{
+  font-size: @headline-size;
+  font-family: 'Roboto Thin', sans-serif;
+  color: white;
+}
+.headline2{
+  font-size: @headline-size;
+  font-family: 'Roboto Light', sans-serif;
+  color: white;
+}
+.title{
+  font-size: @title-size;
+  font-family: 'Roboto Regular', sans-serif;
+  color: @xui-cyan1;
+}
+.body1{
+  font-size: @body-size;
+  font-family: 'Roboto Light', sans-serif;
+  color: @xui-black;
+}
+.body2{
+  font-size: @body-size;
+  font-family: 'Roboto Bold', sans-serif;
+  color: @xui-black;
+}
+.caption{
+  font-size: @caption-size;
+  font-family: 'Roboto Light', sans-serif;
+  color: @xui-medium-grey;
+}
+
+
+
 
 // Structure and positioning
 .inline-block {
@@ -25,7 +63,7 @@
   ._border-radius(50%);
 }
 
-.xuiLink(@color: @xui-purple, @hoverColor: @color){
+.xuiLink(@color: @xui-purple1, @hoverColor: @color){
   .no-decoration;
   ._color-withHover(@color, @hoverColor);
 }
@@ -34,13 +72,13 @@
   .xuiLink(white);
 }
 .xuiLink--brown {
-  .xuiLink(@xui-brown, @xui-purple);
+  .xuiLink(@xui-brown, @xui-purple1);
 }
 .xuiLink--purple {
-  .xuiLink(@xui-purple, @xui-medium-grey);
+  .xuiLink(@xui-purple1, @xui-medium-grey);
 }
 .xuiLink-grey{
-  .xuiLink(@xui-dark-grey, @xui-cyan);
+  .xuiLink(@xui-dark-grey, @xui-cyan1);
 }
 .xuiLink--black{
   .xuiLink(@xui-dark-grey, @xui-black);
