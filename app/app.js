@@ -5,6 +5,9 @@ import 'expose?angular!angular';
 // Import polyfill for browsers compatibility
 import 'babel-polyfill';
 
+// Vendors here
+import 'bootstrap/dist/js/bootstrap.min';
+
 // Import modules dependencies here
 import uiRouter from 'angular-ui-router';
 import uiBootstrap from 'angular-ui-bootstrap';
