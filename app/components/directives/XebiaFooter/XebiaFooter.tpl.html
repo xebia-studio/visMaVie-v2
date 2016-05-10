@@ -1,4 +1,4 @@
-<footer class="XebiaFooter">
+<footer class="XebiaFooter body1">
 
     <div class="XebiaFooter-social">
         <a href="http://www.linkedin.com/company/xebia-france" class="fa fa-linkedin" target="_blank"></a>
@@ -11,26 +11,25 @@
     <div class="XebiaFooter-alliance">
         <div class="XebiaFooter-alliance-taglineXebia"></div>
         <div class="XebiaFooter-alliance-taglineAlliance">
-            <div class="XebiaFooter-alliance-taglineAlliance-logo inline-block">
+            <div class="XebiaFooter-alliance-taglineAlliance-logo">
                 <a href="http://alliance.xebia.fr" target="_blank"></a>
             </div>
             <div class="XebiaFooter-alliance-taglineAlliance-members inline-block">
-                <span> = </span>
-                <span ng-repeat="ally in ::footer.alliance" class="XebiaFooter-alliance-taglineAlliance-members-item">
+                <div ng-repeat="ally in ::footer.alliance"
+                     class="XebiaFooter-alliance-taglineAlliance-members-item">
                     <a href="{{ally.website}}">{{ally.name}}</a>
-                    <span> + </span>
-                </span>
+                </div>
             </div>
         </div>
     </div>
 
     <div class="XebiaFooter-address">
-        <ul class="list-inline">
-            <li class="list-inline-item"><a ui-sref="home">Xebia France</a></li>
-            <li class="list-inline-item"><a href="tel:+33153899999">+33 (0)1 53 89 99 99</a></li>
-            <li class="list-inline-item"><a href="mailto:info@xebia.fr">info@xebia.fr</a></li>
-            <li class="list-inline-item"><a href="" class="mentions-legales">Mentions légales</a></li>
-        </ul>
+        <div class="row">
+            <div class="col-xs-6 col-md-3"><a ui-sref="home">Xebia France</a></div>
+            <div class="col-xs-6 col-md-3"><a href="tel:+33153899999">+33 (0)1 53 89 99 99</a></div>
+            <div class="col-xs-6 col-md-3"><a href="mailto:info@xebia.fr">info@xebia.fr</a></div>
+            <div class="col-xs-6 col-md-3"><a href="" class="mentions-legales">Mentions légales</a></div>
+        </div>
     </div>
 
 </footer>

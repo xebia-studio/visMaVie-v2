@@ -12,8 +12,9 @@
 
   >a{
     color: white;
-    ._roundShape(40px, 40px, 12px, 0 10px, 50%);
-    ._backgroundColor-withHover(@xui-medium-grey, @xui-purple);
+    ._roundShape(50px, 50px, 16px, 0 10px, 50%);
+    font-size: @button-size;
+    ._backgroundColor-withHover(@xui-light-grey, @xui-purple1);
     .no-decoration;
   }
 }
@@ -31,15 +32,14 @@
   max-width: 700px;
   margin: auto;
   padding: 20px 0;
-  border-top: 1px solid #bebab8;
+  border-top: 1px solid @xui-light-grey;
+  text-align: center;
 }
 .XebiaFooter-alliance-taglineAlliance-logo {
   height: 42px;
-  width: 130px;
-  background: url('../../../../assets/images/logo-alliance-xebia-long.png') 0 5px no-repeat #ffffff;
+  background: url('../../../../assets/images/logo-alliance-xebia-long.png') center no-repeat #ffffff;
 }
 .XebiaFooter-alliance-taglineAlliance-members {
-  font-size: @small-size;
   margin: 14px 0;
   text-transform: uppercase;
   vertical-align: top;
@@ -53,7 +53,7 @@
 
 .XebiaFooter-address {
   padding: 20px 0 10px;
-  background-color: @xui-purple;
+  background-color: @xui-purple1;
 
   a{
     .xuiLink--white;
