@@ -3,6 +3,7 @@
 import webpack from 'webpack';
 import path from 'path';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
+let CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const DIRNAME = __dirname;
 
@@ -17,7 +18,11 @@ export default {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     vendorCSS,
-    appCSS
+    appCSS,
+    new CopyWebpackPlugin([{
+      from: 'assets',
+      to: 'assets'
+    }])
   ],
   output: {
     path: path.resolve(DIRNAME, "dist"),
