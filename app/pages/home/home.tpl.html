@@ -1,14 +1,43 @@
 <div class="home">
-    <xui-showcase title="home.showCaseTitle" description="home.showCaseDescription"></xui-showcase>
+    <xui-showcase class="home-showcase"
+                  title="home.showCaseTitle"
+                  main-description="home.showCaseMainDescription"
+                  sub-description="home.showCaseSubDescription">
 
-    <br/>
+        <!--Showcase right panel-->
+        <div id="home-carousel"
+             class="home-carousel carousel slide"
+             data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li ng-repeat="(index, xebian) in home.xebians"
+                    data-target="#home-carousel"
+                    data-slide-to="{{index}}"
+                    ng-class="{'active': index === 0}"></li>
+            </ol>
 
-    <xui-button color="white" on-click="home.openModal()">Ouvre une popup</xui-button>
-
-    <div>
-        Liste de noms retournés par le service et mis en majuscules par le filtre:
-        <ul>
-            <li ng-repeat="name in home.names | ExampleFilter">{{name}}</li>
-        </ul>
-    </div>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <div ng-repeat="(index, xebian) in home.xebians"
+                     class="item"
+                     ng-class="{'active': index === 0}">
+                    <img class="home-carousel-img" src="{{xebian.imageUrl}}" alt="...">
+                    <div class="home-carousel-content">
+                        <div class="home-carousel-content-headline1">
+                            {{xebian.firstName}} <span class="bold">{{xebian.lastName}}</span>
+                        </div>
+                        <div class="home-carousel-content-headline2">
+                            {{xebian.job}}
+                        </div>
+                        <div class="home-carousel-link">
+                            Découvrez son évolution <i class="fa fa-chevron-right"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="home-carousel-button">
+                    <xui-button color="cyan">Nous rejoindre</xui-button>
+                </div>
+            </div>
+        </div>
+    </xui-showcase>
 </div>

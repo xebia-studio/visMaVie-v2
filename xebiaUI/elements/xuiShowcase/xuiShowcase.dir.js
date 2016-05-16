@@ -1,10 +1,12 @@
 import './xuiShowcase.less';
 
 let xuiShowcase = {
-  template: require('./xuiShowcase.html'),
+  template: require('./xuiShowcase.tpl.html'),
+  transclude: true,
   bindings: {
     title: '<',
-    description: '<',
+    mainDescription: '<',
+    subDescription: '<',
     rightPanelTemplateUrl: '<'
   }
 };

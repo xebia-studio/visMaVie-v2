@@ -1,5 +1,76 @@
-.home{}
+@import '../../../xebiaUI/styles/variables';
+@import (reference) '../../../xebiaUI/styles/main';
 
-.showcase{
-  margin: 20px 0;
+.home {
+
+  .home-showcase {
+
+    .xuiShowcase-rightPanel {
+      background-color: rgba(14, 14, 14, 0.84);
+      height: 220px;
+
+      .home-carousel {
+
+        .carousel-indicators{
+          bottom: 85px;
+          left: 148px;
+          width: auto;
+          margin-left: 0;
+
+          li{
+            margin-right: 4px;
+            margin-left: 4px;
+            border-color: @xui-cyan1;
+          }
+          .active{
+            background-color: @xui-cyan1;
+            border-color: @xui-cyan1;
+          }
+        }
+
+        .carousel-inner {
+          overflow: visible;
+
+          .home-carousel-img {
+            height: 250px;
+            position: relative;
+            top: -30px;
+            left: -30px;
+          }
+          
+          .home-carousel-content{
+            position: absolute;
+            top:0;
+            left: 150px;
+            padding: 30px 0;
+            .xui-body1;
+            color: white;
+
+            .bold{
+              .xui-body2;
+              color: white;
+            }
+
+            .home-carousel-content-headline1{
+              padding-bottom: 5px;
+            }
+            .home-carousel-content-headline2{
+              padding-bottom: 20px;
+            }
+            .home-carousel-link{
+              .xui-body1;
+              color: @xui-cyan1;
+            }
+          }
+        }
+
+        .home-carousel-button{
+          position: relative;
+          bottom: 48px;
+          width: 100%;
+          text-align: center;
+        }
+      }
+    }
+  }
 }

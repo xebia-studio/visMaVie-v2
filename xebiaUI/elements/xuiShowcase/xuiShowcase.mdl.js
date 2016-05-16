@@ -1,4 +1,4 @@
-import xuiShowcase from './xuiShowcase.js';
+import xuiShowcase from './xuiShowcase.dir.js';
 
 export default angular
   .module('xuiShowCaseMdl', [])

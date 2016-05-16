@@ -21,7 +21,12 @@
 // End variables & mixins
 
 .xuiButton:extend(.btn){
-  font-weight: 300;
+  .font-regular;
+  text-transform: uppercase;
+
+  @media (max-width: @screen-phone) {
+    font-size: 19px;
+  }
 
   &:focus{
     outline: none;
@@ -35,7 +40,7 @@
 }
 .xuiButton--cyan{
   ._color-withHover(white);
-  ._backgroundColor-withHover(@xui-cyan1, @xui-purple1);
+  ._backgroundColor-withHover(@xui-cyan1, @xui-cyan1);
 }
 .xuiButton--white{
   ._color-withHover(@xui-dark-grey, @xui-black);

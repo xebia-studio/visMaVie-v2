@@ -8,12 +8,7 @@ export const alliance = [
   {name: 'Akamis', website: 'http://www.akamis.com/'}
 ];
 
-export const websitePages = [
-  {name: 'Nos valeurs', state: 'values', order: 1},
-  {name: 'Nos passions', state: 'passions', order: 2},
-  {name: 'Nos créations', state: 'creations', order: 3},
-  {name: 'Accélérez votre trajectoire', state: 'boostYourCareer', order: 4},
-  {name: 'Vos débuts', state: 'yourDebut', order: 5},
-  {name: 'Xebia comme si vous y étiez', state: 'visit3D', order: 6},
-  {name: 'Nous rejoindre', state: 'join', order: 7}
+export const homeXebians = [
+  {firstName: 'Pablo', lastName: 'Lopez', job: 'CTO chez Xebia', imageUrl: '/assets/images/home/pablo-lopez.png'},
+  {firstName: 'Pablo2', lastName: 'Lopez2', job: 'CTO chez Xebia', imageUrl: '/assets/images/home/pablo-lopez.png'}
 ];
