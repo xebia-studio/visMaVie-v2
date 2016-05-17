@@ -13,7 +13,8 @@
                 <li ng-repeat="(index, xebian) in home.xebians"
                     data-target="#home-carousel"
                     data-slide-to="{{index}}"
-                    ng-class="{'active': index === 0}"></li>
+                    ng-class="{'active': index === 0}">
+                </li>
             </ol>
 
             <!-- Wrapper for slides -->
@@ -21,7 +22,7 @@
                 <div ng-repeat="(index, xebian) in home.xebians"
                      class="item"
                      ng-class="{'active': index === 0}">
-                    <img class="home-carousel-img" src="{{xebian.imageUrl}}" alt="...">
+                    <img class="home-carousel-img" ng-src="{{xebian.imageUrl}}" alt="...">
                     <div class="home-carousel-content">
                         <div class="home-carousel-content-headline1">
                             {{xebian.firstName}} <span class="bold">{{xebian.lastName}}</span>
