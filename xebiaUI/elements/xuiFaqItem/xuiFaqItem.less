@@ -8,17 +8,25 @@
     background-color: @xui-purple1;
 
     .xuiFaqItem-title {
-      .xui-display1;
+      font-size: 14px;
+      .font-regular;
+      color: white;
       text-transform: uppercase;
-      line-height: initial;
-      margin-bottom: 5px;
     }
   }
 
   .xuiFaqItem-body{
-    background-color: @xui-purple1;
-
+    background-color: white;
     .xuiFaqItem-answer {
+      padding: 20px 10px;
+      border-bottom: 1px solid @xui-light-grey;
+      :last-child {
+        border:none;
+      }
+      .xuiFaqItem-answer-title {
+        .xui-title;
+        font-size: 14px;
+      }
     }
   }
 

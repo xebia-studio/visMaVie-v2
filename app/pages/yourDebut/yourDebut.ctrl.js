@@ -4,6 +4,10 @@ import missionsClientTemplateUrl from '!!file!./answersTemplates/missionsClient.
 
 export default class YourDebutCtrl {
   constructor() {
+    this.showCaseTitle = 'Votre intégration';
+    this.showCaseMainDescription = 'Les indispensables pour une intégration réussie';
+    this.showCaseSubDescription = '';
+
     this.faqItems = [
         {
             question:`Quelle possibilité d'évolution ?`,
