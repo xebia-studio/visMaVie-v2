@@ -1,0 +1,6 @@
+<div class="xuiFaqItem row">
+    <div class="xuiFaqItem-header col-xs-12 col-md-6">
+        <div class="xuiFaqItem-title">{{$ctrl.title}}</div>
+    </div>
+    <div class="xuiFaqItem-body col-xs-12 col-md-6" ng-repeat="faqAnswerTemplate in $ctrl.answersTemplates track by $index" ng-include="faqAnswerTemplate"></div>
+</div>
