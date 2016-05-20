@@ -6,8 +6,20 @@
   .home-showcase {
 
     .xuiShowcase-rightPanel {
-      background: url('../../../assets/images/home/background-paris-xebia-home.jpg');
-      height: 230px;
+
+      @media (max-width: @screen-phone) {
+        height: 260px;
+      }
+
+      @media (min-width: @screen-phone) and (max-width: @screen-tablet) {
+        height: 400px;
+      }
+
+      @media (min-width: @screen-phone) and (max-width: @screen-tablet) {
+        height: auto;
+      }
+
+
 
       .home-carousel {
 
@@ -32,16 +44,31 @@
           overflow: visible;
 
           .home-carousel-img {
-            height: 250px;
             position: relative;
-            top: -30px;
-            left: -30px;
+            left: -150px;
+
+            @media (max-width: @screen-phone) {
+              height: 290px;
+              left: -90px;
+              top: -30px;
+            }
+
+            @media (min-width: @screen-phone) and (max-width: @screen-tablet) {
+              height: 290px;
+              top: 35px;
+              left: 0px;
+            }
+
+            @media (min-width: @screen-tablet) and (max-width: @screen-desktop) {
+              height: 360px;
+              top: 40px;
+            }
           }
           
           .home-carousel-content{
             position: absolute;
             top:0;
-            left: 150px;
+            left: 110px;
             padding: 30px 0;
             .xui-body1;
             color: white;

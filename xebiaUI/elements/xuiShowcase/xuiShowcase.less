@@ -2,16 +2,51 @@
 @import '../../styles/variables';
 
 .xuiShowcase{
+  background: url('../../../assets/images/home/background-paris-xebia-home.jpg');
+  height: 400px;
+
+  @media (max-width: @screen-phone) {
+    background-size: cover;
+    background-position: center center;
+    height: auto;
+    background-repeat: no-repeat;
+  }
+
+  @media (min-width: @screen-phone) and (max-width: @screen-tablet) {
+    background-size: cover;
+    background-position: center center;
+    height: auto;
+    background-repeat: no-repeat;
+  }
 
   .xuiShowcase-leftPanel {
-    padding: 30px 15px;
-    background-color: @xui-purple1;
+    padding: 40px 130px 40px 10px;
+    background-color: @xui-purple1-opacity;
+    height: 400px;
+
+    @media (max-width: @screen-phone) {
+      padding: 30px 15px;
+      height: auto;
+    }
+
+    @media (min-width: @screen-phone) and (max-width: @screen-tablet) {
+      padding: 60px 15px;
+      height: auto;
+    }
+
+    @media (max-width: 1200px) and (min-width: @screen-desktop) {
+      padding: 40px 90px 40px 10px;
+    }
 
     .xuiShowcase-title {
       .xui-display1;
       text-transform: uppercase;
       line-height: initial;
-      margin-bottom: 5px;
+      margin-bottom: 20px;
+
+      @media (max-width: @screen-phone) {
+        margin-bottom: 0px;
+      }
     }
 
     .xuiShowcase-mainDescription {
@@ -25,7 +60,6 @@
   }
 
   .xuiShowcase-rightPanel{
-    background-color: @xui-purple1;
     color: white;
   }
 
