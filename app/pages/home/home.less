@@ -6,35 +6,29 @@
   .home-showcase {
 
     .xuiShowcase-rightPanel {
-
       @media (max-width: @screen-phone) {
         height: 260px;
       }
-
       @media (min-width: @screen-phone) and (max-width: @screen-tablet) {
         height: 400px;
       }
-
       @media (min-width: @screen-phone) and (max-width: @screen-tablet) {
         height: auto;
       }
 
-
-
       .home-carousel {
-
-        .carousel-indicators{
+        .carousel-indicators {
           bottom: 85px;
           left: 148px;
           width: auto;
           margin-left: 0;
 
-          li{
+          li {
             margin-right: 4px;
             margin-left: 4px;
             border-color: @xui-cyan1;
           }
-          .active{
+          .active {
             background-color: @xui-cyan1;
             border-color: @xui-cyan1;
           }
@@ -46,59 +40,83 @@
           .home-carousel-img {
             position: relative;
             left: -150px;
-
             @media (max-width: @screen-phone) {
-
               height: 290px;
               left: -90px;
               top: -30px;
             }
-
             @media (min-width: @screen-phone) and (max-width: @screen-tablet) {
               height: 290px;
               top: 35px;
-              left: 0px;
+              left: 0;
             }
-
             @media (min-width: @screen-tablet) and (max-width: @screen-desktop) {
               height: 360px;
               top: 40px;
             }
           }
 
-          .home-carousel-content{
+          .home-carousel-content {
             position: absolute;
-            top:0;
+            top: 0;
             left: 110px;
             padding: 30px 0;
             .xui-body1;
             color: white;
-
-            .bold{
+            @media (max-width: @screen-phone) {
+              color: @xui-purple1;
+            }
+            
+            .bold {
               .xui-body2;
               color: white;
+              @media (max-width: @screen-phone) {
+                color: @xui-purple1;
+              }
             }
 
-            .home-carousel-content-headline1{
+            .home-carousel-content-headline1 {
               padding-bottom: 5px;
             }
-            .home-carousel-content-headline2{
+            .home-carousel-content-headline2 {
               padding-bottom: 20px;
             }
-            .home-carousel-link{
+            .home-carousel-link {
               .xui-body1;
               color: @xui-cyan1;
             }
           }
         }
 
-        .home-carousel-button{
+        .home-carousel-button {
           position: relative;
           bottom: 48px;
           width: 100%;
           text-align: center;
         }
       }
+    }
+  }
+
+  .home-citations {
+    .home-citations-title {
+      .xui-title;
+    }
+    .home-citations-content {
+      height: 100px;
+    }
+  }
+
+  .home-numbers {
+    background-color: @xui-light-grey;
+
+    .home-numbers-title {
+      .xui-title;
+      padding-left: 15px;
+    }
+
+    .home-numbers-cards-item {
+      margin-bottom: 15px;
     }
   }
 }

@@ -1,4 +1,5 @@
 <div class="home">
+    <!-- Section Showcase -->
     <xui-showcase class="home-showcase"
                   title="home.showCaseTitle"
                   main-description="home.showCaseMainDescription"
@@ -41,4 +42,26 @@
             </div>
         </div>
     </xui-showcase>
+
+    <!-- Section Citations -->
+    <div class="home-citations">
+        <h1 class="home-citations-title">Xebia en quelques citations</h1>
+        <div class="home-citations-content">
+            Image à insérer ici
+        </div>
+    </div>
+
+    <!-- Section Numbers -->
+    <div class="home-numbers row">
+        <h1 class="home-numbers-title">Xebia en quelques chiffres</h1>
+        <div class="home-numbers-cards container">
+            <xui-card ng-repeat="card in home.numbersCards"
+                      class="home-numbers-cards-item col-xs-4 col-sm-3"
+                      image-url="card.icon"
+                      background-url="card.background"
+                      title="card.title"
+                      content="card.content">
+            </xui-card>
+        </div>
+    </div>
 </div>

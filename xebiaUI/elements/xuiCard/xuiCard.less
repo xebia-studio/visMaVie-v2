@@ -1,0 +1,50 @@
+@import (reference) '../../styles/main';
+@import '../../styles/variables';
+
+.xuiCard {
+  background-color: black;
+  color: white;
+  border-radius: 3px;
+  @media (max-width: @screen-phone) {
+    background-color: @xui-purple1;
+    opacity: 1;
+  }
+
+  .xuiCard-image {
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.8;
+    @media (max-width: @screen-phone) {
+      background-image: none !important;
+    }
+
+    > img {
+      width: 100%;
+      text-align: center;
+      height: 50px;
+      margin: 30px 0;
+      opacity: 1;
+
+      @media (max-width: @screen-phone) {
+        margin: 10px 0;
+        opacity: 0.5;
+      }
+    }
+  }
+  .xuiCard-title {
+    .xui-number;
+    padding: 0 10px;
+    line-height: normal;
+    background-color: @xui-purple1;
+  }
+  .xuiCard-content {
+    .xui-label;
+    height: 50px;
+    padding: 0 10px;
+    background-color: @xui-purple1;
+
+    @media (max-width: @screen-phone) {
+      height: 40px;
+    }
+  }
+}
