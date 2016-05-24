@@ -7,24 +7,24 @@
 
   @media (max-width: @screen-phone) {
     background-size: cover;
-    background-position: center center;
     height: auto;
-    background-repeat: no-repeat;
+    background: no-repeat center center;
   }
 
   @media (min-width: @screen-phone) and (max-width: @screen-tablet) {
     background-size: cover;
-    background-position: center center;
     height: auto;
-    background-repeat: no-repeat;
+    background: no-repeat center center;
   }
 
   .xuiShowcase-leftPanel {
     padding: 40px 130px 40px 10px;
-    background-color: @xui-purple1-opacity;
+    background-color: @xui-purple1;
+    opacity: 0.7;
     height: 400px;
 
     @media (max-width: @screen-phone) {
+      opacity: 1;
       padding: 30px 15px;
       height: auto;
     }
@@ -45,7 +45,7 @@
       margin-bottom: 20px;
 
       @media (max-width: @screen-phone) {
-        margin-bottom: 0px;
+        margin-bottom: 0;
       }
     }
 
