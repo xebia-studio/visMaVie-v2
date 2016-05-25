@@ -2,21 +2,17 @@
 @import '../../styles/variables';
 
 .xuiShowcase{
-  background: url('../../../assets/images/home/background-paris-xebia-home.jpg');
+  background: url('../../../assets/images/home/background-paris-xebia-home.jpg') no-repeat;
   background-size: cover;
   height: 400px;
 
   @media (max-width: @screen-phone) {
-    background-size: cover;
     height: auto;
-    background: no-repeat center center;
     margin-bottom: 50px;
   }
 
   @media (min-width: @screen-phone) and (max-width: @screen-tablet) {
-    background-size: cover;
     height: auto;
-    background: no-repeat center center;
   }
 
   .xuiShowcase-leftPanel {
