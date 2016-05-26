@@ -5,25 +5,31 @@
   padding: 0 12px;
 
   img {
-    width: 130px;
+    width: 341px;
   }
 }
 
 .XebiaHeader-social {
-  padding: 15px 0;
 
-  .XebiaHeader-social-links {
+  .logo-index {
+    z-index: 1;
 
-    .nav-link {
-      .xui-social;
+    .XebiaHeader-social-links {
+
+      .nav-link {
+        padding-top: 30px;
+        padding-bottom: 25px;
+        .xui-social;
+      }
+
+      .navbar-divider {
+        height: 30px;
+        margin: 25px 16px 0 25px;
+        border-right: 1px solid;
+        color: @xui-cyan1;
+      }
     }
 
-    .navbar-divider {
-      height: 20px;
-      margin: 16px;
-      border-right: 1px solid;
-      color: @xui-cyan1;
-    }
   }
 }
 
@@ -34,6 +40,9 @@
 
 .XebiaHeader-navbar{
   min-height: 0;
+  border-top: 1px solid silver;
+  position: relative;
+  top: -3px;
 
   .navbar{
     margin-bottom: 0;
