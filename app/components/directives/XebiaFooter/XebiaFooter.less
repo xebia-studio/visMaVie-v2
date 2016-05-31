@@ -9,6 +9,16 @@
 
 .XebiaFooter-social {
   line-height: 125px;
+  position: relative;
+  width:100%;
+  text-align: center;
+
+  .XebiaFooter-social-joinUs{
+    position: absolute;
+    width: 100%;
+    top: -18px;
+    line-height: 35px;
+  }
 
   >a{
     color: white;
@@ -38,11 +48,22 @@
 .XebiaFooter-alliance-taglineAlliance-logo {
   height: 42px;
   background: url('../../../../assets/images/logo-alliance-xebia-long.png') center no-repeat #ffffff;
+
+  @media (min-width: @screen-tablet){
+    width: 112px;
+    display: inline-block;
+  }
 }
 .XebiaFooter-alliance-taglineAlliance-members {
   margin: 14px 0;
   text-transform: uppercase;
   vertical-align: top;
+}
+.XebiaFooter-alliance-taglineAlliance-members-item{
+  display: block;
+  @media (min-width: @screen-tablet){
+    display: inline-block;
+  }
 }
 .XebiaFooter-alliance-taglineAlliance-members-item > a{
   .xui-body1;

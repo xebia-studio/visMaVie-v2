@@ -1,6 +1,9 @@
 <footer class="XebiaFooter body1">
 
     <div class="XebiaFooter-social">
+        <div class="XebiaFooter-social-joinUs">
+            <xui-button color="cyan">Nous rejoindre</xui-button>
+        </div>
         <a href="http://www.linkedin.com/company/xebia-france" class="fa fa-linkedin" target="_blank"></a>
         <a href="https://plus.google.com/100396468532572979348/posts" class="fa fa-google-plus" target="_blank"></a>
         <a href="https://twitter.com/XebiaFr" class="fa fa-twitter" target="_blank"></a>
@@ -15,9 +18,11 @@
                 <a href="http://alliance.xebia.fr" target="_blank"></a>
             </div>
             <div class="XebiaFooter-alliance-taglineAlliance-members inline-block">
+                <span class="hidden-xs">= </span>
                 <div ng-repeat="ally in ::footer.alliance"
                      class="XebiaFooter-alliance-taglineAlliance-members-item">
                     <a href="{{ally.website}}">{{ally.name}}</a>
+                    <span class="separator hidden-xs">+</span>
                 </div>
             </div>
         </div>
@@ -25,10 +30,10 @@
 
     <div class="XebiaFooter-address">
         <div class="row">
-            <div class="col-xs-6 col-md-3"><a ui-sref="home">Xebia France</a></div>
-            <div class="col-xs-6 col-md-3"><a href="tel:+33153899999">+33 (0)1 53 89 99 99</a></div>
-            <div class="col-xs-6 col-md-3"><a href="mailto:info@xebia.fr">info@xebia.fr</a></div>
-            <div class="col-xs-6 col-md-3"><a href="" class="mentions-legales">Mentions légales</a></div>
+            <a class="col-xs-12 col-md-6" ui-sref="home">Xebia France</a>
+            <a class="col-xs-12 col-md-6" href="tel:+33153899999">+33 (0)1 53 89 99 99</a>
+            <a class="col-xs-12 col-md-6" href="mailto:info@xebia.fr">info@xebia.fr</a>
+            <a class="col-xs-12 col-md-6 mentions-legales" href="">Mentions légales</a>
         </div>
     </div>
 

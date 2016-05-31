@@ -20,7 +20,7 @@ import xebiaUI from '../xebiaUI/xebiaUI.mdl';
 
 // Common styles
 import 'font-awesome/css/font-awesome.css';
-import 'bootstrap/dist/css/bootstrap.css';
+import '../assets/bootstrap/css/bootstrap.min.css';
 import './styles/mainStyles.less';
 
 // Import the main module css here

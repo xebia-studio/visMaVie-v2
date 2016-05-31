@@ -33,27 +33,34 @@
   }
 }
 
-.XebiaHeader-navbar-toggle{
+.XebiaHeader-navbar-toggle {
   padding: 0;
   margin-right: 0;
 }
 
-.XebiaHeader-navbar{
+.XebiaHeader-navbar {
   min-height: 0;
   border-top: 1px solid silver;
   position: relative;
   top: -3px;
 
-  .navbar{
+  .navbar {
     margin-bottom: 0;
     padding: 0;
   }
 
   .XebiaHeader-navbar-links {
-    .nav-link {
-      .xuiLink-grey;
-      padding: .425rem .6rem;
+    display: flex;
+    width: 100%;
+
+    .nav-item{
+      flex-grow: 1;
+      .nav-link {
+        .xuiLink-grey;
+        padding: .425rem .6rem;
+      }
     }
+
 
     .XebiaHeader-navbar-links-join {
       background-color: @xui-cyan1;
