@@ -25,11 +25,13 @@
                      ng-class="{'active': index === 0}">
                     <img class="home-carousel-img" ng-src="{{xebian.imageUrl}}" alt="...">
                     <div class="home-carousel-content">
-                        <div class="home-carousel-content-headline1">
-                            {{xebian.firstName}} <span class="bold">{{xebian.lastName}}</span>
-                        </div>
-                        <div class="home-carousel-content-headline2">
-                            {{xebian.job}}
+                        <div class="home-carousel-content-name">
+                            <div class="home-carousel-content-headline1">
+                                {{xebian.firstName}} <span class="bold">{{xebian.lastName}}</span>
+                            </div>
+                            <div class="home-carousel-content-headline2">
+                                {{xebian.job}}
+                            </div>
                         </div>
                         <div class="home-carousel-link">
                             Découvrez son évolution <i class="fa fa-chevron-right"></i>
@@ -47,7 +49,10 @@
     <div class="home-citations">
         <h1 class="home-citations-title">Xebia en quelques citations</h1>
         <div class="home-citations-content">
-            Image à insérer ici
+            <img class="home-citations-content-alinea" src="/assets/images/home/alinea-grey.svg" alt="">
+            <div class="home-citations-content-card" ng-repeat="citation in home.citations">
+                {{citation}}
+            </div>
         </div>
     </div>
 
@@ -56,7 +61,7 @@
         <h1 class="home-numbers-title">Xebia en quelques chiffres</h1>
         <div class="home-numbers-cards container">
             <xui-card ng-repeat="card in home.numbersCards"
-                      class="home-numbers-cards-item col-xs-8 col-sm-offset-1 col-sm-5"
+                      class="home-numbers-cards-item col-xs-12 col-sm-offset-1 col-sm-5"
                       image-url="card.icon"
                       background-url="card.background"
                       title="card.title"

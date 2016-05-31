@@ -8,9 +8,9 @@
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#6a205f+0,6a205f+49,06a99c+49,06a99c+100 */
     background: #6a205f; /* Old browsers */
     background: -moz-linear-gradient(left, #6a205f 0%, #6a205f 49%, #06a99c 49%, #06a99c 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(left, #6a205f 0%,#6a205f 49%,#06a99c 49%,#06a99c 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right, #6a205f 0%,#6a205f 49%,#06a99c 49%,#06a99c 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6a205f', endColorstr='#06a99c',GradientType=1 ); /* IE6-9 */
+    background: -webkit-linear-gradient(left, #6a205f 0%, #6a205f 49%, #06a99c 49%, #06a99c 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #6a205f 0%, #6a205f 49%, #06a99c 49%, #06a99c 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#6a205f', endColorstr='#06a99c', GradientType=1); /* IE6-9 */
 
     .xuiShowcase-rightPanel {
       @media (max-width: @screen-phone) {
@@ -47,6 +47,8 @@
           .home-carousel-img {
             position: relative;
             left: -150px;
+            z-index: 101;
+
             @media (max-width: @screen-phone) {
               height: 290px;
               left: -90px;
@@ -65,15 +67,15 @@
 
           .home-carousel-content {
             position: absolute;
-            top: 0;
-            left: 110px;
+            top: 35%;
+            left: -15px;
             padding: 30px 0;
             .xui-body1;
             color: white;
             @media (max-width: @screen-phone) {
               color: @xui-purple1;
             }
-            
+
             .bold {
               .xui-body2;
               color: white;
@@ -81,16 +83,21 @@
                 color: @xui-purple1;
               }
             }
+            .home-carousel-content-name {
+              padding: 5px 10px 5px 200px;
+              background-color: @xui-cyan1;
 
-            .home-carousel-content-headline1 {
-              padding-bottom: 5px;
-            }
-            .home-carousel-content-headline2 {
-              padding-bottom: 20px;
+              .home-carousel-content-headline1,
+              .home-carousel-content-headline2 {
+                padding-bottom: 5px;
+              }
             }
             .home-carousel-link {
+              padding: 5px 10px 5px 200px;
+              margin-top: 15px;
               .xui-body1;
-              color: @xui-cyan1;
+              color: white;
+              background-color: @xui-cyan1;
             }
           }
         }
@@ -107,12 +114,67 @@
 
   .home-citations {
     padding: 0 15px;
+    background: url('/assets/images/home/paris-grey-line.svg') 95% no-repeat;
+    background-size: 250px;
+    background-position-y: bottom;
 
     .home-citations-title {
       .xui-title;
     }
+
     .home-citations-content {
-      height: 100px;
+      position: relative;
+      margin-top: 50px;
+
+      .home-citations-content-alinea {
+        height: 170px;
+        margin-left: 15%;
+      }
+
+      @top: -23px;
+      .home-citations-content-card {
+        height: 160px;
+        width: 170px;
+        font-family: fantasy;
+        font-size: 1.12rem;
+        background-color: #E6E6E6;
+        padding: 15px;
+        position: absolute;
+        top: @top;
+        left: ~'calc(15% + 214px)';
+
+        @media (max-width: @screen-phone) {
+          left: 214px;
+        }
+
+        &:nth-child(2) {
+          // first card
+          transform: rotate(-4deg);
+          z-index: 103;
+        }
+        &:nth-child(3) {
+          // second card
+          transform: rotate(2deg);
+          top: (@top + 2);
+          left: ~'calc(15% + 232px)';
+          background-color: @xui-purple1;
+          color: white;
+          z-index: 102;
+        }
+        &:nth-child(4) {
+          // third card
+          transform: rotate(7deg);
+          top: (@top + 8);
+          left: ~'calc(15% + 246px)';
+          background-color: @xui-cyan1;
+          color: white;
+          z-index: 101;
+        }
+
+        &:hover {
+          z-index: 105;
+        }
+      }
     }
   }
 
