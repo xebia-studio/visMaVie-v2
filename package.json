@@ -47,6 +47,7 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
     "html-loader": "^0.4.0",
+    "html-webpack-plugin": "^2.19.0",
     "less": "^2.6.0",
     "less-loader": "^2.2.2",
     "mocha": "^2.4.5",
