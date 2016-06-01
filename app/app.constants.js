@@ -10,10 +10,10 @@ export const alliance = [
 
 export const homeXebians = [
   {firstName: 'Pablo', lastName: 'Lopez', job: 'CTO chez Xebia', imageUrl: '/assets/images/home/pablo-lopez.png'},
-  // {firstName: 'Julien', lastName: 'Smadja', job: 'Manager chez Xebia', imageUrl: '/assets/images/home/julien-smadja.png'},
-  // {firstName: 'Benjamin', lastName: 'Moitié', job: 'Coach Agile chez Xebia', imageUrl: '/assets/images/home/benjamin-moitie.png'},
-  // {firstName: 'Philippe', lastName: 'Antoine', job: 'Scrum Master chez Xebia', imageUrl: '/assets/images/home/philippe-antoine.png'},
-  // {firstName: 'Hugo', lastName: 'Geissmann', job: 'Président chez Thiga', imageUrl: '/assets/images/home/hugo-geissmann.png'}
+  {firstName: 'Julien', lastName: 'Smadja', job: 'Manager chez Xebia', imageUrl: '/assets/images/home/julien-smadja.png'},
+  {firstName: 'Benjamin', lastName: 'Moitié', job: 'Coach Agile chez Xebia', imageUrl: '/assets/images/home/benjamin-moitie.png'},
+  {firstName: 'Philippe', lastName: 'Antoine', job: 'Scrum Master chez Xebia', imageUrl: '/assets/images/home/philippe-antoine.png'},
+  {firstName: 'Hugo', lastName: 'Geissmann', job: 'Président chez Thiga', imageUrl: '/assets/images/home/hugo-geissmann.png'}
 ];
 
 export const numbersCards = [
