@@ -248,6 +248,7 @@
 
   .timeline {
     padding: 0 15px 35px;
+    margin: auto;
 
     .timeline-title{
       .xui-title;
@@ -273,10 +274,18 @@
         height: 30px;
         position: absolute;
         top: 0;
-        left: 26.5%;
+        left: 24.5%;
         margin-left: -30px;
         -webkit-transform: translateZ(0);
         -webkit-backface-visibility: hidden;
+
+        @media (max-width: 995px) {
+          left: 15%;
+        }
+
+        @media (max-width: 820px) {
+          left: 2%;
+        }
 
         p {
           color: white;
@@ -290,14 +299,18 @@
       .cd-timeline-content {
         position: relative;
         display: inline-block;
-        margin-left: 60px;
+        margin-left: 30%;
         background: white;
         border-radius: 0.25em;
         border: 1px solid #EFEFEF;
         padding: 0.5em;
-        width: 45%;
-        float: right;
-        left: -260px;
+        width: 50%;
+
+        @media (max-width: 995px) {
+          width: 70%;
+        }
+
+
 
         &::after {
           content: "";
