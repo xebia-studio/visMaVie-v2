@@ -32,3 +32,11 @@ export const citations = [
   'citation quatre',
   'citation cinq'
 ];
+
+export const timelineItems = [
+  {year: 2016, imgUrl: 'assets/images/home/frenchkit-icon.svg', text: 'Xebia co-organise la première conférence iOS française', link:'www.google.fr'},
+  {year: 2016, imgUrl: 'assets/images/home/frenchkit-icon.svg', text: 'Xebia co-organise la première conférence iOS française', link:'www.google.fr'},
+  {year: 2016, imgUrl: 'assets/images/home/frenchkit-icon.svg', text: 'Xebia co-organise la première conférence iOS française', link:'www.google.fr'},
+  {year: 2016, imgUrl: 'assets/images/home/frenchkit-icon.svg', text: 'Xebia co-organise la première conférence iOS française', link:'www.google.fr'},
+  {year: 2016, imgUrl: 'assets/images/home/frenchkit-icon.svg', text: 'Xebia co-organise la première conférence iOS française', link:'www.google.fr'}
+];

@@ -1,10 +1,11 @@
-import {homeXebians, numbersCards, citations} from '../../app.constants';
+import {homeXebians, numbersCards, citations, timelineItems} from '../../app.constants';
 
 export default class HomeController {
   constructor(){
     this.xebians = homeXebians;
     this.numbersCards = numbersCards;
     this.citations = citations;
+    this.timelineItems = timelineItems;
 
     this.showCaseTitle = 'Vis ma vie de consultant chez Xebia';
     this.showCaseMainDescription = 'Explorez notre univers et nos expertises technologiques';
