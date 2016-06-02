@@ -5,45 +5,45 @@
                       main-description="home.showCaseMainDescription"
                       sub-description="home.showCaseSubDescription">
 
-        <!--Showcase right panel-->
-        <div id="home-carousel"
-             class="home-carousel carousel slide"
-             data-ride="carousel">
-            <!-- Indicators -->
-            <ol class="carousel-indicators">
-                <li ng-repeat="(index, xebian) in home.xebians"
-                    data-target="#home-carousel"
-                    data-slide-to="{{index}}"
-                    ng-class="{'active': index === 0}">
-                </li>
-            </ol>
+            <!--Showcase right panel-->
+            <div id="home-carousel"
+                 class="home-carousel carousel slide"
+                 data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li ng-repeat="(index, xebian) in home.xebians"
+                        data-target="#home-carousel"
+                        data-slide-to="{{index}}"
+                        ng-class="{'active': index === 0}">
+                    </li>
+                </ol>
 
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner" role="listbox">
-                <div ng-repeat="(index, xebian) in home.xebians"
-                     class="item"
-                     ng-class="{'active': index === 0}">
-                    <img class="home-carousel-img" ng-src="{{xebian.imageUrl}}" alt="...">
-                    <div class="home-carousel-content">
-                        <div class="home-carousel-content-name">
-                            <div class="home-carousel-content-headline1">
-                                {{xebian.firstName}} <span class="bold">{{xebian.lastName}}</span>
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                    <div ng-repeat="(index, xebian) in home.xebians"
+                         class="item"
+                         ng-class="{'active': index === 0}">
+                        <img class="home-carousel-img" ng-src="{{xebian.imageUrl}}" alt="...">
+                        <div class="home-carousel-content">
+                            <div class="home-carousel-content-name">
+                                <div class="home-carousel-content-headline1">
+                                    {{xebian.firstName}} <span class="bold">{{xebian.lastName}}</span>
+                                </div>
+                                <div class="home-carousel-content-headline2">
+                                    {{xebian.job}}
+                                </div>
                             </div>
-                            <div class="home-carousel-content-headline2">
-                                {{xebian.job}}
+                            <div class="home-carousel-link">
+                                Découvrez son évolution <i class="fa fa-chevron-right"></i>
                             </div>
-                        </div>
-                        <div class="home-carousel-link">
-                            Découvrez son évolution <i class="fa fa-chevron-right"></i>
                         </div>
                     </div>
-                </div>
-                <div class="home-carousel-button visible-xs">
-                    <xui-button color="cyan">Nous rejoindre</xui-button>
+                    <div class="home-carousel-button visible-xs">
+                        <xui-button color="cyan">Nous rejoindre</xui-button>
+                    </div>
                 </div>
             </div>
-        </div>
-    </xui-showcase>
+        </xui-showcase>
     </div>
     <!-- Section Citations -->
     <div class="home-citations">
@@ -57,7 +57,7 @@
     </div>
 
     <!-- Section Numbers -->
-    <div class="home-numbers row">
+    <div class="home-numbers">
         <h1 class="home-numbers-title">Xebia en quelques chiffres</h1>
         <div class="home-numbers-cards container">
             <xui-card ng-repeat="card in home.numbersCards"
@@ -71,65 +71,19 @@
     </div>
 
     <!-- Section Timeline -->
-    <div class="timeline row">
-        <h1 class="timeline-title">Xebia en quelques faits</h1>
-        <div class="timeline-content container">
+    <div class="home-timeline">
+        <h1 class="home-timeline-title">Xebia en quelques faits</h1>
 
-            <div class="cd-timeline-block">
-                <div class="cd-timeline-img cd-birthday">
-                    <p>2016</p>
+        <div class="home-timeline-content">
+            <div class="home-timeline-content-item row" ng-repeat="timeline in home.timelineItems">
+                <div class="home-timeline-content-item-year col-lg-offset-5 col-lg-2 col-md-offset-2 col-md-4 col-xs-6">
+                    {{timeline.year}}
                 </div>
-                <div class="cd-timeline-content">
-                   <p class=""><img class="img-timeline" src="../../../assets/images/home/frenchkit-icon.svg"> Xebia co-organise la <a href="http://frenchkit.fr" target="_blank" class="link_bold">première conférence iOS</a> française.</p>
+                <div class="home-timeline-content-item-description col-lg-offset-1 col-lg-12 col-md-offset-1 col-md-17 col-xs-offset-1 col-xs-17">
+                    <img class="img-timeline" ng-src="{{timeline.imgUrl}}">
+                    {{timeline.text}}
                 </div>
             </div>
-
-            <div class="cd-timeline-block">
-                <div class="cd-timeline-img cd-birthday">
-                    <p>2015</p>
-                </div>
-                <div class="cd-timeline-content">
-                    <p class=""><img class="img-timeline" src="../../../assets/images/home/logo-xebicon.svg"> Xebia organise la première <a href="http://xebicon.fr" target="_blank" class="link_bold">XebiCon France</a>.</p>
-                </div>
-            </div>
-
-            <div class="cd-timeline-block">
-                <div class="cd-timeline-img cd-birthday">
-                    <p>2014</p>
-                </div>
-                <div class="cd-timeline-content">
-                    <p class=""><img class="img-timeline" src="../../../assets/images/home/frenchkit-icon.svg"> Xebia devient une <a href="http://www.greatplacetowork.fr/" target="_blank" class="link_bold">Great Place To Work</a>.</p>
-                    <p class="">Xebia s'organise en <a href="http://blog.xebia.fr/2014/02/06/xebia-insights-le-cycle-des-fondations/" target="_blank" class="link_bold">Fondations</a>.</p>
-                </div>
-            </div>
-
-            <div class="cd-timeline-block">
-                <div class="cd-timeline-img cd-birthday">
-                    <p>2012</p>
-                </div>
-                <div class="cd-timeline-content">
-                    <p class=""><img class="img-timeline" src="../../../assets/images/home/logo-devoxx.svg"> Xebia sponsorise le premier <a href="http://www.devoxx.fr/" target="_blank" class="link_bold">Devoxx France</a>.</p>
-                </div>
-            </div>
-
-            <div class="cd-timeline-block">
-                <div class="cd-timeline-img cd-birthday">
-                    <p>2008</p>
-                </div>
-                <div class="cd-timeline-content">
-                    <p class=""><img class="img-timeline" src="../../../assets/images/home/frenchkit-icon.svg"> Xebia est expert <a href="http://datafactory.xebia.fr/" target="_blank" class="link_bold">Big Data</a>.</p>
-                </div>
-            </div>
-
-            <div class="cd-timeline-block">
-                <div class="cd-timeline-img cd-birthday">
-                    <p>2007</p>
-                </div>
-                <div class="cd-timeline-content">
-                    <p class=""><img class="img-timeline" src="../../../assets/images/home/frenchkit-icon.svg"> Xebia travaille en <a href="http://www.xebia.fr/agile.html" target="_blank" class="link_bold">méthodes agiles</a>.</p>
-                </div>
-            </div>
-
         </div>
     </div>
 </div>
