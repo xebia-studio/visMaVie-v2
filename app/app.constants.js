@@ -28,5 +28,7 @@ export const numbersCards = [
 export const citations = [
   'La grande majorité des collaborateurs partagent un but commun: L\'Excellence technique',
   'Seconde citation',
-  'troisième exemple de citation'
+  'troisième exemple de citation',
+  'citation quatre',
+  'citation cinq'
 ];
