@@ -1,6 +1,6 @@
 import './XebiaFooter.less';
-import '../../../../assets/images/footer-logo-xebia.png';
-import '../../../../assets/images/logo-alliance-xebia-long.png';
+import '../../../../assets/images/footer-logo-xebia.svg';
+import '../../../../assets/images/logo-alliance-xebia-long.svg';
 
 let XebiaFooter = function(){
   return {
