@@ -37,10 +37,18 @@
 
       .home-carousel {
         .carousel-indicators {
-          bottom: 85px;
-          left: 148px;
+          bottom: 0px;
+          left: 200px;
           width: auto;
           margin-left: 0;
+          @media (max-width: @screen-tablet) and (min-width: @screen-phone){
+            bottom: 25px;
+            left: 260px;
+          }
+          @media (max-width: @screen-phone) {
+            bottom: 100px;
+            left: 130px;
+          }
 
           li {
             margin-right: 4px;
@@ -84,16 +92,17 @@
             padding: 30px 0;
             .xui-body1;
             color: white;
+            @media (max-width: @screen-tablet) and (min-width: @screen-phone){
+              left: 100px;
+            }
             @media (max-width: @screen-phone) {
-              color: @xui-purple1;
+              top: 5%;
+              left: -80px;
             }
 
             .bold {
               .xui-body2;
               color: white;
-              @media (max-width: @screen-phone) {
-                color: @xui-purple1;
-              }
             }
             .home-carousel-content-name {
               padding: 5px 10px 5px 200px;
@@ -119,6 +128,9 @@
           bottom: 48px;
           width: 100%;
           text-align: center;
+          @media (max-width: @screen-tablet) and (min-width: @screen-phone){
+            bottom: -15px;
+          }
         }
       }
     }
