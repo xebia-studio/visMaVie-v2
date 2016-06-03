@@ -34,9 +34,10 @@ export const citations = [
 ];
 
 export const timelineItems = [
-  {year: 2016, imgUrl: 'assets/images/home/frenchkit-icon.svg', text: 'Xebia co-organise la première conférence iOS française', link:'www.google.fr'},
-  {year: 2016, imgUrl: 'assets/images/home/frenchkit-icon.svg', text: 'Xebia co-organise la première conférence iOS française', link:'www.google.fr'},
-  {year: 2016, imgUrl: 'assets/images/home/frenchkit-icon.svg', text: 'Xebia co-organise la première conférence iOS française', link:'www.google.fr'},
-  {year: 2016, imgUrl: 'assets/images/home/frenchkit-icon.svg', text: 'Xebia co-organise la première conférence iOS française', link:'www.google.fr'},
-  {year: 2016, imgUrl: 'assets/images/home/frenchkit-icon.svg', text: 'Xebia co-organise la première conférence iOS française', link:'www.google.fr'}
+  {year: 2016, imgUrl: 'assets/images/home/frenchkit-icon.svg', text: 'Xebia co-organise la première conférence iOS française.', link:'www.google.fr'},
+  {year: 2015, imgUrl: 'assets/images/home/logo-xebicon.svg', text: 'Xebia organise la première XebiCon France.', link:'http://www.xebicon.fr/'},
+  {year: 2014, imgUrl: 'assets/images/home/logo-gptw.svg', text: 'Xebia devient une Great Place to Work.', subText: 'Xebia s’organise en Fondations', link:'http://www.greatplacetowork.fr/'},
+  {year: 2012, imgUrl: 'assets/images/home/logo-devoxx.svg', text: 'Xebia sponsorise le premier Devoxx France.', link:'http://www.devoxx.fr/'},
+  {year: 2008, imgUrl: 'assets/images/home/frenchkit-icon.svg', text: 'Xebia est expert Big Data.', link:'http://datafactory.xebia.fr/'},
+  {year: 2007, imgUrl: 'assets/images/home/frenchkit-icon.svg', text: 'Xebia travaille en méthodes agiles.', link:'www.google.fr'}
 ];
