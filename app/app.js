@@ -14,6 +14,7 @@ import uiBootstrap from 'angular-ui-bootstrap';
 import appDirectives from './components/directives/directives.module';
 import appFilters from './components/filters/filters.module';
 import appServices from './components/services/services.module';
+import ngSanitize from 'angular-sanitize';
 
 // Future dependency when xebiaUI will be a full project
 import xebiaUI from '../xebiaUI/xebiaUI.mdl';
@@ -53,7 +54,8 @@ export default angular
     xebiaUI,
     appDirectives,
     appFilters,
-    appServices
+    appServices,
+    ngSanitize
   ])
   .config(routes)
   .controller('BoostYourCareerController', BoostYourCareerController)

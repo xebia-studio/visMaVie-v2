@@ -10,8 +10,65 @@
     </xui-showcase>
 
     <!-- Test your expertise -->
-    <div class="passions-test row">
-        <h1 class="passions-test-title">Xebia en quelques citations</h1>
+    <div class="passions-quizz row">
+        <h1 class="passions-quizz-title">Xebia en quelques citations</h1>
 
+        <!-- List to choose the test-->
+        <div class="passions-quizzList col-xs-24 col-sm-10 col-md-offset-1 col-md-7">
+            <ul class="list-group">
+                <li class="list-group-item"
+                    ng-repeat="(index,section) in ::passions.testSections"
+                    ng-class="{'active': section.categoryName === passions.currentQuizz.categoryName}">
+
+                    <xui-button color="cyan" ng-click="passions.chooseTest(index)">{{section.categoryName}}</xui-button>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Test content-->
+        <div class="passions-currentQuizz col-xs-24 col-sm-14 col-md-16">
+            <div class="passions-currentQuizz-title">{{passions.currentQuizz.title}}</div>
+
+            <div class="passions-currentQuizz-description" ng-bind-html="passions.currentQuizz.description"></div>
+
+            <div class="passions-currentQuizz-progress">Questions</div>
+            <div class="passions-currentQuizz-progressBar"
+                 ng-style="{'width': (passions.answers.length/passions.currentQuizz.questions.length)*100 +'%'}"></div>
+
+            <!-- Question libelle -->
+            <div class="passions-currentQuizz-question row">
+                <div class="col-xs-4 col-md-2">
+                    <div class="passions-currentQuizz-question-index">{{passions.currentQuestion + 1}}</div>
+                </div>
+                <div class="passions-currentQuizz-question-libelle col-xs-20 col-md-22"
+                     ng-bind-html="passions.currentQuizz.questions[passions.currentQuestion].libelle">
+                </div>
+            </div>
+
+            <!-- Possible answers -->
+            <div class="passions-currentQuizz-choices row">
+                <div class="passions-currentQuizz-choices-timer col-xs-4">
+                    {{passions.timer.value}}
+                </div>
+                <div class="passions-currentQuizz-choices-list col-xs-20">
+                    <div class="radio passions-currentQuizz-choices-list-item"
+                         ng-repeat="(index, choice) in ::passions.currentQuizz.questions[passions.currentQuestion].choices">
+                        <label><input type="radio" name="optradio" (click)="answerQuestion(index)">{{choice}}</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- To download the pdf -->
+            <div class="passions-currentQuizz-pdf">
+                <div class="row">
+                    <div class="passions-currentQuizz-pdf-text col-xs-10">
+                        A tout moment vous pouvez reçevoir nos références sur le sujet
+                    </div>
+                    <div class="passions-currentQuizz-pdf-button col-xs-offset-4 col-xs-10">
+                        <xui-button>Télécharger</xui-button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

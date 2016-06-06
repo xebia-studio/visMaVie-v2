@@ -1,9 +1,10 @@
 @import '../../../xebiaUI/styles/variables';
 @import (reference) '../../../xebiaUI/styles/main';
 
-.passions{}
+.passions {
+}
 
-.passions-showcase-image{
+.passions-showcase-image {
   background: url('../../../assets/images/passions/nospassions.jpg') no-repeat;
   background-size: cover;
   height: 100%;
@@ -11,11 +12,113 @@
   margin-right: -15px;
 }
 
-.passions-test{
-  padding: 15px 35px;
+.passions-quizz {
+  padding: 15px 35px 50px;
   background-color: @xui-light-grey;
 
-  .passions-test-title{
+  .passions-quizz-title {
     .xui-title;
+  }
+
+  // List to choose a quizz
+  .passions-quizzList {
+    padding-right: 0;
+
+    .list-group {
+      margin: 0;
+
+      .list-group-item {
+        padding: 0;
+        border-color: @xui-light-grey;
+
+        // Custom button style
+        .xuiButton {
+          width: 100%;
+          padding: 16px;
+          border-radius: 0;
+          text-align: left;
+        }
+
+        &.active {
+          border-color: @xui-light-grey;
+          .xuiButton {
+            background-color: @xui-purple1;
+          }
+        }
+      }
+    }
+  }
+
+  // Current quizz content
+  .passions-currentQuizz {
+    background-color: white;
+    padding: 15px 25px;
+
+    .passions-currentQuizz-title {
+      .xui-body1;
+      color: @xui-cyan1;
+    }
+    .passions-currentQuizz-description {
+      padding: 25px 0 25px 50px;
+    }
+    .passions-currentQuizz-progress {
+      padding: 15px;
+      background-color: #6A205F;
+      color: @xui-light-grey;
+      text-transform: uppercase;
+      font-size: 1.2rem;
+      margin-left: 50px;
+    }
+    .passions-currentQuizz-progressBar {
+      ._transition(width 0.5s);
+      height: 4px;
+      width: 0;
+      background-color: @xui-cyan1;
+    }
+
+    // Current question
+    .passions-currentQuizz-question {
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+    .passions-currentQuizz-question-index {
+      border-radius: 50%;
+      background-color: #06A99C;
+      color: white;
+      width: 25px;
+      height: 25px;
+      padding: 2px;
+      text-align: center;
+    }
+
+    .passions-currentQuizz-choices-timer{
+      text-align: center;
+      font-size: 10rem;
+      line-height: 148px;
+      color: #e6e6e6;
+      font-weight: 700;
+    }
+    .passions-currentQuizz-choices-list-item {
+      margin: 20px 0;
+    }
+
+    // Download the pdf
+    .passions-currentQuizz-pdf{
+      margin-left: 50px;
+      margin-top: 20px;
+      padding-top: 20px;
+      padding-bottom: 25px;
+      border-top: 1px solid @xui-light-grey;
+
+      .passions-currentQuizz-pdf-text{
+        .xui-body1;
+      }
+      .passions-currentQuizz-pdf-button{
+        text-align: right;
+        .xuiButton{
+          width: 180px;
+        }
+      }
+    }
   }
 }
