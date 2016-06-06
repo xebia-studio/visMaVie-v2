@@ -1,10 +1,10 @@
-<div class="xuiShowcase row">
-    <div class="xuiShowcase-leftPanel col-xs-24 col-sm-10 col-md-8">
+<div class="xuiShowcase row" ng-style="{'background-image': 'url('+$ctrl.backgroundUrl+ ')'}">
+
+    <div class="xuiShowcase-leftPanel col-xs-24 col-sm-10 col-md-8" ng-class="{'noBackground': !$ctrl.backgroundUrl.length }">
         <div class="xuiShowcase-title">{{$ctrl.title}}</div>
         <div class="xuiShowcase-mainDescription">{{$ctrl.mainDescription}}</div>
         <div class="xuiShowcase-subDescription">{{$ctrl.subDescription}}</div>
     </div>
-
     <div class="xuiShowcase-rightPanel col-xs-24 col-sm-14 col-md-16">
         <ng-transclude></ng-transclude>
     </div>

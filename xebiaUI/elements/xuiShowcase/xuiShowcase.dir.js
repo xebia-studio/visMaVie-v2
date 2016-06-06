@@ -7,7 +7,7 @@ let xuiShowcase = {
     title: '<',
     mainDescription: '<',
     subDescription: '<',
-    rightPanelTemplateUrl: '<'
+    backgroundUrl: '<'
   }
 };
 

@@ -2,7 +2,6 @@
 @import '../../styles/variables';
 
 .xuiShowcase{
-  background: url('../../../assets/images/home/background-paris-xebia-home.jpg') no-repeat;
   background-size: cover;
 
   @media (max-width: @screen-phone) {
@@ -24,6 +23,10 @@
       opacity: 0.7;
       padding: 60px 15px;
       height: 360px;
+
+      &.noBackground{
+        opacity: 1;
+      }
     }
 
     @media (min-width: @screen-desktop){
