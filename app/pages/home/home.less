@@ -16,7 +16,7 @@
 .home {
 
   .home-extension {
-    width: 100vw;
+    width: 100%;
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#6a205f+0,6a205f+49,06a99c+49,06a99c+100 */
     background: #6a205f; /* Old browsers */
     background: -moz-linear-gradient(left, #6a205f 0%, #6a205f 49%, #06a99c 49%, #06a99c 100%); /* FF3.6-15 */
@@ -25,22 +25,22 @@
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#6a205f', endColorstr='#06a99c', GradientType=1); /* IE6-9 */
 
     .xuiShowcase-rightPanel {
-      @media (max-width: @screen-phone) {
-        height: 260px;
-      }
-      @media (min-width: @screen-phone) and (max-width: @screen-tablet) {
-        height: 400px;
-      }
-      @media (min-width: @screen-phone) and (max-width: @screen-tablet) {
-        height: auto;
+      height: 260px;
+
+      @media (min-width: @screen-tablet) {
+        height: 360px;
       }
 
       .home-carousel {
         .carousel-indicators {
-          bottom: 85px;
+          bottom: 100px;
           left: 148px;
           width: auto;
           margin-left: 0;
+
+          @media(min-width: @screen-tablet){
+            bottom: 40px;
+          }
 
           li {
             margin-right: 4px;
@@ -58,31 +58,35 @@
 
           .home-carousel-img {
             position: relative;
-            left: -150px;
             z-index: 101;
+            height: 290px;
+            left: -90px;
+            top: -30px;
 
-            @media (max-width: @screen-phone) {
-              height: 290px;
-              left: -90px;
-              top: -30px;
-            }
-            @media (min-width: @screen-phone) and (max-width: @screen-tablet) {
-              height: 290px;
-              top: 35px;
-              left: 0;
-            }
-            @media (min-width: @screen-tablet) and (max-width: @screen-desktop) {
+            @media (min-width: @screen-tablet){
               height: 360px;
-              top: 40px;
+              top: 0;
+              left: -90px;
+            }
+            @media (min-width: @screen-desktop){
+              left: -150px;
+              height: 360px;
+              top: 0;
             }
           }
 
           .home-carousel-content {
             position: absolute;
-            top: 35%;
+            .xui-body1;
+
+            top: 10%;
             left: -15px;
             padding: 30px 0;
-            .xui-body1;
+            @media (min-width: @screen-tablet){
+              top: 35%;
+              left: -15px;
+            }
+
             color: white;
             @media (max-width: @screen-phone) {
               color: @xui-purple1;
@@ -105,11 +109,15 @@
               }
             }
             .home-carousel-link {
-              padding: 5px 10px 5px 200px;
+              padding: 5px 10px 5px 140px;
               margin-top: 15px;
               .xui-body1;
               color: white;
               background-color: @xui-cyan1;
+
+              @media (min-width: @screen-tablet) {
+                padding-left: 200px;
+              }
             }
           }
         }
