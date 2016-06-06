@@ -1,4 +1,4 @@
-import {homeXebians, numbersCards, citations, timelineItems} from '../../app.constants';
+import {homeXebians, numbersCards, citations, timelineItems} from '../../constants/home.constants';
 
 export default class HomeController {
   constructor(){

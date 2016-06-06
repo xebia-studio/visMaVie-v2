@@ -1,4 +1,4 @@
-import {alliance} from '../../../app.constants.js';
+import {alliance} from '../../../constants/app.constants.js';
 
 export default class XebiaFooterController {
   constructor(){
