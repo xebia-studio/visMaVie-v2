@@ -45,11 +45,11 @@
           li {
             margin-right: 4px;
             margin-left: 4px;
-            border-color: @xui-cyan1;
+            border-color: white;
           }
           .active {
-            background-color: @xui-cyan1;
-            border-color: @xui-cyan1;
+            background-color: white;
+            border-color: white;
           }
         }
 
@@ -95,9 +95,6 @@
             .bold {
               .xui-body2;
               color: white;
-              @media (max-width: @screen-phone) {
-                color: @xui-purple1;
-              }
             }
             .home-carousel-content-name {
               padding: 5px 10px 5px 200px;
@@ -284,6 +281,30 @@
       border: 1px solid #E6E6E6;
       border-radius: 4px;
       padding: 10px;
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 7px;
+        left: -20px;
+        width: 0;
+        height: 0;
+        border-color: transparent white transparent transparent;
+        border-style: solid;
+        border-width: 10px;
+      }
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 6px;
+        left: -22px;
+        width: 0;
+        height: 0;
+        border-color: transparent #E6E6E6 transparent transparent;
+        border-style: solid;
+        border-width: 11px;
+      }
     }
   }
 

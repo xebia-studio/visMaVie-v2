@@ -17,7 +17,7 @@ export const homeXebians = [
 ];
 
 export const numbersCards = [
-  {icon: 'assets/icons/icon-brain-vert.svg', background: '', title: '5%', content: 'du CA dédié aux XKE'},
+  {icon: 'assets/icons/icon-brain-vert.svg', background: '', title: '5%', content: 'Du CA dédié aux XKE'},
   {icon: 'assets/icons/icon-people-vert.svg', background: '', title: '125', content: 'Consultants en France'},
   {icon: 'assets/icons/icon-pen-vert.svg', background: '', title: '1800', content: 'Articles de blog'},
   {icon: 'assets/icons/icon-world-vert.svg', background: '', title: '15', content: 'Ans'},
@@ -26,17 +26,18 @@ export const numbersCards = [
 ];
 
 export const citations = [
-  'La grande majorité des collaborateurs partagent un but commun: L\'Excellence technique',
-  'Seconde citation',
-  'troisième exemple de citation',
-  'citation quatre',
-  'citation cinq'
+  'Les valeurs de l’entreprise sont véritablement en adéquation avec ce que je vis en tant que salarié.',
+  'Les contributions individuelles et les prises d’initiatives sont reconnues, encouragées et appréciées.',
+  'Notre positionnement, unique en France, nous permet d’être fier de nos réalisations et de notre métier.',
+  'Xebia m’aide à trouver mon équilibre vie active/vie privée dans un monde où cela devient de plus en plus difficile.',
+  'Xebia aide les employés dans le but d’une amélioration continue.'
 ];
 
 export const timelineItems = [
-  {year: 2016, imgUrl: 'assets/images/home/frenchkit-icon.svg', text: 'Xebia co-organise la première conférence iOS française', link:'www.google.fr'},
-  {year: 2016, imgUrl: 'assets/images/home/frenchkit-icon.svg', text: 'Xebia co-organise la première conférence iOS française', link:'www.google.fr'},
-  {year: 2016, imgUrl: 'assets/images/home/frenchkit-icon.svg', text: 'Xebia co-organise la première conférence iOS française', link:'www.google.fr'},
-  {year: 2016, imgUrl: 'assets/images/home/frenchkit-icon.svg', text: 'Xebia co-organise la première conférence iOS française', link:'www.google.fr'},
-  {year: 2016, imgUrl: 'assets/images/home/frenchkit-icon.svg', text: 'Xebia co-organise la première conférence iOS française', link:'www.google.fr'}
+  {year: 2016, imgUrl: 'assets/images/home/frenchkit-icon.svg', text: 'Xebia co-organise la première conférence iOS France, FrenchKit.', link:'www.google.fr'},
+  {year: 2015, imgUrl: 'assets/images/home/logo-xebicon.svg', text: 'Xebia organise la première XebiCon France.', link:'http://www.xebicon.fr/'},
+  {year: 2014, imgUrl: 'assets/images/home/logo-gptw.svg', text: 'Xebia devient une Great Place to Work.', subText: 'Xebia s’organise en Fondations', link:'http://www.greatplacetowork.fr/'},
+  {year: 2012, imgUrl: 'assets/images/home/logo-devoxx.svg', text: 'Xebia sponsorise le premier Devoxx France.', link:'http://www.devoxx.fr/'},
+  {year: 2008, imgUrl: 'assets/images/home/frenchkit-icon.svg', text: 'Xebia est pionnière sur les technologies Big Data.', link:'http://datafactory.xebia.fr/'},
+  {year: 2007, imgUrl: 'assets/images/home/frenchkit-icon.svg', text: 'Xebia travaille en méthodes agiles.', link:'www.google.fr'}
 ];
