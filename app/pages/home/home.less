@@ -43,7 +43,7 @@
           width: auto;
           margin-left: 0;
 
-          @media(min-width: @screen-tablet){
+          @media (min-width: @screen-tablet) {
             bottom: 40px;
           }
 
@@ -68,12 +68,12 @@
             left: -90px;
             top: -30px;
 
-            @media (min-width: @screen-tablet){
+            @media (min-width: @screen-tablet) {
               height: 360px;
               top: 0;
               left: -90px;
             }
-            @media (min-width: @screen-desktop){
+            @media (min-width: @screen-desktop) {
               left: -150px;
               height: 360px;
               top: 0;
@@ -87,7 +87,7 @@
             top: 10%;
             left: -15px;
             padding: 30px 0;
-            @media (min-width: @screen-tablet){
+            @media (min-width: @screen-tablet) {
               top: 35%;
               left: -15px;
             }
@@ -271,21 +271,31 @@
       .xui-title;
     }
 
-    .home-timeline-content-item{
+    .home-timeline-content-item {
       margin-bottom: 20px;
     }
-    
-    .home-timeline-content-item-year{
+
+    .home-timeline-content-item-year {
       background-color: #6a205f;
       color: white;
       padding: 8px;
       text-align: center;
     }
 
-    .home-timeline-content-item-description{
+    .home-timeline-content-item-description {
       border: 1px solid #E6E6E6;
       border-radius: 4px;
       padding: 10px;
+      display: flex;
+      flex-direction: row;
+
+      .img-timeline {
+        width: 40px;
+        height: 40px;
+        margin-left: 30px;
+        margin-right: 30px;
+      }
+
       &:after {
         content: '';
         display: block;
@@ -294,9 +304,8 @@
         left: -20px;
         width: 0;
         height: 0;
-        border-color: transparent white transparent transparent;
-        border-style: solid;
-        border-width: 10px;
+        border: 10px solid transparent;
+        border-right-color: white;
       }
       &:before {
         content: '';
@@ -306,19 +315,10 @@
         left: -22px;
         width: 0;
         height: 0;
-        border-color: transparent #E6E6E6 transparent transparent;
-        border-style: solid;
-        border-width: 11px;
+        border: 11px solid transparent;
+        border-right-color: #E6E6E6;
       }
     }
   }
 
-
-}
-
-// TODO à remplacer
-.img-timeline {
-  width: 40px;
-  margin-left: 30px;
-  margin-right: 30px;
 }
