@@ -1,3 +1,7 @@
+/*******************************************/
+/*           GENERAL CONSTANTS             */
+/*******************************************/
+
 export const alliance = [
   {name: 'Xebia', website: 'http://www.xebia.fr'},
   {name: 'XebiaLabs', website: 'http://xebialabs.com/'},
@@ -7,6 +11,10 @@ export const alliance = [
   {name: 'Cellenza', website: 'http://www.cellenza.com/'},
   {name: 'Akamis', website: 'http://www.akamis.com/'}
 ];
+
+/*******************************************/
+/*                HOMEPAGE                 */
+/*******************************************/
 
 export const homeXebians = [
   {firstName: 'Pablo', lastName: 'Lopez', job: 'CTO chez Xebia', imageUrl: '/assets/images/home/pablo-lopez.png'},
