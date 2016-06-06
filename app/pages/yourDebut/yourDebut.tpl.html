@@ -1,3 +1,22 @@
 <div class="yourDebut">
-    Your debut
+    <xui-showcase class="yourDebut-showcase"
+                  title="yourDebut.showCaseTitle"
+                  main-description="yourDebut.showCaseMainDescription"
+                  sub-description="yourDebut.showCaseSubDescription">
+
+        <!--Showcase right panel-->
+        <div id="home-carousel"
+             class="home-carousel carousel slide"
+             data-ride="carousel">
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <div class="home-carousel-button">
+                    <xui-button color="cyan">Nous rejoindre</xui-button>
+                </div>
+            </div>
+        </div>
+    </xui-showcase>
+    <p class="xui-title">Des réponses à vos questions, consultez notre FAQ.</p>
+    <xui-faq faq-items="yourDebut.faqItems"></xui-faq>
 </div>

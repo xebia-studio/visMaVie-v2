@@ -1,0 +1,8 @@
+<div class="xuiFaqItem">
+    <div class="xuiFaqItem-header">
+        <div class="xuiFaqItem-title">{{$ctrl.question}}</div>
+    </div>
+    <div class="xuiFaqItem-body">
+    	<div class="xuiFaqItem-answer" ng-repeat="faqAnswerTemplate in $ctrl.answersTemplates track by $index" ng-include="faqAnswerTemplate"></div>
+    </div>
+</div>

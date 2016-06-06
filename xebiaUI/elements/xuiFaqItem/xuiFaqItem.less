@@ -1,0 +1,33 @@
+@import (reference) '../../styles/main';
+@import '../../styles/variables';
+
+.xuiFaqItem{
+
+  .xuiFaqItem-header {
+    padding: 30px 8px;
+    background-color: @xui-purple1;
+
+    .xuiFaqItem-title {
+      font-size: 14px;
+      .font-regular;
+      color: white;
+      text-transform: uppercase;
+    }
+  }
+
+  .xuiFaqItem-body{
+    background-color: white;
+    .xuiFaqItem-answer {
+      padding: 20px 10px;
+      border-bottom: 1px solid @xui-light-grey;
+      :last-child {
+        border:none;
+      }
+      .xuiFaqItem-answer-title {
+        .xui-title;
+        font-size: 14px;
+      }
+    }
+  }
+
+}
