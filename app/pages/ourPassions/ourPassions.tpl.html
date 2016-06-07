@@ -13,7 +13,7 @@
     <div class="passions-quizz row">
         <h1 class="passions-quizz-title">Xebia en quelques citations</h1>
 
-        <!-- List to choose the test-->
+        <!-- List to choose the quizz-->
         <div class="passions-quizzList col-xs-24 col-sm-10 col-md-offset-1 col-md-7">
             <ul class="list-group">
                 <li class="list-group-item"
@@ -25,7 +25,7 @@
             </ul>
         </div>
 
-        <!-- Test content-->
+        <!-- Quizz content-->
         <div class="passions-currentQuizz col-xs-24 col-sm-14 col-md-16">
             <div class="passions-currentQuizz-title">{{passions.currentQuizz.title}}</div>
 
@@ -48,12 +48,12 @@
             <!-- Possible answers -->
             <div class="passions-currentQuizz-choices row">
                 <div class="passions-currentQuizz-choices-timer col-xs-4">
-                    {{passions.timer.value}}
+                    <span ng-show="passions.timer.enabled">{{passions.timer.value}}</span>
                 </div>
                 <div class="passions-currentQuizz-choices-list col-xs-20">
                     <div class="radio passions-currentQuizz-choices-list-item"
-                         ng-repeat="(index, choice) in ::passions.currentQuizz.questions[passions.currentQuestion].choices">
-                        <label><input type="radio" name="optradio" (click)="answerQuestion(index)">{{choice}}</label>
+                         ng-repeat="choice in passions.currentQuizz.questions[passions.currentQuestion].choices track by $index">
+                        <label><input type="radio" name="choice" value="{{choice}}" ng-model="choice" ng-click="passions.answerQuestion(index)">{{choice}}</label>
                     </div>
                 </div>
             </div>

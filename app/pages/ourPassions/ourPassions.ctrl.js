@@ -1,26 +1,45 @@
 import {testSections} from '../../constants/passions.constants';
 
 export default class OurPassionsCtrl {
-  constructor() {
+  constructor($interval) {
+    this.$interval = $interval;
+
     this.showCaseTitle = 'Nos passions';
     this.showCaseMainDescription = 'Pratiquer les technologies de demain';
 
     this.testSections = testSections;
-    console.log(this.testSections);
     this.currentQuizz = this.testSections[0];
     this.answers = [];
     this.currentQuestion = 0;
     this.timer = this.resetTimer();
   }
 
-  resetTimer(){
+  resetTimer() {
     return {
       enabled: false,
       value: 3
     }
   }
 
-  resetTest(){
+  launchTimer() {
+    var self = this;
+    this.timer.enabled = true;
+
+    var timer = this.$interval(function(){
+      if(self.timer.value > 0){
+        self.timer.value--;
+      }else{
+        stopTimer();
+      }
+    }, 1000);
+
+    var stopTimer = function(){
+      self.$interval.cancel(timer);
+      self.goToNextQuestion()
+    }
+  }
+
+  resetTest() {
     this.currentQuestion = 0;
     this.timer = this.resetTimer();
     this.answers = [];
@@ -32,23 +51,23 @@ export default class OurPassionsCtrl {
   }
 
   answerQuestion(index) {
-    if(!this.timer.enabled) {
+    if (!this.timer.enabled) {
       this.answers.push(index);
-      // TODO is not started, start timer then call goToNextQuestion. Else, just wait
+      this.launchTimer();
       return;
     }
     this.modifyQuestion(index);
   }
 
-  modifyQuestion(index){
+  modifyQuestion(index) {
     this.answers[this.currentQuestion] = index;
   }
 
-  goToNextQuestion(){
+  goToNextQuestion() {
     this.timer = this.resetTimer();
     this.currentQuestion += 1;
   }
 
 }
 
-OurPassionsCtrl.$inject = [];
+OurPassionsCtrl.$inject = ['$interval'];
