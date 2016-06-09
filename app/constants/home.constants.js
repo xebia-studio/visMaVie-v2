@@ -28,10 +28,10 @@ export const citations = [
 ];
 
 export const timelineItems = [
-  {year: 2016, imgUrl: 'assets/images/home/frenchkit-icon.svg', text: 'Xebia co-organise la première conférence iOS France, FrenchKit.', link:'www.google.fr'},
-  {year: 2015, imgUrl: 'assets/images/home/logo-xebicon.svg', text: 'Xebia organise la première XebiCon France.', link:'http://www.xebicon.fr/'},
-  {year: 2014, imgUrl: 'assets/images/home/logo-gptw.svg', text: 'Xebia devient une Great Place to Work.', subText: 'Xebia s’organise en Fondations', link:'http://www.greatplacetowork.fr/'},
-  {year: 2012, imgUrl: 'assets/images/home/logo-devoxx.svg', text: 'Xebia sponsorise le premier Devoxx France.', link:'http://www.devoxx.fr/'},
-  {year: 2008, imgUrl: 'assets/images/home/frenchkit-icon.svg', text: 'Xebia est pionnière sur les technologies Big Data.', link:'http://datafactory.xebia.fr/'},
-  {year: 2007, imgUrl: 'assets/images/home/frenchkit-icon.svg', text: 'Xebia travaille en méthodes agiles.', link:'www.google.fr'}
+  {year: 2016, imgUrl: 'assets/images/home/frenchkit-icon.svg', text: 'Xebia co-organise la première conférence iOS France, <a href="http://www.frenchkit.fr" target="_blank">FrenchKit.</a>'},
+  {year: 2015, imgUrl: 'assets/images/home/logo-xebicon.svg', text: 'Xebia organise la première <a href="http://www.xebicon.fr" target="_blank">XebiCon France.</a>'},
+  {year: 2014, imgUrl: 'assets/images/home/logo-gptw.svg', text: 'Xebia devient une <a href="http://www.greatplacetowork.fr/" target="_blank">Great Place to Work.</a>', subText: 'Xebia s’organise en Fondations'},
+  {year: 2012, imgUrl: 'assets/images/home/logo-devoxx.svg', text: 'Xebia sponsorise le premier <a href="http://www.devoxx.fr/" target="_blank">Devoxx France.</a>'},
+  {year: 2008, imgUrl: 'assets/images/home/logo-bigdata.svg', text: 'Xebia est pionnière sur les technologies <a href="http://datafactory.xebia.fr/" target="_blank">Big Data.</a>'},
+  {year: 2007, imgUrl: 'assets/images/home/logo-agile.svg', text: 'Xebia travaille en <a href="http://www.xebia.fr/agile.html" target="_blank">méthodes agiles.</a>'}
 ];
