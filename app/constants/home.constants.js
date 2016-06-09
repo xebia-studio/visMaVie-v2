@@ -28,10 +28,10 @@ export const citations = [
 ];
 
 export const timelineItems = [
-  {year: 2016, imgUrl: 'assets/images/home/frenchkit-icon.svg', text: 'Xebia co-organise la première conférence iOS France, <a href="http://www.frenchkit.fr" target="_blank">FrenchKit.</a>'},
-  {year: 2015, imgUrl: 'assets/images/home/logo-xebicon.svg', text: 'Xebia organise la première <a href="http://www.xebicon.fr" target="_blank">XebiCon France.</a>'},
-  {year: 2014, imgUrl: 'assets/images/home/logo-gptw.svg', text: 'Xebia devient une <a href="http://www.greatplacetowork.fr/" target="_blank">Great Place to Work.</a>', subText: 'Xebia s’organise en Fondations'},
-  {year: 2012, imgUrl: 'assets/images/home/logo-devoxx.svg', text: 'Xebia sponsorise le premier <a href="http://www.devoxx.fr/" target="_blank">Devoxx France.</a>'},
-  {year: 2008, imgUrl: 'assets/images/home/logo-bigdata.svg', text: 'Xebia est pionnière sur les technologies <a href="http://datafactory.xebia.fr/" target="_blank">Big Data.</a>'},
-  {year: 2007, imgUrl: 'assets/images/home/logo-agile.svg', text: 'Xebia travaille en <a href="http://www.xebia.fr/agile.html" target="_blank">méthodes agiles.</a>'}
+  {year: 2016, imgUrl: 'assets/images/home/frenchkit-icon.svg', text: 'Xebia co-organise la première conférence iOS France, <a class="link" href="http://www.frenchkit.fr" target="_blank">FrenchKit.</a>'},
+  {year: 2015, imgUrl: 'assets/images/home/logo-xebicon.svg', text: 'Xebia organise la première <a class="link" href="http://www.xebicon.fr" target="_blank">XebiCon France.</a>'},
+  {year: 2014, imgUrl: 'assets/images/home/logo-gptw.svg', text: 'Xebia devient une <a class="link" href="http://www.greatplacetowork.fr/" target="_blank">Great Place to Work.</a>', subText: 'Xebia s’organise en Fondations'},
+  {year: 2012, imgUrl: 'assets/images/home/logo-devoxx.svg', text: 'Xebia sponsorise le premier <a class="link" href="http://www.devoxx.fr/" target="_blank">Devoxx France.</a>'},
+  {year: 2008, imgUrl: 'assets/images/home/logo-bigdata.svg', text: 'Xebia est pionnière sur les technologies <a class="link" href="http://datafactory.xebia.fr/" target="_blank">Big Data.</a>'},
+  {year: 2007, imgUrl: 'assets/images/home/logo-agile.svg', text: 'Xebia travaille en <a class="link" href="http://www.xebia.fr/agile.html" target="_blank">méthodes agiles.</a>'}
 ];
