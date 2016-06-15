@@ -4,10 +4,30 @@
 
 export const homeXebians = [
   {firstName: 'Pablo', lastName: 'Lopez', job: 'CTO chez Xebia', imageUrl: '/assets/images/home/pablo-lopez.png'},
-  {firstName: 'Julien', lastName: 'Smadja', job: 'Manager chez Xebia', imageUrl: '/assets/images/home/julien-smadja.png'},
-  {firstName: 'Benjamin', lastName: 'Moitié', job: 'Coach Agile chez Xebia', imageUrl: '/assets/images/home/benjamin-moitie.png'},
-  {firstName: 'Philippe', lastName: 'Antoine', job: 'Scrum Master chez Xebia', imageUrl: '/assets/images/home/philippe-antoine.png'},
-  {firstName: 'Hugo', lastName: 'Geissmann', job: 'Président chez Thiga', imageUrl: '/assets/images/home/hugo-geissmann.png'}
+  {
+    firstName: 'Julien',
+    lastName: 'Smadja',
+    job: 'Manager chez Xebia',
+    imageUrl: '/assets/images/home/julien-smadja.png'
+  },
+  {
+    firstName: 'Benjamin',
+    lastName: 'Moitié',
+    job: 'Coach Agile chez Xebia',
+    imageUrl: '/assets/images/home/benjamin-moitie.png'
+  },
+  {
+    firstName: 'Philippe',
+    lastName: 'Antoine',
+    job: 'Scrum Master chez Xebia',
+    imageUrl: '/assets/images/home/philippe-antoine.png'
+  },
+  {
+    firstName: 'Hugo',
+    lastName: 'Geissmann',
+    job: 'Président chez Thiga',
+    imageUrl: '/assets/images/home/hugo-geissmann.png'
+  }
 ];
 
 export const numbersCards = [
@@ -28,10 +48,36 @@ export const citations = [
 ];
 
 export const timelineItems = [
-  {year: 2016, imgUrl: 'assets/images/home/frenchkit-icon.svg', text: 'Xebia co-organise la première conférence iOS France, <a class="link" href="http://www.frenchkit.fr" target="_blank">FrenchKit.</a>'},
-  {year: 2015, imgUrl: 'assets/images/home/logo-xebicon.svg', text: 'Xebia organise la première <a class="link" href="http://www.xebicon.fr" target="_blank">XebiCon France.</a>'},
-  {year: 2014, imgUrl: 'assets/images/home/logo-gptw.svg', text: 'Xebia devient une <a class="link" href="http://www.greatplacetowork.fr/" target="_blank">Great Place to Work.</a>', subText: 'Xebia s’organise en Fondations'},
-  {year: 2012, imgUrl: 'assets/images/home/logo-devoxx.svg', text: 'Xebia sponsorise le premier <a class="link" href="http://www.devoxx.fr/" target="_blank">Devoxx France.</a>'},
-  {year: 2008, imgUrl: 'assets/images/home/logo-bigdata.svg', text: 'Xebia est pionnière sur les technologies <a class="link" href="http://datafactory.xebia.fr/" target="_blank">Big Data.</a>'},
-  {year: 2007, imgUrl: 'assets/images/home/logo-agile.svg', text: 'Xebia travaille en <a class="link" href="http://www.xebia.fr/agile.html" target="_blank">méthodes agiles.</a>'}
+  {
+    year: 2016,
+    imgUrl: 'assets/images/home/frenchkit-icon.svg',
+    text: `Xebia co-organise la première conférence iOS France, <a class="link" href="http://www.frenchkit.fr" target="_blank">FrenchKit.</a>`
+  },
+  {
+    year: 2015,
+    imgUrl: 'assets/images/home/logo-xebicon.svg',
+    text: `Xebia organise la première <a class="link" href="http://www.xebicon.fr" target="_blank">XebiCon France.</a>`
+  },
+  {
+    year: 2014,
+    imgUrl: 'assets/images/home/logo-gptw.svg',
+    text: `Xebia devient une <a class="link" href="http://www.greatplacetowork.fr/" target="_blank">Great Place to Work.</a>
+Xebia s’organise en Fondations
+`
+  },
+  {
+    year: 2012,
+    imgUrl: 'assets/images/home/logo-devoxx.svg',
+    text: `Xebia sponsorise le premier <a class="link" href="http://www.devoxx.fr/" target="_blank">Devoxx France.</a>`
+  },
+  {
+    year: 2008,
+    imgUrl: 'assets/images/home/logo-bigdata.svg',
+    text: `Xebia est pionnière sur les technologies <a class="link" href="http://datafactory.xebia.fr/" target="_blank">Big Data.</a>`
+  },
+  {
+    year: 2007,
+    imgUrl: 'assets/images/home/logo-agile.svg',
+    text: `Xebia travaille en <a class="link" href="http://www.xebia.fr/agile.html" target="_blank">méthodes agiles.</a>`
+  }
 ];

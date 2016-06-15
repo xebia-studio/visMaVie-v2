@@ -273,35 +273,48 @@
       .xui-title;
     }
 
-    .home-timeline-content-line {
-      height: 430px;
-      width: 2px;
-      background: @xui-light-grey;
-      position: absolute;
-      left: 5%;
-    }
-
     .home-timeline-content-item {
       margin-bottom: 20px;
     }
 
     .home-timeline-content-item-year {
-      background-color: #6a205f;
-      color: white;
-      padding: 8px;
-      text-align: center;
-      font-size: 16px;
-      font-weight: bold;
+      position: relative;
+      z-index: 10;
+
+
+      .year-value{
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        background-color: @xui-purple1;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        padding: 8px;
+      }
+
+      .home-timeline-line {
+        position: absolute;
+        z-index: 1;
+        height: 85px;
+        width: 2px;
+        top: 0;
+        left: 50%;
+        background: @xui-light-grey;
+      }
     }
 
     .home-timeline-content-item-description {
-      border: 1px solid #E6E6E6;
+      border: 1px solid @xui-light-grey;
       border-radius: 4px;
       padding: 10px;
       display: flex;
       flex-direction: row;
+      white-space: pre-line;
+      align-items: center;
 
-      .img-timeline {
+      .home-timeline-img{
         width: 100px;
         height: 40px;
         margin-left: 30px;
