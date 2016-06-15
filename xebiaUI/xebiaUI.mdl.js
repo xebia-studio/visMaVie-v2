@@ -1,5 +1,3 @@
-import './styles/main.less';
-
 //Elements
 import xuiButton from './elements/xuiButton/xuiButton.mdl';
 import xuiFaq from './elements/xuiFaq/xuiFaq.mdl';

@@ -2,9 +2,6 @@
 import 'expose?jQuery!expose?$!jquery';
 import 'expose?angular!angular';
 
-// Import polyfill for browsers compatibility
-import 'babel-polyfill';
-
 // Vendors here
 import 'bootstrap/dist/js/bootstrap.min';
 
@@ -43,6 +40,8 @@ import HomeController from './pages/home/home.ctrl';
 import JoinUsController from './pages/joinUs/joinUs.ctrl';
 import CreationsController from './pages/ourCreations/ourCreations.ctrl';
 import OurPassionsController from './pages/ourPassions/ourPassions.ctrl';
+import QuizSvc from './pages/ourPassions/quiz.svc';
+
 import OurValuesController from './pages/ourValues/ourValues.ctrl';
 import Visit3DController from './pages/visit3D/visit3D.ctrl';
 import YourDebutController from './pages/yourDebut/yourDebut.ctrl';
@@ -63,6 +62,7 @@ export default angular
   .controller('JoinUsController', JoinUsController)
   .controller('CreationsController', CreationsController)
   .controller('OurPassionsController', OurPassionsController)
+  .service('QuizSvc', QuizSvc)
   .controller('OurValuesController', OurValuesController)
   .controller('Visit3DController', Visit3DController)
   .controller('YourDebutController', YourDebutController);

@@ -17,55 +17,65 @@
         <div class="passions-quizzList col-xs-24 col-sm-10 col-md-offset-1 col-md-7">
             <ul class="list-group">
                 <li class="list-group-item"
-                    ng-repeat="(index,section) in ::passions.testSections"
-                    ng-class="{'active': section.categoryName === passions.currentQuizz.categoryName}">
+                    ng-repeat="(index,section) in ::passions.quizSvc.testSections"
+                    ng-class="{'active': section.categoryName === passions.quizSvc.currentQuiz.categoryName}">
 
-                    <xui-button color="cyan" ng-click="passions.chooseTest(index)">{{section.categoryName}}</xui-button>
+                    <xui-button color="cyan" ng-click="passions.chooseQuiz(index)">{{section.categoryName}}
+                    </xui-button>
                 </li>
             </ul>
         </div>
 
-        <!-- Quizz content-->
-        <div class="passions-currentQuizz col-xs-24 col-sm-14 col-md-16">
-            <div class="passions-currentQuizz-title">{{passions.currentQuizz.title}}</div>
+        <!-- Quiz content-->
+        <div class="passions-currentQuiz col-xs-24 col-sm-14 col-md-16">
+            <div class="passions-currentQuiz-title">{{passions.quizSvc.currentQuiz.title}}</div>
 
-            <div class="passions-currentQuizz-description" ng-bind-html="passions.currentQuizz.description"></div>
+            <div class="passions-currentQuiz-description" ng-bind-html="passions.quizSvc.currentQuiz.description"></div>
 
-            <div class="passions-currentQuizz-progress">Questions</div>
-            <div class="passions-currentQuizz-progressBar"
-                 ng-style="{'width': (passions.answers.length/passions.currentQuizz.questions.length)*100 +'%'}"></div>
-
-            <!-- Question libelle -->
-            <div class="passions-currentQuizz-question row">
-                <div class="col-xs-4 col-md-2">
-                    <div class="passions-currentQuizz-question-index">{{passions.currentQuestion + 1}}</div>
-                </div>
-                <div class="passions-currentQuizz-question-libelle col-xs-20 col-md-22"
-                     ng-bind-html="passions.currentQuizz.questions[passions.currentQuestion].libelle">
-                </div>
+            <!-- Button to start quiz -->
+            <div class="passions-currentQuiz-startButton" ng-hide="passions.quizSvc.currentQuizStarted">
+                <xui-button ng-click="passions.startQuiz()">Tester votre expertise</xui-button>
             </div>
 
-            <!-- Possible answers -->
-            <div class="passions-currentQuizz-choices row">
-                <div class="passions-currentQuizz-choices-timer col-xs-4">
-                    <span ng-show="passions.timer.enabled">{{passions.timer.value}}</span>
-                </div>
-                <div class="passions-currentQuizz-choices-list col-xs-20">
-                    <div class="radio passions-currentQuizz-choices-list-item"
-                         ng-repeat="choice in passions.currentQuizz.questions[passions.currentQuestion].choices track by $index">
-                        <label><input type="radio" name="choice" value="{{choice}}" ng-model="choice" ng-click="passions.answerQuestion(index)">{{choice}}</label>
-                    </div>
-                </div>
-            </div>
+            <!-- When quiz starts -->
+            <div class="passions-currentQuiz-container" ng-show="passions.quizSvc.currentQuizStarted">
+                <div class="passions-currentQuiz-progress">Questions</div>
+                <div class="passions-currentQuiz-progressBar"
+                     ng-style="{'width': 'calc('+(passions.quizSvc.answers.length/passions.quizSvc.currentQuiz.questions.length)*100 +'% - 50px)'}"></div>
 
-            <!-- To download the pdf -->
-            <div class="passions-currentQuizz-pdf">
-                <div class="row">
-                    <div class="passions-currentQuizz-pdf-text col-xs-10">
-                        A tout moment vous pouvez reçevoir nos références sur le sujet
+                <!-- Question libelle -->
+                <div class="passions-currentQuiz-question row">
+                    <div class="col-xs-4 col-md-2">
+                        <div class="passions-currentQuiz-question-index">{{passions.quizSvc.currentQuestion + 1}}</div>
                     </div>
-                    <div class="passions-currentQuizz-pdf-button col-xs-offset-4 col-xs-10">
-                        <xui-button>Télécharger</xui-button>
+                    <div class="passions-currentQuiz-question-libelle col-xs-20 col-md-22"
+                         ng-bind-html="passions.quizSvc.currentQuiz.questions[passions.quizSvc.currentQuestion].libelle">
+                    </div>
+                </div>
+
+                <!-- Possible answers -->
+                <div class="passions-currentQuiz-choices row">
+                    <div class="passions-currentQuiz-choices-timer col-xs-4">
+                        <span ng-show="passions.quizSvc.timer.enabled">{{passions.quizSvc.timer.value}}</span>
+                    </div>
+                    <div class="passions-currentQuiz-choices-list col-xs-20">
+                        <div class="radio passions-currentQuiz-choices-list-item"
+                             ng-repeat="choice in passions.quizSvc.currentQuiz.questions[passions.quizSvc.currentQuestion].choices track by $index">
+                            <label><input type="radio" name="choice" value="{{choice}}" ng-model="answer"
+                                          ng-click="passions.quizSvc.answerQuestion($index)">{{choice}}</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- To download the pdf -->
+                <div class="passions-currentQuiz-pdf">
+                    <div class="row">
+                        <div class="passions-currentQuiz-pdf-text col-xs-10">
+                            A tout moment vous pouvez reçevoir nos références sur le sujet
+                        </div>
+                        <div class="passions-currentQuiz-pdf-button col-xs-offset-4 col-xs-10">
+                            <xui-button>Télécharger</xui-button>
+                        </div>
                     </div>
                 </div>
             </div>

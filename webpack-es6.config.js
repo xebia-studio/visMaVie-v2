@@ -50,7 +50,7 @@ export default {
       { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=application/octet-stream&name=fonts/[name].ttf"},
       { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file?name=fonts/[name].eot"},
       { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=image/svg+xml&name=fonts/[name].svg"},
-      {test: /\.html$/, loader: 'html-loader', exclude: ['src/index.html']},
+      { test: /\.html$/, loader: 'html-loader', exclude: ['src/index.html']},
       { test: /\.(png|jpg|gif)$/, loader: "file-loader?name=img/[name].[ext]"},
       { test: /\.css$/, exclude:'/app/', loader: vendorCSS.extract(['css']) },
       { test: /\.less$/, exclude:'/node_modules/', loader: appCSS.extract(['css', 'less']) }
