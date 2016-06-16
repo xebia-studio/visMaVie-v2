@@ -10,11 +10,11 @@
     </xui-showcase>
 
     <!-- Test your expertise -->
-    <div class="passions-quizz row">
-        <h1 class="passions-quizz-title">Xebia en quelques citations</h1>
+    <div class="quiz row">
+        <h1 class="quiz-title">Xebia en quelques citations</h1>
 
         <!-- List to choose the quizz-->
-        <div class="passions-quizzList col-xs-24 col-sm-10 col-md-offset-1 col-md-7">
+        <div class="quiz-list col-xs-24 col-sm-10 col-md-offset-1 col-md-7">
             <ul class="list-group">
                 <li class="list-group-item"
                     ng-repeat="(index,section) in ::passions.quizSvc.testSections"
@@ -27,39 +27,39 @@
         </div>
 
         <!-- Quiz content-->
-        <div class="passions-currentQuiz col-xs-24 col-sm-14 col-md-16">
-            <div class="passions-currentQuiz-title">{{passions.quizSvc.currentQuiz.title}}</div>
+        <div class="currentQuiz col-xs-24 col-sm-14 col-md-16">
+            <div class="currentQuiz-title">{{passions.quizSvc.currentQuiz.title}}</div>
 
-            <div class="passions-currentQuiz-description" ng-bind-html="passions.quizSvc.currentQuiz.description"></div>
+            <div class="currentQuiz-description" ng-bind-html="passions.quizSvc.currentQuiz.description"></div>
 
             <!-- Button to start quiz -->
-            <div class="passions-currentQuiz-startButton" ng-hide="passions.quizSvc.currentQuizStarted">
+            <div class="currentQuiz-startButton" ng-hide="passions.quizSvc.currentQuizStarted">
                 <xui-button ng-click="passions.startQuiz()">Tester votre expertise</xui-button>
             </div>
 
             <!-- When quiz starts -->
-            <div class="passions-currentQuiz-container" ng-show="passions.quizSvc.currentQuizStarted">
-                <div class="passions-currentQuiz-progress">Questions</div>
-                <div class="passions-currentQuiz-progressBar"
+            <div class="currentQuiz-container" ng-show="passions.quizSvc.currentQuizStarted">
+                <div class="currentQuiz-progress">Questions</div>
+                <div class="currentQuiz-progressBar"
                      ng-style="{'width': 'calc('+(passions.quizSvc.answers.length/passions.quizSvc.currentQuiz.questions.length)*100 +'% - 50px)'}"></div>
 
                 <!-- Question libelle -->
-                <div class="passions-currentQuiz-question row">
+                <div class="currentQuiz-question row">
                     <div class="col-xs-4 col-md-2">
-                        <div class="passions-currentQuiz-question-index">{{passions.quizSvc.currentQuestion + 1}}</div>
+                        <div class="currentQuiz-question-index">{{passions.quizSvc.currentQuestion + 1}}</div>
                     </div>
-                    <div class="passions-currentQuiz-question-libelle col-xs-20 col-md-22"
+                    <div class="currentQuiz-question-libelle col-xs-20 col-md-22"
                          ng-bind-html="passions.quizSvc.currentQuiz.questions[passions.quizSvc.currentQuestion].libelle">
                     </div>
                 </div>
 
                 <!-- Possible answers -->
-                <div class="passions-currentQuiz-choices row">
-                    <div class="passions-currentQuiz-choices-timer col-xs-4">
+                <div class="currentQuiz-choices row">
+                    <div class="currentQuiz-choices-timer col-xs-4">
                         <span ng-show="passions.quizSvc.timer.enabled">{{passions.quizSvc.timer.value}}</span>
                     </div>
-                    <div class="passions-currentQuiz-choices-list col-xs-20">
-                        <div class="radio passions-currentQuiz-choices-list-item"
+                    <div class="currentQuiz-choices-list col-xs-20">
+                        <div class="radio currentQuiz-choices-list-item"
                              ng-repeat="choice in passions.quizSvc.currentQuiz.questions[passions.quizSvc.currentQuestion].choices track by $index">
                             <label><input type="radio" name="choice" value="{{choice}}" ng-model="answer"
                                           ng-click="passions.quizSvc.answerQuestion($index)">{{choice}}</label>
@@ -68,12 +68,12 @@
                 </div>
 
                 <!-- To download the pdf -->
-                <div class="passions-currentQuiz-pdf">
+                <div class="currentQuiz-pdf">
                     <div class="row">
-                        <div class="passions-currentQuiz-pdf-text col-xs-10">
+                        <div class="currentQuiz-pdf-text col-xs-10">
                             A tout moment vous pouvez reçevoir nos références sur le sujet
                         </div>
-                        <div class="passions-currentQuiz-pdf-button col-xs-offset-4 col-xs-10">
+                        <div class="currentQuiz-pdf-button col-xs-offset-4 col-xs-10">
                             <xui-button>Télécharger</xui-button>
                         </div>
                     </div>
