@@ -7,6 +7,8 @@ export default class QuizSvc{
     this.testSections = testSections;
     this.currentQuiz = this.testSections[0];
     this.currentQuizStarted = false;
+    this.currentQuizEnded = false;
+    this.quizState = 'Questions';
     this.answers = [];
     this.currentQuestion = 0;
     this.timer = this.resetTimer();
@@ -68,7 +70,16 @@ export default class QuizSvc{
 
   goToNextQuestion() {
     this.timer = this.resetTimer();
-    this.currentQuestion += 1;
+    if(this.currentQuestion < this.currentQuiz.questions.length-1){
+      this.currentQuestion += 1;
+      return;
+    }
+    this.showAnswers();
+  }
+  
+  showAnswers(){
+    this.currentQuizEnded = true;
+    this.quizState = 'Réponses';
   }
 }
 

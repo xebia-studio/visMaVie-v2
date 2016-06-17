@@ -20,8 +20,7 @@
                     ng-repeat="(index,section) in ::passions.quizSvc.testSections"
                     ng-class="{'active': section.categoryName === passions.quizSvc.currentQuiz.categoryName}">
 
-                    <xui-button color="cyan" ng-click="passions.chooseQuiz(index)">{{section.categoryName}}
-                    </xui-button>
+                    <xui-button color="cyan" ng-click="passions.chooseQuiz(index)">{{section.categoryName}}</xui-button>
                 </li>
             </ul>
         </div>
@@ -39,32 +38,58 @@
 
             <!-- When quiz starts -->
             <div class="currentQuiz-container" ng-show="passions.quizSvc.currentQuizStarted">
-                <div class="currentQuiz-progress">Questions</div>
+                <div class="currentQuiz-progress">{{passions.quizSvc.quizState}}</div>
                 <div class="currentQuiz-progressBar"
                      ng-style="{'width': 'calc('+(passions.quizSvc.answers.length/passions.quizSvc.currentQuiz.questions.length)*100 +'% - 50px)'}"></div>
 
-                <!-- Question libelle -->
-                <div class="currentQuiz-question row">
-                    <div class="col-xs-4 col-md-2">
-                        <div class="currentQuiz-question-index">{{passions.quizSvc.currentQuestion + 1}}</div>
+                <div class="currentQuiz-question-container" ng-hide="passions.quizSvc.currentQuizEnded">
+
+                    <!-- Question libelle -->
+                    <div class="currentQuiz-question row">
+                        <div class="col-xs-3 col-md-2">
+                            <div class="question-index">{{passions.quizSvc.currentQuestion + 1}}</div>
+                        </div>
+                        <div class="currentQuiz-question-libelle col-xs-21 col-md-22"
+                             ng-bind-html="passions.quizSvc.currentQuiz.questions[passions.quizSvc.currentQuestion].libelle">
+                        </div>
                     </div>
-                    <div class="currentQuiz-question-libelle col-xs-20 col-md-22"
-                         ng-bind-html="passions.quizSvc.currentQuiz.questions[passions.quizSvc.currentQuestion].libelle">
+
+                    <!-- Possible answers -->
+                    <div class="currentQuiz-choices row">
+                        <div class="currentQuiz-choices-timer col-xs-4">
+                            <span ng-show="passions.quizSvc.timer.enabled">{{passions.quizSvc.timer.value}}</span>
+                        </div>
+                        <div class="currentQuiz-choices-list col-xs-20">
+                            <div class="radio currentQuiz-choices-list-item"
+                                 ng-repeat="choice in passions.quizSvc.currentQuiz.questions[passions.quizSvc.currentQuestion].choices track by $index">
+                                <label>
+                                    <input type="radio" name="choice" value="{{choice}}" ng-model="answer"
+                                           ng-click="passions.quizSvc.answerQuestion($index)">{{choice}}
+                                </label>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Possible answers -->
-                <div class="currentQuiz-choices row">
-                    <div class="currentQuiz-choices-timer col-xs-4">
-                        <span ng-show="passions.quizSvc.timer.enabled">{{passions.quizSvc.timer.value}}</span>
-                    </div>
-                    <div class="currentQuiz-choices-list col-xs-20">
-                        <div class="radio currentQuiz-choices-list-item"
-                             ng-repeat="choice in passions.quizSvc.currentQuiz.questions[passions.quizSvc.currentQuestion].choices track by $index">
-                            <label><input type="radio" name="choice" value="{{choice}}" ng-model="answer"
-                                          ng-click="passions.quizSvc.answerQuestion($index)">{{choice}}</label>
-                        </div>
-                    </div>
+                <!-- Answers -->
+                <div class="answers container-fluid" ng-show="passions.quizSvc.currentQuizEnded">
+                    <div class="answers-libelle" ng-bind-html="passions.wording.answers"></div>
+                    <ul class="list-group">
+                        <li class="answers-item list-group-item"
+                            ng-repeat="(index,question) in ::passions.quizSvc.currentQuiz.questions">
+                            <div class="row">
+                                <div class="col-xs-4 col-md-2">
+                                    <div class="question-index">{{index + 1}}</div>
+                                </div>
+                                <div class="answers-item-content col-xs-20 col-md-22">
+                                    <div class="answers-item-content-libelle" ng-bind-html="question.libelle"></div>
+                                    <div class="answers-item-content-answer">
+                                        Réponse: <span ng-bind-html="question.choices[question.indexAnswer]"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
 
                 <!-- To download the pdf -->

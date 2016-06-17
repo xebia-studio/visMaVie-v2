@@ -87,15 +87,6 @@
       margin-top: 30px;
       margin-bottom: 30px;
     }
-    .currentQuiz-question-index {
-      border-radius: 50%;
-      background-color: #06A99C;
-      color: white;
-      width: 25px;
-      height: 25px;
-      padding: 2px;
-      text-align: center;
-    }
 
     .currentQuiz-choices-timer{
       text-align: center;
@@ -106,6 +97,28 @@
     }
     .currentQuiz-choices-list-item {
       margin: 20px 0;
+    }
+
+    .answers{
+      .answers-libelle{
+        padding: 10px 0 30px;
+      }
+      .list-group {
+        margin: 0;
+
+        .answers-item {
+          padding: 10px 0;
+          border: none;
+
+          .answers-item-content-answer{
+            color: @xui-cyan1;
+            >span{
+              font-weight: 700;
+              color: @xui-black;
+            }
+          }
+        }
+      }
     }
 
     // Download the pdf
@@ -127,4 +140,17 @@
       }
     }
   }
+}
+
+
+
+// Shared classes
+.question-index {
+  border-radius: 50%;
+  background-color: #06A99C;
+  color: white;
+  width: 25px;
+  height: 25px;
+  padding: 2px;
+  text-align: center;
 }

@@ -156,3 +156,7 @@ export const testSections = [
   testMobility
 ];
 
+export const wording = {
+  answers: `Merci d'avoir participé à ce quiz, voici les réponses. N'hésitez pas à nous contacter et à <b>télécharger nos références</b> sur le sujet en base de page.`
+};
+
