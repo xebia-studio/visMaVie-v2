@@ -26,7 +26,7 @@ export default class QuizSvc{
     this.timer.enabled = true;
 
     var timer = this.$interval(function(){
-      if(self.timer.value > 0){
+      if(self.timer.value > 1){
         self.timer.value--;
       }else{
         stopTimer();
