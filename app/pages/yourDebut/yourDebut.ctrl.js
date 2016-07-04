@@ -11,6 +11,7 @@ export default class YourDebutCtrl {
     this.faqItems = [
         {
             question:`Quelle possibilité d'évolution ?`,
+            headerPicture:`/assets/images/integration/mini-mission-xebia-consultant.jpg`,
             answersTemplates: [
                 choixMissionsTemplateUrl,
                 dureeMissionsTemplateUrl,
