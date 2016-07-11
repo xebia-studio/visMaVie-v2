@@ -20,9 +20,7 @@
     "start": "export NODE_ENV=development && webpack-dev-server --port=9000 --content-base app/",
     "phantom": "phantomjs --webdriver=4444",
     "codecept": "codeceptjs run --steps",
-    "test": "concurrently \"npm run phantom\" \"npm run codecept\" ",
-    "presurge": "npm run build",
-    "surge": "surge -d vis-ma-vie-dev.surge.sh -p ./dist/"
+    "test": "concurrently \"npm run phantom\" \"npm run codecept\" "
   },
   "dependencies": {
     "angular": "^1.5.0",
@@ -47,6 +45,7 @@
     "codeceptjs": "^0.2.7",
     "copy-webpack-plugin": "^3.0.0",
     "css-loader": "^0.23.1",
+    "dotenv": "^2.0.0",
     "expose-loader": "^0.7.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
