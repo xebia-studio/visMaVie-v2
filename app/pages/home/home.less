@@ -160,7 +160,7 @@
 
     .home-citations-content {
       position: relative;
-      margin-top: 50px;
+      padding-bottom: 50px;
 
       .home-citations-content-alinea {
         height: 170px;
@@ -171,89 +171,192 @@
         }
       }
 
-      @top: -23px;
-      .home-citations-content-card {
-        height: 160px;
-        width: 170px;
-        font-family: fantasy;
-        font-size: 1.12rem;
-        background-color: #E6E6E6;
-        padding: 15px;
-        position: absolute;
-        top: @top;
-        left: ~'calc(15% + 214px)';
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+      ul{
+        overflow:hidden;
+        padding:3em 0em;
+        margin-bottom: 0px;
+        text-align: center;
 
-        @media (max-width: @screen-phone) {
-          left: 100px;
-        }
+        li {
+          list-style: none;
+          margin: 1em;
+          display: inline-block;
 
-        &:nth-child(2) {
-          // first card
-          transform: rotate(-4deg);
-          z-index: 103;
-
-          @media (max-width: @screen-phone) {
-            left: 100px;
+          &:nth-child(even) a {
+            -o-transform:rotate(4deg);
+            -webkit-transform:rotate(4deg);
+            -moz-transform:rotate(4deg);
+            position:relative;
+            top:5px;
+            color:#000;
+            background: #E6E6E6; /* Old browsers */
+            background: -moz-linear-gradient(-45deg, #E6E6E6 81%, #E6E6E6 82%, #E6E6E6 82%, #D5D5D5 100%); /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, right bottom, color-stop(81%,#E6E6E6), color-stop(82%,#E6E6E6), color-stop(82%,#E6E6E6), color-stop(100%,#D5D5D5)); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(-45deg, #E6E6E6 81%,#E6E6E6 82%,#E6E6E6 82%,#D5D5D5 100%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(-45deg, #E6E6E6 81%,#E6E6E6 82%,#E6E6E6 82%,#D5D5D5 100%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(-45deg, #E6E6E6 81%,#E6E6E6 82%,#E6E6E6 82%,#D5D5D5 100%); /* IE10+ */
+            background: linear-gradient(135deg, #E6E6E6 81%,#E6E6E6 82%,#E6E6E6 82%,#D5D5D5 100%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E6E6E6', endColorstr='#D5D5D5',GradientType=1 );
+            border-bottom-right-radius: 60px 5px;
+            border-top: 30px solid rgb(235, 235, 235);
           }
-        }
-        &:nth-child(3) {
-          // second card
-          transform: rotate(2deg);
-          top: (@top + 2);
-          left: ~'calc(15% + 232px)';
-          background-color: @xui-purple1;
-          color: white;
-          z-index: 102;
-          @media (max-width: @screen-phone) {
-            left: 100px;
-          }
-        }
-        &:nth-child(4) {
-          // third card
-          transform: rotate(7deg);
-          top: (@top + 8);
-          left: ~'calc(15% + 246px)';
-          background-color: @xui-cyan1;
-          color: white;
-          z-index: 101;
-          @media (max-width: @screen-phone) {
-            left: 100px;
-          }
-        }
 
-        &:nth-child(5) {
-          // fourth card
-          transform: rotate(-10deg);
-          top: (@top + 5);
-          left: ~'calc(15% + 258px)';
-          background-color: #E6E6E6;
-          color: black;
-          z-index: 100;
-          @media (max-width: @screen-phone) {
-            left: 100px;
+          &:nth-child(3n) a {
+            -o-transform:rotate(-3deg);
+            -webkit-transform:rotate(-3deg);
+            -moz-transform:rotate(-3deg);
+            position:relative;
+            top:-5px;
+            background: #6a205f; /* Old browsers */
+            background: -moz-linear-gradient(-45deg, #6a205f 81%, #6a205f 82%, #6a205f 82%, #53144a 100%); /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, right bottom, color-stop(81%,#6a205f), color-stop(82%,#6a205f), color-stop(82%,#6a205f), color-stop(100%,#53144a)); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(-45deg, #6a205f 81%,#6a205f 82%,#6a205f 82%,#53144a 100%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(-45deg, #6a205f 81%,#6a205f 82%,#6a205f 82%,#53144a 100%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(-45deg, #6a205f 81%,#6a205f 82%,#6a205f 82%,#53144a 100%); /* IE10+ */
+            background: linear-gradient(135deg, #6a205f 81%,#6a205f 82%,#6a205f 82%,#53144a 100%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6a205f', endColorstr='#D5D5D5',GradientType=1 );
+            border-bottom-right-radius: 60px 5px;
+            border-top: 30px solid #762b6b;
           }
-        }
 
-        &:nth-child(6) {
-          // five card
-          transform: rotate(4deg);
-          top: (@top + 8);
-          left: ~'calc(15% + 268px)';
-          background-color: @xui-purple1;
-          color: white;
-          z-index: 99;
-          @media (max-width: @screen-phone) {
-            left: 100px;
+          &:nth-child(5n) a{
+            -o-transform:rotate(5deg);
+            -webkit-transform:rotate(5deg);
+            -moz-transform:rotate(5deg);
+            position:relative;
+            top:-10px;
+            background: #06a99c; /* Old browsers */
+            background: -moz-linear-gradient(-45deg, #06a99c 81%, #06a99c 82%, #06a99c 82%, #04897e 100%); /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, right bottom, color-stop(81%,#06a99c), color-stop(82%,#06a99c), color-stop(82%,#06a99c), color-stop(100%,#04897e)); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(-45deg, #06a99c 81%,#06a99c 82%,#06a99c 82%,#04897e 100%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(-45deg, #06a99c 81%,#06a99c 82%,#06a99c 82%,#04897e 100%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(-45deg, #06a99c 81%,#06a99c 82%,#06a99c 82%,#04897e 100%); /* IE10+ */
+            background: linear-gradient(135deg, #06a99c 81%,#06a99c 82%,#06a99c 82%,#04897e 100%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6a205f', endColorstr='#D5D5D5',GradientType=1 );
+            border-bottom-right-radius: 60px 5px;
           }
-        }
 
-        &:hover {
-          z-index: 104;
-          animation: card-out 0.6s cubic-bezier(.8, .2, .1, 0.8);
-          -webkit-animation: card-out 0.6s cubic-bezier(.8, .2, .1, 0.8);
+          a {
+            text-decoration:none;
+            color:#FFF;
+            background:#06a99c;
+            display:block;
+            height:14em;
+            width:14em;
+            padding:1em;
+            -moz-box-shadow:1px 2px 5px rgba(99,99,99,.7);
+            -webkit-box-shadow: 1px 2px 5px rgba(99,99,99,.7);
+            box-shadow: 1px 2px 5px rgba(99,99,99,.7);
+            -moz-transition:-moz-transform .15s linear;
+            -o-transition:-o-transform .15s linear;
+            -webkit-transition:-webkit-transform .15s linear;
+            -webkit-transform: rotate(-6deg);
+            -o-transform: rotate(-6deg);
+            -moz-transform:rotate(-6deg);
+            position:relative;
+            top:-10px;
+            background: -moz-linear-gradient(-45deg, #06a99c 81%, #06a99c 82%, #06a99c 82%, #04897e 100%); /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, right bottom, color-stop(81%,#06a99c), color-stop(82%,#06a99c), color-stop(82%,#06a99c), color-stop(100%,#04897e)); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(-45deg, #06a99c 81%,#06a99c 82%,#06a99c 82%,#04897e 100%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(-45deg, #06a99c 81%,#06a99c 82%,#06a99c 82%,#04897e 100%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(-45deg, #06a99c 81%,#06a99c 82%,#06a99c 82%,#04897e 100%); /* IE10+ */
+            background: linear-gradient(135deg, #06a99c 81%,#06a99c 82%,#06a99c 82%,#04897e 100%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6a205f', endColorstr='#D5D5D5',GradientType=1 );
+            border-bottom-right-radius: 60px 5px;
+            border-top: 30px solid rgb(24, 172, 160);
+
+            &:hover, &:focus {
+              box-shadow:2px 4px 8px rgba(0,0,0,.3);
+              -moz-box-shadow:2px 4px 8px rgba(0,0,0,.3);
+              -webkit-box-shadow: 2px 4px 8px rgba(0,0,0,.3);
+              -webkit-transform: scale(1.15);
+              moz-transform: scale(1.15);  -o-transform: scale(1.15);
+              position:relative;
+              z-index:11;
+            }
+
+
+          }
+
+          p {
+            font-family: 'Reenie Beanie', serif;
+            font-size:1.5em;
+            line-height: 1.1em;
+            margin-top: 0px;
+            text-align: left;
+          }
         }
       }
+
+
+      .postit-1 {
+      position:relative;
+      left:0%;
+      z-index: 10;
+        @media (min-width: @screen-tablet) {
+          left: 0%;
+        }
+        @media (min-width: @screen-desktop) {
+          left: 120%;
+        }
+    }
+
+      .postit-2 {
+        position:relative;
+        left:0%;
+        z-index: 9;
+        @media (max-width: @screen-phone) {
+          left: 0%;
+          top: -150px !important;
+        }
+        @media (min-width: @screen-tablet) {
+          left: 0%;
+        }
+        @media (min-width: @screen-desktop) {
+          left: 60%;
+        }
+      }
+
+      .postit-3 {
+        z-index: 8;
+        @media (max-width: @screen-phone) {
+          left: 0%;
+          top: -300px !important;
+        }
+      }
+
+      .postit-4 {
+        position:relative;
+        right:0%;
+        z-index: 7;
+        @media (max-width: @screen-phone) {
+          right: 0%;
+          top: -450px !important;
+        }
+        @media (min-width: @screen-tablet) {
+          right: 0%;
+        }
+        @media (min-width: @screen-desktop) {
+          right: 60%;
+        }
+      }
+
+      .postit-5 {
+        position:relative;
+        right:0%;
+        z-index: 6;
+        @media (max-width: @screen-phone) {
+          right: 0%;
+          top: -600px !important;
+        }
+        @media (min-width: @screen-tablet) {
+          right: 0%;
+        }
+        @media (min-width: @screen-desktop) {
+          right: 120%;
+        }
+      }
+
     }
   }
 
