@@ -75,12 +75,12 @@
 
         <div class="home-timeline-content">
             <div class="home-timeline-content-item row" ng-repeat="timeline in home.timelineItems">
-                <div class="home-timeline-content-item-year col-lg-offset-5 col-lg-2 col-md-offset-2 col-md-4 col-xs-6">
+                <div class="home-timeline-content-item-year col-lg-offset-5 col-lg-2 col-md-offset-2 col-md-4 col-xs-8">
                     <div class="year-value">{{timeline.year}}</div>
                     <div class="home-timeline-line"></div>
                 </div>
-                <div class="home-timeline-content-item-description col-lg-offset-1 col-lg-12 col-md-offset-1 col-md-17 col-xs-offset-1 col-xs-17">
-                    <img class="home-timeline-img" ng-src="{{timeline.imgUrl}}">
+                <div class="home-timeline-content-item-description col-lg-offset-1 col-lg-12 col-md-offset-1 col-md-17 col-xs-offset-1 col-xs-15">
+                    <img class="home-timeline-img hidden-xs" ng-src="{{timeline.imgUrl}}">
                     <div ng-bind-html="timeline.text"></div>
                 </div>
             </div>
