@@ -1,6 +1,57 @@
 @import '../../../xebiaUI/styles/variables';
 @import (reference) '../../../xebiaUI/styles/main';
 
-.yourDebut{
-	background-color: @xui-light-grey; 
+.yourDebut .grey-background {
+  background-color: @xui-light-grey;
 }
+
+.yourDebut-showcase-image {
+  background: url('../../../assets/images/integration/background-blur-integration.jpg') no-repeat;
+  background-size: cover;
+  height: 100%;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.yourDebut-flower-bg {
+  background: url('../../../assets/images/integration/icon-flower-xebia-integration.svg') no-repeat right 20px top;
+  height: 14em;
+  @media (min-width: @screen-tablet) {
+    background-position: center;
+  }
+}
+
+.xuiShowcase {
+  margin-bottom:0px;
+}
+
+.yourDebut .faq-container {
+  padding-bottom:70px;
+}
+
+.yourDebut .faq-container xui-button {
+  margin-top:30px;
+  display:flex;
+  justify-content: flex-end;
+}
+
+.yourDebut .process {
+  padding-bottom:40px;
+}
+
+.yourDebut .process .process-image {
+  text-align:center;
+  @media (min-width: @screen-tablet) {
+    text-align: right;
+    right:10px;
+  }
+}
+
+.yourDebut .process .questions {
+  padding-top: 10px;
+}
+
+.yourDebut .process .question {
+  padding: 5px 0;
+}
+
