@@ -32,14 +32,14 @@
             </ul>
 
             <button type="button" class="XebiaHeader-navbar-toggle navbar-toggle collapsed pull-right"
-                    data-toggle="collapse" data-target="#header-menu" aria-expanded="false">
+                    ng-click="header.navbarCollapsed = !header.navbarCollapsed">
                 <span class="sr-only">Toggle navigation</span>
                 <i class="fa fa-bars fa-2x"></i>
             </button>
         </div>
     </div>
 
-    <div class="XebiaHeader-navbar collapse navbar-collapse row" id="header-menu">
+    <div class="XebiaHeader-navbar collapse navbar-collapse row" uib-collapse="header.navbarCollapsed">
         <nav class="col-md-offset-2 col-md-20 navbar">
             <div class="container-fluid">
                 <ul class="XebiaHeader-navbar-links nav navbar-nav">
@@ -71,5 +71,4 @@
             </div>
         </nav>
     </div>
-
 </header>

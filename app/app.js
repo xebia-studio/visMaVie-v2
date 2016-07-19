@@ -4,6 +4,7 @@ import 'expose?angular!angular';
 
 // Vendors here
 import 'bootstrap/dist/js/bootstrap.min';
+import ngAnimate from 'angular-animate';
 
 // Import modules dependencies here
 import uiRouter from 'angular-ui-router';
@@ -49,6 +50,7 @@ import YourDebutController from './pages/yourDebut/yourDebut.ctrl';
 export default angular
   .module('visMaVieApp', [
     uiRouter,
+    ngAnimate,
     uiBootstrap,
     xebiaUI,
     appDirectives,
