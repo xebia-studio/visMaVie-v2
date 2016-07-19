@@ -20,7 +20,9 @@
     "start": "export NODE_ENV=development && webpack-dev-server --port=9000 --content-base app/",
     "phantom": "phantomjs --webdriver=4444",
     "codecept": "codeceptjs run --steps",
-    "test": "concurrently \"npm run phantom\" \"npm run codecept\" "
+    "test": "concurrently \"npm run phantom\" \"npm run codecept\" ",
+    "pres3:sync": "npm run build",
+    "s3:sync": "aws s3 sync ./dist s3://xebia-vis-ma-vie-xebia --profile xebia"
   },
   "dependencies": {
     "angular": "^1.5.0",
