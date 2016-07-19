@@ -1,0 +1,86 @@
+<div class="PassionQuiz">
+    <div class="PassionQuiz-title">{{$ctrl.content.title}}</div>
+
+    <div class="PassionQuiz-description" ng-bind-html="$ctrl.content.description"></div>
+
+    <!-- Button to start quiz -->
+    <div class="PassionQuiz-startButton" ng-hide="$ctrl.currentQuizStarted">
+        <xui-button ng-click="$ctrl.startQuiz()">Tester votre expertise</xui-button>
+    </div>
+
+    <!-- When quiz starts -->
+    <div class="PassionQuiz-container" ng-show="$ctrl.currentQuizStarted">
+        <div class="PassionQuiz-progress">
+            <div class="PassionQuiz-progress-state">{{$ctrl.quizState}}</div>
+            <div class="PassionQuiz-choices-timer visible-xs">
+                <span ng-show="$ctrl.timer.enabled">{{$ctrl.timer.value}}</span>
+            </div>
+
+            <div class="PassionQuiz-progressBar"
+                 ng-style="{'width': ($ctrl.answers.length/$ctrl.content.questions.length)*100 +'%'}">
+            </div>
+        </div>
+
+
+        <div class="PassionQuiz-question-container" ng-hide="$ctrl.currentQuizEnded">
+
+            <!-- Question libelle -->
+            <div class="PassionQuiz-question row">
+                <div class="col-xs-3 col-md-2">
+                    <div class="question-index">{{$ctrl.currentQuestion + 1}}</div>
+                </div>
+                <div class="PassionQuiz-question-libelle col-xs-21 col-md-22"
+                     ng-bind-html="$ctrl.content.questions[$ctrl.currentQuestion].libelle">
+                </div>
+            </div>
+
+            <!-- Possible answers -->
+            <div class="PassionQuiz-choices row">
+                <div class="PassionQuiz-choices-timer col-md-4 hidden-xs">
+                    <span ng-show="$ctrl.timer.enabled">{{$ctrl.timer.value}}</span>
+                </div>
+                <div class="PassionQuiz-choices-list col-md-20 col-xs-offset-2 col-xs-22">
+                    <div class="radio PassionQuiz-choices-list-item"
+                         ng-repeat="choice in $ctrl.content.questions[$ctrl.currentQuestion].choices track by $index">
+                        <label>
+                            <input type="radio" name="choice" value="{{choice}}" ng-model="answer"
+                                   ng-click="$ctrl.answerQuestion($index)">{{choice}}
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Answers -->
+        <div class="answers container-fluid" ng-show="$ctrl.currentQuizEnded">
+            <div class="answers-libelle" ng-bind-html="$ctrl.wording.answers"></div>
+            <ul class="list-group">
+                <li class="answers-item list-group-item"
+                    ng-repeat="(index,question) in ::$ctrl.content.questions">
+                    <div class="row">
+                        <div class="col-xs-4 col-md-2">
+                            <div class="question-index">{{index + 1}}</div>
+                        </div>
+                        <div class="answers-item-content col-xs-20 col-md-22">
+                            <div class="answers-item-content-libelle" ng-bind-html="question.libelle"></div>
+                            <div class="answers-item-content-answer">
+                                Réponse: <span ng-bind-html="question.choices[question.indexAnswer]"></span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- To download the pdf -->
+        <div class="PassionQuiz-pdf">
+            <div class="PassionQuiz-pdf-text">
+                A tout moment vous pouvez reçevoir nos références sur le sujet
+            </div>
+            <div class="PassionQuiz-pdf-button">
+                <img src="/assets/icons/pdf-icon-green.svg" alt="">
+                <xui-button ng-click="downloadPdf()">Télécharger</xui-button>
+            </div>
+        </div>
+    </div>
+</div>

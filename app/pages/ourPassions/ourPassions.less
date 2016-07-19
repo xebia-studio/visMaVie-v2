@@ -48,107 +48,7 @@
       }
     }
   }
-
-  // Current quizz content
-  .currentQuiz {
-    background-color: white;
-    padding: 15px 25px;
-    min-height: 385px;
-
-    .currentQuiz-title {
-      .xui-body1;
-      color: @xui-cyan1;
-    }
-    .currentQuiz-description {
-      padding: 25px 0 25px 50px;
-    }
-    .currentQuiz-startButton{
-      padding-left: 50px;
-    }
-
-    .currentQuiz-progress {
-      padding: 15px;
-      background-color: #6A205F;
-      color: @xui-light-grey;
-      text-transform: uppercase;
-      font-size: 1.2rem;
-      margin-left: 50px;
-    }
-    .currentQuiz-progressBar {
-      ._transition(width 0.5s);
-      height: 4px;
-      width: 0;
-      margin-left: 50px;
-      background-color: @xui-cyan1;
-    }
-
-    // Current question
-    .currentQuiz-question {
-      margin-top: 30px;
-      margin-bottom: 20px;
-    }
-
-    .currentQuiz-choices-timer{
-      text-align: center;
-      font-size: 10rem;
-      line-height: 148px;
-      color: #e6e6e6;
-      font-weight: 700;
-    }
-    .currentQuiz-choices-list-item {
-      margin: 20px 0;
-    }
-
-    .answers{
-      .answers-libelle{
-        padding: 10px 0 30px 35px;
-      }
-      .list-group {
-        margin: 0;
-
-        .answers-item {
-          padding: 10px 0;
-          border: none;
-
-          .answers-item-content-answer{
-            color: @xui-cyan1;
-            >span{
-              font-weight: 700;
-              color: @xui-black;
-            }
-          }
-        }
-      }
-    }
-
-    // Download the pdf
-    .currentQuiz-pdf{
-      margin-left: 50px;
-      margin-top: 20px;
-      padding-top: 20px;
-      padding-bottom: 25px;
-      border-top: 1px solid @xui-light-grey;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-
-      .currentQuiz-pdf-text{
-        .xui-body1;
-        width: 260px;
-      }
-      .currentQuiz-pdf-button{
-        text-align: right;
-        .xuiButton{
-          width: 180px;
-        }
-      }
-    }
-  }
 }
-
-
 
 // Shared classes
 .question-index {
@@ -159,4 +59,26 @@
   height: 25px;
   padding: 2px;
   text-align: center;
+}
+
+.quiz-accordion.panel-default {
+  .panel-heading {
+    background-color: @xui-purple1;
+
+    .panel-title {
+      color: white;
+      font-size: 18px;
+      font-weight: 300;
+
+      > a {
+        text-decoration: none;
+        &:focus{
+          outline: 0;
+        }
+      }
+    }
+  }
+  .panel-body {
+    padding: 0;
+  }
 }

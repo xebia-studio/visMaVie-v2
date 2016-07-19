@@ -1,0 +1,162 @@
+@import '../../../../xebiaUI/styles/mixins';
+@import '../../../../xebiaUI/styles/variables';
+@import (reference) '../../../../xebiaUI/styles/main';
+
+.PassionQuiz {
+  background-color: white;
+  padding: 15px 25px;
+  min-height: 385px;
+
+  @media (max-width: @screen-phone) {
+    padding: 15px 0;
+  }
+}
+
+.PassionQuiz-title {
+  .xui-body1;
+  color: @xui-cyan1;
+}
+
+.PassionQuiz-description {
+  padding: 25px 0 25px 50px;
+
+  @media (max-width: @screen-phone) {
+    padding: 15px 0;
+  }
+}
+
+.PassionQuiz-startButton {
+  padding-left: 50px;
+
+  @media (max-width: @screen-phone) {
+    padding: 15px 0;
+    text-align: center;
+  }
+}
+
+.PassionQuiz-progress {
+  position: relative;
+  padding: 15px;
+  margin-left: 50px;
+  background-color: #6A205F;
+  color: @xui-light-grey;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+
+  @media (max-width: @screen-phone) {
+    margin-left: 0;
+  }
+}
+
+.PassionQuiz-progressBar {
+  ._transition(width 0.5s);
+  height: 4px;
+  width: 0;
+  background-color: @xui-cyan1;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+
+  @media (max-width: @screen-phone) {
+    margin-left: 0;
+  }
+}
+
+// Current question
+.PassionQuiz-question {
+  margin-top: 25px;
+  margin-bottom: 10px;
+
+  @media (max-width: @screen-phone) {
+    margin-top: 15px;
+    margin-bottom: 0;
+  }
+}
+
+.PassionQuiz-choices-timer {
+  text-align: center;
+  font-size: 10rem;
+  line-height: 148px;
+  color: #e6e6e6;
+  font-weight: 700;
+
+  @media (max-width: @screen-phone) {
+    font-size: 2.2rem;
+    line-height: 23px;
+    font-weight: 700;
+  }
+}
+
+.PassionQuiz-choices-list-item {
+  margin: 20px 0;
+}
+
+.answers {
+  .answers-libelle {
+    padding: 10px 0 30px 35px;
+  }
+  .list-group {
+    margin: 0;
+
+    .answers-item {
+      padding: 10px 0;
+      border: none;
+
+      .answers-item-content-answer {
+        color: @xui-cyan1;
+        > span {
+          font-weight: 700;
+          color: @xui-black;
+        }
+      }
+    }
+  }
+}
+
+// Download the pdf
+.PassionQuiz-pdf {
+  margin-left: 50px;
+  margin-top: 20px;
+  padding-top: 20px;
+  padding-bottom: 25px;
+  border-top: 1px solid @xui-light-grey;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  @media (max-width: @screen-phone) {
+    margin-left: 0;
+    margin-top: 10px;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 15px;
+  }
+}
+
+.PassionQuiz-pdf-text {
+  .xui-body1;
+  width: 260px;
+}
+
+.PassionQuiz-pdf-button {
+  display: flex;
+  img {
+    height: 34px;
+
+    @media (max-width: @screen-phone) {
+      height: 39px;
+    }
+  }
+  .xuiButton {
+    width: 180px;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+  }
+  @media (max-width: @screen-phone) {
+    margin-top: 5px;
+  }
+}
