@@ -9,7 +9,8 @@ let xuiShowcase = {
     subDescription: '<',
     backgroundUrl: '<',
     backgroundColor: '<',
-    rightPanelFlex: '='
+    rightPanelFlex: '=',
+    bottomButton: '<'
   }
 };
 
