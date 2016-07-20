@@ -39,7 +39,7 @@
                 <div class="PassionQuiz-choices-timer col-md-4 hidden-xs">
                     <span ng-show="$ctrl.timer.enabled">{{$ctrl.timer.value}}</span>
                 </div>
-                <div class="PassionQuiz-choices-list col-md-20 col-xs-offset-2 col-xs-22">
+                <div class="PassionQuiz-choices-list col-md-20 col-md-offset-0 col-xs-offset-2 col-xs-22">
                     <div class="radio PassionQuiz-choices-list-item"
                          ng-repeat="choice in $ctrl.content.questions[$ctrl.currentQuestion].choices track by $index">
                         <label>
