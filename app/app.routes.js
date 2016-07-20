@@ -6,19 +6,19 @@ export default function routes($urlRouterProvider, $locationProvider, $stateProv
 
   // Defining the routes here
   $stateProvider.state('home', {
-    url: '/home',
+    url: '/accueil',
     template: require('./pages/home/home.tpl.html'),
     controller: 'HomeController as home'
   });
   
   $stateProvider.state('boostYourCareer', {
-     url: '/boostYourCareer',
+     url: '/carriere',
      template: require('./pages/boostYourCareer/boostYourCareer.tpl.html'),
      controller: 'BoostYourCareerController as boostYourCareer'
   });
 
   $stateProvider.state('join', {
-     url: '/join',
+     url: '/nous-rejoindre',
      template: require('./pages/joinUs/joinUs.tpl.html'),
      controller: 'JoinUsController as join'
   });
@@ -30,31 +30,26 @@ export default function routes($urlRouterProvider, $locationProvider, $stateProv
   });
 
   $stateProvider.state('passions', {
-     url: '/ourPassions',
+     url: '/passions',
      template: require('./pages/ourPassions/ourPassions.tpl.html'),
      controller: 'OurPassionsController as passions'
   });
 
   $stateProvider.state('values', {
-     url: '/values',
+     url: '/valeurs',
      template: require('./pages/ourValues/ourValues.tpl.html'),
      controller: 'OurValuesController as values'
   });
 
   $stateProvider.state('visit3D', {
-     url: '/visit3D',
+     url: '/visite-3D',
      template: require('./pages/visit3D/visit3D.tpl.html'),
      controller: 'Visit3DController as visit3D'
   });
 
   $stateProvider.state('yourDebut', {
-     url: '/yourDebut',
+     url: '/integration',
      template: require('./pages/yourDebut/yourDebut.tpl.html'),
      controller: 'YourDebutController as yourDebut'
-  });
-
-  $stateProvider.state('showcase', {
-    url: '/showcase',
-    template: require('./pages/componentsShowcase/componentsShowcase.tpl.html')
   });
 }
