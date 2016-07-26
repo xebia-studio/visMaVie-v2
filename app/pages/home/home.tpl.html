@@ -44,26 +44,10 @@
             </div>
         </xui-showcase>
     </div>
-    <!-- Section Citations -->
-    <!-- OLD
 
-    <div class="home-citations">
-        <h1 class="home-citations-title">Xebia en quelques citations</h1>
-        <div class="home-citations-content">
-            <img class="home-citations-content-alinea" src="/assets/images/home/alinea-grey.svg" alt="">
-            <div class="home-citations-content-card" ng-repeat="citation in home.citations">
-                {{citation}}
-            </div>
-        </div>
-    </div>
-
-    -->
-
-    <!-- NEW Section Citations -->
-
-    <div class="home-citations">
-        <h1 class="home-citations-title">Xebia en quelques citations</h1>
-            <div class="home-citations-content">
+    <div class="home-citations row ">
+        <h1 class="home-citations-title col-md-offset-1 col-md-22">Xebia en quelques citations</h1>
+            <div class="home-citations-content col-md-offset-1 col-md-22">
                 <!--<img class="home-citations-content-alinea" src="/assets/images/home/alinea-grey.svg" alt="">-->
                 <div class="home-citations-content-card" >
                 <ul>
@@ -95,14 +79,13 @@
                 </ul>
                 </div>
             </div>
-
      </div>
 
 
     <!-- Section Numbers -->
-    <div class="home-numbers">
-        <h1 class="home-numbers-title">Xebia en quelques chiffres</h1>
-        <div class="home-numbers-cards container">
+    <div class="home-numbers row">
+        <h1 class="home-numbers-title col-md-offset-1 col-md-22">Xebia en quelques chiffres</h1>
+        <div class="home-numbers-cards col-md-offset-1 col-md-22">
             <xui-card ng-repeat="card in home.numbersCards"
                       class="home-numbers-cards-item col-xs-12 col-sm-offset-1 col-sm-5"
                       image-url="card.icon"
@@ -114,10 +97,9 @@
     </div>
 
     <!-- Section Timeline -->
-    <div class="home-timeline">
-        <h1 class="home-timeline-title">Xebia en quelques faits</h1>
-
-        <div class="home-timeline-content">
+    <div class="home-timeline row">
+        <h1 class="home-timeline-title col-md-offset-1 col-md-22">Xebia en quelques faits</h1>
+        <div class="home-timeline-content col-md-offset-1 col-md-22">
             <div class="home-timeline-content-item row" ng-repeat="timeline in home.timelineItems">
                 <div class="home-timeline-content-item-year col-lg-offset-5 col-lg-2 col-md-offset-2 col-md-4 col-xs-8">
                     <div class="year-value">{{timeline.year}}</div>
