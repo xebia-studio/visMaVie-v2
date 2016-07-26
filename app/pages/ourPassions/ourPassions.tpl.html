@@ -23,7 +23,7 @@
                         ng-repeat="(index,section) in ::passions.quizSvc.testSections"
                         ng-class="{'active': section.categoryName === passions.quizSvc.currentQuiz.categoryName}">
 
-                        <xui-button color="cyan" ng-click="passions.chooseQuiz(index)">
+                        <xui-button color="'cyan'" ng-click="passions.chooseQuiz(index)">
                             {{section.categoryName}}
                         </xui-button>
                     </li>

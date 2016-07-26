@@ -1,3 +1,122 @@
-.ourCreations{
+@import '../../../xebiaUI/styles/variables';
+@import (reference) '../../../xebiaUI/styles/main';
+
+.creations {
+  margin-bottom: 35px;
+
+  // Showcase styles
+  .showcase-content-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 115px;
+  }
+  .showcase-content-item-icon {
+    height: 75px;
+  }
+  .showcase-content-item-wording {
+    display: flex;
+    flex-direction: column;
+  }
+  .showcase-content-item-title {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: normal;
+  }
+  .showcase-content-item-description {
+    font-size: 0.9rem;
+    color: @xui-light-grey;
+    font-weight: 100;
+    line-height: initial;
+    margin-top: -3px;
+  }
+
+  // Find your contribution
+  .yourContribution {
+    padding: 45px 0;
+    .yourContribution-leftPanel {
+      text-align: center;
+    }
+    .yourContribution-icon {
+      height: 150px;
+    }
+    .yourContribution-title {
+      .xui-title;
+    }
+    .yourContribution-description {
+      .xui-body1;
+    }
+
+    .questionnaire {
+      padding: 30px 0;
+    }
+    .questionnaire-item {
+      position: relative;
+      padding: 40px;
+      .xui-body1;
+      background-color: @xui-light-grey;
+      margin-bottom: 70px;
+    }
+    .questionnaire-item-buttons {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      bottom: -20px;
+      display: flex;
+      justify-content: center;
+
+      > xui-button:first-child {
+        margin-right: 70px;
+      }
+    }
+  }
+
+  .projectFound-image {
+    width: 100%;
+  }
+  .projectFound-icon {
+    text-align: center;
+    img {
+      width: 200px;
+    }
+  }
+  .projectFound-content {
+    padding: 30px;
+    background-color: @xui-light-grey;
+
+    .projectFound-content-flexContainer{
+      display: flex;
+      align-items:center;
+    }
+  }
+  .projectFound-content-container {
+    display: flex;
+    flex-direction: column;
+
+    .projectFound-content-title {
+      .xui-title;
+    }
+    .projectFound-content-contributors {
+      .xui-caption;
+      display: flex;
+      flex-direction: row;
+      margin: 10px 0 15px;
+    }
+    .projectFound-content-contributors-item {
+      display: flex;
+      margin-right: 5px;
+      &:after {
+        content: ',';
+      }
+      &:last-child:after {
+        content: ''
+      }
+    }
+    .projectFound-content-description {
+      .xui-body1;
+      white-space: pre-line;
+    }
+  }
 
 }
+

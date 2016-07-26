@@ -40,6 +40,7 @@ import BoostYourCareerController from './pages/boostYourCareer/boostYourCareer.c
 import HomeController from './pages/home/home.ctrl';
 import JoinUsController from './pages/joinUs/joinUs.ctrl';
 import CreationsController from './pages/ourCreations/ourCreations.ctrl';
+import ContributionsSvc from './pages/ourCreations/contributions.svc';
 import OurPassionsController from './pages/ourPassions/ourPassions.ctrl';
 import QuizSvc from './pages/ourPassions/quiz.svc';
 
@@ -63,6 +64,7 @@ export default angular
   .controller('HomeController', HomeController)
   .controller('JoinUsController', JoinUsController)
   .controller('CreationsController', CreationsController)
+  .service('ContributionsSvc', ContributionsSvc)
   .controller('OurPassionsController', OurPassionsController)
   .service('QuizSvc', QuizSvc)
   .controller('OurValuesController', OurValuesController)

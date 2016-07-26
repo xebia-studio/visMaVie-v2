@@ -1,3 +1,82 @@
-<div class="ourCreations">
+<div class="creations">
+    <!-- Showcase -->
+    <xui-showcase class="showcase"
+                  title="creations.showCaseTitle"
+                  main-description="creations.showCaseMainDescription"
+                  background-color="'purple'"
+                  right-panel-flex="true">
 
+        <!--Showcase right panel-->
+        <div class="showcase-content">
+            <div class="showcase-content-item col-md-8 col-sm-12 col-xs-24"
+                 ng-repeat="item in ::creations.showCaseItems">
+                <img class="showcase-content-item-icon" ng-src="/assets/icons/{{item.icon}}">
+                <div class="showcase-content-item-wording">
+                    <div class="showcase-content-item-title">{{item.title}}</div>
+                    <div class="showcase-content-item-description">{{item.description}}</div>
+                </div>
+            </div>
+        </div>
+    </xui-showcase>
+
+    <!-- Find your contribution -->
+    <div class="yourContribution row">
+        <div class="yourContribution-leftPanel col-xs-24 col-sm-10 col-md-8">
+            <img class="yourContribution-icon" src="/assets/icons/chrono-20sec.svg" alt="">
+        </div>
+        <div class="yourContribution-rightPanel col-xs-24 col-sm-14 col-md-15">
+            <div class="yourContribution-title">{{creations.wording.yourContribution.title}}</div>
+            <div class="yourContribution-description">{{creations.wording.yourContribution.description}}</div>
+
+            <div class="questionnaire">
+                <div class="questionnaire-item"
+                     ng-repeat="(index, question) in creations.contributionsSvc.questionnaire">
+
+                    <div class="questionnaire-item-libelle">{{question.libelle}}</div>
+                    <div class="questionnaire-item-buttons">
+                        <xui-button type="round" color="question.buttonYesColor"
+                                    is-disabled="question.answer !== undefined"
+                                    on-click="creations.contributionsSvc.answerQuestion(index, 'yes')">
+                            <img src="/assets/icons/check-white.svg" alt="Yes">
+                        </xui-button>
+                        <xui-button type="round" color="question.buttonNoColor"
+                                    is-disabled="question.answer !== undefined"
+                                    on-click="creations.contributionsSvc.answerQuestion(index, 'no')">
+                            <img src="/assets/icons/cross-white.svg" alt="No">
+                        </xui-button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" ng-show="creations.contributionsSvc.projectFound">
+        <div class="projectFound col-md-offset-1 col-md-22">
+            <img class="projectFound-image"
+                 ng-src="/assets/images/creations/{{creations.contributionsSvc.projectFound.image}}"
+                 ng-if="creations.contributionsSvc.projectFound.image">
+
+            <div class="projectFound-content">
+                <div class="projectFound-content-flexContainer row">
+                    <div class="projectFound-icon col-md-8">
+                        <img ng-src="/assets/icons/{{creations.contributionsSvc.projectFound.icon}}"
+                             ng-if="creations.contributionsSvc.projectFound.icon">
+                    </div>
+
+                    <div class="projectFound-content-container col-md-16">
+                        <div class="projectFound-content-title">{{creations.contributionsSvc.projectFound.title}}</div>
+                        <div class="projectFound-content-contributors">
+                            <div class="projectFound-content-contributors-item"
+                                 ng-repeat="contributor in ::creations.contributionsSvc.projectFound.contributors">
+                                {{contributor}}
+                            </div>
+                        </div>
+                        <div class="projectFound-content-description">
+                            {{creations.contributionsSvc.projectFound.description}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
