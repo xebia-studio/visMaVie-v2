@@ -1,4 +1,4 @@
-<div class="xuiShowcase row" ng-style="{'background-image': 'url('+$ctrl.backgroundUrl+ ')'}">
+<div class="xuiShowcase row" ng-style="{'background-image': 'url('+$ctrl.backgroundUrl+ ')'}" ng-class="$ctrl.backgroundColor">
 
     <div class="xuiShowcase-leftPanel--container col-xs-24 col-sm-10 col-md-8" ng-class="{'noBackground': !$ctrl.backgroundUrl.length }">
         <div class="xuiShowcase-leftPanel col-md-offset-3 col-md-21">
@@ -8,7 +8,9 @@
         </div>
     </div>
     <div class="xuiShowcase-rightPanel col-xs-24 col-sm-14 col-md-15"
-         ng-class="[$ctrl.rightPanelBackgroundColor, {'flex': $ctrl.rightPanelFlex}]">
+         ng-class="[$ctrl.backgroundColor, {'flex': $ctrl.rightPanelFlex}]">
         <ng-transclude></ng-transclude>
     </div>
+
+
 </div>
