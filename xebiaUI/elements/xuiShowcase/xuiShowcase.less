@@ -3,6 +3,7 @@
 
 .xuiShowcase{
   background-size: cover;
+  position:relative;
 
   &.purple{
     background-color: @xui-purple1;
@@ -79,5 +80,12 @@
     @media (min-width: @screen-tablet) {
       height: 360px;
     }
+  }
+
+  .bottom-button {
+    position: absolute;
+    bottom: -17px;
+    width: 100%;
+    text-align: center;
   }
 }
