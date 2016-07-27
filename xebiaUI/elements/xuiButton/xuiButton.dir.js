@@ -12,7 +12,7 @@ let xuiButton = {
   },
   controller: function () {
     let prefix = 'xuiButton--';
-    if (this.color === undefined) this.color = 'purple';
+    if (this.color === undefined && this.type !== 'link') this.color = 'purple';
     this.typeCLass = this.type ? prefix + this.type : '';
     this.sizeClass = this.size ? prefix + this.size : '';
   }
