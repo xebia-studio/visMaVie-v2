@@ -24,7 +24,7 @@ export const showCaseItems = [
   Définition de toutes les questions
  */
 export const questions = [
-  {id: 0, libelle: `Il est important pour moi de transmettre mon savoir`, answeredYes: 6, answeredNo: 2},
+  {id: 0, libelle: `Il est important pour moi de transmettre mon savoir`, answeredYes: 1, answeredNo: 2},
   {id: 1, libelle: `Ecrire est pour moi le meilleur moyen`, answeredYes: 3, answeredNo: 4},
   {id: 2, libelle: `J'aimerais beaucoup que les DSI comprennent mes problématiques`, answeredYes: 5, answeredNo: 6},
   {id: 3, libelle: `Je préfère partager avec ma communauté`, answeredYes: 2, answeredNo: 5},
