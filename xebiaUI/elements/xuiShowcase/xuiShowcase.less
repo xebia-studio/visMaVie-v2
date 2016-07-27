@@ -60,14 +60,20 @@
   .xuiShowcase-rightPanel {
     color: white;
     height: 260px;
+    border-top: 1px solid white;
+    position: relative;
 
     &.purple{
-      border-left: 1px solid white;
+      @media (min-width: @screen-tablet) {
+        border-left: 1px solid white;
+        border-top: none;
+      }
     }
 
     &.flex{
       display: flex;
       align-items: center;
+      justify-content: center;
     }
 
     @media (min-width: @screen-tablet) {

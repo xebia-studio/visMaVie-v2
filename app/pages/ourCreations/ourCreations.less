@@ -31,10 +31,21 @@
 
   // Find your contribution section
   .yourContribution {
-    padding-top: 45px;
+    @media (min-width: @screen-tablet) {
+      padding-top: 45px;
+    }
+
     .yourContribution-leftPanel {
       text-align: center;
     }
+
+    .yourContribution-rightPanel {
+      padding-top: 30px;
+      @media (min-width: @screen-tablet) {
+        padding-top: 0;
+      }
+    }
+
     .yourContribution-icon {
       height: 150px;
     }
@@ -56,10 +67,10 @@
       background-color: @xui-light-grey;
       transition: margin-bottom 0.5s ease-out;
 
-      &.answered{
+      &.answered {
         margin-bottom: @question-space;
       }
-      &.ng-leave{
+      &.ng-leave {
         transition: none;
       }
       &.ng-enter {
@@ -94,11 +105,11 @@
       border-right: 2px solid transparent;
       border-left: 2px solid transparent;
 
-      &.answeredYes{
+      &.answeredYes {
         height: @question-space - 21px;
         border-left: 2px solid @xui-purple1;
       }
-      &.answeredNo{
+      &.answeredNo {
         height: @question-space - 21px;
         border-right: 2px solid @xui-purple1;
       }
@@ -121,12 +132,12 @@
   }
 
   //  Project Found section
-  .projectFound{
+  .projectFound {
     opacity: 1;
-    &.ng-hide{
+    &.ng-hide {
       opacity: 0;
     }
-    &.ng-hide-remove{
+    &.ng-hide-remove {
       transition: opacity 500ms ease-out 0.5s;
     }
   }
@@ -140,11 +151,16 @@
     }
   }
   .projectFound-content {
-    padding: 30px;
+    padding: 15px;
     background-color: @xui-light-grey;
+
+    @media (min-width: @screen-tablet) {
+      padding: 30px;
+    }
 
     .projectFound-content-flexContainer {
       display: flex;
+      flex-direction: column;
       align-items: center;
     }
   }
@@ -177,28 +193,31 @@
     white-space: pre-line;
     margin-bottom: 15px;
   }
-  .projectFound-content-buttons{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  .projectFound-content-buttons {
+    display: block;
+    text-align: center;
 
-    .xuiButton{
-      width:150px;
+    @media (min-width: @screen-tablet) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .xuiButton {
+      width: 150px;
     }
   }
 
-
   //  Other projects section
-  .otherProjects{
+  .otherProjects {
     margin-top: 70px;
     padding-bottom: 35px;
     background-color: @xui-light-grey;
   }
-  .otherProjects-title{
+  .otherProjects-title {
     .xui-title;
   }
 
-  .otherProjects-item{
+  .otherProjects-item {
     padding: 15px;
     margin-bottom: 15px;
     background-color: white;
@@ -207,23 +226,77 @@
     flex-direction: column;
     justify-content: space-between;
 
-    .otherProjects-item-icon{
+    .otherProjects-item-icon {
       height: 50px;
       width: 100%;
     }
-    .otherProjects-item-title{
+    .otherProjects-item-title {
       .xui-body2;
     }
     @line-height: 20px;
-    .otherProjects-item-description{
+    .otherProjects-item-description {
       .xui-body1;
       margin: 10px 0;
       overflow: hidden;
       line-height: @line-height;
       max-height: 8 * @line-height;
     }
-    .otherProjects-item-button{
+    .otherProjects-item-button {
       text-align: center;
     }
   }
+}
+
+// Carousels (for Phone screens)
+.showcase-carousel,
+.projects-carousel {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
+
+  .carousel-inner {
+    width: auto;
+  }
+  .carousel-indicators {
+    position: relative;
+    width: auto;
+    margin: 10px 0;
+    left: 0;
+
+    li {
+      margin-right: 4px;
+      margin-left: 4px;
+      border-color: white;
+    }
+    .active {
+      background-color: white;
+      border-color: white;
+    }
+  }
+}
+
+.projects-carousel {
+  .carousel-inner {
+    margin: 15px;
+  }
+  .carousel-indicators {
+    li {
+      border-color: @xui-cyan1;
+    }
+    .active {
+      background-color: @xui-cyan1;
+      border-color: @xui-cyan1;
+    }
+  }
+}
+
+.showcase-carousel-joinButton {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: -15px;
+  text-align: center;
 }

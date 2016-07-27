@@ -7,7 +7,7 @@
                   right-panel-flex="true">
 
         <!--Showcase right panel-->
-        <div class="showcase-content">
+        <div class="showcase-content hidden-xs">
             <div class="showcase-content-item col-md-8 col-sm-12 col-xs-24"
                  ng-repeat="item in ::creations.showCaseItems">
                 <img class="showcase-content-item-icon" ng-src="/assets/icons/{{item.icon}}">
@@ -15,6 +15,38 @@
                     <div class="showcase-content-item-title">{{item.title}}</div>
                     <div class="showcase-content-item-description">{{item.description}}</div>
                 </div>
+            </div>
+        </div>
+
+        <!--Showcase right panel-->
+        <div class="visible-xs" style="height: 100%;">
+            <div class="showcase-carousel carousel slide" id="creations-carousel" data-ride="carousel">
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                    <div ng-repeat="(index, item) in ::creations.showCaseItems" class="item"
+                         ng-class="{'active': index === 0}">
+                        <div class="showcase-content-item">
+                            <img class="showcase-content-item-icon" ng-src="/assets/icons/{{item.icon}}">
+                            <div class="showcase-content-item-wording">
+                                <div class="showcase-content-item-title">{{item.title}}</div>
+                                <div class="showcase-content-item-description">{{item.description}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li ng-repeat="(index, item) in ::creations.showCaseItems"
+                        data-target="#creations-carousel"
+                        data-slide-to="{{index}}"
+                        ng-class="{'active': index === 0}">
+                    </li>
+                </ol>
+            </div>
+
+            <div class="showcase-carousel-joinButton">
+                <xui-button color="'cyan'">Nous rejoindre</xui-button>
             </div>
         </div>
     </xui-showcase>
@@ -64,12 +96,12 @@
 
             <div class="projectFound-content">
                 <div class="projectFound-content-flexContainer row">
-                    <div class="projectFound-icon col-md-8">
+                    <div class="projectFound-icon col-xs-24 col-md-8">
                         <img ng-src="/assets/icons/{{creations.contributionsSvc.projectFound.icon}}"
                              ng-if="creations.contributionsSvc.projectFound.icon">
                     </div>
 
-                    <div class="projectFound-content-container col-md-16">
+                    <div class="projectFound-content-container col-xs-24 col-md-16">
                         <div class="projectFound-content-title">{{creations.contributionsSvc.projectFound.title}}</div>
                         <div class="projectFound-content-contributors">
                             <div class="projectFound-content-contributors-item"
@@ -98,15 +130,44 @@
         <h1 class="otherProjects-title col-md-offset-1 col-md-22">Des projets variés</h1>
         <div class="otherProjects-content col-md-offset-2 col-md-20">
             <div class="otherProjects-line row">
-                <div class="col-md-6" ng-repeat="project in ::creations.projects">
-                    <div class="otherProjects-item">
-                        <img class="otherProjects-item-icon" ng-src="/assets/icons/{{project.icon}}">
-                        <div class="otherProjects-item-title">{{project.title}}</div>
-                        <div class="otherProjects-item-description">{{project.description}}</div>
-                        <div class="otherProjects-item-button">
-                            <xui-button color="'purple'" on-click="">En savoir plus</xui-button>
+                <!-- On tablet and desktop -->
+                <div class="hidden-xs">
+                    <div class="col-sm-12 col-md-6" ng-repeat="project in ::creations.projects">
+                        <div class="otherProjects-item">
+                            <img class="otherProjects-item-icon" ng-src="/assets/icons/{{project.icon}}">
+                            <div class="otherProjects-item-title">{{project.title}}</div>
+                            <div class="otherProjects-item-description">{{project.description}}</div>
+                            <div class="otherProjects-item-button">
+                                <xui-button color="'purple'" on-click="">En savoir plus</xui-button>
+                            </div>
                         </div>
                     </div>
+                </div>
+
+                <!-- On phone -->
+                <div class="projects-carousel carousel slide visible-xs" id="projects-carousel" data-ride="carousel">
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" role="listbox">
+                        <div ng-repeat="(index, project) in ::creations.projects" class="item"
+                             ng-class="{'active': index === 0}">
+                            <div class="otherProjects-item">
+                                <img class="otherProjects-item-icon" ng-src="/assets/icons/{{project.icon}}">
+                                <div class="otherProjects-item-title">{{project.title}}</div>
+                                <div class="otherProjects-item-description">{{project.description}}</div>
+                                <div class="otherProjects-item-button">
+                                    <xui-button color="'purple'" on-click="">En savoir plus</xui-button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li ng-repeat="(index, item) in ::creations.projects"
+                            data-target="#projects-carousel"
+                            data-slide-to="{{index}}"
+                            ng-class="{'active': index === 0}">
+                        </li>
+                    </ol>
                 </div>
             </div>
         </div>
