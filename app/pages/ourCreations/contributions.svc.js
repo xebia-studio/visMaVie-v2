@@ -9,6 +9,7 @@ export default class ContributionsSvc {
   resetQuestions(){
     _.forEach(questions, (question) => {
       _.assign(question, {buttonYesColor: 'cyan', buttonNoColor: 'cyan'});
+      delete question.answer;
     });
     this.questionnaire = [questions[0]];
     this.projectFound = null;

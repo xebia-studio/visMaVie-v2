@@ -21,37 +21,43 @@
 
     <!-- Find your contribution -->
     <div class="yourContribution row">
-        <div class="yourContribution-leftPanel col-xs-24 col-sm-10 col-md-8">
+        <div class="yourContribution-leftPanel col-xs-24 col-sm-10 col-md-7 col-md-offset-1">
             <img class="yourContribution-icon" src="/assets/icons/chrono-20sec.svg" alt="">
         </div>
-        <div class="yourContribution-rightPanel col-xs-24 col-sm-14 col-md-15">
+        <div class="yourContribution-rightPanel col-xs-24 col-sm-14 col-md-14">
             <div class="yourContribution-title">{{creations.wording.yourContribution.title}}</div>
             <div class="yourContribution-description">{{creations.wording.yourContribution.description}}</div>
 
             <div class="questionnaire">
                 <div class="questionnaire-item"
-                     ng-repeat="(index, question) in creations.contributionsSvc.questionnaire">
+                     ng-repeat="(index, question) in creations.contributionsSvc.questionnaire"
+                     ng-class="{'answered': question.answer !== undefined}">
 
                     <div class="questionnaire-item-libelle">{{question.libelle}}</div>
                     <div class="questionnaire-item-buttons">
-                        <xui-button type="round" color="question.buttonYesColor"
-                                    is-disabled="question.answer !== undefined"
-                                    on-click="creations.contributionsSvc.answerQuestion(index, 'yes')">
-                            <img src="/assets/icons/check-white.svg" alt="Yes">
-                        </xui-button>
-                        <xui-button type="round" color="question.buttonNoColor"
-                                    is-disabled="question.answer !== undefined"
-                                    on-click="creations.contributionsSvc.answerQuestion(index, 'no')">
-                            <img src="/assets/icons/cross-white.svg" alt="No">
-                        </xui-button>
+                        <div class="questionnaire-item-buttons-linesBox"
+                             ng-class="{'answeredYes': question.answer === 'yes', 'answeredNo': question.answer === 'no'}">
+                            <xui-button type="round" color="question.buttonYesColor"
+                                        is-disabled="question.answer !== undefined"
+                                        on-click="creations.contributionsSvc.answerQuestion(index, 'yes')">
+                                <img src="/assets/icons/check-white.svg" alt="Yes">
+                            </xui-button>
+                            <xui-button type="round" color="question.buttonNoColor"
+                                        is-disabled="question.answer !== undefined"
+                                        on-click="creations.contributionsSvc.answerQuestion(index, 'no')">
+                                <img src="/assets/icons/cross-white.svg" alt="No">
+                            </xui-button>
+                        </div>
                     </div>
 
                 </div>
             </div>
         </div>
     </div>
-    <div class="row" ng-show="creations.contributionsSvc.projectFound">
-        <div class="projectFound col-md-offset-1 col-md-22">
+
+    <!-- The project found -->
+    <div class="projectFound row" ng-show="creations.contributionsSvc.projectFound">
+        <div class=" col-md-offset-2 col-md-20">
             <img class="projectFound-image"
                  ng-src="/assets/images/creations/{{creations.contributionsSvc.projectFound.image}}"
                  ng-if="creations.contributionsSvc.projectFound.image">
@@ -73,6 +79,11 @@
                         </div>
                         <div class="projectFound-content-description">
                             {{creations.contributionsSvc.projectFound.description}}
+                        </div>
+
+                        <div class="projectFound-content-buttons">
+                            <xui-button color="'purple'" on-click="">Contribuer</xui-button>
+                            <xui-button type="link" on-click="creations.contributionsSvc.resetQuestions()">Recommencer</xui-button>
                         </div>
                     </div>
                 </div>

@@ -2,7 +2,7 @@
 @import (reference) '../../../xebiaUI/styles/main';
 
 .creations {
-  margin-bottom: 35px;
+  margin-bottom: 90px;
 
   // Showcase styles
   .showcase-content-item {
@@ -19,8 +19,7 @@
     flex-direction: column;
   }
   .showcase-content-item-title {
-    font-size: 2rem;
-    font-weight: 700;
+    .xui-number;
     line-height: normal;
   }
   .showcase-content-item-description {
@@ -33,7 +32,7 @@
 
   // Find your contribution
   .yourContribution {
-    padding: 45px 0;
+    padding-top: 45px;
     .yourContribution-leftPanel {
       text-align: center;
     }
@@ -48,29 +47,85 @@
     }
 
     .questionnaire {
-      padding: 30px 0;
+      padding-top: 30px;
     }
+    @question-space: 90px;
     .questionnaire-item {
       position: relative;
       padding: 40px;
       .xui-body1;
       background-color: @xui-light-grey;
-      margin-bottom: 70px;
+      transition: margin-bottom 0.5s ease-out;
+
+      &.answered{
+        margin-bottom: @question-space;
+      }
+
+      &.ng-enter {
+        transition: all 0.5s ease-out 0.5s;
+        opacity: 0;
+        height: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-bottom: 0;
+      }
+      &.ng-enter.ng-enter-active {
+        opacity: 1;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        height: initial;
+        margin-bottom: inherit;
+      }
     }
     .questionnaire-item-buttons {
       position: absolute;
       left: 0;
       width: 100%;
-      bottom: -20px;
-      display: flex;
-      justify-content: center;
+      top: ~'calc(100% + 21px)';
+      text-align: center;
+    }
+    .questionnaire-item-buttons-linesBox {
+      position: relative;
+      width: 140px;
+      margin: auto;
+      height: 0;
+      transition: height 0.5s linear;
+      border-right: 2px solid transparent;
+      border-left: 2px solid transparent;
 
-      > xui-button:first-child {
-        margin-right: 70px;
+      &.answeredYes{
+        height: @question-space - 21px;
+        border-left: 2px solid @xui-purple1;
+      }
+      &.answeredNo{
+        height: @question-space - 21px;
+        border-right: 2px solid @xui-purple1;
+      }
+
+      xui-button:first-child {
+        .xuiButton {
+          position: absolute;
+          top: -40px;
+          left: -21px;
+        }
+      }
+      xui-button:last-child {
+        .xuiButton {
+          position: absolute;
+          top: -40px;
+          right: -21px;
+        }
       }
     }
   }
 
+  .projectFound{
+    transition: opacity 0.2s ease-out 0.5s;
+    opacity: 1;
+    &.ng-hide{
+      opacity: 0;
+    }
+  }
   .projectFound-image {
     width: 100%;
   }
@@ -84,24 +139,24 @@
     padding: 30px;
     background-color: @xui-light-grey;
 
-    .projectFound-content-flexContainer{
+    .projectFound-content-flexContainer {
       display: flex;
-      align-items:center;
+      align-items: center;
     }
   }
   .projectFound-content-container {
     display: flex;
     flex-direction: column;
+  }
+  .projectFound-content-title {
+    .xui-title;
+  }
+  .projectFound-content-contributors {
+    .xui-caption;
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
 
-    .projectFound-content-title {
-      .xui-title;
-    }
-    .projectFound-content-contributors {
-      .xui-caption;
-      display: flex;
-      flex-direction: row;
-      margin: 10px 0 15px;
-    }
     .projectFound-content-contributors-item {
       display: flex;
       margin-right: 5px;
@@ -112,9 +167,19 @@
         content: ''
       }
     }
-    .projectFound-content-description {
-      .xui-body1;
-      white-space: pre-line;
+  }
+  .projectFound-content-description {
+    .xui-body1;
+    white-space: pre-line;
+    margin-bottom: 15px;
+  }
+  .projectFound-content-buttons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .xuiButton{
+      width:150px;
     }
   }
 

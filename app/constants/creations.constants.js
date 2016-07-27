@@ -40,7 +40,7 @@ export const projects = [
     icon: 'xebiatv.svg',
     title: `Xebia TV, la web TV de Xebia.`,
     contributors: ['Nom contributeur 1', 'Nom contributeur 2'],
-    description: `Alexandre Dergham, consultant chez Xebia, témoigne : “Le premier souhait était de partager nos sessions de partage de connaissance avec l’extérieur. Nous considérons que nos XKE (Xebia Knowledge Exchange) sont d’une grande valeur et qu’ils peuvent intéresser beaucoup de développeurs. Le XKE de septembre 2014 était organisé en hackathon. Nous avons donc profité pour développer la première version du site XebiaTV. Puis, nous l’avons ensuite affiné pendant un mois avant sa mise en production.”
+    description: `Alexandre Dergham, consultant chez Xebia, témoigne  “Le premier souhait était de partager nos sessions de partage de connaissance avec l’extérieur. Nous considérons que nos XKE (Xebia Knowledge Exchange) sont d’une grande valeur et qu’ils peuvent intéresser beaucoup de développeurs. Le XKE de septembre 2014 était organisé en hackathon. Nous avons donc profité pour développer la première version du site XebiaTV. Puis, nous l’avons ensuite affiné pendant un mois avant sa mise en production.”
 http://www.xebia.tv/`
   }
 ];
