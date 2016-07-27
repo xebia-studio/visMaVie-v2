@@ -3,20 +3,76 @@
                   title="yourDebut.showCaseTitle"
                   main-description="yourDebut.showCaseMainDescription"
                   sub-description="yourDebut.showCaseSubDescription">
-
-        <!--Showcase right panel-->
-        <div id="home-carousel"
-             class="home-carousel carousel slide"
-             data-ride="carousel">
-
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner" role="listbox">
-                <div class="home-carousel-button">
-                    <xui-button color="'cyan'">Nous rejoindre</xui-button>
-                </div>
-            </div>
-        </div>
+      <!--Showcase right panel-->
+      <div class="yourDebut-showcase-image"></div>
     </xui-showcase>
-    <p class="xui-title">Des réponses à vos questions, consultez notre FAQ.</p>
-    <xui-faq faq-items="yourDebut.faqItems"></xui-faq>
+    <div class="row grey-background">
+      <div class="col-xs-24">
+        <p class="xui-title">
+          Des réponses à vos questions, consultez notre FAQ.
+        </p>
+      </div>
+    </div>
+    <div class="row grey-background faq-container">
+      <div class="col-sm-8 yourDebut-flower-bg">
+      </div>
+      <div class="col-sm-16">
+        <xui-faq faq-items="yourDebut.faqItems"></xui-faq>
+        <xui-button ng-click="">Posez vos questions</xui-button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-24">
+        <p class="xui-title">
+          Quel est le processus de recrutement&nbsp;?
+        </p>
+      </div>
+    </div>
+    <div class="row process">
+      <div class="col-sm-8 process-image">
+        <img src="../../../assets/images/integration/process-recrutement-xebia.jpg" alt="Processus de recrutement" />
+      </div>
+      <div class="col-sm-16 questions">
+        <div class="row question">
+          <div class="col-xs-2">
+            <div class="question-index">1</div>
+          </div>
+          <div class="col-xs-22">Prenez contact avec nous (recrutement@xebia.fr).</div>
+        </div>
+        <div class="row question">
+          <div class="col-xs-2">
+            <div class="question-index">2</div>
+          </div>
+          <div class="col-xs-22">Échangez avec un recruteur de vos envies, vos passions et de Xebia.</div>
+        </div>
+        <div class="row question">
+          <div class="col-xs-2">
+            <div class="question-index">3</div>
+          </div>
+          <div class="col-xs-22">Développez une application chez vous dans la technologie de votre choix.</div>
+        </div>
+        <div class="row question">
+          <div class="col-xs-2">
+            <div class="question-index">4</div>
+          </div>
+          <div class="col-xs-22">Rencontrez un consultant Xebia pour discuter de votre exercice et de vos passions.</div>
+        </div>
+        <div class="row question">
+          <div class="col-xs-2">
+            <div class="question-index">5</div>
+          </div>
+          <div class="col-xs-22">Rencontrez le directeur des opérations pour un dernier échange autour de vos envies et des 6 possibilités chez Xebia.</div>
+        </div>
+        <div class="row question">
+          <div class="col-xs-2">
+            <div class="question-index">6</div>
+          </div>
+          <div class="col-xs-22">Signez votre contrat et votre intégration commence !</div>
+        </div>
+        <div class="row question">
+          <div class="col-xs-2"></div>
+          <div class="col-xs-22">Tout au long de ces étapes, un recruteur vous suit et répond à toutes vos questions, vous fait rencontrer les bons interlocuteurs de façon formelle ou informelle !</div>
+        </div>
+      </div>
+    </div>
 </div>

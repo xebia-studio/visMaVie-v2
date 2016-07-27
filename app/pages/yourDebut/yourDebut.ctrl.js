@@ -1,6 +1,4 @@
-import choixMissionsTemplateUrl from '!!file!./answersTemplates/choixMissions.tpl.html';
-import dureeMissionsTemplateUrl from '!!file!./answersTemplates/dureeMission.tpl.html';
-import missionsClientTemplateUrl from '!!file!./answersTemplates/missionsClient.tpl.html';
+import evolutionTemplateUrl from '!!file!./answersTemplates/evolution.tpl.html';
 
 export default class YourDebutCtrl {
   constructor() {
@@ -11,16 +9,14 @@ export default class YourDebutCtrl {
     this.faqItems = [
         {
             question:`Quelle possibilité d'évolution ?`,
-            answersTemplates: [
-                choixMissionsTemplateUrl,
-                dureeMissionsTemplateUrl,
-                missionsClientTemplateUrl
-            ]
+            headerPicture:`/assets/images/integration/mini-mission-xebia-consultant.jpg`,
+            answersTemplate: evolutionTemplateUrl,
+            isOpen: true
         },
         {
             question:`Comment se passent les missions ?`,
-            answersTemplates: [
-            ]
+            answersTemplates: evolutionTemplateUrl,
+            isOpen: false
         }
     ]
   }
