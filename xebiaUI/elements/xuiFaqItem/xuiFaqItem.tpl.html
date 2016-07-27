@@ -1,12 +1,12 @@
 <div class="xuiFaqItem">
     <div class="xuiFaqItem-header">
-    	<div class="xuiFaqItem-picture">
-    		<img ng-src="{{$ctrl.headerPicture}}" />
-    	</div>
+        <div class="xuiFaqItem-picture hidden-xs">
+            <img ng-src="{{$ctrl.headerPicture}}" />
+        </div>
         <div class="xuiFaqItem-title">{{$ctrl.question}}</div>
         <div class="xuiFaqItem-toggle"></div>
     </div>
     <div class="xuiFaqItem-body">
-    	<div class="xuiFaqItem-answer" ng-repeat="faqAnswerTemplate in $ctrl.answersTemplates track by $index" ng-include="faqAnswerTemplate"></div>
+        <div class="xuiFaqItem-answer" ng-repeat="faqAnswerTemplate in $ctrl.answersTemplates track by $index" ng-include="faqAnswerTemplate"></div>
     </div>
 </div>
