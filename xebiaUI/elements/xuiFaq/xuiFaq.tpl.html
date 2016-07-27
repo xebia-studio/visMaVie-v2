@@ -1,5 +1,14 @@
-<div class="xuiFaq">
-    <xui-faq-item ng-repeat="faqItem in $ctrl.faqItems"
-    question="faqItem.question" answers-templates="faqItem.answersTemplates" header-picture="faqItem.headerPicture">
-	</xui-faq-item>
-</div>
+<uib-accordion close-others="true" class="xuiFaq">
+    <uib-accordion-group class="xuiFaqItem" ng-repeat="faqItem in $ctrl.faqItems" is-open="faqItem.isOpen">
+        <uib-accordion-heading ng-click="faqItem.isOpen = !faqItem.isOpen">
+            <div class="xuiFaqItem-picture hidden-xs">
+                <img ng-src="{{faqItem.headerPicture}}" />
+            </div>
+            <div class="xuiFaqItem-title">{{ faqItem.question }}</div>
+            <div class="xuiFaqItem-toggle"></div>
+        </uib-accordion-heading>
+        <div class="xuiFaqItem-body">
+            <div ng-include="faqItem.answersTemplate"></div>
+        </div>
+    </uib-accordion-group>
+</uib-accordion>

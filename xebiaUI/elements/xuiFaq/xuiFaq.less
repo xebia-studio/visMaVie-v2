@@ -1,5 +1,64 @@
 @import (reference) '../../styles/main';
 @import '../../styles/variables';
 
-.xuiFaq{
+.xuiFaq {
+  .panel{
+    .panel-heading {
+      cursor:pointer;
+      padding:0;
+      height: 60px;
+      background-color: @xui-purple1;
+      position:relative;
+      a {
+        outline:none;
+      }
+      .xuiFaqItem-picture {
+        display: inline-block;
+      }
+      .xuiFaqItem-title {
+        font-size: 14px;
+        display: inline-block;
+        line-height: 60px;
+        white-space: nowrap;
+        .xui-menu;
+        color:white;
+        margin-left: 15px;
+        @media (min-width: @screen-tablet) {
+          text-transform: uppercase;
+        }
+      }
+
+      .xuiFaqItem-toggle {
+        display:inline-block;
+        position:absolute;
+        right:20px;
+        top:17.5px;
+        height: 25px;
+        width:25px;
+        background: url('../../../assets/images/integration/icon-arrow-down.svg') center no-repeat;
+      }
+    }
+
+    .panel-body{
+      background-color: white;
+      .xuiFaqItem-answer {
+        padding: 20px 10px;
+        border-bottom: 1px solid @xui-light-grey;
+        &:last-child {
+          border:none;
+        }
+        &:first-child {
+          padding-top: 0;
+        }
+        .xuiFaqItem-answer-title {
+          .xui-title;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  .panel-open .panel-heading .xuiFaqItem-toggle {
+    background: url('../../../assets/images/integration/icon-arrow-up.svg') center no-repeat;
+  }
 }
