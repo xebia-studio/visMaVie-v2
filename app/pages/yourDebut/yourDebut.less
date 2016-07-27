@@ -49,9 +49,16 @@
 
 .yourDebut .process .questions {
   padding-top: 10px;
+  @media (min-width: @screen-tablet) {
+    padding-top:0px;
+  }
 }
 
 .yourDebut .process .question {
+  min-height:25px;
   padding: 5px 0;
+  &:first-child {
+    padding-top: 0;
+  }
 }
 

@@ -4,22 +4,37 @@
 .xuiFaqItem{
 
   .xuiFaqItem-header {
-    padding: 30px 8px;
+    height: 60px;
     background-color: @xui-purple1;
-
+    position:relative;
     .xuiFaqItem-picture {
-      display: inline-block;
-      .font-regular;
-      color: white;
-      text-transform: uppercase;
+      display: none;
+      @media (min-width: @screen-tablet) {
+        display: inline-block;
+      }
     }
 
     .xuiFaqItem-title {
       font-size: 14px;
       display: inline-block;
-      .font-regular;
-      color: white;
-      text-transform: uppercase;
+      line-height: 60px;
+      white-space: nowrap;
+      .xui-menu;
+      color:white;
+      margin-left: 15px;
+      @media (min-width: @screen-tablet) {
+        text-transform: uppercase;
+      }
+    }
+
+    .xuiFaqItem-toggle {
+      display:inline-block;
+      position:absolute;
+      right:20px;
+      top:17.5px;
+      height: 25px;
+      width:25px;
+      background: url('../../../assets/images/integration/icon-arrow-up.svg') center no-repeat;
     }
   }
 
