@@ -25,19 +25,21 @@ export default class ContributionsSvc {
       this.questionnaire[index] = _.assign(this.questionnaire[index], {buttonYesColor: 'grey', buttonNoColor: 'purple'});
     }
 
-    // Check if project found
-    if(this.questionnaire[index].hasOwnProperty('projectFound')){
-      this.showProjectFound(this.questionnaire[index].projectFound);
-      return;
-    }
-
     // Next question
     const nextIndex = value === 'yes' ? this.questionnaire[index].answeredYes : this.questionnaire[index].answeredNo;
     this.getNextQuestion(nextIndex);
   }
 
   getNextQuestion(index) {
-    this.questionnaire.push(questions[index]);
+    const nextQuestion = questions[index];
+
+    // Check if project found
+    if(nextQuestion.hasOwnProperty('projectFound')){
+      this.showProjectFound(nextQuestion.projectFound);
+      return;
+    }
+
+    this.questionnaire.push(nextQuestion);
   }
 
   showProjectFound(index){

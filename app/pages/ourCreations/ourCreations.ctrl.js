@@ -1,4 +1,4 @@
-import {wording, showCaseItems, run} from '../../constants/creations.constants';
+import {wording, showCaseItems, projects} from '../../constants/creations.constants';
 
 
 export default class CreationsCtrl {
@@ -9,7 +9,7 @@ export default class CreationsCtrl {
     this.showCaseMainDescription = 'Chacun sa voix pour faire grandir Xebia';
     this.wording = wording;
     this.showCaseItems = showCaseItems;
-    this.run = run;
+    this.projects = projects;
   }
 
 }

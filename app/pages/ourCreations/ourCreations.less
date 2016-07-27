@@ -2,7 +2,6 @@
 @import (reference) '../../../xebiaUI/styles/main';
 
 .creations {
-  margin-bottom: 90px;
 
   // Showcase styles
   .showcase-content-item {
@@ -30,7 +29,7 @@
     margin-top: -3px;
   }
 
-  // Find your contribution
+  // Find your contribution section
   .yourContribution {
     padding-top: 45px;
     .yourContribution-leftPanel {
@@ -121,13 +120,14 @@
     }
   }
 
+  //  Project Found section
   .projectFound{
     opacity: 1;
     &.ng-hide{
       opacity: 0;
     }
     &.ng-hide-remove{
-      transition: opacity 0.2s ease-out 0.5s;
+      transition: opacity 500ms ease-out 0.5s;
     }
   }
   .projectFound-image {
@@ -187,5 +187,43 @@
     }
   }
 
-}
 
+  //  Other projects section
+  .otherProjects{
+    margin-top: 70px;
+    padding-bottom: 35px;
+    background-color: @xui-light-grey;
+  }
+  .otherProjects-title{
+    .xui-title;
+  }
+
+  .otherProjects-item{
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: white;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .otherProjects-item-icon{
+      height: 50px;
+      width: 100%;
+    }
+    .otherProjects-item-title{
+      .xui-body2;
+    }
+    @line-height: 20px;
+    .otherProjects-item-description{
+      .xui-body1;
+      margin: 10px 0;
+      overflow: hidden;
+      line-height: @line-height;
+      max-height: 8 * @line-height;
+    }
+    .otherProjects-item-button{
+      text-align: center;
+    }
+  }
+}

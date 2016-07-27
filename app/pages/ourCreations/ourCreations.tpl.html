@@ -57,7 +57,7 @@
 
     <!-- The project found -->
     <div class="projectFound row" ng-show="creations.contributionsSvc.projectFound">
-        <div class=" col-md-offset-2 col-md-20">
+        <div class="col-md-offset-2 col-md-20">
             <img class="projectFound-image"
                  ng-src="/assets/images/creations/{{creations.contributionsSvc.projectFound.image}}"
                  ng-if="creations.contributionsSvc.projectFound.image">
@@ -83,7 +83,28 @@
 
                         <div class="projectFound-content-buttons">
                             <xui-button color="'purple'" on-click="">Contribuer</xui-button>
-                            <xui-button type="link" on-click="creations.contributionsSvc.resetQuestions()">Recommencer</xui-button>
+                            <xui-button type="link" on-click="creations.contributionsSvc.resetQuestions()">Recommencer
+                            </xui-button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Other projects description -->
+    <div class="otherProjects row">
+        <h1 class="otherProjects-title col-md-offset-1 col-md-22">Des projets variés</h1>
+        <div class="otherProjects-content col-md-offset-2 col-md-20">
+            <div class="otherProjects-line row">
+                <div class="col-md-6" ng-repeat="project in ::creations.projects">
+                    <div class="otherProjects-item">
+                        <img class="otherProjects-item-icon" ng-src="/assets/icons/{{project.icon}}">
+                        <div class="otherProjects-item-title">{{project.title}}</div>
+                        <div class="otherProjects-item-description">{{project.description}}</div>
+                        <div class="otherProjects-item-button">
+                            <xui-button color="'purple'" on-click="">En savoir plus</xui-button>
                         </div>
                     </div>
                 </div>
