@@ -16,7 +16,7 @@ export default class YourDebutCtrl {
         {
             question:`Comment se passent les missions ?`,
             answersTemplates: evolutionTemplateUrl,
-            isOpen: true
+            isOpen: false
         }
     ]
   }
