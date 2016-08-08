@@ -1,3 +1,70 @@
 <div class="ourValues">
-    Our Values
+
+    <!-- Showcase -->
+    <xui-showcase class="showcase"
+                  title="values.showCaseTitle"
+                  main-description="values.showCaseMainDescription">
+
+        <!--Showcase right panel-->
+        <div class="showcase-image"></div>
+    </xui-showcase>
+
+    <div class="peopleFirst row">
+        <div class="col-md-offset-1 col-md-22 col-xs-24">
+            <h1>Comment manager des geeks - Devoxx 2015</h1>
+            <div class="peopleFirst-content col-md-offset-1 col-md-22 col-xs-24">
+                <iframe class="video" width="400" height="250"
+                        ng-src="{{values.trustSrc(values.wording.peopleFirst.videoSrc)}}" frameborder="0"
+                        allowfullscreen></iframe>
+                <div class="article">
+                    <div class="article-description">{{values.wording.peopleFirst.description}}</div>
+                    <div class="article-author">
+                        {{values.wording.peopleFirst.author}},
+                        <span class="article-job">{{values.wording.peopleFirst.job}}</span>
+                        <span class="article-place">{{values.wording.peopleFirst.place}}</span>
+                    </div>
+                    <div class="article-link">
+                        <img src="/assets/icons/link-external.svg" alt="">
+                        <a href="{{values.wording.peopleFirst.articleLink}}" target="_blank">Lien vers l'article</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sharingKnowledge row">
+        <div class="col-md-offset-1 col-md-22">
+            <h1>Notre blog, un partage de la connaissance</h1>
+
+            <div class="sharingKnowledge-cards col-md-offset-1 col-md-22 col-xs-24">
+                <div class="row">
+                    <div class="sharingKnowledge-cards-item col-xs-24 col-sm-12 col-md-8" ng-repeat="item in values.sharingKnowledgeItems">
+                        <img class="sharingKnowledge-cards-item-img" ng-src="/assets/{{item.img}}">
+                        <div class="sharingKnowledge-cards-item-container">
+                            <div class="sharingKnowledge-cards-item-title">{{item.title}}</div>
+                            <div class="sharingKnowledge-cards-item-description">{{item.content}}</div>
+                            <div class="sharingKnowledge-cards-item-button">
+                                <xui-button color="'purple'" on-click="">En savoir plus</xui-button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="quality row">
+        <div class="col-md-offset-1 col-md-22">
+            <h1>Qualité sans compromis</h1>
+
+        </div>
+    </div>
+
+    <div class="customerIntimacy row">
+        <div class="col-md-offset-1 col-md-22">
+            <h1>Nos qualités témoignent</h1>
+        </div>
+    </div>
+
+
 </div>
