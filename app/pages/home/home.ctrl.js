@@ -7,8 +7,8 @@ export default class HomeController {
     this.citations = citations;
     this.timelineItems = timelineItems;
 
-    this.showCaseTitle = 'Vis ma vie de consultant chez Xebia';
-    this.showCaseMainDescription = 'Explorez notre univers et nos expertises technologiques';
+    this.showCaseTitle = 'Vis ma vie chez Xebia';
+    this.showCaseMainDescription = 'Explorez notre univers et nos passions';
     this.showCaseSubDescription = '#BeBrave #BeaXebian';
   }
 }
