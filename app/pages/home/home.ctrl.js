@@ -8,7 +8,7 @@ export default class HomeController {
     this.timelineItems = timelineItems;
 
     this.showCaseTitle = 'Vis ma vie chez Xebia';
-    this.showCaseMainDescription = 'Explorez notre univers et nos passions';
+    this.showCaseMainDescription = 'Explorez notre univers et nos passions.';
     this.showCaseSubDescription = '#BeBrave #BeaXebian';
   }
 }
