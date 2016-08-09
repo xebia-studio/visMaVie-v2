@@ -1,23 +1,30 @@
-import evolutionTemplateUrl from '!!file!./answersTemplates/evolution.tpl.html';
+import missionTemplateUrl from '!!file!./answersTemplates/mission.tpl.html';
 
 export default class YourDebutCtrl {
   constructor() {
     this.showCaseTitle = 'Votre intégration';
-    this.showCaseMainDescription = 'Les indispensables pour une intégration réussie';
+    this.showCaseMainDescription = 'Les indispensables pour une intégration réussie.';
     this.showCaseSubDescription = '';
 
     this.faqItems = [
         {
-            question:`Quelle possibilité d'évolution ?`,
+            question:`Comment se passent les missions ?`,
             headerPicture:`/assets/images/integration/mini-mission-xebia-consultant.jpg`,
-            answersTemplate: evolutionTemplateUrl,
+            answersTemplate: missionTemplateUrl,
             isOpen: true
         },
         {
-            question:`Comment se passent les missions ?`,
-            answersTemplates: evolutionTemplateUrl,
+            question:`Quelle possibilité d'évolution ?`,
+            headerPicture:`/assets/images/integration/mini-mission-xebia-consultant.jpg`,
+            answersTemplates: missionTemplateUrl,
             isOpen: false
-        }
+        },
+        {
+            question:`Quelle est la politique de management ?`,
+            headerPicture:`/assets/images/integration/mini-mission-xebia-consultant.jpg`,
+            answersTemplates: missionTemplateUrl,
+            isOpen: false
+        },
     ]
   }
 
