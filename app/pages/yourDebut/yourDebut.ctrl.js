@@ -1,4 +1,6 @@
 import missionTemplateUrl from '!!file!./answersTemplates/mission.tpl.html';
+import evolutionTemplateUrl from '!!file!./answersTemplates/evolution.tpl.html';
+import managementTemplateUrl from '!!file!./answersTemplates/management.tpl.html';
 
 export default class YourDebutCtrl {
   constructor() {
@@ -14,17 +16,17 @@ export default class YourDebutCtrl {
             isOpen: true
         },
         {
-            question:`Quelle possibilité d'évolution ?`,
+            question:`Quelles sont les possibilités d’évolution ?`,
             headerPicture:`/assets/images/integration/mini-mission-xebia-consultant.jpg`,
-            answersTemplates: missionTemplateUrl,
-            isOpen: false
+            answersTemplates: evolutionTemplateUrl,
+            isOpen: true
         },
         {
             question:`Quelle est la politique de management ?`,
             headerPicture:`/assets/images/integration/mini-mission-xebia-consultant.jpg`,
             answersTemplates: missionTemplateUrl,
             isOpen: false
-        },
+        }
     ]
   }
 
