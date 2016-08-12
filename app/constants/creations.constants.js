@@ -4,7 +4,7 @@
 
 export const wording = {
   yourContribution: {
-    title: `Comment partager sa connaissance chez Xebia en externe ?`,
+    title: `Comment partager sa connaissance chez Xebia ?`,
     description: `Écrire, enseigner, contruire, manager... Les contributions internes sont nombreseuses et chacun a la possibilité de participer en fonction de ses savoirs-faire et savoirs-être!`
   }
 };
@@ -76,7 +76,7 @@ http://www.xebia.tv/`
   {
     id: 4,
     image: 'xebia-tv-background.jpg',
-    icon: 'xebiatv.svg',
+    icon: 'icon-pen-vert.svg',
     title: `Devenez un auteur d'articles de blog.`,
     contributors: ['Nom contributeur 1', 'Nom contributeur 2'],
     description: `Sur notre blog, vous retrouvez quotidiennement des articles écrits par les Xebians sur les technologies de demain. Avec plus de 500 000 lecteurs en 2015, notre blog est une véritable vitrine de l'expertise technique de Xebia. Chaque consultant Xebia peut publier sur des sujets qui le passionnent : retours d'expérience, articles techniques ou encore revues de presse hebdomadaires sur des sujets d'actualité. Tous les thèmes et formats sont acceptés pour partager avec les internautes.
@@ -85,11 +85,19 @@ http://www.xebia.tv/`
   {
     id: 5,
     image: 'xebia-tv-background.jpg',
-    icon: 'xebiatv.svg',
+    icon: 'techtrends.svg',
     title: `Devenez un auteur de TechTrends.`,
     contributors: ['Nom contributeur 1', 'Nom contributeur 2'],
     description: `Les Xebians partagent leurs savoirs faire et leurs expertises en écrivant des Livres Blancs qui permettent de guider, éclairer, identifier et palier des problèmes rencontrés au sein des DSI.
- 	Pablo Lopez, CTO témoigne : “Le monde des nouvelles technologies évolue de plus en plus vite et apporte chaque année son lot d’usages nouveaux et d’innovations, tous plus prometteurs les uns que les autres. Cependant, cette foison de nouveaux concepts technologiques et méthodologiques s’accompagne d’un dilemme. Il s’agira de choisir entre expérimenter, adopter (ou non) en différenciant le mainstream de l’effet de mode.”`
+ 	Pablo Lopez, CTO témoigne : “Le monde des nouvelles technologies évolue de plus en plus vite et apporte chaque année son lot d’usages nouveaux et d’innovations, tous plus prometteurs les uns que les autres. Cependant, cette foison de nouveaux concepts technologiques et méthodologiques s’accompagne d’un dilemme. Il s’agira de choisir entre expérimenter, adopter (ou non) en différenciant le mainstream de l’effet de mode.`
+  },
+  {
+    id: 6,
+    image: 'xebia-tv-background.jpg',
+    icon: 'xskillz.svg',
+    title: `Développez des idées innovantes.`,
+    contributors: ['Nom contributeur 1', 'Nom contributeur 2'],
+    description: `Proposez des idées d'application pour augmenter la visibilité de Xebia ou encore aider le marketing dans le développement d'applications natives pour leurs prochains gros événements. Seul ou avec des pairs, nous encourageons ces prises d'initiatives.`
   }
 
 ];
