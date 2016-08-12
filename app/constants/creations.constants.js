@@ -26,12 +26,13 @@ export const showCaseItems = [
 export const questions = [
   {id: 0, libelle: `Aimez-vous écrire ?`, answeredYes: 1, answeredNo: 2},
   {id: 1, libelle: `Avez-vous déjà écrit pour un blog technique ?`, answeredYes: 5, answeredNo: 4},
-  {id: 2, libelle: `Préferez-vous coder ?`, answeredYes: 6, answeredNo: 7},
-  {id: 3, libelle: `Je préfère partager avec ma communauté`, answeredYes: 2, answeredNo: 5},
+  {id: 2, libelle: `Préferez-vous coder ?`, answeredYes: 7, answeredNo: 6},
   {id: 4, projectFound: 4},
   {id: 5, projectFound: 5},
   {id: 6, projectFound: 6},
-
+  {id: 7, libelle: `Pensez-vous être un bon orateur ?`, answeredYes: 8, answeredNo: 9},
+  {id: 8, projectFound: 8},
+  {id: 9, projectFound: 9}
 ];
 
 export const projects = [
@@ -79,8 +80,7 @@ http://www.xebia.tv/`
     icon: 'icon-pen-vert.svg',
     title: `Devenez un auteur d'articles de blog.`,
     contributors: ['Nom contributeur 1', 'Nom contributeur 2'],
-    description: `Sur notre blog, vous retrouvez quotidiennement des articles écrits par les Xebians sur les technologies de demain. Avec plus de 500 000 lecteurs en 2015, notre blog est une véritable vitrine de l'expertise technique de Xebia. Chaque consultant Xebia peut publier sur des sujets qui le passionnent : retours d'expérience, articles techniques ou encore revues de presse hebdomadaires sur des sujets d'actualité. Tous les thèmes et formats sont acceptés pour partager avec les internautes.
-`
+    description: `Sur notre blog, vous retrouvez quotidiennement des articles écrits par les Xebians sur les technologies de demain. Avec plus de 500 000 lecteurs en 2015, notre blog est une véritable vitrine de l'expertise technique de Xebia. Chaque consultant Xebia peut publier sur des sujets qui le passionnent : retours d'expérience, articles techniques ou encore revues de presse hebdomadaires sur des sujets d'actualité. Tous les thèmes et formats sont acceptés pour partager avec les internautes.`
   },
   {
     id: 5,
@@ -98,6 +98,21 @@ http://www.xebia.tv/`
     title: `Développez des idées innovantes.`,
     contributors: ['Nom contributeur 1', 'Nom contributeur 2'],
     description: `Proposez des idées d'application pour augmenter la visibilité de Xebia ou encore aider le marketing dans le développement d'applications natives pour leurs prochains gros événements. Seul ou avec des pairs, nous encourageons ces prises d'initiatives.`
+  },
+  {
+    id: 8,
+    image: 'xebia-tv-background.jpg',
+    icon: 'devoxx.svg',
+    title: `Devenez conférencier.`,
+    contributors: ['Nom contributeur 1', 'Nom contributeur 2'],
+    description: `Nous donnons l'opportunité à nos consultants de présenter des CFPs pour des conférences comme Devoxx.`
+  },
+  {
+    id: 9,
+    image: 'xebia-tv-background.jpg',
+    icon: 'xke.svg',
+    title: `Devenez speaker au XKE`,
+    contributors: ['Nom contributeur 1', 'Nom contributeur 2'],
+    description: `Nous avons à coeur de faire monter en compétence les soft skills de nos consultants. En plus de formations distribuées dans l'année, nous permettons aux consultants de proposer des conférences une fois par mois lors de nos XKE (la journée de partage de la connaissance).`
   }
-
 ];
