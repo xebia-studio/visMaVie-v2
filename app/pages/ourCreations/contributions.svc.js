@@ -31,7 +31,7 @@ export default class ContributionsSvc {
   }
 
   getNextQuestion(index) {
-    const nextQuestion = questions[index];
+    const nextQuestion = _.find(questions, {id: index});
 
     // Check if project found
     if(nextQuestion.hasOwnProperty('projectFound')){
@@ -43,6 +43,6 @@ export default class ContributionsSvc {
   }
 
   showProjectFound(index){
-    this.projectFound = projects[index];
+    this.projectFound = _.find(projects, {id: index});
   }
 }
