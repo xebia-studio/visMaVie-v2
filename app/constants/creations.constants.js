@@ -26,7 +26,7 @@ export const showCaseItems = [
 export const questions = [
   {id: 0, libelle: `Aimez-vous écrire ?`, answeredYes: 1, answeredNo: 2},
   {id: 1, libelle: `Avez-vous déjà écrit pour un blog technique ?`, answeredYes: 5, answeredNo: 4},
-  {id: 2, libelle: `Préferez-vous coder ?`, answeredYes: 7, answeredNo: 6},
+  {id: 2, libelle: `Préferez-vous coder ?`, answeredYes: 6, answeredNo: 7},
   {id: 4, projectFound: 4},
   {id: 5, projectFound: 5},
   {id: 6, projectFound: 6},
