@@ -14,6 +14,21 @@ html, body {
   overflow-y: hidden;
 }
 
+// Surcharge de la classe bootstrap (width plus grande)
+@containerMaxWidth: 1280px;
+
+@media (min-width: 992px) {
+  .container {
+    width: @containerMaxWidth;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 100%;
+  }
+}
+
 /********************************/
 /*          Main classes        */
 /********************************/
