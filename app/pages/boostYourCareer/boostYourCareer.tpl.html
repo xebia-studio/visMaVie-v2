@@ -1,3 +1,16 @@
-<div class="boostYourCareer">
-    Boost Your career
+<div class="career">
+    <!-- Section Soft Skills -->
+    <div class="career-softskills row">
+        <h1 class="career-softskills-title col-md-offset-1 col-md-22">Xebia investit dans les Soft Skills</h1>
+        <div class="career-softskills-cards col-md-offset-1 col-md-22">
+            <xui-card ng-repeat="card in career.softSkillsCards"
+                      class="career-softskills-cards-item col-xs-12 col-sm-offset-1 col-sm-7"
+                      image-url="card.icon"
+                      background-url="card.background"
+                      title="card.title"
+                      top-content="card.topContent",
+                      bottom-content="card.bottomContent">
+            </xui-card>
+        </div>
+    </div>
 </div>

@@ -4,7 +4,8 @@ let xuiCard = {
   template: require('./xuiCard.tpl.html'),
   bindings: {
     title: '<',
-    content: '<',
+    topContent: '<',
+    bottomContent: '<',
     imageUrl: '<',
     backgroundUrl: '<'
   }

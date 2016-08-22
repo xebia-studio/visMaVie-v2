@@ -14,7 +14,7 @@ export default function routes($urlRouterProvider, $locationProvider, $stateProv
   $stateProvider.state('boostYourCareer', {
      url: '/carriere',
      template: require('./pages/boostYourCareer/boostYourCareer.tpl.html'),
-     controller: 'BoostYourCareerController as boostYourCareer'
+     controller: 'BoostYourCareerController as career'
   });
 
   $stateProvider.state('join', {

@@ -31,13 +31,13 @@ export const homeXebians = [
 ];
 
 export const numbersCards = [
-  {icon: 'assets/icons/icon-brain-vert.svg', background: '', title: '5%', content: 'Du CA investi dans le partage de la connaissance'},
-  {icon: 'assets/icons/icon-people-vert.svg', background: '', title: '125', content: 'Consultants en France'},
-  {icon: 'assets/icons/icon-pen-vert.svg', background: '', title: '1800', content: 'Billets de blog'},
-  {icon: 'assets/icons/icon-birthday-cake-vert.svg', background: '', title: '12', content: 'Ans'},
-  {icon: 'assets/icons/icon-birthday-cake-vert.svg', background: '', title: '18', content: 'Millions de CA'},
-  {icon: 'assets/icons/icon-evolution-vert.svg', background: '', title: '56', content: 'Missions réalisées en 2015'},
-  {icon: 'assets/icons/icon-evolution-vert.svg', background: '', title: '182', content: 'Slots en XKE en 2015'}
+  {icon: 'assets/icons/icon-brain-vert.svg', background: '', title: '5%', bottomContent: 'Du CA investi dans le partage de la connaissance'},
+  {icon: 'assets/icons/icon-people-vert.svg', background: '', title: '125', bottomContent: 'Consultants en France'},
+  {icon: 'assets/icons/icon-pen-vert.svg', background: '', title: '1800', bottomContent: 'Billets de blog'},
+  {icon: 'assets/icons/icon-birthday-cake-vert.svg', background: '', title: '12', bottomContent: 'Ans'},
+  {icon: 'assets/icons/icon-birthday-cake-vert.svg', background: '', title: '18', bottomContent: 'Millions de CA'},
+  {icon: 'assets/icons/icon-evolution-vert.svg', background: '', title: '56', bottomContent: 'Missions réalisées en 2015'},
+  {icon: 'assets/icons/icon-evolution-vert.svg', background: '', title: '182', bottomContent: 'Slots en XKE en 2015'}
 ];
 
 export const citations = [

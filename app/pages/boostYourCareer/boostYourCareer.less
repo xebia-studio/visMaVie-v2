@@ -1,1 +1,55 @@
-.boostYourCareer{}
+@import '../../../xebiaUI/styles/variables';
+@import (reference) '../../../xebiaUI/styles/main';
+
+.career{
+
+    // SECTION - softSkills
+  .career-softskills {
+    margin-left: -15px;
+    margin-right: -15px;
+    padding: 15px;
+    background-color: white;
+
+    .career-softskills-title {
+      .xui-title;
+    }
+
+    .career-softskills-cards-item {
+      border: 1px solid @xui-light-grey;
+      margin-bottom: 15px;
+      padding: 0px;
+      .xuiCard-image {
+        .xui-body2;
+        font-weight: 400;
+        color:white;
+        padding:15px;
+        background-color: @xui-purple1;
+        opacity: 1;
+        img {
+            display:none;
+        }
+      }
+      .xuiCard-title {
+        display: none;
+      }
+      .xuiCard-bottom-content {
+        .xui-body1;
+        padding: 15px;
+        background-color: white;
+        height:100%;
+      }
+
+      &:first-child {
+        .xuiCard-image {
+            background-color: @xui-light-grey;
+            color: @xui-black;
+        }
+        .xuiCard-bottom-content {
+            background-color: @xui-light-grey;
+            color: @xui-black;
+        }
+      }
+    }
+  }
+
+}
