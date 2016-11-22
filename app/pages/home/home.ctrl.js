@@ -9,7 +9,7 @@ export default class HomeController {
 
     this.showCaseTitle = 'Vis ma vie chez Xebia';
     this.showCaseMainDescription = 'Explorez notre univers et nos passions.';
-    this.showCaseSubDescription = '#BeBrave #BeaXebian';
+    this.showCaseSubDescription = '#XebiaLife';
   }
 }
 

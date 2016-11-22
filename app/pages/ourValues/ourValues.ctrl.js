@@ -1,4 +1,4 @@
-import {wording, sharingKnowledgeItems} from '../../constants/values.constants.js';
+import {wording, sharingKnowledgeItems, qualityWithoutCompromise} from '../../constants/values.constants.js';
 
 export default class OurValuesCtrl {
   constructor($sce) {
@@ -8,6 +8,7 @@ export default class OurValuesCtrl {
     this.showCaseMainDescription = 'Je suis chez Xebia pour les valeurs';
     this.wording = wording;
     this.sharingKnowledgeItems = sharingKnowledgeItems;
+    this.qualityWithoutCompromise = qualityWithoutCompromise;
   }
 
   trustSrc(src){

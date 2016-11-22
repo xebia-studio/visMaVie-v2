@@ -37,7 +37,8 @@ export const numbersCards = [
   {icon: 'assets/icons/icon-birthday-cake-vert.svg', background: '', title: '12', bottomContent: 'Ans'},
   {icon: 'assets/icons/icon-birthday-cake-vert.svg', background: '', title: '18', bottomContent: 'Millions de CA'},
   {icon: 'assets/icons/icon-evolution-vert.svg', background: '', title: '56', bottomContent: 'Missions réalisées en 2015'},
-  {icon: 'assets/icons/icon-evolution-vert.svg', background: '', title: '182', bottomContent: 'Slots en XKE en 2015'}
+  {icon: 'assets/icons/icon-evolution-vert.svg', background: '', title: '182', bottomContent: 'Slots en XKE en 2015'},
+  {icon: 'assets/icons/factory.svg', background: '', title: '8', bottomContent: 'Fondations techniques ouvertes à tous les xebians'}
 ];
 
 export const citations = [
@@ -50,6 +51,11 @@ export const citations = [
 
 export const timelineItems = [
   {
+    year: 2016,
+    imgUrl: 'assets/images/home/kodokojo-icon.png',
+    text: `<a class="link" href="http://www.kodokojo.io" target="_blank">Kodo Kojo</a> ouvre son SAAS, votre usine logicielle en 3 clics.`
+  },
+   {
     year: 2016,
     imgUrl: 'assets/images/home/frenchkit-icon.svg',
     text: `Xebia co-organise la première conférence iOS France, <a class="link" href="http://www.frenchkit.fr" target="_blank">FrenchKit.</a>`

@@ -29,6 +29,12 @@
       .article-description{
         white-space: pre-line;
       }
+      .article-title-desc {
+      color: @xui-cyan1;
+        .font-regular;
+        margin-bottom: 10px;
+        font-size:16px;
+      }
       .article-author {
         color: @xui-cyan1;
         .font-regular;
@@ -65,7 +71,7 @@
     .sharingKnowledge-cards-item-container{
       box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
       padding: 15px;
-      height: 250px;
+      height: 270px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -88,5 +94,48 @@
     }
   }
 
+  // Quality without compromise et testimonie
 
+  .sharingKnowledge {
+    background:#f3f3f3 !important;
+  }
+  .quality-bullet {
+    margin-bottom:5px;
+  }
+  .quality-compromise {
+    overflow:hidden;
+    padding:10px 0 40px 0;
+  }
+
+  .content-testimonie {
+    background-image:url('../../../assets/images/values/bkg-testimonies.svg');
+    background-size: 100% auto;
+    height: 240px;
+    background-repeat:no-repeat;
+  }
+
+  .background-img-testimonie {
+    width:26.8%;
+    padding:0;
+    margin-left:-14px;
+  }
+  p.content-txt-testimonie {
+    padding:10px 15px;
+    line-height:25px;
+  }
+  a.content-link-testimonie {
+    padding:0 15px;color:
+    @xui-cyan1;
+    cursor:pointer;
+  }
+  .bullet-link {
+    border-radius: 50%;
+    background-color: #06A99C;
+    color: white;
+    width: 25px;
+    height: 25px;
+    padding: 2px;
+    text-align: center;
+  }
+  
 }
