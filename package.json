@@ -26,10 +26,12 @@
     "test": "concurrently \"npm run phantom\" \"npm run codecept\" ",
 
 		"deploy" : "npm run deploy:dev",
+			"predeploy:dev": "npm run build",
 		"deploy:dev": "aws s3 sync ./dist s3://xebia-vis-ma-vie--dev --profile xebia",
-		"predeploy:master": "npm run build",
-		"deploy:master": "aws s3 sync ./dist s3://xebia-vis-ma-vie--master --profile xebia",
-		"deploy:integ": "aws s3 sync ./dist s3://xebia-vis-ma-vie--integ --profile xebia"
+			"predeploy:integ": "npm run build",
+		"deploy:integ": "aws s3 sync ./dist s3://xebia-vis-ma-vie--integ --profile xebia",
+			"predeploy:master": "npm run build",
+		"deploy:master": "aws s3 sync ./dist s3://xebia-vis-ma-vie--master --profile xebia"
 	},
   "dependencies": {
     "angular": "^1.5.0",
