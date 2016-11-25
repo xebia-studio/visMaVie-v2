@@ -34,3 +34,17 @@ npm run start:dev
 npm run phantom --> on a terminal to launch phantomjs
 npm run test --> on another terminal to launch the tests
 ```
+### Deploy
+### On master
+```console
+npm run deploy:master
+```
+### On integ
+```console
+npm run deploy:integ
+```
+### On dev
+```console
+npm run deploy:dev
+```
+
