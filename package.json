@@ -8,22 +8,29 @@
     "type": "git",
     "url": "https://github.com/xebia-studio/visMaVie-v2.git"
   },
+	"private": true,
   "engines": {
-    "node": "4.3.0",
-    "npm": "2.14.x"
+    "node": ">= 6.0.0",
+    "npm": ">= 3.0.0"
   },
   "scripts": {
     "build": "npm run build:dev",
     "build:dev": "webpack -d",
     "build:prod": "webpack -p",
-    "prestart": "npm install",
+
+    	"prestart": "npm install",
     "start": "export NODE_ENV=development && webpack-dev-server --port=9000 --content-base app/",
+
     "phantom": "phantomjs --webdriver=4444",
     "codecept": "codeceptjs run --steps",
     "test": "concurrently \"npm run phantom\" \"npm run codecept\" ",
-    "pres3:sync": "npm run build",
-    "s3:sync": "aws s3 sync ./dist s3://xebia-vis-ma-vie-xebia --profile xebia"
-  },
+
+		"deploy" : "npm run deploy:dev",
+		"deploy:dev": "aws s3 sync ./dist s3://xebia-vis-ma-vie-master --profile xebia",
+		"predeploy:master": "npm run build",
+		"deploy:master": "aws s3 sync ./dist s3://xebia-vis-ma-vie-master --profile xebia",
+		"deploy:integ": "aws s3 sync ./dist s3://xebia-vis-ma-vie--integ --profile xebia"
+	},
   "dependencies": {
     "angular": "^1.5.0",
     "angular-animate": "^1.5.7",
