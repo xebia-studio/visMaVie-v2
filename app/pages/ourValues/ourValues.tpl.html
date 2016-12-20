@@ -11,12 +11,13 @@
 
     <div class="peopleFirst row">
         <div class="col-md-offset-1 col-md-22 col-xs-24">
-            <h1>Comment manager des geeks - Devoxx 2015</h1>
+            <h1>People First</h1>
             <div class="peopleFirst-content col-md-offset-1 col-md-22 col-xs-24">
                 <iframe class="video" width="400" height="250"
                         ng-src="{{values.trustSrc(values.wording.peopleFirst.videoSrc)}}" frameborder="0"
                         allowfullscreen></iframe>
                 <div class="article">
+                    <div class="article-title-desc">{{values.wording.peopleFirst.titleDesc}}</div>
                     <div class="article-description">{{values.wording.peopleFirst.description}}</div>
                     <div class="article-author">
                         {{values.wording.peopleFirst.author}},
@@ -34,7 +35,7 @@
 
     <div class="sharingKnowledge row">
         <div class="col-md-offset-1 col-md-22">
-            <h1>Notre blog, un partage de la connaissance</h1>
+            <h1>Sharing Knowledge</h1>
 
             <div class="sharingKnowledge-cards col-md-offset-1 col-md-22 col-xs-24">
                 <div class="row">
@@ -53,18 +54,63 @@
         </div>
     </div>
 
+<div class="quality-compromise">
     <div class="quality row">
         <div class="col-md-offset-1 col-md-22">
-            <h1>Qualité sans compromis</h1>
-
+            <h1>Quality without compromise</h1>
         </div>
     </div>
 
+    <div class="quality-content col-md-offset-1 col-md-22 col-xs-24">
+      <div class="col-sm-8 process-image">
+        <img src="../../../assets/images/values/198conference.jpg" alt="Quality without compromise" width="100%"/>
+      </div>
+        <div class="col-sm-16">
+              <p>En tant que crafts(wo)men, les Xebians sont vigilants à la mise en place de bonnes pratiques de développement sur les projets :</p>
+            <div class="row question" ng-repeat="item in values.qualityWithoutCompromise">
+                <div class="col-xs-2 quality-bullet">
+                    <div class="question-index">{{item.number}}</div>
+                </div>
+                <div class="col-xs-22">{{item.content}}</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="sharingKnowledge row">
     <div class="customerIntimacy row">
         <div class="col-md-offset-1 col-md-22">
-            <h1>Nos qualités témoignent</h1>
+            <h1>Customer intimacy</h1>
+        </div>
+    </div>
+    <div class="col-md-offset-1 col-md-22 col-xs-24">
+        <div class=" col-md-offset-1 col-md-22 col-xs-24 content-testimonie">
+          <div class="col-md-6 background-img-testimonie"><img src="../../../assets/images/values/198conference.jpg" alt="Quality without compromise" width="100%"/></div>
+            <div class="col-md-17">
+            <p class="content-txt-testimonie">Pour simplifier les montées de version de Fnac.com, l’installation d’outils s’avère indispensable, mais pas suffisante. Le site de e-commerce a fait appel à Xebia pour dépasser les « artefacts de l’agilité » et d’instiller une culture Devops dans toute l’entreprise.</p>
+            
+            <div class="col-xs-1">
+            <div class="bullet-link"><i class="fa fa-link" aria-hidden="true"></i></div>
+            </div>
+
+            <a class="content-link-testimonie" href="http://www.silicon.fr/fnac-devops-limite-pas-outils-162675.html?utm_content=buffer09d3f&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer#uRyvYdw5HQah6eUk.99http://buff.ly/2fg8645" target="_blank">Lien vers l'article</a>
+            </div>
+        </div>
+
+        <div class=" col-md-offset-1 col-md-22 col-xs-24 content-testimonie">
+          <div class="col-md-6 background-img-testimonie"><img src="../../../assets/images/values/198conference.jpg" alt="Quality without compromise" width="100%"/></div>
+            <div class="col-md-17">
+            <p class="content-txt-testimonie">Depuis octobre 2015, le PMU et Xebia construisent un datalake. Porté par le département Marketing, le premier Use Case couvre sur la connaissance client et a permis de justifier un ROI en 6 mois.</p>
+            
+            <div class="col-xs-1">
+            <div class="bullet-link"><i class="fa fa-link" aria-hidden="true"></i></div>
+            </div>
+
+            <a class="content-link-testimonie" href="http://www.silicon.fr/fnac-devops-limite-pas-outils-162675.html?utm_content=buffer09d3f&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer#uRyvYdw5HQah6eUk.99http://buff.ly/2fg8645" target="_blank">Lien vers l'article</a>
+            </div>
         </div>
     </div>
 
 
+</div>
 </div>
