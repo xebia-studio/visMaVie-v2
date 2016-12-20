@@ -1,0 +1,30 @@
+font__$mainFontSize = 18
+
+/*---------------------*/
+
+font__pxToRem(pxValue)
+	return unit(pxValue/font__$mainFontSize, 'rem')
+
+font__rem-size(sizeValue = font__$mainFontSize)
+	font-size : sizeValue px
+	font-size : font__pxToRem(sizeValue)
+
+font__base(fontName, size = false, transform = false, defaultFont = sans-serif)
+	font-family : fontName, defaultFont
+	
+	if size is not false
+		font__rem-size size
+
+	if transform
+		text-transform transform
+
+font__antialiasing()
+	-webkit-font-smoothing: antialiased;
+
+font__line-height(sizeValue = font__$mainFontSize)
+	line-height : unit(sizeValue, 'px')
+	line-height : font__pxToRem(sizeValue)
+
+font__letter-spacing(spacing)
+	letter-spacing : unit(spacing/100, 'px')
+	letter-spacing : unit(spacing/1000, 'em')

@@ -1,9 +1,1 @@
-/.idea/
-/node_modules/
-/dist/
-*.sublime*
-/designs/
-
-*.log
-.DS_Store
-.env
+node_modules/

@@ -1,0 +1,8 @@
+dependencies:
+  pre:
+    - npm install -g npm dependency-check
+deployment:
+  staging:
+    branch: staging
+    commands:
+      - npm run build && aws s3 sync dist s3://xebia-fr-2016-preprod/ --delete

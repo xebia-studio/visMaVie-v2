@@ -1,50 +1,23 @@
-# visMaVie-v2
-Rewriting of the website http://vismavie.xebia.fr
-To collaborate follow the steps:
+Site VisMaVie v3
+==================
 
-## Environments
-- [Main](http://xebia-vis-ma-vie--master.s3-website.eu-central-1.amazonaws.com)
-- [Integration](http://xebia-vis-ma-vie--integ.s3-website.eu-central-1.amazonaws.com)
-- [Dev](http://xebia-vis-ma-vie--dev.s3-website.eu-central-1.amazonaws.com)
+## Build Setup
 
-## To collaborate
-
-### Clone the repository
-```console
-git clone https://github.com/xebia-studio/visMaVie-v2
-```
-### Install dependencies
-```console
+``` bash
+# install dependencies
 npm install
-```
-### Build in development mode
-```console
-npm run build:dev
-```
-### Or, build in production mode
-```console
-npm run build:prod
-```
-### Start the app with webpack dev server
-```console
-npm run start:dev
-```
-### To launch the tests:
-```console
-npm run phantom --> on a terminal to launch phantomjs
-npm run test --> on another terminal to launch the tests
-```
-### Deploy
-### On master
-```console
-npm run deploy:master
-```
-### On integ
-```console
-npm run deploy:integ
-```
-### On dev
-```console
-npm run deploy:dev
+
+# serve with hot reload at localhost:8080
+npm run dev
+
+# build for production with minification
+npm run build
+
+# run unit tests
+npm run unit
+
+# run all tests
+npm test
 ```
 
+For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
