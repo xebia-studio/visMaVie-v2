@@ -2,7 +2,7 @@
 	.Home_page
 		ParallaxedLayersGroup
 			ParallaxedLayer
-				ScreenFillerBlock.Home_page-header(:percentageOfScreenFilled="{default: settings.heightHeader/settings.screenHeightIdeal*100, 'width-compact': 100}")
+				ScreenFillerBlock.Home_page-header(:percentageOfScreenFilled="configScreenFiller")
 
 					h1.Home_page-header-logo-outer-wrapper Xebia
 						.Home_page-header-logo-inner-wrapper
@@ -14,7 +14,7 @@
 						span.Home_page-header-baseline-secondary Spécialisé dans les <br> technologies de pointe
 
 					.Home_page-scroll-down-button-outer-wrapper
-						button.Home_page-scroll-down-button(@click='scrollToBottom()')
+						button.Home_page-scroll-down-button(@click='scrollToBottom()', ref='scrollToDownButton')
 							ArrowBottom
 
 			ParallaxedLayer
@@ -44,6 +44,15 @@ import { Home_page as settings } from 'settings/components'
 export default {
 	name: 'Home_page',
 	mixins: [fontLoader, scrollController, tweenHelper, sizeClassHelper],
+	data: function () {
+		return {
+			configScreenFiller: {
+				'height-compact & not-width-compact': 100,
+				'default': settings.heightHeader/settings.screenHeightIdeal*100,
+				'width-compact': 100
+			}
+		}
+	},
 	components: {
 		ParallaxedLayersGroup,
 		ParallaxedLayer,
@@ -65,9 +74,9 @@ export default {
 	},
 	methods: {
 		scrollToBottom: function () {
-			const button = this.$el.querySelector('.Home_page-scroll-down-button');
+			const button = this.$refs.scrollToDownButton;
 			button.blur ? button.blur() : null;
-			
+
 			this.getTweenHelper().tween({
 				duration: '250ms',
 				startValue: this.getScrollController().scrollTop,
@@ -83,13 +92,13 @@ export default {
 
 <style lang="stylus">
 	_contentNumberOfColumns = 12
-	
+
 	_screenHeightIdeal = Home_page__$screenHeightIdeal
 	_heightHeader = Home_page__$heightHeader
 	_marginTopLogoXebia = 140
 	_marginBottomLogoXebia = 75
 	_heightLogo = 55
-	
+
 	.Home_page-header
 		background-color color__$blue
 		background-position center center
@@ -106,7 +115,7 @@ export default {
 	/*------------*/
 	/* Logo Xebia */
 	/*------------*/
-		
+
 	.Home_page-header-logo-outer-wrapper
 		display block
 		position absolute
@@ -114,19 +123,19 @@ export default {
 		height ( _heightLogo / _heightHeader * 100%)
 		width 100%
 		font-size 0
-	
+
 	.size-class-width-compact
 		.Home_page-header-logo-outer-wrapper
 			display none
-			
+
 	.Home_page-header-logo-inner-wrapper
 		layout__centeredGridBlock(numberOfColumns: _contentNumberOfColumns)
 		height 100%
-	
+
 	.Home_page-header-logo
 		max-width (5 / _contentNumberOfColumns * 100%)
 		height 100%
-		
+
 		g
 			fill white
 
@@ -139,7 +148,7 @@ export default {
 	.Home_page-header-baseline
 		layout__centeredGridBlock(numberOfColumns: _contentNumberOfColumns)
 		color white
-	
+
 	.size-class-not-width-compact
 		.Home_page-header-baseline br
 			display none
@@ -151,31 +160,31 @@ export default {
 		font__useTextExtraLight 18px
 		font__line-height 20px
 		display block
-	
+
 	.Home_page-header-baseline-main+.Home_page-header-baseline-secondary
 		margin-top 10px
-		
+
 	.size-class-width-compact
 		.Home_page-header-baseline-margin-top
 			height 85px
-		
+
 		.Home_page-header-baseline
 			max-width 100%
 			width auto
 			margin-left 40px
 			margin-right 40px
-			
+
 		// .Home_page-header-baseline-main
 		// 	font__rem-size 40px
 		// 	font__line-height 50px
-			
+
 		// .Home_page-header-baseline-secondary
 		// 	font__rem-size 28px
 		// 	font__line-height 40px
-		
+
 		.Home_page-header-baseline-main+.Home_page-header-baseline-secondary
 			margin-top 20px
-	
+
 	/*---------------*/
 	/*---------------*/
 
@@ -192,15 +201,17 @@ export default {
 		.Home_page-scroll-down-button
 			layout__centeredGridBlock(numberOfColumns: 4)
 			button__resetStyle()
-			
+
 			transition transform 200ms ease__inOutCubic()
 			transform translateY(0)
 
 			&:hover, &:focus
 				cursor pointer
 				transform translateY(-5px)
-	
+
+			svg
+				width 100%
 	/*---------------*/
 	/*---------------*/
-			
+
 </style>

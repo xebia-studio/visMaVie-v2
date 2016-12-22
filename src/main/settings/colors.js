@@ -20,6 +20,7 @@ var text = '#666666'
 /*--------------*/
 
 module.exports = {
+    _namespace: 'color',
 	orchid: orchid,
 	orange: orange,
 	blue: blue,

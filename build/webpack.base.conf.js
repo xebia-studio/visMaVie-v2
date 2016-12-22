@@ -45,7 +45,7 @@ module.exports = {
         test: /\.js$/,
         loader: 'babel',
         include: projectRoot,
-        exclude: /node_modules/
+        exclude: /node_modules(?!\/xebia-web-common)/
       },
       {
         test: /\.json$/,
@@ -75,20 +75,7 @@ module.exports = {
   stylus: {
     use: [require('nib')()],
     import: [
-      '~nib/lib/nib/index.styl',
-      //'~assets/spritesheets/sprites.styl',
-
-      //comment/uncomment lines if no files matching
-      '~src/generated/settings/colors.styl',
-      '~src/generated/settings/fonts.styl',
-      '~src/generated/settings/components.styl',
-
-      '~tools/layout.styl',
-      '~tools/ease/ease.styl',
-      '~tools/button.styl',
-
-      '~tools/font.styl',
-      '~src/generated/tools/font.styl',
+      '~src/main/tools/index.styl'
     ]
   }
 }

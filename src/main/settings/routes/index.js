@@ -6,7 +6,7 @@ const routes = concat(
 		{
 			name: 'home',
 			path: '/',
-			component: resolve => require(['components/Home_page.vue'], resolve)
+			component: resolve => require(['components/Tester.vue'], resolve)
 		}
 	],
 	require('./test-block')

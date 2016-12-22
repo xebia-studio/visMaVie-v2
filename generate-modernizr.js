@@ -4,8 +4,8 @@ var modernizr = require("modernizr");
 var fs = require('fs');
 var path = require('path');
 
-var saveFile = require('./save-file');
- 
+var saveFile = require('xebia-web-common/scripts/save-file');
+
 modernizr.build(getConfig(), function (result) {
 	var filePath = path.join(__dirname, 'src/generated/tools/modernizr.js');
 

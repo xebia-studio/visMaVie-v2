@@ -10,7 +10,9 @@ import {
 	isFunction,
 	isNumber,
 	isArray,
-	includes
+	includes,
+	trim,
+	every
 } from 'lodash'
 
 import { mixin } from 'tools/size-class-helper'
@@ -44,11 +46,18 @@ export default {
 			this.blockHeight = (() => {
 				if (isObject(percentage)) {
 					const defaultPercentage = isNumber(percentage.default) ? percentage.default : defaultPercentageOfScreenFilled;
+
 					for(let sizeClass in percentage){
 						if(sizeClass != 'default'){
-							if(sizeClassHelper.isActive(sizeClass)){
+
+							const sizeClassList = sizeClass.split('&');
+
+							if(every(sizeClassList, function (_sizeClass) {
+								return sizeClassHelper.isActive(trim(_sizeClass));
+							})){
 								return calc(percentage[sizeClass]);
 							}
+
 						}
 					}
 					return calc(defaultPercentage);

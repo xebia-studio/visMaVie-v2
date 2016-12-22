@@ -20,7 +20,8 @@
     "swiper": "^3.4.1",
     "vue": "^2.1.0",
     "vue-router": "^2.1.1",
-    "webfontloader": "^1.6.27"
+    "webfontloader": "^1.6.27",
+    "xebia-web-common": "git+ssh://git@github.com:xebia-france/xebia-web-common.git"
   },
   "devDependencies": {
     "@alexistessier/report": "^1.0.4",

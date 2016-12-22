@@ -9,7 +9,7 @@ var svgpath = require('svgpath');
 
 var jsdom = require("jsdom");
 
-var saveFile = require('./save-file');
+var saveFile = require('xebia-web-common/scripts/save-file');
 
 var SvgComponentGenerator = (function() {
 	'use strict';
@@ -19,7 +19,7 @@ var SvgComponentGenerator = (function() {
 		if (!(this instanceof SvgComponentGenerator)) {
 			return new SvgComponentGenerator(params);
 		}
-		
+
 		this.inputPath = params.inputPath;
 		this.fileContentTransformMethod = (params.fileContentTransformMethod || function (name, content) {
 			return content;
@@ -210,7 +210,7 @@ var SvgComponentGenerator = (function() {
 
 			_.forEach(fileList, function (file) {
 				var outputPath = path.join(self.outputPath, file.name);
-				
+
 				self.save(outputPath, file.content);
 			});
 		});

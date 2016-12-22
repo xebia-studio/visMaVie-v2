@@ -1,7 +1,7 @@
 var path = require('path');
 var _ = require('lodash');
 
-var saveFile = require('./save-file.js');
+var saveFile = require('xebia-web-common/scripts/save-file');
 
 /**/
 
@@ -22,11 +22,11 @@ var settingsFonts = require('./src/main/settings/fonts.js');
     }
 
     function formatWeightVar(fontName, variation, weight) {
-        return 'fonts__$'+_.camelCase(fontName+'-'+variation)+'Weight = '+weight; 
+        return 'fonts__$'+_.camelCase(fontName+'-'+variation)+'Weight = '+weight;
     }
 
     function formatStyleVar(fontName, variation, style) {
-        return 'fonts__$'+_.camelCase(fontName+'-'+variation)+'Style = '+style; 
+        return 'fonts__$'+_.camelCase(fontName+'-'+variation)+'Style = '+style;
     }
 
     function unserializeVariation(variation) {
@@ -123,7 +123,7 @@ var settingsFonts = require('./src/main/settings/fonts.js');
                 return font._type === 'google';
             })
             .mapValues(function (font, fontName) {
-                
+
                 return _.concat(
                     [formatFontUseMixin(fontName)],
 
