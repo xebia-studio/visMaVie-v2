@@ -19,6 +19,7 @@ generateStyles({
     settingsFiles : [
         path.join(__dirname, 'src/main/settings/colors.js'),
         path.join(__dirname, 'src/main/settings/components.js'),
+        path.join(__dirname, 'src/main/settings/layout.js'),
         path.join(__dirname, 'src/main/settings/fonts-sizes.js')
     ],
     outputPath: path.join(__dirname, 'src/generated/settings')

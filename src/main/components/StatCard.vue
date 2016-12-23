@@ -1,16 +1,20 @@
 <template lang="jade">
     .StatCard
-        .StatCard-picto-wrapper
-            .StatCard-picto(:is='picto')
-        .StatCard-stat-wrapper
-            .StatCard-stat {{stat}}
-            .StatCard-text {{text}}
+        .StatCard-inner-wrapper
+            .StatCard-picto-wrapper
+                .StatCard-picto(:is='picto')
+            .StatCard-stat-text-wrapper
+                .StatCard-stat {{stat}}
+                .StatCard-text {{text}}
 
 </template>
 
 <script>
+    import { mixin as fontLoader } from 'tools/font-loader'
+
     export default {
         name: 'StatCard',
+        mixins: [fontLoader],
         props: {
             picto: {
                 required: true
@@ -23,6 +27,12 @@
                 type: String,
                 required: true
             }
+        },
+        created: function () {
+            this.loadFont({
+                'text': 'light',
+                'title': 'bold'
+            });
         }
     }
 </script>
@@ -36,29 +46,38 @@
     _textFontSize = fontsize__$mainFontSize
 
     .StatCard
-        width 80px
-        height 100px
         background-color white
+        border-radius 0 0 5px 5px
+
+    .StatCard-inner-wrapper
+        padding 10px
 
     .StatCard-picto-wrapper
         height (100*2/3) %
+        width 100%
+        padding 15px 0 10px 0
+        border-bottom 1px solid color__$sectionEven
 
     .StatCard-picto
+        color _pictoColor
         margin-left auto
         margin-right auto
-        width 60px
-        height 100%
-        color _pictoColor
+        display block
+        width 80px
 
-    .StatCard-stat-wrapper
+    .StatCard-stat-text-wrapper
         height (100*1/3) %
 
-    .Statcard-stat
+    .StatCard-stat
+        padding-top 10px
         color _statColor
-        font-size _statFontSize
+        font__useTitleBold 36px
+        text-align center
 
     .StatCard-text
+        padding-top 10px
         color _textColor
-        font-size _textFontSize
+        font__useTextLight fontsize__$sectionSubTitle
+        text-align center
 
 </style>

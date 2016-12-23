@@ -1,13 +1,14 @@
-_grid(boxSelector, baseWidth, numberOfColumns, gutter, rowGutter = 0, gutterProperty = 'margin')
+_grid(boxSelector, widthInColumns, numberOfColumns, gutterInColumns, rowGutter = 0, gutterProperty = 'margin')
     numberOfGutter = (numberOfColumns - 1)
-    availableWidth = baseWidth - (numberOfGutter*gutter)
-    baseColumnWidth = availableWidth / numberOfColumns
+    availableColumns = widthInColumns - (numberOfGutter*gutterInColumns)
+    columnInColumns = availableColumns / numberOfColumns
 
-    columnWidth = ((baseColumnWidth / baseWidth) * 100%)
-    gutterWidth = ((gutter / baseWidth) * 100%)
+    columnWidth = ((columnInColumns / widthInColumns) * 100%)
+    gutterWidth = ((gutterInColumns / widthInColumns) * 100%)
+    areaWidth = widthInColumns * layout__$gridColumnWidth
 
     display block
-    width (baseWidth)px
+    width areaWidth px
     max-width 100%
 
     zoom 1

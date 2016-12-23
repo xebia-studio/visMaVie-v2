@@ -9,7 +9,62 @@ var svgpath = require('svgpath');
 
 var jsdom = require("jsdom");
 
-var saveFile = require('xebia-web-common/scripts/save-file');
+var saveFile = require('xebia-web-common/scripts/save-file.js');
+
+var cssInline = (function () {
+	function traverse(obj) {
+	    var tree = [];
+	    tree.push(obj);
+	    visit(obj);
+	    
+    	function visit(node) {
+	      if (node && node.hasChildNodes()) {
+	        var child = node.firstChild;
+	        while (child) {
+	          if (child.nodeType === 1 && child.nodeName !== 'SCRIPT'){
+	            tree.push(child);
+	            visit(child);
+	          }
+	          child = child.nextSibling;
+	        }
+	      }
+	    }
+	    return tree;
+	}
+
+	function explicitlySetStyle(element, _window) {
+	    var cSSStyleDeclarationComputed = (_window || window).getComputedStyle(element);
+	    var i, len, key, value;
+	    var computedStyleStr = "";
+	    for (i=0, len=cSSStyleDeclarationComputed.length; i<len; i++) {
+	        key = cSSStyleDeclarationComputed[i];
+	        value = cSSStyleDeclarationComputed.getPropertyValue(key);
+	        // Write style if not a null value AND not set by an inline style
+	        // or set with !important.
+	        if (
+	          value !== '' &&
+	          (element.attributes.getNamedItem(key) === null || value.indexOf('!important') > -1)
+	        ) {
+	            computedStyleStr += key + ":" + value + ";";
+	        }
+	    }
+	    if (computedStyleStr.length > 0) {
+	      element.setAttribute('style', computedStyleStr);
+	    }
+	    else{
+	      element.removeAttribute('style');
+	    }
+	}
+
+
+	return function(svg, _window) {
+	    var allElements = traverse(svg);
+	    var i = allElements.length;
+	    while (i--) {
+	      explicitlySetStyle(allElements[i], _window);
+	    }
+	}
+})();
 
 var SvgComponentGenerator = (function() {
 	'use strict';
@@ -19,7 +74,7 @@ var SvgComponentGenerator = (function() {
 		if (!(this instanceof SvgComponentGenerator)) {
 			return new SvgComponentGenerator(params);
 		}
-
+		
 		this.inputPath = params.inputPath;
 		this.fileContentTransformMethod = (params.fileContentTransformMethod || function (name, content) {
 			return content;
@@ -163,6 +218,28 @@ var SvgComponentGenerator = (function() {
 			});
 
 			var svgroot = window.document.querySelector('svg');
+			cssInline(svgroot, window);
+
+			/*-------*/
+			// remove useless tags
+			/*-------*/
+
+			dom.forEach(svgroot.querySelectorAll('style'), function (styleElement) {
+				dom.remove(styleElement);
+			});
+
+			dom.forEach(svgroot.querySelectorAll('defs'), function (styleElement) {
+				dom.remove(styleElement);
+			});
+
+			dom.forEach(svgroot.querySelectorAll('title'), function (styleElement) {
+				dom.remove(styleElement);
+			});
+
+			/*-------*/
+			/*-------*/
+			/*-------*/
+			
 			svgroot.setAttribute(self.classAttributeString, elementClass);
 			var viewBox = (svgroot.getAttribute('viewBox') || '0 0 '+size.width+' '+size.height).split(' ');
 
@@ -210,7 +287,7 @@ var SvgComponentGenerator = (function() {
 
 			_.forEach(fileList, function (file) {
 				var outputPath = path.join(self.outputPath, file.name);
-
+				
 				self.save(outputPath, file.content);
 			});
 		});
