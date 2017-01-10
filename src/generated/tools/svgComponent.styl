@@ -1,0 +1,40 @@
+
+svgComponent__data = {"arrow-bottom":{"name":"arrow-bottom","className":"ArrowBottom","width":80,"height":28},"logo-xebia":{"name":"logo-xebia","className":"LogoXebia","width":128,"height":44}}
+
+svgComponent__absoluteCenter(svgName, containerWidth, containerHeight = containerWidth, centerX = true, centerY = true)
+	svgElement = svgComponent__data[svgName]
+	svgClass = svgElement.className
+	svgWidth = svgElement.width
+	svgHeight = svgElement.height
+	topPosition = ((containerHeight - svgHeight) / 2)
+	leftPosition = ((containerWidth - svgWidth) / 2)
+
+	.{svgClass}
+		position absolute
+		if centerY
+			top (topPosition)px
+		if centerX
+			left (leftPosition)px
+
+svgComponent__absoluteAlignCenter(svgName, targetWidth, targetHeight = targetWidth, centerX = true, centerY = true)
+	svgElement = svgComponent__data[svgName]
+	svgWidth = svgElement.width
+	svgHeight = svgElement.height
+	topPosition = -((targetWidth - svgHeight) / 2)
+	leftPosition = -((targetWidth - svgWidth) / 2)
+
+	position absolute
+	if centerY
+		top (topPosition)px
+	if centerX
+		left (leftPosition)px
+
+svgComponent__wrapper(svgName)
+	svgElement = svgComponent__data[svgName]
+	svgWidth = svgElement.width
+	svgHeight = svgElement.height
+
+	width (svgWidth)px
+	height (svgHeight)px
+	> svg
+		display block
