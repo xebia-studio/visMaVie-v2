@@ -58,3 +58,5 @@ test/unit/coverage
 test/visual-regression/temp
 test/visual-regression/rendering
 src/generated/
+test/unit/coverage/lcov-report
+test/unit/coverage/lcov.info

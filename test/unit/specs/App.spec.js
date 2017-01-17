@@ -1,6 +1,3 @@
-import Vue from 'vue'
-import App from 'src/main/components/App'
-
 describe('App.vue', () => {
 
 	it('should render correct contents', () => {
@@ -16,4 +13,4 @@ describe('App.vue', () => {
 		// expect(vm.$el.querySelector('.App-title').textContent)
 	 //    .to.equal('My title world !!!')
 	})
-})
+});
