@@ -1,8 +1,8 @@
-var gridNumberOfColumns = 28;
+var gridNumberOfColumns = 30;
 var gridUsefulWidth = usefulWidth = 1400;
 var gutter = 20;
 
-var gridSectionNumberOfColumns = 24;
+var gridSectionNumberOfColumns = 26;
 var gridContainerNumberOfColumns = 16;
 var gridCompactContainerNumberOfColumns = 12;
 

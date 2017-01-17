@@ -1,34 +1,16 @@
 <template lang="jade">
     .Section
         .StatCard-list
-            StatCard(:picto="statData.picto", :stat="statData.stat", :text="statData.text")
-            StatCard(:picto="statData.picto", :stat="statData.stat", :text="statData.text")
-            StatCard(:picto="statData.picto", :stat="statData.stat", :text="statData.text")
-            StatCard(:picto="statData.picto", :stat="statData.stat", :text="statData.text")
-            StatCard(:picto="statData.picto", :stat="statData.stat", :text="statData.text")
-            StatCard(:picto="statData.picto", :stat="statData.stat", :text="statData.text")
-            StatCard(:picto="statData.picto", :stat="statData.stat", :text="statData.text")
-            StatCard(:picto="statData.picto", :stat="statData.stat", :text="statData.text")
+            StatCardList
 </template>
 
 <script>
-import StatCard from 'components/StatCard'
-import HomeStat1 from 'src/generated/components/HomeStat1'
+import StatCardList from 'components/StatCardList'
 
 export default {
 	name: 'Tester',
-	data: function () {
-		return {
-			statData: {
-				picto: HomeStat1,
-				stat: '125',
-				text: 'Consultants en France'
-			}
-		}
-	},
 	components: {
-		StatCard,
-		HomeStat1
+		StatCardList
 	}
 }
 </script>

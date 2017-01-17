@@ -50,12 +50,12 @@
         border-radius 0 0 5px 5px
 
     .StatCard-inner-wrapper
-        padding 10px
+        padding 0 10px 10px 10px
 
     .StatCard-picto-wrapper
         height (100*2/3) %
         width 100%
-        padding 15px 0 10px 0
+        padding-bottom 15px
         border-bottom 1px solid color__$sectionEven
 
     .StatCard-picto
@@ -63,7 +63,6 @@
         margin-left auto
         margin-right auto
         display block
-        width 80px
 
     .StatCard-stat-text-wrapper
         height (100*1/3) %
