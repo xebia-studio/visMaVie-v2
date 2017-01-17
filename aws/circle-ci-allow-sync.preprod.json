@@ -1,5 +1,5 @@
 {
-    "Version": "2012-10-17",
+    "Version": "2017-01-17",
     "Statement": [
         {
             "Sid": "CirleCIAllowSyncBucket",
@@ -8,7 +8,7 @@
                 "s3:ListBucket"
             ],
             "Resource": [
-                "arn:aws:s3:::xebia-fr-2016-preprod"
+                "arn:aws:s3:::vis-ma-vie-preprod"
             ]
         },
         {
@@ -20,7 +20,7 @@
                 "s3:PutObject"
             ],
             "Resource": [
-                "arn:aws:s3:::xebia-fr-2016-preprod/*"
+                "arn:aws:s3:::vis-ma-vie-preprod/*"
             ]
         }
     ]

@@ -5,4 +5,4 @@ deployment:
   staging:
     branch: staging
     commands:
-      - npm run build && aws s3 sync dist s3://xebia-fr-2016-preprod/ --delete
+      - npm run build && aws s3 sync dist s3://vis-ma-vie/ --delete
