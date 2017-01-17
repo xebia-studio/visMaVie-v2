@@ -42,8 +42,8 @@
     _statColor = color__$blue
     _textColor = color__$blue
 
-    _statFontSize = fontsize__$sectionTitle
-    _textFontSize = fontsize__$mainFontSize
+    _statFontSize = font__$sectionTitle
+    _textFontSize = font__$mainFontSize
 
     .StatCard
         background-color white
@@ -77,7 +77,7 @@
     .StatCard-text
         padding-top 10px
         color _textColor
-        font__useTextLight fontsize__$sectionSubTitle
+        font__useTextLight font__$sectionSubTitle
         text-align center
 
 </style>

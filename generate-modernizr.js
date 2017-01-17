@@ -1,25 +1,10 @@
 'use strict';
 
-var modernizr = require("modernizr");
-var fs = require('fs');
 var path = require('path');
 
-var saveFile = require('xebia-web-common/scripts/save-file');
+var generateModernizr = require('xebia-web-common/scripts/generate-modernizr');
 
-modernizr.build(getConfig(), function (result) {
-	var filePath = path.join(__dirname, 'src/generated/tools/modernizr.js');
-
-    saveFile({
-        path: filePath,
-        content: result,
-        reportMessageTransform: function (message) {
-            return 'Generate Modernizr => '+message;
-        }
-    });
-});
-
-function getConfig () {
-return {
+generateModernizr(path.join(__dirname, 'src/generated/tools/modernizr.js'), {
   "classPrefix": "",
   "options": [
     // "addTest",
@@ -298,5 +283,4 @@ return {
     // "workers/webworkers",
     // "xdomainrequest"
   ]
-};
-}
+});

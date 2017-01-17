@@ -28,7 +28,7 @@
 import ParallaxedLayersGroup from 'components/ParallaxedLayersGroup/ParallaxedLayersGroup'
 import ParallaxedLayer from 'components/ParallaxedLayersGroup/ParallaxedLayer'
 
-import ScreenFillerBlock from 'components/ScreenFillerBlock'
+import ScreenFillerBlock from 'xebia-web-common/components/ScreenFillerBlock'
 import LogoXebia from 'src/generated/components/LogoXebia'
 import ArrowBottom from 'src/generated/components/ArrowBottom'
 

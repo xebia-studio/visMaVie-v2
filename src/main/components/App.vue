@@ -15,7 +15,7 @@ export default {
 	global-reset()
 
 	html
-		font-size (fontsize__$mainFontSize px) !important
+		font-size (font__$mainFontSize px) !important
 		overflow-x hidden
 
 	.App

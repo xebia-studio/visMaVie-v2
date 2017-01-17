@@ -21,8 +21,8 @@
 
 <script>
 
-import Slider from 'components/Slider/Slider'
-import SliderSlide from 'components/Slider/SliderSlide'
+import Slider from 'xebia-web-common/components/Slider/Slider'
+import SliderSlide from 'xebia-web-common/components/Slider/SliderSlide'
 
 import { SliderExpertises as settings } from 'settings/components'
 

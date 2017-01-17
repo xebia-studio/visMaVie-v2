@@ -8,8 +8,8 @@ var sectionSubTitle = 12;
 /*-------------*/
 
 module.exports = {
-    _namespace: 'fontsize',
-    mainFontSize: mainFontSize,
+  _namespace: 'font',
+  mainFontSize: mainFontSize,
 	sectionTitle: sectionTitle,
 	sectionSubTitle: sectionSubTitle
 }
