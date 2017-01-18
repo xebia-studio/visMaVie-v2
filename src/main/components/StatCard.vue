@@ -5,7 +5,8 @@
                 .StatCard-picto(:is='picto')
             .StatCard-stat-text-wrapper
                 .StatCard-stat {{stat}}
-                .StatCard-text {{text}}
+                .StatCard-text
+                    span {{text}}
 
 </template>
 
@@ -42,8 +43,8 @@
     _statColor = color__$blue
     _textColor = color__$blue
 
-    _statFontSize = font__$sectionTitle
-    _textFontSize = font__$mainFontSize
+    _statFontSize = font__$cardTitleFontSize
+    _textFontSize = font__$cardTextFontSize
 
     .StatCard
         background-color white
@@ -70,13 +71,19 @@
     .StatCard-stat
         padding-top 10px
         color _statColor
-        font__useTitleBold 36px
+        font__useTitleBold _statFontSize
         text-align center
 
     .StatCard-text
-        padding-top 10px
+        padding-top 5px
         color _textColor
-        font__useTextLight font__$sectionSubTitle
+        font__useTextLight _textFontSize
         text-align center
+        height 32px
+        display table
+        width 100%
+        & span
+            display table-cell
+            vertical-align middle
 
 </style>

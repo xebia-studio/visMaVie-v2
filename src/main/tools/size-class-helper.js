@@ -2,33 +2,36 @@ import SizeClassHelper from 'xebia-web-common/tools/size-class-helper'
 
 let sizeClassHelper = null;
 
+export const config = {
+  'width-compact': {
+    minWidth:0,
+    maxWidth:767
+  },
+  'width-regular': {
+    minWidth:768,
+    maxWidth:1199
+  },
+  'width-large': {
+    minWidth: 1200
+  },
+  'height-compact': {
+    minHeight:0,
+    maxHeight:700
+  }
+};
+
 export const mixin = {
-    methods: {
-        getSizeClassHelper: function () {
-            return sizeClassHelper || (function () {
-                sizeClassHelper = new SizeClassHelper();
+  methods: {
+    getSizeClassHelper: function () {
+      return sizeClassHelper || (function () {
+          sizeClassHelper = new SizeClassHelper();
 
-                sizeClassHelper.setSizeClass('width-compact', {
-                    minWidth:0,
-                    maxWidth:767
-                });
+          for(let sizeClassName in config){
+            sizeClassHelper.setSizeClass(sizeClassName, config[sizeClassName]);
+          }
 
-                sizeClassHelper.setSizeClass('width-regular', {
-                    minWidth:768,
-                    maxWidth:1199
-                });
-
-                sizeClassHelper.setSizeClass('width-large', {
-                    minWidth: 1200
-                });
-
-                sizeClassHelper.setSizeClass('height-compact', {
-                    minHeight:0,
-                    maxHeight:800
-                });
-
-                return sizeClassHelper;
-            })();
-        }
+          return sizeClassHelper;
+        })();
     }
+  }
 };

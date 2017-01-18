@@ -6,8 +6,14 @@
 </template>
 
 <script>
+import { mixin as sizeClassHelper } from 'tools/size-class-helper'
+
 export default {
-	name: 'App'
+	name: 'App',
+	mixins: [sizeClassHelper],
+	created: function () {
+		const sizeClassHelper = this.getSizeClassHelper();
+	}
 }
 </script>
 

@@ -1,15 +1,18 @@
 'use strict';
 
-var mainFontSize = 18;
-
-var sectionTitle = 24;
-var sectionSubTitle = 12;
-
-/*-------------*/
-
 module.exports = {
   _namespace: 'font',
-  mainFontSize: mainFontSize,
-	sectionTitle: sectionTitle,
-	sectionSubTitle: sectionSubTitle
-}
+  mainFontSize: 18,
+
+  textFontSize: 15,
+  textLineHeight: 24,
+
+  sectionTitleFontSize: 36,
+  sectionTitleLineHeight: 40,
+  sectionBaselineMobileFontSize: 24,
+  sectionBaselineDesktopFontSize: 16,
+
+
+  cardTitleFontSize: 36,
+  cardTextFontSize:16
+};
