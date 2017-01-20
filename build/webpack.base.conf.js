@@ -33,13 +33,20 @@ module.exports = {
     }
   },
   resolveLoader: {
-    fallback: [path.join(__dirname, '../node_modules')]
+    fallback: [path.join(__dirname, '../node_modules')],
+    alias: {
+      "xebia-data": path.join(__dirname, "../xebia-data-loader")
+    }
   },
   module: {
     loaders: [
       {
         test: /\.vue$/,
         loader: 'vue'
+      },
+      {
+        test: /\.yaml$/,
+        loader: 'xebia-data!json!yaml'
       },
       {
         test: /\.js$/,

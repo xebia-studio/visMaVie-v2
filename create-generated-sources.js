@@ -1,5 +1,6 @@
 var path = require('path');
 var generateStyles = require('xebia-web-common/scripts/generate-generic-styles');
+var generateImages = require('xebia-web-common/scripts/generate-images');
 
 // Generic settings
 
@@ -13,10 +14,16 @@ generateStyles({
   outputPath: path.join(__dirname, 'src/generated/settings')
 });
 
+generateImages({
+  inputPath: path.join(__dirname, './src/main/assets/images/svg'),
+  toolsOutputPath: path.join(__dirname, './src/generated/tools/svgComponent.styl'),
+  outputPath: path.join(__dirname, './src/generated/components'),
+  sizeAliases: require(path.join(__dirname, './src/main/assets/images/svg/size-aliases.js'))
+});
+
 // Special settings
 
 var sourcesGenerators = [
-	path.join(__dirname, 'generate-images.js'),
 	path.join(__dirname, 'generate-modernizr.js'),
 	path.join(__dirname, 'generate-fonts.js'),
 ];
