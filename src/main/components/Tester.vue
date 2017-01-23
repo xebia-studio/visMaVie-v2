@@ -1,56 +1,23 @@
 <template lang="jade">
-    AppFooter(:siteMap="siteMap", :secondColumnContent="secondColumnContent", :contacts="contacts", :otherSites="otherSites", :socialNetworks="socialNetworks")
+    OfferAccordion(:jobs="jobs", :talentButtonLabel="talentButtonLabel", :jobButtonLabel="jobButtonLabel")
 </template>
 
 <script>
-import AppFooter from 'xebia-web-common/components/AppFooter'
+import OfferAccordion from 'components/OfferAccordion'
 
-import siteMap from 'assets/data/footer/site-map.yaml'
-import contacts from 'assets/data/footer/contacts.yaml'
-import otherSites from 'assets/data/footer/autres-sites.yaml'
-import socialNetworks from 'assets/data/footer/reseaux-sociaux.yaml'
+import annonces from 'assets/data/nous-rejoindre/annonces.yaml'
 
 export default {
 	name: 'Tester',
 	data: function () {
 		return {
-		    siteMap,
-		    secondColumnContent: {
-		        title: 'Nous recrutons',
-		        links: {
-		            'Back End': {
-		                url: 'backend'
-		            },
-		            'Front End': {
-		                url: 'frontend'
-		            },
-		            IoT: {
-		                url: 'iot'
-		            },
-		            'Mobile': {
-		                url: 'mobile'
-		            },
-		            'Big Data': {
-		                url: 'data'
-		            },
-		            'Cloud': {
-		                url: 'cloud'
-		            },
-		            'Méthodes agiles': {
-		                url: 'agiles'
-		            },
-		            'DevOps': {
-		                url: 'devops'
-		            },
-		        }
-		    },
-		    contacts,
-		    otherSites,
-		    socialNetworks
+		    jobs: annonces,
+		    talentButtonLabel: 'Vous avez d\'autres talents ? C\'est par ici !',
+		    jobButtonLabel: 'Postuler !'
 		}
 	},
 	components: {
-	    AppFooter
+	    OfferAccordion
 	}
 }
 </script>

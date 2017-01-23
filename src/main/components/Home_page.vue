@@ -1,11 +1,11 @@
 <template lang="jade">
 	.Home_page
-		RegularSection(:title="statSection.title", :baseline="statSection.baseline")
+		AppSection(:title="statSection.title", :baseline="statSection.baseline")
 			StatCardList(:statData="statSection.statData", slot="section-content")
 </template>
 
 <script>
-import RegularSection from 'components/RegularSection'
+import AppSection from 'components/AppSection'
 import StatCardList from 'components/StatCardList'
 import ParallaxedLayersGroup from 'components/ParallaxedLayersGroup/ParallaxedLayersGroup'
 import ParallaxedLayer from 'components/ParallaxedLayersGroup/ParallaxedLayer'
@@ -91,7 +91,7 @@ export default {
 		ScreenFillerBlock,
 		LogoXebia,
 		ArrowBottom,
-		RegularSection,
+		AppSection,
 		StatCardList,
 		HandWorldPicto,
 		HandCouplePicto,
@@ -252,9 +252,6 @@ export default {
 
 			svg
 				width 100%
-
-	.RegularSection
-		max-width (layout__$gridUsefulWidth)px
 	/*---------------*/
 	/*---------------*/
 
