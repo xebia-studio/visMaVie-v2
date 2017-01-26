@@ -9,7 +9,11 @@ module.exports = {
 		paginationBulletsSpaceBetween: 20
 	},
 	BulletPoints: {
-		transparentBulletSize: 35,
-		blueBulletSize: 20
+		transparentBulletSize: 30,
+		blueBulletSize: 21
+	},
+	OfferAccordion: {
+    jobTitleDesktopHeight: 60,
+    jobTitleDesktopBorder: 1
 	}
 }

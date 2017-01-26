@@ -1,10 +1,14 @@
 <template lang="jade">
-    AppFooter(:siteMap="siteMap", :secondColumnContent="secondColumnContent", :contacts="contacts", :otherSites="otherSites", :socialNetworks="socialNetworks")
+    .NousRejoindre
+        OfferAccordion(:jobs="jobs", :talentButtonLabel="talentButtonLabel", :jobButtonLabel="jobButtonLabel")
+        AppFooter(:siteMap="siteMap", :secondColumnContent="secondColumnContent", :contacts="contacts", :otherSites="otherSites", :socialNetworks="socialNetworks")
 </template>
 
 <script>
-import AppFooter from 'xebia-web-common/components/AppFooter'
+import OfferAccordion from 'components/OfferAccordion';
+import annonces from 'assets/data/nous-rejoindre/annonces.yaml'
 
+import AppFooter from 'xebia-web-common/components/AppFooter'
 import siteMap from 'assets/data/footer/site-map.yaml'
 import contacts from 'assets/data/footer/contacts.yaml'
 import otherSites from 'assets/data/footer/autres-sites.yaml'
@@ -46,10 +50,17 @@ export default {
 		    },
 		    contacts,
 		    otherSites,
-		    socialNetworks
+		    socialNetworks,
+		    jobs: annonces,
+		    talentButtonLabel: 'Vous avez d\'autres talents&nbsp;? C\'est&nbsp;par&nbsp;ici&nbsp;!',
+		    jobButtonLabel: 'Postuler&nbsp;!'
 		}
 	},
+	created: function () {
+            console.log('NousRejoindre created !');
+    },
 	components: {
+	    OfferAccordion,
 	    AppFooter
 	}
 }

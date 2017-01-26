@@ -25,182 +25,155 @@ Lead Tech:
     - Humilité
 Expert:
   Rôle / Missions:
-    - Accompagne la mise en oeuvre de la solution technique
-    - Arbitre les questions techniques de l’équipe de développement
-    - Met en avant les bonnes pratiques de qualité et de développement
+    - Conseil et assistance
+    - Formation
+    - Recommandation techniques
+    - Audit
   Les compétences attendues:
-    - Maîtrise des outils et bonnes pratiques de développement (Craft)
-    - Bonne communication technique
-    - Couverture et profondeur technique
-    - Partage des connaissances
-    - Mentor technique
+    - Expertise
+    - Prise de parole en public
+    - Ouvert sur la communauté
+    - Animateur et formateur
+    - Assistance à la construction d’offres
+    - Assurer la promotion du changement et de l’amélioration technique continue
   Responsabilités:
-    - Assure la bonne mise en oeuvre de la solution technique
-    - Assure que les bonnes pratiques de développements sont utilisées (tests, analyse du code, performance, etc.)
-    - Facilite la mise en place d’un environnement de développement adéquat (outils, machines, environnements, etc.)
-    - Détecte et gère les problèmes de communication dans l’équipe de développement
-    - Il favorise la diffusion des connaissances au sein de l’équipe
-    - Il guide les membres de l’équipe dans leurs choix en rapport à son domaine d’expertise
+    - Analyser, conseiller et faire des recommandations de façon à améliorer l’efficience et l’efficacité des solutions techniques
+    - Travailler en collaboration avec les développeurs afin de chercher et fournir des solutions
+    - Identifier les risques et saisir les opportunités liés à son domaine puis communiquer aux parties prenantes
+    - Assurer la promotion de nouvelles techniques/méthodologie
+    - Animer des formations internes et externes
   Les qualités requises:
-    - Intelligence relationnelle
-    - Écoute et empathie
-    - Assertivité
-    - Prise de parole en groupe
-    - Leadership
-    - Humilité
+    - Bon communiquant
+    - Écoute et synthèse
+    - Sens de l’innovation et créativité
+    - Rigueur
+    - Fédérateur
+    - Pédagogue
 
 Coding Architect:
   Rôle / Missions:
-    - Accompagne la mise en oeuvre de la solution technique
-    - Arbitre les questions techniques de l’équipe de développement
-    - Met en avant les bonnes pratiques de qualité et de développement
+    - Proposer des architectures logicielles homogènes, compatibles et cohérentes avec les exigences d’urbanisme
+    - Définit les orientations techniques en anticipant les évolutions futures
   Les compétences attendues:
-    - Maîtrise des outils et bonnes pratiques de développement (Craft)
-    - Bonne communication technique
-    - Couverture et profondeur technique
-    - Partage des connaissances
-    - Mentor technique
+    - Évaluation des impacts et conseils
+    - Compréhension et partage de la vision d’ensemble
+    - Conception puis mise en oeuvre
+    - Synthétisations
+    - Compréhension des enjeux techniques et métiers
   Responsabilités:
-    - Assure la bonne mise en oeuvre de la solution technique
-    - Assure que les bonnes pratiques de développements sont utilisées (tests, analyse du code, performance, etc.)
-    - Facilite la mise en place d’un environnement de développement adéquat (outils, machines, environnements, etc.)
-    - Détecte et gère les problèmes de communication dans l’équipe de développement
-    - Il favorise la diffusion des connaissances au sein de l’équipe
-    - Il guide les membres de l’équipe dans leurs choix en rapport à son domaine d’expertise
+    - Garantir l’homogénéité d’une gamme de produits logiciels
+    - Concevoir et accompagner la réalisation d’architectures systèmes et logicielles complexes
+    - Analyser les architectures existantes et formaliser des recommandations stratégiques pour l’amélioration ou la refonte
+    - Conseiller les équipes de développement au sujet de la stratégie logicielle ; bus applicatifs, micro services, etc.
   Les qualités requises:
-    - Intelligence relationnelle
-    - Écoute et empathie
-    - Assertivité
-    - Prise de parole en groupe
-    - Leadership
-    - Humilité
+    - Empathie
+    - Ecoute client
+    - Vision d’ensemble
+    - Créativité
+    - Analyse et synthèse
+    - Adaptabilité
+    - Flexibilité
 
 Coach:
   Rôle / Missions:
-    - Accompagne la mise en oeuvre de la solution technique
-    - Arbitre les questions techniques de l’équipe de développement
-    - Met en avant les bonnes pratiques de qualité et de développement
+    - "Coaching d’équipe : coaching d’équipe Agile, Scrum Mastering et direction de projet Agile"
+    - "Coaching tech : coaching craft et devops"
+    - "Coaching d’entreprise : conseil en orga Agile, conduite du changement et coaching de manageur"
   Les compétences attendues:
-    - Maîtrise des outils et bonnes pratiques de développement (Craft)
-    - Bonne communication technique
-    - Couverture et profondeur technique
-    - Partage des connaissances
-    - Mentor technique
+    - "Le coach Agile, c’est 5 postures : consultant, formateur, facilitateur, mentor et coach"
+    - "Le coach Agile, c’est 3 profils : coach métier, coach de transformation et coach technique"
+    - "Le coach Agile, c’est 3 niveaux d’intervention : équipe, programme et entreprise"
+    - "Le coach Agile, c’est 4 types de conseil : conseil en marketing, conseil en informatique, coaching individuel, d’équipe et collectifs, conseil en management et orga"
   Responsabilités:
-    - Assure la bonne mise en oeuvre de la solution technique
-    - Assure que les bonnes pratiques de développements sont utilisées (tests, analyse du code, performance, etc.)
-    - Facilite la mise en place d’un environnement de développement adéquat (outils, machines, environnements, etc.)
-    - Détecte et gère les problèmes de communication dans l’équipe de développement
-    - Il favorise la diffusion des connaissances au sein de l’équipe
-    - Il guide les membres de l’équipe dans leurs choix en rapport à son domaine d’expertise
+    - Déployer l’agilité en entreprise en respectant les cultures, les individus et les valeurs de Xebia
+    - Satisfaire le client
+    - Construire et vendre une mission
+    - Définir les objectifs, les critères de succès, poser et maîtriser le cadre de l’intervention, structurer et planifier la mission
+    - Faire des points de mission réguliers, aller chercher le feedback, faire le suivi budgétaire
+    - Être force de proposition, conseiller, prendre par la main et donner du feedback
+    - Développer les comptes client, trouver de nouvelles missions et de nouveaux collaborateurs
+    - Partager ses connaissances et expériences en interne et en externe, chercher à s’améliorer en permanence et demander de l’aide si besoin
   Les qualités requises:
-    - Intelligence relationnelle
-    - Écoute et empathie
-    - Assertivité
-    - Prise de parole en groupe
-    - Leadership
-    - Humilité
+    - Culture client
+    - Dynamique, entraînant, convainquant, bon communiquant et motivé
+    - Charismatique avec du leadership et de l'assertivité
+    - Tenace, humble, posture neutre, écoute emphatique et sans jugement
+    - Autonome mais aligné, aime le travail en équipe et pratique la culture du feedback
+    - Sang froid, recul et transparence en toute circonstance
+    - Ouvert, pragmatique, concret et opérationnel, anti-dogmatique
+    - Intelligence de situation
+    - Vient de l’IT, du terrain et a déjà eu des responsabilités de delivery
 
 Studio Team Leader:
   Rôle / Missions:
-    - Accompagne la mise en oeuvre de la solution technique
-    - Arbitre les questions techniques de l’équipe de développement
-    - Met en avant les bonnes pratiques de qualité et de développement
+    - Agit comme un Scrum Master
+    - Est le représentant du Product Owner du client au sein de l’équipe (Proxy PO)
+    - Participe au pilotage du projet avec le Studio Delivery Manager (SDM)
   Les compétences attendues:
-    - Maîtrise des outils et bonnes pratiques de développement (Craft)
-    - Bonne communication technique
-    - Couverture et profondeur technique
-    - Partage des connaissances
-    - Mentor technique
+    - Bonne maîtrise des pratiques agiles
+    - Expérience significative dans un environnement agile
+    - Maîtrise de la bonne gestion d’un backlog
+    - Notions en gestion de projet
+    - Bonne connaissance des outils de gestion de projets agiles
+    - Base ou Formation technique
   Responsabilités:
-    - Assure la bonne mise en oeuvre de la solution technique
-    - Assure que les bonnes pratiques de développements sont utilisées (tests, analyse du code, performance, etc.)
-    - Facilite la mise en place d’un environnement de développement adéquat (outils, machines, environnements, etc.)
-    - Détecte et gère les problèmes de communication dans l’équipe de développement
-    - Il favorise la diffusion des connaissances au sein de l’équipe
-    - Il guide les membres de l’équipe dans leurs choix en rapport à son domaine d’expertise
+    - Garantir le cadre agile du projet
+    - Accompagner le Product Owner du client
+    - Faciliter les interactions entre l’ensemble des parties prenantes, et garantir la fluidité des cérémonies agiles
+    - Planifier le travail de l’équipe
+    - Fournir des indicateurs de prédictibilité / avancement
+    - Suivre les indicateurs de qualité
+    - Aider à rédiger les éléments des comité de pilotage / kick-off en lien avec le SDM
+    - Être un catalyseur de l’amélioration continue au sein de l’équipe
   Les qualités requises:
-    - Intelligence relationnelle
-    - Écoute et empathie
-    - Assertivité
-    - Prise de parole en groupe
-    - Leadership
-    - Humilité
+    - Cultive une bonne intelligence relationnelle / situationnelle
+    - Sait communiquer efficacement vers des profils très variés
+    - Sait obtenir un consensus raisonnable car il est diplomate
+    - A une propension naturelle à la résolution de problèmes
+    - A une bonne capacité de discernement
+    - A un esprit de synthèse
+    - Joue collectif avant tout
 
 Scrum Master:
   Rôle / Missions:
-    - Accompagne la mise en oeuvre de la solution technique
-    - Arbitre les questions techniques de l’équipe de développement
-    - Met en avant les bonnes pratiques de qualité et de développement
+    - Être le garant de la méthode, du respect des principes, des valeurs et des pratiques
+    - S’assurer que les décisions prises par l’équipe sont appliquées
+    - S’assurer du bon déroulement des sprints
   Les compétences attendues:
-    - Maîtrise des outils et bonnes pratiques de développement (Craft)
-    - Bonne communication technique
-    - Couverture et profondeur technique
-    - Partage des connaissances
-    - Mentor technique
+    - Bonne maîtrise de Scrum
+    - Expérience dans un environnement agile
+    - Facilités de présentation, de communication et de négociation
+    - Sait coder
   Responsabilités:
-    - Assure la bonne mise en oeuvre de la solution technique
-    - Assure que les bonnes pratiques de développements sont utilisées (tests, analyse du code, performance, etc.)
-    - Facilite la mise en place d’un environnement de développement adéquat (outils, machines, environnements, etc.)
-    - Détecte et gère les problèmes de communication dans l’équipe de développement
-    - Il favorise la diffusion des connaissances au sein de l’équipe
-    - Il guide les membres de l’équipe dans leurs choix en rapport à son domaine d’expertise
+    - Mettre en place et animer les cérémonies (Sprint planning / Daily Scrum / Sprint review & Démo / Rétrospective)
+    - Agir en facilitateur
+    - "Éliminer les obstacles : Identifier les entraves et aider l’équipe à faire émerger leurs résolutions"
+    - Aider l'équipe à travailler de façon autonome et à s'améliorer constamment
+    - S'assure que chacun participe pleinement aux travaux de l'équipe
   Les qualités requises:
-    - Intelligence relationnelle
-    - Écoute et empathie
-    - Assertivité
-    - Prise de parole en groupe
-    - Leadership
-    - Humilité
+    - Fait preuve d'humilité et d'empathie
+    - Est pédagogue et diplomate
+    - Capacité d’écoute
+    - Persuasif / assertif
+    - A une propension naturelle à la résolution de problèmes
+    - Sait motiver une équipe
 
 Data Scientist:
   Rôle / Missions:
-    - Accompagne la mise en oeuvre de la solution technique
-    - Arbitre les questions techniques de l’équipe de développement
-    - Met en avant les bonnes pratiques de qualité et de développement
+    - Lorem
   Les compétences attendues:
-    - Maîtrise des outils et bonnes pratiques de développement (Craft)
-    - Bonne communication technique
-    - Couverture et profondeur technique
-    - Partage des connaissances
-    - Mentor technique
+    - Lorem
   Responsabilités:
-    - Assure la bonne mise en oeuvre de la solution technique
-    - Assure que les bonnes pratiques de développements sont utilisées (tests, analyse du code, performance, etc.)
-    - Facilite la mise en place d’un environnement de développement adéquat (outils, machines, environnements, etc.)
-    - Détecte et gère les problèmes de communication dans l’équipe de développement
-    - Il favorise la diffusion des connaissances au sein de l’équipe
-    - Il guide les membres de l’équipe dans leurs choix en rapport à son domaine d’expertise
+    - Lorem
   Les qualités requises:
-    - Intelligence relationnelle
-    - Écoute et empathie
-    - Assertivité
-    - Prise de parole en groupe
-    - Leadership
-    - Humilité
+    - Lorem
 
 Data Engineer:
   Rôle / Missions:
-    - Accompagne la mise en oeuvre de la solution technique
-    - Arbitre les questions techniques de l’équipe de développement
-    - Met en avant les bonnes pratiques de qualité et de développement
+    - Ipsum
   Les compétences attendues:
-    - Maîtrise des outils et bonnes pratiques de développement (Craft)
-    - Bonne communication technique
-    - Couverture et profondeur technique
-    - Partage des connaissances
-    - Mentor technique
+    - Ipsum
   Responsabilités:
-    - Assure la bonne mise en oeuvre de la solution technique
-    - Assure que les bonnes pratiques de développements sont utilisées (tests, analyse du code, performance, etc.)
-    - Facilite la mise en place d’un environnement de développement adéquat (outils, machines, environnements, etc.)
-    - Détecte et gère les problèmes de communication dans l’équipe de développement
-    - Il favorise la diffusion des connaissances au sein de l’équipe
-    - Il guide les membres de l’équipe dans leurs choix en rapport à son domaine d’expertise
+    - Ipsum
   Les qualités requises:
-    - Intelligence relationnelle
-    - Écoute et empathie
-    - Assertivité
-    - Prise de parole en groupe
-    - Leadership
-    - Humilité
+    - Ipsum

@@ -3,7 +3,7 @@ var gridUsefulWidth = usefulWidth = 1200;
 var gutter = 20;
 
 var gridSectionNumberOfColumns = 26;
-var gridContainerNumberOfColumns = 16;
+var gridContainerNumberOfColumns = 24;
 var gridCompactContainerNumberOfColumns = 12;
 
 /*--------------*/

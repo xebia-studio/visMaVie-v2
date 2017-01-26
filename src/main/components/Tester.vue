@@ -12,7 +12,7 @@ export default {
 	data: function () {
 		return {
 		    jobs: annonces,
-		    talentButtonLabel: 'Vous avez d\'autres talents ? C\'est par ici !',
+		    talentButtonLabel: 'Vous avez d\'autres talents&nbsp;? C\'est&nbsp;par&nbsp;ici&nbsp;!',
 		    jobButtonLabel: 'Postuler !'
 		}
 	},
