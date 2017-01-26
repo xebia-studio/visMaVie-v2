@@ -13,9 +13,9 @@ import {
 	includes,
 	trim,
 	every
-} from 'lodash'
+} from 'lodash';
 
-import { mixin } from 'tools/size-class-helper'
+import { mixin } from 'tools/size-class-helper';
 
 const defaultPercentageOfScreenFilled = 100;
 
@@ -31,7 +31,7 @@ export default {
 	data: function () {
 		return {
 			blockHeight: 0
-		}
+		};
 	},
 	created: function () {
 		const sizeClassHelper = this.getSizeClassHelper();
@@ -47,7 +47,7 @@ export default {
 				if (isObject(percentage)) {
 					const defaultPercentage = isNumber(percentage.default) ? percentage.default : defaultPercentageOfScreenFilled;
 
-					for(let sizeClass in percentage){
+					for(const sizeClass in percentage){
 						if(sizeClass != 'default'){
 
 							const sizeClassList = sizeClass.split('&');
@@ -64,14 +64,14 @@ export default {
 				}
 
 				return calc(percentage);
-			})()
+			})();
 		};
 
 		sizeClassHelper.on('resize', resize);
 
 		resize(sizeClassHelper.size);
 	}
-}
+};
 </script>
 
 <style lang="stylus">

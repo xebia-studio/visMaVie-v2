@@ -3,8 +3,8 @@ require('src/generated/tools/modernizr');
 
 /*--------------*/
 
-import Vue from 'vue'
-import VueRouter from 'vue-router'
+import Vue from 'vue';
+import VueRouter from 'vue-router';
 
 /*--------------*/
 
@@ -17,4 +17,4 @@ new Vue({
 		mode: 'history',
 		routes
 	})
-}).$mount('#app')
+}).$mount('#app');

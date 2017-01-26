@@ -19,7 +19,7 @@ export default {
 	components: {
 	    OfferAccordion
 	}
-}
+};
 </script>
 
 <style lang="stylus">

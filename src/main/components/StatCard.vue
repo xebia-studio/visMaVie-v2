@@ -11,7 +11,7 @@
 </template>
 
 <script>
-    import { mixin as fontLoader } from 'tools/font-loader'
+    import { mixin as fontLoader } from 'tools/font-loader';
 
     export default {
         name: 'StatCard',
@@ -35,7 +35,7 @@
                 'title': 'bold'
             });
         }
-    }
+    };
 </script>
 
 <style lang="stylus">

@@ -29,8 +29,10 @@ const routes = concat(
   require('./test-block')
 );
 
-module.exports = [{
-  path : '/',
-  component : App,
-  children : routes
-}];
+module.exports = [
+	{
+		path:'/',
+		component: App,
+		children : routes
+	}
+];

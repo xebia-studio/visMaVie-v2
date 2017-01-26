@@ -1,9 +1,9 @@
-import { assign, isString, isArray, forEach, isObject, isBoolean, map, includes, has} from 'lodash'
+import { assign, isString, isArray, forEach, isObject, isBoolean, map, includes, has} from 'lodash';
 
 const WebFont = require('webfontloader');
 
 /* ------------------ */
-import settings from 'settings/fonts.js'
+import settings from 'settings/fonts.js';
 const metaKeys = ['_family', '_type', '_subset'];
 /* ------------------ */
 // settings/fonts.js
@@ -36,10 +36,10 @@ const getFontVariationsCache = {};
 function getFontVariations(fontName) {
 	if (!getFontVariationsCache[fontName]) {
 		const variations = [];
-		let settingsVariations = settings[fontName];
+		const settingsVariations = settings[fontName];
 
 		if ( isObject(settingsVariations) ) {
-			for(let variationName in settingsVariations){
+			for(const variationName in settingsVariations){
 				if(!includes(metaKeys, variationName)) {
 					variations.push(variationName);
 				}
@@ -108,10 +108,10 @@ const loader = {
 		}
 
 		if(isObject(fonts)){
-			let googleFonts = {};
+			const googleFonts = {};
 
-			for(let fontName in fonts){
-				let settingsVariations = settings[fontName];
+			for(const fontName in fonts){
+				const settingsVariations = settings[fontName];
 				let fontVariations = fonts[fontName];
 
 				if (!isObject(settingsVariations)){
@@ -133,14 +133,14 @@ const loader = {
 				}
 
 				if(!isObject(fontVariations)){
-					throw new Error('When using the method loadFont, fonts variations must be of type Boolean, String, Array or Object.')
+					throw new Error('When using the method loadFont, fonts variations must be of type Boolean, String, Array or Object.');
 				}
 				
 				if(settingsVariations._type === 'google'){
 					googleFonts[fontName] = fontVariations;
 				}
 				else{
-					throw new Error('The font loader do not handle yet other font types than google. You can directly use webfontloader if needed.')
+					throw new Error('The font loader do not handle yet other font types than google. You can directly use webfontloader if needed.');
 				}
 			}
 			
@@ -176,7 +176,7 @@ const loader = {
 							return settingsVariations[variation];
 						}
 
-						throw new Error('No font variation named "'+variation+'" defined for font named "'+fontName+'" in settings/fonts.')
+						throw new Error('No font variation named "'+variation+'" defined for font named "'+fontName+'" in settings/fonts.');
 					}).join(',')+(subset.length > 0 ? ':'+subset.join(',') : '');
 				}
 
@@ -186,10 +186,10 @@ const loader = {
 			loader.loadGoogleFont(googleConfigFamilies, callbacks);
 		}
 		else{
-			throw new Error('The fonts parameter when using loadFont method must be a String, an Array or an Object.')
+			throw new Error('The fonts parameter when using loadFont method must be a String, an Array or an Object.');
 		}
 	}
-}
+};
 
 const mixin = {
 	methods: loader

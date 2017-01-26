@@ -1,4 +1,4 @@
-import TweenHelper from 'xebia-web-common/tools/tween-helper'
+import TweenHelper from 'xebia-web-common/tools/tween-helper';
 
 let tweenHelper = null;
 
