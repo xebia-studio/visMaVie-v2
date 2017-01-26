@@ -5,30 +5,30 @@ var orange = '#FBB03B';
 var flashOrange = '#ff6444';
 var blue = '#424661';
 
-var greyMedium = '#CCCCCC';
-var greyExtraLight = '#F2F2F2';
-var greyLight = '#E6E6E6';
-var greyMobileNavigationBar = '#F4F3F2';
+const greyMedium = '#CCCCCC';
+const greyExtraLight = '#F2F2F2';
+const greyLight = '#E6E6E6';
+const greyMobileNavigationBar = '#F4F3F2';
 
 var lightBlue = '#3fa9f5';
 
 /*-------------*/
 
-var uiDecoration = orchid;
+const uiDecoration = orchid;
 
-var uiEnabled = orchid;
-var uiEnabledText = 'white';
+const uiEnabled = orchid;
+const uiEnabledText = 'white';
 
 var uiImportantEnabled = orange;
 var uiImportantEnabledText = 'white';
 var uiImportantClickable = flashOrange;
 
-var title = blue;
-var textLight = '#999999';
-var text = '#666666';
+const title = blue;
+const textLight = '#999999';
+const text = '#666666';
 
-var sectionOdd = 'white';
-var sectionEven = greyLight;
+const sectionOdd = 'white';
+const sectionEven = greyLight;
 
 /*--------------*/
 
@@ -54,4 +54,4 @@ module.exports = {
   greyMobileNavigationBar: greyMobileNavigationBar,
   sectionOdd: sectionOdd,
 	sectionEven: sectionEven
-}
+};

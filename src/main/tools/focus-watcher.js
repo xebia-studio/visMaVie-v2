@@ -1,4 +1,4 @@
-import FocusWatcher from 'xebia-web-common/tools/focus-watcher'
+import FocusWatcher from 'xebia-web-common/tools/focus-watcher';
 
 let focusWatcher = null;
 
@@ -12,4 +12,4 @@ export const mixin = {
         })();
     }
   }
-}
+};

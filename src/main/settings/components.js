@@ -16,4 +16,4 @@ module.exports = {
     jobTitleDesktopHeight: 60,
     jobTitleDesktopBorder: 1
 	}
-}
+};

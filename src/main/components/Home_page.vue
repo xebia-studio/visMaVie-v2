@@ -11,23 +11,23 @@ import ParallaxedLayersGroup from 'components/ParallaxedLayersGroup/ParallaxedLa
 import ParallaxedLayer from 'components/ParallaxedLayersGroup/ParallaxedLayer'
 import ScreenFillerBlock from 'xebia-web-common/components/ScreenFillerBlock'
 
-import LogoXebia from 'xebia-web-common/generated/components/LogoXebia'
-import ArrowBottom from 'xebia-web-common/generated/components/ArrowBottom'
-import HandWorldPicto from 'src/generated/components/HandWorldPicto'
-import HandCouplePicto from 'src/generated/components/HandCouplePicto'
-import HandPaperPenPicto from 'src/generated/components/HandPaperPenPicto'
-import HandCoinPicto from 'src/generated/components/HandCoinPicto'
-import HandBalloonsPicto from 'src/generated/components/HandBalloonsPicto'
-import HandMoneyPigPicto from 'src/generated/components/HandMoneyPigPicto'
-import HandMicroPicto from 'src/generated/components/HandMicroPicto'
-import HandFactoryPicto from 'src/generated/components/HandFactoryPicto'
+import LogoXebia from 'xebia-web-common/generated/components/LogoXebia';
+import ArrowBottom from 'xebia-web-common/generated/components/ArrowBottom';
+import HandWorldPicto from 'src/generated/components/HandWorldPicto';
+import HandCouplePicto from 'src/generated/components/HandCouplePicto';
+import HandPaperPenPicto from 'src/generated/components/HandPaperPenPicto';
+import HandCoinPicto from 'src/generated/components/HandCoinPicto';
+import HandBalloonsPicto from 'src/generated/components/HandBalloonsPicto';
+import HandMoneyPigPicto from 'src/generated/components/HandMoneyPigPicto';
+import HandMicroPicto from 'src/generated/components/HandMicroPicto';
+import HandFactoryPicto from 'src/generated/components/HandFactoryPicto';
 
-import { mixin as fontLoader } from 'tools/font-loader'
-import { mixin as scrollController } from 'xebia-web-common/tools/scroll-controller'
-import { mixin as tweenHelper } from 'xebia-web-common/tools/tween-helper'
-import { mixin as sizeClassHelper } from 'xebia-web-common/tools/size-class-helper'
+import { mixin as fontLoader } from 'tools/font-loader';
+import { mixin as scrollController } from 'xebia-web-common/tools/scroll-controller';
+import { mixin as tweenHelper } from 'xebia-web-common/tools/tween-helper';
+import { mixin as sizeClassHelper } from 'xebia-web-common/tools/size-class-helper';
 
-import { Home_page as settings } from 'settings/components'
+import { Home_page as settings } from 'settings/components';
 
 export default {
 	name: 'Home_page',
@@ -83,7 +83,7 @@ export default {
                     text: 'Fondations techniques'
                 }]
             }
-		}
+		};
 	},
 	components: {
 		ParallaxedLayersGroup,
@@ -124,11 +124,11 @@ export default {
 				endValue: this.getSizeClassHelper().size.height,
 				easingFunction: 'inOutQuad'
 			},  currentValue => {
-				this.getScrollController().scrollTo(currentValue)
+				this.getScrollController().scrollTo(currentValue);
 			});
 		}
 	}
-}
+};
 </script>
 
 <style lang="stylus">

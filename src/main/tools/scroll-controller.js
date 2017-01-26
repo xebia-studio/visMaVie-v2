@@ -1,4 +1,4 @@
-import ScrollController from 'xebia-web-common/tools/scroll-controller'
+import ScrollController from 'xebia-web-common/tools/scroll-controller';
 
 let scrollController = null;
 

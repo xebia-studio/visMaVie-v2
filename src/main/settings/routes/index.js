@@ -32,4 +32,4 @@ module.exports = [
 		component: App,
 		children : routes
 	}
-]
+];

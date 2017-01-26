@@ -1,5 +1,6 @@
 var gridNumberOfColumns = 30;
-var gridUsefulWidth = usefulWidth = 1400;
+var gridUsefulWidth = 1400;
+const usefulWidth = 1400;
 var gutter = 20;
 
 var gridSectionNumberOfColumns = 26;
