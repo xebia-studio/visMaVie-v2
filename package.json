@@ -10,8 +10,9 @@
     "build": "npm run create-generated-sources && node build/build.js",
     "unit": "karma start test/unit/karma.conf.js --single-run",
     "visual-regression": "node test/visual-regression",
-    "test": "dependency-check package.json --entry src/main/root.js & npm run unit"
-  },
+    "test": "dependency-check package.json --entry src/main/root.js & npm run unit",
+		"eslint": "eslint --ext js,vue build config src --fix"
+	},
   "dependencies": {
     "@alexistessier/dom": "^3.0.5",
     "babel-runtime": "^6.20.0",
