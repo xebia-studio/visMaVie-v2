@@ -12,7 +12,7 @@ export default {
 	name: 'App',
 	mixins: [sizeClassHelper],
 	created: function () {
-		const sizeClassHelper = this.getSizeClassHelper();
+//		const sizeClassHelper = this.getSizeClassHelper();
 	}
 };
 </script>

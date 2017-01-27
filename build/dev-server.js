@@ -1,13 +1,15 @@
 'use strict';
 
-require('./check-versions')();
-const config = require('../config');
-if (!process.env.NODE_ENV) process.env.NODE_ENV = JSON.parse(config.dev.env.NODE_ENV);
 const path = require('path');
 const express = require('express');
 const webpack = require('webpack');
 const opn = require('opn');
 const proxyMiddleware = require('http-proxy-middleware');
+
+require('./check-versions')();
+const config = require('../config');
+
+if (!process.env.NODE_ENV) process.env.NODE_ENV = JSON.parse(config.dev.env.NODE_ENV);
 const webpackConfig = process.env.NODE_ENV === 'testing'
   ? require('./webpack.prod.conf')
   : require('./webpack.dev.conf');

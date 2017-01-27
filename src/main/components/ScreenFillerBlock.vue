@@ -7,10 +7,7 @@
 
 import {
 	isObject,
-	isFunction,
 	isNumber,
-	isArray,
-	includes,
 	trim,
 	every
 } from 'lodash';
