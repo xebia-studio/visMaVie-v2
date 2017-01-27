@@ -1,6 +1,5 @@
 <template lang="jade">
-    .CTAButton
-        a(:href="link", target="_blank" v-html="label")
+    a.CTAButton(:href="link", :target="newTab ? '_blank' : '_self'", v-html="label", @click.stop="() => null")
 </template>
 
 <script>
@@ -17,6 +16,10 @@
             link: {
                 type: String,
                 required: false
+            },
+            newTab: {
+                type: Boolean,
+                required: false
             }
         },
         created: function () {
@@ -31,15 +34,14 @@
     _CTAButtonBackgroundColor = color__$flashOrange
 
     .CTAButton
+        display block
         text-transform uppercase
         background-color _CTAButtonBackgroundColor
         color white
-        padding 14px 42px
-        border-radius 5px
-        display table
         text-align center
         font__useTextRegular font__$textFontSize
-        & span
-            display table-cell
-            vertical-align middle
+        text-decoration none
+        padding 14px 42px
+        border-radius 5px
+
 </style>
