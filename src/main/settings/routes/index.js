@@ -1,7 +1,7 @@
-import {get, isUndefined, concat, includes, keys, kebabCase} from 'lodash'
+import {get, isUndefined, concat, includes, keys, kebabCase} from 'lodash';
 
-import App from 'components/App'
-import annonces from 'assets/data/nous-rejoindre/annonces.yaml'
+import App from 'components/App';
+import annonces from 'assets/data/nous-rejoindre/annonces.yaml';
 
 function isAValidJob(job) {
   return includes(keys(annonces).map((jobKey) => kebabCase(jobKey)), job)

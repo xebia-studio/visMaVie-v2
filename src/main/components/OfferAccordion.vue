@@ -62,7 +62,7 @@
                 jobTitleDesktopBorder: settings.jobTitleDesktopBorder,
                 isWidthCompact: this.getSizeClassHelper().isActive('width-compact'),
                 jobStyle: _.mapValues(this.jobs, (value) => undefined)
-            }
+            };
         },
         methods: {
             isJobActive: function (job) {
@@ -122,7 +122,7 @@
                 this.updateLayoutOnResize();
             };
             this.resizeListenerArguments = ['change', resize];
-            this.getSizeClassHelper().on(...this.resizeListenerArguments)
+            this.getSizeClassHelper().on(...this.resizeListenerArguments);
         },
         mounted: function () {
             this.updateLayoutOnResize();
@@ -143,12 +143,12 @@
             }
         },
         beforeDestroy: function () {
-            this.getSizeClassHelper().off(...this.resizeListenerArguments)
+            this.getSizeClassHelper().off(...this.resizeListenerArguments);
         },
         components: {
             CTAButton
         }
-    }
+    };
 </script>
 
 <style lang="stylus">

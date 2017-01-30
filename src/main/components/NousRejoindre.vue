@@ -51,7 +51,7 @@ export default {
 		    technos: technos.technos,
 		    quiSontLesXebians,
 		    lesPlus
-		}
+		};
 	},
 	computed: {
 	    quiSontLesXebiansImgSrc : function() {
@@ -72,7 +72,7 @@ export default {
 	    PictoQuoteOrangeRight,
 	    BulletList
 	}
-}
+};
 </script>
 
 <style lang="stylus">

@@ -21,7 +21,7 @@ export default {
 	data: function () {
 	    return {
 	        technoList: []
-	    }
+	    };
 	},
 	methods: {
 	    buildTechnoList: function() {
@@ -42,15 +42,15 @@ export default {
             this.updateLayoutOnResize();
         };
         this.resizeListenerArguments = ['resize', resize];
-        this.getSizeClassHelper().on(...this.resizeListenerArguments)
+        this.getSizeClassHelper().on(...this.resizeListenerArguments);
     },
     mounted: function () {
         this.updateLayoutOnResize();
     },
     beforeDestroy: function () {
-        this.getSizeClassHelper().off(...this.resizeListenerArguments)
+        this.getSizeClassHelper().off(...this.resizeListenerArguments);
     },
-}
+};
 </script>
 
 <style lang="stylus">
