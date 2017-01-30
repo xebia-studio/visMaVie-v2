@@ -1,8 +1,8 @@
 <template lang="jade">
     .NousRejoindre
-        AppSection(:title="'Nous recrutons :'")
+        AppSection.AppSection-even(:title="'Nous recrutons :'")
             OfferAccordion(:jobs="jobs", :talentButtonLabel="talentButtonLabel", :jobButtonLabel="jobButtonLabel", slot="section-content")
-        AppSection
+        AppSection.AppSection-even
             NosTechnos(:technos="technos", slot="section-content")
         AppFooter(:siteMap="siteMap", :secondColumnContent="secondColumnContent", :contacts="contacts", :otherSites="otherSites", :socialNetworks="socialNetworks")
 </template>
@@ -11,16 +11,17 @@
 import AppSection from 'components/AppSection';
 
 import OfferAccordion from 'components/OfferAccordion';
-import annonces from 'assets/data/nous-rejoindre/annonces.yaml'
+import annonces from 'assets/data/nous-rejoindre/annonces.yaml';
 
 import NosTechnos from 'components/NosTechnos';
 import technos from 'assets/data/nous-rejoindre/technos.yaml';
 
-import AppFooter from 'xebia-web-common/components/AppFooter'
-import siteMap from 'assets/data/footer/site-map.yaml'
-import contacts from 'assets/data/footer/contacts.yaml'
-import otherSites from 'assets/data/footer/autres-sites.yaml'
-import socialNetworks from 'assets/data/footer/reseaux-sociaux.yaml'
+import AppFooter from 'xebia-web-common/components/AppFooter';
+import nousRecrutons from 'assets/data/footer/nous-recrutons.yaml';
+import siteMap from 'assets/data/footer/site-map.yaml';
+import contacts from 'assets/data/footer/contacts.yaml';
+import otherSites from 'assets/data/footer/autres-sites.yaml';
+import socialNetworks from 'assets/data/footer/reseaux-sociaux.yaml';
 
 export default {
 	name: 'NousRejoindre',
@@ -28,33 +29,8 @@ export default {
 		return {
 		    siteMap,
 		    secondColumnContent: {
-		         title: 'Nous recrutons',
-		        links: {
-		            'Back End': {
-		                url: 'backend'
-		            },
-		            'Front End': {
-		                url: 'frontend'
-		            },
-		            IoT: {
-		                url: 'iot'
-		            },
-		            'Mobile': {
-		                url: 'mobile'
-		            },
-		            'Big Data': {
-		                url: 'data'
-		            },
-		            'Cloud': {
-		                url: 'cloud'
-		            },
-		            'Méthodes agiles': {
-		                url: 'agiles'
-		            },
-		            'DevOps': {
-		                url: 'devops'
-		            },
-		        }
+		        title: 'Nous Recrutons',
+		        links: nousRecrutons
 		    },
 		    contacts,
 		    otherSites,

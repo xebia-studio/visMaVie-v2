@@ -2,7 +2,7 @@
     .AppSection
         .AppSection-useful-width-box
             .AppSection-inner-wrapper
-                .AppSection-title {{title}}
+                .AppSection-title(v-if="title") {{title}}
                 .AppSection-baseline(v-if="baseline") {{baseline}}
                 slot(name="section-content")
 </template>
@@ -42,6 +42,13 @@
 
     .AppSection
         max-width (layout__$gridUsefulWidth)px
+        padding 20px 0
+
+    .AppSection-even
+        background-color color__$sectionEven
+
+    .AppSection-odd
+        background-color color__$sectionOdd
 
     .AppSection-useful-width-box
         layout__outerBox()
@@ -52,10 +59,6 @@
         font__useTitleBold _appSectionTitleFontSize
         color _appSectionTitleColor
         margin-bottom 30px
-
-    .size-class-not-width-compact
-        .AppSection-title
-            margin-bottom 30px
 
     AppSection-baseline
         font__useTextRegular _appSectionBaselineMobileFontSize

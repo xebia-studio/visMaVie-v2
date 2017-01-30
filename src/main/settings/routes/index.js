@@ -1,7 +1,7 @@
 import App from 'components/App'
 import { concat, includes, keys, kebabCase } from 'lodash'
 
-import annonces from 'assets/data/nous-rejoindre/annonces.yaml';
+import annonces from 'assets/data/nous-rejoindre/annonces.yaml'
 
 const routes = concat(
 	[
