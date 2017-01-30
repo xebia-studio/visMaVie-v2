@@ -61,7 +61,7 @@ function formatSVG(value) {
       loaderError('Impossible to find the svg "'+value+'" in the assets/svg');
     }
 
-    return componentName;
+    return value;
   }
 
   if(_.isArray(value)){

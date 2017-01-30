@@ -1,8 +1,10 @@
 <template lang="jade">
     .AppSection
-        .AppSection-title {{title}}
-        .AppSection-baseline {{baseline}}
-        slot(name="section-content")
+        .AppSection-useful-width-box
+            .AppSection-inner-wrapper
+                .AppSection-title {{title}}
+                .AppSection-baseline(v-if="baseline") {{baseline}}
+                slot(name="section-content")
 </template>
 
 <script>
@@ -14,10 +16,11 @@
         props: {
             title: {
                 type: String,
-                required: true
+                required: false
             },
             baseline: {
-                type: String
+                type: String,
+                required: false
             }
         },
         created: function () {
@@ -40,6 +43,11 @@
     .AppSection
         max-width (layout__$gridUsefulWidth)px
 
+    .AppSection-useful-width-box
+        layout__outerBox()
+    .AppSection-inner-wrapper
+        layout__innerBox()
+
     .AppSection-title
         font__useTitleBold _appSectionTitleFontSize
         color _appSectionTitleColor
@@ -47,12 +55,12 @@
 
     .size-class-not-width-compact
         .AppSection-title
-            margin-bottom 15px
+            margin-bottom 30px
 
     AppSection-baseline
         font__useTextRegular _appSectionBaselineMobileFontSize
         color _appSectionBaselineColor
-        margin-bottom 30px
+        margin-bottom 15px
 
     .size-class-not-width-compact
         .AppSection-baseline

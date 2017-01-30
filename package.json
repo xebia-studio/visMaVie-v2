@@ -21,10 +21,9 @@
     "vue": "^2.1.0",
     "vue-router": "^2.1.1",
     "webfontloader": "^1.6.27",
-    "xebia-web-common": "git+ssh://git@github.com:xebia-france/xebia-web-common.git#bullet-icons"
+    "xebia-web-common": "git+ssh://git@github.com:xebia-france/xebia-web-common.git#technos-logo"
   },
   "devDependencies": {
-    "@alexistessier/report": "^1.0.4",
     "autoprefixer": "^6.4.0",
     "babel-core": "^6.0.0",
     "babel-loader": "^6.0.0",
@@ -65,7 +64,6 @@
     "mocha": "^3.1.0",
     "modernizr": "^3.3.1",
     "nib": "^1.1.2",
-    "nl2br": "0.0.3",
     "opn": "^4.0.2",
     "ora": "^0.3.0",
     "pageres": "^4.2.0",

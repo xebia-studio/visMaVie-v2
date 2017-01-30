@@ -35,7 +35,7 @@ module.exports = {
   resolveLoader: {
     fallback: [path.join(__dirname, '../node_modules')],
     alias: {
-      "xebia-data": path.join(__dirname, "../xebia-data-loader")
+      "xebia-data": path.join(__dirname, "../node_modules/xebia-web-common/xebia-data-loader")
     }
   },
   module: {
@@ -84,5 +84,8 @@ module.exports = {
     import: [
       '~src/main/tools/index.styl'
     ]
+  },
+  'xebia-data': {
+    svgComponentBasePath: './src/main/tools/svg-component'
   }
 }

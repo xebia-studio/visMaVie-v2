@@ -21,13 +21,10 @@ export default {
 </script>
 
 <style lang="stylus">
-    .StatCard-list
-        layout__gridBlock(24, 1)
-
     .size-class-width-compact
-        _grid('.StatCard', 24, 2, 1, 3vw)
+        _grid('.StatCard', layout__$gridContainerNumberOfColumns, 2, 1, 3vw)
 
     .size-class-not-width-compact
-        _grid('.StatCard', 24, 4, 2, 40px)
+        _grid('.StatCard', layout__$gridContainerNumberOfColumns, 4, 2, 40px)
 
 </style>

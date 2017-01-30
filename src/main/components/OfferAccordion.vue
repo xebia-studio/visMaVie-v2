@@ -153,6 +153,8 @@
     .OfferAccordion-jobs
         width 100%
         float left
+        .size-class-not-width-compact &
+            position relative
 
     .OfferAccordion-job
         width 100%
@@ -198,7 +200,7 @@
         text-transform uppercase
         width auto
         .size-class-not-width-compact &
-            padding ((_jobTitleDesktopHeight - _jobFontSize)/2)px 20px ((_jobTitleDesktopHeight - _jobFontSize)/2)px (_jobTitleNumberWidth + 30)px
+            padding ((_jobTitleDesktopHeight - _jobFontSize)/2)px 0 ((_jobTitleDesktopHeight - _jobFontSize)/2)px (_jobTitleNumberWidth + 30)px
 
     .OfferAccordion-job-title-label
         padding ((_jobTitleMobileHeight - _jobFontSize)/2)px 10px ((_jobTitleMobileHeight - _jobFontSize)/2)px (_jobTitleNumberWidth + 10)px
