@@ -1,16 +1,16 @@
-Back End:
-  url: nous-rejoindre/backend
-Front End:
-  url: nous-rejoindre/frontend
-IoT:
-  url: nous-rejoindre/iot
-Mobile:
-  url: nous-rejoindre/mobile
-Big Data:
-  url: nous-rejoindre/data
-Cloud:
-  url: nous-rejoindre/cloud
-Méthodes agiles:
-  url: nous-rejoindre/agiles
-DevOps:
-  url: nous-rejoindre/devops
+Lead Tech:
+  url: nous-rejoindre/lead-tech
+Expert:
+  url: nous-rejoindre/expert
+Coding Architect:
+  url: nous-rejoindre/coding-architect
+Coach:
+  url: nous-rejoindre/coach
+Studio Team Leader:
+  url: nous-rejoindre/studio-team-leader
+Scrum Master:
+  url: nous-rejoindre/scrum-master
+Data Scientist:
+  url: nous-rejoindre/data-scientist
+Data Engineer:
+  url: nous-rejoindre/data-engineer
