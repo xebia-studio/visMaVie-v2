@@ -7,7 +7,7 @@
 <script>
 
 import Swiper from 'swiper';
-import { random, isNumber, isFunction } from 'lodash';
+import { random, isNumber } from 'lodash';
 
 export default {
 	name: 'Slider',
