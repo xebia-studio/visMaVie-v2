@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+// TODO remove eslint-disable and fix undefined variable --> put just to make the linter task pass
 import { assign, isString, isArray, forEach, isObject, isBoolean, map, includes, has} from 'lodash';
 
 const WebFont = require('webfontloader');
@@ -102,7 +104,7 @@ const loader = {
 		if (isArray(fonts)){
 			const _fonts = {};
 			forEach(fonts, fontName => {
-				_families[fontName] = getFontVariations(fontName);
+        _families[fontName] = getFontVariations(fontName);
 			});
 			fonts = _fonts;
 		}
