@@ -11,6 +11,7 @@
     "build": "npm run create-generated-sources && node build/build.js",
     "unit": "karma start test/unit/karma.conf.js --single-run",
     "visual-regression": "node test/visual-regression",
+		"pretest": "npm run lint",
     "test": "dependency-check package.json --entry src/main/root.js & npm run unit",
     "lint": "eslint --ext js,vue build config src/main --fix"
   },
