@@ -1,16 +1,16 @@
 'use strict';
 
-var orchid = '#C7B299';
-var orange = '#FBB03B';
-var flashOrange = '#ff6444';
-var blue = '#424661';
+const orchid = '#C7B299';
+const orange = '#FBB03B';
+const flashOrange = '#ff6444';
+const blue = '#424661';
 
 const greyMedium = '#CCCCCC';
 const greyExtraLight = '#F2F2F2';
 const greyLight = '#E6E6E6';
 const greyMobileNavigationBar = '#F4F3F2';
 
-var lightBlue = '#3fa9f5';
+const lightBlue = '#3fa9f5';
 
 /*-------------*/
 
@@ -19,9 +19,9 @@ const uiDecoration = orchid;
 const uiEnabled = orchid;
 const uiEnabledText = 'white';
 
-var uiImportantEnabled = orange;
-var uiImportantEnabledText = 'white';
-var uiImportantClickable = flashOrange;
+const uiImportantEnabled = orange;
+const uiImportantEnabledText = 'white';
+const uiImportantClickable = flashOrange;
 
 const title = blue;
 const textLight = '#999999';

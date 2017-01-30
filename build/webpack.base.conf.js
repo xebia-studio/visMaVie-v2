@@ -37,7 +37,7 @@ module.exports = {
   resolveLoader: {
     fallback: [path.join(__dirname, '../node_modules')],
     alias: {
-      "xebia-data": path.join(__dirname, "../node_modules/xebia-web-common/xebia-data-loader")
+      'xebia-data': path.join(__dirname, '../node_modules/xebia-web-common/xebia-data-loader')
     }
   },
   module: {

@@ -5,11 +5,11 @@
 </template>
 
 <script>
-import AppSection from 'components/AppSection'
-import StatCardList from 'components/StatCardList'
-import ParallaxedLayersGroup from 'components/ParallaxedLayersGroup/ParallaxedLayersGroup'
-import ParallaxedLayer from 'components/ParallaxedLayersGroup/ParallaxedLayer'
-import ScreenFillerBlock from 'xebia-web-common/components/ScreenFillerBlock'
+import AppSection from 'components/AppSection';
+import StatCardList from 'components/StatCardList';
+import ParallaxedLayersGroup from 'components/ParallaxedLayersGroup/ParallaxedLayersGroup';
+import ParallaxedLayer from 'components/ParallaxedLayersGroup/ParallaxedLayer';
+import ScreenFillerBlock from 'xebia-web-common/components/ScreenFillerBlock';
 
 import LogoXebia from 'xebia-web-common/generated/components/LogoXebia';
 import ArrowBottom from 'xebia-web-common/generated/components/ArrowBottom';

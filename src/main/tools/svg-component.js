@@ -15,7 +15,7 @@ module.exports = {
         try {
           return require('src/generated/components/' + componentName);
         } catch(error){
-          return require('xebia-web-common/generated/components/' + componentName)
+          return require('xebia-web-common/generated/components/' + componentName);
         }
       },
       getSvgComponentBasePath: function () {
