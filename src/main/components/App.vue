@@ -6,15 +6,15 @@
 </template>
 
 <script>
-import { mixin as sizeClassHelper } from 'tools/size-class-helper'
+import { mixin as sizeClassHelper } from 'tools/size-class-helper';
 
 export default {
 	name: 'App',
 	mixins: [sizeClassHelper],
 	created: function () {
-		const sizeClassHelper = this.getSizeClassHelper();
+//		const sizeClassHelper = this.getSizeClassHelper();
 	}
-}
+};
 </script>
 
 <style lang="stylus">

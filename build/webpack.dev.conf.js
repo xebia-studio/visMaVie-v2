@@ -1,17 +1,30 @@
-var config = require('../config')
-var webpack = require('webpack')
-var merge = require('webpack-merge')
-var utils = require('./utils')
-var baseWebpackConfig = require('./webpack.base.conf')
-var HtmlWebpackPlugin = require('html-webpack-plugin')
+'use strict';
+
+const path = require('path');
+const webpack = require('webpack');
+const merge = require('webpack-merge');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+const utils = require('./utils');
+const baseWebpackConfig = require('./webpack.base.conf');
+const config = require('../config');
+const projectRoot = path.resolve(__dirname, '../');
 
 // add hot-reload related code to entry chunks
 Object.keys(baseWebpackConfig.entry).forEach(function (name) {
-  baseWebpackConfig.entry[name] = ['./build/dev-client'].concat(baseWebpackConfig.entry[name])
-})
+  baseWebpackConfig.entry[name] = ['./build/dev-client'].concat(baseWebpackConfig.entry[name]);
+});
 
 module.exports = merge(baseWebpackConfig, {
   module: {
+    preLoaders: [{
+      test: /\.(js|vue)?$/,
+      loader: 'eslint',
+      exclude: [
+        path.resolve(projectRoot, 'src/generated'),
+        /node_modules/
+      ]
+    }],
     loaders: utils.styleLoaders({ sourceMap: config.dev.cssSourceMap })
   },
   // eval-source-map is faster for development
@@ -30,5 +43,9 @@ module.exports = merge(baseWebpackConfig, {
       template: 'index.html',
       inject: true
     })
-  ]
-})
+  ],
+  eslint: {
+    failOnWarning: false,
+    failOnError: false
+  }
+});

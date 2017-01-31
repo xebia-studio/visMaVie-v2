@@ -58,7 +58,7 @@
                 jobTitleDesktopBorder: settings.jobTitleDesktopBorder,
                 isWidthCompact: this.getSizeClassHelper().isActive('width-compact'),
                 jobHeight: 'auto'
-            }
+            };
         },
         methods: {
             isJobActive: function (job) {
@@ -69,7 +69,7 @@
                     this.jobHeight = _.map(this.jobs, () => 'auto !important');
 
                     nextTick(() => {
-                        this.jobHeight = this.$refs.job ? this.$refs.job.map((job) => {return domHeight(job.$el)+'px'}) : []
+                        this.jobHeight = this.$refs.job ? this.$refs.job.map((job) => {return domHeight(job.$el)+'px';}) : [];
                     });
                 }
             }
@@ -100,18 +100,18 @@
                 this.updateLayoutOnResize();
             };
             this.resizeListenerArguments = ['resize', resize];
-            this.getSizeClassHelper().on(...this.resizeListenerArguments)
+            this.getSizeClassHelper().on(...this.resizeListenerArguments);
         },
         mounted: function () {
             this.updateLayoutOnResize();
         },
         beforeDestroy: function () {
-            this.getSizeClassHelper().off(...this.resizeListenerArguments)
+            this.getSizeClassHelper().off(...this.resizeListenerArguments);
         },
         components: {
             CTAButton
         }
-    }
+    };
 </script>
 
 <style lang="stylus">

@@ -1,14 +1,16 @@
-var path = require('path')
-var config = require('../config')
-var utils = require('./utils')
-var projectRoot = path.resolve(__dirname, '../')
+'use strict';
 
-var env = process.env.NODE_ENV
+const path = require('path');
+const config = require('../config');
+const utils = require('./utils');
+const projectRoot = path.resolve(__dirname, '../');
+
+const env = process.env.NODE_ENV;
 // check env & config/index.js to decide weither to enable CSS Sourcemaps for the
 // various preprocessor loaders added to vue-loader at the end of this file
-var cssSourceMapDev = (env === 'development' && config.dev.cssSourceMap)
-var cssSourceMapProd = (env === 'production' && config.build.productionSourceMap)
-var useCssSourceMap = cssSourceMapDev || cssSourceMapProd
+const cssSourceMapDev = (env === 'development' && config.dev.cssSourceMap);
+const cssSourceMapProd = (env === 'production' && config.build.productionSourceMap);
+const useCssSourceMap = cssSourceMapDev || cssSourceMapProd;
 
 module.exports = {
   entry: {
@@ -35,13 +37,13 @@ module.exports = {
   resolveLoader: {
     fallback: [path.join(__dirname, '../node_modules')],
     alias: {
-      "xebia-data": path.join(__dirname, "../node_modules/xebia-web-common/xebia-data-loader")
+      'xebia-data': path.join(__dirname, '../node_modules/xebia-web-common/xebia-data-loader')
     }
   },
   module: {
     loaders: [
       {
-        test: /\.vue$/,
+        test: /.vue$/,
         loader: 'vue'
       },
       {
@@ -73,7 +75,7 @@ module.exports = {
           limit: 10000,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
-      }
+      },
     ]
   },
   vue: {
@@ -88,4 +90,4 @@ module.exports = {
   'xebia-data': {
     svgComponentBasePath: './src/main/tools/svg-component'
   }
-}
+};

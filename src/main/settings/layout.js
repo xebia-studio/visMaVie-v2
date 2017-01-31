@@ -1,14 +1,15 @@
-var gridNumberOfColumns = 30;
-var gridUsefulWidth = usefulWidth = 1400;
-var gutter = 20;
+const gridNumberOfColumns = 30;
+const gridUsefulWidth = 1400;
+const usefulWidth = 1400;
+const gutter = 20;
 
-var gridSectionNumberOfColumns = 26;
-var gridContainerNumberOfColumns = 30;
-var gridCompactContainerNumberOfColumns = 12;
+const gridSectionNumberOfColumns = 26;
+const gridContainerNumberOfColumns = 30;
+const gridCompactContainerNumberOfColumns = 12;
 
 /*--------------*/
 
-var gridColumnWidth = gridUsefulWidth / gridNumberOfColumns;
+const gridColumnWidth = gridUsefulWidth / gridNumberOfColumns;
 
 /*--------------*/
 

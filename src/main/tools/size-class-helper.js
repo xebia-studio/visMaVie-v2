@@ -1,4 +1,4 @@
-import SizeClassHelper from 'xebia-web-common/tools/size-class-helper'
+import SizeClassHelper from 'xebia-web-common/tools/size-class-helper';
 
 let sizeClassHelper = null;
 
@@ -26,7 +26,7 @@ export const mixin = {
       return sizeClassHelper || (function () {
           sizeClassHelper = new SizeClassHelper();
 
-          for(let sizeClassName in config){
+          for(const sizeClassName in config){
             sizeClassHelper.setSizeClass(sizeClassName, config[sizeClassName]);
           }
 

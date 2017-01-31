@@ -7,7 +7,7 @@
 
 export default {
 	name: 'SliderSlide'
-}
+};
 </script>
 
 <style lang="stylus">

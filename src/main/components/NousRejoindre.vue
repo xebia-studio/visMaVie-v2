@@ -39,7 +39,7 @@ export default {
 		    talentButtonLabel: 'Vous avez d\'autres talents&nbsp;? C\'est&nbsp;par&nbsp;ici&nbsp;!',
 		    jobButtonLabel: 'Postuler&nbsp;!',
 		    technos: technos.technos
-		}
+		};
 	},
 	created: function () {
             console.log('NousRejoindre created !');
@@ -50,7 +50,7 @@ export default {
 	    NosTechnos,
 	    AppFooter
 	}
-}
+};
 </script>
 
 <style lang="stylus">

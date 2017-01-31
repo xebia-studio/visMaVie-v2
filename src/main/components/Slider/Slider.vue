@@ -6,8 +6,8 @@
 
 <script>
 
-import Swiper from 'swiper'
-import { random, isNumber, isFunction } from 'lodash'
+import Swiper from 'swiper';
+import { random, isNumber } from 'lodash';
 
 export default {
 	name: 'Slider',
@@ -39,7 +39,7 @@ export default {
 		paginationBulletRender: Function
 	},
 	mounted: function () {
-		let options = {
+		const options = {
 			pagination: this.pagination,
 			paginationClickable: true,
 			paginationType: this.paginationType,
@@ -76,7 +76,7 @@ export default {
 			this.slider.destroy(true, true);
 		}
 	}
-}
+};
 </script>
 
 <style lang="stylus">
