@@ -2,8 +2,9 @@ color:
   default: rgba(255, 255, 255, 0.15)
   frontend: rgba(255, 255, 255, 0.15)
 navigation_links:
-  Nos expertises: expertises
-  Nos méthodes: methodes
-  Nos offres: offres
-  Nos références: references
-  Nous reconnaître: nous-reconnaitre
+  Nos valeurs: valeurs
+  Nos passions: passions
+  Nos créations: creations
+  Votre carrière: carriere
+  Votre intégration: integration
+  Nous rejoindre: nous-rejoindre
