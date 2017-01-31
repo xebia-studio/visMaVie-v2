@@ -1,18 +1,15 @@
 <template lang="jade">
-	.Home_page
-		AppSection(:title="statSection.title", :baseline="statSection.baseline")
+	AppPage.HomePage
+		AppSection.AppSection-even(:title="statSection.title", :baseline="statSection.baseline")
 			StatCardList(:statData="statSection.statData", slot="section-content")
 </template>
 
 <script>
+import AppPage from 'components/AppPage'
 import AppSection from 'components/AppSection'
 import StatCardList from 'components/StatCardList'
-import ParallaxedLayersGroup from 'components/ParallaxedLayersGroup/ParallaxedLayersGroup'
-import ParallaxedLayer from 'components/ParallaxedLayersGroup/ParallaxedLayer'
-import ScreenFillerBlock from 'xebia-web-common/components/ScreenFillerBlock'
 
 import LogoXebia from 'xebia-web-common/generated/components/LogoXebia'
-import ArrowBottom from 'xebia-web-common/generated/components/ArrowBottom'
 import HandWorldPicto from 'src/generated/components/HandWorldPicto'
 import HandCouplePicto from 'src/generated/components/HandCouplePicto'
 import HandPaperPenPicto from 'src/generated/components/HandPaperPenPicto'
@@ -23,22 +20,15 @@ import HandMicroPicto from 'src/generated/components/HandMicroPicto'
 import HandFactoryPicto from 'src/generated/components/HandFactoryPicto'
 
 import { mixin as fontLoader } from 'tools/font-loader'
-import { mixin as scrollController } from 'xebia-web-common/tools/scroll-controller'
-import { mixin as tweenHelper } from 'xebia-web-common/tools/tween-helper'
-import { mixin as sizeClassHelper } from 'xebia-web-common/tools/size-class-helper'
+import { mixin as sizeClassHelper } from 'tools/size-class-helper';
 
-import { Home_page as settings } from 'settings/components'
+import { HomePage as settings } from 'settings/components'
 
 export default {
-	name: 'Home_page',
-	mixins: [fontLoader, scrollController, tweenHelper, sizeClassHelper],
+	name: 'HomePage',
+	mixins: [fontLoader, sizeClassHelper],
 	data: function () {
 		return {
-			configScreenFiller: {
-				'height-compact & not-width-compact': 100,
-				'default': settings.heightHeader/settings.screenHeightIdeal*100,
-				'width-compact': 100
-			},
 			statSection: {
 		        title: 'Xebia en quelques chiffres',
 		        //baseline: 'Écrire, enseigner, construire, manager... Les contributions internes sont nombreuses et chacun a la possibilité de participer en fonction de ses savoirs-faire et savoirs-être !',
@@ -86,11 +76,8 @@ export default {
 		}
 	},
 	components: {
-		ParallaxedLayersGroup,
-		ParallaxedLayer,
-		ScreenFillerBlock,
+		AppPage,
 		LogoXebia,
-		ArrowBottom,
 		AppSection,
 		StatCardList,
 		HandWorldPicto,
@@ -104,28 +91,13 @@ export default {
 	},
 	created: function () {
 		this.loadFont({
-			'text': 'extra-light',
+			'text': 'light',
 			'title': 'regular'
 		});
 	},
 	computed: {
 		settings: function () {
 			return settings;
-		}
-	},
-	methods: {
-		scrollToBottom: function () {
-			const button = this.$refs.scrollToDownButton;
-			button.blur ? button.blur() : null;
-
-			this.getTweenHelper().tween({
-				duration: '250ms',
-				startValue: this.getScrollController().scrollTop,
-				endValue: this.getSizeClassHelper().size.height,
-				easingFunction: 'inOutQuad'
-			},  currentValue => {
-				this.getScrollController().scrollTo(currentValue)
-			});
 		}
 	}
 }
@@ -134,13 +106,13 @@ export default {
 <style lang="stylus">
 	_contentNumberOfColumns = 12
 
-	_screenHeightIdeal = Home_page__$screenHeightIdeal
-	_heightHeader = Home_page__$heightHeader
+	_screenHeightIdeal = HomePage__$screenHeightIdeal
+	_heightHeader = HomePage__$heightHeader
 	_marginTopLogoXebia = 140
 	_marginBottomLogoXebia = 75
 	_heightLogo = 55
 
-	.Home_page-header
+	.HomePage-header
 		background-color color__$blue
 		background-position center center
 		background-repeat no-repeat
@@ -150,14 +122,14 @@ export default {
 		background-image url('~assets/images/home-header-desktop.jpg')
 
 	.size-class-width-compact
-		.Home_page-header
+		.HomePage-header
 			background-image url('~assets/images/home-header-mobile.jpg')
 
 	/*------------*/
 	/* Logo Xebia */
 	/*------------*/
 
-	.Home_page-header-logo-outer-wrapper
+	.HomePage-header-logo-outer-wrapper
 		display block
 		position absolute
 		top ( _marginTopLogoXebia / _heightHeader * 100%)
@@ -166,14 +138,14 @@ export default {
 		font-size 0
 
 	.size-class-width-compact
-		.Home_page-header-logo-outer-wrapper
+		.HomePage-header-logo-outer-wrapper
 			display none
 
-	.Home_page-header-logo-inner-wrapper
+	.HomePage-header-logo-inner-wrapper
 		layout__centeredGridBlock(numberOfColumns: _contentNumberOfColumns)
 		height 100%
 
-	.Home_page-header-logo
+	.HomePage-header-logo
 		max-width (5 / _contentNumberOfColumns * 100%)
 		height 100%
 
@@ -183,63 +155,63 @@ export default {
 	/*---------------*/
 	/*---------------*/
 
-	.Home_page-header-baseline-margin-top
+	.HomePage-header-baseline-margin-top
 		height ( (_marginTopLogoXebia + _heightLogo + _marginBottomLogoXebia) / _heightHeader * 100% )
 
-	.Home_page-header-baseline
+	.HomePage-header-baseline
 		layout__centeredGridBlock(numberOfColumns: _contentNumberOfColumns)
 		color white
 
 	.size-class-not-width-compact
-		.Home_page-header-baseline br
+		.HomePage-header-baseline br
 			display none
-	.Home_page-header-baseline-main
+	.HomePage-header-baseline-main
 		font__useTitleRegular 50px
 		font__line-height 50px
 
-	.Home_page-header-baseline-secondary
+	.HomePage-header-baseline-secondary
 		font__useTextExtraLight 18px
 		font__line-height 20px
 		display block
 
-	.Home_page-header-baseline-main+.Home_page-header-baseline-secondary
+	.HomePage-header-baseline-main+.HomePage-header-baseline-secondary
 		margin-top 10px
 
 	.size-class-width-compact
-		.Home_page-header-baseline-margin-top
+		.HomePage-header-baseline-margin-top
 			height 85px
 
-		.Home_page-header-baseline
+		.HomePage-header-baseline
 			max-width 100%
 			width auto
 			margin-left 40px
 			margin-right 40px
 
-		// .Home_page-header-baseline-main
+		// .HomePage-header-baseline-main
 		// 	font__rem-size 40px
 		// 	font__line-height 50px
 
-		// .Home_page-header-baseline-secondary
+		// .HomePage-header-baseline-secondary
 		// 	font__rem-size 28px
 		// 	font__line-height 40px
 
-		.Home_page-header-baseline-main+.Home_page-header-baseline-secondary
+		.HomePage-header-baseline-main+.HomePage-header-baseline-secondary
 			margin-top 20px
 
 	/*---------------*/
 	/*---------------*/
 
-	.Home_page-scroll-down-button
+	.HomePage-scroll-down-button
 		display none
 
 	.size-class-width-compact
-		.Home_page-scroll-down-button-outer-wrapper
+		.HomePage-scroll-down-button-outer-wrapper
 			position absolute
 			width 100%
 			bottom 40px
 			left 0
 
-		.Home_page-scroll-down-button
+		.HomePage-scroll-down-button
 			layout__centeredGridBlock(numberOfColumns: 4)
 			button__resetStyle()
 

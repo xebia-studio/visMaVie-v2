@@ -1,7 +1,7 @@
 const screenHeightIdeal = 800;
 
 module.exports = {
-	Home_page : {
+	HomePage : {
 		screenHeightIdeal,
 		heightHeader: 520
 	},

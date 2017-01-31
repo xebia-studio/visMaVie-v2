@@ -8,7 +8,7 @@ const routes = concat(
 		{
 			name: 'home',
 			path: '/',
-			component: resolve => require(['components/Tester.vue'], resolve)
+			component: resolve => require(['components/HomePage.vue'], resolve)
 		},
     {
       name: 'nous-rejoindre',

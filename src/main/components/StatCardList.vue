@@ -1,7 +1,6 @@
 <template lang="jade">
     .StatCard-list
-        template(v-for="statItemData in statData")
-            StatCard(:picto="statItemData.picto", :stat="statItemData.stat", :text="statItemData.text")
+        StatCard(:picto="statItemData.picto", :stat="statItemData.stat", :text="statItemData.text" v-for="statItemData in statData")
 </template>
 
 <script>
@@ -21,6 +20,9 @@ export default {
 </script>
 
 <style lang="stylus">
+    .StatCard-list
+        min-height 600px
+
     .size-class-width-compact
         _grid('.StatCard', layout__$gridContainerNumberOfColumns, 2, 1, 3vw)
 
