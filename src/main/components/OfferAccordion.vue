@@ -82,7 +82,7 @@
                     nextTick(() => {
                         if(this.$refs.job) {
                             selectedJobHeight = domHeight(this.$refs.job[selectedJobIndex].$el)+'px';
-                            this.jobStyle = _.mapValues(this.jobs, (value) => {height: '41px'});
+                            this.jobStyle = _.mapValues(this.jobs, (value) => {height: undefined});
                         }
                         requestAnimationFrame(() => {
                             this.jobStyle[selectedJobLabel] = {height: selectedJobHeight};

@@ -1,5 +1,5 @@
-import { map } from 'lodash'
+import { map, includes } from 'lodash'
 
 export default function urlIsInPath(url, path){
-  return url ? (path.includes(url) ? 'is--active' : '') : false;
+  return url ? (includes(path, url) ? 'is--active' : '') : false;
 }
