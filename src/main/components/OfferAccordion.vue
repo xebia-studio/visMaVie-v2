@@ -124,7 +124,9 @@
         },
         watch: {
             selectedJob: function(to, from) {
-                this.updateLayoutOnResize();
+                if(!_.isEqual(to, from)) {
+                    this.updateLayoutOnResize();
+                }
             }
         },
         beforeDestroy: function () {
