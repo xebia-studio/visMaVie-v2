@@ -116,7 +116,7 @@
             const resize = () => {
                 this.updateLayoutOnResize();
             };
-            this.resizeListenerArguments = ['resize', resize];
+            this.resizeListenerArguments = ['change', resize];
             this.getSizeClassHelper().on(...this.resizeListenerArguments)
         },
         mounted: function () {
