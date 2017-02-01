@@ -2,7 +2,7 @@
     .OfferAccordion
         .OfferAccordion-jobs
             router-link(class="OfferAccordion-job", v-bind:class="{active: isJobActive(job)}" v-for="(job, label, index) in jobs", :to="'/nous-rejoindre/' + jobRoutes[label]", tag="div",
-                        :style="{height: isWidthCompact ? jobHeight[index] || '41px' : 'auto'}", ref="job")
+                        :style="jobStyle[label]", ref="job")
                 .OfferAccordion-job-title(v-bind:style="{top: (jobTitleDesktopHeight+jobTitleDesktopBorder)*index + 'px'}")
                     .OfferAccordion-job-title-number
                         div(v-if="isWidthCompact", :is="svgComponent('BulletBlue' + (index + 1))")
@@ -57,7 +57,7 @@
                 jobTitleDesktopHeight: settings.jobTitleDesktopHeight,
                 jobTitleDesktopBorder: settings.jobTitleDesktopBorder,
                 isWidthCompact: this.getSizeClassHelper().isActive('width-compact'),
-                jobHeight: 'auto'
+                jobStyle: _.mapValues(this.jobs, (value) => undefined)
             }
         },
         methods: {
@@ -65,11 +65,28 @@
                 return _.isEqual(job, this.selectedJob);
             },
             updateLayoutOnResize: function () {
-                if(this.getSizeClassHelper().isActive('width-compact')) {
-                    this.jobHeight = _.map(this.jobs, () => 'auto !important');
+                const widthCompact = this.getSizeClassHelper().isActive('width-compact');
+                let selectedJobIndex = -1;
+                let selectedJobLabel = undefined;
+                let selectedJobHeight = undefined;
 
+                if(widthCompact) {
+                    for(const jobLabel in this.jobs) {
+                        if(this.isJobActive(this.jobs[jobLabel])) {
+                            selectedJobIndex = _.indexOf(_.keys(this.jobs), jobLabel);
+                            selectedJobLabel = jobLabel;
+                            break;
+                        }
+                    }
+                    this.jobStyle[selectedJobLabel] = {height: 'auto'};
                     nextTick(() => {
-                        this.jobHeight = this.$refs.job ? this.$refs.job.map((job) => {return domHeight(job.$el)+'px'}) : []
+                        if(this.$refs.job) {
+                            selectedJobHeight = domHeight(this.$refs.job[selectedJobIndex].$el)+'px';
+                            this.jobStyle = _.mapValues(this.jobs, (value) => {height: '41px'});
+                        }
+                        requestAnimationFrame(() => {
+                            this.jobStyle[selectedJobLabel] = {height: selectedJobHeight};
+                        });
                     });
                 }
             }
@@ -104,6 +121,11 @@
         },
         mounted: function () {
             this.updateLayoutOnResize();
+        },
+        watch: {
+            selectedJob: function(to, from) {
+                this.updateLayoutOnResize();
+            }
         },
         beforeDestroy: function () {
             this.getSizeClassHelper().off(...this.resizeListenerArguments)
@@ -160,9 +182,8 @@
         overflow hidden
         .size-class-width-compact &
             transition height 320ms ease__inOutQuad() 120ms
-        &:not(.active)
-            .size-class-width-compact &
-                height (_jobTitleMobileHeight + _jobTitleDesktopBorder)px !important
+        .size-class-width-compact &
+            height (_jobTitleMobileHeight + _jobTitleDesktopBorder)px
 
     .OfferAccordion-job-title
         width 100%
