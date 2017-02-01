@@ -1,3 +1,5 @@
+const settingsHeader = require('./../../../src/main/assets/data/header/$settings.json');
+
 const screenHeightIdeal = 800;
 
 module.exports = {
@@ -23,6 +25,7 @@ module.exports = {
   },
   NavigationBar: {
     desktopHeight: 40,
-    mobileHeight: 50
+    mobileHeight: 50,
+    numberOfElements: Object.keys(settingsHeader.navigation_links).length
   }
 };

@@ -16,10 +16,10 @@
                                 div(:is="svgComponent('BulletBlue' + (index + 1))")
                             .OfferAccordion-details-part-title-label {{partLabel}} :
                         .OfferAccordion-details-part-body(v-for="partItem in partList") {{partItem}}
-                    CTAButton.OfferAccordion-details-job-button(:label="jobButtonLabel", :link="'mailto:recrutement@xebia.fr'", :newTab="false")
+                    CTAButton.OfferAccordion-details-job-button(:label="jobButtonLabel", :link="'mailto:recrutement@xebia.fr'", :newTab="false", :type="'primary'")
             a.OfferAccordion-jobs-talent-wrapper(v-bind:style="{top: (jobTitleDesktopHeight+jobTitleDesktopBorder)*Object.keys(jobs).length + 'px'}",
                                                 href="mailto:recrutement@xebia.fr")
-                .OfferAccordion-jobs-talent-label(v-html="talentButtonLabel")
+                CTAButton.OfferAccordion-jobs-talent-label(:label="talentButtonLabel", :type="'secondary'")
 </template>
 
 <script>
@@ -132,8 +132,7 @@
 
     _selectedJobTriangleBase = (_jobTitleDesktopHeight / 5)
 
-    _talentButtonBackgroundColor = color__$lightBlue
-    _talentButtonMobileFontSize = font__$sectionBaselineMobileFontSize
+    _talentButtonMargin = 25px
 
     _detailsBackgroundColor = color__$sectionOdd
     _detailsPartTitleColor = color__$uiImportantClickable
@@ -194,8 +193,7 @@
         .size-class-not-width-compact .OfferAccordion-job.active &
             background-color _jobsBackgroundColor
 
-    .OfferAccordion-job-title-label,
-    .OfferAccordion-jobs-talent-label
+    .OfferAccordion-job-title-label
         color _jobColor
         text-transform uppercase
         width auto
@@ -224,21 +222,18 @@
 
     .OfferAccordion-jobs-talent-wrapper
         text-decoration none
-        color inherit
         .size-class-not-width-compact &
             position absolute
             left (_jobTitleNumberWidth + 10)px
-            width 'calc(%s - %s)' % ((_jobTitleDesktopPercentage)% (_jobTitleNumberWidth + 10)px)
+            width 'calc(%s - %s - %s)' % ((_jobTitleDesktopPercentage)% (_jobTitleNumberWidth + 10)px _talentButtonMargin)
 
     .OfferAccordion-jobs-talent-label
-        margin-top 25px
+        margin-top _talentButtonMargin
         text-align center
-        background-color _talentButtonBackgroundColor
-        line-height 30px
-        font__useTextRegular _talentButtonMobileFontSize
         padding 20px 50px
         .size-class-not-width-compact &
-            padding ((_jobTitleDesktopHeight - _jobFontSize)/2)px 20px ((_jobTitleDesktopHeight - _jobFontSize)/2)px (_jobTitleNumberWidth + 30 - _jobTitleNumberWidth)px
+            padding-left 15px
+            padding-right 15px
             text-align left
             font__useTextRegular _jobFontSize
 

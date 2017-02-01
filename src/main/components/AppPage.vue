@@ -1,7 +1,7 @@
 <template lang="jade">
     .AppPage
         ParallaxedLayersGroup
-            NavigationBarLayer(:scrollPositionToReachBeforeLightBackground="scrollPositionToReachBeforeLightBackground")
+            NavigationBarLayer(:scrollPositionToReachBeforeLightBackground="scrollPositionToReachBeforeLightBackground", :settingsHeader="settingsHeader")
                 LogoVisMaVie(slot="logo")
 
             slot
@@ -11,12 +11,12 @@
 </template>
 
 <script>
-
-import NavigationBarLayer from 'xebia-web-common/components/NavigationBarLayer'
+import settingsHeader from 'src/main/assets/data/header/$settings.json';
+import NavigationBarLayer from 'xebia-web-common/components/NavigationBarLayer';
 import LogoVisMaVie from 'src/generated/components/LogoVisMaVie';
 
-import ParallaxedLayersGroup from 'xebia-web-common/components/ParallaxedLayersGroup/ParallaxedLayersGroup'
-import ParallaxedLayer from 'xebia-web-common/components/ParallaxedLayersGroup/ParallaxedLayer'
+import ParallaxedLayersGroup from 'xebia-web-common/components/ParallaxedLayersGroup/ParallaxedLayersGroup';
+import ParallaxedLayer from 'xebia-web-common/components/ParallaxedLayersGroup/ParallaxedLayer';
 
 import AppFooter from 'xebia-web-common/components/AppFooter';
 import nousRecrutons from 'assets/data/footer/nous-recrutons.yaml';
@@ -37,6 +37,7 @@ export default {
 		    contacts,
 		    otherSites,
 		    socialNetworks,
+		    settingsHeader
 	    }
 	},
 	components: {

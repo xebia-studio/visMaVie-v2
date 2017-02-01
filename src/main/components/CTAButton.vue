@@ -1,5 +1,5 @@
 <template lang="jade">
-    a.CTAButton(:href="link", :target="newTab ? '_blank' : '_self'", v-html="label", @click.stop="() => null")
+    a.CTAButton(v-bind:class="type", :href="link", :target="newTab ? '_blank' : '_self'", v-html="label", @click.stop="() => null")
 </template>
 
 <script>
@@ -10,6 +10,10 @@
         mixins: [fontLoader],
         props: {
             label: {
+                type: String,
+                required: true
+            },
+            type: {
                 type: String,
                 required: true
             },
@@ -31,17 +35,20 @@
 </script>
 
 <style lang="stylus">
-    _CTAButtonBackgroundColor = color__$flashOrange
+    _CTAButtonPrimaryBackgroundColor = color__$flashOrange
+    _CTAButtonSecondaryBackgroundColor = color__$lightBlue
 
     .CTAButton
         display block
         text-transform uppercase
-        background-color _CTAButtonBackgroundColor
         color white
         text-align center
         font__useTextRegular font__$textFontSize
         text-decoration none
         padding 14px 42px
         border-radius 5px
-
+        &.primary
+            background-color _CTAButtonPrimaryBackgroundColor
+        &.secondary
+            background-color _CTAButtonSecondaryBackgroundColor
 </style>
