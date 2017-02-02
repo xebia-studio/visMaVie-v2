@@ -33,7 +33,6 @@
 </script>
 
 <style lang="stylus">
-    _appSectionTitleFontSize = font__$sectionTitleFontSize
     _appSectionTitleColor = color__$title
 
     _appSectionBaselineDesktopFontSize = font__$sectionBaselineDesktopFontSize
@@ -43,6 +42,11 @@
     .AppSection
         max-width (layout__$gridUsefulWidth)px
         padding 20px 0
+        font__useTextRegular font__$textFontSize
+        &.AppSection-special
+            color color__$sectionOdd
+        .size-class-not-width-compact &
+            padding 40px 0
 
     .AppSection-even
         background-color color__$sectionEven
@@ -50,20 +54,30 @@
     .AppSection-odd
         background-color color__$sectionOdd
 
+    .AppSection-special
+        background-color color__$blue
+
     .AppSection-useful-width-box
         layout__outerBox()
     .AppSection-inner-wrapper
         layout__innerBox()
 
     .AppSection-title
-        font__useTitleBold _appSectionTitleFontSize
+        font__useTitleBold font__$sectionTitleMobileFontSize
         color _appSectionTitleColor
-        margin-bottom 30px
+        margin-bottom 10px
+        .AppSection-special &
+            color color__$sectionOdd
+        .size-class-not-width-compact &
+            margin-bottom 30px
+            font__useTitleBold font__$sectionTitleDesktopFontSize
 
     AppSection-baseline
         font__useTextRegular _appSectionBaselineMobileFontSize
         color _appSectionBaselineColor
         margin-bottom 15px
+        .AppSection-special &
+            color color__$sectionOdd
 
     .size-class-not-width-compact
         .AppSection-baseline
