@@ -2,6 +2,8 @@ var path = require('path');
 var generateStyles = require('xebia-web-common/scripts/generate-generic-styles');
 var generateImages = require('xebia-web-common/scripts/generate-images');
 
+var cliOptions = require('./cli-options');
+
 // Generic settings
 
 generateStyles({
@@ -30,6 +32,10 @@ var sourcesGenerators = [
 
 for(var i = 0, imax = sourcesGenerators.length; i < imax; i++){
     require(sourcesGenerators[i]);
+}
+
+if (!cliOptions.noBlurryImage) {
+  require('./blur-images');
 }
 
 

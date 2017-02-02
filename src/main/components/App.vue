@@ -23,7 +23,4 @@ export default {
 	html
 		font-size (font__$mainFontSize px) !important
 		overflow-x hidden
-
-	.App
-		min-height 5000px
 </style>

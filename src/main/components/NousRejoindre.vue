@@ -1,5 +1,5 @@
 <template lang="jade">
-    AppPage.NousRejoindre
+    AppPage.NousRejoindre(:header="header")
         AppSection.AppSection-even(:title="'Nous recrutons :'")
             OfferAccordion(:jobs="jobs", :talentButtonLabel="talentButtonLabel", :jobButtonLabel="jobButtonLabel", slot="section-content")
         AppSection.AppSection-even.AppSection-no-padding
@@ -13,13 +13,15 @@
                     PictoQuoteOrangeLeft.NousRejoindre-xebians-quote-left
                     span.NousRejoindre-xebians-quote-text(v-html="quiSontLesXebians.quote")
                     PictoQuoteOrangeRight.NousRejoindre-xebians-quote-right
-        AppSection.AppSection-even.NousRejoindre-plus(:title="'Les plus'")
+        AppSection.AppSection-odd.NousRejoindre-plus(:title="'Les plus'")
             BulletList(:image="lesPlus.image", :itemList="lesPlus.items", slot="section-content")
 
 </template>
 
 <script>
 import AppPage from 'components/AppPage'
+import header from 'assets/data/nous-rejoindre/header.json'
+
 import AppSection from 'components/AppSection';
 
 import OfferAccordion from 'components/OfferAccordion';
@@ -42,6 +44,7 @@ export default {
 	mixins: [fontLoader],
 	data: function () {
 		return {
+		    header,
 		    jobs: annonces,
 		    talentButtonLabel: 'Vous avez d\'autres talents&nbsp;? C\'est&nbsp;par&nbsp;ici&nbsp;!',
 		    jobButtonLabel: 'Postuler&nbsp;!',

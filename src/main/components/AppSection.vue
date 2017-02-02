@@ -40,7 +40,7 @@
     _appSectionBaselineColor = color__$text
 
     .AppSection
-        max-width (layout__$gridUsefulWidth)px
+        max-width (layout__$usefulWidth)px
         font__useTextRegular font__$textFontSize
         &.AppSection-special
             color color__$sectionOdd

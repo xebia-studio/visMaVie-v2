@@ -1,25 +1,20 @@
 var gridNumberOfColumns = 30;
-var gridUsefulWidth = usefulWidth = 1400;
-var gutter = 20;
-
-var gridSectionNumberOfColumns = 26;
-var gridContainerNumberOfColumns = 30;
-var gridCompactContainerNumberOfColumns = 12;
-
-/*--------------*/
-
-var gridColumnWidth = gridUsefulWidth / gridNumberOfColumns;
+var usefulWidth = 1400;
+var gridColumnWidth = usefulWidth / gridNumberOfColumns;
 
 /*--------------*/
 
 module.exports = {
   _namespace: 'layout',
   gridNumberOfColumns: gridNumberOfColumns,
-  gridUsefulWidth: gridUsefulWidth,
   usefulWidth: usefulWidth,
-  gutter: gutter,
-  gridSectionNumberOfColumns: gridSectionNumberOfColumns,
-  gridContainerNumberOfColumns: gridContainerNumberOfColumns,
-  gridCompactContainerNumberOfColumns: gridCompactContainerNumberOfColumns,
-  gridColumnWidth: gridColumnWidth
+  gridColumnWidth: gridColumnWidth,
+  gutter: 20,
+  gridSectionNumberOfColumns: 26,
+  gridContainerNumberOfColumns: 30,
+  gridCompactContainerNumberOfColumns: 12,
+  sectionMargin: 100,
+  sectionMarginBig: 100,
+  screenHeightIdeal: 800,
+  headerBlockHeight: 500
 };
