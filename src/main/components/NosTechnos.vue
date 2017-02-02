@@ -58,6 +58,7 @@ export default {
 
     .NosTechnos
         display table
+        padding-bottom 20px
 
     .size-class-width-compact
         _grid('.NosTechnos-techno', layout__$gridContainerNumberOfColumns, 3, 1, 3vw)
