@@ -2,7 +2,7 @@
     AppPage.NousRejoindre
         AppSection.AppSection-even(:title="'Nous recrutons :'")
             OfferAccordion(:jobs="jobs", :talentButtonLabel="talentButtonLabel", :jobButtonLabel="jobButtonLabel", slot="section-content")
-        AppSection.AppSection-even
+        AppSection.AppSection-even.AppSection-no-padding
             NosTechnos(:technos="technos", slot="section-content")
         AppSection.AppSection-special.NousRejoindre-xebians(:title="'Qui sont les Xebian(e)s ?'")
             template(slot="section-content")

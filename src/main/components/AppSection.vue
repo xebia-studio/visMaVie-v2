@@ -41,12 +41,13 @@
 
     .AppSection
         max-width (layout__$gridUsefulWidth)px
-        padding 20px 0
         font__useTextRegular font__$textFontSize
         &.AppSection-special
             color color__$sectionOdd
-        .size-class-not-width-compact &
-            padding 40px 0
+        &:not(.AppSection-no-padding)
+            padding 20px 0
+            .size-class-not-width-compact &
+                padding 40px 0
 
     .AppSection-even
         background-color color__$sectionEven
