@@ -9,7 +9,7 @@ module.exports = {
 	},
   BlurryHeaderLayer: {
     screenHeightIdeal,
-    heightBlurryHeader: 350,
+    heightBlurryHeader: 400,
   },
 	BulletPoints: {
 		transparentBulletSize: 30,

@@ -7,12 +7,6 @@ _grid(boxSelector, widthInColumns, numberOfColumns, gutterInColumns, rowGutter =
     gutterWidth = ((gutterInColumns / widthInColumns) * 100%)
     areaWidth = widthInColumns * layout__$gridColumnWidth
 
-    display block
-    width areaWidth px
-    max-width 100%
-
-    zoom 1
-
     &:before, &:after
         content ""
         display table
@@ -21,6 +15,7 @@ _grid(boxSelector, widthInColumns, numberOfColumns, gutterInColumns, rowGutter =
         clear both
 
     {boxSelector}
+        zoom 1
         display block
         float left
         width columnWidth

@@ -57,6 +57,7 @@ export default {
     _technoLogoHeight = 35
 
     .NosTechnos
+        width 100%
         display table
         padding-bottom 20px
 

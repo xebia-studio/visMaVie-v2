@@ -1,0 +1,18 @@
+xebiaUI__simplePageLayout(
+  selectorPrefix = '',
+  separator = '-',
+  usefullWidthBoxSelector = 'usefull-width-box',
+  marginBoxSelector = 'margin-box',
+  contentLayerSelector = 'content-layer'
+)
+  {selectorPrefix}{separator}{usefullWidthBoxSelector}
+    layout__outerBox()
+  {selectorPrefix}{separator}{marginBoxSelector}
+    layout__innerBox()
+
+  {selectorPrefix}{separator}{contentLayerSelector}
+    padding-top 80px
+
+  .size-class-width-compact
+    {selectorPrefix}{separator}{contentLayerSelector}
+      padding-top 40px

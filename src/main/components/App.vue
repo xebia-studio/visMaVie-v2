@@ -23,4 +23,10 @@ export default {
 	html
 		font-size (font__$mainFontSize px) !important
 		overflow-x hidden
+		letter-spacing 0.02em
+
+	.App
+		width 100%
+		background-color white
+		overflow-x hidden
 </style>

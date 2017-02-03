@@ -6,7 +6,7 @@
 
             BlurryHeaderLayer(@resize="headerResize", :title="header.title", :description="header.description", :image="header.image", :description_image="header.image_description", ref="blurryHeader", :titleLevel="header.titleLevel", :heightBlurryHeader="heightBlurryHeader", :screenHeightIdeal="screenHeightIdeal")
             .AppPage-in-header-block(ref='inHeaderContainer')
-                slot(name='inHeader')
+                CallToActionLayer(ref="inHeader")
 
             slot
 
@@ -23,6 +23,8 @@ import LogoVisMaVie from 'src/generated/components/LogoVisMaVie';
 
 import BlurryHeaderLayer from 'xebia-web-common/components/BlurryHeaderLayer';
 import { BlurryHeaderLayer as blurryHeaderLayerSettings } from 'settings/components';
+
+import CallToActionLayer from 'src/main/components/CallToActionLayer';
 
 import ParallaxedLayer from 'xebia-web-common/components/ParallaxedLayersGroup/ParallaxedLayer';
 
@@ -71,6 +73,7 @@ export default {
 		NavigationBarLayer,
 		LogoVisMaVie,
 		BlurryHeaderLayer,
+		CallToActionLayer,
 		AppFooter,
 		ParallaxedLayersGroup,
 		ParallaxedLayer
