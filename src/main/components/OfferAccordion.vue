@@ -32,12 +32,16 @@
     import { mixin as fontLoader } from 'tools/font-loader';
     import { mixin as svgComponent } from 'tools/svg-component';
     import { mixin as sizeClassHelper } from 'tools/size-class-helper';
+    import { mixin as scrollController } from 'tools/scroll-controller';
+
+    import animatedScrollTo from 'xebia-web-common/tools/animated-scroll-to'
+    import centralEventBus from 'xebia-web-common/tools/central-event-bus';
 
     import { OfferAccordion as settings } from 'settings/components';
 
     export default {
         name: 'OfferAccordion',
-        mixins: [fontLoader, svgComponent, sizeClassHelper],
+        mixins: [fontLoader, svgComponent, sizeClassHelper, scrollController],
         props: {
             jobs: {
                 type: Object,
@@ -66,22 +70,14 @@
             },
             updateLayoutOnResize: function () {
                 const widthCompact = this.getSizeClassHelper().isActive('width-compact');
-                let selectedJobIndex = -1;
-                let selectedJobLabel = undefined;
+                const selectedJobLabel = _.keys(this.jobs)[this.selectedJobIndex];
                 let selectedJobHeight = undefined;
 
                 if(widthCompact) {
-                    for(const jobLabel in this.jobs) {
-                        if(this.isJobActive(this.jobs[jobLabel])) {
-                            selectedJobIndex = _.indexOf(_.keys(this.jobs), jobLabel);
-                            selectedJobLabel = jobLabel;
-                            break;
-                        }
-                    }
                     this.jobStyle[selectedJobLabel] = {height: 'auto'};
                     nextTick(() => {
                         if(this.$refs.job) {
-                            selectedJobHeight = domHeight(this.$refs.job[selectedJobIndex].$el)+'px';
+                            selectedJobHeight = domHeight(this.$refs.job[this.selectedJobIndex].$el)+'px';
                             this.jobStyle = _.mapValues(this.jobs, (value) => {height: undefined});
                         }
                         requestAnimationFrame(() => {
@@ -96,6 +92,15 @@
                 // Check if the $route.params.job parameter is in our job range
                 const jobLabel = _.findKey(this.jobRoutes, (value) => value === this.$route.params.job);
                 return jobLabel ? this.jobs[jobLabel] : this.jobs[_.keys(this.jobs)[0]];
+            },
+            selectedJobIndex: function () {
+                let selectedJobIndex = -1;
+                for(const jobLabel in this.jobs) {
+                    if(this.isJobActive(this.jobs[jobLabel])) {
+                        return _.indexOf(_.keys(this.jobs), jobLabel);
+                    }
+                }
+                return selectedJobIndex;
             },
             jobRoutes: function () {
                 const jobRoutes = {};
@@ -126,6 +131,14 @@
             selectedJob: function(to, from) {
                 if(!_.isEqual(to, from)) {
                     this.updateLayoutOnResize();
+                }
+                if(this.getSizeClassHelper().isActive('width-compact')) {
+                    nextTick(() => {
+                        requestAnimationFrame(() => {
+                            centralEventBus.$emit('force-hide-navigation-bar');
+                            animatedScrollTo(this.getScrollController().nodePosition(this.$refs.job[0].$el) + (41*this.selectedJobIndex));
+                        });
+                    });
                 }
             }
         },
