@@ -44,7 +44,7 @@
         &.AppSection-special
             color color__$sectionOdd
         &:not(.AppSection-no-padding)
-            padding 20px 0
+            padding 30px 0
             .size-class-not-width-compact &
                 padding 40px 0
 
@@ -65,7 +65,7 @@
     .AppSection-title
         font__useTitleBold font__$sectionTitleMobileFontSize
         color _appSectionTitleColor
-        margin-bottom 10px
+        margin-bottom 20px
         .AppSection-special &
             color color__$sectionOdd
         .size-class-not-width-compact &

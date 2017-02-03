@@ -267,7 +267,7 @@
         .size-class-not-width-compact &
             float right
             position relative
-            padding 15px 0 70px 0
+            padding 15px 0 50px 0
             width (_detailsDesktopPercentage) %
             background no-repeat _detailsBackgroundColor right -15px top -15px/180px url('~assets/images/svg/target.svg')
             &:not(.desktopActive)
@@ -300,9 +300,7 @@
             padding-left 45px
 
     .OfferAccordion-details-job-button
-        margin-left auto
-        margin-right auto
-        margin-top 15px
+        margin 15px auto
         max-width 85px
         .size-class-not-width-compact &
             margin 20px 0 0 75px
