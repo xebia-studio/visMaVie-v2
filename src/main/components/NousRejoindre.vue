@@ -131,4 +131,7 @@ export default {
         line-height (_xebiansQuoteLineHeight)px
         display inline
 
+    .CallToActionLayer-button
+        display none !important
+
 </style>
