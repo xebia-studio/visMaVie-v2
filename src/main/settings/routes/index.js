@@ -1,35 +1,36 @@
-import App from 'components/App'
-import { concat, includes, keys, kebabCase } from 'lodash'
+import {get, isUndefined, concat, includes, keys, kebabCase} from 'lodash'
 
+import App from 'components/App'
 import annonces from 'assets/data/nous-rejoindre/annonces.yaml'
+
+function isAValidJob(job) {
+  return includes(keys(annonces).map((jobKey) => kebabCase(jobKey)), job)
+}
 
 const routes = concat(
 	[
 		{
 			name: 'home',
 			path: '/',
-			component: resolve => require(['components/HomePage.vue'], resolve)
+			component: resolve => require(['components/HomePage/HomePage.vue'], resolve)
 		},
     {
-      name: 'nous-rejoindre',
-      path: '/nous-rejoindre/:job?',
-      component: resolve => require(['components/NousRejoindre.vue'], resolve),
-      beforeEnter: (to, from, next) => {
-        if ( to.params.job === undefined || includes(keys(annonces).map((jobKey) => kebabCase(jobKey)), to.params.job) ) {
-          next();
-        } else {
-          next('/nous-rejoindre/');
-        }
+      name : 'nous-rejoindre',
+      path : '/nous-rejoindre/:job?',
+      component : resolve => require(['components/NousRejoindre.vue'], resolve),
+      beforeEnter : (to, from, next) => {
+        const jobParam = get(to, "params.job");
+        return (isUndefined(jobParam) || isAValidJob(jobParam))
+          ? next()
+          : next('/nous-rejoindre/');
       },
     }
-	],
-	require('./test-block')
+  ],
+  require('./test-block')
 );
 
-module.exports = [
-	{
-		path:'/',
-		component: App,
-		children : routes
-	}
-]
+module.exports = [{
+  path : '/',
+  component : App,
+  children : routes
+}];

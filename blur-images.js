@@ -1,22 +1,23 @@
-var path = require('path');
-var blurImages = require('xebia-web-common/scripts/blur-images');
-var readYaml = require('read-yaml');
+const path = require('path');
+const _ = require('lodash');
 
-var _ = require('lodash');
+const blurImages = require('xebia-web-common/scripts/blur-images');
 
 function imagePath(imageName) {
   return path.join(__dirname, './src/main/assets/images', imageName)
 }
 
-var outputDirectory = path.join(__dirname, './src/generated/assets/images/blur');
+const outputDirectory = path.join(__dirname, './src/generated/assets/images/blur');
 
-var imagesToBlur = [];
+const imagesToBlur = [];
 
 /*---------------------------*/
 /* Blur simple pages headers */
 /*---------------------------*/
-_.forEach(['nous-rejoindre'], function (page) {
-  var header = require('./src/main/assets/data/'+page+'/header.json');
+const pagesToBlur = ['nous-rejoindre', 'home'];
+
+_.forEach(pagesToBlur, page => {
+  const header = require(`./src/main/assets/data/${page}/header.json`);
   imagesToBlur.push(imagePath(header.image.default), imagePath(header.image.mobile));
 });
 
