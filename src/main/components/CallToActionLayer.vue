@@ -19,7 +19,7 @@ export default {
 		CTAButton,
 		LogoXebiaVisMaVie
 	}
-}
+};
 </script>
 
 <style lang="stylus">

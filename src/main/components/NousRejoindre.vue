@@ -19,8 +19,8 @@
 </template>
 
 <script>
-import AppPage from 'components/AppPage'
-import header from 'assets/data/nous-rejoindre/header.json'
+import AppPage from 'components/AppPage';
+import header from 'assets/data/nous-rejoindre/header.json';
 
 import AppSection from 'components/AppSection';
 

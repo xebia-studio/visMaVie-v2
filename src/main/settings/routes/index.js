@@ -4,7 +4,7 @@ import App from 'components/App';
 import annonces from 'assets/data/nous-rejoindre/annonces.yaml';
 
 function isAValidJob(job) {
-  return includes(keys(annonces).map((jobKey) => kebabCase(jobKey)), job)
+  return includes(keys(annonces).map((jobKey) => kebabCase(jobKey)), job);
 }
 
 const routes = concat(
@@ -19,7 +19,7 @@ const routes = concat(
       path : '/nous-rejoindre/:job?',
       component : resolve => require(['components/NousRejoindre.vue'], resolve),
       beforeEnter : (to, from, next) => {
-        const jobParam = get(to, "params.job");
+        const jobParam = get(to, 'params.job');
         return (isUndefined(jobParam) || isAValidJob(jobParam))
           ? next()
           : next('/nous-rejoindre/');

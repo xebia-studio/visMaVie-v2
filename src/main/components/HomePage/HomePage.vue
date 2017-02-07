@@ -5,25 +5,25 @@
 </template>
 
 <script>
-  import AppPage from 'components/AppPage'
-  import AppSection from 'components/AppSection'
-  import StatCardList from 'components/StatCardList'
+  import AppPage from 'components/AppPage';
+  import AppSection from 'components/AppSection';
+  import StatCardList from 'components/StatCardList';
 
-  import LogoXebia from 'xebia-web-common/generated/components/LogoXebia'
-  import HandWorldPicto from 'src/generated/components/HandWorldPicto'
-  import HandCouplePicto from 'src/generated/components/HandCouplePicto'
-  import HandPaperPenPicto from 'src/generated/components/HandPaperPenPicto'
-  import HandCoinPicto from 'src/generated/components/HandCoinPicto'
-  import HandBalloonsPicto from 'src/generated/components/HandBalloonsPicto'
-  import HandMoneyPigPicto from 'src/generated/components/HandMoneyPigPicto'
-  import HandMicroPicto from 'src/generated/components/HandMicroPicto'
-  import HandFactoryPicto from 'src/generated/components/HandFactoryPicto'
+  import LogoXebia from 'xebia-web-common/generated/components/LogoXebia';
+  import HandWorldPicto from 'src/generated/components/HandWorldPicto';
+  import HandCouplePicto from 'src/generated/components/HandCouplePicto';
+  import HandPaperPenPicto from 'src/generated/components/HandPaperPenPicto';
+  import HandCoinPicto from 'src/generated/components/HandCoinPicto';
+  import HandBalloonsPicto from 'src/generated/components/HandBalloonsPicto';
+  import HandMoneyPigPicto from 'src/generated/components/HandMoneyPigPicto';
+  import HandMicroPicto from 'src/generated/components/HandMicroPicto';
+  import HandFactoryPicto from 'src/generated/components/HandFactoryPicto';
 
-  import {mixin as fontLoader} from 'tools/font-loader'
+  import {mixin as fontLoader} from 'tools/font-loader';
   import {mixin as sizeClassHelper} from 'tools/size-class-helper';
 
-  import {HomePage as settings} from 'settings/components'
-  import header from 'assets/data/home/header.json'
+  import {HomePage as settings} from 'settings/components';
+  import header from 'assets/data/home/header.json';
 
   export default {
     name : 'HomePage',
@@ -77,7 +77,7 @@
             }
           ]
         }
-      }
+      };
     },
     components : {
       AppPage,
@@ -104,7 +104,7 @@
         return settings;
       }
     }
-  }
+  };
 </script>
 
 <style lang="stylus" src="./HomePage.styl"></style>

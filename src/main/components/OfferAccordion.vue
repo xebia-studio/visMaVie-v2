@@ -34,7 +34,7 @@
     import { mixin as sizeClassHelper } from 'tools/size-class-helper';
     import { mixin as scrollController } from 'tools/scroll-controller';
 
-    import animatedScrollTo from 'xebia-web-common/tools/animated-scroll-to'
+    import animatedScrollTo from 'xebia-web-common/tools/animated-scroll-to';
     import centralEventBus from 'xebia-web-common/tools/central-event-bus';
 
     import { OfferAccordion as settings } from 'settings/components';
@@ -61,7 +61,7 @@
                 jobTitleDesktopHeight: settings.jobTitleDesktopHeight,
                 jobTitleDesktopBorder: settings.jobTitleDesktopBorder,
                 isWidthCompact: this.getSizeClassHelper().isActive('width-compact'),
-                jobStyle: _.mapValues(this.jobs, (value) => undefined)
+                jobStyle: _.mapValues(this.jobs, () => undefined)
             };
         },
         methods: {
@@ -78,7 +78,7 @@
                     nextTick(() => {
                         if(this.$refs.job) {
                             selectedJobHeight = domHeight(this.$refs.job[this.selectedJobIndex].$el)+'px';
-                            this.jobStyle = _.mapValues(this.jobs, (value) => {height: undefined});
+                            this.jobStyle = _.mapValues(this.jobs, () => {return {height: undefined};});
                         }
                         requestAnimationFrame(() => {
                             this.jobStyle[selectedJobLabel] = {height: selectedJobHeight};
@@ -94,7 +94,7 @@
                 return jobLabel ? this.jobs[jobLabel] : this.jobs[_.keys(this.jobs)[0]];
             },
             selectedJobIndex: function () {
-                let selectedJobIndex = -1;
+                const selectedJobIndex = -1;
                 for(const jobLabel in this.jobs) {
                     if(this.isJobActive(this.jobs[jobLabel])) {
                         return _.indexOf(_.keys(this.jobs), jobLabel);
