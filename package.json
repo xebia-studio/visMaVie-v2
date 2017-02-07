@@ -21,7 +21,7 @@
     "vue": "^2.1.0",
     "vue-router": "^2.1.1",
     "webfontloader": "^1.6.27",
-    "xebia-web-common": "git+ssh://git@github.com:xebia-france/xebia-web-common.git#2f0f176"
+    "xebia-web-common": "git+ssh://git@github.com:xebia-france/xebia-web-common.git#7fe1887"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.0",
