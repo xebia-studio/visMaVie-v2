@@ -15,6 +15,11 @@ const routes = concat(
 			component: resolve => require(['components/HomePage/HomePage.vue'], resolve)
 		},
     {
+      name : 'integration',
+      path : '/integration',
+      component : resolve => require(['components/VotreIntegration.vue'], resolve)
+    },
+    {
       name : 'nous-rejoindre',
       path : '/nous-rejoindre/:job?',
       component : resolve => require(['components/NousRejoindre.vue'], resolve),
