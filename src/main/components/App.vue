@@ -1,5 +1,5 @@
 <template lang="jade">
-	.App
+	.App(v-bind:class="'is--animation-ready'")
 		header.App-header
 		router-view
 		footer.App-footer
