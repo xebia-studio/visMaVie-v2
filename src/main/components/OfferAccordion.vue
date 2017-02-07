@@ -135,7 +135,7 @@
                 if(this.getSizeClassHelper().isActive('width-compact')) {
                     nextTick(() => {
                         requestAnimationFrame(() => {
-                            centralEventBus.$emit('force-hide-navigation-bar');
+                            centralEventBus.$emit('force-hide-parallaxed-layer', 'navigation-bar');
                             animatedScrollTo(this.getScrollController().nodePosition(this.$refs.job[0].$el) + (41*this.selectedJobIndex));
                         });
                     });
