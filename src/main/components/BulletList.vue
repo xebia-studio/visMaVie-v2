@@ -41,7 +41,7 @@ export default {
     },
     mounted: function () {},
     beforeDestroy: function () {}
-}
+};
 </script>
 
 <style lang="stylus">

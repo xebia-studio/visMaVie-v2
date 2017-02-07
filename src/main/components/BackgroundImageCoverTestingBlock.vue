@@ -21,7 +21,7 @@ export default {
 			return this.inputValue;
 		}
 	}
-}
+};
 </script>
 
 <style lang="stylus">

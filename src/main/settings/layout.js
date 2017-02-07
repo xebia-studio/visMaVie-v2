@@ -1,6 +1,6 @@
-var gridNumberOfColumns = 30;
-var usefulWidth = 1400;
-var gridColumnWidth = usefulWidth / gridNumberOfColumns;
+const gridNumberOfColumns = 30;
+const usefulWidth = 1400;
+const gridColumnWidth = usefulWidth / gridNumberOfColumns;
 
 /*--------------*/
 

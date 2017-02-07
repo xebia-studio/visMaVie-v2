@@ -36,8 +36,6 @@ import contacts from 'assets/data/footer/contacts.yaml';
 import otherSites from 'assets/data/footer/autres-sites.yaml';
 import socialNetworks from 'assets/data/footer/reseaux-sociaux.yaml';
 
-import { domHeight } from '@alexistessier/dom';
-
 export default {
 	name: 'AppPage',
 	props: {
@@ -62,7 +60,7 @@ export default {
 		    scrollPositionToReachBeforeLightBackground: undefined,
 		    heightBlurryHeader: blurryHeaderLayerSettings.heightBlurryHeader,
 		    screenHeightIdeal: layoutSettings.screenHeightIdeal
-	    }
+	    };
 	},
 	methods: {
 	    headerResize: function (headerHeight) {
@@ -78,7 +76,7 @@ export default {
 		ParallaxedLayersGroup,
 		ParallaxedLayer
 	}
-}
+};
 </script>
 
 <style lang="stylus">

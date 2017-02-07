@@ -7,10 +7,13 @@
   "scripts": {
     "create-generated-sources": "node create-generated-sources",
     "dev": "npm run create-generated-sources -- noBlurryImage && node build/dev-server.js",
+    "prebuild": "npm run lint",
     "build": "npm run create-generated-sources && node build/build.js",
     "unit": "karma start test/unit/karma.conf.js --single-run",
     "visual-regression": "node test/visual-regression",
-    "test": "dependency-check package.json --entry src/main/root.js & npm run unit"
+		"pretest": "npm run lint",
+    "test": "dependency-check package.json --entry src/main/root.js & npm run unit",
+    "lint": "eslint --ext js,vue build config src/main --fix"
   },
   "dependencies": {
     "@alexistessier/dom": "^3.0.5",
@@ -37,6 +40,8 @@
     "connect-history-api-fallback": "^1.1.0",
     "css-loader": "^0.25.0",
     "cucumber": "^2.0.0-rc.2",
+    "eslint": "^3.14.1",
+    "eslint-loader": "^1.6.1",
     "eventsource-polyfill": "^0.9.6",
     "express": "^4.14.0",
     "extract-text-webpack-plugin": "^1.0.1",
@@ -89,6 +94,7 @@
     "webpack-merge": "^0.14.1",
     "yaml-loader": "^0.4.0"
   },
+  "engineStrict": true,
   "engines": {
     "node": ">= 4.0.0",
     "npm": ">= 3.0.0"

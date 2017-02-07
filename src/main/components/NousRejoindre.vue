@@ -19,8 +19,8 @@
 </template>
 
 <script>
-import AppPage from 'components/AppPage'
-import header from 'assets/data/nous-rejoindre/header.json'
+import AppPage from 'components/AppPage';
+import header from 'assets/data/nous-rejoindre/header.json';
 
 import AppSection from 'components/AppSection';
 
@@ -51,7 +51,7 @@ export default {
 		    technos: technos.technos,
 		    quiSontLesXebians,
 		    lesPlus
-		}
+		};
 	},
 	computed: {
 	    quiSontLesXebiansImgSrc : function() {
@@ -72,7 +72,7 @@ export default {
 	    PictoQuoteOrangeRight,
 	    BulletList
 	}
-}
+};
 </script>
 
 <style lang="stylus">

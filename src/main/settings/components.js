@@ -27,5 +27,5 @@ module.exports = {
     desktopHeight: 40,
     mobileHeight: 50,
     numberOfElements: Object.keys(settingsHeader.navigation_links).length
-  }
+	}
 };

@@ -4,7 +4,7 @@
 </template>
 
 <script>
-import StatCard from 'components/StatCard'
+import StatCard from 'components/StatCard';
 
 export default {
 	name: 'StatCardList',
@@ -16,7 +16,7 @@ export default {
 	components: {
 		StatCard
 	}
-}
+};
 </script>
 
 <style lang="stylus">

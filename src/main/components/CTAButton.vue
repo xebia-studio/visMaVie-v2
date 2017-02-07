@@ -3,7 +3,7 @@
 </template>
 
 <script>
-    import { mixin as fontLoader } from 'tools/font-loader'
+    import { mixin as fontLoader } from 'tools/font-loader';
 
     export default {
         name: 'CTAButton',
@@ -31,7 +31,7 @@
                 'text': 'regular'
             });
         }
-    }
+    };
 </script>
 
 <style lang="stylus">
@@ -51,4 +51,5 @@
             background-color _CTAButtonPrimaryBackgroundColor
         &.secondary
             background-color _CTAButtonSecondaryBackgroundColor
+
 </style>
