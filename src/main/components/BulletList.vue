@@ -1,7 +1,7 @@
 <template lang="jade">
     .BulletList
         .BulletList-image-wrapper
-            img.BulletList-image(v-bind:src="bulletListImgSrc")
+            .BulletList-image(v-bind:style="{'background-image': 'url('+bulletListImgSrc+')'}")
         .BulletList-list
             .BulletList-list-item(v-for="item, index in itemList")
                 .BulletList-list-item-picto(:is="svgComponent('BulletBlue'+(index+1))")
@@ -45,20 +45,17 @@ export default {
 </script>
 
 <style lang="stylus">
-    _bulletListImageDesktopNumberOfColumns = 8.5
+    _bulletListImageDesktopNumberOfColumns =  NousRejoindre__$leftPartNumberOfColumns
     _bulletListImageDesktopPercentage = (_bulletListImageDesktopNumberOfColumns/layout__$gridSectionNumberOfColumns*100)
     _bulletListListDesktopPercentage = 100 - _bulletListImageDesktopPercentage
 
-    _bulletListListItemPictoSize = BulletPoints__$blueBulletSize
+    _bulletListListItemPictoSize = BulletPoints__$smallBulletSize
 
     .BulletList
         clearfix()
 
     .BulletList-image-wrapper
-        margin-left auto
-        margin-right auto
-        .size-class-width-compact &
-            max-width 256px
+        width 100%
         .size-class-not-width-compact &
             text-align right
             float left
@@ -66,6 +63,8 @@ export default {
 
     .BulletList-image
         width 100%
+        height 140px
+        background-size cover
         display inline-block
         .size-class-not-width-compact &
             max-width 256px
@@ -73,9 +72,9 @@ export default {
     .BulletList-list
         padding 10px 0 20px 0
         .size-class-not-width-compact &
-            padding 0 20px
+            padding 0
             float left
-            width 'calc(%s - %s)' % ((_bulletListListDesktopPercentage)% 60px)
+            width (_bulletListListDesktopPercentage)%
 
     .BulletList-list-item
         clearfix()
@@ -86,12 +85,16 @@ export default {
     .BulletList-list-item-picto
         width (_bulletListListItemPictoSize)px
         float left
-        padding-right 10px
+        padding ((font__$textLineHeight - _bulletListListItemPictoSize)/2)px (BulletPoints__$smallBulletMobilePaddingHorizontal*2)px ((font__$textLineHeight - _bulletListListItemPictoSize)/2)px 0
+        .size-class-not-width-compact &
+            padding ((font__$textLineHeight - _bulletListListItemPictoSize)/2)px (BulletPoints__$smallBulletDesktopPaddingHorizontal)px
 
     .BulletList-list-item-text
-        with auto
+        width auto
         color color__$text
-        padding-left (_bulletListListItemPictoSize+10)px
-        line-height (_bulletListListItemPictoSize)px
+        padding-left (_bulletListListItemPictoSize+BulletPoints__$smallBulletMobilePaddingHorizontal*2)px
+        line-height (font__$textLineHeight)px
+        .size-class-not-width-compact &
+            padding-left (_bulletListListItemPictoSize+BulletPoints__$smallBulletDesktopPaddingHorizontal*2)px
 
 </style>

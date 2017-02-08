@@ -3,17 +3,23 @@ const settingsHeader = require('./../../../src/main/assets/data/header/$settings
 const screenHeightIdeal = 800;
 
 module.exports = {
-	HomePage : {
+	HomePage: {
 		screenHeightIdeal,
 		heightHeader: 520
 	},
+  NousRejoindre: {
+    leftPartNumberOfColumns: 8.5
+  },
   BlurryHeaderLayer: {
     screenHeightIdeal,
     heightBlurryHeader: 400,
   },
 	BulletPoints: {
-		transparentBulletSize: 30,
-		blueBulletSize: 21
+		bigBulletSize: 30,
+    bigBulletPaddingRight: 10,
+		smallBulletSize: 20,
+    smallBulletMobilePaddingHorizontal: 10,
+    smallBulletDesktopPaddingHorizontal: 25
 	},
 	OfferAccordion: {
     jobTitleDesktopHeight: 60,

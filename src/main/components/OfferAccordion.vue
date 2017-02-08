@@ -10,11 +10,12 @@
                     .OfferAccordion-job-title-label {{label}}
                         div(v-if="isWidthCompact", :is="svgComponent('IconCircledArrowDown')")
                 .OfferAccordion-details(v-bind:class="{desktopActive: isJobActive(job)}")
+                    .OfferAccordion-details-title {{ label }}
                     .OfferAccordion-details-part(v-for="(partList, partLabel, index) in job")
                         .OfferAccordion-details-part-title
                             .OfferAccordion-details-part-title-number
                                 div(:is="svgComponent('BulletBlue' + (index + 1))")
-                            .OfferAccordion-details-part-title-label {{partLabel}} :
+                            .OfferAccordion-details-part-title-label {{partLabel}}
                         .OfferAccordion-details-part-body(v-for="partItem in partList") {{partItem}}
                     CTAButton.OfferAccordion-details-job-button(:label="jobButtonLabel", :link="'mailto:recrutement@xebia.fr'", :newTab="false", :type="'primary'")
             a.OfferAccordion-jobs-talent-wrapper(v-bind:style="{top: (jobTitleDesktopHeight+jobTitleDesktopBorder)*Object.keys(jobs).length + 'px'}",
@@ -113,7 +114,7 @@
         created: function () {
             this.loadFont({
                 'text': ['light', 'regular', 'bold'],
-                'title': 'bold'
+                'title': ['light', 'bold']
             });
             this.getSizeClassHelper().on('resize', () => {
                 this.isWidthCompact = this.getSizeClassHelper().isActive('width-compact');
@@ -152,7 +153,7 @@
 </script>
 
 <style lang="stylus">
-    _jobTitleDesktopNumberOfColumns = 8.5
+    _jobTitleDesktopNumberOfColumns = NousRejoindre__$leftPartNumberOfColumns
     _jobTitleDesktopPercentage = (_jobTitleDesktopNumberOfColumns/layout__$gridSectionNumberOfColumns*100)
     _detailsDesktopPercentage = 100 - _jobTitleDesktopPercentage
 
@@ -176,9 +177,9 @@
     _detailsPartTitleHeight = 30
     _detailsPartBodyColor = color__$text
 
-    _jobMobileBulletSize = BulletPoints__$blueBulletSize + 5
-    _jobDesktopBulletSize = BulletPoints__$transparentBulletSize
-    _jobPartBulletSize = BulletPoints__$blueBulletSize
+    _jobMobileBulletSize = BulletPoints__$smallBulletSize + 5
+    _jobDesktopBulletSize = BulletPoints__$bigBulletSize
+    _jobPartBulletSize = BulletPoints__$smallBulletSize
 
     .OfferAccordion
         clearfix()
@@ -214,15 +215,15 @@
         color white
         text-align center
         float left
-        width _jobMobileBulletSize px
-        height _jobMobileBulletSize px
-        padding ((_jobTitleMobileHeight - _jobMobileBulletSize)/2)px 5px
+        width (_jobMobileBulletSize)px
+        height (_jobMobileBulletSize)px
+        padding ((_jobTitleMobileHeight - _jobMobileBulletSize)/2)px (BulletPoints__$smallBulletMobilePaddingHorizontal/2)px
         .OfferAccordion-job.active &
             background-color _jobBackgroundColor
         .size-class-not-width-compact &
             width _jobTitleNumberWidth px
             height _jobDesktopBulletSize px
-            padding ((_jobTitleDesktopHeight - _jobDesktopBulletSize)/2)px 10px ((_jobTitleDesktopHeight - _jobDesktopBulletSize)/2)px 0px
+            padding ((_jobTitleDesktopHeight - _jobDesktopBulletSize)/2)px (BulletPoints__$bigBulletPaddingRight)px ((_jobTitleDesktopHeight - _jobDesktopBulletSize)/2)px 0px
             background-color _jobsBackgroundColor
             & svg
                 width _jobDesktopBulletSize px
@@ -286,31 +287,42 @@
             &:not(.desktopActive)
                 display none
 
+    .OfferAccordion-details-title
+        padding ((_detailsPartTitleHeight - font__$textFontSize)/2)px 0
+        font__useTitleLight font__$sectionTitleDesktopFontSize
+        color color__$title
+        padding-top 20px
+        padding-bottom 10px
+        .size-class-not-width-compact &
+            padding-left (BulletPoints__$smallBulletDesktopPaddingHorizontal*2 + _jobPartBulletSize)px
+
     .OfferAccordion-details-part
         font__useTextRegular font__$textFontSize
         padding 15px 0
         .size-class-not-width-compact &
-            padding 15px 30px
+            padding 15px (BulletPoints__$smallBulletDesktopPaddingHorizontal)px
 
     .OfferAccordion-details-part-title-number
         float left
         width _jobPartBulletSize px
         height _jobPartBulletSize px
-        padding ((_detailsPartTitleHeight - _jobPartBulletSize)/2)px 10px ((_detailsPartTitleHeight - _jobPartBulletSize)/2)px 0
+        padding ((_detailsPartTitleHeight - _jobPartBulletSize)/2)px (BulletPoints__$smallBulletMobilePaddingHorizontal)px ((_detailsPartTitleHeight - _jobPartBulletSize)/2)px 0
         .size-class-not-width-compact &
-            padding-right 25px
+            padding-right (BulletPoints__$smallBulletDesktopPaddingHorizontal)px
 
     .OfferAccordion-details-part-title-label
         width auto
-        padding ((_detailsPartTitleHeight - font__$textFontSize)/2)px 10px ((_detailsPartTitleHeight - font__$textFontSize)/2)px 0
+        padding ((_detailsPartTitleHeight - font__$textFontSize)/2)px (BulletPoints__$smallBulletMobilePaddingHorizontal)px ((_detailsPartTitleHeight - font__$textFontSize)/2)px 0
         color _detailsPartTitleColor
         font__useTextBold font__$textFontSize
 
     .OfferAccordion-details-part-body
         color _detailsPartBodyColor
         margin-top 10px
+        padding-left (BulletPoints__$smallBulletSize/2)px
+        line-height (font__$textLineHeight)px
         .size-class-not-width-compact &
-            padding-left 45px
+            padding-left (BulletPoints__$smallBulletDesktopPaddingHorizontal+BulletPoints__$smallBulletSize)px
 
     .OfferAccordion-details-job-button
         margin 15px auto
