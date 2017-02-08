@@ -7,7 +7,7 @@
         AppSection.AppSection-special.NousRejoindre-xebians(:title="'Qui sont les Xebian(e)s ?'")
             template(slot="section-content")
                 .NousRejoindre-xebians-image-with-caption
-                    img.NousRejoindre-xebians-image(v-bind:src="quiSontLesXebiansImgSrc")
+                    .NousRejoindre-xebians-image(v-bind:style="{'background-image': 'url('+quiSontLesXebiansImgSrc+')'}")
                     .NousRejoindre-xebians-caption(v-html="quiSontLesXebians.image.caption")
                 .NousRejoindre-xebians-quote
                     PictoQuoteOrangeLeft.NousRejoindre-xebians-quote-left
@@ -76,9 +76,9 @@ export default {
 </script>
 
 <style lang="stylus">
-    _xebiansQuoteLineHeight = 26
+    _xebiansQuoteLineHeight = font__$textLineHeight
 
-    _xebiansImageDesktopNumberOfColumns = 8.5
+    _xebiansImageDesktopNumberOfColumns = NousRejoindre__$leftPartNumberOfColumns
     _xebiansImageDesktopPercentage = (_xebiansImageDesktopNumberOfColumns/layout__$gridSectionNumberOfColumns*100)
     _xebiansQuoteDesktopPercentage = 100 - _xebiansImageDesktopPercentage
 
@@ -86,10 +86,7 @@ export default {
         clearfix()
 
     .NousRejoindre-xebians-image-with-caption
-        margin-left auto
-        margin-right auto
-        .size-class-width-compact &
-            max-width 256px
+        width 100%
         .size-class-not-width-compact &
             text-align right
             float left
@@ -97,6 +94,8 @@ export default {
 
     .NousRejoindre-xebians-image
         width 100%
+        height 140px
+        background-size cover
         display inline-block
         .size-class-not-width-compact &
             max-width 256px
@@ -104,8 +103,9 @@ export default {
     .NousRejoindre-xebians-caption
         font__useTextRegular font__$captionMobileFontSize
         width 100%
-        text-align right
         padding 5px 0
+        opacity 0.6
+        font-style italic
         .size-class-not-width-compact &
             padding 0
             font__useTextRegular font__$captionDesktopFontSize
@@ -130,8 +130,5 @@ export default {
     .NousRejoindre-xebians-quote-text
         line-height (_xebiansQuoteLineHeight)px
         display inline
-
-    .CallToActionLayer-button
-        display none !important
 
 </style>
