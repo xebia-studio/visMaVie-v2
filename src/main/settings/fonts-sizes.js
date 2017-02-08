@@ -7,9 +7,9 @@ module.exports = {
   textFontSize: 15,
   textLineHeight: 24,
 
-  sectionTitleMobileFontSize: 20,
+  sectionTitleMobileFontSize: 36,
   sectionTitleDesktopFontSize: 36,
-  sectionTitleLineHeight: 40,
+  sectionTitleLineHeight: 45,
   sectionBaselineMobileFontSize: 24,
   sectionBaselineDesktopFontSize: 16,
 

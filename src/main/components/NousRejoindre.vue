@@ -111,9 +111,9 @@ export default {
             font__useTextRegular font__$captionDesktopFontSize
 
     .NousRejoindre-xebians-quote
-        padding 40px 0 30px 0
+        padding 30px 0 10px 0
         .size-class-not-width-compact &
-            padding 10px 30px
+            padding 0px 30px
             float left
             width 'calc(%s - %s)' % ((_xebiansQuoteDesktopPercentage)% 60px)
 

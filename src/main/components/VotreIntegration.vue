@@ -1,5 +1,7 @@
 <template lang="jade">
     AppPage.VotreIntegration(:header="header")
+        AppSection(:title="'Des réponses à vos questions, consultez notre FAQ.'")
+            FAQ(:themes="themes", :questionButtonLabel="'Posez Vos Questions'", slot="section-content")
 </template>
 
 <script>
@@ -8,6 +10,9 @@ import header from 'assets/data/votre-integration/header.json';
 
 import AppSection from 'components/AppSection';
 
+import FAQ from 'components/FAQ';
+import themes from 'assets/data/votre-integration/faq.json';
+
 import { mixin as fontLoader } from 'tools/font-loader';
 
 export default {
@@ -15,7 +20,8 @@ export default {
 	mixins: [fontLoader],
 	data: function () {
 		return {
-		    header
+		    header,
+		    themes
 		};
 	},
 	created: function () {
@@ -25,7 +31,8 @@ export default {
     },
 	components: {
 	    AppPage,
-	    AppSection
+	    AppSection,
+	    FAQ
 	}
 };
 </script>

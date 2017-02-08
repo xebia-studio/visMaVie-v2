@@ -53,6 +53,7 @@
 
     .AppSection-odd
         background-color color__$sectionOdd
+        border-bottom 1px color__$greyLight solid
 
     .AppSection-special
         background-color color__$blue
@@ -65,11 +66,12 @@
     .AppSection-title
         font__useTitleBold font__$sectionTitleMobileFontSize
         color _appSectionTitleColor
-        margin-bottom 20px
+        margin-bottom 30px
+        line-height (font__$sectionTitleLineHeight)px
         .AppSection-special &
             color color__$sectionOdd
         .size-class-not-width-compact &
-            margin-bottom 30px
+            margin-bottom 40px
             font__useTitleBold font__$sectionTitleDesktopFontSize
 
     AppSection-baseline

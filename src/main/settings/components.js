@@ -10,6 +10,9 @@ module.exports = {
   NousRejoindre: {
     leftPartNumberOfColumns: 8.5
   },
+  VotreIntegration: {
+    leftPartNumberOfColumns: 8.5
+  },
   BlurryHeaderLayer: {
     screenHeightIdeal,
     heightBlurryHeader: 400,

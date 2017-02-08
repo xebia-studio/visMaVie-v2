@@ -70,7 +70,7 @@ export default {
             max-width 256px
 
     .BulletList-list
-        padding 10px 0 20px 0
+        padding 30px 0 0 0
         .size-class-not-width-compact &
             padding 0
             float left

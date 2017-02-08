@@ -70,6 +70,7 @@ export default {
     .NosTechnos-techno
         opacity 0.5
         height _technoLogoHeight px
+        filter sepia(100%) hue-rotate(190deg) saturate(50%)
 
     .NosTechnos-techno-plus
         font__useTextRegular font__$textFontSize

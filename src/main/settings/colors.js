@@ -28,7 +28,7 @@ const textLight = '#999999';
 const text = '#666666';
 
 const sectionOdd = 'white';
-const sectionEven = greyLight;
+const sectionEven = greyExtraLight;
 
 /*--------------*/
 

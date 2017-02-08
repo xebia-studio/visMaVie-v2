@@ -291,10 +291,11 @@
         padding ((_detailsPartTitleHeight - font__$textFontSize)/2)px 0
         font__useTitleLight font__$sectionTitleDesktopFontSize
         color color__$title
+        padding-left (_jobPartBulletSize/2)px
         padding-top 20px
         padding-bottom 10px
         .size-class-not-width-compact &
-            padding-left (BulletPoints__$smallBulletDesktopPaddingHorizontal*2 + _jobPartBulletSize)px
+            padding-left (BulletPoints__$smallBulletDesktopPaddingHorizontal + _jobPartBulletSize/2)px
 
     .OfferAccordion-details-part
         font__useTextRegular font__$textFontSize
