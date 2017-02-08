@@ -2,6 +2,8 @@ Lead Tech:
   url: nous-rejoindre/lead-tech
 Expert:
   url: nous-rejoindre/expert
+Développeur:
+  url: nous-rejoindre/developpeur 
 Coding Architect:
   url: nous-rejoindre/coding-architect
 Coach:
@@ -10,7 +12,4 @@ Studio Team Leader:
   url: nous-rejoindre/studio-team-leader
 Scrum Master:
   url: nous-rejoindre/scrum-master
-Data Scientist:
-  url: nous-rejoindre/data-scientist
-Data Engineer:
-  url: nous-rejoindre/data-engineer
+
