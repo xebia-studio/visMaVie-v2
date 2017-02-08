@@ -16,7 +16,7 @@
                             .OfferAccordion-details-part-title-number
                                 div(:is="svgComponent('BulletBlue' + (index + 1))")
                             .OfferAccordion-details-part-title-label {{partLabel}}
-                        .OfferAccordion-details-part-body(v-for="partItem in partList") {{partItem}}
+                        .OfferAccordion-details-part-body(v-for="partItem in partList", v-html="partItem")
                     CTAButton.OfferAccordion-details-job-button(:label="jobButtonLabel", :link="'mailto:recrutement@xebia.fr'", :newTab="false", :type="'primary'")
             a.OfferAccordion-jobs-talent-wrapper(v-bind:style="{top: (jobTitleDesktopHeight+jobTitleDesktopBorder)*Object.keys(jobs).length + 'px'}",
                                                 href="mailto:recrutement@xebia.fr")

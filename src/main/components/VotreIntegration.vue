@@ -1,6 +1,6 @@
 <template lang="jade">
     AppPage.VotreIntegration(:header="header")
-        AppSection(:title="'Des réponses à vos questions, consultez notre FAQ.'")
+        AppSection.AppSection-even(:title="'Des réponses à vos questions, consultez notre FAQ.'")
             FAQ(:themes="themes", :questionButtonLabel="'Posez Vos Questions'", slot="section-content")
 </template>
 
