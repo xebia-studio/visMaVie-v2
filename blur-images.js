@@ -14,7 +14,7 @@ const imagesToBlur = [];
 /*---------------------------*/
 /* Blur simple pages headers */
 /*---------------------------*/
-const pagesToBlur = ['nous-rejoindre', 'home', 'votre-integration'];
+const pagesToBlur = ['nous-rejoindre', 'home', 'votre-integration', 'nos-creations'];
 
 _.forEach(pagesToBlur, page => {
   const header = require(`./src/main/assets/data/${page}/header.json`);
