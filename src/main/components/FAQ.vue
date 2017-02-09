@@ -4,11 +4,13 @@
         .FAQ-themes
             .FAQ-theme(v-bind:class="{active: isThemeActive(theme)}" v-for="(questions, theme, index) in themes", :style="themeStyle[theme]", ref="theme", v-on:click="selectTheme(theme)")
                 .FAQ-theme-title-number(v-if="!isWidthCompact", :is="svgComponent('BulletTransparentWhite' + (index + 1))")
-                .FAQ-theme-title {{theme}}
-                    div(:is="svgComponent(isThemeActive(theme) ? 'IconCircledArrowUp' : 'IconCircledArrowDown')")
-                .FAQ-theme-question(v-for="question in questions")
-                    .FAQ-theme-question-title(v-html="question.title")
-                    .FAQ-theme-question-body(v-html="question.answer")
+                .FAQ-theme-title
+                    .FAQ-theme-title-label(v-html="theme")
+                    .FAQ-theme-title-picto(:is="svgComponent(isThemeActive(theme) ? 'IconCircledArrowUp' : 'IconCircledArrowDown')")
+                .FAQ-theme-questions
+                    .FAQ-theme-question(v-for="question in questions")
+                        .FAQ-theme-question-title(v-html="question.title")
+                        .FAQ-theme-question-body(v-html="question.answer")
             CTAButton.FAQ-question-button(:label="questionButtonLabel", :link="'mailto:recrutement@xebia.fr'", :newTab="false", :type="'primary'")
 </template>
 
@@ -43,7 +45,7 @@
         data: function () {
             return {
                 isWidthCompact: this.getSizeClassHelper().isActive('width-compact'),
-                themeStyle: _.mapValues(this.jobs, () => undefined),
+                themeStyle: _.mapValues(this.themes, () => undefined),
                 selectedThemeLabel: _.keys(this.themes)[0]
             };
         },
@@ -55,16 +57,19 @@
                 this.selectedThemeLabel = themeLabel;
             },
             updateLayoutOnResize: function () {
-                let selectedThemeHeight = undefined;
-
-                this.themeStyle[this.selectedThemeLabel] = {height: 'auto'};
+                const temporaryThemeStyle = {};
+                _.keys(this.themes).forEach((themeLabel) => {
+                    this.themeStyle[themeLabel] = {height: 'auto'};
+                });
                 nextTick(() => {
                     if(this.$refs.theme) {
-                        selectedThemeHeight = domHeight(this.$refs.theme[this.selectedThemeIndex])+'px';
-                        this.themeStyle = _.mapValues(this.themes, () => {return {height: undefined};});
+                        _.keys(this.themes).forEach((themeLabel, index) => {
+                            temporaryThemeStyle[themeLabel] = {height: domHeight(this.$refs.theme[index])+'px'};
+                            this.themeStyle = _.mapValues(this.themes, () => {return {height: undefined};});
+                        });
                     }
                     requestAnimationFrame(() => {
-                        this.themeStyle[this.selectedThemeLabel] = {height: selectedThemeHeight};
+                        this.themeStyle = _.cloneDeep(temporaryThemeStyle);
                     });
                 });
             }
@@ -105,7 +110,11 @@
                 nextTick(() => {
                     requestAnimationFrame(() => {
                         centralEventBus.$emit('force-hide-parallaxed-layer', 'navigation-bar');
-                        animatedScrollTo(this.getScrollController().nodePosition(this.$refs.theme[0]) + (100*this.selectedThemeIndex));
+                        let heightToAdd = 0;
+                        this.$refs.theme.slice(0, this.selectedThemeIndex).forEach((themeElement) => {
+                            heightToAdd += domHeight(themeElement)+20;
+                        });
+                        animatedScrollTo(this.getScrollController().nodePosition(this.$refs.theme[0]) + heightToAdd);
                     });
                 });
             }
@@ -120,7 +129,7 @@
 </script>
 
 <style lang="stylus">
-    _themeTitleMobileHeight = 80
+    _themeTitleMobileHeight = 60
     _themeTitleBackgroundColor = color__$blue
     _themeColor = color__$uiImportantEnabledText
     _questionBackgroundColor = color__$sectionOdd
@@ -131,11 +140,14 @@
 
     .FAQ
         background-color color__$sectionEven
+        clearfix()
 
     .FAQ-left-part
         .size-class-width-compact &
             display none
         .size-class-not-width-compact &
+            background no-repeat 25% top/100px url('~assets/images/svg/picto-plant.svg')
+            height 500px
             float left
             width (_leftPartDesktopPercentage)%
 
@@ -146,65 +158,80 @@
 
     .FAQ-theme
         width 100%
-        overflow hidden
         transition height 320ms ease__inOutQuad() 120ms
-        margin 20px 0
+        margin-bottom 20px
         &.active
             border-radius 0 0 8px 8px
-        &:not(.active)
-            height (_themeTitleMobileHeight)px
-
-    .FAQ-theme-title
-        cursor pointer
-        background-color _themeTitleBackgroundColor
-        color _themeColor
-        text-transform uppercase
-        font__useTextRegular font__$textFontSize
-        padding ((_themeTitleMobileHeight - font__$textFontSize)/2)px 10px
         .size-class-not-width-compact &
             position relative
 
     .FAQ-theme-title-number
-        display none
-        width (BulletPoints__$bigBulletSize)px
-        height (BulletPoints__$bigBulletSize)px
         .size-class-not-width-compact &
-            background-color _jobBackgroundColor
-        .size-class-not-width-compact .FAQ-theme.active &
+            width (BulletPoints__$bigBulletSize)px
+            height (BulletPoints__$bigBulletSize)px
             position absolute
-            left 30px
-            & svg
-                fill _themeTitleBackgroundColor
+            left -(BulletPoints__$bigBulletSize + 20)px
+            top ((_themeTitleMobileHeight - BulletPoints__$bigBulletSize)/2)px
+        .size-class-not-width-compact .FAQ-theme.active &
+            & circle
+                stroke _themeTitleBackgroundColor !important
+            & path
+                fill _themeTitleBackgroundColor !important
 
-    .IconCircledArrowUp, .IconCircledArrowDown
+    .FAQ-theme-title
+        padding ((_themeTitleMobileHeight - font__$textFontSize)/2)px 35px ((_themeTitleMobileHeight - font__$textFontSize)/2)px 10px
+        cursor pointer
+        background-color _themeTitleBackgroundColor
+        position relative
+        .size-class-not-width-compact &
+            padding-left 20px
+
+    .FAQ-theme-title-label
+        font__useTextRegular font__$textFontSize
+        padding-right 10px
+        color _themeColor
+
+    .FAQ-theme-title-picto
         width 25px
-        float right
-        margin-top -5px
+        position absolute
+        right 10px
+        top 'calc(%s - %s)' % (50% (25/2)px)
+        .size-class-not-width-compact &
+            right 20px
+
+    .FAQ-theme-questions
+        overflow hidden
+        .FAQ-theme:not(.active) &
+            height 0px
 
     .FAQ-theme-question
         background-color _questionBackgroundColor
         .size-class-width-compact &
             padding 0px 10px 30px 10px
-        .size-class-not-width-compact &
-            padding 15px 0 50px 0
 
     .FAQ-theme-question-title
         padding ((_questionHeight - font__$textFontSize)/2)px 0
         color color__$blue
         font__useTextBold font__$textFontSize
+        .size-class-not-width-compact &
+            padding 30px 0 30px 20px
 
     .FAQ-theme-question-body
         color color__$text
         line-height (font__$textLineHeight)px
         .size-class-not-width-compact &
-            margin-left 40px
-            margin-bottom 1px solid red
+            margin 0 80px
+            padding-bottom 30px
+        .size-class-not-width-compact .FAQ-theme-question:not(:last-child) > &
+            border-bottom 2px solid color__$sectionEven
 
     .FAQ-question-button
-        margin 15px auto
-        max-width 85px
+        max-width 180px
+        margin 40px auto 10px auto
+        padding 15px 20px
         .size-class-not-width-compact &
             margin 20px 0 0 75px
+            float right
 
 
 </style>

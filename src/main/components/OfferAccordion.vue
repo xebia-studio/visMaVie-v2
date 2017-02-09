@@ -283,7 +283,7 @@
             position relative
             padding 15px 0 50px 0
             width (_detailsDesktopPercentage) %
-            background no-repeat _detailsBackgroundColor right -15px top -15px/180px url('~assets/images/svg/target.svg')
+            background no-repeat _detailsBackgroundColor right -15px top -15px/180px url('~assets/images/svg/picto-target.svg')
             &:not(.desktopActive)
                 display none
 
