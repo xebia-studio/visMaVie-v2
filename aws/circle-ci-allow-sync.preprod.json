@@ -5,7 +5,8 @@
             "Sid": "CirleCIAllowSyncBucket",
             "Effect": "Allow",
             "Action": [
-                "s3:ListBucket"
+                "s3:ListBucket",
+                "s3:PutBucketPolicy"
             ],
             "Resource": [
                 "arn:aws:s3:::xebia-vis-ma-vie--master"

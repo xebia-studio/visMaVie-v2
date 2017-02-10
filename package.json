@@ -5,6 +5,8 @@
   "author": "Xebia",
   "private": true,
   "scripts": {
+    "aws:update-circle-ci-policy": "aws iam put-user-policy --user-name circleci-vis-ma-vie --policy-name vis-ma-vie-master-circle-ci --policy-document file://aws/circle-ci-allow-sync.preprod.json",
+    "robots-txt": "test -d dist || mkdir -p dist && cp robots.txt dist/robots.txt",
     "create-generated-sources": "node create-generated-sources",
     "dev": "npm run create-generated-sources -- noBlurryImage && node build/dev-server.js",
     "prebuild": "npm run lint",
@@ -20,6 +22,7 @@
     "babel-runtime": "^6.20.0",
     "event-emitter": "^0.3.4",
     "lodash": "^4.17.2",
+    "scrollbar-width": "^3.1.1",
     "swiper": "^3.4.1",
     "vue": "^2.1.0",
     "vue-router": "^2.1.1",
