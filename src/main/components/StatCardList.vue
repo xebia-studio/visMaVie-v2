@@ -21,7 +21,7 @@ export default {
 
 <style lang="stylus">
     .StatCard-list
-        min-height 600px
+        clearfix()
 
     .size-class-width-compact
         _grid('.StatCard', layout__$gridContainerNumberOfColumns, 2, 1, 3vw)
