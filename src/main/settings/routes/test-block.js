@@ -8,10 +8,10 @@ must be disabled from prod
 module.exports = [
 	{
 		path:'/test-block/background-image-cover',
-		component: require('components/BackgroundImageCoverTestingBlock')
+		component: require('components/BackgroundImageCoverTestingBlock/BackgroundImageCoverTestingBlock')
 	},
 	{
 		path:'/test-block/DiscoverExpertiseButton',
-		component: require('components/DiscoverExpertiseButton')
+		component: require('components/DiscoverExpertiseButton/DiscoverExpertiseButton')
 	}
 ];

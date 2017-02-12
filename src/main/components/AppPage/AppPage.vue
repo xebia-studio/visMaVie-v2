@@ -24,7 +24,7 @@ import LogoVisMaVie from 'src/generated/components/LogoVisMaVie';
 import BlurryHeaderLayer from 'xebia-web-common/components/BlurryHeaderLayer';
 import { BlurryHeaderLayer as blurryHeaderLayerSettings } from 'settings/components';
 
-import CallToActionLayer from 'src/main/components/CallToActionLayer';
+import CallToActionLayer from 'src/main/components/CallToActionLayer/CallToActionLayer';
 
 import ParallaxedLayer from 'xebia-web-common/components/ParallaxedLayersGroup/ParallaxedLayer';
 
@@ -79,5 +79,4 @@ export default {
 };
 </script>
 
-<style lang="stylus">
-</style>
+<style lang="stylus"></style>

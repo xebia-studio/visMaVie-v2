@@ -1,0 +1,23 @@
+_technoLogoHeight = 35
+
+.NosTechnos
+  width 100%
+  display table
+  padding-bottom 20px
+
+.size-class-width-compact
+  _grid('.NosTechnos-techno', layout__$gridContainerNumberOfColumns, 3, 1, 3vw)
+
+.size-class-not-width-compact
+  _grid('.NosTechnos-techno', layout__$gridContainerNumberOfColumns, 12, 0.5, 40px)
+
+.NosTechnos-techno
+  opacity 0.5
+  height _technoLogoHeight px
+  filter sepia(100%) hue-rotate(190deg) saturate(50%)
+
+.NosTechnos-techno-plus
+  font__useTextRegular font__$textFontSize
+  text-align center
+  padding ((_technoLogoHeight - font__$textFontSize) / 2) px 0px
+

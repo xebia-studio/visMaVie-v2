@@ -12,22 +12,22 @@ const routes = concat(
 		{
 			name: 'home',
 			path: '/',
-			component: resolve => require(['components/HomePage/HomePage.vue'], resolve)
+			component: resolve => require(['components/pages/Home/Home.vue'], resolve)
 		},
     {
       name : 'creations',
       path : '/creations',
-      component : resolve => require(['components/NosCreations.vue'], resolve)
+      component : resolve => require(['components/pages/NosCreations/NosCreations.vue'], resolve)
     },
     {
       name : 'integration',
       path : '/integration',
-      component : resolve => require(['components/VotreIntegration.vue'], resolve)
+      component : resolve => require(['components/pages/VotreIntegration/VotreIntegration.vue'], resolve)
     },
     {
       name : 'nous-rejoindre',
       path : '/nous-rejoindre/:job?',
-      component : resolve => require(['components/NousRejoindre.vue'], resolve),
+      component : resolve => require(['components/pages/NousRejoindre/NousRejoindre.vue'], resolve),
       beforeEnter : (to, from, next) => {
         const jobParam = get(to, 'params.job');
         return (isUndefined(jobParam) || isAValidJob(jobParam))

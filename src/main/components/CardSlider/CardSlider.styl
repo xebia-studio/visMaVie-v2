@@ -1,0 +1,104 @@
+_navigationButtonColor = color__$greyMedium
+
+_paginationBulletSize = CardSlider__$paginationBulletSize px
+_paginationBulletBorderWidth = CardSlider__$paginationBulletBorderWidth px
+_paginationBulletsSpaceBetween = CardSlider__$paginationBulletsSpaceBetween px
+
+.CardSlider-wrapper
+  .size-class-width-compact &
+    width 95%
+    margin-left auto
+    margin-right auto
+
+.CardSlider-slider
+  .size-class-width-compact &
+    width (560 / 640 * 100%)
+    margin-right auto
+    margin-left auto
+    &:after
+      content ''
+      display block
+      clear both
+  .size-class-not-width-compact &
+    display flex
+    flex-direction column
+
+.Slider-slides-list
+  .size-class-not-width-compact &
+    transform translate3d(0px, 0px, 0px) !important
+    position relative
+    width 100% !important
+    &:hover
+      cursor auto
+
+.CardSlider-slide
+  .size-class-width-compact &
+    width 100%
+    float left
+    layout__outerBox()
+  .size-class-not-width-compact &
+    position absolute
+    width (1 / 3 * 100%) !important
+
+.CardSlider-slide-inner-wrapper
+  margin-left auto
+  margin-right auto
+  background-color color__$sectionOdd
+  padding 0 20px
+  width 85%
+  line-height (font__$textLineHeight) px
+  border (CardSlider__$cardBorder) px solid color__$greyLight
+  .size-class-width-compact &
+    position relative
+  .size-class-not-width-compact &
+    width 80%
+
+.Card-image
+  border-bottom 1px solid color__$greyLight
+  padding 10px 0
+
+.Card-title
+  padding 20px 0
+  font__useTitleRegular 30px
+  line-height (font__$cardTitleLineHeight) px
+  color color__$title
+  .size-class-width-compact &
+    padding 20px 0 64px 0
+
+.Card-text
+  color color__$text
+
+.Card-link
+  text-transform uppercase
+  color color__$flashOrange
+  display block
+  padding 20px 0
+  .size-class-width-compact &
+    position absolute
+    bottom 0
+
+.CardSlider-pagination
+  display block
+  margin-left auto
+  margin-right auto
+  margin-top 20px
+  .size-class-not-width-compact &
+    display none
+
+.CardSlider-pagination-bullet
+  font-size 0
+  button__resetStyle()
+  shape__circle(_paginationBulletSize, tranparent)
+  border _paginationBulletBorderWidth solid _navigationButtonColor
+  float left
+  background-color white
+
+  &:hover, &:focus
+    cursor pointer
+    background-color lighten(_navigationButtonColor, 10)
+
+  &.is--active
+    background-color _navigationButtonColor
+
+.CardSlider-pagination-bullet + .CardSlider-pagination-bullet
+  margin-left _paginationBulletsSpaceBetween

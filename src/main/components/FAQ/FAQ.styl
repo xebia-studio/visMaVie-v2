@@ -1,0 +1,103 @@
+_themeTitleMobileHeight = 60
+_themeTitleBackgroundColor = color__$blue
+_themeColor = color__$uiImportantEnabledText
+_questionBackgroundColor = color__$sectionOdd
+_leftPartDesktopNumberOfColumns = VotreIntegration__$leftPartNumberOfColumns
+_leftPartDesktopPercentage = (_leftPartDesktopNumberOfColumns/layout__$gridSectionNumberOfColumns*100)
+_rightPartDesktopPercentage = 100 - _leftPartDesktopPercentage
+_questionHeight = 50
+
+.FAQ
+  background-color color__$sectionEven
+  clearfix()
+
+.FAQ-left-part
+  .size-class-width-compact &
+    display none
+  .size-class-not-width-compact &
+    background no-repeat 25% top/100px url('~assets/images/svg/picto-plant.svg')
+    height 500px
+    float left
+    width (_leftPartDesktopPercentage)%
+
+.FAQ-themes
+  .size-class-not-width-compact &
+    float left
+    width (_rightPartDesktopPercentage)%
+
+.FAQ-theme
+  width 100%
+  transition height 320ms ease__inOutQuad() 120ms
+  margin-bottom 20px
+  &.active
+    border-radius 0 0 8px 8px
+  .size-class-not-width-compact &
+    position relative
+
+.FAQ-theme-title-number
+  .size-class-not-width-compact &
+    width (BulletPoints__$bigBulletSize)px
+    height (BulletPoints__$bigBulletSize)px
+    position absolute
+    left -(BulletPoints__$bigBulletSize + 20)px
+    top ((_themeTitleMobileHeight - BulletPoints__$bigBulletSize)/2)px
+  .size-class-not-width-compact .FAQ-theme.active &
+    & circle
+      stroke _themeTitleBackgroundColor !important
+    & path
+      fill _themeTitleBackgroundColor !important
+
+.FAQ-theme-title
+  padding ((_themeTitleMobileHeight - font__$textFontSize)/2)px 35px ((_themeTitleMobileHeight - font__$textFontSize)/2)px 10px
+  cursor pointer
+  background-color _themeTitleBackgroundColor
+  position relative
+  .size-class-not-width-compact &
+    padding-left 20px
+
+.FAQ-theme-title-label
+  font__useTextRegular font__$textFontSize
+  padding-right 10px
+  color _themeColor
+
+.FAQ-theme-title-picto
+  width 25px
+  position absolute
+  right 10px
+  top 'calc(%s - %s)' % (50% (25/2)px)
+  .size-class-not-width-compact &
+    right 20px
+
+.FAQ-theme-questions
+  overflow hidden
+  .FAQ-theme:not(.active) &
+    height 0px
+
+.FAQ-theme-question
+  background-color _questionBackgroundColor
+  .size-class-width-compact &
+    padding 0px 10px 30px 10px
+
+.FAQ-theme-question-title
+  padding ((_questionHeight - font__$textFontSize)/2)px 0
+  color color__$blue
+  font__useTextBold font__$textFontSize
+  .size-class-not-width-compact &
+    padding 30px 0 30px 20px
+
+.FAQ-theme-question-body
+  color color__$text
+  line-height (font__$textLineHeight)px
+  .size-class-not-width-compact &
+    margin 0 80px
+    padding-bottom 30px
+  .size-class-not-width-compact .FAQ-theme-question:not(:last-child) > &
+    border-bottom 2px solid color__$sectionEven
+
+.FAQ-question-button
+  max-width 180px
+  margin 40px auto 10px auto
+  padding 15px 20px
+  .size-class-not-width-compact &
+    margin 20px 0 0 75px
+    float right

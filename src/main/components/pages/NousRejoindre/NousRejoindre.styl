@@ -1,0 +1,54 @@
+_xebiansQuoteLineHeight = font__$textLineHeight
+
+_xebiansImageDesktopNumberOfColumns = NousRejoindre__$leftPartNumberOfColumns
+_xebiansImageDesktopPercentage = (_xebiansImageDesktopNumberOfColumns/layout__$gridSectionNumberOfColumns*100)
+_xebiansQuoteDesktopPercentage = 100 - _xebiansImageDesktopPercentage
+
+.NousRejoindre-xebians
+  clearfix()
+
+.NousRejoindre-xebians-image-with-caption
+  width 100%
+  .size-class-not-width-compact &
+    text-align right
+    float left
+    width (_xebiansImageDesktopPercentage) %
+
+.NousRejoindre-xebians-image
+  width 100%
+  height 140px
+  background-size cover
+  display inline-block
+  .size-class-not-width-compact &
+    max-width 256px
+
+.NousRejoindre-xebians-caption
+  font__useTextRegular font__$captionMobileFontSize
+  width 100%
+  padding 5px 0
+  opacity 0.6
+  font-style italic
+  .size-class-not-width-compact &
+    padding 0
+    font__useTextRegular font__$captionDesktopFontSize
+
+.NousRejoindre-xebians-quote
+  padding 30px 0 10px 0
+  .size-class-not-width-compact &
+    padding 0px 30px
+    float left
+    width 'calc(%s - %s)' % ((_xebiansQuoteDesktopPercentage)% 60px)
+
+.NousRejoindre-xebians-quote-left, .NousRejoindre-xebians-quote-right
+  height (font__$textFontSize)px
+  margin 0 10px
+
+.NousRejoindre-xebians-quote-left
+  transform scale(_xebiansQuoteLineHeight/font__$textFontSize) translateY(-5px)
+
+.NousRejoindre-xebians-quote-right
+  transform scale(_xebiansQuoteLineHeight/font__$textFontSize) translateY(8px)
+
+.NousRejoindre-xebians-quote-text
+  line-height (_xebiansQuoteLineHeight)px
+  display inline
