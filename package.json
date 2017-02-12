@@ -15,7 +15,7 @@
     "visual-regression": "node test/visual-regression",
 		"pretest": "npm run lint",
     "test": "dependency-check package.json --entry src/main/root.js & npm run unit",
-    "lint": "eslint --ext js,vue build config src/main --fix"
+    "lint": "eslint --ext js,vue . --fix"
   },
   "dependencies": {
     "@alexistessier/dom": "^3.0.5",
