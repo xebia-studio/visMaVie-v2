@@ -1,25 +1,23 @@
-var glob = require('glob');
-var SVGO  = require('svgo');
-var _ = require('lodash');
-var path = require('path');
-var fs = require('fs');
-var dom = require('@alexistessier/dom').default;
-var svgo = new SVGO();
-var svgpath = require('svgpath');
+const glob = require('glob');
+const SVGO  = require('svgo');
+const _ = require('lodash');
+const path = require('path');
+const svgpath = require('svgpath');
+const fs = require('fs');
+const dom = require('@alexistessier/dom').default;
+const jsdom = require('jsdom');
+const saveFile = require('xebia-web-common/scripts/save-file.js');
+const svgo = new SVGO();
 
-var jsdom = require("jsdom");
-
-var saveFile = require('xebia-web-common/scripts/save-file.js');
-
-var cssInline = (function () {
+const cssInline = (function () {
 	function traverse(obj) {
-	    var tree = [];
+	    const tree = [];
 	    tree.push(obj);
 	    visit(obj);
 	    
     	function visit(node) {
 	      if (node && node.hasChildNodes()) {
-	        var child = node.firstChild;
+	        let child = node.firstChild;
 	        while (child) {
 	          if (child.nodeType === 1 && child.nodeName !== 'SCRIPT'){
 	            tree.push(child);
@@ -33,9 +31,9 @@ var cssInline = (function () {
 	}
 
 	function explicitlySetStyle(element, _window) {
-	    var cSSStyleDeclarationComputed = (_window || window).getComputedStyle(element);
-	    var i, len, key, value;
-	    var computedStyleStr = "";
+	    const cSSStyleDeclarationComputed = (_window || window).getComputedStyle(element);
+	    let i, len, key, value;
+	    let computedStyleStr = '';
 	    for (i=0, len=cSSStyleDeclarationComputed.length; i<len; i++) {
 	        key = cSSStyleDeclarationComputed[i];
 	        value = cSSStyleDeclarationComputed.getPropertyValue(key);
@@ -45,7 +43,7 @@ var cssInline = (function () {
 	          value !== '' &&
 	          (element.attributes.getNamedItem(key) === null || value.indexOf('!important') > -1)
 	        ) {
-	            computedStyleStr += key + ":" + value + ";";
+	            computedStyleStr += key + ':' + value + ';';
 	        }
 	    }
 	    if (computedStyleStr.length > 0) {
@@ -58,15 +56,15 @@ var cssInline = (function () {
 
 
 	return function(svg, _window) {
-	    var allElements = traverse(svg);
-	    var i = allElements.length;
+	    const allElements = traverse(svg);
+	    let i = allElements.length;
 	    while (i--) {
 	      explicitlySetStyle(allElements[i], _window);
 	    }
-	}
+	};
 })();
 
-var SvgComponentGenerator = (function() {
+const SvgComponentGenerator = (function() {
 	'use strict';
 
 	function SvgComponentGenerator(params) {
@@ -90,7 +88,7 @@ var SvgComponentGenerator = (function() {
 	}
 
 	SvgComponentGenerator.prototype.run = function() {
-		var self = this;
+		const self = this;
 		this.totalCount = 0;
 		this.totalGeneratedCount = 0;
 
@@ -106,7 +104,7 @@ var SvgComponentGenerator = (function() {
 					});
 
 					_.forEach(sizeAliases, function (sizeInline, alias) {
-						var size = {
+						const size = {
 							width: sizeInline.split('x')[0],
 							height: sizeInline.split('x')[1]
 						};
@@ -117,12 +115,12 @@ var SvgComponentGenerator = (function() {
 					});
 				});
 			});
-		})
+		});
 	};
 
 	SvgComponentGenerator.prototype.optimizeFile = function(filePath, callback) {
-		var basename = path.basename(filePath, '.svg');
-		var sizeAliases = this.sizeAliases[basename] || {};
+		const basename = path.basename(filePath, '.svg');
+		const sizeAliases = this.sizeAliases[basename] || {};
 
 		fs.readFile(filePath, 'utf8', function(err, data) {
 			if (err) {
@@ -130,11 +128,11 @@ var SvgComponentGenerator = (function() {
 			}
 
 			svgo.optimize(data, function(result) {
-				let mark = 'viewBox="';
+				const mark = 'viewBox="';
 				let vb = result.data.indexOf(mark);
 				vb+=mark.length;
-				let end_vb = result.data.indexOf('"', vb);
-				let viewBox = result.data.substring(vb, end_vb).split(' ');
+				const end_vb = result.data.indexOf('"', vb);
+				const viewBox = result.data.substring(vb, end_vb).split(' ');
 
 				if (typeof result.info.width !== 'number') {
 					result.info.width = parseInt(viewBox[2], 10);
@@ -149,11 +147,12 @@ var SvgComponentGenerator = (function() {
 
 	SvgComponentGenerator.prototype.generateToolAtEnd = function() {
 		if(this.totalGeneratedCount >= this.totalCount && this.totalGeneratedCount > 0){
-			var jsonData = JSON.stringify(this.generatedList);
+			const jsonData = JSON.stringify(this.generatedList);
 
-			var tab = '\t', newLine = '\n';
+			const tab = '\t';
+			const newLine = '\n';
 
-			var fileContent = newLine
+			const fileContent = newLine
 				+'svgComponent__data = '+jsonData
 				+newLine+newLine
 				+'svgComponent__absoluteCenter(svgName, containerWidth, containerHeight = containerWidth, centerX = true, centerY = true)'
@@ -200,24 +199,24 @@ var SvgComponentGenerator = (function() {
 	};
 
 	SvgComponentGenerator.prototype.createComponent = function(name, aliasName, size, data, originalSize, callback) {
-		var self = this;
-		var modifier = _.trim(aliasName).length > 0 ? '--'+_.kebabCase(aliasName) : '';
-		var elementClass = _.upperFirst(_.camelCase(name))+modifier;
-		var fileNameBase = _.kebabCase(name)+modifier;
-		var fileName = fileNameBase+this.outputExt;
+		const self = this;
+		const modifier = _.trim(aliasName).length > 0 ? '--'+_.kebabCase(aliasName) : '';
+		const elementClass = _.upperFirst(_.camelCase(name))+modifier;
+		const fileNameBase = _.kebabCase(name)+modifier;
+		const fileName = fileNameBase+this.outputExt;
 
-		var sx = size.width/originalSize.width;
-		var sy = size.height/originalSize.height;
+		const sx = size.width/originalSize.width;
+		const sy = size.height/originalSize.height;
 
 		jsdom.env(data, [], function (err, window) {
-			var all = window.document.querySelectorAll('*');
+			const all = window.document.querySelectorAll('*');
 			dom.forEach(all, function (el) {
 				_.forEach(self.attributesToRemove, function (attr) {
 					el.removeAttribute(attr);
 				});
 			});
 
-			var svgroot = window.document.querySelector('svg');
+			const svgroot = window.document.querySelector('svg');
 			cssInline(svgroot, window);
 
 			/*-------*/
@@ -241,7 +240,7 @@ var SvgComponentGenerator = (function() {
 			/*-------*/
 			
 			svgroot.setAttribute(self.classAttributeString, elementClass);
-			var viewBox = (svgroot.getAttribute('viewBox') || '0 0 '+size.width+' '+size.height).split(' ');
+			const viewBox = (svgroot.getAttribute('viewBox') || '0 0 '+size.width+' '+size.height).split(' ');
 
 			viewBox[0] = viewBox[0] * sx;
 			viewBox[1] = viewBox[1] * sy;
@@ -267,10 +266,10 @@ var SvgComponentGenerator = (function() {
 				svgroot.setAttribute('width', size.width);
 			}
 
-			var pathList = window.document.querySelectorAll('path');
+			const pathList = window.document.querySelectorAll('path');
 
 			dom.forEach(pathList, function (path) {
-				var transformed = svgpath(path.getAttribute('d'))
+				const transformed = svgpath(path.getAttribute('d'))
                     .scale(sx, sy)
                     .translate(0,0)
                     .rel()
@@ -280,13 +279,13 @@ var SvgComponentGenerator = (function() {
                 path.setAttribute('d', transformed);
 			});
 
-			var fileContent = window.document.querySelector('body').innerHTML;
+			const fileContent = window.document.querySelector('body').innerHTML;
 
-			var fileList = self.fileContentTransformMethod(fileNameBase, fileContent);
+			let fileList = self.fileContentTransformMethod(fileNameBase, fileContent);
 			fileList = _.isArray(fileList) ? fileList : [{name: fileName, content:fileList}];
 
 			_.forEach(fileList, function (file) {
-				var outputPath = path.join(self.outputPath, file.name);
+				const outputPath = path.join(self.outputPath, file.name);
 				
 				self.save(outputPath, file.content);
 			});

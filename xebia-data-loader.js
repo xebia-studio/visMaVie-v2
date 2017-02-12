@@ -1,15 +1,15 @@
-var _ = require('lodash');
-var fs = require('fs');
-var path = require('path');
-var nl2br = require('nl2br');
-var report = require('@alexistessier/report');
+const _ = require('lodash');
+const fs = require('fs');
+const path = require('path');
+const nl2br = require('nl2br');
+const report = require('@alexistessier/report');
 
-var svgComponentBasePath = path.join(
+const svgComponentBasePath = path.join(
   './',
   require('./src/main/tools/svg-component').mixin.methods.getSvgComponentBasePath()
 );
 
-var commonSvgComponentBasePath = './node_modules/xebia-web-common/generated/components/';
+const commonSvgComponentBasePath = './node_modules/xebia-web-common/generated/components/';
 
 function loaderError(message){
   report('error', 'xebia-data-loader error: '+message);
@@ -17,7 +17,7 @@ function loaderError(message){
 }
 
 function formatDate(value) {
-  var dateMonthMatchingTable  = {
+  const dateMonthMatchingTable  = {
     '01': 'Jan',
     '02': 'Fév',
     '03': 'Mar',
@@ -33,7 +33,7 @@ function formatDate(value) {
   };
 
   if (_.isString(value)) {
-    var date = value.split('/');
+    const date = value.split('/');
 
     if(date.length === 3 && date[0].length === 2 && date[1].length === 2 && date[2].length === 4){
 
@@ -41,7 +41,7 @@ function formatDate(value) {
         day : date[0],
         month: dateMonthMatchingTable[date[1]] || date[1],
         year: date[2]
-      }
+      };
     }
   }
 
@@ -49,12 +49,12 @@ function formatDate(value) {
 }
 
 function formatSVG(value) {
-  var svgComponentNormalizeName = function (name) {
+  const svgComponentNormalizeName = function (name) {
     return _.upperFirst(_.camelCase(name));
-  }
+  };
 
   if(_.isString(value)){
-    var componentName = svgComponentNormalizeName(value);
+    const componentName = svgComponentNormalizeName(value);
 
     if(!fs.existsSync(path.join(svgComponentBasePath, componentName+'.vue'))
         && !fs.existsSync(path.join(commonSvgComponentBasePath, componentName+'.vue'))){
@@ -77,7 +77,7 @@ function formatSVG(value) {
 
 function formatContent(value) {
   if (_.isString(value)) {
-    _value = _.trim(value);
+    const _value = _.trim(value);
 
     return {
       isText: true,
@@ -99,7 +99,7 @@ function formatContent(value) {
       return {
         isLink: true,
         content: value
-      }
+      };
     }
 
     if (value.absolute_url && value.label) {
@@ -109,7 +109,7 @@ function formatContent(value) {
         isLink: true,
         isAbsolute: true,
         content: value
-      }
+      };
     }
   }
 
@@ -152,16 +152,16 @@ function formatObject(data) {
 
 module.exports = function xebiaDataLoader(source) {
   this.cacheable();
-  var error = null;
+  let error = null;
+  let data;
 
   try{
-    var _jsonText = source.substring(source.indexOf('{'), source.lastIndexOf('}') + 1);
-
-    var data = formatObject(JSON.parse(_jsonText));
+    const _jsonText = source.substring(source.indexOf('{'), source.lastIndexOf('}') + 1);
+    data = formatObject(JSON.parse(_jsonText));
   }
   catch(err){
     error = err;
   }
 
-  return error ? error : 'module.exports = ' + JSON.stringify(data) + ';'
-}
+  return error ? error : 'module.exports = ' + JSON.stringify(data) + ';';
+};

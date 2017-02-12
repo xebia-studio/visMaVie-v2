@@ -1,24 +1,24 @@
-var path = require('path');
-var _ = require('lodash');
+const path = require('path');
+const _ = require('lodash');
 
-var saveFile = require('xebia-web-common/scripts/save-file');
+const saveFile = require('xebia-web-common/scripts/save-file');
 
 /**/
 
 /*---------------------*/
 
-var settingsFonts = require('./src/main/settings/fonts.js');
+const settingsFonts = require('./src/main/settings/fonts.js');
 
 (function generateColorsFonts() {
-	var filePathSettings = path.join(__dirname, 'src/generated/settings/fonts.styl');
-    var filePathTools = path.join(__dirname, 'src/generated/tools/font.styl');
+	const filePathSettings = path.join(__dirname, 'src/generated/settings/fonts.styl');
+    const filePathTools = path.join(__dirname, 'src/generated/tools/font.styl');
 
     function formatFamilyVarName(fontName) {
         return 'fonts__$'+_.camelCase(fontName);
     }
 
     function formatFamilyVar(fontName, family) {
-        return formatFamilyVarName(fontName)+' = "'+family+'"'
+        return formatFamilyVarName(fontName)+' = "'+family+'"';
     }
 
     function formatWeightVar(fontName, variation, weight) {
@@ -30,19 +30,19 @@ var settingsFonts = require('./src/main/settings/fonts.js');
     }
 
     function unserializeVariation(variation) {
-        var availableStyles = {
+        const availableStyles = {
             i: 'italic',
             o: 'oblique',
             n: 'normal'
         };
 
-        var variationAsString = (''+variation);
+        const variationAsString = (''+variation);
 
-        var weight = variationAsString.length <= 1 ? 400 : parseInt(variationAsString);
-        var baseWeight = variationAsString.length <= 1 ? '' : parseInt(variationAsString);
+        const weight = variationAsString.length <= 1 ? 400 : parseInt(variationAsString);
+        const baseWeight = variationAsString.length <= 1 ? '' : parseInt(variationAsString);
 
-        var style = variationAsString.replace(''+weight, '');
-        var baseStyle = style;
+        let style = variationAsString.replace(''+weight, '');
+        const baseStyle = style;
         style = style.length === 0 ? 'n' : style;
 
         if (!_.includes(_.keys(availableStyles), style) ||
@@ -52,13 +52,13 @@ var settingsFonts = require('./src/main/settings/fonts.js');
                 'Wrong variation format in src/main/settings/fonts.js\n => '+variationAsString+
                 '\nThe variation must be a String or a Number formated like this : 300i, 300, or i '+
                 '(300 is the weight and i is for italic => can use i:italic, n: normal, o:oblique)'
-            )
+            );
         }
 
         return {
             weight: weight,
             style: availableStyles[style]
-        }
+        };
     }
 
     function extractWeightFromVariation(variation) {
@@ -102,8 +102,8 @@ var settingsFonts = require('./src/main/settings/fonts.js');
     }
 
     function formatFontUseMixin(fontName, variation) {
-        var tab='\t';
-        var parameters = '(size = false, transform = false, defaultFont = sans-serif)';
+        const tab='\t';
+        const parameters = '(size = false, transform = false, defaultFont = sans-serif)';
 
         return variation ? [
         formatFontUseMixinName(fontName, variation)+parameters,

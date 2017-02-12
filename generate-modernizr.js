@@ -1,12 +1,12 @@
 'use strict';
 
-var path = require('path');
+const path = require('path');
 
-var generateModernizr = require('xebia-web-common/scripts/generate-modernizr');
+const generateModernizr = require('xebia-web-common/scripts/generate-modernizr');
 
 generateModernizr(path.join(__dirname, 'src/generated/tools/modernizr.js'), {
-  "classPrefix": "",
-  "options": [
+  'classPrefix': '',
+  'options': [
     // "addTest",
     // "atRule",
     // "domPrefixes",
@@ -18,12 +18,12 @@ generateModernizr(path.join(__dirname, 'src/generated/tools/modernizr.js'), {
     // "prefixed",
     // "prefixes",
     // "prefixedCSS",
-    "setClasses",
+    'setClasses',
     // "testAllProps",
     // "testProp",
     // "testStyles"
   ],
-  "feature-detects": [
+  'feature-detects': [
     // "a/download",
     // "ambientlight",
     // "applicationcache",
