@@ -4,7 +4,7 @@ const _ = require('lodash');
 const blurImages = require('xebia-web-common/scripts/blur-images');
 
 function imagePath(imageName) {
-  return path.join(__dirname, './src/main/assets/images', imageName)
+  return path.join(__dirname, './src/main/assets/images', imageName);
 }
 
 const outputDirectory = path.join(__dirname, './src/generated/assets/images/blur');

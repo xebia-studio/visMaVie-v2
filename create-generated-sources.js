@@ -1,8 +1,8 @@
-var path = require('path');
-var generateStyles = require('xebia-web-common/scripts/generate-generic-styles');
-var generateImages = require('xebia-web-common/scripts/generate-images');
+const path = require('path');
+const generateStyles = require('xebia-web-common/scripts/generate-generic-styles');
+const generateImages = require('xebia-web-common/scripts/generate-images');
 
-var cliOptions = require('./cli-options');
+const cliOptions = require('./cli-options');
 
 // Generic settings
 
@@ -25,12 +25,12 @@ generateImages({
 
 // Special settings
 
-var sourcesGenerators = [
+const sourcesGenerators = [
 	path.join(__dirname, 'generate-modernizr.js'),
 	path.join(__dirname, 'generate-fonts.js'),
 ];
 
-for(var i = 0, imax = sourcesGenerators.length; i < imax; i++){
+for(let i = 0, imax = sourcesGenerators.length; i < imax; i++){
     require(sourcesGenerators[i]);
 }
 
