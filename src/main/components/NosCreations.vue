@@ -1,5 +1,7 @@
 <template lang="jade">
     AppPage.NosCreations(:header="header")
+        AppSection.AppSection-even(:title="'Des projets variés'")
+            CardSlider(slot="section-content", :cards="projetsVaries")
 </template>
 
 <script>
@@ -8,6 +10,9 @@ import header from 'assets/data/nos-creations/header.json';
 
 import AppSection from 'components/AppSection';
 
+import CardSlider from 'components/CardSlider';
+import projetsVaries from 'assets/data/nos-creations/projets-varies.json';
+
 import { mixin as fontLoader } from 'tools/font-loader';
 
 export default {
@@ -15,7 +20,8 @@ export default {
 	mixins: [fontLoader],
 	data: function () {
 		return {
-		    header
+		    header,
+		    projetsVaries
 		};
 	},
 	created: function () {
@@ -25,7 +31,8 @@ export default {
     },
 	components: {
 	    AppPage,
-	    AppSection
+	    AppSection,
+	    CardSlider
 	}
 };
 </script>

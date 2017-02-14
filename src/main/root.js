@@ -3,8 +3,17 @@ require('src/generated/tools/modernizr');
 
 /*--------------*/
 
+require('lodash');
+require('swiper');
+
+/*--------------*/
+
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+
+/*--------------*/
+
+require('components/AppPage');
 
 /*--------------*/
 

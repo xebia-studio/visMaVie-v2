@@ -36,5 +36,13 @@ module.exports = {
     desktopHeight: 40,
     mobileHeight: 50,
     numberOfElements: Object.keys(settingsHeader.navigation_links).length
-	}
+	},
+  CardSlider: {
+    paginationBulletSize: 10,
+    paginationBulletBorderWidth: 1,
+    paginationBulletsSpaceBetween: 10,
+    sizeClassCompactSlidesPerView: 3,
+    desktopCardsPerRow: 3,
+    cardBorder: 1
+  },
 };
