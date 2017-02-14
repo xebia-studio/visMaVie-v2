@@ -7,7 +7,7 @@
                         .Card-image(:is="svgComponent(card.image)")
                         .Card-title(v-html="card.title")
                         .Card-text(v-html="card.text", v-if="!isWidthCompact")
-                        a.Card-link(v-bind:href="card.link", target="_blank") En Savoir Plus
+                        ArrowLink.Card-link(:url="card.link", :label="'En Savoir Plus'", :external="true")
         .CardSlider-pagination(ref='pagination', :style="{width: paginationWidth+ 'px'}")
 </template>
 
@@ -24,6 +24,7 @@ import { CardSlider as settings } from 'settings/components';
 
 import Slider from 'xebia-web-common/components/Slider/Slider';
 import SliderSlide from 'xebia-web-common/components/Slider/SliderSlide';
+import ArrowLink from 'xebia-web-common/components/ArrowLink';
 
 import getScrollBarWidth from 'scrollbar-width';
 const scrollBarWidth = getScrollBarWidth();
@@ -147,7 +148,8 @@ export default {
 	},
 	components: {
 	    Slider,
-	    SliderSlide
+	    SliderSlide,
+	    ArrowLink
 	}
 };
 </script>
@@ -161,7 +163,7 @@ export default {
 
     .CardSlider-wrapper
         .size-class-width-compact &
-            width 80%
+            width 95%
             margin-left auto
             margin-right auto
 
@@ -200,20 +202,28 @@ export default {
         margin-right auto
         background-color color__$sectionOdd
         padding 0 20px
-        width 80%
+        width 85%
         line-height (font__$textLineHeight)px
         border (CardSlider__$cardBorder)px solid color__$greyLight
         .size-class-width-compact &
             position relative
+        .size-class-not-width-compact &
+            width 80%
 
     .Card-image
         border-bottom 1px solid color__$greyLight
+        padding 10px 0
 
     .Card-title
-        padding-bottom 54px
+        padding 20px 0
         font__useTitleRegular 30px
-        line-height (font__$sectionTitleLineHeight)px
+        line-height (font__$cardTitleLineHeight)px
         color color__$title
+        .size-class-width-compact &
+            padding 20px 0 64px 0
+
+    .Card-text
+        color color__$text
 
     .Card-link
         text-transform uppercase

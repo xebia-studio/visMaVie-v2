@@ -12,9 +12,10 @@
     "link": "http://blog.xebia.fr"
   },
   {
-    "image": "logo-xke",
-    "title": "Intervenez en XKE",
-    "text": "Une fois par mois, les Xebians quittent leur mission pour venir assister à des conférences techniques présentées par les Xebians. Retours d’expériences, hands-on, plénières, hackathons, etc. : les formats sont variés. Cette journée est l’occasion pour tous d’échanger autour de sujets qui nous passionnent, Les XKEs sont sans doute aussi la meilleure école pour vous mettre le pied à l’étriller et roder vos présentations devant un public bienveillant qui vous donnera du feedback pour vous améliorer et être prêt lors de prochaines conférences."
+    "image": "logo-devoxxfrance",
+    "title": "Développez des applications mobiles pour des conférences d’envergure",
+    "text": "Passionnés et actifs dans la communauté, les Xebians ont développé pour la première fois en 2012, l’application mobile Devoxx France.<br />Ses retombées ont permis aux Xebians de développer quelques autres applications officielles d’évènement comme la XebiCon, Devoxx Anvers ou Devoxx Turino.<br />Vous pourrez également aider le marketing dans le développement d'applications natives pour leurs prochains gros événements comme la conférence Frenchkit, Paris Container Day ou encore la conférence XebiCon.",
+    "link": "https://github.com/xebia-france/devoxx-mobile"
   },
   {
     "image": "logo-xskillz",
@@ -68,9 +69,8 @@
     "text": "C’est en partant du constat que nous faisons souvent les mêmes recherches sur la toile, que les xebians ont eu l’idée de créer des outils pratiques à garder sur le bureau ou à afficher au mur.<br />Chaque année, nous proposons différents outils sur des bonnes pratiques, de nouveaux frameworks ou encore méthodologique, lors de différentes conférences, salons ou meetups, à l’ensemble de la communauté."
   },
   {
-    "image": "logo-devoxxfrance",
-    "title": "Développez des applications mobiles pour des conférences d’envergure",
-    "text": "Passionnés et actifs dans la communauté, les Xebians ont développé pour la première fois en 2012, l’application mobile Devoxx France.<br />Ses retombées ont permis aux Xebians de développer quelques autres applications officielles d’évènement comme la XebiCon, Devoxx Anvers ou Devoxx Turino.<br />Vous pourrez également aider le marketing dans le développement d'applications natives pour leurs prochains gros événements comme la conférence Frenchkit, Paris Container Day ou encore la conférence XebiCon.",
-    "link": "https://github.com/xebia-france/devoxx-mobile"
+    "image": "logo-xke",
+    "title": "Intervenez en XKE",
+    "text": "Une fois par mois, les Xebians quittent leur mission pour venir assister à des conférences techniques présentées par les Xebians. Retours d’expériences, hands-on, plénières, hackathons, etc. : les formats sont variés. Cette journée est l’occasion pour tous d’échanger autour de sujets qui nous passionnent, Les XKEs sont sans doute aussi la meilleure école pour vous mettre le pied à l’étriller et roder vos présentations devant un public bienveillant qui vous donnera du feedback pour vous améliorer et être prêt lors de prochaines conférences."
   }
 ]

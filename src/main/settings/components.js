@@ -1,4 +1,5 @@
 const settingsHeader = require('./../../../src/main/assets/data/header/$settings.json');
+const colorsSettings = require('./colors');
 
 const screenHeightIdeal = 800;
 
@@ -45,4 +46,10 @@ module.exports = {
     desktopCardsPerRow: 3,
     cardBorder: 1
   },
+  ArrowLink: {
+	  color: colorsSettings.flashOrange,
+    highlightColor:colorsSettings.textLight,
+    externalPictoColor: colorsSettings.flashOrange,
+    arrowPictoColor: colorsSettings.flashOrange
+  }
 };

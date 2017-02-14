@@ -32,7 +32,7 @@
         created: function () {
             this.loadFont({
                 'text': 'light',
-                'title': 'bold'
+                'title': 'regular'
             });
         }
     };
@@ -71,7 +71,7 @@
     .StatCard-stat
         padding-top 10px
         color _statColor
-        font__useTitleBold _statFontSize
+        font__useTitleRegular _statFontSize
         text-align center
 
     .StatCard-text

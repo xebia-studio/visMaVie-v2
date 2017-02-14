@@ -14,6 +14,7 @@ module.exports = {
   sectionBaselineDesktopFontSize: 16,
 
   cardTitleFontSize: 36,
+  cardTitleLineHeight: 32,
   cardTextFontSize:16,
 
   uiImportantEnabledTextFontSize: 18,
