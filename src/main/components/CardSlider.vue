@@ -97,12 +97,12 @@ export default {
                             if(index >= settings.desktopCardsPerRow) {
                                 const targetColumnLastCardIndex = ((parseInt(index/settings.desktopCardsPerRow)-1)*settings.desktopCardsPerRow) + targetColumnIndex;
                                 const targetColumnLastCardBottom =  temporaryCardsDesktopPosition[targetColumnLastCardIndex].rawTop + cardHeights[targetColumnLastCardIndex];
-                                temporaryCardsDesktopPosition[index].css.top = 'calc('+ targetColumnLastCardBottom + 'px + ' + parseInt(index/settings.desktopCardsPerRow)*30 + 'px)';
+                                temporaryCardsDesktopPosition[index].css.top = 'calc(' + targetColumnLastCardBottom + 'px + ' + parseInt(index/settings.desktopCardsPerRow)*2 + 'vw)';
                                 temporaryCardsDesktopPosition[index].rawTop = targetColumnLastCardBottom;
                             }
                             columnHeights[targetColumnIndex] += cardHeights[index];
                         });
-                        this.componentDesktopHeight = (Math.max(...columnHeights)+parseInt(this.cards.length/settings.desktopCardsPerRow)*30)+'px';
+                        this.componentDesktopHeight = 'calc(' + (Math.max(...columnHeights) + 'px + ' + parseInt(this.cards.length/settings.desktopCardsPerRow)*2)+'vw';
                         this.cardsDesktopPosition = temporaryCardsDesktopPosition;
                     }
                 }
@@ -186,7 +186,6 @@ export default {
             &:hover
                 cursor auto
 
-
     .CardSlider-slide
         .size-class-width-compact &
             width 100%
@@ -204,9 +203,14 @@ export default {
         width 80%
         line-height (font__$textLineHeight)px
         border (CardSlider__$cardBorder)px solid color__$greyLight
+        .size-class-width-compact &
+            position relative
+
+    .Card-image
+        border-bottom 1px solid color__$greyLight
 
     .Card-title
-        padding-bottom 20px
+        padding-bottom 54px
         font__useTitleRegular 30px
         line-height (font__$sectionTitleLineHeight)px
         color color__$title
@@ -216,6 +220,9 @@ export default {
         color color__$flashOrange
         display block
         padding 20px 0
+        .size-class-width-compact &
+            position absolute
+            bottom 0
 
     .CardSlider-pagination
         display block
