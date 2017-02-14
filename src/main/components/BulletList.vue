@@ -6,6 +6,7 @@
             .BulletList-list-item(v-for="item, index in itemList")
                 .BulletList-list-item-picto(:is="svgComponent('BulletBlue'+(index+1))")
                 .BulletList-list-item-text(v-html="item")
+            .BulletList-bottom-text(v-html="bottomText")
 </template>
 
 <script>
@@ -21,6 +22,10 @@ export default {
 	        required: true
 	    },
 	    image: {
+	        type: String,
+	        required: false
+	    },
+	    bottomText: {
 	        type: String,
 	        required: false
 	    }
@@ -89,12 +94,15 @@ export default {
         .size-class-not-width-compact &
             padding ((font__$textLineHeight - _bulletListListItemPictoSize)/2)px (BulletPoints__$smallBulletDesktopPaddingHorizontal)px
 
-    .BulletList-list-item-text
+    .BulletList-list-item-text, .BulletList-bottom-text
         width auto
         color color__$text
         padding-left (_bulletListListItemPictoSize+BulletPoints__$smallBulletMobilePaddingHorizontal*2)px
         line-height (font__$textLineHeight)px
         .size-class-not-width-compact &
             padding-left (_bulletListListItemPictoSize+BulletPoints__$smallBulletDesktopPaddingHorizontal*2)px
+
+    .BulletList-bottom-text
+        padding-top 20px
 
 </style>
