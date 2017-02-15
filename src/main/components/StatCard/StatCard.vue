@@ -38,4 +38,4 @@
   };
 </script>
 
-<style lang="stylus" src="./StatCard.Styl"></style>
+<style lang="stylus" src="./StatCard.styl"></style>
