@@ -1,6 +1,6 @@
 <template lang="jade">
     .StatCard-list
-        StatCard(:picto="statItemData.picto", :stat="statItemData.stat", :text="statItemData.text" v-for="statItemData in statData")
+        StatCard(:picto="statCard.picto", :stat="statCard.stat", :text="statCard.text" v-for="statCard in statCards")
 </template>
 
 <script>
@@ -9,7 +9,7 @@ import StatCard from 'components/StatCard';
 export default {
 	name: 'StatCardList',
 	props: {
-	    statData: {
+	    statCards: {
 	        required: true
 	    }
 	},

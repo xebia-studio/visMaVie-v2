@@ -2,7 +2,7 @@
     .StatCard
         .StatCard-inner-wrapper
             .StatCard-picto-wrapper
-                .StatCard-picto(:is='picto')
+                .StatCard-picto(:is="svgComponent(picto)")
             .StatCard-stat-text-wrapper
                 .StatCard-stat {{stat}}
                 .StatCard-text
@@ -12,10 +12,11 @@
 
 <script>
     import { mixin as fontLoader } from 'tools/font-loader';
+    import { mixin as svgComponent } from 'tools/svg-component';
 
     export default {
         name: 'StatCard',
-        mixins: [fontLoader],
+        mixins: [fontLoader, svgComponent],
         props: {
             picto: {
                 required: true

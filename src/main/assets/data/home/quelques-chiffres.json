@@ -1,0 +1,42 @@
+[ 
+  {
+    "picto" : "picto-hand-world",
+    "stat" : "3",
+    "text" : "Pays"
+  },
+  {
+    "picto" : "picto-hand-couple",
+    "stat" : "125",
+    "text" : "Consultants en France"
+  },
+  {
+    "picto" : "picto-hand-paper-pen",
+    "stat" : "1800",
+    "text" : "Articles de blog"
+  },
+  {
+    "picto" : "picto-hand-coin",
+    "stat" : "5%",
+    "text" : "du CA dédié aux XKE"
+  },
+  {
+    "picto" : "picto-hand-balloons",
+    "stat" : "15",
+    "text" : "Ans"
+  },
+  {
+    "picto" : "picto-hand-money-pig",
+    "stat" : "45",
+    "text" : "Millions de CA"
+  },
+  {
+    "picto" : "picto-hand-micro",
+    "stat" : "182",
+    "text" : "Slots en XKE en 2016"
+  },
+  {
+    "picto" : "picto-hand-factory",
+    "stat" : "8",
+    "text" : "Fondations techniques"
+  }
+]
