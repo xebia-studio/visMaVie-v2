@@ -23,10 +23,17 @@ _appSectionBaselineColor = color__$text
 .AppSection-special
   background-color color__$blue
 
-.AppSection-useful-width-box
+.AppSection-usefull-width-box
   layout__outerBox()
-.AppSection-inner-wrapper
+
+.AppSection-margin-box
   layout__innerBox()
+
+.AppSection-inner-wrapper
+  .size-class-not-width-compact &
+    layout__centeredGridBox(28)
+  .size-class-width-compact &
+    layout__centeredGridBox(30)
 
 .AppSection-title-with-baseline
   margin-bottom 30px

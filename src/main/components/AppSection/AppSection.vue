@@ -1,11 +1,12 @@
 <template lang="jade">
     .AppSection
         .AppSection-useful-width-box
-            .AppSection-inner-wrapper
-                .AppSection-title-with-baseline
-                    .AppSection-title(v-if="title") {{title}}
-                    .AppSection-baseline(v-if="baseline") {{baseline}}
-                slot(name="section-content")
+            .AppSection-margin-box
+                .AppSection-inner-wrapper
+                    .AppSection-title-with-baseline
+                        .AppSection-title(v-if="title") {{title}}
+                        .AppSection-baseline(v-if="baseline") {{baseline}}
+                    slot(name="section-content")
 </template>
 
 <script>
