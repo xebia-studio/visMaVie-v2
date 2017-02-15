@@ -1,0 +1,32 @@
+[
+  {
+    "picto" : "picto-adn",
+    "stat" : "100%",
+    "text" : "des idées issues des consultants"
+  },
+  {
+    "picto" : "picto-people",
+    "stat" : "",
+    "text" : "Plusieurs consultants par idée"
+  },
+  {
+    "picto" : "picto-pizza",
+    "stat" : "6000",
+    "text" : "pizzas englouties"
+  },
+  {
+    "picto" : "picto-lightbulb",
+    "stat" : "+35",
+    "text" : "idées actives à ce jour"
+  },
+  {
+    "picto" : "picto-graph",
+    "stat" : "100%",
+    "text" : "des consultants ont appris en contribuant"
+  },
+  {
+    "picto" : "picto-arduino",
+    "stat" : "",
+    "text" : "Un atelier disponible à tous les consultants"
+  }
+]

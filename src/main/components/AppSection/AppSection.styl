@@ -25,29 +25,33 @@ _appSectionBaselineColor = color__$text
 
 .AppSection-useful-width-box
   layout__outerBox()
-
 .AppSection-inner-wrapper
   layout__innerBox()
+
+.AppSection-title-with-baseline
+  margin-bottom 30px
+  .size-class-not-width-compact &
+    margin-bottom 40px
 
 .AppSection-title
   font__useTitleBold font__$sectionTitleMobileFontSize
   color _appSectionTitleColor
-  margin-bottom 30px
-  line-height (font__$sectionTitleLineHeight) px
+  line-height (font__$sectionTitleLineHeight)px
   .AppSection-special &
     color color__$sectionOdd
   .size-class-not-width-compact &
-    margin-bottom 40px
     font__useTitleBold font__$sectionTitleDesktopFontSize
 
-AppSection-baseline
+
+.AppSection-baseline
   font__useTextRegular _appSectionBaselineMobileFontSize
   color _appSectionBaselineColor
   margin-bottom 15px
+  line-height (font__$sectionBaselineLineHeight)px
   .AppSection-special &
     color color__$sectionOdd
-
-.size-class-not-width-compact
-  .AppSection-baseline
+  .AppSection-title + &
+    margin-top 10px
+  .size-class-not-width-compact &
     font__useTextRegular _appSectionBaselineDesktopFontSize
-    margin-bottom 80px
+    margin-bottom 40px

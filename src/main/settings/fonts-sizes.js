@@ -12,6 +12,7 @@ module.exports = {
   sectionTitleLineHeight: 45,
   sectionBaselineMobileFontSize: 24,
   sectionBaselineDesktopFontSize: 16,
+  sectionBaselineLineHeight: 30,
 
   cardTitleFontSize: 36,
   cardTitleLineHeight: 32,
