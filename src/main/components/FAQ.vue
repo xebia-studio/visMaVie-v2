@@ -69,7 +69,7 @@
                         });
                     }
                     requestAnimationFrame(() => {
-                        this.themeStyle = _.cloneDeep(temporaryThemeStyle);
+                        this.themeStyle = temporaryThemeStyle;
                     });
                 });
             }
