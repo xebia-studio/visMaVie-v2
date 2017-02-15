@@ -1,21 +1,21 @@
 <template lang="jade">
   AppPage.NosCreations(:header="header")
-      AppSection.AppSection-odd(:title="'Comment partager sa connaissance chez Xebia ?'", :baseline="partagerBaseline")
+      AppSection.AppSection-even(:title="'Comment partager sa connaissance chez Xebia ?'", :baseline="partagerBaseline")
         PartagerConnaissance(:statCards="partagerConnaissance", slot="section-content")
       AppSection.AppSection-even(:title="'Des projets variés'")
         CardSlider(slot="section-content", :cards="projetsVaries")
 </template>
 
 <script>
-import AppPage from 'components/AppPage';
+import AppPage from 'components/AppPage/AppPage';
 import header from 'assets/data/nos-creations/header.json';
 
-import AppSection from 'components/AppSection';
+import AppSection from 'components/AppSection/AppSection';
 
-import PartagerConnaissance from 'components/PartagerConnaissance';
+import PartagerConnaissance from 'components/PartagerConnaissance/PartagerConnaissance';
 import partagerConnaissance from 'assets/data/nos-creations/partager-connaissance.json';
 
-import CardSlider from 'components/CardSlider';
+import CardSlider from 'components/CardSlider/CardSlider';
 import projetsVaries from 'assets/data/nos-creations/projets-varies.json';
 
 import { mixin as fontLoader } from 'tools/font-loader';

@@ -14,7 +14,7 @@
   import {HomePage as settings} from 'settings/components';
   import header from 'assets/data/home/header.json';
 
-  import QuelquesChiffres from 'components/QuelquesChiffres';
+  import QuelquesChiffres from 'components/QuelquesChiffres/QuelquesChiffres';
   import quelquesChiffres from 'assets/data/home/quelques-chiffres.json';
 
   export default {
