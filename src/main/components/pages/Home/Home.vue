@@ -5,8 +5,8 @@
 </template>
 
 <script>
-  import AppPage from 'components/AppPage';
-  import AppSection from 'components/AppSection';
+  import AppPage from 'components/AppPage/AppPage';
+  import AppSection from 'components/AppSection/AppSection';
 
   import {mixin as fontLoader} from 'tools/font-loader';
   import {mixin as sizeClassHelper} from 'tools/size-class-helper';
@@ -14,7 +14,7 @@
   import {HomePage as settings} from 'settings/components';
   import header from 'assets/data/home/header.json';
 
-  import StatCardList from 'components/StatCardList';
+  import StatCardList from 'components/StatCardList/StatCardList';
   import quelquesChiffres from 'assets/data/home/quelques-chiffres.json';
 
   export default {
@@ -45,4 +45,4 @@
   };
 </script>
 
-<style lang="stylus" src="./HomePage.styl"></style>
+<style lang="stylus" src="./Home.styl"></style>

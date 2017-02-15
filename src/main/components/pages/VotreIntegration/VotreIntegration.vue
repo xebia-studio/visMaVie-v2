@@ -7,15 +7,15 @@
 </template>
 
 <script>
-import AppPage from 'components/AppPage';
+import AppPage from 'components/AppPage/AppPage';
 import header from 'assets/data/votre-integration/header.json';
 
-import AppSection from 'components/AppSection';
+import AppSection from 'components/AppSection/AppSection';
 
-import FAQ from 'components/FAQ';
+import FAQ from 'components/FAQ/FAQ';
 import themes from 'assets/data/votre-integration/faq.json';
 
-import BulletList from 'components/BulletList';
+import BulletList from 'components/BulletList/BulletList';
 import processusRecrutement from 'assets/data/votre-integration/processus-recrutement.json';
 
 import { mixin as fontLoader } from 'tools/font-loader';
@@ -44,5 +44,4 @@ export default {
 };
 </script>
 
-<style lang="stylus">
-</style>
+<style lang="stylus" src="./VotreIntegration.styl"></style>

@@ -11,9 +11,7 @@ import { mixin as sizeClassHelper } from 'tools/size-class-helper';
 export default {
 	name: 'App',
 	mixins: [sizeClassHelper],
-	created: function () {
-//		const sizeClassHelper = this.getSizeClassHelper();
-	}
+	created: function () {}
 };
 </script>
 

@@ -13,7 +13,7 @@ import VueRouter from 'vue-router';
 
 /*--------------*/
 
-require('components/AppPage');
+require('components/AppPage/AppPage');
 
 /*--------------*/
 
