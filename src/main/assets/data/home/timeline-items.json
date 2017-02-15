@@ -1,7 +1,32 @@
 [
   {
     "year" : 2016,
-    "image" : "",
+    "image" : "logo-frenchkit",
     "description" : "Xebia co-organise la première conférence iOS française."
+  },
+  {
+    "year" : 2015,
+    "image" : "logo-xebicon",
+    "description" : "Xebia organise la première XebiCon France."
+  },
+  {
+    "year" : 2014,
+    "image" : "logo-gptw",
+    "description" : "Xebia devient une Great Place to Work et s'organise en Fondations."
+  },
+  {
+    "year" : 2012,
+    "image" : "logo-devoxx",
+    "description" : "Xebia sponsorise le premier Devoxx France."
+  },
+  {
+    "year" : 2008,
+    "image" : "logo-bigdata",
+    "description" : "Xebia est expert Big Data."
+  },
+  {
+    "year" : 2007,
+    "image" : "logo-agile",
+    "description" : "Xebia travaille en méthodes agiles."
   }
 ]

@@ -1,22 +1,34 @@
 <template lang="jade">
   .Timeline
-    .Timeline-centralLine
     .Timeline-item(v-for='item in items')
-      .Timeline-item-year(v-html='item.year')
+      .Timeline-item-year
+        .Timeline-item-year-value {{item.year}}
+        .Timeline-item-year-line
       .Timeline-item-block
-        .Timeline-item-block-image(v-html='item.image')
-        .Timeline-item-block-description(v-html='item.description')
+        .Timeline-item-block-image(:is="svgComponent(item.image)")
+        .Timeline-item-block-description
+          span(v-html="item.description")
+          .Timeline-item-block-link
 </template>
 
 <script>
+  import {mixin as svgComponent} from 'tools/svg-component';
+  import {mixin as fontLoader} from 'tools/font-loader';
+
   export default {
     name : 'Timeline',
+    mixins: [svgComponent, fontLoader],
     props : {
       items : {
         required : true
       }
     },
-    created : function() {}
+    created : function() {
+      this.loadFont({
+        'text': ['light'],
+        'title': ['light']
+      });
+    }
   };
 </script>
 

@@ -2,8 +2,8 @@
 	AppPage.HomePage(:header="header")
 		AppSection.AppSection-even(:title="'Xebia en quelques chiffres'")
 			QuelquesChiffres(:statCards="quelquesChiffres", slot="section-content")
-        AppSection.AppSection-even(:title="'Xebia en quelques faits'")
-            Timeline(:items="timelineItems", slot="section-content")
+		AppSection.AppSection-odd(:title="'Xebia en quelques faits'")
+			Timeline(:items="timelineItems", slot="section-content")
 </template>
 
 <script>
