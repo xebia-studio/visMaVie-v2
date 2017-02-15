@@ -1,7 +1,7 @@
 <template lang="jade">
 	AppPage.HomePage(:header="header")
 		AppSection.AppSection-even(:title="'Xebia en quelques chiffres'")
-			StatCardList(:statCards="quelquesChiffres", slot="section-content")
+			QuelquesChiffres(:statCards="quelquesChiffres", slot="section-content")
 </template>
 
 <script>
@@ -14,33 +14,33 @@
   import {HomePage as settings} from 'settings/components';
   import header from 'assets/data/home/header.json';
 
-  import StatCardList from 'components/StatCardList/StatCardList';
+  import QuelquesChiffres from 'components/QuelquesChiffres';
   import quelquesChiffres from 'assets/data/home/quelques-chiffres.json';
 
   export default {
-    name : 'HomePage',
-    mixins : [fontLoader, sizeClassHelper],
-    data : function() {
+    name: 'HomePage',
+    mixins: [fontLoader, sizeClassHelper],
+    data: function() {
       return {
         header,
         quelquesChiffres
       };
     },
-    components : {
-      AppPage,
-      AppSection,
-      StatCardList
-    },
-    created : function() {
+    created: function() {
       this.loadFont({
-        'text' : 'light',
-        'title' : 'regular'
+        'text': 'light',
+        'title': 'regular'
       });
     },
-    computed : {
+    computed: {
       settings : function() {
         return settings;
       }
+    },
+    components: {
+      AppPage,
+      AppSection,
+      QuelquesChiffres
     }
   };
 </script>

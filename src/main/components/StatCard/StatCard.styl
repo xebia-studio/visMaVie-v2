@@ -1,4 +1,3 @@
-_pictoColor = color__$orange
 _statColor = color__$blue
 _textColor = color__$blue
 
@@ -6,41 +5,58 @@ _statFontSize = font__$cardTitleFontSize
 _textFontSize = font__$cardTextFontSize
 
 .StatCard
-  background-color white
-  border-radius 0 0 5px 5px
+  &.StatCard-vertical
+    background-color white
+    border-radius 0 0 5px 5px
+  &.StatCard-horizontal
+    display table-row
 
 .StatCard-inner-wrapper
   padding 0 10px 10px 10px
+  .StatCard-horizontal &
+    height 100%
 
 .StatCard-picto-wrapper
-  height (100*2/3) %
-  width 100%
   padding-bottom 15px
-  border-bottom 1px solid color__$sectionEven
+  .StatCard-vertical &
+    height (100*2/3) %
+    width 100%
+    border-bottom 1px solid color__$sectionEven
+  .StatCard-horizontal &
+    height 100%
+    width 25%
 
 .StatCard-picto
-  color _pictoColor
-  margin-left auto
-  margin-right auto
-  display block
+  .StatCard-vertical &
+    margin-left auto
+    margin-right auto
+    display block
 
 .StatCard-stat-text-wrapper
-  height (100*1/3) %
+  .StatCard-vertical &
+    height (100*1/3) %
+  .StatCard-horizontal &
+    width 75%
+    height 100%
+    display table-cell
+    vertical-align middle
 
 .StatCard-stat
-  padding-top 10px
   color _statColor
   font__useTitleRegular _statFontSize
-  text-align center
+  .StatCard-vertical &
+    padding-top 10px
+    text-align center
 
 .StatCard-text
   padding-top 5px
   color _textColor
   font__useTextLight _textFontSize
-  text-align center
-  height 32px
-  display table
-  width 100%
-  & span
-    display table-cell
-    vertical-align middle
+  .StatCard-vertical &
+    text-align center
+    height 32px
+    display table
+    width 100%
+    & span
+      display table-cell
+      vertical-align middle
