@@ -51,5 +51,11 @@ module.exports = {
     highlightColor:colorsSettings.textLight,
     externalPictoColor: colorsSettings.flashOrange,
     arrowPictoColor: colorsSettings.flashOrange
+  },
+  AppSection: {
+	  mobileVerticalPadding: 30,
+    desktopVerticalPadding: 40,
+    mobileTitleWithBaselineBottomMargin: 30,
+    desktopTitleWithBaselineBottomMargin: 40,
   }
 };

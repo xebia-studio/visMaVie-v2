@@ -10,7 +10,7 @@ module.exports = {
   usefulWidth: usefulWidth,
   gridColumnWidth: gridColumnWidth,
   gutter: 20,
-  gridSectionNumberOfColumns: 26,
+  gridSectionNumberOfColumns: 28,
   gridContainerNumberOfColumns: 30,
   gridCompactContainerNumberOfColumns: 12,
   sectionMargin: 100,
