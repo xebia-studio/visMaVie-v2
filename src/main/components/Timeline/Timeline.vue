@@ -1,14 +1,11 @@
 <template lang="jade">
   .Timeline
-    .Timeline-item(v-for='item in items')
+    .Timeline-item(v-for='item, index in items', :class="index%2 == 0 ? 'Timeline-item-even' : 'Timeline-item-odd'")
       .Timeline-item-year
         .Timeline-item-year-value {{item.year}}
-        .Timeline-item-year-line
-      .Timeline-item-block
+      a.Timeline-item-block(:href="item.link", target="_blank")
         .Timeline-item-block-image(:is="svgComponent(item.image)")
-        .Timeline-item-block-description
-          span(v-html="item.description")
-          .Timeline-item-block-link
+        .Timeline-item-block-description(v-html="item.description")
 </template>
 
 <script>
@@ -25,8 +22,8 @@
     },
     created : function() {
       this.loadFont({
-        'text': ['light'],
-        'title': ['light']
+        'text': ['regular', 'bold'],
+        'title': ['regular']
       });
     }
   };
