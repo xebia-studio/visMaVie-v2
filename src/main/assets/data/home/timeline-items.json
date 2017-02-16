@@ -6,13 +6,13 @@
     "link": "http://www.xebia.fr"
   },
   {
-    "year" : 2016,
+    "year" : "",
     "image" : "logo-devoxx",
     "description" : "Xebia organise la première édition du <strong>Paris Container Day</strong>.",
     "link": "http://www.xebia.fr"
   },
   {
-    "year" : 2016,
+    "year" : "",
     "image" : "logo-bigdata",
     "description" : "Xebia lance une usine logicielle Open Source, <strong>Kodo Kojo</strong>.",
     "link": "http://www.xebia.fr"
@@ -30,7 +30,7 @@
     "link": "http://www.xebia.fr"
   },
   {
-    "year" : 2014,
+    "year" : "",
     "image" : "logo-agile",
     "description" : "Xebia crée <strong>Xebia Studio</strong>.",
     "link": "http://www.xebia.fr"
@@ -54,7 +54,7 @@
     "link": "http://www.xebia.fr"
   },
   {
-    "year" : 2011,
+    "year" : "",
     "image" : "logo-agile",
     "description" : "Xebia écrit le <strong>contrat agile</strong> et le met en <strong>Open Source</strong>.",
     "link": "http://www.xebia.fr"

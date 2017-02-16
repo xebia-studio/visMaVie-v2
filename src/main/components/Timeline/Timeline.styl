@@ -33,7 +33,7 @@ _timelineItemBlockDescriptionDesktopHorizontalPadding = 20
   padding (_timelineItemVerticalPadding)px 0
   position relative
   &:before
-    z-index 2
+    z-index 4
     shape__circle((_timelineYearMobileCircleSize)px, color:color__$flashOrange)
     content ''
     position absolute
@@ -47,13 +47,13 @@ _timelineItemBlockDescriptionDesktopHorizontalPadding = 20
     content ''
     position absolute
     border (_timelineYearLineWidth/2)px solid color__$greyLight
+    z-index 1
+    height 100%
     .size-class-width-compact &
       top (_timelineYearMobileFontSize+_timelineItemVerticalPadding)px
-      height 'calc(%s - %s - %s)' % (100% (_timelineYearMobileFontSize)px (_timelineYearLineWidth/2)px)
       left 'calc((%s - %s - %s) / 2)' % ((_timelineYearsMobilePercentageWidth)% (_timelineYearMobileRightPadding)px (_timelineYearLineWidth)px)
     .size-class-not-width-compact &
       top (_timelineYearDesktopFontSize+_timelineItemVerticalPadding)px
-      height 'calc(%s - %s - %s)' % (100% (_timelineYearDesktopFontSize)px (_timelineYearLineWidth/2)px)
       left 'calc(%s - %s)' % (50% (_timelineYearLineWidth/2)px)
   &:last-of-type:after
     .size-class-width-compact &
@@ -65,7 +65,9 @@ _timelineItemBlockDescriptionDesktopHorizontalPadding = 20
   width 'calc(%s - %s)' % ((_timelineYearsMobilePercentageWidth)% (_timelineYearMobileRightPadding)px)
   display inline-block
   vertical-align top
+  z-index 2
   .size-class-width-compact &
+    position relative
     padding-right (_timelineYearMobileRightPadding)px
   .size-class-not-width-compact &
     position absolute
@@ -75,14 +77,19 @@ _timelineItemBlockDescriptionDesktopHorizontalPadding = 20
 
 .Timeline-item-year-value
   font__useTitleRegular (_timelineYearMobileFontSize)px
-  text-align center
   color color__$title
+  text-align center
+  background-color color__$sectionOdd
+  .size-class-width-compact &
+    position absolute
+    width 'calc(%s - %s)' % (100% (_timelineYearMobileRightPadding)px)
   .size-class-not-width-compact &
     font-size (_timelineYearDesktopFontSize)px
 
 .Timeline-item-block
   width 'calc(%s - %s)' % ((100-(_timelineYearsMobilePercentageWidth))% (_timelineItemBlockBorder*2)px)
   display inline-block
+  cursor pointer
   vertical-align top
   padding (_timelineItemBlockVerticalPadding)px 0
   border (_timelineItemBlockBorder)px solid color__$greyLight
@@ -92,8 +99,8 @@ _timelineItemBlockDescriptionDesktopHorizontalPadding = 20
   .size-class-not-width-compact .Timeline-item-even &
     left 'calc(%s + %s)' % (50% ((_timelineYearsDesktopPercentageWidth)/2)%)
   &:after
-    z-index 2
     content ''
+    z-index 3
     position absolute
     top (_timelineYearMobileTriangleTop)%
     shape__triangle((_timelineYearMobileTriangleHeight)px, (_timelineYearMobileTriangleBaseWidth)px, color:color__$greyLight, direction:left)
