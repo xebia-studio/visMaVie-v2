@@ -1,0 +1,134 @@
+_timelineYearsDesktopNumberOfColumns = 3
+_timelineYearsDesktopPercentageWidth = _timelineYearsDesktopNumberOfColumns/layout__$gridSectionNumberOfColumns*100
+_timelineYearsMobilePercentageWidth = 1/7*100
+
+_timelineYearMobileCircleSize = 12
+_timelineYearDesktopCircleSize = 16
+_timelineYearMobileCircleTop = 1/3*100
+
+_timelineYearMobileTriangleTop = _timelineYearMobileCircleTop
+_timelineYearMobileTriangleBaseWidth = 12
+_timelineYearDesktopTriangleBaseWidth = 16
+_timelineYearMobileTriangleHeight = 14
+_timelineYearDesktopTriangleHeight = 20
+
+_timelineYearLineWidth = 2
+
+_timelineYearMobileFontSize = 16
+_timelineYearDesktopFontSize = 28
+_timelineYearMobileRightPadding = 5
+_timelineYearDesktopHorizontalPadding = 10
+
+_timelineItemVerticalPadding = 5
+
+_timelineItemBlockBorder = 1
+_timelineItemBlockVerticalPadding = 10
+_timelineItemBlockImageWidthPercentage = 1/3*100
+_timelineItemBlockImageHorizontalPadding = 10
+_timelineItemBlockImageDescriptionSeparation = 1
+_timelineItemBlockDescriptionMobileHorizontalPadding = 10
+_timelineItemBlockDescriptionDesktopHorizontalPadding = 20
+
+.Timeline-item
+  padding (_timelineItemVerticalPadding)px 0
+  position relative
+  &:before
+    z-index 2
+    shape__circle((_timelineYearMobileCircleSize)px, color:color__$flashOrange)
+    content ''
+    position absolute
+    left 'calc((%s - %s - %s)/2)' % ((_timelineYearsMobilePercentageWidth)% (_timelineYearMobileCircleSize)px (_timelineYearMobileRightPadding)px)
+    top 'calc(%s + %s)' % ((_timelineYearMobileCircleTop)% 3px)
+    .size-class-not-width-compact &
+      shape__circle((_timelineYearDesktopCircleSize)px, color:color__$flashOrange)
+      top 'calc(%s - %s)' % (50% 6px)
+      left 'calc(%s - %s)' % (50% (_timelineYearDesktopCircleSize/2)px)
+  &:after
+    content ''
+    position absolute
+    border (_timelineYearLineWidth/2)px solid color__$greyLight
+    .size-class-width-compact &
+      top (_timelineYearMobileFontSize+_timelineItemVerticalPadding)px
+      height 'calc(%s - %s - %s)' % (100% (_timelineYearMobileFontSize)px (_timelineYearLineWidth/2)px)
+      left 'calc((%s - %s - %s) / 2)' % ((_timelineYearsMobilePercentageWidth)% (_timelineYearMobileRightPadding)px (_timelineYearLineWidth)px)
+    .size-class-not-width-compact &
+      top (_timelineYearDesktopFontSize+_timelineItemVerticalPadding)px
+      height 'calc(%s - %s - %s)' % (100% (_timelineYearDesktopFontSize)px (_timelineYearLineWidth/2)px)
+      left 'calc(%s - %s)' % (50% (_timelineYearLineWidth/2)px)
+  &:last-of-type:after
+    .size-class-width-compact &
+      height 'calc(%s - %s + %s - %s)' % (100% (_timelineYearMobileFontSize+_timelineItemVerticalPadding)px (AppSection__$mobileVerticalPadding)px (_timelineYearLineWidth/2)px)
+    .size-class-not-width-compact &
+      height 'calc(%s - %s + %s - %s)' % (100% (_timelineYearDesktopFontSize+_timelineItemVerticalPadding)px (AppSection__$desktopVerticalPadding)px (_timelineYearLineWidth/2)px)
+
+.Timeline-item-year
+  width 'calc(%s - %s)' % ((_timelineYearsMobilePercentageWidth)% (_timelineYearMobileRightPadding)px)
+  display inline-block
+  vertical-align top
+  .size-class-width-compact &
+    padding-right (_timelineYearMobileRightPadding)px
+  .size-class-not-width-compact &
+    position absolute
+    left (50 - _timelineYearsDesktopPercentageWidth/2)%
+    width 'calc(%s - %s)' % ((_timelineYearsDesktopPercentageWidth)% (_timelineYearDesktopHorizontalPadding*2)px)
+    padding 0 (_timelineYearDesktopHorizontalPadding)px
+
+.Timeline-item-year-value
+  font__useTitleRegular (_timelineYearMobileFontSize)px
+  text-align center
+  color color__$title
+  .size-class-not-width-compact &
+    font-size (_timelineYearDesktopFontSize)px
+
+.Timeline-item-block
+  width 'calc(%s - %s)' % ((100-(_timelineYearsMobilePercentageWidth))% (_timelineItemBlockBorder*2)px)
+  display inline-block
+  vertical-align top
+  padding (_timelineItemBlockVerticalPadding)px 0
+  border (_timelineItemBlockBorder)px solid color__$greyLight
+  position relative
+  .size-class-not-width-compact &
+    width 'calc(%s - %s)' % (50% ((_timelineYearsDesktopPercentageWidth)/2)%)
+  .size-class-not-width-compact .Timeline-item-even &
+    left 'calc(%s + %s)' % (50% ((_timelineYearsDesktopPercentageWidth)/2)%)
+  &:after
+    z-index 2
+    content ''
+    position absolute
+    top (_timelineYearMobileTriangleTop)%
+    shape__triangle((_timelineYearMobileTriangleHeight)px, (_timelineYearMobileTriangleBaseWidth)px, color:color__$greyLight, direction:left)
+    left -(_timelineYearMobileTriangleBaseWidth)px
+    .size-class-not-width-compact &
+      top 'calc(%s - %s)' % (50% (_timelineYearDesktopTriangleBaseWidth/2)px)
+      shape__triangle((_timelineYearDesktopTriangleHeight)px, (_timelineYearDesktopTriangleBaseWidth)px, color:color__$greyLight, direction:left)
+      left -(_timelineYearDesktopTriangleBaseWidth)px
+  .size-class-not-width-compact .Timeline-item-odd &:after
+    shape__triangle((_timelineYearDesktopTriangleHeight)px, (_timelineYearDesktopTriangleBaseWidth)px, color:color__$greyLight, direction:right)
+    left initial
+    right -(_timelineYearDesktopTriangleBaseWidth)px
+
+
+
+.Timeline-item-block-image
+  width 'calc(%s - %s - %s)' % ((_timelineItemBlockImageWidthPercentage)% (_timelineItemBlockImageHorizontalPadding*2)px (_timelineItemBlockImageDescriptionSeparation)px)
+  display inline-block
+  vertical-align middle
+  padding 0 (_timelineItemBlockImageHorizontalPadding)px
+  border-right (_timelineItemBlockImageDescriptionSeparation)px solid color__$greyLight
+
+.Timeline-item-block-description
+  width 'calc(%s - %s)' % ((100-(_timelineItemBlockImageWidthPercentage))% (_timelineItemBlockDescriptionMobileHorizontalPadding*2 + _timelineItemBlockImageDescriptionSeparation)px)
+  color color__$text
+  border-left (_timelineItemBlockImageDescriptionSeparation)px solid color__$greyLight
+  margin-left -(_timelineItemBlockImageDescriptionSeparation)px
+  padding 0 (_timelineItemBlockDescriptionMobileHorizontalPadding)px
+  display inline-block
+  line-height (font__$textLineHeight)px
+  vertical-align middle
+  font__useTextRegular (font__$textFontSize)px
+  .size-class-not-width-compact &
+    padding 0 (_timelineItemBlockDescriptionDesktopHorizontalPadding)px
+    width 'calc(%s - %s)' % ((100-(_timelineItemBlockImageWidthPercentage))% (_timelineItemBlockDescriptionDesktopHorizontalPadding*2 + _timelineItemBlockImageDescriptionSeparation)px)
+  & strong
+    color color__$flashOrange
+    font__useTextBold (font__$textFontSize)px

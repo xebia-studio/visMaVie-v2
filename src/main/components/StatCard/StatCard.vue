@@ -42,7 +42,7 @@
         },
         created: function () {
             this.loadFont({
-                'text': 'light',
+                'text': ['regular', 'light'],
                 'title': 'regular'
             });
             const sizeClassHelper = this.getSizeClassHelper();

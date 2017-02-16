@@ -9,9 +9,13 @@ _appSectionBaselineColor = color__$text
   &.AppSection-special
     color color__$sectionOdd
   &:not(.AppSection-no-padding)
-    padding 30px 0
+    padding (AppSection__$mobileVerticalPadding)px 0
     .size-class-not-width-compact &
-      padding 40px 0
+      padding (AppSection__$desktopVerticalPadding)px 0
+    & .AppSection-title-with-baseline
+      margin-bottom (AppSection__$mobileTitleWithBaselineBottomMargin)px
+      .size-class-not-width-compact &
+        margin-bottom (AppSection__$desktopTitleWithBaselineBottomMargin)px
 
 .AppSection-even
   background-color color__$sectionEven
@@ -31,14 +35,9 @@ _appSectionBaselineColor = color__$text
 
 .AppSection-inner-wrapper
   .size-class-not-width-compact &
-    layout__centeredGridBox(28)
+    layout__centeredGridBox(layout__$gridSectionNumberOfColumns)
   .size-class-width-compact &
-    layout__centeredGridBox(30)
-
-.AppSection-title-with-baseline
-  margin-bottom 30px
-  .size-class-not-width-compact &
-    margin-bottom 40px
+    layout__centeredGridBox(layout__$gridContainerNumberOfColumns)
 
 .AppSection-title
   font__useTitleBold font__$sectionTitleMobileFontSize

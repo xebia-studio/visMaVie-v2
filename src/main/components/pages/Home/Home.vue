@@ -2,6 +2,8 @@
 	AppPage.HomePage(:header="header")
 		AppSection.AppSection-even(:title="'Xebia en quelques chiffres'")
 			QuelquesChiffres(:statCards="quelquesChiffres", slot="section-content")
+		AppSection.AppSection-odd(:title="'Xebia en quelques faits'")
+			Timeline(:items="timelineItems", slot="section-content")
 </template>
 
 <script>
@@ -17,16 +19,20 @@
   import QuelquesChiffres from 'components/QuelquesChiffres/QuelquesChiffres';
   import quelquesChiffres from 'assets/data/home/quelques-chiffres.json';
 
+  import Timeline from 'components/Timeline/Timeline';
+  import timelineItems from 'assets/data/home/timeline-items.json';
+
   export default {
     name: 'HomePage',
     mixins: [fontLoader, sizeClassHelper],
     data: function() {
       return {
         header,
-        quelquesChiffres
+        quelquesChiffres,
+        timelineItems
       };
     },
-    created: function() {
+    created : function() {
       this.loadFont({
         'text': 'light',
         'title': 'regular'
@@ -40,7 +46,8 @@
     components: {
       AppPage,
       AppSection,
-      QuelquesChiffres
+      QuelquesChiffres,
+      Timeline
     }
   };
 </script>

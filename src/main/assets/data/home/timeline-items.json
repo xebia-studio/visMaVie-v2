@@ -1,0 +1,86 @@
+[
+  {
+    "year" : 2016,
+    "image" : "logo-frenchkit",
+    "description" : "Xebia co-organise la <strong>première conférence iOS</strong> française, <strong>FrenchKit</strong>.",
+    "link": "http://www.xebia.fr"
+  },
+  {
+    "year" : 2016,
+    "image" : "logo-devoxx",
+    "description" : "Xebia organise la première édition du <strong>Paris Container Day</strong>.",
+    "link": "http://www.xebia.fr"
+  },
+  {
+    "year" : 2016,
+    "image" : "logo-bigdata",
+    "description" : "Xebia lance une usine logicielle Open Source, <strong>Kodo Kojo</strong>.",
+    "link": "http://www.xebia.fr"
+  },
+  {
+    "year" : 2015,
+    "image" : "logo-xebicon",
+    "description" : "Xebia organise la première <strong>XebiCon France</strong>.",
+    "link": "http://www.xebia.fr"
+  },
+  {
+    "year" : 2014,
+    "image" : "logo-gptw",
+    "description" : "Xebia devient une <strong>Great Place to Work</strong>.",
+    "link": "http://www.xebia.fr"
+  },
+  {
+    "year" : 2014,
+    "image" : "logo-agile",
+    "description" : "Xebia crée <strong>Xebia Studio</strong>.",
+    "link": "http://www.xebia.fr"
+  },
+  {
+    "year" : 2013,
+    "image" : "logo-agile",
+    "description" : "Xebia publie son premier <strong>TechTrends</strong>.",
+    "link": "http://www.xebia.fr"
+  },
+  {
+    "year" : 2012,
+    "image" : "logo-devoxx",
+    "description" : "Xebia est la première société à sponsoriser <strong>Devoxx France</strong>.",
+    "link": "http://www.xebia.fr"
+  },
+  {
+    "year" : 2011,
+    "image" : "logo-agile",
+    "description" : "Xebia  promeut le <strong>Software Craftsmanship</strong> avec <strong>Uncle Bob</strong>.",
+    "link": "http://www.xebia.fr"
+  },
+  {
+    "year" : 2011,
+    "image" : "logo-agile",
+    "description" : "Xebia écrit le <strong>contrat agile</strong> et le met en <strong>Open Source</strong>.",
+    "link": "http://www.xebia.fr"
+  },
+  {
+    "year" : 2010,
+    "image" : "logo-agile",
+    "description" : "Premier projet <strong>Big Data</strong>.",
+    "link": "http://www.xebia.fr"
+  },
+  {
+    "year" : 2009,
+    "image" : "logo-agile",
+    "description" : "Création du <strong>French Scrum User Group</strong>.",
+    "link": "http://www.xebia.fr"
+  },
+  {
+    "year" : 2008,
+    "image" : "logo-agile",
+    "description" : "Lancement de la première <strong>formation certifiante</strong> avec <strong>Jeff Sutherland</strong>.",
+    "link": "http://www.xebia.fr"
+  },
+  {
+    "year" : 2004,
+    "image" : "logo-xebia",
+    "description" : "Création de <strong>Xebia en France</strong>.",
+    "link": "http://www.xebia.fr"
+  }
+]
