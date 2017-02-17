@@ -4,11 +4,11 @@ _timelineYearsMobilePercentageWidth = 1/7*100
 
 _timelineYearMobileCircleSize = 12
 _timelineYearDesktopCircleSize = 16
-_timelineYearMobileCircleTop = 1/3*100
+_timelineYearCircleTop = 1/2*100
 
-_timelineYearMobileTriangleTop = _timelineYearMobileCircleTop
-_timelineYearMobileTriangleBaseWidth = 12
-_timelineYearDesktopTriangleBaseWidth = 16
+_timelineYearTriangleTop = _timelineYearCircleTop
+_timelineYearMobileTriangleBaseWidth = 13
+_timelineYearDesktopTriangleBaseWidth = 17
 _timelineYearMobileTriangleHeight = 14
 _timelineYearDesktopTriangleHeight = 20
 
@@ -38,10 +38,10 @@ _timelineItemBlockDescriptionDesktopHorizontalPadding = 20
     content ''
     position absolute
     left 'calc((%s - %s - %s)/2)' % ((_timelineYearsMobilePercentageWidth)% (_timelineYearMobileCircleSize)px (_timelineYearMobileRightPadding)px)
-    top 'calc(%s + %s)' % ((_timelineYearMobileCircleTop)% 3px)
+    top 'calc(%s - %s)' % ((_timelineYearCircleTop)% (_timelineYearMobileCircleSize/2)px)
     .size-class-not-width-compact &
       shape__circle((_timelineYearDesktopCircleSize)px, color:color__$flashOrange)
-      top 'calc(%s - %s)' % (50% 6px)
+      top 'calc(%s - %s)' % ((_timelineYearCircleTop)% (_timelineYearDesktopCircleSize/2)px)
       left 'calc(%s - %s)' % (50% (_timelineYearDesktopCircleSize/2)px)
   &:after
     content ''
@@ -102,19 +102,17 @@ _timelineItemBlockDescriptionDesktopHorizontalPadding = 20
     content ''
     z-index 3
     position absolute
-    top (_timelineYearMobileTriangleTop)%
-    shape__triangle((_timelineYearMobileTriangleHeight)px, (_timelineYearMobileTriangleBaseWidth)px, color:color__$greyLight, direction:left)
-    left -(_timelineYearMobileTriangleBaseWidth)px
+    top 'calc(%s - %s)' % ((_timelineYearCircleTop)% (_timelineYearMobileTriangleBaseWidth/2 - 1)px)
+    shape__triangle((_timelineYearMobileTriangleBaseWidth)px, (_timelineYearMobileTriangleHeight)px, color:color__$greyLight, direction:left)
+    left -(_timelineYearMobileTriangleHeight)px
     .size-class-not-width-compact &
-      top 'calc(%s - %s)' % (50% (_timelineYearDesktopTriangleBaseWidth/2)px)
-      shape__triangle((_timelineYearDesktopTriangleHeight)px, (_timelineYearDesktopTriangleBaseWidth)px, color:color__$greyLight, direction:left)
-      left -(_timelineYearDesktopTriangleBaseWidth)px
+      top 'calc(%s - %s)' % ((_timelineYearCircleTop)% (_timelineYearDesktopTriangleBaseWidth/2)px)
+      shape__triangle((_timelineYearDesktopTriangleBaseWidth)px, (_timelineYearDesktopTriangleHeight)px, color:color__$greyLight, direction:left)
+      left -(_timelineYearDesktopTriangleHeight)px
   .size-class-not-width-compact .Timeline-item-odd &:after
-    shape__triangle((_timelineYearDesktopTriangleHeight)px, (_timelineYearDesktopTriangleBaseWidth)px, color:color__$greyLight, direction:right)
+    shape__triangle((_timelineYearDesktopTriangleBaseWidth)px, (_timelineYearDesktopTriangleHeight)px, color:color__$greyLight, direction:right)
     left initial
-    right -(_timelineYearDesktopTriangleBaseWidth)px
-
-
+    right -(_timelineYearDesktopTriangleHeight)px
 
 .Timeline-item-block-image
   width 'calc(%s - %s - %s)' % ((_timelineItemBlockImageWidthPercentage)% (_timelineItemBlockImageHorizontalPadding*2)px (_timelineItemBlockImageDescriptionSeparation)px)
