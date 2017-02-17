@@ -1,42 +1,42 @@
 [ 
   {
-    "picto" : "picto-hand-world",
-    "stat" : "3",
-    "text" : "Pays"
-  },
+    "picto" : "picto-hand-money-pig",
+    "stat" : "17,5",
+    "text" : "millions de CA en 2016"
+  },  
   {
     "picto" : "picto-hand-couple",
     "stat" : "150",
     "text" : "personnes"
   },
   {
+    "picto" : "picto-hand-balloons",
+    "stat" : "12",
+    "text" : "ans de passion"
+  },  
+  {
     "picto" : "picto-hand-paper-pen",
     "stat" : "500 000",
     "text" : "lecteurs de blog.xebia.fr"
   },
   {
-    "picto" : "picto-hand-coin",
-    "stat" : "5%",
-    "text" : "du CA dédié aux XKE"
-  },
-  {
-    "picto" : "picto-hand-balloons",
-    "stat" : "12",
-    "text" : "ans de passion"
-  },
-  {
-    "picto" : "picto-hand-money-pig",
-    "stat" : "17,5",
-    "text" : "millions de CA en 2016"
-  },
-  {
     "picto" : "picto-hand-micro",
     "stat" : "1",
-    "text" : "XKE, journée mensuelle de partage"
+    "text" : "XKE, journée mensuelle de partage de la connaissance"
+  },
+  {
+    "picto" : "picto-hand-coin",
+    "stat" : "2032",
+    "text" : "clients formés en 2016"
   },
   {
     "picto" : "picto-hand-factory",
-    "stat" : "8",
-    "text" : "Fondations techniques"
+    "stat" : "100%",
+    "text" : "de Xebians fiers de l’être (GPTW)"
   }
+  {
+    "picto" : "picto-hand-world",
+    "stat" : "650",
+    "text" : "personnes à la XebiCon'16"
+  },  
 ]
