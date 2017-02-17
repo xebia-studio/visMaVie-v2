@@ -22,6 +22,9 @@ export default {
 		font-size (font__$mainFontSize px) !important
 		overflow-x hidden
 
+	a
+		color color__$lightBlue
+
 	.App
 		width 100%
 		background-color white

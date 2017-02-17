@@ -75,9 +75,11 @@
         return '<button type="button" class="CardSlider-pagination-bullet ' + className + '">' + (index + 1) + '</button>';
       },
       updateLayoutOnDeviceChange : function() {
+        console.log('DEVICE CHANGE');
         this.$refs.slider ? this.$refs.slider.update(true) : null;
       },
       updateLayoutOnResize : function() {
+        console.log('RESIZE');
         this.maxCardHeight = this.cards.map(() => {
           return {height : 'auto'};
         });
