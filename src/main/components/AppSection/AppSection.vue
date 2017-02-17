@@ -1,6 +1,6 @@
 <template lang="jade">
     .AppSection
-        .AppSection-useful-width-box
+        .AppSection-usefull-width-box
             .AppSection-margin-box
                 .AppSection-inner-wrapper
                     .AppSection-title-with-baseline
