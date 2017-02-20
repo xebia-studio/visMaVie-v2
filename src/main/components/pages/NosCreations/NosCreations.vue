@@ -26,7 +26,7 @@ export default {
 	data: function () {
 		return {
 		    header,
-		    partagerBaseline: 'Écrire, enseigner, construire, manager... Les contributions internes sont nombreuses et chacun a la possibilité de participer en fonction de ses savoirs-faire et savoirs-être !',
+		    partagerBaseline: 'Écrire, enseigner, construire, manager... Les contributions internes sont nombreuses et chacun a la possibilité de participer en fonction de ses savoir-faire et savoir-être !',
 		    partagerConnaissance,
 		    projetsVaries
 		};
