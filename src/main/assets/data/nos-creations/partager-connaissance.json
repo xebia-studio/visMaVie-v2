@@ -11,22 +11,22 @@
   },
   {
     "picto" : "picto-pizza",
-    "stat" : "6000",
-    "text" : "pizzas englouties"
+    "stat" : "+2 000",
+    "text" : "articles de blog"
   },
   {
     "picto" : "picto-lightbulb",
-    "stat" : "+35",
-    "text" : "idées actives à ce jour"
+    "stat" : "10 000",
+    "text" : "TechTrends imprimés"
   },
   {
     "picto" : "picto-graph",
-    "stat" : "100%",
-    "text" : "des consultants ont appris en contribuant"
+    "stat" : "3",
+    "text" : "évènements majeurs : XebiCon, FrenchKit et Paris Container Day"
   },
   {
     "picto" : "picto-arduino",
-    "stat" : "",
-    "text" : "Un atelier disponible à tous les consultants"
+    "stat" : "1",
+    "text" : "atelier plein de Rasberry Pi, imprimantes 3D, fers à souder, etc."
   }
 ]
