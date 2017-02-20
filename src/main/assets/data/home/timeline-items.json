@@ -3,7 +3,7 @@
     "year" : 2016,
     "image" : "logo-frenchkit",
     "description" : "Xebia co-organise la <strong>première conférence iOS</strong> française, <strong>FrenchKit</strong>.",
-    "link": "http://www.xebia.fr"
+    "link": "http://frenchkit.fr/"
   },
   {
     "year" : "",
@@ -21,7 +21,7 @@
     "year" : 2015,
     "image" : "logo-xebicon",
     "description" : "Xebia organise la première <strong>XebiCon France</strong>.",
-    "link": "http://www.xebia.fr"
+    "link": "http://xebicon.fr/"
   },
   {
     "year" : 2014,
@@ -37,7 +37,7 @@
   },
   {
     "year" : 2013,
-    "image" : "logo-agile",
+    "image" : "logo-techtrends",
     "description" : "Xebia publie son premier <strong>TechTrends</strong>.",
     "link": "http://www.xebia.fr"
   },
@@ -49,7 +49,7 @@
   },
   {
     "year" : 2011,
-    "image" : "logo-agile",
+    "image" : "logo-craftsmanship",
     "description" : "Xebia  promeut le <strong>Software Craftsmanship</strong> avec <strong>Uncle Bob</strong>.",
     "link": "http://www.xebia.fr"
   },
@@ -61,21 +61,21 @@
   },
   {
     "year" : 2010,
-    "image" : "logo-agile",
+    "image" : "logo-bigdata",
     "description" : "Premier projet <strong>Big Data</strong>.",
-    "link": "http://www.xebia.fr"
+    "link": "http://datafactory.xebia.fr/"
   },
   {
     "year" : 2009,
-    "image" : "logo-agile",
+    "image" : "logo-frenchsug",
     "description" : "Création du <strong>French Scrum User Group</strong>.",
     "link": "http://www.xebia.fr"
   },
   {
     "year" : 2008,
-    "image" : "logo-agile",
+    "image" : "logo-xebia-training",
     "description" : "Lancement de la première <strong>formation certifiante</strong> avec <strong>Jeff Sutherland</strong>.",
-    "link": "http://www.xebia.fr"
+    "link": "http://training.xebia.fr"
   },
   {
     "year" : 2004,
