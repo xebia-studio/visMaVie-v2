@@ -2,37 +2,37 @@
   {
     "image": "logo-atelier",
     "title": "Devenez auteur de TechTrends",
-    "text": "Les Xebians <strong>partagent leurs savoir-faire et leurs expertises</strong> en écrivant des Livres Blancs qui permettent de guider, d’éclairer, d’identifier et de résoudre les problèmes rencontrés au sein des DSI. Nous en imprimons et envoyons 10 000 par an. Pablo Lopez, CTO témoigne : “Le monde des nouvelles technologies évolue de plus en plus vite et apporte chaque année son lot d’usages nouveaux et d’innovations, tous plus prometteurs les uns que les autres. Cette foison de nouveaux concepts technologiques et méthodologiques s’accompagne cependant d’un dilemme. Il s’agira de choisir entre expérimenter, adopter (ou non) en différenciant le mainstream de l’effet de mode.”",
+    "text": "Les Xebians partagent leurs savoir-faire et leurs expertises en écrivant des Livres Blancs qui permettent de guider, d’éclairer, d’identifier et de résoudre les problèmes rencontrés au sein des DSI. Nous en imprimons et envoyons 10 000 par an. Pablo Lopez, CTO témoigne : “Le monde des nouvelles technologies évolue de plus en plus vite et apporte chaque année son lot d’usages nouveaux et d’innovations, tous plus prometteurs les uns que les autres. Cette foison de nouveaux concepts technologiques et méthodologiques s’accompagne cependant d’un dilemme. Il s’agira de choisir entre expérimenter, adopter (ou non) en différenciant le mainstream de l’effet de mode.”",
     "link": "http://blog.xebia.fr/publications"
   },
   {
     "image": "logo-atelier",
     "title": "Devenez auteur d’articles de blog",
-    "text": "Sur notre blog, vous retrouvez quotidiennement des articles écrits par les Xebians sur les technologies de demain. Avec plus de 500 000 lecteurs en 2016, notre blog est une véritable vitrine de l'expertise technique de Xebia. Chaque consultant peut <strong>publier sur les sujets qui le passionnent</strong> : retours d'expérience, articles techniques ou encore revues de presse hebdomadaires sur des sujets d'actualité. Tous les thèmes et formats sont bons pour partager avec les internautes.",
+    "text": "Sur notre blog, vous retrouvez quotidiennement des articles écrits par les Xebians sur les technologies de demain. Avec plus de 500 000 lecteurs en 2016, notre blog est une véritable vitrine de l'expertise technique de Xebia. Chaque consultant peut publier sur les sujets qui le passionnent : retours d'expérience, articles techniques ou encore revues de presse hebdomadaires sur des sujets d'actualité. Tous les thèmes et formats sont bons pour partager avec les internautes.",
     "link": "http://blog.xebia.fr"
   },
   {
     "image": "logo-devoxxfrance",
     "title": "Développez des applications mobiles pour des conférences d’envergure",
-    "text": "Passionnés et actifs dans la communauté, les Xebians ont développé pour la première fois en 2012, l’application mobile Devoxx France.<br />Ses retombées ont permis aux Xebians de développer quelques autres applications officielles d’évènement comme la XebiCon, Devoxx Anvers ou Devoxx Turino.<br />Vous pourrez également aider le marketing dans le développement d'applications natives pour leurs prochains gros événements comme la conférence Frenchkit, Paris Container Day ou encore la conférence XebiCon.",
+    "text": "Passionnés et actifs dans la communauté, les Xebians ont développé pour la première fois en 2012, l’application mobile Devoxx France.<br/>Ses retombées ont permis aux Xebians de développer quelques autres applications officielles d’évènement comme la XebiCon, Devoxx Anvers ou Devoxx Turino.<br />Vous pourrez également aider le marketing dans le développement d'applications natives pour leurs prochains gros événements comme la conférence Frenchkit, Paris Container Day ou encore la conférence XebiCon.",
     "link": "https://github.com/xebia-france/devoxx-mobile"
   },
   {
     "image": "logo-xskillz",
     "title": "Développez des applications internes",
-    "text": "Seul ou avec des pairs, nous encourageons les prises d'initiatives. Xskillz est le résultat d’une idée innovante : une <strong>application de gestion de compétences</strong> développée par et pour les Xebians. Chacun remplit son profil, fiche sur laquelle il indique les technologies qu’il emploie en s'auto évaluant selon son niveau d’expertise (0 à 3 étoiles) et en spécifiant ses intérêts (grâce à des cœurs). Il peut aussi y notifier les technologies ou méthodologies sur lesquelles il souhaite monter en compétence. Cette application a été développée par quelques Xebians, en version web et en version IOS. Cela a été l’occasion de monter en compétences sur ces technologies tout en réfléchissant à de nouvelles problématiques (RH, communication interne, UX, etc.)  Elle nous <strong>guide dans le choix des missions à proposer aux Xebians</strong>.",
+    "text": "Seul ou avec des pairs, nous encourageons les prises d'initiatives. Xskillz est le résultat d’une idée innovante : une application de gestion de compétences développée par et pour les Xebians. Chacun remplit son profil, fiche sur laquelle il indique les technologies qu’il emploie en s'auto évaluant selon son niveau d’expertise (0 à 3 étoiles) et en spécifiant ses intérêts (grâce à des cœurs). Il peut aussi y notifier les technologies ou méthodologies sur lesquelles il souhaite monter en compétence. Cette application a été développée par quelques Xebians, en version web et en version IOS. Cela a été l’occasion de monter en compétences sur ces technologies tout en réfléchissant à de nouvelles problématiques (RH, communication interne, UX, etc.)  Elle nous guide dans le choix des missions à proposer aux Xebians.",
     "link": "https://github.com/xebia-france/xskillz-v2"
   },
   {
     "image": "logo-devoxxfrance",
     "title": "Devenez conférencier",
-    "text": "Nous encourageons l’ensemble des Xebians à <strong>présenter des CFPs</strong> pour des conférences techniques comme la Android Makers, Devoxx (France), FrenchKit, XebiCon, Paris Container Day, NSpain ou encore AltConfs sur les sujets qui les passionnent. Ces talks sont une réelle vitrine de l’expertise du speaker et donc de sa notoriété.",
+    "text": "Nous encourageons l’ensemble des Xebians à présenter des CFPs pour des conférences techniques comme la Android Makers, Devoxx (France), FrenchKit, XebiCon, Paris Container Day, NSpain ou encore AltConfs sur les sujets qui les passionnent. Ces talks sont une réelle vitrine de l’expertise du speaker et donc de sa notoriété.",
     "link": "http://blog.xebia.fr/2016/03/29/devoxx-france-la-conference-2016-des-developpeurs-passionnes"
   },
   {
     "image": "logo-meetup",
     "title": "Organisez des TechEvents et Meetups",
-    "text": "Les Xebians proposent régulièrement des TechEvents, des conférences ou ateliers techniques organisés le soir dans nos locaux. La société leur <strong>met à disposition l’ensemble des moyens nécessaires</strong> (salle, nourriture, invitations, site dédié,etc).<br />Les consultants Xebia invitent régulièrement leurs meetups préférés à venir dans les locaux de Xebia. C’est l’occasion d’être au plus prêt de la communauté, de faire de la veille tout en rencontrant d’autres passionnés.<br />Meetups et TechEvent sont d’ailleurs souvent retransmis sur <a href=\"http://xebia.tv\">Xebia TV</a> !"
+    "text": "Les Xebians proposent régulièrement des TechEvents, des conférences ou ateliers techniques organisés le soir dans nos locaux. La société leur met à disposition l’ensemble des moyens nécessaires (salle, nourriture, invitations, site dédié,etc).<br />Les consultants Xebia invitent régulièrement leurs meetups préférés à venir dans les locaux de Xebia. C’est l’occasion d’être au plus prêt de la communauté, de faire de la veille tout en rencontrant d’autres passionnés.<br />Meetups et TechEvent sont d’ailleurs souvent retransmis sur <a href=\"http://xebia.tv\">Xebia TV</a> !"
   },
   {
     "image": "logo-atelier",
@@ -65,11 +65,11 @@
   {
     "image": "logo-atelier",
     "title": "Créez des outils pratiques",
-    "text": "C’est en partant du constat que nous faisons souvent les mêmes recherches sur la toile, que les Xebians ont eu <srong>l’idée de créer des outils pratiques</strong> à garder sur le bureau ou à afficher au mur. </br>Chaque année, nous mettons à disposition gratuitement différents outils sur les bonnes pratiques de développement et méthodologique ou encore sur des nouveaux frameworks afin de partager avec l’ensemble de la communauté."
+    "text": "C’est en partant du constat que nous faisons souvent les mêmes recherches sur la toile, que les Xebians ont eu l’idée de créer des outils pratiques à garder sur le bureau ou à afficher au mur. </br>Chaque année, nous mettons à disposition gratuitement différents outils sur les bonnes pratiques de développement et méthodologique ou encore sur des nouveaux frameworks afin de partager avec l’ensemble de la communauté."
   },
   {
     "image": "logo-xke",
     "title": "Intervenez en XKE",
-    "text": "Une fois par mois, les Xebians quittent leur mission pour venir assister à des <strong>conférences techniques</strong> présentées par les Xebians. Retours d’expériences, hands-on, plénières, hackathons, etc. : les formats sont variés. Cette journée est l’occasion pour tous d’échanger autour de sujets qui nous passionnent. Les XKEs sont sans doute aussi <strong>la meilleure école</strong> pour vous mettre le pied à l'étrier et roder vos présentations devant un public bienveillant qui vous donnera du feedback pour vous améliorer et être prêt lors de prochaines conférences."
+    "text": "Une fois par mois, les Xebians quittent leur mission pour venir assister à des conférences techniques présentées par les Xebians. Retours d’expériences, hands-on, plénières, hackathons, etc. : les formats sont variés. Cette journée est l’occasion pour tous d’échanger autour de sujets qui nous passionnent. Les XKEs sont sans doute aussi <strong>la meilleure école</strong> pour vous mettre le pied à l'étrier et roder vos présentations devant un public bienveillant qui vous donnera du feedback pour vous améliorer et être prêt lors de prochaines conférences."
   }
 ]
