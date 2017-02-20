@@ -7,15 +7,15 @@
   },
   {
     "year" : "",
-    "image" : "logo-devoxx",
+    "image" : "logo-paris-container-day",
     "description" : "Xebia organise la première édition du <strong>Paris Container Day</strong>.",
-    "link": "http://www.xebia.fr"
+    "link": "http://paris-container-day.xebia.fr/"
   },
   {
     "year" : "",
-    "image" : "logo-bigdata",
+    "image" : "logo-kodokojo",
     "description" : "Xebia lance une usine logicielle Open Source, <strong>Kodo Kojo</strong>.",
-    "link": "http://www.xebia.fr"
+    "link": "https://kodokojo.io/"
   },
   {
     "year" : 2015,
