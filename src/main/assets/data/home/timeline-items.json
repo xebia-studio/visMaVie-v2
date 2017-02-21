@@ -27,7 +27,7 @@
     "year" : 2014,
     "image" : "logo-gptw",
     "description" : "Xebia devient une <strong>Great Place to Work</strong>.",
-    "link": "http://www.xebia.fr"
+    "link": "http://blog.xebia.fr/2014/03/19/xebia-n5-au-palmares-great-place-to-work/"
   },
   {
     "year" : "",
@@ -44,20 +44,19 @@
   {
     "year" : 2012,
     "image" : "logo-devoxx",
-    "description" : "Xebia est la première société à sponsoriser <strong>Devoxx France</strong>.",
-    "link": "http://www.xebia.fr"
+    "description" : "Xebia est la première société à sponsoriser <strong>Devoxx France</strong>."
   },
   {
     "year" : 2011,
     "image" : "logo-craftsmanship",
     "description" : "Xebia  promeut le <strong>Software Craftsmanship</strong> avec <strong>Uncle Bob</strong>.",
-    "link": "http://www.xebia.fr"
+    "link": "http://www.xebia.fr/methodes"
   },
   {
     "year" : "",
     "image" : "logo-agile",
     "description" : "Xebia écrit le <strong>contrat agile</strong> et le met en <strong>Open Source</strong>.",
-    "link": "http://www.xebia.fr"
+    "link": "http://www.xebia.fr/agile"
   },
   {
     "year" : 2010,
@@ -69,7 +68,7 @@
     "year" : 2009,
     "image" : "logo-frenchsug",
     "description" : "Création du <strong>French Scrum User Group</strong>.",
-    "link": "http://www.xebia.fr"
+    "link": "https://www.meetup.com/fr-FR/frenchsug/?chapter_analytics_code=UA-240545-6"
   },
   {
     "year" : 2008,
