@@ -10,17 +10,17 @@
     "text" : "Plusieurs consultants par idée"
   },
   {
-    "picto" : "picto-pizza",
+    "picto" : "picto-blog",
     "stat" : "+2 000",
     "text" : "articles de blog"
   },
   {
-    "picto" : "picto-lightbulb",
+    "picto" : "picto-printer",
     "stat" : "10 000",
     "text" : "TechTrends imprimés"
   },
   {
-    "picto" : "picto-graph",
+    "picto" : "picto-events",
     "stat" : "3",
     "text" : "évènements majeurs : XebiCon, FrenchKit et Paris Container Day"
   },
