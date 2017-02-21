@@ -9,7 +9,7 @@
     "year" : "",
     "image" : "logo-paris-container-day",
     "description" : "Xebia organise la première édition du <strong>Paris Container Day</strong>.",
-    "link": "http://paris-container-day.xebia.fr/"
+    "link": "http://paris-container-day.fr/"
   },
   {
     "year" : "",
@@ -39,12 +39,13 @@
     "year" : 2013,
     "image" : "logo-techtrends",
     "description" : "Xebia publie son premier <strong>TechTrends</strong>.",
-    "link": "http://www.xebia.fr"
+    "link": "http://blog.xebia.fr/publications/"
   },
   {
     "year" : 2012,
     "image" : "logo-devoxx",
-    "description" : "Xebia est la première société à sponsoriser <strong>Devoxx France</strong>."
+    "description" : "Xebia est la première société à sponsoriser <strong>Devoxx France</strong>.",
+    "link": "http://devoxx.fr"
   },
   {
     "year" : 2011,
@@ -56,7 +57,7 @@
     "year" : "",
     "image" : "logo-agile",
     "description" : "Xebia écrit le <strong>contrat agile</strong> et le met en <strong>Open Source</strong>.",
-    "link": "http://www.xebia.fr/agile"
+    "link": "http://www.contrat-agile.org/"
   },
   {
     "year" : 2010,
