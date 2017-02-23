@@ -22,7 +22,7 @@
   {
     "picto" : "picto-hand-micro",
     "stat" : "1",
-    "text" : "XKE, journée mensuelle de partage de la connaissance"
+    "text" : "XKE par mois, journée de partage de la connaissance"
   },
   {
     "picto" : "pic-degree",
@@ -32,11 +32,11 @@
   {
     "picto" : "picto-heart",
     "stat" : "100%",
-    "text" : "de Xebians fiers de l’être (GPTW)"
+    "text" : "des Xebians sont fiers de l’être (GPTW)"
   },
   {
     "picto" : "picto-xebicon",
-    "stat" : "650",
-    "text" : "personnes à la XebiCon'16"
+    "stat" : "+60",
+    "text" : "Xebians ont assisté à une conférence en 2016"
   }  
 ]
