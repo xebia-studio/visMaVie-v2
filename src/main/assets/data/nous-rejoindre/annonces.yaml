@@ -4,14 +4,14 @@ Lead Tech:
     - Arbitre les questions techniques de l’équipe de développement
     - Met en avant les bonnes pratiques de qualité et de développement
   Les compétences attendues:
-    - Maîtrise des outils et bonnes pratiques de développement (Craft)
+    - Maîtrise des outils et bonnes pratiques de développement (Crafts)
     - Bonne communication technique
     - Couverture et profondeur technique
     - Partage des connaissances
     - Mentoring technique
   Responsabilités:
     - Assure la bonne mise en oeuvre de la solution technique 
-    - Assure que les bonnes pratiques de développements sont utilisées (tests, analyse du code, performance, etc.) 
+    - Assure que les bonnes pratiques de développement sont utilisées (tests, analyse du code, performance, etc.) 
     - Facilite la mise en place d’un environnement de développement adéquat (outils, machines, environnements, etc.) 
     - Détecte et gère les problèmes de communication dans l’équipe de développement
     - Favorise la diffusion des connaissances au sein de l’équipe
@@ -26,10 +26,10 @@ Lead Tech:
 
 Expert:
   Rôle / Missions:
-    - Conseil et assistance
-    - Formation
-    - Recommandation techniques
-    - Audit
+    - Conseille son équipe et les assiste en cas de besoin
+    - Forme ses pairs
+    - Explicite ses recommandations techniques
+    - Gère des audits
   Les compétences attendues:
     - Expertise
     - Prise de parole en public
@@ -38,7 +38,7 @@ Expert:
   Responsabilités:
     - Analyse, conseille et fait des recommandations de façon à améliorer l’efficience et l’efficacité des solutions techniques
     - Travaille en collaboration avec les développeurs afin de chercher et fournir des solutions
-    - Identifie les risques et saisir les opportunités liés à son domaine puis communiquer aux parties prenantes
+    - Identifie les risques et saisit les opportunités liés à son domaine puis communique aux parties prenantes
     - Assure la promotion de nouvelles techniques/méthodologie
     - Aide à la construction d’offres
     - Assure la promotion du changement et de l’amélioration technique continue
@@ -49,7 +49,7 @@ Expert:
     - Sens de l’innovation et créativité
     - Rigueur
     - Fédérateur
-    - Pédagogue
+    - Pédagogie
 
 Développeur:
   Rôle / Missions:
@@ -64,7 +64,7 @@ Développeur:
     - Connaissance théorique et/ou pratique du Test Driven Development
     - Capacité à estimer la complexité des tâches techniques
   Responsabilités:
-    - Applique les bonnes pratiques de développements (tests, analyse du code, performance, etc.)
+    - Applique les bonnes pratiques de développement (tests, analyse du code, performance, etc.)
     - Travaille en collaboration avec les autres développeurs afin de chercher et fournir des solutions
     - Identifie les risques et les exprime au plus tôt à son équipe ou à son référent technique
   Les qualités requises:
@@ -92,7 +92,7 @@ Coding Architect:
     - Conseille les équipes de développement au sujet de la stratégie logicielle ; bus applicatifs, micro services, etc.
   Les qualités requises:
     - Empathie
-    - Ecoute client
+    - Écoute client
     - Vision d’ensemble
     - Créativité
     - Analyse et synthèse
@@ -102,21 +102,19 @@ Coding Architect:
 Coach:
   Rôle / Missions:
     - "Coaching d’équipe : coaching d’équipe Agile, Scrum Mastering et direction de projet Agile"
-    - "Coaching tech : coaching craft et devops"
-    - "Coaching d’entreprise : conseil en orga Agile, conduite du changement et coaching de manageur"
+    - "Coaching tech : coaching Craft et DevOps"
+    - "Coaching d’entreprise : conseil en organisation Agile, conduite du changement et coaching de manageur"
   Les compétences attendues:
     - "5 postures : consultant, formateur, facilitateur, mentor et coach"
     - "3 profils : coach métier, coach de transformation et coach technique"
     - "3 niveaux d’intervention : équipe, programme et entreprise"
-    - "4 types de conseil : conseil en marketing, conseil en informatique, coaching individuel, d’équipe et collectifs, conseil en management et orga"
+    - "4 types de conseil : conseil en marketing, conseil en informatique, coaching individuel, d’équipe et collectif, conseil en management et organisation"
   Responsabilités:
     - Déploie l’agilité en entreprise en respectant les cultures, les individus et les valeurs de Xebia
-    - Satisfait le client
-    - Construit et vendre une mission
-    - Définit les objectifs, les critères de succès, poser et maîtriser le cadre de l’intervention, structurer et planifier la mission
-    - Fait des points de mission réguliers, aller chercher le feedback, faire le suivi budgétaire
-    - Est force de proposition, conseiller, prendre par la main et donner du feedback
-    - Développe les comptes client, trouve de nouvelles missions et de nouveaux collaborateurs
+    - Construit et vend une mission
+    - Définit les objectifs, les critères de succès, pose et maîtrise le cadre de l’intervention, structure et planifie la mission
+    - Fait des points de mission réguliers, va chercher le feedback, fait le suivi budgétaire
+    - Est force de proposition, conseille, prend par la main et donner du feedback
     - Partage ses connaissances et expériences en interne et en externe, cherche à s’améliorer en permanence et demander de l’aide si besoin
   Les qualités requises:
     - Culture client
@@ -148,12 +146,12 @@ Studio Team Leader:
     - Planifie le travail de l’équipe
     - Fournit des indicateurs de prédictibilité / avancement
     - Suit les indicateurs de qualité
-    - Aide à rédiger les éléments des comité de pilotage / kick-off en lien avec le SDM
+    - Aide à rédiger les éléments des comités de pilotage / kick-off en lien avec le SDM
     - Est un catalyseur de l’amélioration continue au sein de l’équipe
   Les qualités requises:
     - Intelligence relationnelle / situationnelle
     - Communication efficace vers des profils très variés
-    - Diplomate
+    - Diplomatie
     - Propension naturelle à la résolution de problèmes
     - Bonne capacité de discernement
     - Esprit de synthèse
@@ -170,15 +168,15 @@ Scrum Master:
     - Facilités de présentation, de communication et de négociation
     - Sait coder
   Responsabilités:
-    - Met en place et animer les cérémonies (Sprint planning / Daily Scrum / Sprint review & Démo / Rétrospective)
+    - Met en place et anime les cérémonies (Sprint planning / Daily Scrum / Sprint review & Démo / Rétrospective)
     - Agit en facilitateur
-    - "Élimine les obstacles : identifie les entraves et aider l’équipe à faire émerger leurs résolutions"
+    - "Élimine les obstacles : identifie les entraves et aide l’équipe à faire émerger leurs résolutions"
     - Aide l'équipe à travailler de façon autonome et à s'améliorer constamment
     - S'assure que chacun participe pleinement aux travaux de l'équipe
   Les qualités requises:
     - Humble et empathique
-    - Pédagogue et diplomate
+    - Pédagogie et diplomatie
     - Capacité d’écoute
-    - Persuasif / assertif
+    - Persuasion / assertivité
     - Propension naturelle à la résolution de problèmes
     - Leadership
