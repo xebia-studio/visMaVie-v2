@@ -25,11 +25,7 @@
   import SliderSlide from 'xebia-web-common/components/Slider/SliderSlide';
   import ArrowLink from 'xebia-web-common/components/ArrowLink';
 
-  //import svgComponent from 'generated/assets/components/CardSlider/svgComponents/sync'
-
-  function svgComponent(src) {
-    console.log(src);
-  }
+  import svgComponent from 'generated/assets/components/CardSlider/svgComponents/sync';
 
   import getScrollBarWidth from 'scrollbar-width';
   const scrollBarWidth = getScrollBarWidth();

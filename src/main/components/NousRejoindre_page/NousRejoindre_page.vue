@@ -39,12 +39,16 @@ import lesPlus from 'data/nous-rejoindre/les-plus.json';
 
 import { mixin as fontLoader } from 'tools/font-loader';
 
+import headerImageCacheSetter from 'generated/tools/components/NousRejoindre_page/blurryHeaderImageCacheSetter';
+
 export default {
   name : 'NousRejoindre_page',
   mixins : [fontLoader],
   data : function() {
     return {
-      header,
+      header: Object.assign({}, header, {
+        imageCacheSetter: headerImageCacheSetter
+      }),
       jobs : annonces,
       talentButtonLabel : 'Vous avez d\'autres talents&nbsp;? C\'est&nbsp;par&nbsp;ici&nbsp;!',
       jobButtonLabel : 'Postuler&nbsp;!',

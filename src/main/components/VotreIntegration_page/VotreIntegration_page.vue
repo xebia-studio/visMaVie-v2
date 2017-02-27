@@ -20,26 +20,30 @@ import processusRecrutement from 'data/votre-integration/processus-recrutement.j
 
 import { mixin as fontLoader } from 'tools/font-loader';
 
+import headerImageCacheSetter from 'generated/tools/components/VotreIntegration_page/blurryHeaderImageCacheSetter';
+
 export default {
-	name: 'VotreIntegration_page',
-	mixins: [fontLoader],
-	data: function () {
-		return {
-		    header,
-		    themes,
-		    processusRecrutement
-		};
-	},
-	created: function () {
-            this.loadFont({
-                'text': ['light', 'regular'],
-            });
+    name: 'VotreIntegration_page',
+    mixins: [fontLoader],
+    data: function () {
+        return {
+            header: Object.assign({}, header, {
+                imageCacheSetter: headerImageCacheSetter
+            }),
+            themes,
+            processusRecrutement
+        };
     },
-	components: {
-	    AppPage,
-	    AppSection,
-	    FAQ,
-	    BulletList
-	}
+    created: function () {
+        this.loadFont({
+            'text': ['light', 'regular'],
+        });
+    },
+    components: {
+        AppPage,
+        AppSection,
+        FAQ,
+        BulletList
+    }
 };
 </script>

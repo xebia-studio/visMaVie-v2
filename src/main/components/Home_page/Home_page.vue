@@ -22,12 +22,16 @@
   import Timeline from 'components/Timeline';
   import timelineItems from 'data/home/timeline-items.json';
 
+  import headerImageCacheSetter from 'generated/tools/components/Home_page/blurryHeaderImageCacheSetter';
+
   export default {
     name: 'Home_page',
     mixins: [fontLoader, sizeClassHelper],
     data: function() {
       return {
-        header,
+        header: Object.assign({}, header, {
+          imageCacheSetter: headerImageCacheSetter
+        }),
         quelquesChiffres,
         timelineItems
       };

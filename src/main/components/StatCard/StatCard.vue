@@ -12,12 +12,13 @@
 
 <script>
     import { mixin as fontLoader } from 'tools/font-loader';
-    import { mixin as svgComponent } from 'tools/svg-component';
     import { mixin as sizeClassHelper } from 'tools/size-class-helper';
+
+    import svgComponent from 'generated/assets/components/StatCard/svgComponents/sync';
 
     export default {
         name: 'StatCard',
-        mixins: [fontLoader, svgComponent, sizeClassHelper],
+        mixins: [fontLoader, sizeClassHelper],
         props: {
             picto: {
                 required: true
@@ -39,6 +40,9 @@
           return {
               isWidthCompact: this.getSizeClassHelper().isActive('width-compact')
           };
+        },
+        methods: {
+            svgComponent
         },
         created: function () {
             this.loadFont({

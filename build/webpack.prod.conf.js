@@ -10,6 +10,10 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 
+var PrerenderSpaPlugin = require('prerender-spa-plugin');
+
+var routesToPrerender = require('../config/prerendered-routes');
+
 const env = process.env.NODE_ENV === 'testing'
   ? require('../config/test.env')
   : config.build.env;
@@ -90,7 +94,23 @@ const webpackConfig = merge(baseWebpackConfig, {
         quality: '65-90',
         speed: 4
       }
-    })
+    }),
+    new PrerenderSpaPlugin(
+      path.join(__dirname, '../dist'),
+      routesToPrerender,
+      {
+        //captureAfterDocumentEvent: 'prerender-page',
+        captureAfterTime: 5000,
+        maxAttempts: 10,
+
+        postProcessHtml: function (context) {
+          return context.html.replace(
+            /http(s?):\/\/localhost:([0-9]*)\//g,
+            config.build.host+'/'
+          )
+        }
+      }
+    )
   ]
 });
 
@@ -99,7 +119,7 @@ if (config.build.productionGzip) {
 
   webpackConfig.plugins.push(
     new CompressionWebpackPlugin({
-      asset: '[path].gz[query]',
+      asset: '[path][query].gz',
       algorithm: 'gzip',
       test: new RegExp(
         '\\.(' +

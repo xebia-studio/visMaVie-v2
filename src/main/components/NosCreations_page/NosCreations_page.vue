@@ -20,27 +20,31 @@ import projetsVaries from 'data/nos-creations/projets-varies.json';
 
 import { mixin as fontLoader } from 'tools/font-loader';
 
+import headerImageCacheSetter from 'generated/tools/components/NosCreations_page/blurryHeaderImageCacheSetter';
+
 export default {
-	name: 'NosCreations_page',
-	mixins: [fontLoader],
-	data: function () {
-		return {
-		    header,
-		    partagerBaseline: 'Écrire, enseigner, construire, manager... Les contributions internes sont nombreuses et chacun a la possibilité de participer en fonction de ses savoir-faire et savoir-être !',
-		    partagerConnaissance,
-		    projetsVaries
-		};
-	},
-	created: function () {
+    name: 'NosCreations_page',
+    mixins: [fontLoader],
+    data: function () {
+        return {
+            header: Object.assign({}, header, {
+                imageCacheSetter: headerImageCacheSetter
+            }),
+            partagerBaseline: 'Écrire, enseigner, construire, manager... Les contributions internes sont nombreuses et chacun a la possibilité de participer en fonction de ses savoir-faire et savoir-être !',
+            partagerConnaissance,
+            projetsVaries
+        };
+    },
+    created: function () {
             this.loadFont({
                 'text': ['light', 'regular'],
             });
     },
-	components: {
-	    AppPage,
-	    AppSection,
-	    PartagerConnaissance,
-	    CardSlider
-	}
+    components: {
+        AppPage,
+        AppSection,
+        PartagerConnaissance,
+        CardSlider
+    }
 };
 </script>
