@@ -5,7 +5,7 @@
 <script>
   import OfferAccordion from 'components/OfferAccordion';
 
-  import annonces from 'assets/data/nous-rejoindre/annonces.yaml';
+  import annonces from 'data/nous-rejoindre/annonces.yaml';
 
   export default {
     name : 'Tester',

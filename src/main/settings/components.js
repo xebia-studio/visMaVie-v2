@@ -1,17 +1,17 @@
-const settingsHeader = require('./../../../src/main/assets/data/header/$settings.json');
+const settingsHeader = require('../data/header/$settings.json');
 const colorsSettings = require('./colors');
 
 const screenHeightIdeal = 800;
 
 module.exports = {
-	HomePage: {
+	Home_page: {
 		screenHeightIdeal,
 		heightHeader: 520
 	},
-  NousRejoindre: {
+  NousRejoindre_page: {
     leftPartNumberOfColumns: 8.5
   },
-  VotreIntegration: {
+  VotreIntegration_page: {
     leftPartNumberOfColumns: 8.5
   },
   BlurryHeaderLayer: {

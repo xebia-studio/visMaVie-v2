@@ -15,26 +15,27 @@
 </template>
 
 <script>
+
 import ParallaxedLayersGroup from 'xebia-web-common/components/ParallaxedLayersGroup/ParallaxedLayersGroup';
-
-import NavigationBarLayer from 'xebia-web-common/components/NavigationBarLayer';
-import settingsNavigation from 'src/main/assets/data/header/$settings.json';
-import LogoVisMaVie from 'src/generated/components/LogoVisMaVie';
-
-import BlurryHeaderLayer from 'xebia-web-common/components/BlurryHeaderLayer';
-import { BlurryHeaderLayer as blurryHeaderLayerSettings } from 'settings/components';
-
-import CallToActionLayer from 'src/main/components/CallToActionLayer/CallToActionLayer';
-
 import ParallaxedLayer from 'xebia-web-common/components/ParallaxedLayersGroup/ParallaxedLayer';
 
+import NavigationBarLayer from 'xebia-web-common/components/NavigationBarLayer';
+import BlurryHeaderLayer from 'xebia-web-common/components/BlurryHeaderLayer';
+
+import LogoVisMaVie from 'generated/assets/components/AppPage/LogoVisMaVie';
+
+import { BlurryHeaderLayer as blurryHeaderLayerSettings } from 'settings/components';
+
+import CallToActionLayer from 'components/CallToActionLayer';
+
+import settingsNavigation from 'data/header/$settings.json';
 import layoutSettings from 'settings/layout';
 import AppFooter from 'xebia-web-common/components/AppFooter';
-import nousRecrutons from 'assets/data/footer/nous-recrutons.yaml';
-import siteMap from 'assets/data/footer/site-map.yaml';
-import contacts from 'assets/data/footer/contacts.yaml';
-import otherSites from 'assets/data/footer/autres-sites.yaml';
-import socialNetworks from 'assets/data/footer/reseaux-sociaux.yaml';
+import nousRecrutons from 'data/footer/nous-recrutons.yaml';
+import siteMap from 'data/footer/site-map.yaml';
+import contacts from 'data/footer/contacts.yaml';
+import otherSites from 'data/footer/autres-sites.yaml';
+import socialNetworks from 'data/footer/reseaux-sociaux.yaml';
 
 export default {
 	name: 'AppPage',
@@ -78,5 +79,3 @@ export default {
 	}
 };
 </script>
-
-<style lang="stylus"></style>

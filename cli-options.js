@@ -1,8 +1,9 @@
-const argv = require('minimist')(process.argv.slice(2));
-const includes = require('lodash/includes');
+var argv = require('./argv');
 
-const options = {
-  noBlurryImage: includes(argv._, 'noBlurryImage')
-};
+var options = Object.assign({}, require('xebia-web-common/cli-options'), {
+	//create-components-directories options
+	override: argv._ ? (argv._.indexOf("override") >= 0) : false,
+	removeExistingIndex: argv._ ? (argv._.indexOf("removeExistingIndex") >= 0) : false
+});
 
 module.exports = options;

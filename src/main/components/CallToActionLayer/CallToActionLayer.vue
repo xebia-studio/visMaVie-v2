@@ -9,9 +9,9 @@
 <script>
 
 import AppHeaderSubBarLayer from 'xebia-web-common/components/AppHeaderSubBarLayer';
-import CTAButton from 'components/CTAButton/CTAButton';
+import CTAButton from 'components/CTAButton';
 
-import LogoXebiaVisMaVie from 'src/generated/components/LogoXebiaVisMaVie';
+import LogoXebiaVisMaVie from 'generated/assets/components/CallToActionLayer/LogoXebiaVisMaVie';
 
 export default {
 	name: 'CallToActionLayer',

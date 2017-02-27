@@ -27,11 +27,13 @@ module.exports = {
     alias: {
       'vue$': 'vue/dist/vue.common.js',
       'src': path.resolve(__dirname, '../src'),
+      'generated': path.resolve(__dirname, '../src/generated'),
       'assets': path.resolve(__dirname, '../src/main/assets'),
-      'components': path.resolve(__dirname, '../src/main/components'),
-      'settings': path.resolve(__dirname, '../src/main/settings'),
       'generic': path.resolve(__dirname, '../src/main/generic'),
-      'tools': path.resolve(__dirname, '../src/main/tools')
+      'settings': path.resolve(__dirname, '../src/main/settings'),
+      'tools': path.resolve(__dirname, '../src/main/tools'),
+      'components': path.resolve(__dirname, '../src/main/components'),
+      'data': path.resolve(__dirname, '../src/main/data')
     }
   },
   resolveLoader: {

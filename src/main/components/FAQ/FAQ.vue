@@ -19,19 +19,20 @@
   import _ from 'lodash';
   import { domHeight } from '@alexistessier/dom';
 
-  import CTAButton from 'components/CTAButton/CTAButton';
+  import CTAButton from 'components/CTAButton';
 
   import { mixin as fontLoader } from 'tools/font-loader';
-  import { mixin as svgComponent } from 'tools/svg-component';
   import { mixin as sizeClassHelper } from 'tools/size-class-helper';
   import { mixin as scrollController } from 'tools/scroll-controller';
 
   import animatedScrollTo from 'xebia-web-common/tools/animated-scroll-to';
   import centralEventBus from 'xebia-web-common/tools/central-event-bus';
 
+  import svgComponent from 'generated/assets/components/FAQ/svgComponents/sync';
+
   export default {
     name: 'FAQ',
-    mixins: [fontLoader, svgComponent, sizeClassHelper, scrollController],
+    mixins: [fontLoader, sizeClassHelper, scrollController],
     props: {
       themes: {
         type: Object,
@@ -50,6 +51,7 @@
       };
     },
     methods: {
+      svgComponent,
       isThemeActive: function (themeLabel) {
         return _.isEqual(themeLabel, this.selectedThemeLabel);
       },

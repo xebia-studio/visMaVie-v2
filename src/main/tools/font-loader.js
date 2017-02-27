@@ -5,8 +5,10 @@ import { assign, isString, isArray, forEach, isObject, isBoolean, map, includes,
 const WebFont = require('webfontloader');
 
 /* ------------------ */
+
 import settings from 'settings/fonts.js';
 const metaKeys = ['_family', '_type', '_subset'];
+
 /* ------------------ */
 // settings/fonts.js
 //
@@ -33,6 +35,8 @@ const metaKeys = ['_family', '_type', '_subset'];
 // }
 /* ------------------ */
 /* ------------------ */
+
+const yetLoadedFont = {};
 
 const getFontVariationsCache = {};
 function getFontVariations(fontName) {
@@ -104,7 +108,7 @@ const loader = {
 		if (isArray(fonts)){
 			const _fonts = {};
 			forEach(fonts, fontName => {
-        _families[fontName] = getFontVariations(fontName);
+				_families[fontName] = getFontVariations(fontName);
 			});
 			fonts = _fonts;
 		}
@@ -145,8 +149,30 @@ const loader = {
 					throw new Error('The font loader do not handle yet other font types than google. You can directly use webfontloader if needed.');
 				}
 			}
-			
-			const googleConfigFamilies = map(googleFonts, (options, fontName)=>{
+
+			const googleFontsFiltered = {};
+
+			for(const fontName in googleFonts){
+				const options = googleFonts[fontName];
+				const filteredOptions = {};
+				
+				const variations = options.variations;
+				has(options, 'subset') ? (filteredOptions.subset = options.subset) : null;
+
+				const fontVariationsLoaded = yetLoadedFont[fontName] || [];
+
+				filteredOptions.variations = variations.filter(variation => !includes(fontVariationsLoaded, variation));
+
+				if (filteredOptions.variations.length > 0) {
+
+					googleFontsFiltered[fontName] = filteredOptions;
+
+					yetLoadedFont[fontName] = yetLoadedFont[fontName] || [];
+					yetLoadedFont[fontName].push(...variations);
+				}
+			}
+
+			const googleConfigFamilies = map(googleFontsFiltered, (options, fontName)=>{
 				const settingsVariations = settings[fontName];
 				let variations = options.variations;
 				let subset = has(options, 'subset') ? options.subset : true;
@@ -185,7 +211,15 @@ const loader = {
 				throw new Error('You attempt to load an empty list of variations for font named "'+fontName+'".');
 			});
 
-			loader.loadGoogleFont(googleConfigFamilies, callbacks);
+			if (googleConfigFamilies.length > 0) {
+				loader.loadGoogleFont(googleConfigFamilies, callbacks);
+			}
+			else{
+				callbacks && callbacks.fontactive ? (
+					setTimeout(()=>{callbacks.fontactive();}, 1000)
+				) : null;
+			}
+			
 		}
 		else{
 			throw new Error('The fonts parameter when using loadFont method must be a String, an Array or an Object.');

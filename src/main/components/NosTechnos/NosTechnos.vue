@@ -6,12 +6,13 @@
 
 <script>
   import {mixin as fontLoader} from 'tools/font-loader';
-  import {mixin as svgComponent} from 'tools/svg-component';
   import {mixin as sizeClassHelper} from 'tools/size-class-helper';
+
+  import svgComponent from 'generated/assets/components/NosTechnos/svgComponents/sync';
 
   export default {
     name : 'NosTechnos',
-    mixins : [fontLoader, svgComponent, sizeClassHelper],
+    mixins : [fontLoader, sizeClassHelper],
     props : {
       technos : {
         type : Array,
@@ -24,6 +25,7 @@
       };
     },
     methods : {
+      svgComponent,
       buildTechnoList : function() {
         if (this.getSizeClassHelper().isActive('width-compact')) {
           return this.technos.slice(0, 11);

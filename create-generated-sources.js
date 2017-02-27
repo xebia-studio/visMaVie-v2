@@ -1,8 +1,15 @@
 const path = require('path');
 const generateStyles = require('xebia-web-common/scripts/generate-generic-styles');
-const generateImages = require('xebia-web-common/scripts/generate-images');
 
 const cliOptions = require('./cli-options');
+
+// Special scripts
+for(const scriptPath of [
+  path.join(__dirname, 'generate-modernizr.js'),
+  path.join(__dirname, 'generate-fonts.js'),
+]){
+    require(scriptPath);
+}
 
 // Generic settings
 
@@ -16,26 +23,8 @@ generateStyles({
   outputPath: path.join(__dirname, 'src/generated/settings')
 });
 
-generateImages({
-  inputPath: path.join(__dirname, './src/main/assets/images/svg'),
-  toolsOutputPath: path.join(__dirname, './src/generated/tools/svgComponent.styl'),
-  outputPath: path.join(__dirname, './src/generated/components'),
-  sizeAliases: require(path.join(__dirname, './src/main/assets/images/svg/size-aliases.js'))
+require('xebia-web-common/scripts/generate-layers')({
+  mainDirectoryPath: path.join(__dirname, 'src/main'),
+  generatedDirectoryPath: path.join(__dirname, 'src/generated'),
+  layersGeneratorsDirectory: path.join(__dirname, 'layers-generators')
 });
-
-// Special settings
-
-const sourcesGenerators = [
-	path.join(__dirname, 'generate-modernizr.js'),
-	path.join(__dirname, 'generate-fonts.js'),
-];
-
-for(let i = 0, imax = sourcesGenerators.length; i < imax; i++){
-    require(sourcesGenerators[i]);
-}
-
-if (!cliOptions.noBlurryImage) {
-  require('./blur-images');
-}
-
-

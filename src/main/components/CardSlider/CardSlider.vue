@@ -17,7 +17,6 @@
   import {domHeight} from '@alexistessier/dom';
 
   import {mixin as fontLoader} from 'tools/font-loader';
-  import {mixin as svgComponent} from 'tools/svg-component';
   import {mixin as sizeClassHelper, config as sizeClassHelperConfig} from 'tools/size-class-helper';
 
   import {CardSlider as settings} from 'settings/components';
@@ -26,12 +25,18 @@
   import SliderSlide from 'xebia-web-common/components/Slider/SliderSlide';
   import ArrowLink from 'xebia-web-common/components/ArrowLink';
 
+  //import svgComponent from 'generated/assets/components/CardSlider/svgComponents/sync'
+
+  function svgComponent(src) {
+    console.log(src);
+  }
+
   import getScrollBarWidth from 'scrollbar-width';
   const scrollBarWidth = getScrollBarWidth();
 
   export default {
     name : 'CardSlider',
-    mixins : [fontLoader, svgComponent, sizeClassHelper],
+    mixins : [fontLoader, sizeClassHelper],
     props : {
       cards : {
         required : true
@@ -71,6 +76,7 @@
       }
     },
     methods : {
+      svgComponent,
       paginationBulletRender : function(swiper, index, className) {
         return '<button type="button" class="CardSlider-pagination-bullet ' + className + '">' + (index + 1) + '</button>';
       },

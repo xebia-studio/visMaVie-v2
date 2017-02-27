@@ -1,0 +1,1 @@
+module.exports = require('xebia-web-common/argv');

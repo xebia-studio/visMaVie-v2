@@ -28,10 +28,9 @@
   import _ from 'lodash';
   import {domHeight} from '@alexistessier/dom';
 
-  import CTAButton from 'components/CTAButton/CTAButton';
+  import CTAButton from 'components/CTAButton';
 
   import {mixin as fontLoader} from 'tools/font-loader';
-  import {mixin as svgComponent} from 'tools/svg-component';
   import {mixin as sizeClassHelper} from 'tools/size-class-helper';
   import {mixin as scrollController} from 'tools/scroll-controller';
 
@@ -40,9 +39,11 @@
 
   import {OfferAccordion as settings} from 'settings/components';
 
+  import svgComponent from 'generated/assets/components/OfferAccordion/svgComponents/sync';
+
   export default {
     name : 'OfferAccordion',
-    mixins : [fontLoader, svgComponent, sizeClassHelper, scrollController],
+    mixins : [fontLoader, sizeClassHelper, scrollController],
     props : {
       jobs : {
         type : Object,
@@ -66,6 +67,7 @@
       };
     },
     methods : {
+      svgComponent,
       isJobActive : function(job) {
         return _.isEqual(job, this.selectedJob);
       },

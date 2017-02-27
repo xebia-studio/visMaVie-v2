@@ -9,16 +9,20 @@
 </template>
 
 <script>
-  import {mixin as svgComponent} from 'tools/svg-component';
   import {mixin as fontLoader} from 'tools/font-loader';
+
+  import svgComponent from 'generated/assets/components/Timeline/svgComponents/sync';
 
   export default {
     name : 'Timeline',
-    mixins: [svgComponent, fontLoader],
+    mixins: [fontLoader],
     props : {
       items : {
         required : true
       }
+    },
+    methods: {
+      svgComponent
     },
     created : function() {
       this.loadFont({

@@ -10,11 +10,12 @@
 
 <script>
 import { mixin as fontLoader } from 'tools/font-loader';
-import { mixin as svgComponent } from 'tools/svg-component';
+
+import svgComponent from 'generated/assets/components/BulletList/svgComponents/sync';
 
 export default {
 	name: 'BulletList',
-	mixins: [fontLoader, svgComponent],
+	mixins: [fontLoader],
 	props: {
 	    itemList: {
 	        type: Array,
@@ -33,7 +34,9 @@ export default {
 	        return this.image ? require('assets/images/'+this.image) : '';
 	    }
 	},
-	methods: {},
+	methods: {
+		svgComponent
+	},
 	created: function () {
         this.loadFont({
             'text': 'regular'
