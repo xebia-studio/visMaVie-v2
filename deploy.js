@@ -73,6 +73,7 @@ let notGzippedCommand = '';
 	//create the commands to upadte the gzip files
 	const baseOptions = [
 		"--exclude '*'",
+		"--region eu-central-1",
 		cache
 	];
 
@@ -101,16 +102,16 @@ if (!allowBot) {
 report('notice', `-- start deployment on ${bucketARN} --`);
 
 //remove the old files from s3 bucket
-shell.exec(`aws s3 rm ${bucketARN} --recursive`);
+shell.exec(`aws s3 rm ${bucketARN} --recursive --region eu-central-1`);
 
 //sync the bucket policy
-shell.exec(`aws s3api put-bucket-policy --bucket ${bucket} --policy file://aws/${bucket}/bucket-policy.json`);
+shell.exec(`aws s3api put-bucket-policy --bucket ${bucket} --policy file://aws/${bucket}/bucket-policy.json --region eu-central-1`);
 
 //sync the file which are not gzipped or cached
-shell.exec(`aws s3 sync dist ${bucketARN} --exclude '*' --include '*.html' --include '*.txt' --include '*.rtf' --include '*.ico' --include '*.json' --include '*.xml'`);
+shell.exec(`aws s3 sync dist ${bucketARN} --exclude '*' --include '*.html' --include '*.txt' --include '*.rtf' --include '*.ico' --include '*.json' --include '*.xml' --region eu-central-1`);
 
 //sync the images
-shell.exec(`aws s3 sync dist ${bucketARN} --exclude '*' --include '*.jpg' --include '*.png' --include '*.svg' ${cache}`);
+shell.exec(`aws s3 sync dist ${bucketARN} --exclude '*' --include '*.jpg' --include '*.png' --include '*.svg' ${cache} --region eu-central-1`);
 
 shell.exec(gzipCommand);
 shell.exec(notGzippedCommand);
