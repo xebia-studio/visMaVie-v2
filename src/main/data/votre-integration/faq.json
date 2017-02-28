@@ -2,7 +2,7 @@
   "Comment se passent les missions&nbsp;?": [
     {
       "title": "Quelle est la durée moyenne d'une mission&nbsp;?",
-      "answer": "Hors missions courtes de conseil, les Xebians restent entre 3 mois et un an sur une mission. Nous cherchons un juste équilibre entre apprendre dans la mission et la quitter avant de s'essouffler. </br>À chaque Xebian d'évaluer avec son manageur s'il est pertinent pour lui de rester plus longtemps sur sa mission ou de la quitter dans un délai plus bref."
+      "answer": "Hors missions courtes de conseil, les Xebians restent entre 3 mois et 1 an sur une mission. Nous cherchons un juste équilibre entre apprendre dans la mission et la quitter avant de s'essouffler. </br>À chaque Xebian d'évaluer avec son manageur s'il est pertinent pour lui de rester plus longtemps sur sa mission ou de la quitter dans un délai plus bref."
     },
     {
       "title": "Pourrai-je choisir mes missions&nbsp;?",
@@ -14,7 +14,7 @@
     },
     {
       "title": "Serai-je seul sur ma mission&nbsp;?",
-      "answer": "Les Xebians sont rarement seuls en mission. </br>De plus, vous serez très souvent en contact avec les autres Xebians. Les occasions de se rencontrer sont nombreuses : XKEs, XLunchs, Tech Events, etc. Même à distance, les échanges et le partage sont quotidiens : mailing lists, Slack, Google Hangouts, etc."
+      "answer": "Les Xebians sont rarement seuls en mission. </br>De plus, vous serez très souvent en contact avec les autres Xebians. Les occasions de se rencontrer sont nombreuses : XKE, XLunchs, Tech Events, etc. Même à distance, les échanges et le partage sont quotidiens : mailing lists, Slack, Google Hangouts, etc."
     }
   ],
   "Quelles sont les possibilités d’évolution&nbsp;?": [
@@ -46,7 +46,7 @@
     },
     {
       "title": "Quelle est l’implication attendue chez Xebia&nbsp;?",
-      "answer": "Il n’y a pas de simples spectateurs chez Xebia. Être un Xebian, c’est participer activement à la construction de la société. </br>Il existe de nombreuses manières de s’investir : articles de blog, XKEs, conférences, articles dans la presse, recrutement, création d’applications, organisation d’événements, etc. À vous de choisir celle qui vous convient le mieux !"
+      "answer": "Il n’y a pas de simples spectateurs chez Xebia. Être un Xebian, c’est participer activement à la construction de la société. </br>Il existe de nombreuses manières de s’investir : articles de blog, XKE, conférences, articles dans la presse, recrutement, création d’applications, organisation d’événements, etc. À vous de choisir celle qui vous convient le mieux !"
     }
   ]
 }
