@@ -1,5 +1,13 @@
-import { keys, kebabCase } from 'lodash';
+const { kebabCase } = require('lodash');
 
-import annonces from 'data/nous-rejoindre/annonces.yaml';
+const annonces = [
+'Lead Tech',
+'Expert',
+'Développeur',
+'Coding Architect',
+'Coach',
+'Studio Team Leader',
+'Scrum Master'
+];
 
-module.exports = keys(annonces).map((jobKey) => kebabCase(jobKey));
+module.exports = annonces.map((jobKey) => kebabCase(jobKey));

@@ -1,6 +1,6 @@
 const genericPageRoutes = require('generated/settings/routes');
 
-import {get, isUndefined, concat, includes} from 'lodash';
+const {get, isUndefined, concat, includes} = require('lodash');
 
 const jobRoutesList = require('./job-routes-list');
 
