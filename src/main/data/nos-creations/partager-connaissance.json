@@ -1,32 +1,35 @@
-[
-  {
-    "picto" : "picto-adn",
-    "stat" : "100%",
-    "text" : "des idées issues des consultants"
-  },
-  {
-    "picto" : "picto-people",
-    "stat" : "",
-    "text" : "Plusieurs consultants par idée"
-  },
-  {
-    "picto" : "picto-blog",
-    "stat" : "+2 000",
-    "text" : "articles de blog"
-  },
-  {
-    "picto" : "picto-printer",
-    "stat" : "10 000",
-    "text" : "TechTrends imprimés"
-  },
-  {
-    "picto" : "picto-events",
-    "stat" : "3",
-    "text" : "évènements majeurs par an : XebiCon, FrenchKit et Paris Container Day"
-  },
-  {
-    "picto" : "picto-arduino",
-    "stat" : "1",
-    "text" : "atelier plein de Rasberry Pi, d'imprimantes 3D, de fers à souder, etc."
-  }
-]
+{
+  "name": "Comment partager sa connaissance chez Xebia ?",
+  "data": [
+    {
+      "picto": "picto-adn",
+      "stat": "100%",
+      "text": "des idées issues des consultants"
+    },
+    {
+      "picto": "picto-people",
+      "stat": "",
+      "text": "Plusieurs consultants par idée"
+    },
+    {
+      "picto": "picto-blog",
+      "stat": "+2 000",
+      "text": "articles de blog"
+    },
+    {
+      "picto": "picto-printer",
+      "stat": "10 000",
+      "text": "TechTrends imprimés"
+    },
+    {
+      "picto": "picto-events",
+      "stat": "3",
+      "text": "évènements majeurs par an : XebiCon, FrenchKit et Paris Container Day"
+    },
+    {
+      "picto": "picto-arduino",
+      "stat": "1",
+      "text": "atelier plein de Rasberry Pi, d'imprimantes 3D, de fers à souder, etc."
+    }
+  ]
+}

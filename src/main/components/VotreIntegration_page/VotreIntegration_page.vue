@@ -1,9 +1,9 @@
 <template lang="jade">
     AppPage.VotreIntegration_page(:header="header")
-        AppSection.AppSection-even(:title="'Des réponses à vos questions, consultez notre FAQ.'")
-            FAQ(:themes="themes", :questionButtonLabel="'Posez Vos Questions'", slot="section-content")
-        AppSection.AppSection-odd.VotreIntegration_page-processus(:title="'Quel est le processus de recrutement ?'")
-            BulletList(:image="processusRecrutement.image", :itemList="processusRecrutement.items", :bottomText="processusRecrutement.bottomText", slot="section-content")
+        AppSection.AppSection-even(:title="themes.name")
+            FAQ(:themes="themes.data", :questionButtonLabel="'Posez Vos Questions'", slot="section-content")
+        AppSection.AppSection-odd.VotreIntegration_page-processus(:title="processusRecrutement.name")
+            BulletList(:image="processusRecrutement.data.image", :itemList="processusRecrutement.data.items", :bottomText="processusRecrutement.data.bottomText", slot="section-content")
 </template>
 
 <script>

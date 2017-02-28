@@ -1,9 +1,9 @@
 <template lang="jade">
   AppPage.NosCreations_page(:header="header")
-      AppSection.AppSection-even(:title="'Comment partager sa connaissance chez Xebia ?'", :baseline="partagerBaseline")
-        PartagerConnaissance(:statCards="partagerConnaissance", slot="section-content")
-      AppSection.AppSection-even(:title="'Des projets variés'")
-        CardSlider(slot="section-content", :cards="projetsVaries")
+      AppSection.AppSection-even(:title="partagerConnaissance.name", :baseline="partagerBaseline")
+        PartagerConnaissance(:statCards="partagerConnaissance.data", slot="section-content")
+      AppSection.AppSection-even(:title="projetsVaries.name")
+        CardSlider(slot="section-content", :cards="projetsVaries.data")
 </template>
 
 <script>
