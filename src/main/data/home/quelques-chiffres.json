@@ -17,7 +17,7 @@
   {
     "picto" : "picto-hand-paper-pen",
     "stat" : "500 000",
-    "text" : "lecteurs de blog.xebia.fr"
+    "text" : "lecteurs de <a href="blog.xebia.fr">blog.xebia.fr</a>"
   },
   {
     "picto" : "picto-hand-micro",
