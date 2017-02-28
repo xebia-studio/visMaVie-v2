@@ -1,30 +1,29 @@
-// const path = require('path');
-// const appModulePath = require('app-module-path');
+const path = require('path');
+const appModulePath = require('app-module-path');
 
-// appModulePath.addPath(path.join(__dirname, '../src'));
-// appModulePath.addPath(path.join(__dirname, '../src/main'));
+appModulePath.addPath(path.join(__dirname, '../src'));
+appModulePath.addPath(path.join(__dirname, '../src/main'));
 
-// const appRoutes = require('settings/routes/app-routes');
+const appRoutes = require('settings/routes/app-routes');
 
-// const expertisesRoutesList = require('settings/routes/expertises-routes-list');
+const jobRoutesList = require('settings/routes/job-routes-list');
 
-// const excludeRoutes = [];
+const excludeRoutes = [];
 
-// let prerenderedRoutes = [];
+let prerenderedRoutes = [];
 
-// const hook = {
-// 	expertise: function () {
-// 		expertisesRoutesList.forEach(route => {
-// 			prerenderedRoutes.push('/'+route);
-// 		})
-// 	}
-// }
+const hook = {
+	['nous-rejoindre']: function () {
+		prerenderedRoutes.push('/nous-rejoindre');
+		jobRoutesList.forEach(route => {
+			prerenderedRoutes.push('/nous-rejoindre/'+route);
+		})
+	}
+}
 
-// appRoutes.filter(route => ( excludeRoutes.indexOf(route.name) === -1 )
-// ).forEach(route => {
-// 	hook[route.name] ? hook[route.name](route.path) : prerenderedRoutes.push(route.path);
-// });
-
-const prerenderedRoutes = [];
+appRoutes.filter(route => ( excludeRoutes.indexOf(route.name) === -1 )
+).forEach(route => {
+	hook[route.name] ? hook[route.name](route.path) : prerenderedRoutes.push(route.path);
+});
 
 module.exports = prerenderedRoutes;

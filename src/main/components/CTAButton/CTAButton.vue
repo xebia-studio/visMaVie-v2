@@ -1,5 +1,6 @@
 <template lang="jade">
-    a.CTAButton(v-bind:class="type", :href="link", :target="newTab ? '_blank' : '_self'", v-html="label", @click.stop="() => null")
+    button.CTAButton(v-if="clickable", v-bind:class="type", @click.stop="onClickEvent", v-html="label")
+    a.CTAButton(v-else, v-bind:class="type", :href="link", :target="newTab ? '_blank' : '_self'", v-html="label", @click.stop="() => null")
 </template>
 
 <script>
@@ -13,6 +14,10 @@
         type : String,
         required : true
       },
+      clickable: {
+        type: Boolean,
+        default: false
+      },
       type : {
         type : String,
         required : true
@@ -24,6 +29,11 @@
       newTab : {
         type : Boolean,
         required : false
+      }
+    },
+    methods: {
+      onClickEvent: function () {
+        this.$emit('click');
       }
     },
     created : function() {

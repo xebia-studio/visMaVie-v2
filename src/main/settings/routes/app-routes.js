@@ -1,9 +1,11 @@
-import {get, isUndefined, concat, includes, keys, kebabCase} from 'lodash';
+const genericPageRoutes = require('generated/settings/routes');
 
-import annonces from 'data/nous-rejoindre/annonces.yaml';
+import {get, isUndefined, concat, includes} from 'lodash';
+
+const jobRoutesList = require('./job-routes-list');
 
 function isAValidJob(job) {
-  return includes(keys(annonces).map((jobKey) => kebabCase(jobKey)), job);
+  return includes(jobRoutesList, job);
 }
 
 module.exports = concat(
@@ -38,6 +40,7 @@ module.exports = concat(
         next();
       }
     },
+    ...genericPageRoutes,
     {
       name : 'nous-rejoindre',
       path : '/nous-rejoindre/:job?',

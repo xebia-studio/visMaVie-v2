@@ -5,6 +5,7 @@
                 LogoVisMaVie(slot="logo")
 
             BlurryHeaderLayer(@resize="headerResize", :title="header.title", :description="header.description", :image="header.image", :description_image="header.image_description", ref="blurryHeader", :titleLevel="header.titleLevel", :heightBlurryHeader="heightBlurryHeader", :screenHeightIdeal="screenHeightIdeal", :headerImageCacheSetter="header.imageCacheSetter")
+                slot(name='headerContent')
             .AppPage-in-header-block(ref='inHeaderContainer')
                 CallToActionLayer(ref="inHeader")
 
@@ -12,6 +13,8 @@
 
             ParallaxedLayer.AppPage-footer-layer
                 AppFooter(:siteMap="siteMap", :secondColumnContent="secondColumnContent", :contacts="contacts", :otherSites="otherSites", :socialNetworks="socialNetworks")
+                FooterNavigationBar
+                CookiesBar
 </template>
 
 <script>
@@ -27,6 +30,8 @@ import LogoVisMaVie from 'generated/assets/components/AppPage/LogoVisMaVie';
 import { BlurryHeaderLayer as blurryHeaderLayerSettings } from 'settings/components';
 
 import CallToActionLayer from 'components/CallToActionLayer';
+import FooterNavigationBar from 'components/FooterNavigationBar';
+import CookiesBar from 'components/CookiesBar';
 
 import settingsNavigation from 'data/header/$settings.json';
 import layoutSettings from 'settings/layout';
@@ -38,44 +43,46 @@ import otherSites from 'data/footer/autres-sites.yaml';
 import socialNetworks from 'data/footer/reseaux-sociaux.yaml';
 
 export default {
-	name: 'AppPage',
-	props: {
-		header: {
-			type: Object,
-			default: function () {
-				return {};
-			}
-		}
-	},
-	data: function () {
-	    return {
-	        siteMap,
-		    secondColumnContent: {
-		        title: 'Nous Recrutons',
-		        links: nousRecrutons
-		    },
-		    contacts,
-		    otherSites,
-		    socialNetworks,
-		    settingsNavigation,
-		    scrollPositionToReachBeforeLightBackground: undefined,
-		    heightBlurryHeader: blurryHeaderLayerSettings.heightBlurryHeader,
-		    screenHeightIdeal: layoutSettings.screenHeightIdeal
-	    };
-	},
-	methods: {
-	    headerResize: function (headerHeight) {
-			this.scrollPositionToReachBeforeLightBackground = parseInt(headerHeight, 10);
-		}
-	},
-	components: {
-		NavigationBarLayer,
-		LogoVisMaVie,
-		BlurryHeaderLayer,
-		CallToActionLayer,
-		AppFooter,
-		ParallaxedLayersGroup,
-		ParallaxedLayer
-	}
+    name: 'AppPage',
+    props: {
+        header: {
+            type: Object,
+            default: function () {
+                return {};
+            }
+        }
+    },
+    data: function () {
+        return {
+            siteMap,
+            secondColumnContent: {
+                title: 'Nous Recrutons',
+                links: nousRecrutons
+            },
+            contacts,
+            otherSites,
+            socialNetworks,
+            settingsNavigation,
+            scrollPositionToReachBeforeLightBackground: undefined,
+            heightBlurryHeader: blurryHeaderLayerSettings.heightBlurryHeader,
+            screenHeightIdeal: layoutSettings.screenHeightIdeal
+        };
+    },
+    methods: {
+        headerResize: function (headerHeight) {
+            this.scrollPositionToReachBeforeLightBackground = parseInt(headerHeight, 10);
+        }
+    },
+    components: {
+        NavigationBarLayer,
+        LogoVisMaVie,
+        BlurryHeaderLayer,
+        CallToActionLayer,
+        AppFooter,
+        ParallaxedLayersGroup,
+        ParallaxedLayer,
+        FooterNavigationBar,
+        CookiesBar
+    }
 };
 </script>

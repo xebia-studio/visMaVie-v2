@@ -1,3 +1,33 @@
+xebiaUI__titleBlock(mainSelector, secondarySelector, fontSizeMain = font__$sectionTitleDesktopFontSize, fontSizeSecondary = font__$sectionBaselineDesktopFontSize, font__useMixinMain = font__useTitleBold, font__useMixinSecondary = font__useTextLight)
+  {mainSelector},
+  {secondarySelector}
+    display block
+  
+  {mainSelector}
+    _loadMixin = font__useMixinMain
+    _loadMixin(fontSizeMain)
+    color color__$title
+    font__line-height 45px
+
+  //{mainSelector}+{secondarySelector}
+    //margin-top 2px
+
+  {secondarySelector}
+    _loadMixin = font__useMixinSecondary
+    _loadMixin(fontSizeSecondary)
+    color color__$textLight
+
+xebiaUI__text(selector, font__useMixin = font__useTextLight, font__useMixinStrong = font__useTextBold)
+  {selector}
+    _loadMixin = font__useMixin
+    _loadMixin(font__$textFontSize)
+    color color__$text
+    font__line-height font__$textLineHeight
+    
+    > strong
+      _loadMixin = font__useMixinStrong
+      _loadMixin()
+
 xebiaUI__simplePageLayout(
   selectorPrefix = '',
   separator = '-',
