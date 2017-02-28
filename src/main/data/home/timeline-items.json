@@ -14,7 +14,7 @@
   {
     "year" : "",
     "image" : "logo-kodokojo",
-    "description" : "Xebia lance une usine logicielle Open Source, <strong>Kodo Kojo</strong>.",
+    "description" : "Xebia lance une usine logicielle Open Source, <strong>Kodo&nbsp;Kojo</strong>.",
     "link": "https://kodokojo.io/"
   },
   {
@@ -51,7 +51,7 @@
     "year" : 2011,
     "image" : "logo-craftsmanship",
     "description" : "Xebia  promeut le <strong>Software Craftsmanship</strong> avec <strong>Uncle Bob</strong>.",
-    "link": "http://www.xebia.fr/methodes"
+    "link": "http://blog.xebia.fr/2011/05/03/code-propre-2-jours-avec-uncle-bob/"
   },
   {
     "year" : "",

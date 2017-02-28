@@ -22,11 +22,11 @@
   {
     "picto" : "picto-events",
     "stat" : "3",
-    "text" : "évènements majeurs : XebiCon, FrenchKit et Paris Container Day"
+    "text" : "évènements majeurs par an : XebiCon, FrenchKit et Paris Container Day"
   },
   {
     "picto" : "picto-arduino",
     "stat" : "1",
-    "text" : "atelier plein de Rasberry Pi, imprimantes 3D, fers à souder, etc."
+    "text" : "atelier plein de Rasberry Pi, d'imprimantes 3D, de fers à souder, etc."
   }
 ]

@@ -12,6 +12,12 @@
     "link": "http://blog.xebia.fr"
   },
   {
+    "image": "logo-xke",
+    "title": "Intervenez en XKE",
+    "text": "Une fois par mois, les Xebians quittent leur mission pour venir assister à des conférences techniques présentées par les Xebians. Retours d’expériences, hands-on, plénières, hackathons, etc. : les formats sont variés. Cette journée est l’occasion pour tous d’échanger autour de sujets qui nous passionnent. Les XKEs sont sans doute aussi la meilleure école pour vous mettre le pied à l'étrier et roder vos présentations devant un public bienveillant qui vous donnera du feedback pour vous améliorer et être prêt lors de prochaines conférences.",
+    "link": "http://xebicon.fr/"
+  },
+  {
     "image": "logo-xebicon2",
     "title": "Développez des applications mobiles pour des conférences d’envergure",
     "text": "Passionnés et actifs dans la communauté, les Xebians ont développé pour la première fois en 2012, l’application mobile Devoxx France.<br/>Ses retombées ont permis aux Xebians de développer quelques autres applications officielles d’évènement comme la XebiCon, Devoxx Anvers ou Devoxx Turino.<br />Vous pourrez également aider le marketing dans le développement d'applications natives pour leurs prochains gros événements comme la conférence Frenchkit, Paris Container Day ou encore la conférence XebiCon.",
@@ -20,7 +26,7 @@
   {
     "image": "logo-xskillz",
     "title": "Développez des applications internes",
-    "text": "Seul ou avec des pairs, nous encourageons les prises d'initiatives. Xskillz est le résultat d’une idée innovante : une application de gestion de compétences développée par et pour les Xebians. Chacun remplit son profil, fiche sur laquelle il indique les technologies qu’il emploie en s'auto évaluant selon son niveau d’expertise (0 à 3 étoiles) et en spécifiant ses intérêts (grâce à des cœurs). Il peut aussi y notifier les technologies ou méthodologies sur lesquelles il souhaite monter en compétence. Cette application a été développée par quelques Xebians, en version web et en version IOS. Cela a été l’occasion de monter en compétences sur ces technologies tout en réfléchissant à de nouvelles problématiques (RH, communication interne, UX, etc.)  Elle nous guide dans le choix des missions à proposer aux Xebians.",
+    "text": "Seul ou avec des pairs, nous encourageons les prises d'initiatives. Xskillz est le résultat d’une idée innovante&nbsp;: une application de gestion de compétences développée par et pour les Xebians. Chacun remplit son profil, fiche sur laquelle il indique les technologies qu’il emploie en s'auto évaluant selon son niveau d’expertise (0 à 3 étoiles) et en spécifiant ses intérêts (grâce à des cœurs). Il peut aussi y notifier les technologies ou méthodologies sur lesquelles il souhaite monter en compétence. Cette application a été développée par quelques Xebians, en version web et en version iOS. Cela a été l’occasion de monter en compétences sur ces technologies tout en réfléchissant à de nouvelles problématiques (RH, communication interne, UX, etc.).  Elle nous guide dans le choix des missions à proposer aux Xebians.",
     "link": "https://github.com/xebia-france/xskillz-v2"
   },
   {
@@ -32,19 +38,19 @@
   {
     "image": "logo-meetup",
     "title": "Organisez des TechEvents et Meetups",
-    "text": "Les Xebians proposent régulièrement des TechEvents, des conférences ou ateliers techniques organisés le soir dans nos locaux. La société leur met à disposition l’ensemble des moyens nécessaires (salle, nourriture, invitations, site dédié,etc).<br />Les consultants Xebia invitent régulièrement leurs meetups préférés à venir dans les locaux de Xebia. C’est l’occasion d’être au plus prêt de la communauté, de faire de la veille tout en rencontrant d’autres passionnés.<br />Meetups et TechEvent sont d’ailleurs souvent retransmis sur <a href=\"http://xebia.tv\">Xebia TV</a> !",
+    "text": "Les Xebians proposent régulièrement des TechEvents, des conférences ou ateliers techniques organisés le soir dans nos locaux. La société leur met à disposition l’ensemble des moyens nécessaires (salle, nourriture, invitations, site dédié, etc.). <br />Les consultants Xebia invitent régulièrement leurs meetups préférés à venir dans les locaux de Xebia. C’est l’occasion d’être au plus prêt de la communauté, de faire de la veille tout en rencontrant d’autres passionnés.<br />Meetups et TechEvent sont d’ailleurs souvent retransmis sur <a href=\"http://xebia.tv\">Xebia TV</a> !",
     "link": "http://blog.xebia.fr/category/events/"
   },
   {
     "image": "logo-atelier",
     "title": "Contribuez à l’Atelier IoT",
-    "text": "Les consultants Xebia peuvent s’initier à l’IoT avec l’Atelier : un lieu et du matériel dédié à la création d’objets qu’ils soient numériques ou connectés, ne nous battons pas sur la terminologie.<br />Autour d’une imprimante 3D, ils ont réuni des Rasberry PI, des Arduino, des cartes LaunchPad de Texas Instrument, des capteur Grove de Seed Studio, des boutons, des DEL, des modems Sigfox et LoRa, des lecteur RFID, chacun est libre de transformer ses idées en objets !",
+    "text": "Les consultants Xebia peuvent s’initier à l’IoT avec l’Atelier&nbsp;: un lieu et du matériel dédié à la création d’objets qu’ils soient numériques ou connectés, ne nous battons pas sur la terminologie.<br />Autour d’une imprimante 3D, ils ont réuni des Rasberry PI, des Arduino, des cartes LaunchPad de Texas Instrument, des capteur Grove de Seed Studio, des boutons, des LED, des modems Sigfox et LoRa, des lecteur RFID, chacun est libre de transformer ses idées en objets !",
     "link": "http://blog.xebia.fr/2016/02/15/atelier-presentation-un-espace-de-creation-dig-numerique-avec-nos-petits-doigts-muscles-2/"
   },
   {
     "image": "logo-xebiatv",
     "title": "Partagez avec Xebia TV",
-    "text": "Alexandre Dergham, consultant chez Xebia, témoigne : “Le premier souhait était de partager nos sessions de partage de connaissance avec l’extérieur. Nous considérons que nos XKE (Xebia Knowledge Exchange) sont d’une grande valeur et qu’ils peuvent intéresser beaucoup de développeurs. Le XKE de septembre 2014 était organisé en hackathon. Nous avons donc profité pour développer la première version du site XebiaTV. Puis, nous l’avons ensuite affiné pendant un mois avant sa mise en production.”",
+    "text": "Alexandre Dergham, consultant chez Xebia, témoigne : “&nbsp;Le premier souhait était de partager nos sessions de partage de connaissance avec l’extérieur. Nous considérons que nos XKE (Xebia Knowledge Exchange) sont d’une grande valeur et qu’ils peuvent intéresser beaucoup de développeurs. Le XKE de septembre 2014 était organisé en hackathon. Nous en avons profité pour développer la première version du site XebiaTV. Puis, nous l’avons ensuite affiné pendant un mois avant sa mise en production.&nbsp;”",
     "link": "http://www.xebia.tv"
   },
   {
@@ -64,11 +70,5 @@
     "title": "Créez des outils pratiques",
     "text": "C’est en partant du constat que nous faisons souvent les mêmes recherches sur la toile, que les Xebians ont eu l’idée de créer des outils pratiques à garder sur le bureau ou à afficher au mur. </br>Chaque année, nous mettons à disposition gratuitement différents outils sur les bonnes pratiques de développement et méthodologique ou encore sur des nouveaux frameworks afin de partager avec l’ensemble de la communauté.",
     "link": "http://blog.xebia.fr/2016/09/13/react-ember-et-vue-js-les-cycles-de-vie/" 
-  },  
-  {
-    "image": "logo-xke",
-    "title": "Intervenez en XKE",
-    "text": "Une fois par mois, les Xebians quittent leur mission pour venir assister à des conférences techniques présentées par les Xebians. Retours d’expériences, hands-on, plénières, hackathons, etc. : les formats sont variés. Cette journée est l’occasion pour tous d’échanger autour de sujets qui nous passionnent. Les XKEs sont sans doute aussi la meilleure école pour vous mettre le pied à l'étrier et roder vos présentations devant un public bienveillant qui vous donnera du feedback pour vous améliorer et être prêt lors de prochaines conférences.",
-    "link": "http://xebicon.fr/"
   }
 ]
