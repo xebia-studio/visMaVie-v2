@@ -4,14 +4,14 @@ Lead Tech:
     - Arbitre les questions techniques de l’équipe de développement
     - Met en avant les bonnes pratiques de qualité et de développement
   Les compétences attendues:
-    - Maîtrise des outils et bonnes pratiques de développement (Crafts)
-    - Bonne communication technique
-    - Couverture et profondeur technique
+    - Maîtrise les outils et les bonnes pratiques de développement (Crafts)
+    - Fait preuve d'une bonne communication technique
+    - Possède une large couverture et profondeur technique
     - Partage ses connaissances
-    - Mentoring technique
+    - Assure un mentoring technique
   Responsabilités:
-    - Assure la bonne mise en oeuvre de la solution technique 
-    - Assure que les bonnes pratiques de développement sont utilisées (tests, analyse du code, performance, etc.) 
+    - Garantit la bonne mise en oeuvre de la solution technique 
+    - S'assure que les bonnes pratiques de développement sont utilisées (tests, analyse du code, performance, etc.) 
     - Facilite la mise en place d’un environnement de développement adéquat (outils, machines, environnements, etc.) 
     - Détecte et gère les problèmes de communication dans l’équipe de développement
     - Favorise la diffusion des connaissances au sein de l’équipe
@@ -30,10 +30,10 @@ Expert:
     - Explicite ses recommandations techniques
     - Gère des audits
   Les compétences attendues:
-    - Profondeur technique
-    - Prise de parole en public
-    - Ouverture sur la communauté
-    - Animateur et formateur
+    - Possède une véritable profondeur technique
+    - Sait prendre la parole en public
+    - Est ouvert sur la communauté
+    - Sait animer et former
   Responsabilités:
     - Analyse, conseille et fait des recommandations de façon à améliorer l’efficience et l’efficacité des solutions techniques
     - Travaille en collaboration avec les développeurs afin de chercher et fournir des solutions
@@ -44,11 +44,11 @@ Expert:
     - Anime des formations internes et externes
   Les qualités requises:
     - Bon communiquant
-    - Écoute et synthèse
-    - Sens de l’innovation et créativité
-    - Rigueur
+    - Capacité d'écoute et de synthèse
+    - Sens de l’innovation et de la créativité
+    - Riguoureux
     - Fédérateur
-    - Pédagogie
+    - Pédagogue
 
 Développeur:
   Rôle / Missions:
@@ -84,7 +84,7 @@ Coding Architect:
     - Synthétisation
     - Compréhension des enjeux techniques et métiers
   Responsabilités:
-    - Garantie l’homogénéité d’une gamme de produits logiciels
+    - Garantit l’homogénéité d’une gamme de produits logiciels
     - Conçoit et accompagne la réalisation d’architectures systèmes et logicielles complexes
     - Analyse les architectures existantes et formalise des recommandations stratégiques pour l’amélioration ou la refonte
     - Conseille les équipes de développement au sujet de la stratégie logicielle : bus applicatifs, micro services, etc.
@@ -123,7 +123,7 @@ Coach:
     - Sang froid, recul et transparence en toute circonstance
     - Ouvert, pragmatique, concret et opérationnel, anti-dogmatique
     - Intelligence de situation
-    - Vient de l’IT, du terrain et a déjà eu des responsabilités de delivery
+    - Connaissance de l’IT, du terrain et des responsabilités de delivery
 
 Studio Team Leader:
   Rôle / Missions:
@@ -131,7 +131,7 @@ Studio Team Leader:
     - Est le représentant du Product Owner du client au sein de l’équipe (Proxy PO)
     - Participe au pilotage du projet avec le Studio Delivery Manager (SDM)
   Les compétences attendues:
-    - Bonne maîtrise des pratiques agiles
+    - Maîtrise des pratiques agiles
     - Expérience significative dans un environnement agile
     - Maîtrise de la bonne gestion d’un backlog
     - Bonne connaissance des outils de gestion de projets agiles
@@ -147,8 +147,8 @@ Studio Team Leader:
     - Est un catalyseur de l’amélioration continue au sein de l’équipe
   Les qualités requises:
     - Intelligence relationnelle/situationnelle
-    - Communication efficace vers des profils très variés
-    - Diplomatie
+    - Bon communicant vers des profils très variés
+    - Diplomate
     - Propension naturelle à la résolution de problèmes
     - Bonne capacité de discernement
     - Esprit de synthèse
@@ -160,9 +160,9 @@ Scrum Master:
     - S’assure que les décisions prises par l’équipe sont appliquées
     - S’assure du bon déroulement des sprints
   Les compétences attendues:
-    - Bonne maîtrise de Scrum
-    - Expérience dans un environnement agile
-    - Facilités de présentation, de communication et de négociation
+    - Possède une bonne maîtrise de Scrum
+    - A une expérience dans un environnement agile
+    - Dispose de facilités de présentation, de communication et de négociation
     - Sait coder
   Responsabilités:
     - Met en place et anime les cérémonies (Sprint planning/Daily Scrum/Sprint review & Démo/Rétrospective)
@@ -172,8 +172,8 @@ Scrum Master:
     - S'assure que chacun participe pleinement aux travaux de l'équipe
   Les qualités requises:
     - Empathique
-    - Pédagogie et diplomatie
+    - Pédagogue et diplomate
     - Capacité d’écoute
-    - Persuasion / assertivité
+    - Persuasif / assertivité
     - Propension naturelle à la résolution de problèmes
     - Leadership
