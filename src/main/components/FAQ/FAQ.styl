@@ -49,9 +49,10 @@ _questionHeight = 50
 
 .FAQ-theme-title
   padding ((_themeTitleMobileHeight - font__$textFontSize)/2)px 35px ((_themeTitleMobileHeight - font__$textFontSize)/2)px 10px
-  cursor pointer
   background-color _themeTitleBackgroundColor
   position relative
+  .FAQ-theme:not(.active) &
+    cursor pointer
   .size-class-not-width-compact &
     padding-left 20px
 
