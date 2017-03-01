@@ -29,7 +29,7 @@
       }
     },
     {
-      "image": "logo-xebicon2",
+      "image": "picto-creapplis",
       "title": "Développez des applications mobiles pour des conférences d’envergure",
       "text": "Passionnés et actifs dans la communauté, les Xebians ont développé pour la première fois en 2012, l’application mobile Devoxx France.<br/>Ses retombées ont permis aux Xebians de développer quelques autres applications officielles d’évènements comme la XebiCon, Devoxx Anvers ou Devoxx Turino.<br />Vous pourrez également aider le marketing dans le développement d'applications natives pour leurs prochains gros événements comme la conférence Frenchkit, Paris Container Day ou encore la conférence XebiCon.",
       "link": {
@@ -38,7 +38,7 @@
       }
     },
     {
-      "image": "logo-xskillz",
+      "image": "picto-devapplis",
       "title": "Développez des applications internes",
       "text": "Seul ou avec des pairs, nous encourageons les prises d'initiatives. Xskillz est le résultat d’une idée innovante&nbsp;: une application de gestion de compétences développée par et pour les Xebians. Chacun remplit son profil, fiche sur laquelle il indique les technologies qu’il emploie en s'auto-évaluant selon son niveau d’expertise (0 à 3 étoiles) et en spécifiant ses intérêts (grâce à des cœurs). Il peut aussi y notifier les technologies ou méthodologies sur lesquelles il souhaite monter en compétence. Cette application a été développée par quelques Xebians, en version web et en version iOS. Cela a été l’occasion de monter en compétences sur ces technologies tout en réfléchissant à de nouvelles problématiques (RH, communication interne, UX, etc.).  Elle nous guide dans le choix des missions à proposer aux Xebians.",
       "link": {
@@ -47,7 +47,7 @@
       }
     },
     {
-      "image": "logo-devoxxfrance",
+      "image": "picto-conference",
       "title": "Devenez conférencier",
       "text": "Nous encourageons l’ensemble des Xebians à présenter des CFPs pour des conférences techniques comme la Android Makers, Devoxx (France), FrenchKit, XebiCon, Paris Container Day, NSpain ou encore AltConfs sur les sujets qui les passionnent. Ces talks sont une réelle vitrine de l’expertise du speaker et donc de sa notoriété.",
       "link": {
@@ -83,7 +83,7 @@
       }
     },
     {
-      "image": "logo-recrutement",
+      "image": "picto-recrut",
       "title": "Participez au recrutement",
       "text": "Quel meilleur moyen pour se plaire dans une entreprise que de choisir ses collègues&nbsp;? Qui de mieux qu’un pair pour répondre au mieux aux questions que l’on se pose&nbsp;? Participer au recrutement pour un Xebian c’est choisir ses collègues, participer directement au développement de Xebia, faire grandir sa société avec les bonnes personnes à bord.<br />Ainsi, beaucoup de Xebians se sont proposés pour faire passer les entretiens techniques ou même simplement corriger les tests techniques des candidats.",
       "link": {
@@ -101,7 +101,7 @@
       }
     },
     {
-      "image": "logo-outils",
+      "image": "picto-outilspratiques",
       "title": "Créez des outils pratiques",
       "text": "C’est en partant du constat que nous faisons souvent les mêmes recherches sur la toile, que les Xebians ont eu l’idée de créer des outils pratiques à garder sur le bureau ou à afficher au mur. </br>Chaque année, nous mettons à disposition gratuitement différents outils sur les bonnes pratiques de développement et méthodologiques ou encore sur des nouveaux frameworks afin de partager avec l’ensemble de la communauté.",
       "link": {
