@@ -7,7 +7,7 @@
                         .Card-image(:is="svgComponent(card.image)")
                         .Card-title(v-html="card.title")
                         .Card-text(v-html="card.text", v-if="!isWidthCompact")
-                        ArrowLink.Card-link(:url="card.link", :label="'En Savoir Plus'", :external="true")
+                        ArrowLink.Card-link(:url="card.link.url", :label="card.link.name", :external="true")
         .CardSlider-pagination(ref='pagination', :style="{width: paginationWidth+ 'px'}")
 </template>
 

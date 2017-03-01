@@ -1,20 +1,20 @@
 <template lang="jade">
     AppPage.NousRejoindre_page(:header="header")
-        AppSection.AppSection-even(:title="'Nous recrutons :'")
-            OfferAccordion(:jobs="jobs", :talentButtonLabel="talentButtonLabel", :jobButtonLabel="jobButtonLabel", slot="section-content")
+        AppSection.AppSection-even(:title="annonces.name")
+            OfferAccordion(:jobs="annonces.data", :talentButtonLabel="talentButtonLabel", :jobButtonLabel="jobButtonLabel", slot="section-content")
         AppSection.AppSection-even.AppSection-no-padding
             NosTechnos(:technos="technos", slot="section-content")
-        AppSection.AppSection-special.NousRejoindre_page-xebians(:title="'Qui sont les Xebian(e)s ?'")
+        AppSection.AppSection-special.NousRejoindre_page-xebians(:title="quiSontLesXebians.name")
             template(slot="section-content")
                 .NousRejoindre_page-xebians-image-with-caption
                     .NousRejoindre_page-xebians-image(v-bind:style="{'background-image': 'url('+quiSontLesXebiansImgSrc+')'}")
-                    .NousRejoindre_page-xebians-caption(v-html="quiSontLesXebians.image.caption")
+                    .NousRejoindre_page-xebians-caption(v-html="quiSontLesXebians.data.image.caption")
                 .NousRejoindre_page-xebians-quote
                     PictoQuoteOrangeLeft.NousRejoindre_page-xebians-quote-left
-                    span.NousRejoindre_page-xebians-quote-text(v-html="quiSontLesXebians.quote")
+                    span.NousRejoindre_page-xebians-quote-text(v-html="quiSontLesXebians.data.quote")
                     PictoQuoteOrangeRight.NousRejoindre_page-xebians-quote-right
-        AppSection.AppSection-odd.NousRejoindre_page-plus(:title="'Les plus'")
-            BulletList(:image="lesPlus.image", :itemList="lesPlus.items", slot="section-content")
+        AppSection.AppSection-odd.NousRejoindre_page-plus(:title="lesPlus.name")
+            BulletList(:image="lesPlus.data.image", :itemList="lesPlus.data.items", slot="section-content")
 </template>
 
 <script>
@@ -49,7 +49,7 @@ export default {
       header: Object.assign({}, header, {
         imageCacheSetter: headerImageCacheSetter
       }),
-      jobs : annonces,
+      annonces,
       talentButtonLabel : 'Vous avez d\'autres talents&nbsp;? C\'est&nbsp;par&nbsp;ici&nbsp;!',
       jobButtonLabel : 'Postuler&nbsp;!',
       technos : technos.technos,
@@ -59,8 +59,8 @@ export default {
   },
   computed : {
     quiSontLesXebiansImgSrc : function() {
-      return this.quiSontLesXebians.image.filename
-        ? require('assets/images/' + this.quiSontLesXebians.image.filename)
+      return this.quiSontLesXebians.data.image.filename
+        ? require('assets/images/' + this.quiSontLesXebians.data.image.filename)
         : '';
     }
   },

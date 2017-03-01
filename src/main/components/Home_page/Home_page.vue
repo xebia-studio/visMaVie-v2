@@ -1,9 +1,9 @@
 <template lang="jade">
 	AppPage.Home_page(:header="header")
-		AppSection.AppSection-even(:title="'Xebia en quelques chiffres'")
-			QuelquesChiffres(:statCards="quelquesChiffres", slot="section-content")
-		AppSection.AppSection-odd(:title="'Xebia en quelques faits'")
-			Timeline(:items="timelineItems", slot="section-content")
+		AppSection.AppSection-even(:title="quelquesChiffres.name")
+			QuelquesChiffres(:statCards="quelquesChiffres.data", slot="section-content")
+		AppSection.AppSection-odd(:title="timelineItems.name")
+			Timeline(:items="timelineItems.data", slot="section-content")
 </template>
 
 <script>
