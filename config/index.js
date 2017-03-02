@@ -2,8 +2,11 @@
 const path = require('path');
 
 module.exports = {
+  host: {
+    staging:"//pp-vmv.xebia.fr",
+    production:"//vismavie.xebia.fr"
+  },
   build: {
-    host: 'http://xebia-vis-ma-vie--master.s3-website.eu-central-1.amazonaws.com',
     env: require('./prod.env'),
     index: path.resolve(__dirname, '../dist/index.html'),
     assetsRoot: path.resolve(__dirname, '../dist'),
@@ -14,7 +17,7 @@ module.exports = {
     // Surge or Netlify already gzip all static assets for you.
     // Before setting to `true`, make sure to:
     // npm install --save-dev compression-webpack-plugin
-    productionGzip: true,
+    productionGzip: false,
     productionGzipExtensions: ['js', 'css']
   },
   dev: {

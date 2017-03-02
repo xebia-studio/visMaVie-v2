@@ -1,11 +1,8 @@
-dependencies:
-  pre:
-    - npm install -g npm dependency-check
-deployment:
-  master:
-    branch: master
-    commands:
-      - npm run create-generated-sources && npm run deploy:staging -- --execute
 machine:
   node:
     version: 6.9.1
+# deployment:
+#   staging:
+#     branch: staging
+#     commands:
+#       - npm run deploy:staging

@@ -13,9 +13,8 @@
     "test-bdd:units": "nightwatch --tags @units",
     "test-bdd:endToEnd": "nightwatch --tags @endToEnd",
     "test": "exit 0;",
-    "aws:update-circle-ci-policy:staging": "node aws/update-circle-ci-policy --bucket='xebia-fr-2016-preprod'",
-    "deploy:staging": "node deploy --bucket='xebia-vis-ma-vie--master'",
-    "deploy:master": "node deploy --bucket='xebia-vis-ma-vie--master' --allowbot",
+    "deploy:staging": "node deploy --env=staging --ssh-directory-site-root='beta-vmv'",
+    "deploy:production": "node deploy --env=production --ssh-directory-site-root='vmv'",
     "lint": "eslint --ext js,vue . --fix"
   },
   "dependencies": {
@@ -55,6 +54,7 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
     "function-bind": "^1.0.2",
+    "git-repo-info": "^1.4.1",
     "glob": "^7.1.1",
     "html-webpack-plugin": "^2.8.1",
     "http-proxy-middleware": "^0.17.2",

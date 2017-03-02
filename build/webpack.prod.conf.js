@@ -9,10 +9,17 @@ const baseWebpackConfig = require('./webpack.base.conf');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
+const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 
-var PrerenderSpaPlugin = require('prerender-spa-plugin');
+const PrerenderSpaPlugin = require('prerender-spa-plugin');
 
-var routesToPrerender = require('../config/prerendered-routes');
+const routesToPrerender = require('../config/prerendered-routes');
+
+const currentBranchName = require('git-repo-info')().branch;
+
+if (!config.host[currentBranchName]) {
+  throw new Error(`Please define the host for the branch "${currentBranchName}", in config/index.js`);
+}
 
 const env = process.env.NODE_ENV === 'testing'
   ? require('../config/test.env')
@@ -66,6 +73,9 @@ const webpackConfig = merge(baseWebpackConfig, {
       // necessary to consistently work with multiple chunks via CommonsChunkPlugin
       chunksSortMode: 'dependency'
     }),
+    // new ScriptExtHtmlWebpackPlugin({
+    //   defaultAttribute: 'defer'
+    // }),
     // split vendor js into its own file
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
@@ -86,15 +96,6 @@ const webpackConfig = merge(baseWebpackConfig, {
       name: 'manifest',
       chunks: ['vendor']
     }),
-    new ImageminPlugin({
-      jpegtran: {
-        progressive: true
-      },
-      pngquant: {
-        quality: '65-90',
-        speed: 4
-      }
-    }),
     new PrerenderSpaPlugin(
       path.join(__dirname, '../dist'),
       routesToPrerender,
@@ -110,7 +111,16 @@ const webpackConfig = merge(baseWebpackConfig, {
           )
         }
       }
-    )
+    ),
+    new ImageminPlugin({
+      jpegtran: {
+        progressive: true
+      },
+      pngquant: {
+        quality: '65-90',
+        speed: 4
+      }
+    })
   ]
 });
 
