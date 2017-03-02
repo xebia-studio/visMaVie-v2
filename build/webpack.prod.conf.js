@@ -105,9 +105,9 @@ const webpackConfig = merge(baseWebpackConfig, {
         maxAttempts: 10,
 
         postProcessHtml: function (context) {
-          return context.html.replace(
+          return context.html.replace('class="js', 'class="no-js').replace(
             /http(s?):\/\/localhost:([0-9]*)\//g,
-            config.build.host+'/'
+            config.host[currentBranchName]+'/'
           )
         }
       }

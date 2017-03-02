@@ -5,7 +5,7 @@
 				.VisMaVieCommonHeaderContent-header-logo-inner-wrapper
 					LogoVisMaVie.VisMaVieCommonHeaderContent-header-logo
 
-			h2.VisMaVieCommonHeaderContent-header-baseline
+			//-h2.VisMaVieCommonHeaderContent-header-baseline
 				span.VisMaVieCommonHeaderContent-header-baseline-main(v-html="content.baseline")
 </template>
 

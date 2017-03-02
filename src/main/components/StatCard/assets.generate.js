@@ -4,8 +4,8 @@ const { upperFirst, camelCase, uniq } = require('lodash');
 const svgComponents = {};
 
 uniq([
-	...require('data/home/quelques-chiffres.json'),
-	...require('data/nos-creations/partager-connaissance.json')
+	...require('data/home/quelques-chiffres.json').data,
+	...require('data/nos-creations/partager-connaissance.json').data
 ].map(stat => stat.picto)).forEach(picto => {
 	svgComponents[upperFirst(camelCase(picto))] = path.join('assets/images/svg', picto+'.svg');
 });
