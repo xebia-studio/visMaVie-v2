@@ -16,6 +16,9 @@ import {domReady} from '@alexistessier/dom';
 
 require('components/AppPage');
 
+require('./trumps/device-related-content.styl');
+require('./trumps/deffered-resources.styl');
+
 /*--------------*/
 
 Vue.use(VueRouter);

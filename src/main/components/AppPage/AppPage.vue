@@ -4,7 +4,7 @@
             NavigationBarLayer(:scrollPositionToReachBeforeLightBackground="scrollPositionToReachBeforeLightBackground", :settingsNavigation="settingsNavigation")
                 LogoVisMaVie(slot="logo")
 
-            BlurryHeaderLayer(@resize="headerResize", :title="header.title", :description="header.description", :image="header.image", :description_image="header.image_description", ref="blurryHeader", :titleLevel="header.titleLevel", :heightBlurryHeader="heightBlurryHeader", :screenHeightIdeal="screenHeightIdeal", :headerImageCacheSetter="header.imageCacheSetter")
+            BlurryHeaderLayer(@resize="headerResize", :title="header.title", :description="header.description", :image="header.image", :description_image="header.image_description", ref="blurryHeader", :titleLevel="header.titleLevel", :configScreenFiller="configScreenFiller", :headerImageCacheSetter="header.imageCacheSetter")
                 slot(name='headerContent')
             .AppPage-in-header-block(ref='inHeaderContainer')
                 CallToActionLayer(ref="inHeader")
@@ -64,8 +64,10 @@ export default {
             socialNetworks,
             settingsNavigation,
             scrollPositionToReachBeforeLightBackground: undefined,
-            heightBlurryHeader: blurryHeaderLayerSettings.heightBlurryHeader,
-            screenHeightIdeal: layoutSettings.screenHeightIdeal
+            configScreenFiller: {
+                'width-compact': '500px',
+                'default': (blurryHeaderLayerSettings.heightBlurryHeader / layoutSettings.screenHeightIdeal * 100)
+            }
         };
     },
     methods: {

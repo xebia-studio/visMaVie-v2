@@ -68,6 +68,7 @@ const shell = {
 
 module.exports = {
 	shell,
+	env,
 	argv,
 	allowBot,
 	ignoreGenerateSources,
