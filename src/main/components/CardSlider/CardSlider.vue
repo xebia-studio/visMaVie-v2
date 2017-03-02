@@ -1,5 +1,5 @@
 <template lang="jade">
-    .CardSlider(v-bind:style="{height: isWidthCompact ? '' : componentDesktopHeight}")
+    .CardSlider(v-bind:style="{height: isWidthCompact ? 'auto' : componentDesktopHeight}")
         .CardSlider-wrapper
             Slider.CardSlider-slider(:breakpoints='sliderBreakpoints', ref='slider', loop=false, :speed='400', pagination='.CardSlider-pagination', :paginationBulletRender='paginationBulletRender')
                 SliderSlide.CardSlider-slide(v-for="card, index in cards", ref="card", v-bind:style="cardsDesktopPosition[index].css")
@@ -47,7 +47,7 @@
         cardsDesktopPosition : this.cards.map(() => {
           return {css : {top : '0px', left : '0px'}, rawTop : 0};
         }),
-        componentDesktopHeight : 0
+        componentDesktopHeight : 'auto'
       };
     },
     computed : {
@@ -115,7 +115,8 @@
                 }
                 columnHeights[targetColumnIndex] += cardHeights[index];
               });
-              this.componentDesktopHeight = 'calc(' + (Math.max(...columnHeights) + 'px + ' + parseInt(this.cards.length / settings.desktopCardsPerRow) * 2) + 'vw';
+              this.componentDesktopHeight = 'calc(' + (Math.max(...columnHeights) + 'px + ' + parseInt(this.cards.length / settings.desktopCardsPerRow) * 2) + 'vw)';
+
               this.cardsDesktopPosition = temporaryCardsDesktopPosition;
             }
           }
