@@ -88,7 +88,7 @@ const webpackConfig = merge(baseWebpackConfig, {
       // Inject the html into the html-webpack-plugin
       inject: true,
       // favicon background color (see https://github.com/haydenbleasel/favicons#usage)
-      background: '#FBB03B',
+      background: '#ff6444',
       // favicon app title (see https://github.com/haydenbleasel/favicons#usage)
       title: 'Vis ma vie'
     }),
