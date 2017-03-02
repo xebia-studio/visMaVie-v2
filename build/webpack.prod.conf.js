@@ -10,7 +10,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
-
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const PrerenderSpaPlugin = require('prerender-spa-plugin');
 
 const routesToPrerender = require('../config/prerendered-routes');
@@ -72,6 +72,25 @@ const webpackConfig = merge(baseWebpackConfig, {
       },
       // necessary to consistently work with multiple chunks via CommonsChunkPlugin
       chunksSortMode: 'dependency'
+    }),
+    new FaviconsWebpackPlugin({
+      // Your source logo
+      logo: 'src/main/assets/images/favicon/favicon.png',
+      // The prefix for all image files (might be a folder or a name)
+      prefix: 'icons-[hash]/',
+      // Emit all stats of the generated icons
+      emitStats: true,
+      // The name of the json containing all favicon information
+      statsFilename: 'iconstats-[hash].json',
+      // Generate a cache file with control hashes and
+      // don't rebuild the favicons until those hashes change
+      persistentCache: true,
+      // Inject the html into the html-webpack-plugin
+      inject: true,
+      // favicon background color (see https://github.com/haydenbleasel/favicons#usage)
+      background: '#FBB03B',
+      // favicon app title (see https://github.com/haydenbleasel/favicons#usage)
+      title: 'Vis ma vie'
     }),
     // new ScriptExtHtmlWebpackPlugin({
     //   defaultAttribute: 'defer'
