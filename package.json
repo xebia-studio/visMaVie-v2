@@ -14,7 +14,7 @@
     "test-bdd:endToEnd": "nightwatch --tags @endToEnd",
     "test": "exit 0;",
     "deploy:staging": "node deploy --env=staging --ssh-directory-site-root='beta-vmv'",
-    "deploy:production": "node deploy --env=production --ssh-directory-site-root='vmv'",
+    "deploy:production": "node deploy --env=production --ssh-directory-site-root='vmv' --allow-bot",
     "lint": "eslint --ext js,vue . --fix"
   },
   "dependencies": {
