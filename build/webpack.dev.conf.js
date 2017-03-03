@@ -17,14 +17,14 @@ Object.keys(baseWebpackConfig.entry).forEach(function (name) {
 
 module.exports = merge(baseWebpackConfig, {
   module: {
-    preLoaders: [{
-      test: /\.(js|vue)?$/,
-      loader: 'eslint',
-      exclude: [
-        path.resolve(projectRoot, 'src/generated'),
-        /node_modules/
-      ]
-    }],
+    // preLoaders: [{
+    //   test: /\.(js|vue)?$/,
+    //   loader: 'eslint',
+    //   exclude: [
+    //     path.resolve(projectRoot, 'src/generated'),
+    //     /node_modules/
+    //   ]
+    // }],
     loaders: utils.styleLoaders({ sourceMap: config.dev.cssSourceMap })
   },
   // eval-source-map is faster for development
