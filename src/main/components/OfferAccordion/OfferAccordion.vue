@@ -80,7 +80,7 @@
 			isJobActive : function(job) {
 				return _.isEqual(job, this.selectedJob);
 			},
-			updateLayoutOnResize : function() {
+			updateLayoutOnResize : function(useTransition = true) {
 				const widthCompact = this.getSizeClassHelper().isActive('width-compact');
 				const selectedJobLabel = _.keys(this.jobs)[this.selectedJobIndex];
 				let selectedJobHeight = undefined;
@@ -88,7 +88,7 @@
 				this.jobStyle = _.mapValues(this.jobs, () => undefined);
 
 				if (widthCompact) {
-				  this.jobStyle = _.mapValues(this.jobs, () => ({height: 'auto'}));
+				  this.jobStyle = _.mapValues(this.jobs, () => ({height: 'auto'}));				  
 
 				  nextTick(() => {
 				  	if (this.$refs.job) {
@@ -101,13 +101,22 @@
 				  			return (j-1) === this.previousSelectedJobIndex ? {height: previousSelectedJobHeight} : undefined;
 				  		});
 
-				  		setTimeout(()=>{
+				  		const updateHeight = ()=>{
 				  			let i = 0;
-				  			this.jobStyle = _.mapValues(this.jobs, () => {
-				  				i++;
-				  				return (i-1) === this.selectedJobIndex ? {height: selectedJobHeight} : undefined;
-				  			});
-				  		}, 80);
+					  		this.jobStyle = _.mapValues(this.jobs, () => {
+					  			i++;
+					  			return (i-1) === this.selectedJobIndex ? {height: selectedJobHeight} : undefined;
+							});
+				  		};
+
+				  		if (useTransition) {
+				  			setTimeout(()=>{
+					  			updateHeight()
+					  		}, 80);
+				  		}
+				  		else{
+				  			updateHeight();
+				  		}
 				  	};
 				  });
 				}
@@ -141,13 +150,20 @@
 				'text' : ['light', 'regular', 'bold'],
 				'title' : ['light', 'bold']
 			});
-			this.getSizeClassHelper().on('resize', () => {
-				this.isWidthCompact = this.getSizeClassHelper().isActive('width-compact');
-			});
+			let isWidthCompactCache = this.getSizeClassHelper().isActive('width-compact');
 			const resize = () => {
-				this.updateLayoutOnResize();
+				this.isWidthCompact = this.getSizeClassHelper().isActive('width-compact');
+
+				if (this.isWidthCompact !== isWidthCompactCache) {
+					this.updateLayoutOnResize();
+				}
+				else{
+					this.updateLayoutOnResize(false);
+				}
+
+				isWidthCompactCache = this.isWidthCompact;
 			};
-			this.resizeListenerArguments = ['change', resize];
+			this.resizeListenerArguments = ['resize', resize];
 			this.getSizeClassHelper().on(...this.resizeListenerArguments);
 		},
 		mounted : function() {
