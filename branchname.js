@@ -1,0 +1,1 @@
+module.exports = require('git-repo-info')().branch;

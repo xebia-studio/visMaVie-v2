@@ -6,7 +6,7 @@ const report = require('@alexistessier/report');
 
 const argv = require('../argv');
 
-const currentBranchName = require('git-repo-info')().branch;
+const currentBranchName = require('../branchname');
 
 const env = argv['env'];
 

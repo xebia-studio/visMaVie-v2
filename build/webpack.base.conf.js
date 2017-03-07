@@ -17,7 +17,7 @@ module.exports = {
     app: './src/main/root.js'
   },
   output: {
-    path: config.build.assetsRoot,
+    path: config.build.distDirectory,
     publicPath: process.env.NODE_ENV === 'production' ? config.build.assetsPublicPath : config.dev.assetsPublicPath,
     filename: '[name].js'
   },
@@ -88,8 +88,5 @@ module.exports = {
     import: [
       '~src/main/tools/index.styl'
     ]
-  },
-  'xebia-data': {
-    svgComponentBasePath: './src/main/tools/svg-component'
   }
 };

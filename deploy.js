@@ -20,30 +20,30 @@ if (!ignoreGenerateSources) {
 }
 
 if (!ignoreBuild) {
-	shell.exec('rm -rf dist && npm run build', true);
+	shell.exec('npm run build', true);
 }
 
 //Copy robots.txt to the dist if necessary
 if (!allowBot) {
-	shell.exec(`test -d dist || mkdir -p dist && cp robots.txt dist/robots.txt`, true);
+	shell.exec(`test -d dist/${env} || mkdir -p dist/${env} && cp robots.txt dist/${env}/robots.txt`, true);
 }
 
 //move root-files to dist
 const glob = require('glob');
 const path = require('path');
 
-shell.exec(`cp -r root-files/${env}/hidden-files/ dist`, true);
-shell.exec(`rm dist/.DS_Store`, true);
+shell.exec(`cp -r root-files/${env}/hidden-files/ dist/${env}`, true);
+shell.exec(`rm dist/${env}/.DS_Store`, true);
 
 glob.sync(`root-files/${env}/*.*`).forEach(rootFile => {
 	const fileName = path.basename(rootFile);
-	shell.exec(`cp ${rootFile} dist/${fileName}`, true);
+	shell.exec(`cp ${rootFile} dist/${env}/${fileName}`, true);
 });
 
 const sshTarget = `${sshDirectory}:${sshDirectorySiteRoot}`;
 
 report('notice', `-- start deployment on ${sshTarget} --`);
 
-shell.exec(`rsync -avhzr -e ssh ./dist/ ${sshIdentifier}@ssh.${sshTarget} --delete`);
+shell.exec(`rsync -avhzr -e ssh ./dist/${env}/ ${sshIdentifier}@ssh.${sshTarget} --delete`);
 
 report('success', `-- deployment script done on ${sshTarget} --`);

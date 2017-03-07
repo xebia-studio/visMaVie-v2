@@ -1,6 +1,11 @@
 // see http://vuejs-templates.github.io/webpack for documentation.
 const path = require('path');
 
+const currentBranchName = require('../branchname');
+const distDirectory = path.join(path.resolve(__dirname, '../dist'), currentBranchName);
+
+const devPort = 8080;
+
 module.exports = {
   host: {
     staging:"//pp-vmv.xebia.fr",
@@ -8,8 +13,7 @@ module.exports = {
   },
   build: {
     env: require('./prod.env'),
-    index: path.resolve(__dirname, '../dist/index.html'),
-    assetsRoot: path.resolve(__dirname, '../dist'),
+    distDirectory,
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     productionSourceMap: false,
@@ -21,8 +25,9 @@ module.exports = {
     productionGzipExtensions: ['js', 'css']
   },
   dev: {
+    host: "http://localhost:"+devPort,
     env: require('./dev.env'),
-    port: 8080,
+    port: devPort,
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {},

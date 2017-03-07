@@ -15,15 +15,9 @@ const PrerenderSpaPlugin = require('prerender-spa-plugin');
 
 const routesToPrerender = require('../config/prerendered-routes');
 
-const currentBranchName = require('git-repo-info')().branch;
+const currentBranchName = require('../branchname');
 
-if (!config.host[currentBranchName]) {
-  throw new Error(`Please define the host for the branch "${currentBranchName}", in config/index.js`);
-}
-
-const env = process.env.NODE_ENV === 'testing'
-  ? require('../config/test.env')
-  : config.build.env;
+const env = config.build.env;
 
 const webpackConfig = merge(baseWebpackConfig, {
   module: {
@@ -31,7 +25,7 @@ const webpackConfig = merge(baseWebpackConfig, {
   },
   devtool: config.build.productionSourceMap ? '#source-map' : false,
   output: {
-    path: config.build.assetsRoot,
+    path: config.build.distDirectory,
     filename: utils.assetsPath('js/[name].[chunkhash].js'),
     chunkFilename: utils.assetsPath('js/[id].[chunkhash].js')
   },
@@ -58,9 +52,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     // you can customize output by editing /index.html
     // see https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
-      filename: process.env.NODE_ENV === 'testing'
-        ? 'index.html'
-        : config.build.index,
+      filename: path.join(config.build.distDirectory, 'index.html'),
       template: 'index.html',
       inject: 'head',
       minify: {
@@ -103,6 +95,7 @@ const webpackConfig = merge(baseWebpackConfig, {
         return (
           module.resource &&
           /\.js$/.test(module.resource) &&
+          module.resource.indexOf('xebia-web-common') < 0 &&
           module.resource.indexOf(
             path.join(__dirname, '../node_modules')
           ) === 0
@@ -116,7 +109,7 @@ const webpackConfig = merge(baseWebpackConfig, {
       chunks: ['vendor']
     }),
     new PrerenderSpaPlugin(
-      path.join(__dirname, '../dist'),
+      config.build.distDirectory,
       routesToPrerender,
       {
         //captureAfterDocumentEvent: 'prerender-page',
