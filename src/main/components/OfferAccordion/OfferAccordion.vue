@@ -16,12 +16,12 @@
 								div(:is="svgComponent('BulletBlue' + (index + 1))")
 							.OfferAccordion-details-part-title-label {{partLabel}}
 							.OfferAccordion-details-part-body(v-for="partItem in partList", v-html="partItem")
-					CTAButton.OfferAccordion-details-job-button(:label="jobButtonLabel", :link="'mailto:recrutement@xebia.fr'", :newTab="false", :type="'primary'")
+					CallToActionButton.OfferAccordion-details-job-button(:label="jobButtonLabel", :link="'mailto:recrutement@xebia.fr'", :important="true")
 
 			a.OfferAccordion-jobs-talent-wrapper(href="mailto:recrutement@xebia.fr",
 				v-bind:style="{top: (jobTitleDesktopHeight+jobTitleDesktopBorder)*Object.keys(jobs).length + 'px'}"
 			)
-				CTAButton.OfferAccordion-jobs-talent-label(:label="talentButtonLabel", :type="'secondary'")
+				CallToActionButton.OfferAccordion-jobs-talent-label(:label="talentButtonLabel", :empty="true")
 </template>
 
 <script>
@@ -29,7 +29,7 @@
 	import _ from 'lodash';
 	import {domHeight} from '@alexistessier/dom';
 
-	import CTAButton from 'components/CTAButton';
+	import CallToActionButton from 'xebia-web-common/components/CallToActionButton';
 
 	import {mixin as fontLoader} from 'tools/font-loader';
 	import {mixin as sizeClassHelper} from 'tools/size-class-helper';
@@ -190,7 +190,7 @@
 			this.getSizeClassHelper().off(...this.resizeListenerArguments);
 		},
 		components : {
-			CTAButton
+			CallToActionButton
 		}
 	};
 </script>

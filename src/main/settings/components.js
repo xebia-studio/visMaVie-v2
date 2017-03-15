@@ -4,6 +4,11 @@ const colorsSettings = require('./colors');
 const screenHeightIdeal = 800;
 
 module.exports = {
+  CallToActionButton: {
+    colorNormal: colorsSettings.lightBlue,
+    colorImportant: colorsSettings.flashOrange,
+    textColor: 'white'
+  },
 	Home_page: {
 		screenHeightIdeal,
 		heightHeader: 520

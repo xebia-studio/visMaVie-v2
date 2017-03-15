@@ -1,15 +1,12 @@
 'use strict';
 
+const xebiaCommonColors = require('xebia-web-common/settings/colors');
+
 const orchid = '#C7B299';
 const orange = '#FBB03B';
 const flashOrange = '#ff6444';
 const blue = '#424661';
 const purple = '#6b215f';
-
-const greyMedium = '#CCCCCC';
-const greyExtraLight = '#F2F2F2';
-const greyLight = '#E6E6E6';
-const greyMobileNavigationBar = '#F4F3F2';
 
 const lightBlue = '#3fa9f5';
 
@@ -29,31 +26,28 @@ const textLight = '#999999';
 const text = '#666666';
 
 const sectionOdd = 'white';
-const sectionEven = greyExtraLight;
+const sectionEven = xebiaCommonColors.neutral100;
 
 /*--------------*/
 
-module.exports = {
-  _namespace: 'color',
-  purple: purple,
-  flashOrange: flashOrange,
-  lightBlue: lightBlue,
-  orchid: orchid,
-  orange: orange,
-  blue: blue,
-  uiDecoration: uiDecoration,
-  uiEnabled: uiEnabled,
-  uiEnabledText: uiEnabledText,
-  uiImportantEnabled: uiImportantEnabled,
-  uiImportantEnabledText: uiImportantEnabledText,
-  uiImportantClickable: uiImportantClickable,
-  title: title,
-  textLight: textLight,
-  text: text,
-  greyMedium: greyMedium,
-  greyLight: greyLight,
-  greyExtraLight: greyExtraLight,
-  greyMobileNavigationBar: greyMobileNavigationBar,
-  sectionOdd: sectionOdd,
+module.exports = Object.assign({
+	_namespace: 'color'
+}, xebiaCommonColors, {
+	purple: purple,
+	flashOrange: flashOrange,
+	lightBlue: lightBlue,
+	orchid: orchid,
+	orange: orange,
+	blue: blue,
+	uiDecoration: uiDecoration,
+	uiEnabled: uiEnabled,
+	uiEnabledText: uiEnabledText,
+	uiImportantEnabled: uiImportantEnabled,
+	uiImportantEnabledText: uiImportantEnabledText,
+	uiImportantClickable: uiImportantClickable,
+	title: title,
+	textLight: textLight,
+	text: text,
+	sectionOdd: sectionOdd,
 	sectionEven: sectionEven
-};
+});

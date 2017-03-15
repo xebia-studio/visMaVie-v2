@@ -9,7 +9,7 @@
 							.CookiesBar-message {{message}}
 							.CookiesBar-link-outer-wrapper
 								router-link.CookiesBar-link(:to="'/'+link_url") {{link_label}}
-						CallToActionButton.CookiesBar-validation-button(type="primary", label="OK", :clickable="true", @click="acceptCookies")
+						CallToActionButton.CookiesBar-validation-button(label="OK", :clickable="true", @click="acceptCookies")
 </template>
 
 <script>
@@ -18,7 +18,7 @@ import cookies from 'js-cookie';
 
 import {domHeight} from '@alexistessier/dom';
 
-import CallToActionButton from 'components/CTAButton';
+import CallToActionButton from 'xebia-web-common/components/CallToActionButton';
 
 import {mixin as sizeClassHelper} from 'tools/size-class-helper';
 import {mixin as fontLoader} from 'tools/font-loader';

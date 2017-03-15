@@ -12,7 +12,11 @@
             slot
 
             ParallaxedLayer.AppPage-footer-layer
-                AppFooter(:siteMap="siteMap", :secondColumnContent="secondColumnContent", :contacts="contacts", :otherSites="otherSites", :socialNetworks="socialNetworks")
+                AppFooter
+                    AppFooterSiteMap(slot="col1", :siteMap="siteMap")
+                    AppFooterLinksList(slot="col2", label="Nous Recrutons", :links="nousRecrutons")
+                    AppFooterContacts(slot="col3", :contacts="contacts", :otherSites="otherSites")
+                    AppFooterSocialNetworks(slot="col4", :socialNetworks="socialNetworks")
                 FooterNavigationBar
                 CookiesBar
 </template>
@@ -35,7 +39,13 @@ import CookiesBar from 'components/CookiesBar';
 
 import settingsNavigation from 'data/header/$settings.json';
 import layoutSettings from 'settings/layout';
+
 import AppFooter from 'xebia-web-common/components/AppFooter';
+import AppFooterSiteMap from 'xebia-web-common/components/AppFooter/AppFooterNavGroups/AppFooterSiteMap';
+import AppFooterLinksList from 'xebia-web-common/components/AppFooter/AppFooterNavGroups/AppFooterLinksList';
+import AppFooterSocialNetworks from 'xebia-web-common/components/AppFooter/AppFooterNavGroups/AppFooterSocialNetworks';
+import AppFooterContacts from 'xebia-web-common/components/AppFooter/AppFooterNavGroups/AppFooterContacts';
+
 import nousRecrutons from 'data/footer/nous-recrutons.yaml';
 import siteMap from 'data/footer/site-map.yaml';
 import contacts from 'data/footer/contacts.yaml';
@@ -55,10 +65,7 @@ export default {
     data: function () {
         return {
             siteMap,
-            secondColumnContent: {
-                title: 'Nous Recrutons',
-                links: nousRecrutons
-            },
+            nousRecrutons,
             contacts,
             otherSites,
             socialNetworks,
@@ -81,6 +88,10 @@ export default {
         BlurryHeaderLayer,
         CallToActionLayer,
         AppFooter,
+        AppFooterSiteMap,
+        AppFooterLinksList,
+        AppFooterSocialNetworks,
+        AppFooterContacts,
         ParallaxedLayersGroup,
         ParallaxedLayer,
         FooterNavigationBar,

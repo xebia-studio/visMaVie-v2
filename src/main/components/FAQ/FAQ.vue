@@ -11,7 +11,7 @@
                     .FAQ-theme-question(v-for="question in questions")
                         .FAQ-theme-question-title(v-html="question.title")
                         .FAQ-theme-question-body(v-html="question.answer")
-            CTAButton.FAQ-question-button(:label="questionButtonLabel", :link="'mailto:recrutement@xebia.fr'", :newTab="false", :type="'primary'")
+            CallToActionButton.FAQ-question-button(:label="questionButtonLabel", :link="'mailto:recrutement@xebia.fr'", :important="true")
 </template>
 
 <script>
@@ -19,7 +19,7 @@
   import _ from 'lodash';
   import { domHeight } from '@alexistessier/dom';
 
-  import CTAButton from 'components/CTAButton';
+  import CallToActionButton from 'xebia-web-common/components/CallToActionButton';
 
   import { mixin as fontLoader } from 'tools/font-loader';
   import { mixin as sizeClassHelper } from 'tools/size-class-helper';
@@ -125,7 +125,7 @@
       this.getSizeClassHelper().off(...this.resizeListenerArguments);
     },
     components: {
-      CTAButton
+      CallToActionButton
     }
   };
 </script>
