@@ -1,6 +1,8 @@
 const settingsHeader = require('../data/header/$settings.json');
 const colorsSettings = require('./colors');
 
+const NavigationBarSettings = require('xebia-web-common/components/NavigationBar/settings');
+
 const screenHeightIdeal = 800;
 
 module.exports = {
@@ -38,11 +40,9 @@ module.exports = {
     linkLineHeight: 24,
     linkMarginTop: 30
   },
-  NavigationBar: {
-    desktopHeight: 40,
-    mobileHeight: 50,
+  NavigationBar: Object.assign({}, NavigationBarSettings, {
     numberOfElements: Object.keys(settingsHeader.navigation_links).length
-	},
+	}),
   CardSlider: {
     paginationBulletSize: 10,
     paginationBulletBorderWidth: 1,
