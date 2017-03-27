@@ -12,6 +12,8 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import {domReady} from '@alexistessier/dom';
 
+import seo from 'data/seo';
+
 /*--------------*/
 
 require('components/AppPage');
@@ -37,12 +39,39 @@ const router = new VueRouter({
 	}
 });
 
+function changePageSeoData({
+	title = seo.$default.title,
+	keywords = seo.$default.keywords,
+	description = seo.$default.description
+} = seo.$default) {
+	const titleTag = document.querySelector('title');
+	const keywordsTag = document.getElementById('meta-keywords');
+	const descriptionTag = document.getElementById('meta-description');
+
+	titleTag.innerHTML = title;
+	keywordsTag.setAttribute('content', keywords);
+	descriptionTag.setAttribute('content', description);
+}
+
 router.beforeEach((to, from, next) => {
+	let currentPageSeo = seo[to.name] || seo.$default;
+
+	if (typeof currentPageSeo === 'function') {
+		currentPageSeo = seo[currentPageSeo(to)] || seo.$default;
+	}
+
+	changePageSeoData(currentPageSeo);
+
 	if (to.path.indexOf('/index.html') >= 0) {
 		next(to.path.replace('/index.html', ''));
 	}
 	else{
 		next();
+	}
+
+	if (typeof window.ga === 'function') {
+		ga('set', 'page', to.path);
+		ga('send', 'pageview');
 	}
 });
 

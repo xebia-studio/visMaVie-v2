@@ -15,8 +15,6 @@ module.exports = concat(
 			path: '/',
 			component: resolve => require(['components/Home_page'], resolve),
       beforeEnter: (to, from, next) => {
-        const title = document.querySelector('title');
-        title.innerHTML = 'Vis Ma Vie - Xebia France';
         next();
       }
 		},
@@ -25,8 +23,6 @@ module.exports = concat(
       path : '/creations',
       component : resolve => require(['components/NosCreations_page'], resolve),
       beforeEnter: (to, from, next) => {
-        const title = document.querySelector('title');
-        title.innerHTML = 'Vis Ma Vie - Nos créations';
         next();
       }
     },
@@ -35,8 +31,6 @@ module.exports = concat(
       path : '/integration',
       component : resolve => require(['components/VotreIntegration_page'], resolve),
       beforeEnter: (to, from, next) => {
-        const title = document.querySelector('title');
-        title.innerHTML = 'Vis Ma Vie - Votre intégration';
         next();
       }
     },
@@ -47,8 +41,6 @@ module.exports = concat(
       component : resolve => require(['components/NousRejoindre_page'], resolve),
       beforeEnter : (to, from, next) => {
         const jobParam = get(to, 'params.job');
-        const title = document.querySelector('title');
-        title.innerHTML = 'Vis Ma Vie - Nous rejoindre';
         return (isUndefined(jobParam) || isAValidJob(jobParam))
           ? next()
           : next('/nous-rejoindre/');
