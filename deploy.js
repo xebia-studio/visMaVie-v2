@@ -33,7 +33,7 @@ const glob = require('glob');
 const path = require('path');
 
 shell.exec(`cp -r root-files/${env}/hidden-files/ dist/${env}`, true);
-shell.exec(`rm dist/${env}/.DS_Store`, true);
+shell.exec(`rm -f dist/${env}/.DS_Store`, true);
 
 glob.sync(`root-files/${env}/*.*`).forEach(rootFile => {
 	const fileName = path.basename(rootFile);
