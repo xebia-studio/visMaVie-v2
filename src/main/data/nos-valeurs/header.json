@@ -1,0 +1,8 @@
+{
+  "title": "Nos valeurs",
+  "description": "Explorez notre univers et nos passions </br>#XebiaLife",
+  "image": {
+    "default": "home-header-desktop.jpg",
+    "mobile": "home-header-mobile.jpg"
+  }
+}
