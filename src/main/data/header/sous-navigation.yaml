@@ -1,0 +1,24 @@
+Sites Xebia:
+    Xebia <strong>Studio</strong>:
+        description: Une équipe dédiée
+        url: http://studio.xebia.fr/
+    Xebia <strong>Mobile</strong>:
+        description: Mobile Application Done Right
+        url: https://mobile.xebia.fr/
+    Xebia <strong>Data Factory</strong>:
+        description: From Lab to Factory
+        url: https://datafactory.xebia.fr/
+    Xebia <strong>Training</strong>:
+        description: Centre de formations agréé
+        url: https://training.xebia.fr/
+    
+Xebia life:
+    <strong>BLOG</strong>:
+        description: Nos consultants partagent leurs connaissances quotidiennement
+        url: https://blog.xebia.fr/
+    <strong>Vis ma vie</strong>:
+        description: Les coulisses de Xebia
+        url: https://vismavie.xebia.fr/
+    Xebia <strong>TV</strong>:
+        description: La web TV tenue par les Xebians
+        url: http://xebia.tv
