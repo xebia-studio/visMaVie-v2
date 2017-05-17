@@ -1,0 +1,35 @@
+{
+  "title": "Sharing Knowledge",
+  "facts": [
+  	{
+  		"title": "Notre blog",
+  		"description": "Les Xebians ont fait le choix d'une t fait le choix d'une t fait le choix d'une t fait le choix d'une carriere",
+  		"image": "blog.png",
+  		"link": {
+  			"absolute": true,
+  			"label": "Voir notre Blog",
+  			"url": "https://blog.xebia.fr/"
+  		}
+  	},
+  	{
+  		"title": "Le XKE, la journée des Xebians",
+  		"description": "Une fois par mois, tous les consultants",
+  		"image": "xke.png",
+  		"link": {
+  			"absolute": true,
+  			"label": "En savoir plus",
+  			"url": "https://blog.xebia.fr/"
+  		}
+  	},
+  	{
+  		"title": "Nos Techtrends",
+  		"description": "Les Xebians rédigent régulièrement des Techtrends, l'exression du savoir-fairendes Xebians",
+  		"image": "blog.png",
+  		"link": {
+  			"absolute": true,
+  			"label": "Télécharger nos Techtrends",
+  			"url": "https://blog.xebia.fr/"
+  		}
+  	}
+  ]
+}

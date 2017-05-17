@@ -29,7 +29,4 @@ export default {
 		width 100%
 		background-color white
 		overflow-x hidden
-
-	.NavigationBar-logo
-		padding-right 20px
 </style>
