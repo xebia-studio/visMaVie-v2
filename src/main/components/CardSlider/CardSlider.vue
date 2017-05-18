@@ -80,6 +80,7 @@
         this.$refs.slider ? this.$refs.slider.update(true) : null;
       },
       updateLayoutOnResize : function() {
+        this.isWidthCompact = this.getSizeClassHelper().isActive('width-compact');
         this.maxCardHeight = this.cards.map(() => {
           return {height : 'auto'};
         });
@@ -137,9 +138,7 @@
           }
         });
       const sizeClassHelper = this.getSizeClassHelper();
-      this.getSizeClassHelper().on('resize', () => {
-        this.isWidthCompact = this.getSizeClassHelper().isActive('width-compact');
-      });
+
       const change = () => {
         this.updateLayoutOnDeviceChange();
       };
@@ -148,6 +147,7 @@
       };
       this.deviceChangeListenerArguments = ['change', change];
       sizeClassHelper.on(...this.deviceChangeListenerArguments);
+
       this.resizeListenerArguments = ['resize', resize];
       sizeClassHelper.on(...this.resizeListenerArguments);
     },
