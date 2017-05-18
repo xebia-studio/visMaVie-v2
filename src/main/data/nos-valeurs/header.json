@@ -1,8 +1,8 @@
 {
   "title": "Nos valeurs",
-  "description": "Explorez notre univers et nos passions </br>#XebiaLife",
+  "description": "Je suis chez Xebia pour ses valeurs, sa culture, la passion, le partage et l’excellence",
   "image": {
-    "default": "home-header-desktop.jpg",
-    "mobile": "home-header-mobile.jpg"
+    "default": "valeurs-header-desktop.jpg",
+    "mobile": "valeursheader-mobile.jpg"
   }
 }
