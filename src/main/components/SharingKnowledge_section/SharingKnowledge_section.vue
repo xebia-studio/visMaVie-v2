@@ -6,7 +6,12 @@
 				.SharingKnowledge_section-facts-list-slider-wrapper
 					Slider.SharingKnowledge_section-facts-list(:breakpoints='sliderBreakpoints', ref="slider")
 						SliderSlide.SharingKnowledge_section-fact-slide(v-for="fact in facts")
-							.SharingKnowledge_section-fact hello
+							.SharingKnowledge_section-fact
+								.SharingKnowledge_section-fact-inner-wrapper
+									.SharingKnowledge_section-image-outer-wrapper
+										.SharingKnowledge_section-image-inner-wrapper
+											img.SharingKnowledge_section-image(v-if="imageUrl(fact.image)", :src="imageUrl(fact.image)", alt="")
+									.SharingKnowledge_section-fact-title(v-html="fact.title")
 </template>
 
 <script>
@@ -20,20 +25,29 @@
 
 	import { config as sizeClassHelperConfig } from 'tools/size-class-helper'
 
+	import {mixin as fontLoader} from 'tools/font-loader';
+
 	const scrollBarWidth = getScrollBarWidth();
 
 	export default {
 		name: 'SharingKnowledge_section',
+		mixins: [fontLoader],
 		data: function() {
 			return {
 				title: data.title,
-				facts: data.facts
+				facts: data.facts,
+				imageUrlCache: {}
 			}
 		},
 		components: {
 			TitleBlock,
 			Slider,
 			SliderSlide
+		},
+		methods: {
+			imageUrl: function (image) {
+				return this.imageUrlCache[image] ? this.imageUrlCache[image] : false;
+			}
 		},
 		computed: {
 			sliderBreakpoints: function () {
@@ -53,6 +67,19 @@
 				};
 				return conf;
 			}
+		},
+		created: function () {
+			this.loadFont({
+	          'title' : 'regular'
+	        });
+
+	        require.ensure([],  require => {
+	        	this.facts.forEach(fact => {
+	        		this.imageUrlCache[fact.image] = require('generated/assets/components/SharingKnowledge_section/images/'+fact.image);
+	        	});
+
+	        	this.$forceUpdate()
+	        });
 		}
 	};
 </script>
@@ -64,6 +91,10 @@
 		border-bottom 1px solid color__$greyMedium
 		padding-top 60px
 		padding-bottom 80px
+		
+		.size-class-width-compact &
+			padding-bottom 35px
+			padding-top 35px
 	
 	.SharingKnowledge_section-useful-width
 		layout__outerBox()
@@ -95,6 +126,43 @@
 			float left
 			
 			&.is--active
-				.PublicationsList_cards_list-publication:before
+				.SharingKnowledge_section-fact:before
 					opacity 1 !important
+	
+	.SharingKnowledge_section-fact
+		.size-class-width-compact &
+			xebiaUI__cardBorder()
+			xebiaUI__borderRadius()
+			xebiaUI__hoverShadow()
+			background-color white
+	
+	.SharingKnowledge_section-fact-inner-wrapper
+		.size-class-width-compact &
+			margin 15px 20px
+	
+	.SharingKnowledge_section-image-outer-wrapper
+		width 100%
+		height 200px
+		overflow hidden
+	
+	.SharingKnowledge_section-image-inner-wrapper
+		max-width 100%
+		height 250px
+		width 100%
+		margin-left auto
+		margin-right auto
+		text-align center
+
+	.SharingKnowledge_section-image
+		max-height 150%
+		max-width 100%
+		
+	.SharingKnowledge_section-image-outer-wrapper+.SharingKnowledge_section-fact-title
+		margin-top 40px
+	
+	.SharingKnowledge_section-fact-title
+		font__useTitleRegular 30px
+		line-height (font__$cardTitleLineHeight) px
+		color color__$title
+			
 </style>
