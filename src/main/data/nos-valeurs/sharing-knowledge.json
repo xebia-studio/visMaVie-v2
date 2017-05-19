@@ -3,7 +3,7 @@
   "facts": [
   	{
   		"title": "Le blog",
-  		"description": "Le partage de connaissances est inscrit dans notre ADN. Riche de plus de 2&nbsp;000 articles, notre blog est une véritable bibliothèque technologique en ligne. Il compte plus de 500&nbsp;000 lecteurs. Les Xebians y partagent quotidiennement avec notre communauté.",
+  		"description": "Le partage de connaissances est inscrit dans notre ADN. Riche de plus de 2&nbsp;000 articles, notre blog est <strong>une véritable bibliothèque technologique en ligne</strong>. Il compte plus de 500&nbsp;000 lecteurs. Les Xebians y partagent quotidiennement avec notre communauté.",
   		"image": "blog.png",
   		"link": {
   			"absolute": true,
@@ -13,7 +13,7 @@
   	},
   	{
   		"title": "Le XKE, la journée des Xebians",
-  		"description": "Qu’il pleuve, qu’il neige ou qu’il vente, une fois par mois, tous les consultants se retrouvent au siège  pour participer à une journée de conférences et de partage de savoir-faire. : le <strong>Xebia Knowledge Exchange</strong>. Une fois par an, cette journée est ouverte à tous lors de la Xebicon.",
+  		"description": "Qu’il pleuve, qu’il neige ou qu’il vente, une fois par mois, tous les consultants se retrouvent au siège  pour participer à une journée de conférences et de partage de savoir-faire. : <strong>le Xebia Knowledge Exchange</strong>. Une fois par an, cette journée est ouverte à tous lors de la Xebicon.",
   		"image": "xke.png",
   		"link": {
   			"absolute": true,
@@ -23,7 +23,7 @@
   	},
   	{
   		"title": "Les Techtrends",
-  		"description": "DevOps, Cloud, Agilité, Data, Back end&nbsp;… Nos livres blancs sont le fruit de nos expériences forgées auprès de nos clients et de notre veille permanente. Ces ouvrages de références plongent dans les grandes tendances de nos écosystèmes.",
+  		"description": "DevOps, Cloud, Agilité, Data, Back end&nbsp;… Nos livres blancs sont le fruit de nos expériences forgées auprès de nos clients et de notre veille permanente. Ces ouvrages de références plongent dans <strong>les grandes tendances de nos écosystèmes</strong>.",
   		"image": "techtrends.png",
   		"link": {
   			"absolute": true,
