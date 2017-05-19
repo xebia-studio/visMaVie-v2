@@ -172,21 +172,13 @@
 		},
 		beforeDestroy : function() {
 			this.getSizeClassHelper().off(...this.resizeListenerArguments);
-		},
+		}
 	};
 </script>
 
 <style lang="stylus">
 	.SharingKnowledge_section
-		background-color: color__$sectionEven
-		border-top 1px solid color__$greyMedium
-		border-bottom 1px solid color__$greyMedium
-		padding-top 60px
-		padding-bottom 80px
-		
-		.size-class-width-compact &
-			padding-bottom 35px
-			padding-top 35px
+		xebiaUI__section('even')
 	
 	.SharingKnowledge_section-useful-width
 		layout__outerBox()

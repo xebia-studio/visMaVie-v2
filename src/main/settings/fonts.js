@@ -4,6 +4,7 @@ module.exports = {
     '_family': 'Lato',
     'thin': 100,
     'light': 300,
+    'italic': '300i',
     'regular': 400,
     'bold': 700,
     'black':900
