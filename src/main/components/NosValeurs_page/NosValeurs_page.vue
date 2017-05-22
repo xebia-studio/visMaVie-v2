@@ -1,5 +1,6 @@
 <template lang="jade">
 	AppPage.NosValeurs_page(:header="header")
+		PeopleFirst_section.NosValeurs_page-section
 		SharingKnowledge_section.NosValeurs_page-section
 		QualityWithoutCompromise_section.NosValeurs_page-section
 		CustomerIntimacy_section.NosValeurs_page-section
@@ -8,6 +9,7 @@
 <script>
 	import AppPage from 'components/AppPage';
 
+	import PeopleFirst_section from 'components/PeopleFirst_section'
 	import SharingKnowledge_section from 'components/SharingKnowledge_section'
 	import QualityWithoutCompromise_section from 'components/QualityWithoutCompromise_section'
 	import CustomerIntimacy_section from 'components/CustomerIntimacy_section'
@@ -26,6 +28,7 @@
 		},
 		components: {
 			AppPage,
+			PeopleFirst_section,
 			SharingKnowledge_section,
 			QualityWithoutCompromise_section,
 			CustomerIntimacy_section
