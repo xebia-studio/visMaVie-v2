@@ -1,13 +1,15 @@
 <template lang="jade">
 	AppPage.NosValeurs_page(:header="header")
-		SharingKnowledge_section.NosValeurs_page-sharing-knowlegde
-		CustomerIntimacy_section.NosValeurs_page-customer-intimacy
+		SharingKnowledge_section.NosValeurs_page-section
+		QualityWithoutCompromise_section.NosValeurs_page-section
+		CustomerIntimacy_section.NosValeurs_page-section
 </template>
 
 <script>
 	import AppPage from 'components/AppPage';
 
 	import SharingKnowledge_section from 'components/SharingKnowledge_section'
+	import QualityWithoutCompromise_section from 'components/QualityWithoutCompromise_section'
 	import CustomerIntimacy_section from 'components/CustomerIntimacy_section'
 
 	import header from 'data/nos-valeurs/header.json';
@@ -25,7 +27,13 @@
 		components: {
 			AppPage,
 			SharingKnowledge_section,
+			QualityWithoutCompromise_section,
 			CustomerIntimacy_section
 		}
 	};
 </script>
+
+<style lang="stylus">
+	.NosValeurs_page-section+.NosValeurs_page-section
+		border-top 0
+</style>

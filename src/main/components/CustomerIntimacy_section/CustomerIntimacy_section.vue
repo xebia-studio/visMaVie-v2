@@ -85,7 +85,7 @@
 <style lang="stylus">
 	.CustomerIntimacy_section
 		xebiaUI__section('even')
-	
+
 	.CustomerIntimacy_section-useful-width
 		layout__outerBox()
 	.CustomerIntimacy_section-margin-constraints

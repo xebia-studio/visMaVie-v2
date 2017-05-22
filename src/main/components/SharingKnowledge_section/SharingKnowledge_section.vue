@@ -3,6 +3,7 @@
 		.SharingKnowledge_section-useful-width
 			.SharingKnowledge_section-margin-constraints
 				TitleBlock(:titleLevel="3", :main="title").SharingKnowledge_section-title
+				ContentBlock(v-if="introduction && introduction.length", :blocks="[{isText: true, content:introduction}]").SharingKnowledge_section-introduction
 				.SharingKnowledge_section-facts-list-slider-wrapper
 					Slider.SharingKnowledge_section-facts-list(:paginationBulletRender='paginationBulletRender', :breakpoints='sliderBreakpoints', ref="slider", :pagination='"."+uniquePaginationClass')
 						SliderSlide.SharingKnowledge_section-fact-slide(v-for="(fact, index) in facts")
@@ -27,6 +28,7 @@
 
 	import data from 'data/nos-valeurs/sharing-knowledge.json';
 	import TitleBlock from 'components/TitleBlock'
+	import ContentBlock from 'components/ContentBlock'
 
 	import Slider from 'xebia-web-common/components/Slider/Slider'
 	import SliderSlide from 'xebia-web-common/components/Slider/SliderSlide'
@@ -57,6 +59,7 @@
 		data: function() {
 			return {
 				title: data.title,
+				introduction: data.introduction,
 				facts: data.facts,
 				imageUrlCache: {},
 				uniquePaginationClass: 'SharingKnowledge_section-slider-pagination-'+(++uniquePaginationId),
@@ -67,6 +70,7 @@
 		},
 		components: {
 			TitleBlock,
+			ContentBlock,
 			Slider,
 			SliderSlide,
 			SliderPagination,
@@ -186,11 +190,18 @@
 		layout__innerBox()
 	
 	.SharingKnowledge_section-title,
+	.SharingKnowledge_section-introduction,
 	.SharingKnowledge_section-facts-list-slider-wrapper
 		layout__centeredGridBox(28)
 		
 	.SharingKnowledge_section-title+.SharingKnowledge_section-facts-list-slider-wrapper
 		margin-top 20px
+		
+	.SharingKnowledge_section-introduction+.SharingKnowledge_section-facts-list-slider-wrapper
+		margin-top 45px
+		
+		.size-class-width-compact &
+			margin-top 40px
 	
 	.SharingKnowledge_section-facts-list
 		.size-class-width-compact &
