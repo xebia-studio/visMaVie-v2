@@ -1,8 +1,13 @@
 <template lang="jade">
     .AppPage
         ParallaxedLayersGroup
-            NavigationBarLayer(:scrollPositionToReachBeforeLightBackground="scrollPositionToReachBeforeLightBackground", :settingsNavigation="settingsNavigation")
-                LogoVisMaVie(slot="logo")
+            NavigationBarLayer(
+                :scrollPositionToReachBeforeLightBackground="scrollPositionToReachBeforeLightBackground",
+                :settingsNavigation="settingsNavigation",
+                :settingsSubNavigation="settingsSubNavigation",
+                :socialNetworks="socialNetworks"
+            )
+                LogoVisMaVie(slot="logo").NavigationBar-logo-svg
 
             BlurryHeaderLayer(@resize="headerResize", :title="header.title", :description="header.description", :image="header.image", :description_image="header.image_description", ref="blurryHeader", :titleLevel="header.titleLevel", :configScreenFiller="configScreenFiller", :headerImageCacheSetter="header.imageCacheSetter")
                 slot(name='headerContent')
@@ -38,6 +43,8 @@ import FooterNavigationBar from 'components/FooterNavigationBar';
 import CookiesBar from 'components/CookiesBar';
 
 import settingsNavigation from 'data/header/$settings.json';
+import settingsSubNavigation from 'data/header/sous-navigation.yaml';
+
 import layoutSettings from 'settings/layout';
 
 import AppFooter from 'xebia-web-common/components/AppFooter';
@@ -70,6 +77,7 @@ export default {
             otherSites,
             socialNetworks,
             settingsNavigation,
+            settingsSubNavigation,
             scrollPositionToReachBeforeLightBackground: undefined,
             configScreenFiller: {
                 'width-compact': '500px',
@@ -99,3 +107,15 @@ export default {
     }
 };
 </script>
+
+<style lang="stylus">
+    .NavigationBar.on--light-background,
+    .NavigationBar.menu--is-open
+        .NavigationBar-logo > .NavigationBar-logo-svg.LogoVisMaVie path
+            fill color__$flashOrange !important
+    
+    .size-class-width-compact
+        .NavigationBar-logo
+            > .NavigationBar-logo-svg.LogoVisMaVie
+                transform translate(20px, -2px)
+</style>

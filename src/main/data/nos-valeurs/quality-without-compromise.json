@@ -1,0 +1,13 @@
+{
+	"title": "Quality without compromise",
+	"introduction": "Être Xebian c'est être animé(e) par l'amour du travail bien fait, dans le souci des règles du Software Craftsmanship",
+	"information": "<em>70%</em> de nos clients estiment que <strong>la qualité</strong> de ce que nous leur livrons <strong>est supérieure à leurs attentes</strong>.",
+	"key_points": {
+		"Méthodes agiles": "valeurs-agiles",
+		"Test First": "valeurs-testfirst",
+		"Code Review": "valeurs-codereview",
+		"Behavior Driven Development": "valeurs-bdd",
+		"Domain Driven Design": "valeurs-ddd",
+		"Pair Programming": "valeurs-pairprog"
+	}
+}

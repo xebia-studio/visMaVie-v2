@@ -1,11 +1,12 @@
 {
   "color": {
-    "default": "rgba(255, 255, 255, 0.15)",
-    "frontend": "rgba(255, 255, 255, 0.15)"
+    "default": "rgba(0, 0, 0, 0.21)",
+    "frontend": "rgba(0, 0, 0, 0.21)"
   },
   "navigation_links": {
     "Nos créations": "creations",
     "Votre intégration": "integration",
-    "Nous rejoindre": "nous-rejoindre"
+    "Nous rejoindre": "nous-rejoindre",
+    "Nos valeurs": "valeurs"
   }
 }

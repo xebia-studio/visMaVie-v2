@@ -1,3 +1,23 @@
+xebiaUI__section(oddOrEven = 'even', borderColor = color__$greyMedium)
+  if oddOrEven == 'odd'
+    background-color: color__$sectionOdd
+  else
+    if oddOrEven == 'even'
+      background-color: color__$sectionEven
+    else
+      background-color: oddOrEven
+  
+  border-top 1px solid borderColor
+  border-bottom 1px solid borderColor
+  padding-top 60px
+  padding-bottom 80px
+  
+  .size-class-width-compact &
+    padding-bottom 35px
+    padding-top 35px
+
+xebiaUI__section_mobile()
+
 xebiaUI__titleBlock(mainSelector, secondarySelector, fontSizeMain = font__$sectionTitleDesktopFontSize, fontSizeSecondary = font__$sectionBaselineDesktopFontSize, font__useMixinMain = font__useTitleBold, font__useMixinSecondary = font__useTextLight)
   {mainSelector},
   {secondarySelector}

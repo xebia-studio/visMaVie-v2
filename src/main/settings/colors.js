@@ -14,7 +14,7 @@ const lightBlue = '#3fa9f5';
 
 const uiDecoration = orchid;
 
-const uiEnabled = orchid;
+const uiEnabled = flashOrange;
 const uiEnabledText = 'white';
 
 const uiImportantEnabled = orange;

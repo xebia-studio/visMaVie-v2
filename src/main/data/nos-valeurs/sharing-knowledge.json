@@ -1,0 +1,36 @@
+{
+  "title": "Sharing Knowledge",
+  "introduction": "Être Xebian, c’est aimer apprendre de ses pairs, partager ses connaissances et son savoir-faire, en interne comme en externe.",
+  "facts": [
+  	{
+  		"title": "Le blog",
+  		"description": "Le partage de connaissances est inscrit dans notre ADN. Riche de plus de 2&nbsp;000 articles, notre blog est <strong>une véritable bibliothèque technologique en ligne</strong>. Il compte plus de 500&nbsp;000 lecteurs. Les Xebians y partagent quotidiennement avec notre communauté.",
+  		"image": "blog.png",
+  		"link": {
+  			"absolute": true,
+  			"label": "Voir notre Blog",
+  			"url": "https://blog.xebia.fr/"
+  		}
+  	},
+  	{
+  		"title": "Le XKE, la journée des Xebians",
+  		"description": "Qu’il pleuve, qu’il neige ou qu’il vente, une fois par mois, tous les consultants se retrouvent au siège  pour participer à une journée de conférences et de partage de savoir-faire : <strong>le Xebia Knowledge Exchange</strong>. Une fois par an, cette journée est ouverte à tous lors de la Xebicon.",
+  		"image": "xke.png",
+  		"link": {
+  			"absolute": true,
+  			"label": "Découvrez la XebiCon",
+  			"url": "https://xebicon.fr/"
+  		}
+  	},
+  	{
+  		"title": "Les Techtrends",
+  		"description": "DevOps, Cloud, Agilité, Data, Back end&nbsp;… Nos livres blancs sont le fruit de nos expériences forgées auprès de nos clients et de notre veille permanente. Ces ouvrages de références plongent dans <strong>les grandes tendances de nos écosystèmes</strong>.",
+  		"image": "techtrends.png",
+  		"link": {
+  			"absolute": true,
+  			"label": "Télécharger nos Techtrends",
+  			"url": "http://blog.xebia.fr/publications/"
+  		}
+  	}
+  ]
+}

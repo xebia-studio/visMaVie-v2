@@ -34,6 +34,14 @@ module.exports = concat(
         next();
       }
     },
+    {
+      name : 'valeurs',
+      path : '/valeurs',
+      component : resolve => require(['components/NosValeurs_page'], resolve),
+      beforeEnter: (to, from, next) => {
+        next();
+      }
+    },
     ...genericPageRoutes,
     {
       name : 'nous-rejoindre',

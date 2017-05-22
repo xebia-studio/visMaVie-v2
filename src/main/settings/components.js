@@ -2,10 +2,19 @@ const settingsHeader = require('../data/header/$settings.json');
 const colorsSettings = require('./colors');
 
 const NavigationBarSettings = require('xebia-web-common/components/NavigationBar/settings');
+const SliderPaginationSettings = require('xebia-web-common/components/SliderPagination/settings');
 
 const screenHeightIdeal = 800;
 
 module.exports = {
+  Quote: {
+    quotesColor: '#B3B3B3',
+    contentColor: colorsSettings.text,
+    authorColor: colorsSettings.text,
+    authorUnderlineColor: colorsSettings.flashOrange,
+    jobColor: colorsSettings.textLight
+  },
+  SliderPagination: SliderPaginationSettings,
   CallToActionButton: {
     colorNormal: colorsSettings.lightBlue,
     colorImportant: colorsSettings.flashOrange,
