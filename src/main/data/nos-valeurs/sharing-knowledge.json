@@ -1,6 +1,6 @@
 {
   "title": "Sharing Knowledge",
-  "introduction": "Sharing Knowledge intoduction",
+  "introduction": "Être Xebian, c’est aimer apprendre de ses pairs, partager ses connaissances et son savoir-faire, en interne comme en externe.",
   "facts": [
   	{
   		"title": "Le blog",
@@ -14,7 +14,7 @@
   	},
   	{
   		"title": "Le XKE, la journée des Xebians",
-  		"description": "Qu’il pleuve, qu’il neige ou qu’il vente, une fois par mois, tous les consultants se retrouvent au siège  pour participer à une journée de conférences et de partage de savoir-faire. : <strong>le Xebia Knowledge Exchange</strong>. Une fois par an, cette journée est ouverte à tous lors de la Xebicon.",
+  		"description": "Qu’il pleuve, qu’il neige ou qu’il vente, une fois par mois, tous les consultants se retrouvent au siège  pour participer à une journée de conférences et de partage de savoir-faire : <strong>le Xebia Knowledge Exchange</strong>. Une fois par an, cette journée est ouverte à tous lors de la Xebicon.",
   		"image": "xke.png",
   		"link": {
   			"absolute": true,
