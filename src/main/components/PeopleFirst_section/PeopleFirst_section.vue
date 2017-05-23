@@ -177,6 +177,7 @@
 			layout__gridBox(19, gridNumberOfColumns: 28)
 		background-color PeopleFirst_section__$backgroundColor
 		position relative
+		border-bottom-left-radius 25px
 	
 	.PeopleFirst_section-quotes-list
 		overflow hidden
