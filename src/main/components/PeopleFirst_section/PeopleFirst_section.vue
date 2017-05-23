@@ -55,7 +55,17 @@
 			Quote
 		},
 		methods: {
-			paginationBulletRender: SliderPagination.methods.paginationBulletRender
+			updateLayoutOnResize: function () {
+				this.updateSlider();
+			},
+			paginationBulletRender: SliderPagination.methods.paginationBulletRender,
+			updateSlider: function () {
+				requestAnimationFrame(()=>{
+					if(this.exists && this.$refs.slider){
+						this.$refs.slider.update(true)
+					}
+				});
+			}
 		},
 		computed: {
 			slideCount: function () {
@@ -63,10 +73,31 @@
 			}
 		},
 		created: function () {
-			this.getSizeClassHelper().setSizeClass('people-first-section-width-compact', {
+			this.exists = true;
+
+			const sizeClass = this.getSizeClassHelper();
+
+			sizeClass.setSizeClass('people-first-section-width-compact', {
 				minWidth: 0,
 				maxWidth: 960
 			});
+
+			const resize = ()=>{
+				this.updateLayoutOnResize();
+			}
+
+			this.resizeListenerArguments = ['resize', resize];
+			sizeClass.on(...this.resizeListenerArguments);
+		},
+		mounted: function () {
+			this.updateLayoutOnResize();
+		},
+		beforeDestroy: function () {
+			this.exists = false;
+			
+			if (this.resizeListenerArguments) {
+				this.getSizeClassHelper().off(...this.resizeListenerArguments);
+			}
 		}
 	};
 </script>
@@ -89,7 +120,7 @@
 			margin 0
 	
 	.PeopleFirst_section-title,
-	.PeopleFirst_section-introduction,
+	.PeopleFirst_section-introduction
 		layout__centeredGridBox(28)
 
 	.PeopleFirst_section-quotes-slider-inner-wrapper
@@ -134,6 +165,10 @@
 			layout__gridBox(4, gridNumberOfColumns: 32)
 		.size-class-not-people-first-section-width-compact &
 			layout__gridBox(1.5, gridNumberOfColumns: 28)
+		
+		> .QuoteDecoration
+			display block
+			max-width 100%
 	
 	.PeopleFirst_section-quotes-list-slider-wrapper
 		.size-class-people-first-section-width-compact &
