@@ -50,5 +50,7 @@ export default {
 			height 45px
 			top 2px
 		.size-class-not-width-compact &
-			height 64px
+			height 40px
+			padding-top 12px
+			padding-bottom 12px
 </style>
