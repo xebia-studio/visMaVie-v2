@@ -1,16 +1,16 @@
 {
-	"title": "Customer intimacy",
-	"introduction": "Être Xebian, c’est avoir la confiance de ses clients, leur écoute pour leur proposer la meilleure solution.",
+	"title": "Customer Intimacy",
+	"introduction": "Être Xebian, c’est avoir la confiance de ses clients et leur écoute pour leur proposer la meilleure solution.",
 	"quotes": [
 		{
 			"content": "Votre accompagnement et la formation que vous avez dispensés aux nouveaux équipiers mobile est, en ce qui me concerne, du jamais vu en 15 ans de carrière.",
 			"author": "Gregory",
-			"job": "Responsable de domaine dans une grande société de paris hippiques."
+			"job": "Responsable de domaine dans une grande société de paris hippiques"
 		},
 		{
 			"content": "Your team rocks !",
 			"author": "Franck",
-			"job": "DSI d'une marque de luxe."
+			"job": "DSI d'une marque de luxe"
 		},
 		{
 			"content": "Les chiffres récupérés au quotidien attestent d’un succès sans précédent dans la Maison.",
@@ -23,7 +23,7 @@
 			"job": "DSI d’une grande banque française"
 		},
 		{
-			"content": "Votre accompagnement nous a permis de co-construire une vision long-terme de notre écosystème applicatif, et surtout de délivrer une produit aboutit dans un timing très serré.",
+			"content": "Votre accompagnement nous a permis de co-construire une vision long-terme de notre écosystème applicatif et surtout de délivrer une produit aboutit dans un timing très serré.",
 			"author": "Arnaud",
 			"job": "Digital Product Manager dans la logistique"
 		}
