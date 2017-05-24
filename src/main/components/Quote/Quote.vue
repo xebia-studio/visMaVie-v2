@@ -80,7 +80,7 @@ export default {
 		float left
 
 	.Quote-author-name
-		font__useTitleLight 22
+		font__useTitleLight 16
 		color Quote__$authorColor
 		padding-bottom 4px
 		border-bottom 1px solid Quote__$authorUnderlineColor
