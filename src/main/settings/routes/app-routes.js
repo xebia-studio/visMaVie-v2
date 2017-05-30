@@ -42,6 +42,14 @@ module.exports = concat(
         next();
       }
     },
+    {
+      name : 'carriere',
+      path : '/carriere',
+      component : resolve => require(['components/Career_page'], resolve),
+      beforeEnter: (to, from, next) => {
+        next();
+      }
+    },
     ...genericPageRoutes,
     {
       name : 'nous-rejoindre',
