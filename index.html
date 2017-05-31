@@ -21,7 +21,14 @@
       ga('create', 'UA-1657252-25', 'auto');
       ga('send', 'pageview');
     </script>
+  </head>
+  <body>
+    <div id="app">
+    <!-- if #app not present, the wheel watcher will not works because it need a target element with id="app", and if the root vue component is mounted on #app the node is temporarly removed from the dom, so the wheel wacher doesn't find his target -->
 
+      <div id="root"><!-- used to mount the root component --></div>
+    </div>
+    
     <script type="text/javascript">
       piAId = '297032';
       piCId = '3647';
@@ -36,12 +43,5 @@
       else { window.addEventListener('load', async_load, false); }
       })();
     </script>
-  </head>
-  <body>
-    <div id="app">
-    <!-- if #app not present, the wheel watcher will not works because it need a target element with id="app", and if the root vue component is mounted on #app the node is temporarly removed from the dom, so the wheel wacher doesn't find his target -->
-
-      <div id="root"><!-- used to mount the root component --></div>
-    </div>
   </body>
 </html>
