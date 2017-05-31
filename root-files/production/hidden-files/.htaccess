@@ -1,0 +1,8 @@
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^vismavie.xebia.fr [NC]
+RewriteRule ^(.*)$ https://vismavie.xebia.fr/$1 [L,R=301,NC,NE]
+
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://vismavie.xebia.fr/$1 [R,L,NE]
+
+ErrorDocument 404 https://vismavie.xebia.fr/
