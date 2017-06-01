@@ -73,6 +73,10 @@ router.beforeEach((to, from, next) => {
 		ga('set', 'page', to.path);
 		ga('send', 'pageview');
 	}
+
+	if (typeof window.piTracker === 'function') {
+		piTracker(window.location.protocol+'//'+window.location.host+to.path);
+	}
 });
 
 const appRoot = new Vue({

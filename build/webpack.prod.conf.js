@@ -121,6 +121,9 @@ const webpackConfig = merge(baseWebpackConfig, {
             /http(s?):\/\/localhost:([0-9]*)\//g,
             config.host[currentBranchName]+'/'
           )
+          .replace('<div id="sizeClassHelper_screenFrame" style="z-index:-120;display:block;position:fixed;top:0;left:0;width:100%;height:100%;"></div>', '')
+          .replace('<script async="" src="https://www.google-analytics.com/analytics.js"></script>', '')
+          .replace('<script type="text/javascript" src="https://pi.pardot.com/pd.js"></script>', '');
         }
       }
     ),
