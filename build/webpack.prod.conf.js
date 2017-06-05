@@ -1,5 +1,6 @@
 'use strict';
 
+const fs = require('fs');
 const path = require('path');
 const config = require('../config');
 const utils = require('./utils');
@@ -122,8 +123,7 @@ const webpackConfig = merge(baseWebpackConfig, {
             config.host[currentBranchName]+'/'
           )
           .replace('<div id="sizeClassHelper_screenFrame" style="z-index:-120;display:block;position:fixed;top:0;left:0;width:100%;height:100%;"></div>', '')
-          .replace('<script async="" src="https://www.google-analytics.com/analytics.js"></script>', '')
-          .replace('<script type="text/javascript" src="https://pi.pardot.com/pd.js"></script>', '');
+          .replace('<script id="insert-tracking" type="text/javascript">"insert tracking"</script>', fs.readFileSync(path.join(__dirname, '../tracking.html'), {encoding:"utf-8"}))
         }
       }
     ),
