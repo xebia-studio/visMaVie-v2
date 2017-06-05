@@ -100,19 +100,29 @@ export default {
             });
         },
         getCurrentMenuElement(){
-            return this.$refs['link_'+this.currentPage][0];
+            if(!this.$refs){
+                return null;
+            }
+
+            if(!this.$refs['link_'+this.currentPage]){
+                return null;
+            }
+
+            return this.$refs['link_'+this.currentPage][0] || null;
         },
         menuScrollToCurrent(behavior = "smooth"){
             this.menuScrollToTarget(this.getCurrentMenuElement(), behavior);
         },
         menuScrollToTarget(target, behavior = "smooth"){
-            const scrollView = this.$refs.scrollView;
+            if(target){
+                const scrollView = this.$refs.scrollView;
 
-            scrollView.scrollTo({
-                behavior,
-                left: target.offsetLeft - domWidth(target),
-                top: 0
-            });
+                scrollView.scrollTo({
+                    behavior,
+                    left: target.offsetLeft - domWidth(target),
+                    top: 0
+                });
+            }
         },
         updateLayoutOnResize(){
             this.menuScrollToCurrent("instant");
