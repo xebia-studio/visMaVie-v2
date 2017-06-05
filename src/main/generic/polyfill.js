@@ -23,3 +23,5 @@
             clearTimeout(id);
         };
 }());
+
+require('smoothscroll-polyfill').polyfill();

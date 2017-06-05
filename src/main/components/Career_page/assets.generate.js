@@ -11,5 +11,8 @@ imagesToBlur.push(imagePath(header.image.default), imagePath(header.image.mobile
 
 module.exports = {
 	images: imagesToBlur,
-	blurImages: imagesToBlur
+	blurImages: imagesToBlur,
+	svgComponents: {
+		ArrowBottom: 'assets/images/svg/arrow-bottom.svg'
+	}
 }

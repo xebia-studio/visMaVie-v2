@@ -1,0 +1,36 @@
+{
+  "carrieres": {
+    "agile": {
+      "url": "agile",
+      "svg_picto": "expertise-agile"
+    },
+    "front": {
+      "url": "frontend",
+      "svg_picto": "expertise-frontend"
+    },
+    "iot": {
+      "url": "iot",
+      "svg_picto": "expertise-iot"
+    },
+    "mobile": {
+      "url": "mobile",
+      "svg_picto": "expertise-mobile"
+    },
+    "cloud": {
+      "url": "cloud",
+      "svg_picto": "expertise-cloud"
+    },
+    "back": {
+      "url": "backend",
+      "svg_picto": "expertise-backend"
+    },
+    "bigdata": {
+      "url": "data",
+      "svg_picto": "expertise-bigdata"
+    },
+    "devops": {
+      "url": "devops",
+      "svg_picto": "expertise-devops"
+    }
+  }
+}

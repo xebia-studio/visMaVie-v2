@@ -1,6 +1,6 @@
 <template lang="jade">
 	AppHeaderSubBarLayer.CallToActionLayer(rightSlotClass="CallToActionLayer-button-outer-wrapper")
-		CallToActionButton.CallToActionLayer-button(v-if="currentPage !== 'nous-rejoindre'", :label="'Nous rejoindre'", to="nous-rejoindre", :important="true", slot="right")
+		CallToActionButton.CallToActionLayer-button(v-if="currentPage !== 'nous-rejoindre'", :label="'Nous rejoindre'", to="/nous-rejoindre", :important="true", slot="right")
 		CallToActionButton.CallToActionLayer-button(v-else, :label="'Postuler !'", :link="'mailto:recrutement@xebia.fr'", slot="right")
 
 		LogoXebiaVisMaVie.CallToActionLayer-logo(slot="left")
