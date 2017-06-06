@@ -2,7 +2,7 @@
   "title": "Votre carrière",
   "description": "Rien n'est écrit, tout est possible",
   "image": {
-    "default": "nous-rejoindre-header-desktop.jpg",
-    "mobile": "nous-rejoindre-header-mobile.jpg"
+    "default": "d-carriere.jpg",
+    "mobile": "m-carriere.jpg"
   }
 }
