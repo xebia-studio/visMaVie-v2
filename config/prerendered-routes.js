@@ -7,6 +7,7 @@ appModulePath.addPath(path.join(__dirname, '../src/main'));
 const appRoutes = require('settings/routes/app-routes');
 
 const jobRoutesList = require('settings/routes/job-routes-list');
+const careersRoutesList = require('settings/routes/careers-routes-list');
 
 const excludeRoutes = [];
 
@@ -17,6 +18,12 @@ const hook = {
 		prerenderedRoutes.push('/nous-rejoindre');
 		jobRoutesList.forEach(route => {
 			prerenderedRoutes.push('/nous-rejoindre/'+route);
+		})
+	},
+	['carriere']: function () {
+		prerenderedRoutes.push('/carriere');
+		careersRoutesList.forEach(route => {
+			prerenderedRoutes.push('/'+route);
 		})
 	}
 }
