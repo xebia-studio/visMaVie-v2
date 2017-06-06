@@ -15,7 +15,7 @@
                         a.Career_page-menu-link(v-for="(career, label) in carrieres", :href="career.url", :class="menuButtonIsActiveModifier(career.url)", @click="clickOnCareerItem($event, career.url)", :ref="'link_'+career.url")
                             .Career_page-menu-link-picto(:is="getSvgComponentCareer(career.svg_picto)")
                             .Career_page-menu-link-label(v-html="label")
-    .Career_page-profile
+    //-.Career_page-profile
         .Career_page-profile-useful-width
             .Career_page-profile-margin-constraint
                 .Career_page-profile-contact-card
