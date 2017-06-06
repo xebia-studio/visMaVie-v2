@@ -28,11 +28,11 @@
                             CallToActionButton(:important="true", link="mailto:recrutement@xebia.fr", label="Le contacter")
                 .Career_page-profile-starts-at-xebia
                     .Career_page-profile-title Ses débuts chez Xebia
-                    .Career_page-profile-expertise
-                        .Career_page-profile-expertise-picto-wrapper
-                            .Career_page-profile-expertise-picto
-                            .Career_page-profile-expertise-name back
-                        .Career_page-profile-expertise-description Rentré en tant que <strong>Développeur Java JEE</strong> en 2009
+                    .Career_page-profile-start-expertise
+                        .Career_page-profile-start-expertise-picto-wrapper
+                            .Career_page-profile-start-expertise-picto
+                            .Career_page-profile-start-expertise-name back
+                        .Career_page-profile-start-expertise-description Rentré en tant que <strong>Développeur Java JEE</strong> en 2009
                 .Career_page-profile-new-works
                     .Career_page-profile-title Ses nouveaux terrains de jeu
                     ul.Career_page-profile-expertise-list
@@ -468,4 +468,29 @@ export default {
     .Career_page-profile-title
         font__useTitleMedium 28
         color color__$blue
+        
+    .Career_page-profile-title+.Career_page-profile-start-expertise
+    .Career_page-profile-title+.Career_page-profile-expertise-list
+        margin-top 20px
+    
+    .Career_page-profile-start-expertise
+        clearfix()
+
+    .Career_page-profile-start-expertise-picto-wrapper
+        float left
+        layout__gridBox(1, gridNumberOfColumns:16)
+        margin-right (1 / 16 * 100%)
+        text-align center
+
+    .Career_page-profile-start-expertise-name
+        font__useTextLight 14
+        color color__$text
+    
+    .Career_page-profile-start-expertise-description
+        font__useTextLight 14
+        color color__$text
+        
+        > strong
+            font__useTextRegular()
+            color color__$flashOrange
 </style>
