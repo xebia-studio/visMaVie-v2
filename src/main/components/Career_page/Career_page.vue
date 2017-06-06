@@ -15,6 +15,40 @@
                         a.Career_page-menu-link(v-for="(career, label) in carrieres", :href="career.url", :class="menuButtonIsActiveModifier(career.url)", @click="clickOnCareerItem($event, career.url)", :ref="'link_'+career.url")
                             .Career_page-menu-link-picto(:is="getSvgComponentCareer(career.svg_picto)")
                             .Career_page-menu-link-label(v-html="label")
+    .Career_page-profile
+        .Career_page-profile-useful-width
+            .Career_page-profile-margin-constraint
+                .Career_page-profile-contact-card
+                    .Career_page-profile-contact-card-inner-wrapper
+                        .Career_page-profile-contact-card-photo
+                        .Career_page-profile-contact-name Pablo <strong>Lopez</strong>
+                        .Career_page-profile-contact-sep
+                        .Career_page-profile-contact-job Directeur Technique
+                        .Career_page-profile-contact-button
+                            CallToActionButton(:important="true", link="mailto:recrutement@xebia.fr", label="Le contacter")
+                .Career_page-profile-starts-at-xebia
+                    .Career_page-profile-title Ses débuts chez Xebia
+                    .Career_page-profile-expertise
+                        .Career_page-profile-expertise-picto-wrapper
+                            .Career_page-profile-expertise-picto
+                            .Career_page-profile-expertise-name back
+                        .Career_page-profile-expertise-description Rentré en tant que <strong>Développeur Java JEE</strong> en 2009
+                .Career_page-profile-new-works
+                    .Career_page-profile-title Ses nouveaux terrains de jeu
+                    ul.Career_page-profile-expertise-list
+                        li.Career_page-profile-expertise
+                            .Career_page-profile-expertise-picto-wrapper
+                                .Career_page-profile-expertise-picto
+                                .Career_page-profile-expertise-name back
+                            ul.Career_page-profile-expertise-skills-list
+                                li.Career_page-profile-expertise-skill Coding Architect
+                                li.Career_page-profile-expertise-skill Lead Tech
+                            ul.Career_page-profile-expertise-skills-list
+                                li.Career_page-profile-expertise-skill Coding Architect
+                                li.Career_page-profile-expertise-skill Lead Tech
+                            ul.Career_page-profile-expertise-skills-list
+                                li.Career_page-profile-expertise-skill Coding Architect
+                                li.Career_page-profile-expertise-skill Lead Tech
 </template>
 
 <script>
@@ -39,6 +73,8 @@ import getScrollBarWidth from 'tools/get-scroll-bar-width'
 
 import ArrowBottom from 'generated/assets/components/Career_page/ArrowBottom'
 
+import CallToActionButton from 'xebia-web-common/components/CallToActionButton'
+
 import { domWidth } from '@alexistessier/dom'
 
 export default {
@@ -47,7 +83,8 @@ export default {
     components: {
         AppPage,
         AppSection,
-        ArrowBottom
+        ArrowBottom,
+        CallToActionButton
     },
     data: function () {
         return {
@@ -130,7 +167,7 @@ export default {
     },
     created(){
         this.loadFont({
-            text: 'light',
+            text: ['light', 'regular'],
             title: 'medium'
         });
 
@@ -323,4 +360,112 @@ export default {
 
             > .ArrowBottom
                 transform rotate(-90deg)
+    
+    .Career_page-menu-nav-outer-wrapper+.Career_page-profile
+        margin-top 20px
+        
+        .size-class-not-width-compact &
+            border-top 1px solid color__$neutral50
+            border-bottom 1px solid color__$neutral50
+    
+    .Career_page-profile-useful-width
+        layout__outerBox()
+    .Career_page-profile-margin-constraint
+        layout__innerBox()
+        position relative
+        min-height 450px
+    
+    .Career_page-profile-contact-card
+        .size-class-not-width-compact &
+            layout__gridBox(9)
+            layout__gridTab(1)
+            position absolute
+            height 100%
+            top 0
+            left 0
+            
+            &:after
+                content ''
+                display block
+                width 1px
+                height 100%
+                position absolute
+                right 0
+                top 0
+                background-color color__$neutral50
+    
+    .Career_page-profile-contact-card-inner-wrapper
+        padding-top 30px
+        .size-class-not-width-compact &
+            layout__gridBox(7, gridNumberOfColumns: 9)
+    
+    .Career_page-profile-contact-card-photo
+        height 160px
+        border-bottom 1px solid color__$neutral50
+        background-position center bottom
+        background-repeat no-repeat
+        background-size 190px 160px
+    
+    .Career_page-profile-contact-card-photo+.Career_page-profile-contact-name
+        margin-top 25px
+    
+    .Career_page-profile-contact-name,
+    .Career_page-profile-contact-job
+        text-align center
+        font__useTextLight 14
+        
+        > strong
+            font__useTextRegular()
+    
+    .Career_page-profile-contact-name
+        color color__$blue
+        
+    .Career_page-profile-contact-sep
+        display block
+        margin 10px auto
+        width 40px
+        background-color color__$neutral50
+        height 1px
+    
+    .Career_page-profile-contact-job
+        color color__$text
+    
+    .Career_page-profile-contact-job+.Career_page-profile-contact-button
+        margin-top 60px
+    
+    .Career_page-profile-contact-button
+        layout__centeredGridBox(5, gridNumberOfColumns: 7)
+        padding-bottom 30px
+    
+    .Career_page-profile-starts-at-xebia,
+    .Career_page-profile-new-works
+        layout__gridBox(16)
+        layout__gridTab(12)
+        padding-bottom 30px
+    
+    .Career_page-profile-starts-at-xebia
+        padding-top 35px
+    
+    .Career_page-profile-new-works
+        padding-top 20px
+    
+    .Career_page-profile-starts-at-xebia+.Career_page-profile-new-works
+        position relative
+        &:before
+            content ''
+            display block
+            height 1px
+            background-color color__$neutral50
+            width 100%
+            position absolute
+            padding-right 2000px
+            offset = 2 / 16 * 100%
+            padding-left offset
+            top 0
+            left -(offset)
+            
+    
+    .Career_page-profile-title
+        font__useTitleMedium 28
+        color color__$blue
 </style>
