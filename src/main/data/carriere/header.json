@@ -1,0 +1,8 @@
+{
+  "title": "Votre carrière",
+  "description": "Rien n'est écrit, tout est possible",
+  "image": {
+    "default": "d-carriere.jpg",
+    "mobile": "m-carriere.jpg"
+  }
+}
