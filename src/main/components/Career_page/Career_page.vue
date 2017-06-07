@@ -15,49 +15,34 @@
                         a.Career_page-menu-link(v-for="(career, label) in carrieres", :href="career.url", :class="menuButtonIsActiveModifier[career.url]", @click="clickOnCareerItem($event, career.url)", :ref="'link_'+career.url")
                             .Career_page-menu-link-picto(:is="getSvgComponentCareer(career.svg_picto)")
                             .Career_page-menu-link-label(v-html="label")
-    .Career_page-profile
+    .Career_page-profile(v-if="currentCareer")
         .Career_page-profile-useful-width
             .Career_page-profile-margin-constraint
                 .Career_page-profile-contact-card
                     .Career_page-profile-contact-card-inner-wrapper
                         .Career_page-profile-contact-card-photo(:style="photoStyle")
-                        .Career_page-profile-contact-name Pablo <strong>Lopez</strong>
+                        .Career_page-profile-contact-name(v-html="currentCareer.name")
                         .Career_page-profile-contact-sep
-                        .Career_page-profile-contact-job Directeur Technique
+                        .Career_page-profile-contact-job {{currentCareer.job}}
                         .Career_page-profile-contact-button
-                            CallToActionButton(:important="true", link="mailto:recrutement@xebia.fr", label="Le contacter")
+                            CallToActionButton(:important="true", :link="contactLink", :label="contactLabel")
                 .Career_page-profile-starts-at-xebia
                     .Career_page-profile-title Ses débuts chez Xebia
                     .Career_page-profile-start-expertise
                         .Career_page-profile-start-expertise-picto-wrapper
-                            .Career_page-profile-start-expertise-picto(:is="getSvgComponentCareer('expertise-agile')")
-                            .Career_page-profile-start-expertise-name back
+                            .Career_page-profile-start-expertise-picto(:is="getSvgComponentCareer(currentCareer.svg_picto_expertise)")
+                            .Career_page-profile-start-expertise-name {{currentCareer.expertise_name}}
                         .Career_page-profile-start-expertise-description
-                            span Rentré en tant que <strong>Développeur Java JEE</strong> en 2009
+                            span(v-html="currentCareer.expertise_description")
                 .Career_page-profile-new-works
                     .Career_page-profile-title Ses nouveaux terrains de jeu
                     ul.Career_page-profile-expertise-list
-                        li.Career_page-profile-expertise
+                        li.Career_page-profile-expertise(v-for="expertise in currentCareer.new_works")
                             .Career_page-profile-expertise-picto-wrapper
-                                .Career_page-profile-expertise-picto(:is="getSvgComponentCareer('expertise-agile')")
-                                .Career_page-profile-expertise-name back
+                                .Career_page-profile-expertise-picto(:is="getSvgComponentCareer(expertise.svg_picto)")
+                                .Career_page-profile-expertise-name {{expertise.name}}
                                 ul.Career_page-profile-expertise-skills-list
-                                    li.Career_page-profile-expertise-skill Coding Architect
-                                    li.Career_page-profile-expertise-skill Lead Tech
-                        li.Career_page-profile-expertise
-                            .Career_page-profile-expertise-picto-wrapper
-                                .Career_page-profile-expertise-picto(:is="getSvgComponentCareer('expertise-agile')")
-                                .Career_page-profile-expertise-name back
-                                ul.Career_page-profile-expertise-skills-list
-                                    li.Career_page-profile-expertise-skill Coding Architect
-                                    li.Career_page-profile-expertise-skill Lead Tech
-                        li.Career_page-profile-expertise
-                            .Career_page-profile-expertise-picto-wrapper
-                                .Career_page-profile-expertise-picto(:is="getSvgComponentCareer('expertise-agile')")
-                                .Career_page-profile-expertise-name back
-                                ul.Career_page-profile-expertise-skills-list
-                                    li.Career_page-profile-expertise-skill Coding Architect
-                                    li.Career_page-profile-expertise-skill Lead Tech
+                                    li.Career_page-profile-expertise-skill(v-for="skill in expertise.skills") {{skill}}
 </template>
 
 <script>
@@ -107,10 +92,28 @@ export default {
         };
     },
     computed: {
+        contactLink(){
+            const currentCareer = this.currentCareer;
+            return currentCareer.contact_button_link ? currentCareer.contact_button_link : settings.contact_button_link;
+        },
+        contactLabel(){
+            const currentCareer = this.currentCareer;
+            return currentCareer.contact_button_label ? currentCareer.contact_button_label : settings.contact_button_label;
+        },
         photoStyle(){
             return this.photoCache ? {
                 "background-image": `url("${this.photoCache}")`
             } : null;
+        },
+        currentCareer(){
+            for(const label in this.carrieres){
+                const career = this.carrieres[label];
+
+                if (this.currentPage === career.url) {
+                    return career;
+                }
+            }
+            return null;
         },
         currentPage(){
             return this.$route.params.career;
@@ -130,6 +133,8 @@ export default {
     watch: {
         currentPage(){
             this.menuScrollToCurrent();
+        },
+        currentCareer(){
             this.loadPhoto();
         }
     },
@@ -191,7 +196,7 @@ export default {
         loadPhoto(){
             this.photoCache = null;
             require.ensure([], require => {
-                this.photoCache = require('assets/images/pablo.jpeg');
+                this.photoCache = require(`generated/assets/components/Career_page/images/${this.currentCareer.photo}`);
             });
         }
     },
@@ -202,6 +207,11 @@ export default {
         });
 
         const sizeClassHelper = this.getSizeClassHelper();
+
+        sizeClassHelper.setSizeClass('career-page-width-compact', {
+            minWidth: 0,
+            maxWidth: 600
+        });
 
         const resize = ()=>{
             this.updateLayoutOnResize();
@@ -360,7 +370,7 @@ export default {
             top 1px
             background-color white
             width 46px
-            z-index 12
+            z-index 8
             
             &:hover, &:focus
                 cursor pointer
@@ -429,6 +439,9 @@ export default {
         padding-top 30px
         .size-class-not-width-compact &
             layout__gridBox(7, gridNumberOfColumns: 9)
+        
+        .size-class-width-compact &
+            layout__centeredGridBox(18)
     
     .Career_page-profile-contact-card-photo
         height 160px
@@ -450,6 +463,7 @@ export default {
     
     .Career_page-profile-contact-name
         color color__$blue
+        white-space nowrap
         
     .Career_page-profile-contact-sep
         display block
@@ -460,42 +474,54 @@ export default {
     
     .Career_page-profile-contact-job
         color color__$text
+        white-space nowrap
     
     .Career_page-profile-contact-job+.Career_page-profile-contact-button
         margin-top 60px
+        
+        .size-class-width-compact &
+            margin-top 30px
     
     .Career_page-profile-contact-button
-        layout__centeredGridBox(5, gridNumberOfColumns: 7)
-        padding-bottom 30px
+        padding-bottom 15px
+        
+        .size-class-not-width-compact &
+            layout__centeredGridBox(5, gridNumberOfColumns: 7)
+            padding-bottom 30px
     
     .Career_page-profile-starts-at-xebia,
     .Career_page-profile-new-works
-        layout__gridBox(16)
-        layout__gridTab(12)
         padding-bottom 30px
+        
+        .size-class-not-width-compact &
+            layout__gridBox(16)
+            layout__gridTab(12)
     
     .Career_page-profile-starts-at-xebia
         padding-top 35px
     
     .Career_page-profile-new-works
         padding-top 20px
+        
+        .size-class-width-compact &
+            padding-top 0px
     
     .Career_page-profile-starts-at-xebia+.Career_page-profile-new-works
-        position relative
-        &:before
-            content ''
-            display block
-            height 1px
-            background-color color__$neutral50
-            width 100%
-            position absolute
-            padding-right 2000px
-            offset = 2 / 16 * 100%
-            padding-left offset
-            top 0
-            left -(offset)
-            
-    
+        .size-class-not-width-compact &
+            position relative
+            &:before
+                content ''
+                display block
+                height 1px
+                background-color color__$neutral50
+                width 100%
+                position absolute
+                padding-right 2000px
+                offset = 2 / 16 * 100%
+                padding-left offset
+                top 0
+                left -(offset)
+
     .Career_page-profile-title
         font__useTitleMedium 28
         color color__$blue
@@ -504,40 +530,44 @@ export default {
     .Career_page-profile-title+.Career_page-profile-expertise-list
         margin-top 20px
     
-    .Career_page-profile-start-expertise
+    .Career_page-profile-start-expertise,
+    .Career_page-profile-expertise
         clearfix()
         position relative
 
-    .Career_page-profile-start-expertise-picto-wrapper
+    .Career_page-profile-start-expertise-picto-wrapper,
+    .Career_page-profile-expertise-picto-wrapper
         margin-left 10px
         text-align center
         width 60px
         
-    .Career_page-profile-start-expertise-picto
+    .Career_page-profile-start-expertise-picto,
+    .Career_page-profile-expertise-picto
         display block
         width 100%
-        
+    
+    .Career_page-profile-start-expertise-picto
         path
             fill color__$flashOrange
         
-    .Career_page-profile-start-expertise-picto+.Career_page-profile-start-expertise-name
+    .Career_page-profile-start-expertise-picto+.Career_page-profile-start-expertise-name,
+    .Career_page-profile-expertise-picto+.Career_page-profile-expertise-name
         margin-top 10px
 
     .Career_page-profile-start-expertise-name
         font__useTextLight 14
         color color__$neutral50
     
-    .Career_page-profile-start-expertise-description
-        font__useTextLight 14
-        font__line-height 18
-        color color__$text
+    .Career_page-profile-start-expertise-description,
+    .Career_page-profile-expertise-skills-list
         position absolute
         top 50%
         left 0
         width 100%
         transform translateY(-50%)
         
-        > span
+        > span,
+        > .Career_page-profile-expertise-skill
             display block
             padding-left 95px
             transform translateY(-10px)
@@ -547,6 +577,39 @@ export default {
                 font__useTextRegular()
                 color color__$flashOrange
     
+    .Career_page-profile-start-expertise-description,
+    .Career_page-profile-expertise-skill
+        font__useTextLight 14
+        font__line-height 18
+        color color__$text
+
+    .Career_page-profile-expertise-skill
+        text-align left
+        position relative
+        white-space nowrap
+
+        &:before
+            display block
+            content ''
+            position absolute
+            top 8px
+            left 85px
+            shape__circle(4px, color__$text)
+    
     .Career_page-profile-expertise-list
-        layout__grid('.Career_page-profile-expertise', 16, 2, 2, 20px)
+        .size-class-not-career-page-width-compact &
+            layout__grid('.Career_page-profile-expertise', 16, 2, 2, 20px)
+    
+    .Career_page-profile-expertise+.Career_page-profile-expertise
+        .size-class-career-page-width-compact &
+            margin-top 20px
+    
+    .Career_page-profile-expertise-picto
+        path
+            fill color__$lightBlue
+    
+    .Career_page-profile-expertise-name
+        font__useTextRegular 14
+        color color__$neutral50
+    
 </style>
