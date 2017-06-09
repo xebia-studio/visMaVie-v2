@@ -203,7 +203,7 @@ export default {
     created(){
         this.loadFont({
             text: ['light', 'regular'],
-            title: 'medium'
+            title: ['medium', 'regular']
         });
 
         const sizeClassHelper = this.getSizeClassHelper();
@@ -436,7 +436,7 @@ export default {
                 background-color color__$neutral50
     
     .Career_page-profile-contact-card-inner-wrapper
-        padding-top 30px
+        padding-top 24px
         .size-class-not-width-compact &
             layout__gridBox(7, gridNumberOfColumns: 9)
         
@@ -448,7 +448,7 @@ export default {
         border-bottom 1px solid color__$neutral50
         background-position center bottom
         background-repeat no-repeat
-        background-size 190px 160px
+        background-size auto 100%
     
     .Career_page-profile-contact-card-photo+.Career_page-profile-contact-name
         margin-top 25px
@@ -456,10 +456,17 @@ export default {
     .Career_page-profile-contact-name,
     .Career_page-profile-contact-job
         text-align center
-        font__useTextLight 14
+        font__useTextLight()
         
         > strong
             font__useTextRegular()
+    
+    .Career_page-profile-contact-name
+        font__rem-size 20
+
+    .Career_page-profile-contact-job
+        font__rem-size 14
+        
     
     .Career_page-profile-contact-name
         color color__$blue
@@ -523,7 +530,7 @@ export default {
                 left -(offset)
 
     .Career_page-profile-title
-        font__useTitleMedium 28
+        font__useTitleRegular 24
         color color__$blue
         
     .Career_page-profile-title+.Career_page-profile-start-expertise
@@ -539,7 +546,7 @@ export default {
     .Career_page-profile-expertise-picto-wrapper
         margin-left 10px
         text-align center
-        width 60px
+        width 70px
         
     .Career_page-profile-start-expertise-picto,
     .Career_page-profile-expertise-picto
@@ -554,9 +561,10 @@ export default {
     .Career_page-profile-expertise-picto+.Career_page-profile-expertise-name
         margin-top 10px
 
-    .Career_page-profile-start-expertise-name
+    .Career_page-profile-start-expertise-name,
+    .Career_page-profile-expertise-name
         font__useTextLight 14
-        color color__$neutral50
+        color #B3B3B3
     
     .Career_page-profile-start-expertise-description,
     .Career_page-profile-expertise-skills-list
@@ -569,7 +577,7 @@ export default {
         > span,
         > .Career_page-profile-expertise-skill
             display block
-            padding-left 95px
+            padding-left 105px
             transform translateY(-10px)
             
             
@@ -579,7 +587,7 @@ export default {
     
     .Career_page-profile-start-expertise-description,
     .Career_page-profile-expertise-skill
-        font__useTextLight 14
+        font__useTextLight 15
         font__line-height 18
         color color__$text
 
@@ -591,9 +599,10 @@ export default {
         &:before
             display block
             content ''
-            position absolute
-            top 8px
-            left 85px
+            position relative
+            top 7px
+            margin-right 8px
+            float left
             shape__circle(4px, color__$text)
     
     .Career_page-profile-expertise-list
@@ -607,9 +616,5 @@ export default {
     .Career_page-profile-expertise-picto
         path
             fill color__$lightBlue
-    
-    .Career_page-profile-expertise-name
-        font__useTextRegular 14
-        color color__$neutral50
     
 </style>

@@ -7,7 +7,7 @@
       "svg_picto": "expertise-agile",
       "name": "Pablo <strong>Lopez</strong>",
       "job": "Directeur Technique",
-      "photo": "pablo.jpeg",
+      "photo": "pablo.png",
       "svg_picto_expertise": "expertise-agile",
       "expertise_name": "Agilité",
       "expertise_description": "Rentré en tant que <strong>Développeur Java JEE</strong> en 2009",
@@ -42,11 +42,49 @@
       "svg_picto": "expertise-iot",
       "name": "Pablo <strong>Lopez</strong>",
       "job": "Directeur Technique",
-      "photo": "pablo.jpeg",
+      "photo": "pablo.png",
       "svg_picto_expertise": "expertise-iot",
       "expertise_name": "IoT",
       "expertise_description": "Rentré en tant que <strong>Développeur Java JEE</strong> en 2009",
       "new_works": [{
+        "svg_picto": "expertise-agile",
+        "name": "Agilité",
+        "skills": [
+          "Coding Architect",
+          "Lead Tech"
+        ]
+      }, {
+        "svg_picto": "expertise-backend",
+        "name": "Back End",
+        "skills": [
+          "Extrem Architect"
+        ]
+      }, {
+        "svg_picto": "expertise-frontend",
+        "name": "Front End",
+        "skills": [
+          "React", "IHM"
+        ]
+      },{
+        "svg_picto": "expertise-agile",
+        "name": "Agilité",
+        "skills": [
+          "Coding Architect",
+          "Lead Tech"
+        ]
+      }, {
+        "svg_picto": "expertise-backend",
+        "name": "Back End",
+        "skills": [
+          "Extrem Architect"
+        ]
+      }, {
+        "svg_picto": "expertise-frontend",
+        "name": "Front End",
+        "skills": [
+          "React", "IHM"
+        ]
+      }, {
         "svg_picto": "expertise-agile",
         "name": "Agilité",
         "skills": [
@@ -72,7 +110,7 @@
       "svg_picto": "expertise-mobile",
       "name": "Pablo <strong>Lopez</strong>",
       "job": "Directeur Technique",
-      "photo": "pablo.jpeg",
+      "photo": "pablo.png",
       "contact_button_label": "Contacter",
       "contact_button_link": "mailto@recrutement@xebia.fr",
       "svg_picto_expertise": "expertise-agile",
@@ -92,7 +130,7 @@
       "svg_picto": "expertise-cloud",
       "name": "Pablo <strong>Lopez</strong>",
       "job": "Directeur Technique",
-      "photo": "pablo.jpeg",
+      "photo": "pablo.png",
       "svg_picto_expertise": "expertise-agile",
       "expertise_name": "Agilité",
       "expertise_description": "Rentré en tant que <strong>Développeur Java JEE</strong> en 2009",
@@ -110,7 +148,7 @@
       "svg_picto": "expertise-backend",
       "name": "Pablo <strong>Lopez</strong>",
       "job": "Directeur Technique",
-      "photo": "pablo.jpeg",
+      "photo": "pablo.png",
       "svg_picto_expertise": "expertise-agile",
       "expertise_name": "Agilité",
       "expertise_description": "Rentré en tant que <strong>Développeur Java JEE</strong> en 2009",
@@ -128,7 +166,7 @@
       "svg_picto": "expertise-bigdata",
       "name": "Pablo <strong>Lopez</strong>",
       "job": "Directeur Technique",
-      "photo": "pablo.jpeg",
+      "photo": "pablo.png",
       "svg_picto_expertise": "expertise-agile",
       "expertise_name": "Agilité",
       "expertise_description": "Rentré en tant que <strong>Développeur Java JEE</strong> en 2009",
@@ -146,7 +184,7 @@
       "svg_picto": "expertise-devops",
       "name": "Pablo <strong>Lopez</strong>",
       "job": "Directeur Technique",
-      "photo": "pablo.jpeg",
+      "photo": "pablo.png",
       "svg_picto_expertise": "expertise-agile",
       "expertise_name": "Agilité",
       "expertise_description": "Rentré en tant que <strong>Développeur Java JEE</strong> en 2009",
