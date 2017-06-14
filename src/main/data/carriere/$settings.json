@@ -5,18 +5,19 @@
     "Agile": {
       "url": "agile",
       "svg_picto": "expertise-agile",
-      "name": "Pablo <strong>Lopez</strong>",
-      "job": "Directeur Technique",
-      "photo": "pablo.png",
+      "photo": "laurenethenos.png",
+      "name": "Laurène <strong>Thénoz</strong>",
+      "job": "Studio Delivery Manager",
       "svg_picto_expertise": "expertise-agile",
       "expertise_name": "Agilité",
-      "expertise_description": "Rentré en tant que <strong>Développeur Java JEE</strong> en 2009",
+      "expertise_description": "Rentrée chez Xebia en tant que <strong>Scrum Master</strong> en 2012",
       "new_works": [{
         "svg_picto": "expertise-agile",
-        "name": "Back End",
+        "name": "Agilité",
         "skills": [
-          "Coding Architect",
-          "Lead Tech"
+          "Scrum Master",
+          "Coach",
+          "Studio Team Leader"
         ]
       }]
     },
