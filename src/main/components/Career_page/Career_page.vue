@@ -43,6 +43,16 @@
                                 .Career_page-profile-expertise-name {{expertise.name}}
                                 ul.Career_page-profile-expertise-skills-list
                                     li.Career_page-profile-expertise-skill(v-for="skill in expertise.skills") {{skill}}
+                .Career_page-profile-interventions(v-if="currentCareer.interventions")
+                    .Career_page-profile-title Ses dernières interventions
+                    ul.Career_page-profile-interventions-list
+                        li.Career_page-profile-intervention(v-for="(link, label) in currentCareer.interventions") 
+                            span(v-if="link === true") {{label}}
+                            a(v-else, :href="link", target="_blank") {{label}}
+                .Career_page-profile-creations
+                    .Career_page-profile-title Ses créations chez Xebia
+                    ul.Career_page-profile-creations-list
+                        li.Career_page-profile-creation speaker
 </template>
 
 <script>
@@ -407,8 +417,12 @@ export default {
         
         .size-class-not-width-compact &
             border-top 1px solid color__$neutral50
-            border-bottom 1px solid color__$neutral50
     
+    .Career_page-profile
+        .size-class-not-width-compact &
+            clearfix()
+            border-bottom 1px solid color__$neutral50
+            
     .Career_page-profile-useful-width
         layout__outerBox()
     .Career_page-profile-margin-constraint
@@ -449,6 +463,7 @@ export default {
         background-position center bottom
         background-repeat no-repeat
         background-size auto 100%
+        background-size contain
     
     .Career_page-profile-contact-card-photo+.Career_page-profile-contact-name
         margin-top 25px
@@ -466,8 +481,7 @@ export default {
 
     .Career_page-profile-contact-job
         font__rem-size 14
-        
-    
+
     .Career_page-profile-contact-name
         color color__$blue
         white-space nowrap
@@ -616,5 +630,19 @@ export default {
     .Career_page-profile-expertise-picto
         path
             fill color__$lightBlue
+
+    .Career_page-profile-interventions,
+    .Career_page-profile-creations
+        padding-top 20px
+        padding-bottom 30px
+        float left
+        border-top 1px solid color__$neutral50
     
+    .Career_page-profile-interventions
+        layout__gridBox(9)
+        layout__gridTab(1)
+    
+    .Career_page-profile-creations
+        layout__gridBox(18)
+        //layout__gridTab(12)
 </style>

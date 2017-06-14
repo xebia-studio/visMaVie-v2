@@ -7,7 +7,7 @@
       "svg_picto": "expertise-agile",
       "name": "Pablo <strong>Lopez</strong>",
       "job": "Directeur Technique",
-      "photo": "pablo.png",
+      "photo": "laurenethenoz.png",
       "svg_picto_expertise": "expertise-agile",
       "expertise_name": "Agilité",
       "expertise_description": "Rentré en tant que <strong>Développeur Java JEE</strong> en 2009",
@@ -18,7 +18,12 @@
           "Coding Architect",
           "Lead Tech"
         ]
-      }]
+      }],
+      "interventions": {
+        "Speaker Devoxx": "https://www.devoxx.fr/",
+        "Article : Atelier IOT": "https://blog.xebia.fr/",
+        "Porteur de projet : Be a better developer": true
+      }
     },
     "Front End": {
       "url": "frontend",
@@ -35,7 +40,11 @@
         "skills": [
           "Lead Tech"
         ]
-      }]
+      }],
+      "interventions": {
+        "Speaker Devoxx": "https://www.devoxx.fr/",
+        "Article : Atelier IOT": "https://blog.xebia.fr/"
+      }
     },
     "IoT": {
       "url": "iot",
@@ -46,71 +55,78 @@
       "svg_picto_expertise": "expertise-iot",
       "expertise_name": "IoT",
       "expertise_description": "Rentré en tant que <strong>Développeur Java JEE</strong> en 2009",
-      "new_works": [{
-        "svg_picto": "expertise-agile",
-        "name": "Agilité",
-        "skills": [
-          "Coding Architect",
-          "Lead Tech"
-        ]
-      }, {
-        "svg_picto": "expertise-backend",
-        "name": "Back End",
-        "skills": [
-          "Extrem Architect"
-        ]
-      }, {
-        "svg_picto": "expertise-frontend",
-        "name": "Front End",
-        "skills": [
-          "React", "IHM"
-        ]
-      },{
-        "svg_picto": "expertise-agile",
-        "name": "Agilité",
-        "skills": [
-          "Coding Architect",
-          "Lead Tech"
-        ]
-      }, {
-        "svg_picto": "expertise-backend",
-        "name": "Back End",
-        "skills": [
-          "Extrem Architect"
-        ]
-      }, {
-        "svg_picto": "expertise-frontend",
-        "name": "Front End",
-        "skills": [
-          "React", "IHM"
-        ]
-      }, {
-        "svg_picto": "expertise-agile",
-        "name": "Agilité",
-        "skills": [
-          "Coding Architect",
-          "Lead Tech"
-        ]
-      }, {
-        "svg_picto": "expertise-backend",
-        "name": "Back End",
-        "skills": [
-          "Extrem Architect"
-        ]
-      }, {
-        "svg_picto": "expertise-frontend",
-        "name": "Front End",
-        "skills": [
-          "React", "IHM"
-        ]
-      }]
+      "new_works": [
+        {
+          "svg_picto": "expertise-agile",
+          "name": "Agilité",
+          "skills": [
+            "Coding Architect",
+            "Lead Tech"
+          ]
+        }, {
+          "svg_picto": "expertise-backend",
+          "name": "Back End",
+          "skills": [
+            "Extrem Architect"
+          ]
+        }, {
+          "svg_picto": "expertise-frontend",
+          "name": "Front End",
+          "skills": [
+            "React", "IHM"
+          ]
+        },{
+          "svg_picto": "expertise-agile",
+          "name": "Agilité",
+          "skills": [
+            "Coding Architect",
+            "Lead Tech"
+          ]
+        }, {
+          "svg_picto": "expertise-backend",
+          "name": "Back End",
+          "skills": [
+            "Extrem Architect"
+          ]
+        }, {
+          "svg_picto": "expertise-frontend",
+          "name": "Front End",
+          "skills": [
+            "React", "IHM"
+          ]
+        }, {
+          "svg_picto": "expertise-agile",
+          "name": "Agilité",
+          "skills": [
+            "Coding Architect",
+            "Lead Tech"
+          ]
+        }, {
+          "svg_picto": "expertise-backend",
+          "name": "Back End",
+          "skills": [
+            "Extrem Architect"
+          ]
+        }, {
+          "svg_picto": "expertise-frontend",
+          "name": "Front End",
+          "skills": [
+            "React", "IHM"
+          ]
+        }
+      ],
+      "interventions": {
+        "Speaker Devoxx": "https://www.devoxx.fr/",
+        "Article : Atelier IOT": "https://blog.xebia.fr/",
+        "Porteur de projet : Be a better developer": true
+      }
     },
     "Mobile": {
       "url": "mobile",
       "svg_picto": "expertise-mobile",
       "name": "Pablo <strong>Lopez</strong>",
       "job": "Directeur Technique",
-      "photo": "pablo.png",
+      "photo": "simone.png",
       "contact_button_label": "Contacter",
       "contact_button_link": "mailto@recrutement@xebia.fr",
       "svg_picto_expertise": "expertise-agile",
@@ -123,7 +139,12 @@
           "Coding Architect",
           "Lead Tech"
         ]
-      }]
+      }],
+      "interventions": {
+        "Speaker Devoxx": "https://www.devoxx.fr/",
+        "Article : Atelier IOT": "https://blog.xebia.fr/",
+        "Porteur de projet : Be a better developer": true
+      }
     },
     "Cloud": {
       "url": "cloud",
@@ -141,7 +162,12 @@
           "Coding Architect",
           "Lead Tech"
         ]
-      }]
+      }],
+      "interventions": {
+        "Speaker Devoxx": "https://www.devoxx.fr/",
+        "Article : Atelier IOT": "https://blog.xebia.fr/",
+        "Porteur de projet : Be a better developer": true
+      }
     },
     "Back End": {
       "url": "backend",
@@ -159,7 +185,12 @@
           "Coding Architect",
           "Lead Tech"
         ]
-      }]
+      }],
+      "interventions": {
+        "Speaker Devoxx": "https://www.devoxx.fr/",
+        "Article : Atelier IOT": "https://blog.xebia.fr/",
+        "Porteur de projet : Be a better developer": true
+      }
     },
     "Big Data": {
       "url": "data",
@@ -177,14 +208,19 @@
           "Coding Architect",
           "Lead Tech"
         ]
-      }]
+      }],
+      "interventions": {
+        "Speaker Devoxx": "https://www.devoxx.fr/",
+        "Article : Atelier IOT": "https://blog.xebia.fr/",
+        "Porteur de projet : Be a better developer": true
+      }
     },
     "DevOps": {
       "url": "devops",
       "svg_picto": "expertise-devops",
       "name": "Pablo <strong>Lopez</strong>",
       "job": "Directeur Technique",
-      "photo": "pablo.png",
+      "photo": "jeanlouisrigau.png",
       "svg_picto_expertise": "expertise-agile",
       "expertise_name": "Agilité",
       "expertise_description": "Rentré en tant que <strong>Développeur Java JEE</strong> en 2009",
@@ -195,7 +231,11 @@
           "Coding Architect",
           "Lead Tech"
         ]
-      }]
+      }],
+      "interventions": {
+        "Speaker Devoxx": "https://www.devoxx.fr/",
+        "Porteur de projet : Be a better developer": true
+      }
     }
   }
 }
