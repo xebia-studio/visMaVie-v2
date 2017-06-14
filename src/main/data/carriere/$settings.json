@@ -1,6 +1,18 @@
 {
   "contact_button_label": "Le contacter",
   "contact_button_link": "mailto@recrutement@xebia.fr",
+  "creations": [
+    "Speaker",
+    "Formateur",
+    "Auteur livre blanc",
+    "Porte-parole",
+    "Recruteur",
+    "Auteur article presse",
+    "Rédacteur billet blog",
+    "Porteur de projet",
+    "Organisateur d'évènement",
+    "Contributeur open source"
+  ],
   "carrieres": {
     "Agile": {
       "url": "agile",
@@ -23,7 +35,10 @@
         "Speaker Devoxx": "https://www.devoxx.fr/",
         "Article : Atelier IOT": "https://blog.xebia.fr/",
         "Porteur de projet : Be a better developer": true
-      }
+      },
+      "creations": [
+        "Speaker", "Formateur"
+      ]
     },
     "Front End": {
       "url": "frontend",
@@ -44,7 +59,10 @@
       "interventions": {
         "Speaker Devoxx": "https://www.devoxx.fr/",
         "Article : Atelier IOT": "https://blog.xebia.fr/"
-      }
+      },
+      "creations": [
+        "Speaker", "Formateur", "Recruteur"
+      ]
     },
     "IoT": {
       "url": "iot",
@@ -119,7 +137,10 @@
         "Speaker Devoxx": "https://www.devoxx.fr/",
         "Article : Atelier IOT": "https://blog.xebia.fr/",
         "Porteur de projet : Be a better developer": true
-      }
+      },
+      "creations": [
+        "Speaker", "Recruteur", "Porte-parole"
+      ]
     },
     "Mobile": {
       "url": "mobile",
@@ -144,7 +165,10 @@
         "Speaker Devoxx": "https://www.devoxx.fr/",
         "Article : Atelier IOT": "https://blog.xebia.fr/",
         "Porteur de projet : Be a better developer": true
-      }
+      },
+      "creations": [
+        "Speaker", "Recruteur", "Porte-parole"
+      ]
     },
     "Cloud": {
       "url": "cloud",
@@ -167,7 +191,10 @@
         "Speaker Devoxx": "https://www.devoxx.fr/",
         "Article : Atelier IOT": "https://blog.xebia.fr/",
         "Porteur de projet : Be a better developer": true
-      }
+      },
+      "creations": [
+        "Speaker", "Recruteur", "Porte-parole"
+      ]
     },
     "Back End": {
       "url": "backend",
@@ -190,7 +217,10 @@
         "Speaker Devoxx": "https://www.devoxx.fr/",
         "Article : Atelier IOT": "https://blog.xebia.fr/",
         "Porteur de projet : Be a better developer": true
-      }
+      },
+      "creations": [
+        "Speaker", "Recruteur", "Porte-parole"
+      ]
     },
     "Big Data": {
       "url": "data",
@@ -213,7 +243,10 @@
         "Speaker Devoxx": "https://www.devoxx.fr/",
         "Article : Atelier IOT": "https://blog.xebia.fr/",
         "Porteur de projet : Be a better developer": true
-      }
+      },
+      "creations": [
+        "Speaker", "Recruteur", "Porte-parole"
+      ]
     },
     "DevOps": {
       "url": "devops",
@@ -235,7 +268,10 @@
       "interventions": {
         "Speaker Devoxx": "https://www.devoxx.fr/",
         "Porteur de projet : Be a better developer": true
-      }
+      },
+      "creations": [
+        "Speaker", "Recruteur", "Porte-parole", "Contributeur open source"
+      ]
     }
   }
 }

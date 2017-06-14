@@ -18,22 +18,25 @@
     .Career_page-profile(v-if="currentCareer")
         .Career_page-profile-useful-width
             .Career_page-profile-margin-constraint
-                .Career_page-profile-contact-card
-                    .Career_page-profile-contact-card-inner-wrapper
-                        .Career_page-profile-contact-card-photo(:style="photoStyle")
-                        .Career_page-profile-contact-name(v-html="currentCareer.name")
-                        .Career_page-profile-contact-sep
-                        .Career_page-profile-contact-job {{currentCareer.job}}
-                        .Career_page-profile-contact-button
-                            CallToActionButton(:important="true", :link="contactLink", :label="contactLabel")
-                .Career_page-profile-starts-at-xebia
-                    .Career_page-profile-title Ses débuts chez Xebia
-                    .Career_page-profile-start-expertise
-                        .Career_page-profile-start-expertise-picto-wrapper
-                            .Career_page-profile-start-expertise-picto(:is="getSvgComponentCareer(currentCareer.svg_picto_expertise)")
-                            .Career_page-profile-start-expertise-name {{currentCareer.expertise_name}}
-                        .Career_page-profile-start-expertise-description
-                            span(v-html="currentCareer.expertise_description")
+                .Career_page-profile-mobile-first-column
+                    .Career_page-profile-contact-card
+                        .Career_page-profile-contact-card-inner-wrapper
+                            .Career_page-profile-contact-card-photo(:style="photoStyle")
+                            .Career_page-profile-contact-name(v-html="currentCareer.name")
+                            .Career_page-profile-contact-sep
+                            .Career_page-profile-contact-job {{currentCareer.job}}
+                            .Career_page-profile-contact-button
+                                .Career_page-profile-contact-button-inner-wrapper
+                                    CallToActionButton(:important="true", :link="contactLink", :label="contactLabel")
+                    .Career_page-profile-starts-at-xebia-outer-wrapper
+                        .Career_page-profile-starts-at-xebia
+                            .Career_page-profile-title Ses débuts chez Xebia
+                            .Career_page-profile-start-expertise
+                                .Career_page-profile-start-expertise-picto-wrapper
+                                    .Career_page-profile-start-expertise-picto(:is="getSvgComponentCareer(currentCareer.svg_picto_expertise)")
+                                    .Career_page-profile-start-expertise-name {{currentCareer.expertise_name}}
+                                .Career_page-profile-start-expertise-description
+                                    span(v-html="currentCareer.expertise_description")
                 .Career_page-profile-new-works
                     .Career_page-profile-title Ses nouveaux terrains de jeu
                     ul.Career_page-profile-expertise-list
@@ -52,7 +55,7 @@
                 .Career_page-profile-creations
                     .Career_page-profile-title Ses créations chez Xebia
                     ul.Career_page-profile-creations-list
-                        li.Career_page-profile-creation speaker
+                        li.Career_page-profile-creation(v-for="tag in creations", :class="{'is--active': currentCareer.creations.includes(tag)}") {{tag}}
 </template>
 
 <script>
@@ -97,6 +100,7 @@ export default {
             }),
             content,
             carrieres: settings.carrieres,
+            creations: settings.creations,
             isWidthCompact: false,
             photoCache: null
         };
@@ -412,42 +416,62 @@ export default {
             > .ArrowBottom
                 transform rotate(-90deg)
     
-    .Career_page-menu-nav-outer-wrapper+.Career_page-profile
-        margin-top 20px
-        
+    .Career_page-menu-nav-outer-wrapper+.Career_page-profile    
         .size-class-not-width-compact &
+            margin-top 20px
             border-top 1px solid color__$neutral50
     
     .Career_page-profile
         .size-class-not-width-compact &
             clearfix()
             border-bottom 1px solid color__$neutral50
+        
+        .size-class-width-compact &
+            overflow-y hidden
+            overflow-x scroll
+            -webkit-overflow-scrolling: touch;
             
     .Career_page-profile-useful-width
-        layout__outerBox()
+        .size-class-not-width-compact &
+            layout__outerBox()
+
     .Career_page-profile-margin-constraint
-        layout__innerBox()
         position relative
-        min-height 450px
+        
+        .size-class-not-width-compact &
+            layout__innerBox()
+            min-height 450px
+        
+        .size-class-width-compact &
+            clearfix()
+            width 1200px
+        
+    .Career_page-profile-mobile-first-column
+        .size-class-width-compact &
+            float left
     
     .Career_page-profile-contact-card
+        position relative
+
+        &:after
+            content ''
+            display block
+            width 1px
+            height 100%
+            position absolute
+            right 0
+            top 0
+            background-color color__$neutral50
+                
+        .size-class-width-compact &
+            width 298px
+            padding-bottom 60px
+            border-bottom 1px solid color__$neutral50
+            
         .size-class-not-width-compact &
             layout__gridBox(9)
             layout__gridTab(1)
-            position absolute
-            height 100%
-            top 0
-            left 0
-            
-            &:after
-                content ''
-                display block
-                width 1px
-                height 100%
-                position absolute
-                right 0
-                top 0
-                background-color color__$neutral50
+            float left
     
     .Career_page-profile-contact-card-inner-wrapper
         padding-top 24px
@@ -455,7 +479,7 @@ export default {
             layout__gridBox(7, gridNumberOfColumns: 9)
         
         .size-class-width-compact &
-            layout__centeredGridBox(18)
+            layout__centeredGridBox(22)
     
     .Career_page-profile-contact-card-photo
         height 160px
@@ -464,6 +488,19 @@ export default {
         background-repeat no-repeat
         background-size auto 100%
         background-size contain
+        
+        .size-class-width-compact &
+            height 150px
+            position relative
+            &:after
+                display block
+                content ''
+                position absolute
+                width 298px
+                height 1px
+                background-color color__$neutral50
+                top 100%
+                left -40px
     
     .Career_page-profile-contact-card-photo+.Career_page-profile-contact-name
         margin-top 25px
@@ -484,7 +521,6 @@ export default {
 
     .Career_page-profile-contact-name
         color color__$blue
-        white-space nowrap
         
     .Career_page-profile-contact-sep
         display block
@@ -495,7 +531,6 @@ export default {
     
     .Career_page-profile-contact-job
         color color__$text
-        white-space nowrap
     
     .Career_page-profile-contact-job+.Career_page-profile-contact-button
         margin-top 60px
@@ -503,45 +538,98 @@ export default {
         .size-class-width-compact &
             margin-top 30px
     
-    .Career_page-profile-contact-button
-        padding-bottom 15px
-        
+    .Career_page-profile-contact-button        
         .size-class-not-width-compact &
             layout__centeredGridBox(5, gridNumberOfColumns: 7)
             padding-bottom 30px
+        
+        .size-class-width-compact &
+            position absolute
+            left 0
+            bottom 0
+            width 100%
+            transform translateY(50%)
+    
+    .Career_page-profile-contact-button-inner-wrapper
+        .size-class-width-compact &
+            layout__centeredGridBox(5, gridNumberOfColumns: 7)
     
     .Career_page-profile-starts-at-xebia,
     .Career_page-profile-new-works
         padding-bottom 30px
         
         .size-class-not-width-compact &
-            layout__gridBox(16)
-            layout__gridTab(12)
+            float right
+            position relative
+            
+            &:after
+                display block
+                content ''
+                width 1px
+                height 100%
+                position absolute
+                top 0
+                left -1px
+                background-color color__$neutral50
     
     .Career_page-profile-starts-at-xebia
         padding-top 35px
-    
+        
+        .size-class-width-compact &
+            padding-top 60px
+            border-right 1px solid color__$neutral50
+            > .Career_page-profile-title
+                text-align center
+
+        .size-class-not-width-compact &
+            layout__gridBox(20)
+
+            > .Career_page-profile-title
+                margin-left (2 / 20 * 100%)
+                margin-right (1 / 20 * 100%)
+                
+    .Career_page-profile-starts-at-xebia-outer-wrapper
+        .size-class-width-compact &
+            width 298px
+
+    .Career_page-profile-starts-at-xebia > .Career_page-profile-title,
+    .Career_page-profile-start-expertise
+        .size-class-width-compact &
+            layout__centeredGridBox(22)
+
+    .Career_page-profile-start-expertise,
+    .Career_page-profile-expertise-list
+        .size-class-not-width-compact & 
+            margin-left (2 / 20 * 100%)
+            margin-right (2 / 20 * 100%)
+        
     .Career_page-profile-new-works
         padding-top 20px
         
         .size-class-width-compact &
-            padding-top 0px
-    
-    .Career_page-profile-starts-at-xebia+.Career_page-profile-new-works
+            padding-top 25px
+            float left
+            
+            > .Career_page-profile-title
+                margin-left 30px
+        
         .size-class-not-width-compact &
+            layout__gridBox(20)
             position relative
+            
+            > .Career_page-profile-title
+                margin-left (2 / 20 * 100%)
+                margin-right (1 / 20 * 100%)
+            
             &:before
                 content ''
                 display block
                 height 1px
                 background-color color__$neutral50
-                width 100%
+                width 200%
                 position absolute
-                padding-right 2000px
-                offset = 2 / 16 * 100%
-                padding-left offset
                 top 0
-                left -(offset)
+                left 0
 
     .Career_page-profile-title
         font__useTitleRegular 24
@@ -592,7 +680,9 @@ export default {
         > .Career_page-profile-expertise-skill
             display block
             padding-left 105px
-            transform translateY(-10px)
+            
+            .size-class-not-width-compact &
+                transform translateY(-10px)
             
             
             > strong
@@ -600,15 +690,22 @@ export default {
                 color color__$flashOrange
     
     .Career_page-profile-start-expertise-description,
-    .Career_page-profile-expertise-skill
+    .Career_page-profile-expertise-skill,
+    .Career_page-profile-intervention
         font__useTextLight 15
-        font__line-height 18
+        font__line-height 20
         color color__$text
+        
+        a
+            color color__$text
+            text-decoration underline
+            &:hover, &:focus
+                color color__$flashOrange
 
-    .Career_page-profile-expertise-skill
+    .Career_page-profile-expertise-skill,
+    .Career_page-profile-intervention
         text-align left
         position relative
-        white-space nowrap
 
         &:before
             display block
@@ -622,6 +719,9 @@ export default {
     .Career_page-profile-expertise-list
         .size-class-not-career-page-width-compact &
             layout__grid('.Career_page-profile-expertise', 16, 2, 2, 20px)
+        .size-class-width-compact &
+            margin-left 30px
+            margin-right 30px
     
     .Career_page-profile-expertise+.Career_page-profile-expertise
         .size-class-career-page-width-compact &
@@ -631,18 +731,107 @@ export default {
         path
             fill color__$lightBlue
 
+    .Career_page-profile-interventions
+        .size-class-not-width-compact &
+            clear both
+
     .Career_page-profile-interventions,
     .Career_page-profile-creations
         padding-top 20px
         padding-bottom 30px
-        float left
-        border-top 1px solid color__$neutral50
+        
+        .size-class-not-width-compact &
+            float left
+            border-top 1px solid color__$neutral50
+        
+        .size-class-width-compact &
+            width (750px / 2)
+            padding-top 25px
+            float left
     
     .Career_page-profile-interventions
-        layout__gridBox(9)
-        layout__gridTab(1)
+        .size-class-not-width-compact &
+            layout__gridBox(10)
+            position relative
+            
+            > .Career_page-profile-title
+                layout__gridTab(1, gridNumberOfColumns: 10)
+                margin-right (1 / 10 * 100)%
+            
+            &:before, &:after
+                display block
+                content ''
+                background-color color__$neutral50
+                position absolute
+            
+            &:before
+                top -1px
+                right 100%
+                width 200%
+                height 1px
+            
+            &:after
+                width 1px
+                height 100%
+                right 0
+                top 0
+        
+        .size-class-width-compact &
+            bottom 0
+
+    .Career_page-profile-title+.Career_page-profile-interventions-list,
+    .Career_page-profile-title+.Career_page-profile-creations-list
+        margin-top 30px
+
+    .Career_page-profile-interventions-list
+        .size-class-not-width-compact &
+            margin-left (1 / 10 * 100)%
+            margin-right (1 / 10 * 100)%
     
     .Career_page-profile-creations
-        layout__gridBox(18)
-        //layout__gridTab(12)
+        .size-class-not-width-compact &
+            position relative
+            layout__gridBox(20)
+            
+            > .Career_page-profile-title
+                margin-left (2 / 20 * 100%)
+                margin-right (1 / 20 * 100%)
+            
+            &:before, &:after
+                display block
+                content ''
+                background-color color__$neutral50
+                position absolute
+            
+            &:before
+                top -1px
+                left 100%
+                width 200%
+                height 1px
+            
+            &:after
+                width 1px
+                height 100%
+                left -1px
+                top 0
+    
+    .Career_page-profile-creations-list
+        .size-class-not-width-compact &
+            margin-left (2 / 20 * 100%)
+            margin-right (1 / 20 * 100%)
+    
+    .Career_page-profile-creation
+        display inline-block
+        background-color color__$neutral50
+        color white
+        font__useTextLight 14
+        margin-right 10px
+        margin-bottom 15px
+        padding 4px 12px
+        font__line-height 16
+        border-radius font__pxToRem(16)
+        
+        &.is--active
+            background-color color__$lightBlue
+        
 </style>
