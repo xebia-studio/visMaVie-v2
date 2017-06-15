@@ -56,6 +56,12 @@
         "skills": [
           "Lead Tech"
         ]
+      },{
+        "svg_picto": "expertise-backend",
+        "name": "Back End",
+        "skills": [
+          "Lead Tech"
+        ]
       }],
       "interventions": {
         "Speaker Devoxx": "https://www.devoxx.fr/",
