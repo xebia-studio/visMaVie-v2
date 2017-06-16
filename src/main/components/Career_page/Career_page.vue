@@ -56,7 +56,7 @@
                 .Career_page-profile-creations
                     .Career_page-profile-title Ses créations chez Xebia
                     ul.Career_page-profile-creations-list
-                        li.Career_page-profile-creation(v-for="tag in creations", :class="{'is--active': currentCareer.creations.includes(tag)}") {{tag}}
+                        li.Career_page-profile-creation(v-for="tag in creations", :class="{'is--active': currentCareer && currentCareer.creations && currentCareer.creations.includes(tag)}") {{tag}}
     .Career_page-profile-passions(v-if="currentCareer && currentCareer.passions && currentCareer.passions.length")
         .Career_page-profile-passions-useful-width
             .Career_page-profile-passions-margin-constraint
