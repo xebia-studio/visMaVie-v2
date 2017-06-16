@@ -16,8 +16,8 @@
                             .Career_page-menu-link-picto(:is="getSvgComponentCareer(career.svg_picto)")
                             .Career_page-menu-link-label(v-html="label")
     .Career_page-profile(v-if="currentCareer")
-        .Career_page-profile-useful-width
-            .Career_page-profile-margin-constraint
+        .Career_page-profile-useful-width(ref="profileScrollView")
+            .Career_page-profile-margin-constraint(:class="'contains--'+currentCareer.new_works.length+'-expertises'")
                 .Career_page-profile-mobile-first-column
                     .Career_page-profile-contact-card
                         .Career_page-profile-contact-card-inner-wrapper
@@ -57,6 +57,12 @@
                     .Career_page-profile-title Ses créations chez Xebia
                     ul.Career_page-profile-creations-list
                         li.Career_page-profile-creation(v-for="tag in creations", :class="{'is--active': currentCareer.creations.includes(tag)}") {{tag}}
+    .Career_page-profile-passions(v-if="currentCareer && currentCareer.passions && currentCareer.passions.length")
+        .Career_page-profile-passions-useful-width
+            .Career_page-profile-passions-margin-constraint
+                .Career_page-profile-title Ses passions du moment
+                ul.Career_page-profile-passions-list
+                    li.Career_page-profile-passion(v-for="passion in currentCareer.passions")
 </template>
 
 <script>
@@ -76,8 +82,6 @@ import AppSection from 'components/AppSection';
 import headerImageCacheSetter from 'generated/tools/components/Career_page/blurryHeaderImageCacheSetter';
 
 import getSvgComponentCareer from 'generated/assets/pictoCareers/svgComponents/sync'
-
-import getScrollBarWidth from 'tools/get-scroll-bar-width'
 
 import ArrowBottom from 'generated/assets/components/Career_page/ArrowBottom'
 
@@ -139,7 +143,7 @@ export default {
             for(const label in this.carrieres){
                 const career = this.carrieres[label];
 
-                classList[career.url] = this.$route.path === `/carriere/${career.url}` ? 'is--active' : 'is--unactive';
+                classList[career.url] = this.currentPage === `${career.url}` ? 'is--active' : 'is--unactive';
             }
 
             return classList;
@@ -148,6 +152,15 @@ export default {
     watch: {
         currentPage(){
             this.menuScrollToCurrent();
+
+            const scrollView = this.$refs.profileScrollView;
+            if (scrollView) {
+                scrollView.scrollTo({
+                    behavior: 'smooth',
+                    left: 0,
+                    top: 0
+                });
+            }
         },
         currentCareer(){
             this.loadPhoto();
@@ -242,6 +255,17 @@ export default {
 </script>
 
 <style lang="stylus">
+    _mobileFirstColumnWidth = 298px
+    _mobileLastColumnsWidth = (760px / 2)
+    
+    _mobileNewWorkBaseWidth = 545/2
+    _mobileNewWorkGutterWidth = 75/2
+    _mobileNewWorkColumnWidth = ( ( _mobileNewWorkBaseWidth - _mobileNewWorkGutterWidth ) / 2 )
+    _mobileExpertiseListMarginHorizontal = 30px
+
+    _mobileNewWorkWidth(col)
+        return ( (_mobileNewWorkColumnWidth * col) + (_mobileNewWorkGutterWidth * (col - 1) ) )
+
     .Career_page-top-section.AppSection-odd
         border-bottom 0
         padding-bottom 0 !important
@@ -277,12 +301,14 @@ export default {
     .Career_page-menu-nav-inner-wrapper
         .size-class-not-width-compact &
             layout__innerBox()
-        
+    
+    menuLinkPaddingTop = 18
+
     .Career_page-menu-nav
         .size-class-not-width-compact &
             layout__centeredGridBox(28)
         .size-class-width-compact &
-            height (94 + 18px)
+            height (Career_page__$mobileMenuSliderHeight + menuLinkPaddingTop) px
             position relative
     
     .Career_page-menu-scroll-view
@@ -312,8 +338,8 @@ export default {
         
         .size-class-width-compact &
             width 92px !important
-            padding-top 18px
-            height 94px
+            padding-top menuLinkPaddingTop px
+            height Career_page__$mobileMenuSliderHeight px
             width calc(100% / 8) !important
 
         &:hover, &:focus
@@ -417,10 +443,16 @@ export default {
             margin-top 20px
             border-top 1px solid color__$neutral50
     
+    _mobileProfileHeight = 525
+
     .Career_page-profile
+        border-bottom 1px solid color__$neutral50
         .size-class-not-width-compact &
             clearfix()
-            border-bottom 1px solid color__$neutral50
+
+        .size-class-width-compact &
+            overflow hidden
+            height _mobileProfileHeight px
             
     .Career_page-profile-useful-width
         .size-class-not-width-compact &
@@ -440,8 +472,28 @@ export default {
         
         .size-class-width-compact &
             clearfix()
-            width 1200px
-            height 525px
+            height _mobileProfileHeight px
+            
+            fullWidth(col)
+                return (_mobileFirstColumnWidth + _mobileLastColumnsWidth + _mobileNewWorkWidth(col) + (_mobileExpertiseListMarginHorizontal*2) )
+
+            &.contains--1-expertises,
+            &.contains--2-expertises,
+            &.contains--3-expertises,
+            &.contains--4-expertises
+                width fullWidth(2)
+            
+            &.contains--5-expertises,
+            &.contains--6-expertises
+                width fullWidth(3)
+                
+            &.contains--7-expertises,
+            &.contains--8-expertises
+                width fullWidth(4)
+            
+            &.contains--9-expertises,
+            &.contains--10-expertises
+                width fullWidth(5)
         
     .Career_page-profile-mobile-first-column
         .size-class-width-compact &
@@ -464,7 +516,7 @@ export default {
         position relative
         
         .size-class-width-compact &
-            width 298px
+            width _mobileFirstColumnWidth
             padding-bottom 60px
             border-bottom 1px solid color__$neutral50
             
@@ -799,16 +851,16 @@ export default {
         .size-class-not-width-compact &
             layout__grid('.Career_page-profile-expertise', 16, 2, 2, 20px)
         .size-class-width-compact &
-            margin-left 30px
-            margin-right 30px
+            margin-left _mobileExpertiseListMarginHorizontal
+            margin-right _mobileExpertiseListMarginHorizontal
         
     .size-class-width-compact
-        baseWidth = 545/2
-        gutterWidth = 75/2
-        colWidth = ( ( baseWidth - gutterWidth ) / 2 )
+        baseWidth = _mobileNewWorkBaseWidth
+        gutterWidth = _mobileNewWorkGutterWidth
+        colWidth = _mobileNewWorkColumnWidth
         
         styleExpertiseList(col)
-            fullWidth = ( (colWidth * col) + (gutterWidth * (col - 1) ) )
+            fullWidth = _mobileNewWorkWidth(col)
             layout__grid('.Career_page-profile-expertise', fullWidth, col, gutterWidth, 35px)
             width fullWidth px
 
@@ -852,7 +904,7 @@ export default {
             border-top 1px solid color__$neutral50
         
         .size-class-width-compact &
-            width (760px / 2)
+            width _mobileLastColumnsWidth
             padding-top 25px
             float left
     
@@ -902,6 +954,8 @@ export default {
             margin-right (1 / 10 * 100)%
     
     .Career_page-profile-creations
+        border-top 1px solid color__$neutral50
+        
         .size-class-not-width-compact &
             position relative
             layout__gridBox(20)
@@ -946,5 +1000,19 @@ export default {
         
         &.is--active
             background-color color__$lightBlue
+    
+    .Career_page-profile-passions
+        background-color color__$sectionEven
+        padding-top 25px
+        padding-bottom 20px
+
+    .Career_page-profile-passions-useful-width
+        layout__outerBox()
+    
+    .Career_page-profile-passions-margin-constraint
+        layout__innerBox()
         
+    .Career_page-profile-passions-margin-constraint > .Career_page-profile-title,
+    .Career_page-profile-passions-list
+        layout__centeredGridBox(28)
 </style>
