@@ -316,13 +316,14 @@ export default {
         .size-class-not-width-compact &
             layout__innerBox()
     
+    menuLinkHeight = 94
     menuLinkPaddingTop = 18
 
     .Career_page-menu-nav
         .size-class-not-width-compact &
             layout__centeredGridBox(28)
         .size-class-width-compact &
-            height (Career_page__$mobileMenuSliderHeight + menuLinkPaddingTop) px
+            height (menuLinkHeight + menuLinkPaddingTop) px
             position relative
     
     .Career_page-menu-scroll-view
@@ -353,7 +354,7 @@ export default {
         .size-class-width-compact &
             width 92px !important
             padding-top menuLinkPaddingTop px
-            height Career_page__$mobileMenuSliderHeight px
+            height menuLinkHeight px
             width calc(100% / 8) !important
 
         &:hover, &:focus
