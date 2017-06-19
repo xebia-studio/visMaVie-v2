@@ -21,11 +21,11 @@
       "name": "Laurène <strong>Thénoz</strong>",
       "job": "Studio Delivery Manager",
       "svg_picto_expertise": "expertise-agile",
-      "expertise_name": "Agilité",
+      "expertise_name": "Agile",
       "expertise_description": "Rentrée chez Xebia en tant que <strong>Scrum Master</strong> en 2012",
       "new_works": [{
         "svg_picto": "expertise-agile",
-        "name": "Agilité",
+        "name": "Agile",
         "skills": [
           "Scrum Master",
           "Coach",
@@ -33,26 +33,25 @@
         ]
       }],
       "interventions": {
-        "Speaker Devoxx": "https://www.devoxx.fr/",
-        "Article : Atelier IOT": "https://blog.xebia.fr/",
-        "Porteur de projet : Be a better developer": true
+        "Speaker Devoxx": true,
+        "Speaker XebiCon'16": "http://www.xebia.tv/vod?videoId=V4l1RYSr7Hw"
       },
       "creations": [
-        "Speaker", "Formateur"
+        "Speaker", "Formateur", "Organisateur d'évènement", "Auteur article presse", "Auteur livre blanc", "Rédacteur billet blog"
       ]
     },
     "Front End": {
       "url": "frontend",
       "svg_picto": "expertise-frontend",
       "name": "Antoine <strong>Le Taxin</strong>",
-      "job": "Consultant - développeur front-end",
+      "job": "Consultant",
       "photo": "antoineletaxin.png",
       "svg_picto_expertise": "expertise-frontend",
       "expertise_name": "Front End",
-      "expertise_description": "Rentré en tant que <strong>Développeur Front</strong> en 2009",
+      "expertise_description": "Rentré en tant que <strong>Développeur Front</strong> en 2014",
       "new_works": [{
-        "svg_picto": "expertise-backend",
-        "name": "Back End",
+        "svg_picto": "expertise-frontend",
+        "name": "Front End",
         "skills": [
           "Lead Tech"
         ]
@@ -60,140 +59,115 @@
         "svg_picto": "expertise-backend",
         "name": "Back End",
         "skills": [
-          "Lead Tech"
+          "Développeur"
         ]
       }],
       "interventions": {
-        "Speaker Devoxx": "https://www.devoxx.fr/",
-        "Article : Atelier IOT": "https://blog.xebia.fr/"
+        "Speaker MixIT 2017": "https://vimeo.com/215625792",
+        "Modulariser son application Angular avec ES2015, Webpack et Babel": "http://blog.xebia.fr/2016/03/01/webpack-es6-es2015-babel-6-pour-modulariser-son-application-angularjs/",          
+        "Organisateur du Mois du JS": true
       },
       "creations": [
-        "Speaker", "Formateur", "Recruteur"
+        "Speaker", "Porte-parole", "Recruteur", "Contributeur open source", "Rédacteur billet blog", "Organisateur d'évènement"
       ]
     },
     "IoT": {
       "url": "iot",
       "svg_picto": "expertise-iot",
-      "name": "Pablo <strong>Lopez</strong>",
-      "job": "Directeur Technique",
+      "name": "Qian <strong>Jin</strong>",
+      "job": "Consultante",
       "photo": "pablo.png",
       "svg_picto_expertise": "expertise-iot",
       "expertise_name": "IoT",
-      "expertise_description": "Rentré en tant que <strong>Développeur Java JEE</strong> en 2009",
+      "expertise_description": "Rentré en tant que <strong>Développeuse Android et IoT</strong> en 2013",
       "new_works": [
         {
           "svg_picto": "expertise-agile",
-          "name": "Agilité",
+          "name": "Agile",
           "skills": [
-            "Coding Architect",
-            "Lead Tech"
+            "Scrum Master"
           ]
         }, {
-          "svg_picto": "expertise-backend",
-          "name": "Back End",
+          "svg_picto": "expertise-iot",
+          "name": "IoT",
           "skills": [
-            "Extrem Architect"
-          ]
-        }, {
-          "svg_picto": "expertise-frontend",
-          "name": "Front End",
-          "skills": [
-            "React", "IHM"
-          ]
-        },{
-          "svg_picto": "expertise-agile",
-          "name": "Agilité",
-          "skills": [
-            "Coding Architect",
-            "Lead Tech"
-          ]
-        }, {
-          "svg_picto": "expertise-backend",
-          "name": "Back End",
-          "skills": [
-            "Extrem Architect"
-          ]
-        }, {
-          "svg_picto": "expertise-frontend",
-          "name": "Front End",
-          "skills": [
-            "React", "IHM"
-          ]
-        }, {
-          "svg_picto": "expertise-agile",
-          "name": "Agilité",
-          "skills": [
-            "Coding Architect",
-            "Lead Tech"
-          ]
-        }, {
-          "svg_picto": "expertise-backend",
-          "name": "Back End",
-          "skills": [
-            "Extrem Architect"
-          ]
-        }, {
-          "svg_picto": "expertise-frontend",
-          "name": "Front End",
-          "skills": [
-            "React", "IHM"
+            "IoT Maker"
           ]
         }
       ],
       "interventions": {
-        "Speaker Devoxx": "https://www.devoxx.fr/",
-        "Article : Atelier IOT": "https://blog.xebia.fr/",
-        "Porteur de projet : Be a better developer": true
+        "Speaker Conférence AndroidMakers 2017": "https://speakerdeck.com/jinqian/heat-the-neurons-of-your-smartphone-with-deep-learning",
+        "Speaker Conférence XebiCon 2016": "http://www.xebia.tv/vod?videoId=axHaBOwv1SM"
       },
       "creations": [
-        "Speaker", "Recruteur", "Porte-parole"
+        "Speaker", "Recruteur", "Porte-parole", "Organisateur d'évènement", "Contributeur open source", "Auteur livre blanc",
       ]
     },
     "Mobile": {
       "url": "mobile",
       "svg_picto": "expertise-mobile",
-      "name": "Pablo <strong>Lopez</strong>",
-      "job": "Directeur Technique",
+      "name": "Simone <strong>Civetta</strong>",
+      "job": "Consultant Manager",
       "photo": "simone.png",
       "contact_button_label": "Contacter",
       "contact_button_link": "mailto@recrutement@xebia.fr",
-      "svg_picto_expertise": "expertise-agile",
-      "expertise_name": "Agilité",
-      "expertise_description": "Rentré en tant que <strong>Développeur Java JEE</strong> en 2009",
-      "new_works": [{
-        "svg_picto": "expertise-agile",
-        "name": "Back End",
-        "skills": [
-          "Coding Architect",
-          "Lead Tech"
-        ]
-      }],
+      "svg_picto_expertise": "expertise-mobile",
+      "expertise_name": "Mobile",
+      "expertise_description": "Rentré en tant que <strong>Développeur iOS</strong> en 2013",
+      "new_works": [
+        {
+          "svg_picto": "expertise-agile",
+          "name": "Agile",
+          "skills": [
+            "Scrum Master"
+          ]
+        }, {
+          "svg_picto": "expertise-mobile",
+          "name": "Mobile",
+          "skills": [
+            "Tech Lead",
+            "Expert"       
+          ]
+        }
+      ],
       "interventions": {
-        "Speaker Devoxx": "https://www.devoxx.fr/",
-        "Article : Atelier IOT": "https://blog.xebia.fr/",
-        "Porteur de projet : Be a better developer": true
+        "Speaker Devoxx 2017": "https://www.youtube.com/watch?v=0pEKO2TVj6I",
+        "Organisateur de la FrenchKit": "http://frenchkit.fr/"
       },
       "creations": [
-        "Speaker", "Recruteur", "Porte-parole"
+        "Speaker", "Porte-parole", "Recruteur", "Contributeur open source", "Rédacteur billet blog", "Organisateur d'évènement", "Auteur livre blanc"
       ]
     },
     "Cloud": {
       "url": "cloud",
       "svg_picto": "expertise-cloud",
-      "name": "Pablo <strong>Lopez</strong>",
-      "job": "Directeur Technique",
+      "name": "Alexis <strong>Kinsella</strong>",
+      "job": "Chief Technology Officer",
       "photo": "pablo.png",
-      "svg_picto_expertise": "expertise-agile",
-      "expertise_name": "Agilité",
-      "expertise_description": "Rentré en tant que <strong>Développeur Java JEE</strong> en 2009",
-      "new_works": [{
-        "svg_picto": "expertise-agile",
-        "name": "Back End",
-        "skills": [
-          "Coding Architect",
-          "Lead Tech"
-        ]
-      }],
+      "svg_picto_expertise": "expertise-cloud",
+      "expertise_name": "Cloud",
+      "expertise_description": "Rentré en tant que <strong>Tech Lead</strong> en 2010",
+      "new_works": [
+        {
+          "svg_picto": "expertise-cloud",
+          "name": "Cloud",
+          "skills": [
+            "Certifié Solution Architect AWS"
+          ]
+        }, {
+          "svg_picto": "expertise-mobile",
+          "name": "Mobile",
+          "skills": [
+            "Développeur iOS"
+          ]
+        }, {
+          "svg_picto": "expertise-agile",
+          "name": "Agile",
+          "skills": [
+            "Scrum Master"
+          ]
+        }
+      ],
       "interventions": {
         "Speaker Devoxx": "https://www.devoxx.fr/",
         "Article : Atelier IOT": "https://blog.xebia.fr/",
