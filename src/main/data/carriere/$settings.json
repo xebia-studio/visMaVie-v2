@@ -107,7 +107,7 @@
       "url": "mobile",
       "svg_picto": "expertise-mobile",
       "name": "Simone <strong>Civetta</strong>",
-      "job": "Consultant Manager",
+      "job": "Consultant Manageur",
       "photo": "simone.png",
       "contact_button_label": "Contacter",
       "contact_button_link": "mailto@recrutement@xebia.fr",
@@ -169,89 +169,101 @@
         }
       ],
       "interventions": {
-        "Speaker Devoxx": "https://www.devoxx.fr/",
-        "Article : Atelier IOT": "https://blog.xebia.fr/",
-        "Porteur de projet : Be a better developer": true
+        "Speaker Paris Container Day 2016": "http://www.xebia.tv/vod?videoId=JcQYM7qK8JA",
+        "Auteur TechTrends Back #7": "https://xebia.fr/backend"
       },
       "creations": [
-        "Speaker", "Recruteur", "Porte-parole"
+        "Speaker", "Recruteur", "Porte-parole", "Rédacteur billet blog", "Auteur livre blanc"
       ]
     },
     "Back End": {
       "url": "backend",
       "svg_picto": "expertise-backend",
       "name": "Pablo <strong>Lopez</strong>",
-      "job": "Directeur Technique",
+      "job": "Chief Technology Officer",
       "photo": "pablo.png",
-      "svg_picto_expertise": "expertise-agile",
-      "expertise_name": "Agilité",
+      "svg_picto_expertise": "expertise-backend",
+      "expertise_name": "Back End",
       "expertise_description": "Rentré en tant que <strong>Développeur Java JEE</strong> en 2009",
-      "new_works": [{
-        "svg_picto": "expertise-agile",
-        "name": "Back End",
-        "skills": [
-          "Coding Architect",
-          "Lead Tech"
-        ]
-      }],
+      "new_works": [
+        {
+          "svg_picto": "expertise-backend",
+          "name": "Back End",
+          "skills": [
+            "Coding Architect",
+            "Lead Tech"              
+          ]
+        }, {
+          "svg_picto": "expertise-data",
+          "name": "Data",
+          "skills": [
+            "Certifié Hadoop",
+            "Expert"              
+          ]
+        }, {
+          "svg_picto": "IoT",
+          "name": "IoT",
+          "skills": [
+            "Développeur"
+          ]
+        }
+      ],
       "interventions": {
-        "Speaker Devoxx": "https://www.devoxx.fr/",
-        "Article : Atelier IOT": "https://blog.xebia.fr/",
-        "Porteur de projet : Be a better developer": true
+        "Speaker Keynote XebiCon'16": "http://www.xebia.tv/vod?videoId=amSuCE9rcXo",
+        "Auteur billet de blog Atelier IoT": "http://blog.xebia.fr/2016/02/15/atelier-presentation-un-espace-de-creation-dig-numerique-avec-nos-petits-doigts-muscles-2/",
+        "Porteur de projet : Be a better developer": "http://beabetter.ninja"
       },
       "creations": [
-        "Speaker", "Recruteur", "Porte-parole"
+        "Speaker", "Porte-parole", "Recruteur", "Contributeur open source", "Rédacteur billet blog", "Organisateur d'évènement", "Auteur livre blanc"
       ]
     },
-    "Big Data": {
+    "Data": {
       "url": "data",
       "svg_picto": "expertise-bigdata",
-      "name": "Pablo <strong>Lopez</strong>",
-      "job": "Directeur Technique",
+      "name": "Antoine <strong>Michaud</strong>",
+      "job": "Consultant Manageur",
       "photo": "pablo.png",
-      "svg_picto_expertise": "expertise-agile",
-      "expertise_name": "Agilité",
-      "expertise_description": "Rentré en tant que <strong>Développeur Java JEE</strong> en 2009",
+      "svg_picto_expertise": "expertise-bigdata",
+      "expertise_name": "Data",
+      "expertise_description": "Rentré en tant que <strong>Développeur Data</strong> en 2012",
       "new_works": [{
-        "svg_picto": "expertise-agile",
-        "name": "Back End",
+        "svg_picto": "expertise-bigdata",
+        "name": "Data",
         "skills": [
-          "Coding Architect",
-          "Lead Tech"
+          "Expert"
         ]
       }],
       "interventions": {
-        "Speaker Devoxx": "https://www.devoxx.fr/",
-        "Article : Atelier IOT": "https://blog.xebia.fr/",
-        "Porteur de projet : Be a better developer": true
+        "Organisateur du Code Retreat Paris": "https://www.meetup.com/fr-FR/CodeRetreat-Paris/",
+        "Speaker Mois de la Data": "https://www.youtube.com/watch?v=pHGQ8cNqZY8",
+        "Auteur billet de blog nCraft 2016": "http://blog.xebia.fr/2016/05/24/retour-sur-ncrafts-2016/"
       },
       "creations": [
-        "Speaker", "Recruteur", "Porte-parole"
+        "Speaker", "Porte-parole", "Recruteur", "Contributeur open source", "Rédacteur billet blog", "Organisateur d'évènement", "Auteur livre blanc"
       ]
     },
     "DevOps": {
       "url": "devops",
       "svg_picto": "expertise-devops",
-      "name": "Pablo <strong>Lopez</strong>",
-      "job": "Directeur Technique",
+      "name": "Jean-Louis <strong>Rigau</strong>",
+      "job": "Porteur d'offre Conteneurs",
       "photo": "jeanlouisrigau.png",
-      "svg_picto_expertise": "expertise-agile",
-      "expertise_name": "Agilité",
-      "expertise_description": "Rentré en tant que <strong>Développeur Java JEE</strong> en 2009",
+      "svg_picto_expertise": "expertise-devops",
+      "expertise_name": "DevOps",
+      "expertise_description": "Rentré en tant que <strong>Développeur Java JEE</strong> en 2012",
       "new_works": [{
-        "svg_picto": "expertise-agile",
-        "name": "Back End",
+        "svg_picto": "expertise-devops",
+        "name": "DevOps",
         "skills": [
-          "Coding Architect",
           "Lead Tech"
         ]
       }],
       "interventions": {
-        "Speaker Devoxx": "https://www.devoxx.fr/",
-        "Porteur de projet : Be a better developer": true
+        "Organisateur du Paris Container Day": "http://paris-container-day.fr/",
+        "Auteur billet de blog DockerCon'16": "http://blog.xebia.fr/2016/06/27/xebia-etait-present-a-la-dockercon-16/"
       },
       "creations": [
-        "Speaker", "Recruteur", "Porte-parole", "Contributeur open source"
+        "Speaker", "Recruteur", "Porte-parole", "Rédacteur billet blog", "Organisateur d'évènement", "Auteur livre blanc"
       ]
     }
   }
