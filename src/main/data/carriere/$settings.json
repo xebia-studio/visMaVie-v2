@@ -209,14 +209,14 @@
             "Lead Tech"              
           ]
         }, {
-          "svg_picto": "expertise-data",
+          "svg_picto": "expertise-bigdata",
           "name": "Data",
           "skills": [
             "Certifié Hadoop",
             "Expert"              
           ]
         }, {
-          "svg_picto": "IoT",
+          "svg_picto": "expertise-iot",
           "name": "IoT",
           "skills": [
             "Développeur"
