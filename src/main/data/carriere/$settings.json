@@ -39,6 +39,9 @@
       },
       "creations": [
         "Speaker", "Formateur"
+      ],
+      "passions": [
+        "logo-arduino", "logo-spark", "logo-sigfox", "logo-react", "logo-puppet", "logo-lora", "logo-less"
       ]
     },
     "Front End": {

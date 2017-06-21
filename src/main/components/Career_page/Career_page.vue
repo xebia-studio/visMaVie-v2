@@ -63,6 +63,7 @@
                 .Career_page-profile-title Ses passions du moment
                 ul.Career_page-profile-passions-list
                     li.Career_page-profile-passion(v-for="passion in currentCareer.passions")
+                        .Career_page-profile-passion-picto(:is="getSvgComponentTechno(passion)")
 </template>
 
 <script>
@@ -81,9 +82,10 @@ import AppSection from 'components/AppSection';
 
 import headerImageCacheSetter from 'generated/tools/components/Career_page/blurryHeaderImageCacheSetter';
 
-import getSvgComponentCareer from 'generated/assets/pictoCareers/svgComponents/sync'
+import getSvgComponentCareer from 'generated/assets/pictoCareers/svgComponents/sync';
 
-import ArrowBottom from 'generated/assets/components/Career_page/ArrowBottom'
+import ArrowBottom from 'generated/assets/components/Career_page/ArrowBottom';
+import getSvgComponentTechno from 'generated/assets/components/Career_page/svgComponents/sync';
 
 import CallToActionButton from 'xebia-web-common/components/CallToActionButton'
 
@@ -181,6 +183,7 @@ export default {
         }
     },
     methods: {
+        getSvgComponentTechno,
         getSvgComponentCareer,
         clickOnCareerItem: function (e, careerPath) {
             e.preventDefault();
@@ -1019,7 +1022,8 @@ export default {
     .Career_page-profile-passions
         background-color color__$sectionEven
         padding-top 25px
-        padding-bottom 20px
+        padding-bottom 35px
+        border-bottom 1px solid color__$neutral50
 
     .Career_page-profile-passions-useful-width
         layout__outerBox()
@@ -1030,4 +1034,16 @@ export default {
     .Career_page-profile-passions-margin-constraint > .Career_page-profile-title,
     .Career_page-profile-passions-list
         layout__centeredGridBox(28)
+    
+    .Career_page-profile-title+.Career_page-profile-passions-list
+        margin-top 20px
+
+    .Career_page-profile-passions-list
+        .size-class-not-width-compact &
+            layout__grid('.Career_page-profile-passion', 28, 7, 1)
+        .size-class-width-compact &
+            layout__grid('.Career_page-profile-passion', 28, 3, 2, 20px)
+    
+    .Career_page-profile-passion-picto
+        xebiaUI__logoFilter()
 </style>
