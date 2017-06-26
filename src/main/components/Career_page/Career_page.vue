@@ -17,7 +17,7 @@
                             .Career_page-menu-link-label(v-html="label")
     .Career_page-profile(v-if="currentCareer")
         .Career_page-profile-useful-width(ref="profileScrollView")
-            .Career_page-profile-margin-constraint(:class="'contains--'+currentCareer.new_works.length+'-expertises'")
+            .Career_page-profile-margin-constraint(:class="'contains--'+currentCareer.new_works.length+'-expertises'", ref="profileScrollViewInnerView")
                 .Career_page-profile-mobile-first-column
                     .Career_page-profile-contact-card
                         .Career_page-profile-contact-card-inner-wrapper
@@ -57,6 +57,10 @@
                     .Career_page-profile-title Ses créations chez Xebia
                     ul.Career_page-profile-creations-list
                         li.Career_page-profile-creation(v-for="tag in creations", :class="{'is--active': tagActive[tag]}") {{tag}}
+        .Career_page-profile-shadow
+            .Career_page-profile-shadow-inner-wrapper(:class="{'position--start': scrollViewStart, 'position--end': scrollViewEnd}")
+                .Career_page-chart-handswipe
+                    HandSwipe.Career_page-chart-handswipe-picto
     .Career_page-profile-passions(v-if="currentCareer && currentCareer.passions && currentCareer.passions.length")
         .Career_page-profile-passions-useful-width
             .Career_page-profile-passions-margin-constraint
@@ -85,6 +89,7 @@ import headerImageCacheSetter from 'generated/tools/components/Career_page/blurr
 import getSvgComponentCareer from 'generated/assets/pictoCareers/svgComponents/sync';
 
 import ArrowBottom from 'generated/assets/components/Career_page/ArrowBottom';
+import HandSwipe from 'generated/assets/components/Career_page/HandSwipe';
 import getSvgComponentTechno from 'generated/assets/components/Career_page/svgComponents/sync';
 
 import CallToActionButton from 'xebia-web-common/components/CallToActionButton'
@@ -98,7 +103,8 @@ export default {
         AppPage,
         AppSection,
         ArrowBottom,
-        CallToActionButton
+        CallToActionButton,
+        HandSwipe
     },
     data: function () {
         return {
@@ -109,7 +115,10 @@ export default {
             carrieres: settings.carrieres,
             creations: settings.creations,
             isWidthCompact: false,
-            photoCache: null
+            photoCache: null,
+            scrollViewEnd: false,
+            scrollViewStart: false,
+            profileScrollViewInnerViewWidth: 0
         };
     },
     computed: {
@@ -236,7 +245,36 @@ export default {
             }
         },
         updateLayoutOnResize(){
+            this.isWidthCompact = this.getSizeClassHelper().isActive('width-compact');
+            const profileScrollViewInnerView = this.$refs.profileScrollViewInnerView;
+            if (profileScrollViewInnerView) {
+                this.profileScrollViewInnerViewWidth = domWidth(profileScrollViewInnerView);
+            }
+            
             this.menuScrollToCurrent("instant");
+        },
+        loop: function () {
+            if (!this.stopLoop) {
+                requestAnimationFrame(()=>{
+                    if (!this.isWidthCompact) {
+                        this.chartScrollEnd = true;
+                        this.chartScrollStart = true;
+                    }
+                    else{
+                        const imageWrapper = this.$refs.profileScrollView;
+
+                        if (imageWrapper && this.profileScrollViewInnerViewWidth) {
+                            const scrollPosition = imageWrapper.scrollLeft;
+                            const rightBorderScrollPosition = scrollPosition + imageWrapper.clientWidth;
+
+                            this.scrollViewEnd = rightBorderScrollPosition >= this.profileScrollViewInnerViewWidth;
+                            this.scrollViewStart = scrollPosition <= 0;
+                        }
+                    }
+
+                    this.loop();
+                });
+            }
         },
         loadPhoto(){
             this.photoCache = null;
@@ -259,12 +297,16 @@ export default {
 
         this.resizeListenerArguments = ['resize', resize];
         sizeClassHelper.on(...this.resizeListenerArguments);
+
+        this.stopLoop = false;
+        this.loop();
     },
     mounted(){
         this.updateLayoutOnResize();
         this.loadPhoto();
     },
     beforeDestroy(){
+        this.stopLoop = true;
         this.getSizeClassHelper().off(...this.resizeListenerArguments);
     }
 
@@ -471,6 +513,7 @@ export default {
         .size-class-width-compact &
             overflow hidden
             height _mobileProfileHeight px
+            position relative
             
     .Career_page-profile-useful-width
         .size-class-not-width-compact &
@@ -480,6 +523,11 @@ export default {
             overflow-y hidden
             overflow-x scroll
             -webkit-overflow-scrolling: touch;
+            layout__innerBox()
+            position relative
+            
+            border-left 1px solid color__$neutral50
+            border-right 1px solid color__$neutral50
 
     .Career_page-profile-margin-constraint
         position relative
@@ -512,6 +560,64 @@ export default {
             &.contains--9-expertises,
             &.contains--10-expertises
                 width fullWidth(5)
+    
+    .Career_page-profile-shadow
+        .size-class-width-compact &
+            position absolute
+            display block
+            width 100%
+            height 100%
+            top 0
+            left 0
+            pointer-events none
+            z-index 5
+    
+    .Career_page-profile-shadow-inner-wrapper
+        .size-class-width-compact &
+            layout__innerBox()
+            height 100%
+            position relative
+            overflow hidden
+            
+            &:before, &:after
+                display block
+                content ''
+                position absolute
+                top 5%
+                width 50px
+                height 90%
+                box-shadow 0px 0px 45px rgba(black, 0.42)
+                border-radius 50%
+                opacity 1
+            
+            &:before
+                left -50px
+            &:after
+                right -50px
+
+            &.position--start
+                &:before
+                    opacity 0
+            &.position--end
+                &:after
+                    opacity 0
+    
+    .Career_page-chart-handswipe
+        display block
+        width 40px
+        height 40px
+        position absolute
+        top 10px
+        left 10px
+        
+        .size-class-not-width-compact &,
+        .Career_page-shadow-inner-wrapper.position--end.position--start &
+            display none
+        
+    .Career_page-chart-handswipe-picto
+        display block
+        width 100%
+        height 100%
         
     .Career_page-profile-mobile-first-column
         .size-class-width-compact &
@@ -570,16 +676,6 @@ export default {
         
         .size-class-width-compact &
             height 150px
-            position relative
-            &:after
-                display block
-                content ''
-                position absolute
-                width 298px
-                height 1px
-                background-color color__$neutral50
-                top 100%
-                left -40px
     
     .Career_page-profile-contact-card-photo+.Career_page-profile-contact-name
         margin-top 25px
@@ -814,12 +910,12 @@ export default {
         
     .Career_page-profile-expertise-skill
         display block
-        white-space nowrap
-            
+        
         .size-class-not-width-compact &
             padding-left 105px
             transform translateY(-10px)
             display block
+            width 75%
         
         .size-class-width-compact &
             text-align center

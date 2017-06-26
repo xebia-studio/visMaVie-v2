@@ -29,7 +29,7 @@
     "vue": "^2.1.0",
     "vue-router": "^2.1.1",
     "webfontloader": "github:alexistessier/webfontloader#d7f1c5e",
-    "xebia-web-common": "github:xebia-france/xebia-web-common#e5e7047"
+    "xebia-web-common": "github:xebia-france/xebia-web-common#14fed81"
   },
   "devDependencies": {
     "@alexistessier/report": "^1.0.5",

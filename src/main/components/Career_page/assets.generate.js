@@ -14,7 +14,8 @@ const careers = require('data/carriere/$settings.json').carrieres;
 const profilePhotos = uniq(Object.keys(careers).map(key => careers[key]).map(career => imagePath(career.photo)));
 
 const svgComponents = {
-	ArrowBottom: 'assets/images/svg/arrow-bottom.svg'
+	ArrowBottom: 'assets/images/svg/arrow-bottom.svg',
+	HandSwipe: 'assets/images/svg/hand-swipe.svg'
 };
 
 uniq(Object.keys(careers)).map(key => careers[key]).forEach(career => {
