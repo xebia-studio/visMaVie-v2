@@ -480,6 +480,7 @@ export default {
             overflow-y hidden
             overflow-x scroll
             -webkit-overflow-scrolling: touch;
+            layout__innerBox()
 
     .Career_page-profile-margin-constraint
         position relative
@@ -491,6 +492,8 @@ export default {
         .size-class-width-compact &
             clearfix()
             height _mobileProfileHeight px
+            border-left 1px solid color__$neutral50
+            border-right 1px solid color__$neutral50
             
             fullWidth(col)
                 return (_mobileFirstColumnWidth + _mobileLastColumnsWidth + _mobileNewWorkWidth(col) + (_mobileExpertiseListMarginHorizontal*2) )
@@ -570,16 +573,6 @@ export default {
         
         .size-class-width-compact &
             height 150px
-            position relative
-            &:after
-                display block
-                content ''
-                position absolute
-                width 298px
-                height 1px
-                background-color color__$neutral50
-                top 100%
-                left -40px
     
     .Career_page-profile-contact-card-photo+.Career_page-profile-contact-name
         margin-top 25px
@@ -814,12 +807,12 @@ export default {
         
     .Career_page-profile-expertise-skill
         display block
-        white-space nowrap
-            
+        
         .size-class-not-width-compact &
             padding-left 105px
             transform translateY(-10px)
             display block
+            width 75%
         
         .size-class-width-compact &
             text-align center
