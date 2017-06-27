@@ -48,7 +48,7 @@
       "svg_picto": "expertise-frontend",
       "name": "Alban <strong>Dauleu</strong>",
       "job": "Consultant Manageur",
-      "photo": "antoineletaxin.png",
+      "photo": "alban-dauleu.jpg",
       "svg_picto_expertise": "expertise-frontend",
       "expertise_name": "Front End",
       "expertise_description": "Rentré en tant que <strong>Développeur Front End</strong> en 2015",
@@ -73,7 +73,7 @@
         "Porte-parole", "Recruteur", "Rédacteur billet blog", "Organisateur d'évènement", "Porteur de projet"
       ],
       "passions": [
-        "logo-arduino"
+        "logo-progressive-web-app"
       ]
     },
     "IoT": {
@@ -108,7 +108,7 @@
         "Speaker", "Recruteur", "Porte-parole", "Organisateur d'évènement", "Contributeur open source", "Auteur livre blanc", "Porteur de projet", "Rédacteur billet blog"
       ],
       "passions": [
-        "logo-arduino", "logo-sigfox", "logo-lora", "logo-android"
+        "logo-arduino", "logo-sigfox", "logo-lora", "logo-android","logo-deep-learning"
       ]
     },
     "Mobile": {
@@ -146,7 +146,7 @@
         "Speaker", "Porte-parole", "Recruteur", "Contributeur open source", "Rédacteur billet blog", "Organisateur d'évènement", "Auteur livre blanc", "Porteur de projet", "Auteur article presse", "Auteur article presse"
       ],
       "passions": [
-        "logo-arduino", "logo-spark", "logo-sigfox", "logo-react", "logo-puppet", "logo-lora", "logo-less"
+        "logo-arduino", "logo-sigfox", "logo-lora", "logo-swift"
       ]
     },
     "Cloud": {
@@ -237,7 +237,7 @@
         "Speaker", "Recruteur", "Rédacteur billet blog", "Organisateur d'évènement", "Auteur livre blanc", "Formateur", "Porteur de projet", "Auteur article presse"
       ],
       "passions": [
-        "logo-arduino", "logo-spark", "logo-sigfox", "logo-react", "logo-puppet", "logo-lora", "logo-less"
+        "logo-arduino", "logo-spark", "logo-sigfox", "logo-lora", "logo-server-less", "logo-assistants-vocaux"
       ]
     },
     "Data": {
@@ -265,7 +265,7 @@
         "Speaker", "Porte-parole", "Recruteur", "Contributeur open source", "Rédacteur billet blog", "Organisateur d'évènement", "Auteur livre blanc"
       ],
       "passions": [
-        "logo-spark"
+        "logo-hadoop", "logo-r", "logo-cassandra"
       ]
     },
     "DevOps": {
@@ -295,7 +295,7 @@
         "Speaker", "Recruteur", "Porte-parole", "Rédacteur billet blog", "Organisateur d'évènement", "Auteur livre blanc","Porteur de projet"
       ],
       "passions": [
-        "logo-arduino", "logo-react", "logo-puppet", "logo-lora", "logo-less"
+        "logo-puppet", "logo-docker", "logo-jenkins"
       ]
     }
   }
