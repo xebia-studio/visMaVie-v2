@@ -8,9 +8,11 @@
 	.st2{font-family:'Lato-Medium';}
 	.st3{font-size:24px;}
 	.st4{font-size:30px;}
-	.st5{letter-spacing:2;}
+	.st5{letter-spacing:1;}
 </style>
 <title>scala-logo</title>
 <rect x="15" y="11" class="st0" width="169" height="66"/>
-<text transform="matrix(1 0 0 1 69.2661 28.7119)"><tspan x="0" y="0" class="st1 st2 st3">DEEP</tspan><tspan x="-54.3" y="36" class="st1 st2 st4 st5">LEARNIN</tspan><tspan x="92.9" y="36" class="st1 st2 st4">G</tspan></text>
+<text transform="matrix(1 0 0 1 73.2661 30.7119)" class="st1 st2 st3">DEEP</text>
+<text transform="matrix(1 0 0 1 18.9661 66.7119)" class="st1 st2 st4 st5">LEARNIN</text>
+<text transform="matrix(1 0 0 1 158.1661 66.7119)" class="st1 st2 st4">G</text>
 </svg>

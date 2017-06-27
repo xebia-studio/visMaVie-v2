@@ -7,11 +7,10 @@
 	.st1{fill:#666666;}
 	.st2{font-family:'Lato-Medium';}
 	.st3{font-size:24px;}
-	.st4{letter-spacing:3;}
-	.st5{font-size:38px;}
-	.st6{letter-spacing:1;}
+	.st4{font-size:32px;}
 </style>
 <title>scala-logo</title>
-<rect x="15" y="7" class="st0" width="169" height="66"/>
-<text transform="matrix(1 0 0 1 15 24.7119)"><tspan x="0" y="0" class="st1 st2 st3 st4">ASSISTANT</tspan><tspan x="155.9" y="0" class="st1 st2 st3">S</tspan><tspan x="0" y="45.6" class="st1 st2 st5 st6">VOCAU</tspan><tspan x="144.1" y="45.6" class="st1 st2 st5">X</tspan></text>
+<rect x="17" y="7" class="st0" width="169" height="66"/>
+<text transform="matrix(1 0 0 1 37 30.6157)" class="st1 st2 st3">ASSITANTS</text>
+<text transform="matrix(1 0 0 1 30 69.0157)" class="st1 st2 st4">VOCAUX</text>
 </svg>
