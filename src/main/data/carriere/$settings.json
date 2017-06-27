@@ -40,18 +40,18 @@
         "Speaker", "Formateur", "Organisateur d'évènement", "Auteur article presse", "Auteur livre blanc", "Rédacteur billet blog"
       ],
       "passions": [
-        "logo-arduino", "logo-spark", "logo-sigfox", "logo-react", "logo-puppet", "logo-lora", "logo-less"
+        "logo-less","logo-safe"
       ]
     },
     "Front End": {
       "url": "frontend",
       "svg_picto": "expertise-frontend",
-      "name": "Antoine <strong>Le Taxin</strong>",
-      "job": "Consultant",
+      "name": "Alban <strong>Dauleu</strong>",
+      "job": "Consultant Manageur",
       "photo": "antoineletaxin.png",
       "svg_picto_expertise": "expertise-frontend",
       "expertise_name": "Front End",
-      "expertise_description": "Rentré en tant que <strong>Développeur Front</strong> en 2014",
+      "expertise_description": "Rentré en tant que <strong>Développeur Front End</strong> en 2015",
       "new_works": [{
         "svg_picto": "expertise-frontend",
         "name": "Front End",
@@ -66,15 +66,14 @@
         ]
       }],
       "interventions": {
-        "Speaker MixIT 2017": "https://vimeo.com/215625792",
-        "Modulariser son application Angular avec ES2015, Webpack et Babel": "http://blog.xebia.fr/2016/03/01/webpack-es6-es2015-babel-6-pour-modulariser-son-application-angularjs/",          
+        "Article de blog DOTJS 2016": "http://blog.xebia.fr/2017/01/02/dotjs-2016-notre-compte-rendu/",          
         "Organisateur du Mois du JS": true
       },
       "creations": [
-        "Speaker", "Porte-parole", "Recruteur", "Contributeur open source", "Rédacteur billet blog", "Organisateur d'évènement"
+        "Porte-parole", "Recruteur", "Rédacteur billet blog", "Organisateur d'évènement", "Porteur de projet"
       ],
       "passions": [
-        "logo-arduino", "logo-spark", "logo-sigfox", "logo-react", "logo-puppet", "logo-lora", "logo-less"
+        "logo-arduino"
       ]
     },
     "IoT": {
@@ -85,7 +84,7 @@
       "photo": "qian.png",
       "svg_picto_expertise": "expertise-iot",
       "expertise_name": "IoT",
-      "expertise_description": "Rentré en tant que <strong>Développeuse Android et IoT</strong> en 2013",
+      "expertise_description": "Rentrée en tant que <strong>Développeuse Android et IoT</strong> en 2014",
       "new_works": [
         {
           "svg_picto": "expertise-agile",
@@ -97,7 +96,7 @@
           "svg_picto": "expertise-iot",
           "name": "IoT",
           "skills": [
-            "IoT Maker"
+            "Développeuse"
           ]
         }
       ],
@@ -106,10 +105,10 @@
         "Speaker Conférence XebiCon 2016": "http://www.xebia.tv/vod?videoId=axHaBOwv1SM"
       },
       "creations": [
-        "Speaker", "Recruteur", "Porte-parole", "Organisateur d'évènement", "Contributeur open source", "Auteur livre blanc"
+        "Speaker", "Recruteur", "Porte-parole", "Organisateur d'évènement", "Contributeur open source", "Auteur livre blanc", "Porteur de projet", "Rédacteur billet blog"
       ],
       "passions": [
-        "logo-arduino", "logo-spark", "logo-sigfox", "logo-react", "logo-puppet", "logo-lora", "logo-less"
+        "logo-arduino", "logo-sigfox", "logo-lora", "logo-android"
       ]
     },
     "Mobile": {
@@ -144,7 +143,7 @@
         "Organisateur de la FrenchKit": "http://frenchkit.fr/"
       },
       "creations": [
-        "Speaker", "Porte-parole", "Recruteur", "Contributeur open source", "Rédacteur billet blog", "Organisateur d'évènement", "Auteur livre blanc"
+        "Speaker", "Porte-parole", "Recruteur", "Contributeur open source", "Rédacteur billet blog", "Organisateur d'évènement", "Auteur livre blanc", "Porteur de projet", "Auteur article presse", "Auteur article presse"
       ],
       "passions": [
         "logo-arduino", "logo-spark", "logo-sigfox", "logo-react", "logo-puppet", "logo-lora", "logo-less"
@@ -166,11 +165,24 @@
           "skills": [
             "Certifié Solution Architect AWS"
           ]
-        }, {
+        },{
+          "svg_picto": "expertise-data",
+          "name": "Data",
+          "skills": [
+            "Certifié Solution Architect AWS"
+          ]
+        },{
           "svg_picto": "expertise-mobile",
           "name": "Mobile",
           "skills": [
             "Développeur iOS"
+          ]
+        },{
+          "svg_picto": "expertise-back",
+          "name": "Back",
+          "skills": [
+            "Coding Architect",
+            "Tech Lead"  
           ]
         }, {
           "svg_picto": "expertise-agile",
@@ -185,10 +197,10 @@
         "Auteur TechTrends Back #7": "https://xebia.fr/backend"
       },
       "creations": [
-        "Speaker", "Recruteur", "Porte-parole", "Rédacteur billet blog", "Auteur livre blanc"
+        "Speaker", "Recruteur", "Porte-parole", "Rédacteur billet blog", "Auteur livre blanc", "Porteur de projet"
       ],
       "passions": [
-        "logo-arduino", "logo-spark", "logo-sigfox", "logo-react", "logo-puppet", "logo-lora", "logo-less"
+        "ogo-scala", "logo-spark", "logo-react", "logo-vuejs"
       ]
     },
     "Back End": {
@@ -199,7 +211,7 @@
       "photo": "pablo.png",
       "svg_picto_expertise": "expertise-backend",
       "expertise_name": "Back End",
-      "expertise_description": "Rentré en tant que <strong>Développeur Java JEE</strong> en 2009",
+      "expertise_description": "Rentré en tant que <strong>Développeur Java JEE</strong> en 2008",
       "new_works": [
         {
           "svg_picto": "expertise-backend",
@@ -209,17 +221,10 @@
             "Lead Tech"              
           ]
         }, {
-          "svg_picto": "expertise-bigdata",
-          "name": "Data",
-          "skills": [
-            "Certifié Hadoop",
-            "Expert"              
-          ]
-        }, {
           "svg_picto": "expertise-iot",
           "name": "IoT",
           "skills": [
-            "Développeur"
+            "Développeur"         
           ]
         }
       ],
@@ -229,7 +234,7 @@
         "Porteur de projet : Be a better developer": "http://beabetter.ninja"
       },
       "creations": [
-        "Speaker", "Porte-parole", "Recruteur", "Contributeur open source", "Rédacteur billet blog", "Organisateur d'évènement", "Auteur livre blanc"
+        "Speaker", "Recruteur", "Rédacteur billet blog", "Organisateur d'évènement", "Auteur livre blanc", "Formateur", "Porteur de projet", "Auteur article presse"
       ],
       "passions": [
         "logo-arduino", "logo-spark", "logo-sigfox", "logo-react", "logo-puppet", "logo-lora", "logo-less"
@@ -243,7 +248,7 @@
       "photo": "antoinemichaud.png",
       "svg_picto_expertise": "expertise-bigdata",
       "expertise_name": "Data",
-      "expertise_description": "Rentré en tant que <strong>Développeur Data</strong> en 2012",
+      "expertise_description": "Rentré en tant que <strong>Développeur</strong> en 2012",
       "new_works": [{
         "svg_picto": "expertise-bigdata",
         "name": "Data",
@@ -260,7 +265,7 @@
         "Speaker", "Porte-parole", "Recruteur", "Contributeur open source", "Rédacteur billet blog", "Organisateur d'évènement", "Auteur livre blanc"
       ],
       "passions": [
-        "logo-arduino", "logo-spark", "logo-sigfox", "logo-react", "logo-puppet", "logo-lora", "logo-less"
+        "logo-spark"
       ]
     },
     "DevOps": {
@@ -271,20 +276,23 @@
       "photo": "jeanlouisrigau.png",
       "svg_picto_expertise": "expertise-devops",
       "expertise_name": "DevOps",
-      "expertise_description": "Rentré en tant que <strong>Développeur Java JEE</strong> en 2012",
+      "expertise_description": "Rentré en tant que <strong>Développeur Java JEE</strong> en 2010",
       "new_works": [{
         "svg_picto": "expertise-devops",
         "name": "DevOps",
         "skills": [
-          "Lead Tech"
+          "Lead Tech",
+          "Coach DevOps",
+          "Expert Continuous Delivery"             
         ]
       }],
       "interventions": {
         "Organisateur du Paris Container Day": "http://paris-container-day.fr/",
-        "Auteur billet de blog DockerCon'16": "http://blog.xebia.fr/2016/06/27/xebia-etait-present-a-la-dockercon-16/"
+        "Auteur billet de blog DockerCon'16": "http://blog.xebia.fr/2016/06/27/xebia-etait-present-a-la-dockercon-16/",
+        "Formation Sensibilisation à DevOps": "http://training.xebia.fr/formation/devops-developpeurs/"       
       },
       "creations": [
-        "Speaker", "Recruteur", "Porte-parole", "Rédacteur billet blog", "Organisateur d'évènement", "Auteur livre blanc"
+        "Speaker", "Recruteur", "Porte-parole", "Rédacteur billet blog", "Organisateur d'évènement", "Auteur livre blanc","Porteur de projet"
       ],
       "passions": [
         "logo-arduino", "logo-react", "logo-puppet", "logo-lora", "logo-less"
