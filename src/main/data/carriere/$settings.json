@@ -200,7 +200,7 @@
         "Speaker", "Recruteur", "Porte-parole", "Rédacteur billet blog", "Auteur livre blanc", "Porteur de projet"
       ],
       "passions": [
-        "ogo-scala", "logo-spark", "logo-react", "logo-vuejs"
+        "logo-scala", "logo-spark", "logo-react", "logo-vuejs"
       ]
     },
     "Back End": {
