@@ -8,6 +8,7 @@ const {
 	ignoreGenerateSources,
 	sshIdentifier,
 	sshDirectory,
+	sshPasswordFile,
 	sshDirectorySiteRoot
 } = require('./deployment/script-options');
 
@@ -44,6 +45,8 @@ const sshTarget = `${sshDirectory}:${sshDirectorySiteRoot}`;
 
 report('notice', `-- start deployment on ${sshTarget} --`);
 
-shell.exec(`rsync -avhzr -e ssh ./dist/${env}/ ${sshIdentifier}@ssh.${sshTarget} --delete`);
+const passwordPrefix = sshPasswordFile ? `sshpass -f '${sshPasswordFile}' ` : '';
+
+shell.exec(`${passwordPrefix}rsync -avhzr -e ssh ./dist/${env}/ ${sshIdentifier}@ssh.${sshTarget} --delete`);
 
 report('success', `-- deployment script done on ${sshTarget} --`);
