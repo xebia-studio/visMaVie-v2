@@ -50,14 +50,13 @@ _appSectionBaselineColor = color__$text
 
 
 .AppSection-baseline
-  font__useTextRegular _appSectionBaselineMobileFontSize
+  font__useTextLight 18
   color _appSectionBaselineColor
   margin-bottom 15px
-  line-height (font__$sectionBaselineLineHeight)px
+  font__line-height 20
   .AppSection-special &
     color color__$sectionOdd
   .AppSection-title + &
     margin-top 10px
   .size-class-not-width-compact &
-    font__useTextRegular _appSectionBaselineDesktopFontSize
     margin-bottom 40px
