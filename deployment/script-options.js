@@ -1,4 +1,5 @@
 const assert = require('assert');
+const fs = require('fs');
 
 const shelljs = require('shelljs');
 
@@ -38,6 +39,12 @@ assert(typeof sshDirectorySiteRoot === 'string' && sshDirectorySiteRoot.length,
 	node deploy --ssh-directory-site-root="www"
 )`);
 
+const sshPasswordFile = argv['ssh-password-file'] || null;
+
+if (sshPasswordFile) {
+	assert(fs.existsSync(sshPasswordFile), `Password file at path ${sshPasswordFile} doesn't exist.`);
+}
+
 function isActive(option) {
 	const optionsList = argv._ || [];
 	return (argv[option] === true) || (optionsList.indexOf('--'+option) >= 0);
@@ -60,7 +67,10 @@ const shell = {
 		const sep = '--------------------';
 		report('notice', '\n'+sep+'\n'+cmd);
 		if(execute || force) {
-			shelljs.exec(cmd)
+			if(shelljs.exec(cmd).code !== 0){
+				throw new Error('Error happened during the deployment process.');
+				shelljs.exit(1);
+			}
 		}
 		report('notice', sep)
 	}
@@ -75,5 +85,6 @@ module.exports = {
 	ignoreBuild,
 	sshDirectory,
 	sshIdentifier,
-	sshDirectorySiteRoot
+	sshDirectorySiteRoot,
+	sshPasswordFile
 }
