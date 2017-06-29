@@ -253,7 +253,8 @@
         "svg_picto": "expertise-bigdata",
         "name": "Data",
         "skills": [
-          "Expert"
+          "Expert",
+          "Formateur Hadoop Admin"
         ]
       }],
       "interventions": {
@@ -262,10 +263,10 @@
         "Auteur billet de blog nCraft 2016": "http://blog.xebia.fr/2016/05/24/retour-sur-ncrafts-2016/"
       },
       "creations": [
-        "Speaker", "Porte-parole", "Recruteur", "Contributeur open source", "Rédacteur billet blog", "Organisateur d'évènement", "Auteur livre blanc"
+        "Speaker", "Recruteur", "Rédacteur billet blog", "Organisateur d'évènement", "Auteur livre blanc", "Formateur", "Auteur article presse", "Porteur de projet"
       ],
       "passions": [
-        "logo-hadoop", "logo-r", "logo-cassandra"
+        "logo-airflow"
       ]
     },
     "DevOps": {
