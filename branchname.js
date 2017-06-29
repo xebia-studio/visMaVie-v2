@@ -1,1 +1,1 @@
-module.exports = require('git-repo-info')().branch;
+module.exports = require('xebia-web-common/branchname')();
