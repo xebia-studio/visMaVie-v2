@@ -27,7 +27,6 @@
         "svg_picto": "expertise-agile",
         "name": "Agile",
         "skills": [
-          "Scrum Master",
           "Coach",
           "Studio Team Leader"
         ]
@@ -248,7 +247,7 @@
       "photo": "antoinemichaud.png",
       "svg_picto_expertise": "expertise-bigdata",
       "expertise_name": "Data",
-      "expertise_description": "Rentré en tant que <strong>Développeur</strong> en 2012",
+      "expertise_description": "Rentré en tant que <strong>Développeur Web</strong> en 2012",
       "new_works": [{
         "svg_picto": "expertise-bigdata",
         "name": "Data",
@@ -262,10 +261,10 @@
         "Auteur billet de blog nCraft 2016": "http://blog.xebia.fr/2016/05/24/retour-sur-ncrafts-2016/"
       },
       "creations": [
-        "Speaker", "Porte-parole", "Recruteur", "Contributeur open source", "Rédacteur billet blog", "Organisateur d'évènement", "Auteur livre blanc"
+        "Speaker", "Organisateur d'évènement", "Recruteur", "Formateur", "Contributeur open source", "Rédacteur billet blog", "Auteur livre blanc", "Porteur de projet", "Auteur article presse"
       ],
       "passions": [
-        "logo-hadoop", "logo-r", "logo-cassandra"
+        "logo-airflow"
       ]
     },
     "DevOps": {
