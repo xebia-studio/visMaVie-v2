@@ -135,7 +135,7 @@
           "svg_picto": "expertise-mobile",
           "name": "Mobile",
           "skills": [
-            "Tech Lead",
+            "Lead Tech",
             "Expert"       
           ]
         }
@@ -159,7 +159,7 @@
       "photo": "alexis.png",
       "svg_picto_expertise": "expertise-cloud",
       "expertise_name": "Cloud",
-      "expertise_description": "Rentré en tant que <strong>Tech Lead</strong> en 2010",
+      "expertise_description": "Rentré en tant que <strong>Lead Tech</strong> en 2010",
       "new_works": [
         {
           "svg_picto": "expertise-cloud",
@@ -184,7 +184,7 @@
           "name": "Back",
           "skills": [
             "Coding Architect",
-            "Tech Lead"  
+            "Lead Tech"  
           ]
         }, {
           "svg_picto": "expertise-agile",
@@ -246,7 +246,7 @@
       "url": "data",
       "svg_picto": "expertise-bigdata",
       "name": "Antoine <strong>Michaud</strong>",
-      "job": "Consultant Manageur",
+      "job": "Consultant",
       "photo": "antoinemichaud.png",
       "svg_picto_expertise": "expertise-bigdata",
       "expertise_name": "Data",
