@@ -16,6 +16,7 @@
   "carrieres": {
     "Agile": {
       "url": "agile",
+      "contact_button_label": "La contacter",
       "svg_picto": "expertise-agile",
       "photo": "laurenethenoz.png",
       "name": "Laurène <strong>Thénoz</strong>",
@@ -77,6 +78,7 @@
     },
     "IoT": {
       "url": "iot",
+      "contact_button_label": "La contacter",    
       "svg_picto": "expertise-iot",
       "name": "Qian <strong>Jin</strong>",
       "job": "Consultante",
