@@ -1,12 +1,12 @@
 _contentNumberOfColumns = 12
 
-_screenHeightIdeal = Home_page__$screenHeightIdeal
-_heightHeader = Home_page__$heightHeader
+_screenHeightIdeal = About_page__$screenHeightIdeal
+_heightHeader = About_page__$heightHeader
 _marginTopLogoXebia = 140
 _marginBottomLogoXebia = 75
 _heightLogo = 55
 
-.Home_page-header
+.About_page-header
   background-color color__$blue
   background-position center center
   background-repeat no-repeat
@@ -18,7 +18,7 @@ _heightLogo = 55
 /* Logo Xebia */
 /*------------*/
 
-.Home_page-header-logo-outer-wrapper
+.About_page-header-logo-outer-wrapper
   display block
   position absolute
   top ( _marginTopLogoXebia / _heightHeader * 100%)
@@ -27,14 +27,14 @@ _heightLogo = 55
   font-size 0
 
 .size-class-width-compact
-  .Home_page-header-logo-outer-wrapper
+  .About_page-header-logo-outer-wrapper
     display none
 
-.Home_page-header-logo-inner-wrapper
+.About_page-header-logo-inner-wrapper
   layout__centeredGridBlock(numberOfColumns: _contentNumberOfColumns)
   height 100%
 
-.Home_page-header-logo
+.About_page-header-logo
   max-width (5 / _contentNumberOfColumns * 100%)
   height 100%
 
@@ -44,63 +44,63 @@ _heightLogo = 55
 /*---------------*/
 /*---------------*/
 
-.Home_page-header-baseline-margin-top
+.About_page-header-baseline-margin-top
   height ( (_marginTopLogoXebia + _heightLogo + _marginBottomLogoXebia) / _heightHeader * 100% )
 
-.Home_page-header-baseline
+.About_page-header-baseline
   layout__centeredGridBlock(numberOfColumns: _contentNumberOfColumns)
   color white
 
 .size-class-not-width-compact
-  .Home_page-header-baseline br
+  .About_page-header-baseline br
     display none
-.Home_page-header-baseline-main
+.About_page-header-baseline-main
   font__useTitleRegular 50px
   font__line-height 50px
 
-.Home_page-header-baseline-secondary
+.About_page-header-baseline-secondary
   font__useTextExtraLight 18px
   font__line-height 20px
   display block
 
-.Home_page-header-baseline-main+.Home_page-header-baseline-secondary
+.About_page-header-baseline-main+.About_page-header-baseline-secondary
   margin-top 10px
 
 .size-class-width-compact
-  .Home_page-header-baseline-margin-top
+  .About_page-header-baseline-margin-top
     height 85px
 
-  .Home_page-header-baseline
+  .About_page-header-baseline
     max-width 100%
     width auto
     margin-left 40px
     margin-right 40px
 
-// .Home_page-header-baseline-main
+// .About_page-header-baseline-main
 // 	font__rem-size 40px
 // 	font__line-height 50px
 
-// .Home_page-header-baseline-secondary
+// .About_page-header-baseline-secondary
 // 	font__rem-size 28px
 // 	font__line-height 40px
 
-  .Home_page-header-baseline-main+.Home_page-header-baseline-secondary
+  .About_page-header-baseline-main+.About_page-header-baseline-secondary
     margin-top 20px
 
 /*---------------*/
 /*---------------*/
 
-.Home_page-scroll-down-button
+.About_page-scroll-down-button
   display none
 
 .size-class-width-compact
-  .Home_page-scroll-down-button-outer-wrapper
+  .About_page-scroll-down-button-outer-wrapper
     position absolute
     width 100%
     bottom 40px
     left 0
 
-  .Home_page-scroll-down-button
+  .About_page-scroll-down-button
     layout__centeredGridBlock(numberOfColumns: 4)
     button__resetStyle()
 

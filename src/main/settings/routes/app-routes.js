@@ -72,6 +72,14 @@ module.exports = concat(
         next();
       }
     },
+    {
+      name : 'a-propos',
+      path : 'a-propos',
+      component : resolve => require(['components/About_page'], resolve),
+      beforeEnter: (to, from, next) => {
+        next();
+      }
+    },
     ...genericPageRoutes,
     {
       name : 'nous-rejoindre',
