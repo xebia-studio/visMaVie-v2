@@ -6,8 +6,7 @@
   "private": true,
   "scripts": {
     "create-generated-sources": "node create-generated-sources",
-    "dev": "npm run create-generated-sources -- --ignore-generator=blurImages && node build/dev-server.js",
-    "first-build": "npm run create-generated-sources && npm run build",
+    "dev": "npm run create-generated-sources && node build/dev-server.js",
     "build": "node build/build.js",
     "test-bdd": "nightwatch",
     "test-bdd:units": "nightwatch --tags @units",

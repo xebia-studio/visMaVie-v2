@@ -10,6 +10,8 @@ const header = require(`data/home/header.json`);
 imagesToBlur.push(imagePath(header.image.default), imagePath(header.image.mobile));
 
 module.exports = {
-	images: imagesToBlur,
-	blurImages: imagesToBlur
+	blurImages: imagesToBlur,
+	svgComponents: {
+		LogoXebiaVisMaVie: imagePath('svg/logo-xebia-vis-ma-vie.svg')
+	}
 }
