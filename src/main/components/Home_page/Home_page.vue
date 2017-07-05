@@ -4,13 +4,14 @@
 			VisMaVie_navigation_bar_layer
 
 			ParallaxedLayer.Home_page-header-layer
-				ScreenFillerBlock.Home_page-header(:style="{backgroundImage: headerBackgroundUrl}")
+				ScreenFillerBlock.Home_page-header(:style="{backgroundImage: headerBackgroundUrl}", :percentageOfScreenFilled="configScreenFiller")
 					.Home_page-header-useful-width
 						.Home_page-header-margin-constraints
 							.Home_page-header-content
 								.Home_page-header-logo
 									.Home_page-header-logo-offset
 									LogoXebiaVisMaVie
+				CallToActionLayer(ref="callToActionLayer")
 
 			VisMaVie_footer_layer
 </template>
@@ -21,6 +22,7 @@
 
 	import ScreenFillerBlock from 'xebia-web-common/components/ScreenFillerBlock';
 	import LogoXebiaVisMaVie from 'generated/assets/components/Home_page/LogoXebiaVisMaVie';
+	import CallToActionLayer from 'components/CallToActionLayer';
 
     import VisMaVie_navigation_bar_layer from 'components/VisMaVie_navigation_bar_layer';
     import VisMaVie_footer_layer from 'components/VisMaVie_footer_layer'
@@ -41,7 +43,11 @@
 		computed: {
 			headerBackgroundUrl(){
 				return this.headerBackground ? `url('${this.headerBackground}')` : undefined;
-			}
+			},
+			configScreenFiller(){ const self = this; return (function(height){
+				const layer = self.$refs.callToActionLayer;
+				return (layer && layer.$el ? height - domHeight(layer.$el) : height)+'px';
+			})}
 		},
 		components: {
 			ParallaxedLayersGroup,
@@ -49,7 +55,8 @@
 			VisMaVie_navigation_bar_layer,
 			VisMaVie_footer_layer,
 			ScreenFillerBlock,
-			LogoXebiaVisMaVie
+			LogoXebiaVisMaVie,
+			CallToActionLayer
 		},
 		methods: {
 			updateLayoutOnChange(){
