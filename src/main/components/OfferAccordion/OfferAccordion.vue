@@ -43,7 +43,7 @@
 
 	import svgComponent from 'generated/assets/components/OfferAccordion/svgComponents/sync';
 
-	const scrollBehaviorUseSavedPositionObject = require('tools/scroll-behavior-use-saved-position-object');
+	import scrollBehaviorUseSavedPositionObject from 'tools/scroll-behavior-use-saved-position-object';
 
 	export default {
 		name : 'OfferAccordion',

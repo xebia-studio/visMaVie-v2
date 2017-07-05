@@ -6,8 +6,7 @@
   "private": true,
   "scripts": {
     "create-generated-sources": "node create-generated-sources",
-    "dev": "npm run create-generated-sources -- --ignore-generator=blurImages && node build/dev-server.js",
-    "first-build": "npm run create-generated-sources && npm run build",
+    "dev": "npm run create-generated-sources && node build/dev-server.js",
     "build": "node build/build.js",
     "test-bdd": "nightwatch",
     "test-bdd:units": "nightwatch --tags @units",
@@ -29,7 +28,7 @@
     "vue": "^2.1.0",
     "vue-router": "^2.1.1",
     "webfontloader": "github:alexistessier/webfontloader#d7f1c5e",
-    "xebia-web-common": "github:xebia-france/xebia-web-common#c5cbc99"
+    "xebia-web-common": "github:xebia-france/xebia-web-common#9369d2d"
   },
   "devDependencies": {
     "@alexistessier/report": "^1.0.5",

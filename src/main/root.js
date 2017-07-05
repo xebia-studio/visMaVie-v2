@@ -27,7 +27,7 @@ Vue.use(VueRouter);
 
 const routes = require('settings/routes');
 
-const scrollBehaviorUseSavedPositionObject = require('tools/scroll-behavior-use-saved-position-object');
+import scrollBehaviorUseSavedPositionObject from 'tools/scroll-behavior-use-saved-position-object';
 
 const router = new VueRouter({
 	mode: 'history',
