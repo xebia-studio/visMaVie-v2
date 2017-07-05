@@ -11,49 +11,49 @@
 			"name": "Laurène Thénoz",
 			"job": "Studio Delivery Manager",
 			"url": "carriere/agile",
-			"image": "portrait-home/laurene.png"
+			"image": "portrait-home-laurene.png"
 		},
 		{
 			"name": "Alexis Kinsella",
 			"job": "CTO chez Xebia",
 			"url": "carriere/cloud",
-			"image": "portrait-home/alexis.png"
+			"image": "portrait-home-alexis.png"
 		},
 		{
 			"name": "Pablo Lopez",
 			"job": "CTO chez Xebia",
 			"url": "carriere/backend",
-			"image": "portrait-home/pablo.png"
+			"image": "portrait-home-pablo.png"
 		},
 		{
 			"name": "Jean-Louis Rigau",
 			"job": "Porteur d'offre Conteneurs",
 			"url": "carriere/devops",
-			"image": "portrait-home/jean-louis.png"
+			"image": "portrait-home-jean-louis.png"
 		},
 		{
 			"name": "Simone Civetta",
 			"job": "Consultant Manageur",
 			"url": "carriere/mobile",
-			"image": "portrait-home/simone.png"
+			"image": "portrait-home-simone.png"
 		},
 		{
 			"name": "Antoine Michaud",
 			"job": "Consultant",
 			"url": "carriere/data",
-			"image": "portrait-home/julien.png"
+			"image": "portrait-home-julien.png"
 		},
 		{
 			"name": "Alban Dauleu",
 			"job": "Consultant Manageur",
 			"url": "carriere/frontend",
-			"image": "portrait-home/antoineletaxin.png"
+			"image": "portrait-home-antoineletaxin.png"
 		},
 		{
 			"name": "Qian Jin",
 			"job": "Consultante",
 			"url": "carriere/iot",
-			"image": "portrait-home/qian.png"
+			"image": "portrait-home-qian.png"
 		}
 	]
 }
