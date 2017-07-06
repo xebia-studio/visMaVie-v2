@@ -315,7 +315,7 @@ export default {
 
             nextTick(()=>{
                 if (this.$refs.profileScrollView) {
-                    this.getScrollController().scrollToNode(this.$refs.profileScrollView, -115);
+                    this.getScrollController().scrollToNode(this.$refs.profileScrollView, -140);
                 }
             })
         }

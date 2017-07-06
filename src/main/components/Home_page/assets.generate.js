@@ -7,7 +7,14 @@ function imagePath(imageName) {
 }
 
 const header = require(`data/home/header.json`);
-imagesToBlur.push(imagePath(header.image.default), imagePath(header.image.mobile));
+function blur(src) {
+	return {
+		src,
+		blur: 2
+	}
+}
+
+imagesToBlur.push(blur(imagePath(header.image.default)), blur(imagePath(header.image.mobile)));
 
 const images = header.consultants.map(consultant => imagePath(consultant.image));
 
