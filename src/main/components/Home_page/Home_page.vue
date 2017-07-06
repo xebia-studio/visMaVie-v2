@@ -3,7 +3,7 @@
 		ParallaxedLayersGroup
 			VisMaVie_navigation_bar_layer
 
-			ParallaxedLayer.Home_page-header-layer
+			ParallaxedLayer.Home_page-header-layer(:zIndex='5')
 				ScreenFillerBlock.Home_page-header(:style="{backgroundImage: headerBackgroundUrl}", :percentageOfScreenFilled="configScreenFiller")
 					.Home_page-header-useful-width
 						.Home_page-header-margin-constraints
@@ -11,22 +11,23 @@
 								.Home_page-header-logo
 									.Home_page-header-logo-offset
 									LogoXebiaVisMaVie
-								.Home_page-header-characters
-									.Home_page-header-characters-group(v-for="(charactersGroup, i) in charactersGroups")
-										a.Home_page-header-character(v-for="(character, index) in charactersGroup", :class="'index-'+(index+1+(i*4))", :href="character.url", @click="clickOnCharacter($event, character)")
-											.Home_page-header-character-image(:style="charactersStyles[index+(i*4)]")
-											.Home_page-header-character-widget
-												.Home_page-header-character-widget-outer-wrapper
-													.Home_page-header-character-widget-inner-wrapper
-														.Home_page-header-character-info
-															.Home_page-header-character-name {{character.name}}
-															.Home_page-header-character-job {{character.job}}
-														.Home_page-header-character-link
-															.Home_page-header-character-link-label {{header.consultants_evolution_label}}
-															.Home_page-header-character-link-label-picto
-																ArrowBottom
+								.Home_page-header-characters-scroll-view
+									.Home_page-header-characters
+										.Home_page-header-characters-group(v-for="(charactersGroup, i) in charactersGroups")
+											a.Home_page-header-character(v-for="(character, index) in charactersGroup", :class="'index-'+(index+1+(i*4))", :href="character.url", @click="clickOnCharacter($event, character)")
+												.Home_page-header-character-image(:style="charactersStyles[index+(i*4)]")
+												.Home_page-header-character-widget
+													.Home_page-header-character-widget-outer-wrapper
+														.Home_page-header-character-widget-inner-wrapper
+															.Home_page-header-character-info
+																.Home_page-header-character-name {{character.name}}
+																.Home_page-header-character-job {{character.job}}
+															.Home_page-header-character-link
+																.Home_page-header-character-link-label {{header.consultants_evolution_label}}
+																.Home_page-header-character-link-label-picto
+																	ArrowBottom
 
-				CallToActionLayer(ref="callToActionLayer")
+			CallToActionLayer(ref="callToActionLayer", :zIndex='6', style="position:relative")
 
 			VisMaVie_footer_layer
 </template>
@@ -78,10 +79,18 @@
 			headerBackgroundUrl(){
 				return this.headerBackground ? `url('${this.headerBackground}')` : undefined;
 			},
-			configScreenFiller(){ const self = this; return (function(height){
-				const layer = self.$refs.callToActionLayer;
-				return (layer && layer.$el ? height - domHeight(layer.$el) : height)+'px';
-			})}
+			configScreenFiller(){
+				const self = this;
+
+				function fillerHeight(height){
+					const layer = self.$refs.callToActionLayer;
+					return (layer && layer.$el ? height - domHeight(layer.$el) : height);
+				}
+
+				return function(height){
+					return Math.max(fillerHeight(height), 500)+'px';
+				}
+			}
 		},
 		components: {
 			ParallaxedLayersGroup,
@@ -125,7 +134,7 @@
 		created() {
 			this.loadFont({
 				text: ['regular'],
-				title: ['bold']
+				title: ['bold', 'regular']
 			});
 
 			const sizeClassHelper = this.getSizeClassHelper();
@@ -172,26 +181,52 @@
 			height (105 / 570 * 100%)
 			max-height 105px
 			max-width 260px
+			min-width 240px
+			min-height 100px
+			
+			filter__dropShadow 0px 0px 2px rgba(black, 0.62)
 	
 	.Home_page-header-logo-offset
 		width 100%
 		height (130 / 570 * 100%)
+		
+		.size-class-width-compact &
+			height 80px
 	
-	.Home_page-header-characters
+	.Home_page-header-characters-scroll-view
 		width 100%
 		height (250 / 570 * 100%)
 		position absolute
 		bottom 0
 		left 0
+		
+		.size-class-width-compact &
+			overflow-y hidden
+			overflow-x scroll
+			pointer-events auto
+			-webkit-overflow-scrolling: touch;
+
+	.Home_page-header-characters
+		height (250 / 570 * 100%)
 		clearfix()
-	
+		width 800%
+		position absolute
+		bottom 0
+		left 0
+		
+		.size-class-not-width-compact &
+			width 100%
+
 	.Home_page-header-characters-group
 		height 100%
-		width 50%
 		float left
 		clearfix()
 		position relative
 		z-index 5
+		width 50%
+		
+		.size-class-not-width-compact &
+			left -1.1vw
 		
 		&:hover
 			z-index 6
