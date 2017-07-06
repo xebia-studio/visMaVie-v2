@@ -88,7 +88,7 @@
 				}
 
 				return function(height){
-					return Math.max(fillerHeight(height), 500)+'px';
+					return Math.max(fillerHeight(height), 425)+'px';
 				}
 			}
 		},
@@ -169,12 +169,19 @@
 
 	.Home_page-header-content
 		height 100%
-		layout__centeredGridBox(28)
 		position relative
+
+		.size-class-not-width-compact &
+			layout__centeredGridBox(28)
 
 	.Home_page-header-logo
 		height 100%
-		layout__gridBox(8, gridNumberOfColumns: 28)
+		
+		.size-class-not-width-compact &
+			layout__gridBox(8, gridNumberOfColumns: 28)
+		
+		.size-class-width-compact &
+			layout__gridBox(8, gridNumberOfColumns: 30)
 
 		> .LogoXebiaVisMaVie
 			width 100%
@@ -195,27 +202,34 @@
 	
 	.Home_page-header-characters-scroll-view
 		width 100%
-		height (250 / 570 * 100%)
+		width calc(100% + 40px)
+		height 100%
 		position absolute
 		bottom 0
-		left 0
+		left -20px
 		
 		.size-class-width-compact &
 			overflow-y hidden
 			overflow-x scroll
 			pointer-events auto
 			-webkit-overflow-scrolling: touch;
+		
+		.size-class-not-width-compact &
+			height (250 / 570 * 100%)
+			width 100%
+			left 0
 
 	.Home_page-header-characters
-		height (250 / 570 * 100%)
 		clearfix()
 		width 800%
 		position absolute
 		bottom 0
 		left 0
+		height 55%
 		
 		.size-class-not-width-compact &
 			width 100%
+			height (250 / 570 * 100%)
 
 	.Home_page-header-characters-group
 		height 100%
@@ -241,7 +255,7 @@
 		&:hover
 			cursor pointer
 		
-		&.index-1
+		.size-class-not-width-compact &.index-1
 			left -1vw
 
 		&.index-1, &.index-8
@@ -256,27 +270,37 @@
 			&:hover, &:focus
 				z-index 3
 		
-		&.index-4
+		.size-class-not-width-compact &.index-4
 			left -0.5vw
 	
 	.Home_page-header-character-image
-		height 270px
-		width 160px
-		height 20vw
-		width 15vw
 		position absolute
 		bottom 0
 		background-size auto 100%
 		background-repeat no-repeat
-		background-position center bottom
+		background-position left bottom
 		z-index 5
+		height 100%
+		width 100%
+		
+		.size-class-not-width-compact &
+			height 270px
+			width 160px
+			height 20vw
+			width 15vw
+			background-position center bottom
 	
 	.Home_page-header-character-widget
-		width 25%
+		width 70%
 		position absolute
 		z-index 2
-		bottom 30px
-		left 75%
+		bottom 25%
+		left 20%
+
+		.size-class-not-width-compact &
+			left 75%
+			width 25%
+			bottom 30px
 
 	.Home_page-header-character-widget-outer-wrapper
 		width 250px
@@ -285,30 +309,30 @@
 		overflow hidden
 		pointer-events none
 		
-		.Home_page-header-character.index-5 &,
-		.Home_page-header-character.index-6 &,
-		.Home_page-header-character.index-7 &,
-		.Home_page-header-character.index-8 &
+		.size-class-not-width-compact .Home_page-header-character.index-5 &,
+		.size-class-not-width-compact .Home_page-header-character.index-6 &,
+		.size-class-not-width-compact .Home_page-header-character.index-7 &,
+		.size-class-not-width-compact .Home_page-header-character.index-8 &
 			left -250px
 			left calc(-250px - 4vw)
 	
 	.Home_page-header-character-widget-inner-wrapper
 		transition transform 220ms ease__outQuart()
 		
-		.Home_page-header-character.index-1 &,
-		.Home_page-header-character.index-2 &,
-		.Home_page-header-character.index-3 &,
-		.Home_page-header-character.index-4 &
+		.size-class-not-width-compact .Home_page-header-character.index-1 &,
+		.size-class-not-width-compact .Home_page-header-character.index-2 &,
+		.size-class-not-width-compact .Home_page-header-character.index-3 &,
+		.size-class-not-width-compact .Home_page-header-character.index-4 &
 			transform translateX(-101%)
 		
-		.Home_page-header-character.index-5 &,
-		.Home_page-header-character.index-6 &,
-		.Home_page-header-character.index-7 &,
-		.Home_page-header-character.index-8 &
+		.size-class-not-width-compact .Home_page-header-character.index-5 &,
+		.size-class-not-width-compact .Home_page-header-character.index-6 &,
+		.size-class-not-width-compact .Home_page-header-character.index-7 &,
+		.size-class-not-width-compact .Home_page-header-character.index-8 &
 			transform translateX(101%)
 		
-		.Home_page-header-character:hover &,
-		.Home_page-header-character:focus &
+		.size-class-not-width-compact .Home_page-header-character:hover &,
+		.size-class-not-width-compact .Home_page-header-character:focus &
 			transform translateX(0)
 	
 	.Home_page-header-character-info
