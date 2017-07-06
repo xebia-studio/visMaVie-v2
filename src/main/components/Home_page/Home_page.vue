@@ -3,7 +3,7 @@
 		ParallaxedLayersGroup
 			VisMaVie_navigation_bar_layer
 
-			ParallaxedLayer.Home_page-header-layer(:zIndex='5')
+			ParallaxedLayer.Home_page-header-layer(:zIndex="5")
 				ScreenFillerBlock.Home_page-header(:style="{backgroundImage: headerBackgroundUrl}", :percentageOfScreenFilled="configScreenFiller")
 					.Home_page-header-useful-width
 						.Home_page-header-margin-constraints
@@ -29,7 +29,7 @@
 																.Home_page-header-character-link-label-picto
 																	ArrowBottom
 
-			CallToActionLayer(ref="callToActionLayer", :zIndex='6', style="position:relative")
+			CallToActionLayer(ref="callToActionLayer", :zIndex="6", style="position:relative")
 
 			VisMaVie_footer_layer
 </template>
