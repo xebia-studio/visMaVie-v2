@@ -1,6 +1,6 @@
 {
   "contact_button_label": "Le contacter",
-  "contact_button_link": "mailto@recrutement@xebia.fr",
+  "contact_button_link": "mailto:recrutement@xebia.fr",
   "creations": [
     "Speaker",
     "Formateur",
@@ -119,8 +119,6 @@
       "name": "Simone <strong>Civetta</strong>",
       "job": "Consultant Manageur",
       "photo": "simone.png",
-      "contact_button_label": "Le Contacter",
-      "contact_button_link": "mailto@recrutement@xebia.fr",
       "svg_picto_expertise": "expertise-mobile",
       "expertise_name": "Mobile",
       "expertise_description": "Rentré en tant que <strong>Développeur iOS</strong> en 2013",
