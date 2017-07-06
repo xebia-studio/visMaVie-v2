@@ -3,7 +3,7 @@
 		ParallaxedLayersGroup
 			VisMaVie_navigation_bar_layer
 
-			ParallaxedLayer.Home_page-header-layer
+			ParallaxedLayer.Home_page-header-layer(:zIndex='5')
 				ScreenFillerBlock.Home_page-header(:style="{backgroundImage: headerBackgroundUrl}", :percentageOfScreenFilled="configScreenFiller")
 					.Home_page-header-useful-width
 						.Home_page-header-margin-constraints
@@ -11,28 +11,34 @@
 								.Home_page-header-logo
 									.Home_page-header-logo-offset
 									LogoXebiaVisMaVie
-								.Home_page-header-characters
-									.Home_page-header-characters-group(v-for="(charactersGroup, i) in charactersGroups")
-										a.Home_page-header-character(v-for="(character, index) in charactersGroup", :class="'index-'+(index+1+(i*4))", :href="character.url", @click="clickOnCharacter($event, character)")
-											.Home_page-header-character-image(:style="charactersStyles[index+(i*4)]")
-											.Home_page-header-character-widget
-												.Home_page-header-character-widget-outer-wrapper
-													.Home_page-header-character-widget-inner-wrapper
-														.Home_page-header-character-info
-															.Home_page-header-character-name {{character.name}}
-															.Home_page-header-character-job {{character.job}}
-														.Home_page-header-character-link
-															.Home_page-header-character-link-label {{header.consultants_evolution_label}}
-															.Home_page-header-character-link-label-picto
-																ArrowBottom
+								.Home_page-header-characters-scroll-view-pagination
+									button.Home_page-header-characters-scroll-view-pagination-link(v-for="(c, i) in characters", @click="buttonClick($event, 'paginationLink'+i, scrollToSlideClick, i)", :ref="'paginationLink'+i", rel="button", :class="i === currentSlide ? 'is--active' : ''")
+								.Home_page-header-characters-scroll-view(:style="{bottom:scrollViewBottomStyle}", ref="characterScrollView")
+									.Home_page-header-characters
+										.Home_page-header-characters-group(v-for="(charactersGroup, i) in charactersGroups")
+											a.Home_page-header-character(v-for="(character, index) in charactersGroup", :class="'index-'+(index+1+(i*4))", :href="character.url", @click="clickOnCharacter($event, character)")
+												.Home_page-header-character-image(:style="charactersStyles[index+(i*4)]")
+												.Home_page-header-character-widget
+													.Home_page-header-character-widget-outer-wrapper
+														.Home_page-header-character-widget-inner-wrapper
+															.Home_page-header-character-info
+																.Home_page-header-character-name {{character.name}}
+																.Home_page-header-character-job {{character.job}}
+															.Home_page-header-character-link
+																.Home_page-header-character-link-label {{header.consultants_evolution_label}}
+																.Home_page-header-character-link-label-picto
+																	ArrowBottom
 
-				CallToActionLayer(ref="callToActionLayer")
+			CallToActionLayer(ref="callToActionLayer", :zIndex='6', style="position:relative")
 
 			VisMaVie_footer_layer
 </template>
 
 <script>
-	import {domHeight} from '@alexistessier/dom';
+	import getScrollBarWidth from 'tools/get-scroll-bar-width'
+	const scrollBarWidth = getScrollBarWidth();
+
+	import {domHeight, domWidth} from '@alexistessier/dom';
 
 	import scrollBehaviorScrollToCareerObject from 'tools/scroll-behavior-scroll-to-career-object';
 
@@ -52,15 +58,26 @@
 	import {mixin as sizeClassHelper} from 'tools/size-class-helper';
 	import {mixin as fontLoader} from 'tools/font-loader';
 
+	import {mixin as uiNavigationButton} from 'xebia-web-common/tools/ui-navigation-button';
+
 	export default {
 		name: 'Home_page',
-		mixins: [sizeClassHelper, fontLoader],
+		mixins: [sizeClassHelper, fontLoader, uiNavigationButton],
 		data(){
 			return {
 				header,
 				characters: header.consultants,
 				headerBackground: undefined,
-				charactersBackgrounds: []
+				charactersBackgrounds: [],
+				scrollViewBottomStyle: `-${scrollBarWidth}px`,
+				currentSlide: 0,
+				slideWidth: 0,
+				needAdjust: false
+			}
+		},
+		watch: {
+			slideWidth(){
+				this.needAdjust = true;
 			}
 		},
 		computed: {
@@ -78,10 +95,18 @@
 			headerBackgroundUrl(){
 				return this.headerBackground ? `url('${this.headerBackground}')` : undefined;
 			},
-			configScreenFiller(){ const self = this; return (function(height){
-				const layer = self.$refs.callToActionLayer;
-				return (layer && layer.$el ? height - domHeight(layer.$el) : height)+'px';
-			})}
+			configScreenFiller(){
+				const self = this;
+
+				function fillerHeight(height){
+					const layer = self.$refs.callToActionLayer;
+					return (layer && layer.$el ? height - domHeight(layer.$el) : height);
+				}
+
+				return function(height){
+					return Math.max(fillerHeight(height), 425)+'px';
+				}
+			}
 		},
 		components: {
 			ParallaxedLayersGroup,
@@ -120,12 +145,33 @@
 						this.charactersBackgrounds = this.charactersBackgrounds.map(s => s);
 					});
 				});
+			},
+			updateLayoutOnResize(){
+				const scrollView = this.$refs.characterScrollView;
+
+				this.slideWidth = scrollView ? domWidth(scrollView) : 0;
+			},
+			scrollToSlide(slide){
+				const scrollView = this.$refs.characterScrollView;
+
+				if (scrollView) {
+					const slideWidth = domWidth(scrollView);
+
+					scrollView.scrollTo({
+	                    behavior: 'smooth',
+	                    left: slide*slideWidth,
+	                    top: 0
+	                });
+				}
+			},
+			scrollToSlideClick(event, ref, s, slide){
+				this.scrollToSlide(slide);
 			}
 		},
 		created() {
 			this.loadFont({
 				text: ['regular'],
-				title: ['bold']
+				title: ['bold', 'regular']
 			});
 
 			const sizeClassHelper = this.getSizeClassHelper();
@@ -137,9 +183,69 @@
 			this.deviceChangeListenerArguments = ['change', change];
 
 			sizeClassHelper.on(...this.deviceChangeListenerArguments);
+
+			const resize = () => {
+				this.updateLayoutOnResize();
+			}
+
+			this.resizeListenerArguments = ['resize', resize];
+
+			sizeClassHelper.on(...this.resizeListenerArguments);
+
+			this.stopLoop = false;
+			const self = this;
+
+			let timeSinceNoPositionChange = 0;
+			let previousPosition;
+			let previousTime = Date.now();
+			let adjusted = false;
+
+			(function loop(){
+				const currentTime = Date.now();
+				const deltaTime = currentTime - previousTime;
+				previousTime = currentTime;
+
+				requestAnimationFrame(()=>{
+					if (sizeClassHelper.isActive('width-compact') || Modernizr.touchevents) {
+						const scrollView = self.$refs.characterScrollView;
+						if (scrollView) {
+							const slideWidth = self.slideWidth;
+							const fullWidth = slideWidth*8;
+							const position = scrollView.scrollLeft;
+						
+							const currentSlide = (slideWidth ? parseInt((position+slideWidth/2)/slideWidth) : 0);
+
+							self.currentSlide = currentSlide;
+
+							if (position === previousPosition) {
+								timeSinceNoPositionChange += deltaTime;
+							}
+							else{
+								timeSinceNoPositionChange = 0;
+								adjusted = false;
+							}
+
+							if ((timeSinceNoPositionChange >= 120 && !adjusted) || self.needAdjust) {
+								adjusted = true;
+								self.needAdjust = false;
+								self.scrollToSlide(self.currentSlide);
+							}
+
+							previousPosition = position;
+						}
+					}
+					
+
+					if (!self.stopLoop) {
+						loop();
+					}
+				})
+			})();
 		},
 		beforeDestroy(){
+			this.stopLoop = true;
 			this.getSizeClassHelper().off(...this.deviceChangeListenerArguments);
+			this.getSizeClassHelper().off(...this.resizeListenerArguments);
 		}
 	}
 </script>
@@ -160,38 +266,81 @@
 
 	.Home_page-header-content
 		height 100%
-		layout__centeredGridBox(28)
 		position relative
+
+		.size-class-not-width-compact.no-touchevents &
+			layout__centeredGridBox(28)
 
 	.Home_page-header-logo
 		height 100%
-		layout__gridBox(8, gridNumberOfColumns: 28)
+		
+		.size-class-not-width-compact.no-touchevents &
+			layout__gridBox(8, gridNumberOfColumns: 28)
+		
+		.size-class-width-compact &,
+		.touchevents &
+			layout__gridBox(8, gridNumberOfColumns: 30)
 
 		> .LogoXebiaVisMaVie
 			width 100%
 			height (105 / 570 * 100%)
 			max-height 105px
 			max-width 260px
+			min-width 240px
+			min-height 100px
+			
+			filter__dropShadow 0px 0px 2px rgba(black, 0.62)
 	
 	.Home_page-header-logo-offset
 		width 100%
 		height (130 / 570 * 100%)
+		
+		.size-class-width-compact &,
+		.touchevents &
+			height 80px
 	
-	.Home_page-header-characters
+	.Home_page-header-characters-scroll-view
 		width 100%
-		height (250 / 570 * 100%)
+		width calc(100% + 40px)
+		height 100%
+		position absolute
+		bottom 0
+		left -20px
+		
+		.size-class-width-compact &,
+		.touchevents &
+			overflow-y hidden
+			overflow-x scroll
+			pointer-events auto
+			-webkit-overflow-scrolling: touch;
+		
+		.size-class-not-width-compact.no-touchevents &
+			height (250 / 570 * 100%)
+			width 100%
+			left 0
+
+	.Home_page-header-characters
+		clearfix()
+		width 800%
 		position absolute
 		bottom 0
 		left 0
-		clearfix()
-	
+		height 55%
+		
+		.size-class-not-width-compact.no-touchevents &
+			width 100%
+			height (250 / 570 * 100%)
+
 	.Home_page-header-characters-group
 		height 100%
-		width 50%
 		float left
 		clearfix()
 		position relative
 		z-index 5
+		width 50%
+		
+		.size-class-not-width-compact.no-touchevents &
+			left -1.1vw
 		
 		&:hover
 			z-index 6
@@ -206,7 +355,7 @@
 		&:hover
 			cursor pointer
 		
-		&.index-1
+		.size-class-not-width-compact.no-touchevents &.index-1
 			left -1vw
 
 		&.index-1, &.index-8
@@ -221,82 +370,100 @@
 			&:hover, &:focus
 				z-index 3
 		
-		&.index-4
+		.size-class-not-width-compact.no-touchevents &.index-4
 			left -0.5vw
 	
 	.Home_page-header-character-image
-		height 270px
-		width 160px
-		height 20vw
-		width 15vw
 		position absolute
 		bottom 0
-		background-size auto 100%
+		background-size 160px auto
 		background-repeat no-repeat
-		background-position center bottom
+		background-position 10px bottom
 		z-index 5
+		height 120%
+		width 100%
+		
+		.size-class-not-width-compact.no-touchevents &
+			height 270px
+			width 160px
+			height 20vw
+			max-height 300px
+			width 15vw
+			background-size auto 100%
+			background-position center bottom
 	
 	.Home_page-header-character-widget
-		width 25%
+		width 67%
 		position absolute
 		z-index 2
-		bottom 30px
-		left 75%
+		bottom 40px
+		left 90px
+
+		.size-class-not-width-compact.no-touchevents &
+			left 75%
+			width 25%
+			bottom 30px
 
 	.Home_page-header-character-widget-outer-wrapper
-		width 250px
-		width calc(250px + 4vw)
 		position relative
 		overflow hidden
 		pointer-events none
+		width 100%
 		
-		.Home_page-header-character.index-5 &,
-		.Home_page-header-character.index-6 &,
-		.Home_page-header-character.index-7 &,
-		.Home_page-header-character.index-8 &
-			left -250px
-			left calc(-250px - 4vw)
+		.size-class-not-width-compact.no-touchevents &
+			width 250px
+			width calc(250px + 4vw)
+		
+		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-5 &,
+		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-6 &,
+		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-7 &,
+		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-8 &
+			left -300px
 	
 	.Home_page-header-character-widget-inner-wrapper
 		transition transform 220ms ease__outQuart()
 		
-		.Home_page-header-character.index-1 &,
-		.Home_page-header-character.index-2 &,
-		.Home_page-header-character.index-3 &,
-		.Home_page-header-character.index-4 &
+		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-1 &,
+		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-2 &,
+		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-3 &,
+		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-4 &
 			transform translateX(-101%)
 		
-		.Home_page-header-character.index-5 &,
-		.Home_page-header-character.index-6 &,
-		.Home_page-header-character.index-7 &,
-		.Home_page-header-character.index-8 &
+		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-5 &,
+		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-6 &,
+		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-7 &,
+		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-8 &
 			transform translateX(101%)
 		
-		.Home_page-header-character:hover &,
-		.Home_page-header-character:focus &
+		.size-class-not-width-compact.no-touchevents .Home_page-header-character:hover &,
+		.size-class-not-width-compact.no-touchevents .Home_page-header-character:focus &
 			transform translateX(0)
 	
 	.Home_page-header-character-info
 		background-color color__$blue
+		padding-right 15px
 	
 	_characterWidgetMarginMacro()
 		pxValue = 80px
 		vwValue = 6.5vw
 		
-		.Home_page-header-character.index-1 &,
-		.Home_page-header-character.index-2 &,
-		.Home_page-header-character.index-3 &,
-		.Home_page-header-character.index-4 &
+		margin-left 90px
+		
+		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-1 &,
+		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-2 &,
+		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-3 &,
+		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-4 &
 			margin-left pxValue
 			margin-left vwValue
 			text-align left
 			
-		.Home_page-header-character.index-5 &,
-		.Home_page-header-character.index-6 &,
-		.Home_page-header-character.index-7 &,
-		.Home_page-header-character.index-8 &
+		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-5 &,
+		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-6 &,
+		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-7 &,
+		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-8 &
 			margin-right pxValue * 1.3
 			margin-right vwValue * 1.3
+			margin-left 0
 			text-align right
 
 	.Home_page-header-character-name,
@@ -314,10 +481,10 @@
 		pointer-events auto
 		font__line-height 15
 		
-		.Home_page-header-character.index-5 &,
-		.Home_page-header-character.index-6 &,
-		.Home_page-header-character.index-7 &,
-		.Home_page-header-character.index-8 &
+		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-5 &,
+		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-6 &,
+		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-7 &,
+		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-8 &
 			clearfix()
 	
 	.Home_page-header-character-link-label
@@ -325,10 +492,10 @@
 		display block
 		width 120px
 		
-		.Home_page-header-character.index-5 &,
-		.Home_page-header-character.index-6 &,
-		.Home_page-header-character.index-7 &,
-		.Home_page-header-character.index-8 &
+		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-5 &,
+		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-6 &,
+		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-7 &,
+		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-8 &
 			float right
 	
 	.Home_page-header-character-info,
@@ -337,16 +504,16 @@
 		padding-top 8px
 		padding-bottom 8px
 		
-		.Home_page-header-character.index-1 &,
-		.Home_page-header-character.index-2 &,
-		.Home_page-header-character.index-3 &,
-		.Home_page-header-character.index-4 &
+		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-1 &,
+		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-2 &,
+		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-3 &,
+		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-4 &
 			padding-right 12px
 		
-		.Home_page-header-character.index-5 &,
-		.Home_page-header-character.index-6 &,
-		.Home_page-header-character.index-7 &,
-		.Home_page-header-character.index-8 &
+		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-5 &,
+		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-6 &,
+		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-7 &,
+		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-8 &
 			padding-left 12px
 	
 	.Home_page-header-character-name
@@ -368,18 +535,49 @@
 		height 15px
 		position absolute
 		top 15px
+		transform rotate(-90deg)
+		right 6px
 		
-		.Home_page-header-character.index-1 &,
-		.Home_page-header-character.index-2 &,
-		.Home_page-header-character.index-3 &,
-		.Home_page-header-character.index-4 &
+		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-1 &,
+		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-2 &,
+		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-3 &,
+		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-4 &
 			transform rotate(-90deg)
 			right 15px
 		
-		.Home_page-header-character.index-5 &,
-		.Home_page-header-character.index-6 &,
-		.Home_page-header-character.index-7 &,
-		.Home_page-header-character.index-8 &
+		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-5 &,
+		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-6 &,
+		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-7 &,
+		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-8 &
 			transform rotate(90deg)
 			left 15px
+	
+	.Home_page-header-characters-scroll-view-pagination
+		height 12px
+		clearfix()
+		position absolute
+		bottom 10px
+		right 0
+		z-index 12
+		
+		.size-class-not-width-compact.no-touchevents &
+			display none
+	
+	.Home_page-header-characters-scroll-view-pagination-link
+		button__resetStyle()
+		float left
+		background-color transparent
+		shape__circle(8px)
+		border 1px solid white
+		pointer-events auto
+		
+		&:hover, &:focus
+			cursor pointer
+			background-color rgba(white, 0.5)
+		
+		&.is--active
+			background-color white
+	
+	.Home_page-header-characters-scroll-view-pagination-link+.Home_page-header-characters-scroll-view-pagination-link
+		margin-left 8px
 </style>
