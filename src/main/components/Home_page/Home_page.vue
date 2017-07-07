@@ -31,6 +31,13 @@
 
 			CallToActionLayer(ref="callToActionLayer", :zIndex="6", style="position:relative")
 
+			ParallaxedLayer
+				AppSection.AppSection-odd(:title="timelineItems.introductionTitle", :baseline="timelineItems.baseline")
+					ContentBlock.Home_page-introduction(:blocks="timelineIntroduction.block_content", slot="section-content")
+
+				AppSection.AppSection-odd(:title="timelineItems.name")
+					Timeline(:items="timelineItems.data", slot="section-content").Home_page-timeline
+
 			VisMaVie_footer_layer
 </template>
 
@@ -60,6 +67,15 @@
 
 	import {mixin as uiNavigationButton} from 'xebia-web-common/tools/ui-navigation-button';
 
+	import AppSection from 'components/AppSection';
+	import Timeline from 'components/Timeline';
+	import timelineItems from 'data/about/timeline-items.json';
+	import timelineIntroduction from 'data/about/timeline-introduction.yaml';
+
+	console.log(timelineIntroduction.block_content)
+	
+	import ContentBlock from 'components/ContentBlock'
+
 	export default {
 		name: 'Home_page',
 		mixins: [sizeClassHelper, fontLoader, uiNavigationButton],
@@ -72,7 +88,9 @@
 				scrollViewBottomStyle: `-${scrollBarWidth}px`,
 				currentSlide: 0,
 				slideWidth: 0,
-				needAdjust: false
+				needAdjust: false,
+				timelineItems,
+				timelineIntroduction
 			}
 		},
 		watch: {
@@ -116,7 +134,10 @@
 			ScreenFillerBlock,
 			LogoXebiaVisMaVie,
 			CallToActionLayer,
-			ArrowBottom
+			ArrowBottom,
+			AppSection,
+			Timeline,
+			ContentBlock
 		},
 		methods: {
 			clickOnCharacter(event, character){
@@ -580,4 +601,7 @@
 	
 	.Home_page-header-characters-scroll-view-pagination-link+.Home_page-header-characters-scroll-view-pagination-link
 		margin-left 8px
+	
+	.Home_page-timeline
+		margin-top 30px
 </style>
