@@ -2,8 +2,6 @@
 	AppPage.About_page(:header="header")
 		AppSection.AppSection-even(:title="quelquesChiffres.name")
 			QuelquesChiffres(:statCards="quelquesChiffres.data", slot="section-content")
-		AppSection.AppSection-odd(:title="timelineItems.name")
-			Timeline(:items="timelineItems.data", slot="section-content")
 </template>
 
 <script>
@@ -19,9 +17,6 @@
   import QuelquesChiffres from 'components/QuelquesChiffres';
   import quelquesChiffres from 'data/about/quelques-chiffres.json';
 
-  import Timeline from 'components/Timeline';
-  import timelineItems from 'data/about/timeline-items.json';
-
   import headerImageCacheSetter from 'generated/tools/components/About_page/blurryHeaderImageCacheSetter';
 
   export default {
@@ -32,8 +27,7 @@
         header: Object.assign({}, header, {
           imageCacheSetter: headerImageCacheSetter
         }),
-        quelquesChiffres,
-        timelineItems
+        quelquesChiffres
       };
     },
     created : function() {
@@ -50,8 +44,7 @@
     components: {
       AppPage,
       AppSection,
-      QuelquesChiffres,
-      Timeline
+      QuelquesChiffres
     }
   };
 </script>
