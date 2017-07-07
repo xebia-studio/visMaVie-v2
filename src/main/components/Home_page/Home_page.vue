@@ -579,7 +579,7 @@
 		position absolute
 		bottom 10px
 		right 0
-		z-index 12
+		z-index 10
 		
 		.size-class-not-width-compact.no-touchevents &
 			display none
