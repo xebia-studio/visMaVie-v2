@@ -119,6 +119,15 @@
       }
     },
     {
+      "image": "logo-zeenea",
+      "title": "Devenez des entrepreneurs",
+      "text": " À l'occasion de nombreuses missions Big Data menées chez nos clients, deux xebians ont développé une solution autour de l'exploitation de Data Lakes. Soutenue par Xebia, cette solution a aujourd'hui pris son indépendance pour devenir Zeenea.",
+      "link": {
+        "name": "En savoir plus",
+        "url": "http://www.zeenea.com"
+      }
+    },
+    {
       "image": "picto-outilspratiques",
       "title": "Créez des outils pratiques",
       "text": "C’est en partant du constat que nous faisons souvent les mêmes recherches sur la toile, que les Xebians ont eu l’idée de créer des outils pratiques à garder sur le bureau ou à afficher au mur. </br>Chaque année, nous mettons à disposition gratuitement différents outils sur les bonnes pratiques de développement et méthodologiques ou encore sur des nouveaux frameworks afin de partager avec l’ensemble de la communauté.",
