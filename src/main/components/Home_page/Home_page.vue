@@ -42,8 +42,9 @@
 
 <script>
 	import getScrollBarWidth from 'tools/get-scroll-bar-width'
-	const scrollBarWidth = getScrollBarWidth();
+	let scrollBarWidth = getScrollBarWidth();
 
+	import {nextTick} from 'vue';
 	import {domHeight, domWidth} from '@alexistessier/dom';
 
 	import scrollBehaviorScrollToCareerObject from 'tools/scroll-behavior-scroll-to-career-object';
@@ -276,6 +277,11 @@
 		},
 		mounted(){
 			this.activeCharacter = randomCharacterIndex();
+
+			nextTick(()=>{
+				scrollBarWidth = getScrollBarWidth();
+				this.scrollViewBottomStyle = `-${scrollBarWidth}px`;
+			});
 		},
 		beforeDestroy(){
 			this.stopLoop = true;
