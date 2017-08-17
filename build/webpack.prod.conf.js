@@ -53,7 +53,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     // you can customize output by editing /index.html
     // see https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
-      filename: path.join(config.build.distDirectory, 'index.html'),
+      filename: 'index.html',
       template: 'index.html',
       inject: 'head',
       minify: {
@@ -109,6 +109,15 @@ const webpackConfig = merge(baseWebpackConfig, {
       name: 'manifest',
       chunks: ['vendor']
     }),
+    new ImageminPlugin({
+      jpegtran: {
+        progressive: true
+      },
+      pngquant: {
+        quality: '65-90',
+        speed: 4
+      }
+    }),
     new PrerenderSpaPlugin(
       config.build.distDirectory,
       routesToPrerender,
@@ -122,20 +131,13 @@ const webpackConfig = merge(baseWebpackConfig, {
             /http(s?):\/\/localhost:([0-9]*)\//g,
             config.host[currentBranchName]+'/'
           )
+          .replace('touchevents', '')
+          .replace('no-touchevents', '')
           .replace('<div id="sizeClassHelper_screenFrame" style="z-index:-120;display:block;position:fixed;top:0;left:0;width:100%;height:100%;"></div>', '')
           .replace('<script id="insert-tracking" type="text/javascript">"insert tracking"</script>', fs.readFileSync(path.join(__dirname, '../tracking.html'), {encoding:"utf-8"}))
         }
       }
-    ),
-    new ImageminPlugin({
-      jpegtran: {
-        progressive: true
-      },
-      pngquant: {
-        quality: '65-90',
-        speed: 4
-      }
-    })
+    )
   ]
 });
 

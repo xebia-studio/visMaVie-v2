@@ -251,7 +251,7 @@ generateModernizr(path.join(__dirname, 'src/generated/tools/modernizr.js'), {
     // "test/img/crossorigin",
     // "test/ligatures",
     // "textarea/maxlength",
-    // "touchevents",
+    "touchevents",
     // "typed-arrays",
     // "unicode",
     // "unicode-range",

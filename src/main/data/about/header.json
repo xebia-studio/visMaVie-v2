@@ -1,0 +1,8 @@
+{
+  "title": "Vis ma vie de consultant chez Xebia",
+  "description": "Explorez notre univers et nos passions </br>#XebiaLife",
+  "image": {
+    "default": "about-header.jpg",
+    "mobile": "about-header-mobile.jpg"
+  }
+}

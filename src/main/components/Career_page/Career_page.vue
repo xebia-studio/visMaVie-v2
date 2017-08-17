@@ -71,15 +71,20 @@
 </template>
 
 <script>
+
+import {nextTick} from 'vue';
+
 import AppPage from 'components/AppPage';
 import header from 'data/carriere/header.json';
 import content from 'data/carriere/content.json';
 import settings from 'data/carriere/$settings.json';
 
-const scrollBehaviorUseSavedPositionObject = require('tools/scroll-behavior-use-saved-position-object');
+import scrollBehaviorUseSavedPositionObject from 'tools/scroll-behavior-use-saved-position-object';
+import scrollBehaviorScrollToCareerObject from 'tools/scroll-behavior-scroll-to-career-object';
 
 import { mixin as fontLoader } from 'tools/font-loader';
 import { mixin as sizeClassHelper } from 'tools/size-class-helper';
+import { mixin as scrollController } from 'tools/scroll-controller';
 import { mixin as uiNavigationButton } from 'xebia-web-common/tools/ui-navigation-button';
 
 import AppSection from 'components/AppSection';
@@ -92,13 +97,13 @@ import ArrowBottom from 'generated/assets/components/Career_page/ArrowBottom';
 import HandSwipe from 'generated/assets/components/Career_page/HandSwipe';
 import getSvgComponentTechno from 'generated/assets/components/Career_page/svgComponents/sync';
 
-import CallToActionButton from 'xebia-web-common/components/CallToActionButton'
+import CallToActionButton from 'xebia-web-common/components/CallToActionButton';
 
-import { domWidth } from '@alexistessier/dom'
+import { domWidth } from '@alexistessier/dom';
 
 export default {
     name: 'Career_page',
-    mixins: [fontLoader, uiNavigationButton, sizeClassHelper],
+    mixins: [fontLoader, uiNavigationButton, sizeClassHelper, scrollController],
     components: {
         AppPage,
         AppSection,
@@ -304,6 +309,16 @@ export default {
     mounted(){
         this.updateLayoutOnResize();
         this.loadPhoto();
+
+        if (scrollBehaviorScrollToCareerObject.value) {
+            scrollBehaviorScrollToCareerObject.value = false;
+
+            nextTick(()=>{
+                if (this.$refs.profileScrollView) {
+                    this.getScrollController().scrollToNode(this.$refs.profileScrollView, -140);
+                }
+            })
+        }
     },
     beforeDestroy(){
         this.stopLoop = true;

@@ -20,7 +20,7 @@ module.exports = {
     colorImportant: colorsSettings.flashOrange,
     textColor: 'white'
   },
-	Home_page: {
+	About_page: {
 		screenHeightIdeal,
 		heightHeader: 520
 	},

@@ -1,0 +1,117 @@
+_contentNumberOfColumns = 12
+
+_screenHeightIdeal = About_page__$screenHeightIdeal
+_heightHeader = About_page__$heightHeader
+_marginTopLogoXebia = 140
+_marginBottomLogoXebia = 75
+_heightLogo = 55
+
+.About_page-header
+  background-color color__$blue
+  background-position center center
+  background-repeat no-repeat
+  background-size 100% 100%
+  background-size cover
+  position relative
+
+/*------------*/
+/* Logo Xebia */
+/*------------*/
+
+.About_page-header-logo-outer-wrapper
+  display block
+  position absolute
+  top ( _marginTopLogoXebia / _heightHeader * 100%)
+  height ( _heightLogo / _heightHeader * 100%)
+  width 100%
+  font-size 0
+
+.size-class-width-compact
+  .About_page-header-logo-outer-wrapper
+    display none
+
+.About_page-header-logo-inner-wrapper
+  layout__centeredGridBlock(numberOfColumns: _contentNumberOfColumns)
+  height 100%
+
+.About_page-header-logo
+  max-width (5 / _contentNumberOfColumns * 100%)
+  height 100%
+
+  g
+    fill white
+
+/*---------------*/
+/*---------------*/
+
+.About_page-header-baseline-margin-top
+  height ( (_marginTopLogoXebia + _heightLogo + _marginBottomLogoXebia) / _heightHeader * 100% )
+
+.About_page-header-baseline
+  layout__centeredGridBlock(numberOfColumns: _contentNumberOfColumns)
+  color white
+
+.size-class-not-width-compact
+  .About_page-header-baseline br
+    display none
+.About_page-header-baseline-main
+  font__useTitleRegular 50px
+  font__line-height 50px
+
+.About_page-header-baseline-secondary
+  font__useTextExtraLight 18px
+  font__line-height 20px
+  display block
+
+.About_page-header-baseline-main+.About_page-header-baseline-secondary
+  margin-top 10px
+
+.size-class-width-compact
+  .About_page-header-baseline-margin-top
+    height 85px
+
+  .About_page-header-baseline
+    max-width 100%
+    width auto
+    margin-left 40px
+    margin-right 40px
+
+// .About_page-header-baseline-main
+// 	font__rem-size 40px
+// 	font__line-height 50px
+
+// .About_page-header-baseline-secondary
+// 	font__rem-size 28px
+// 	font__line-height 40px
+
+  .About_page-header-baseline-main+.About_page-header-baseline-secondary
+    margin-top 20px
+
+/*---------------*/
+/*---------------*/
+
+.About_page-scroll-down-button
+  display none
+
+.size-class-width-compact
+  .About_page-scroll-down-button-outer-wrapper
+    position absolute
+    width 100%
+    bottom 40px
+    left 0
+
+  .About_page-scroll-down-button
+    layout__centeredGridBlock(numberOfColumns: 4)
+    button__resetStyle()
+
+    transition transform 200ms ease__inOutCubic()
+    transform translateY(0)
+
+    &:hover, &:focus
+      cursor pointer
+      transform translateY(-5px)
+
+    svg
+      width 100%
+/*---------------*/
+/*---------------*/

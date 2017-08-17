@@ -1,0 +1,45 @@
+{
+  "name": "Xebia en quelques chiffres",
+  "data": [
+    {
+      "picto": "picto-hand-money-pig",
+      "stat": "17,5",
+      "text": "millions de CA en 2016"
+    },
+    {
+      "picto": "picto-hand-couple",
+      "stat": "150",
+      "text": "personnes"
+    },
+    {
+      "picto": "picto-hand-balloons",
+      "stat": "12",
+      "text": "ans de passion"
+    },
+    {
+      "picto": "picto-hand-paper-pen",
+      "stat": "500 000",
+      "text": "lecteurs de blog.xebia.fr"
+    },
+    {
+      "picto": "picto-hand-micro",
+      "stat": "1",
+      "text": "XKE par mois, journée de partage de la connaissance"
+    },
+    {
+      "picto": "pic-degree",
+      "stat": "2 032",
+      "text": "clients formés en 2016"
+    },
+    {
+      "picto": "picto-heart",
+      "stat": "100 %",
+      "text": "des Xebians sont fiers de l’être (GPTW)"
+    },
+    {
+      "picto": "picto-xebicon",
+      "stat": "+ 60",
+      "text": "Xebians ont assisté à une conférence en 2016"
+    }
+  ]
+}

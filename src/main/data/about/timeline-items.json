@@ -1,0 +1,90 @@
+{
+  "introductionTitle": "Qui sont les Xebian(e)s ?",
+  "name": "Xebia en quelques faits",
+  "data": [
+    {
+      "year": 2016,
+      "image": "logo-frenchkit",
+      "description": "Xebia co-organise la <strong>première conférence iOS</strong> française, <strong>FrenchKit</strong>.",
+      "link": "http://frenchkit.fr/"
+    },
+    {
+      "year": "",
+      "image": "logo-paris-container-day",
+      "description": "Xebia organise la première édition du <strong>Paris Container Day</strong>.",
+      "link": "http://paris-container-day.fr/"
+    },
+    {
+      "year": "",
+      "image": "logo-kodokojo",
+      "description": "Xebia lance une usine logicielle Open Source, <strong>Kodo&nbsp;Kojo</strong>.",
+      "link": "https://kodokojo.io/"
+    },
+    {
+      "year": 2015,
+      "image": "logo-xebicon",
+      "description": "Xebia organise la première <strong>XebiCon France</strong>.",
+      "link": "http://xebicon.fr/"
+    },
+    {
+      "year": 2014,
+      "image": "logo-gptw",
+      "description": "Xebia devient une <strong>Great Place to Work</strong>.",
+      "link": "http://blog.xebia.fr/2014/03/19/xebia-n5-au-palmares-great-place-to-work/"
+    },
+    {
+      "year": "",
+      "image": "logo-xebia-studio",
+      "description": "Xebia crée <strong>Xebia Studio</strong>.",
+      "link": "http://studio.xebia.fr"
+    },
+    {
+      "year": 2013,
+      "image": "logo-techtrends",
+      "description": "Xebia publie son premier <strong>TechTrends</strong>.",
+      "link": "http://blog.xebia.fr/publications/"
+    },
+    {
+      "year": 2012,
+      "image": "logo-devoxx",
+      "description": "Xebia est la première société à sponsoriser <strong>Devoxx France</strong>.",
+      "link": "http://devoxx.fr"
+    },
+    {
+      "year": 2011,
+      "image": "logo-craftsmanship",
+      "description": "Xebia  promeut le <strong>Software Craftsmanship</strong> avec <strong>Uncle Bob</strong>.",
+      "link": "http://blog.xebia.fr/2011/05/03/code-propre-2-jours-avec-uncle-bob/"
+    },
+    {
+      "year": "",
+      "image": "logo-agile",
+      "description": "Xebia écrit le <strong>contrat agile</strong> et le met en <strong>Open Source</strong>.",
+      "link": "http://www.contrat-agile.org/"
+    },
+    {
+      "year": 2010,
+      "image": "logo-bigdata",
+      "description": "Premier projet <strong>Big Data</strong>.",
+      "link": "http://datafactory.xebia.fr/"
+    },
+    {
+      "year": 2009,
+      "image": "logo-frenchsug",
+      "description": "Création du <strong>French Scrum User Group</strong>.",
+      "link": "https://www.meetup.com/fr-FR/frenchsug/?chapter_analytics_code=UA-240545-6"
+    },
+    {
+      "year": 2008,
+      "image": "logo-xebia-training",
+      "description": "Lancement de la première <strong>formation certifiante</strong> avec <strong>Jeff Sutherland</strong>.",
+      "link": "http://training.xebia.fr"
+    },
+    {
+      "year": 2004,
+      "image": "logo-xebia-timeline",
+      "description": "Création de <strong>Xebia en France</strong>.",
+      "link": "http://www.xebia.fr"
+    }
+  ]
+}

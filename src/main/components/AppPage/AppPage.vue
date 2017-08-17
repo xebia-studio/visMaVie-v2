@@ -1,14 +1,7 @@
 <template lang="jade">
     .AppPage
         ParallaxedLayersGroup
-            NavigationBarLayer(
-                :scrollPositionToReachBeforeLightBackground="scrollPositionToReachBeforeLightBackground",
-                :settingsNavigation="settingsNavigation",
-                :settingsSubNavigation="settingsSubNavigation",
-                :socialNetworks="socialNetworks"
-            )
-                LogoVisMaVie(slot="logo").NavigationBar-logo-svg
-
+            VisMaVie_navigation_bar_layer(:scrollPositionToReachBeforeLightBackground="scrollPositionToReachBeforeLightBackground")
             BlurryHeaderLayer(@resize="headerResize", :title="header.title", :description="header.description", :image="header.image", :description_image="header.image_description", ref="blurryHeader", :titleLevel="header.titleLevel", :configScreenFiller="configScreenFiller", :headerImageCacheSetter="header.imageCacheSetter")
                 slot(name='headerContent')
             .AppPage-in-header-block(ref='inHeaderContainer')
@@ -16,106 +9,53 @@
 
             slot
 
-            ParallaxedLayer.AppPage-footer-layer
-                AppFooter
-                    AppFooterSiteMap(slot="col1", :siteMap="siteMap")
-                    AppFooterLinksList(slot="col2", label="Nous Recrutons", :links="nousRecrutons")
-                    AppFooterContacts(slot="col3", :contacts="contacts", :otherSites="otherSites")
-                    AppFooterSocialNetworks(slot="col4", :socialNetworks="socialNetworks")
-                FooterNavigationBar
-                CookiesBar
+            VisMaVie_footer_layer.AppPage-footer-layer
 </template>
 
 <script>
+    import ParallaxedLayersGroup from 'xebia-web-common/components/ParallaxedLayersGroup/ParallaxedLayersGroup';
 
-import ParallaxedLayersGroup from 'xebia-web-common/components/ParallaxedLayersGroup/ParallaxedLayersGroup';
-import ParallaxedLayer from 'xebia-web-common/components/ParallaxedLayersGroup/ParallaxedLayer';
+    import VisMaVie_navigation_bar_layer from 'components/VisMaVie_navigation_bar_layer';
+    import VisMaVie_footer_layer from 'components/VisMaVie_footer_layer'
 
-import NavigationBarLayer from 'xebia-web-common/components/NavigationBarLayer';
-import BlurryHeaderLayer from 'xebia-web-common/components/BlurryHeaderLayer';
+    import BlurryHeaderLayer from 'xebia-web-common/components/BlurryHeaderLayer';
 
-import LogoVisMaVie from 'generated/assets/components/AppPage/LogoVisMaVie';
+    import { BlurryHeaderLayer as blurryHeaderLayerSettings } from 'settings/components';
 
-import { BlurryHeaderLayer as blurryHeaderLayerSettings } from 'settings/components';
+    import CallToActionLayer from 'components/CallToActionLayer';
 
-import CallToActionLayer from 'components/CallToActionLayer';
-import FooterNavigationBar from 'components/FooterNavigationBar';
-import CookiesBar from 'components/CookiesBar';
+    import layoutSettings from 'settings/layout';
 
-import settingsNavigation from 'data/header/$settings.json';
-import settingsSubNavigation from 'data/header/sous-navigation.yaml';
-
-import layoutSettings from 'settings/layout';
-
-import AppFooter from 'xebia-web-common/components/AppFooter';
-import AppFooterSiteMap from 'xebia-web-common/components/AppFooter/AppFooterNavGroups/AppFooterSiteMap';
-import AppFooterLinksList from 'xebia-web-common/components/AppFooter/AppFooterNavGroups/AppFooterLinksList';
-import AppFooterSocialNetworks from 'xebia-web-common/components/AppFooter/AppFooterNavGroups/AppFooterSocialNetworks';
-import AppFooterContacts from 'xebia-web-common/components/AppFooter/AppFooterNavGroups/AppFooterContacts';
-
-import nousRecrutons from 'data/footer/nous-recrutons.yaml';
-import siteMap from 'data/footer/site-map.yaml';
-import contacts from 'data/footer/contacts.yaml';
-import otherSites from 'data/footer/autres-sites.yaml';
-import socialNetworks from 'data/footer/reseaux-sociaux.yaml';
-
-export default {
-    name: 'AppPage',
-    props: {
-        header: {
-            type: Object,
-            default: function () {
-                return {};
+    export default {
+        name: 'AppPage',
+        props: {
+            header: {
+                type: Object,
+                default() {
+                    return {};
+                }
             }
-        }
-    },
-    data: function () {
-        return {
-            siteMap,
-            nousRecrutons,
-            contacts,
-            otherSites,
-            socialNetworks,
-            settingsNavigation,
-            settingsSubNavigation,
-            scrollPositionToReachBeforeLightBackground: undefined,
-            configScreenFiller: {
-                'width-compact': '500px',
-                'default': (blurryHeaderLayerSettings.heightBlurryHeader / layoutSettings.screenHeightIdeal * 100)
+        },
+        data() {
+            return {
+                scrollPositionToReachBeforeLightBackground: undefined,
+                configScreenFiller: {
+                    'width-compact': '500px',
+                    'default': (blurryHeaderLayerSettings.heightBlurryHeader / layoutSettings.screenHeightIdeal * 100)
+                }
+            };
+        },
+        methods: {
+            headerResize: function (headerHeight) {
+                this.scrollPositionToReachBeforeLightBackground = parseInt(headerHeight, 10);
             }
-        };
-    },
-    methods: {
-        headerResize: function (headerHeight) {
-            this.scrollPositionToReachBeforeLightBackground = parseInt(headerHeight, 10);
+        },
+        components: {
+            ParallaxedLayersGroup,
+            VisMaVie_navigation_bar_layer,
+            BlurryHeaderLayer,
+            CallToActionLayer,
+            VisMaVie_footer_layer
         }
-    },
-    components: {
-        NavigationBarLayer,
-        LogoVisMaVie,
-        BlurryHeaderLayer,
-        CallToActionLayer,
-        AppFooter,
-        AppFooterSiteMap,
-        AppFooterLinksList,
-        AppFooterSocialNetworks,
-        AppFooterContacts,
-        ParallaxedLayersGroup,
-        ParallaxedLayer,
-        FooterNavigationBar,
-        CookiesBar
     }
-};
 </script>
-
-<style lang="stylus">
-    .NavigationBar.on--light-background,
-    .NavigationBar.menu--is-open
-        .NavigationBar-logo > .NavigationBar-logo-svg.LogoVisMaVie path
-            fill color__$flashOrange !important
-    
-    .size-class-width-compact
-        .NavigationBar-logo
-            > .NavigationBar-logo-svg.LogoVisMaVie
-                transform translate(20px, -2px)
-</style>

@@ -4,7 +4,7 @@
             OfferAccordion(:jobs="annonces.data", :talentButtonLabel="talentButtonLabel", :jobButtonLabel="jobButtonLabel", slot="section-content")
         AppSection.AppSection-even.AppSection-no-padding
             NosTechnos(:technos="technos", slot="section-content")
-        AppSection.AppSection-special.NousRejoindre_page-xebians(:title="quiSontLesXebians.name")
+        //- AppSection.AppSection-special.NousRejoindre_page-xebians(:title="quiSontLesXebians.name")
             template(slot="section-content")
                 .NousRejoindre_page-xebians-image-with-caption
                     .NousRejoindre_page-xebians-image(v-bind:style="{'background-image': 'url('+quiSontLesXebiansImgSrc+')'}")

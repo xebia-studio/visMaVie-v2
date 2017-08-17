@@ -1,8 +1,57 @@
 {
-  "title": "Vis ma vie de consultant chez Xebia",
-  "description": "Explorez notre univers et nos passions </br>#XebiaLife",
-  "image": {
-    "default": "home-header-desktop.jpg",
-    "mobile": "home-header-mobile.jpg"
-  }
+	"image": {
+		"default": "home-header-desktop.jpg",
+		"mobile": "home-header-mobile.jpg"
+	},
+	"consultants_evolution_label": "Découvrir son évolution",
+	"consultants": [
+		{
+			"name": "Laurène Thénoz",
+			"job": "Studio Delivery Manager",
+			"url": "carriere/agile",
+			"image": "portrait-home-laurene.png"
+		},
+		{
+			"name": "Pablo Lopez",
+			"job": "CTO chez Xebia",
+			"url": "carriere/backend",
+			"image": "portrait-home-pablo.png"
+		},
+		{
+			"name": "Alban Dauleu",
+			"job": "Consultant Manageur",
+			"url": "carriere/frontend",
+			"image": "portrait-home-alban.png"
+		},
+		{
+			"name": "Jean-Louis Rigau",
+			"job": "Porteur d'offre Conteneurs",
+			"url": "carriere/devops",
+			"image": "portrait-home-jean-louis.png"
+		},
+		{
+			"name": "Antoine Michaud",
+			"job": "Consultant",
+			"url": "carriere/data",
+			"image": "portrait-home-antoine-michaud.png"
+		},
+		{
+			"name": "Alexis Kinsella",
+			"job": "CTO chez Xebia",
+			"url": "carriere/cloud",
+			"image": "portrait-home-alexis.png"
+		},
+		{
+			"name": "Qian Jin",
+			"job": "Consultante",
+			"url": "carriere/iot",
+			"image": "portrait-home-qian.png"
+		},
+		{
+			"name": "Simone Civetta",
+			"job": "Consultant Manageur",
+			"url": "carriere/mobile",
+			"image": "portrait-home-simone.png"
+		}
+	]
 }

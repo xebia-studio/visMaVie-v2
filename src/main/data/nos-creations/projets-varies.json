@@ -101,12 +101,30 @@
       }
     },
     {
+      "image": "logo-kodokojo",
+      "title": "Développez des projets open source",
+      "text": "Tirés de leurs expériences en mission, certains Xebians ont décidé de développer différents logiciels open source. Kodo Kojo est un projet open source et extensible, qui permet d’orchestrer la création d’un SCM, d’un CI et d’un Repository pour commencer à coder un projet le plus rapidement possible. Kodo Kojo est architecturé en pensant scalabilité et ouverture.",
+      "link": {
+        "name": "En savoir plus",
+        "url": "https://kodokojo.io/"
+      }
+    },
+    {
       "image": "picto-devapplis",
       "title": "Ecrivez pour la presse",
       "text": "Les consultants Xebia publient régulièrement pour plusieurs magazines afin de partager leurs expériences, leurs expertises et leurs savoir-faire. (Programmez, It-expert, l’usine digitale, Journal du Net, Synthèse informatique, La tribune, les Echos, Les Echos business, Le parisien, Le Mag It, It Pro, IT Espresso, Silicon, Alliancy Mag, GPO, ZD Net, Solutions numériques, Info DSI, etc.), vous pourrez partager avec la communauté sur des documents papiers de référence.",
       "link": {
         "name": "Voir un exemple",
         "url": "http://blog.xebia.fr/2017/02/08/programmez-developpement-mobile-les-solutions-comment-choisir-quel-outil-pour-quel-developpement/"
+      }
+    },
+    {
+      "image": "logo-zeenea",
+      "title": "Devenez des entrepreneurs",
+      "text": " À l'occasion de nombreuses missions Big Data menées chez nos clients, deux xebians ont développé une solution autour de l'exploitation de Data Lakes. Soutenue par Xebia, cette solution a aujourd'hui pris son indépendance pour devenir Zeenea.",
+      "link": {
+        "name": "En savoir plus",
+        "url": "http://www.zeenea.com"
       }
     },
     {

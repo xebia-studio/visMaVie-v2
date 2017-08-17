@@ -1,5 +1,5 @@
 <template lang="jade">
-	AppHeaderSubBarLayer.CallToActionLayer(rightSlotClass="CallToActionLayer-button-outer-wrapper")
+	AppHeaderSubBarLayer.CallToActionLayer(rightSlotClass="CallToActionLayer-button-outer-wrapper", :zIndex="zIndex")
 		CallToActionButton.CallToActionLayer-button(v-if="currentPage !== 'nous-rejoindre'", :label="'Nous rejoindre'", to="/nous-rejoindre", :important="true", slot="right")
 		CallToActionButton.CallToActionLayer-button(v-else, :label="'Postuler !'", :link="'mailto:recrutement@xebia.fr'", slot="right")
 
@@ -15,6 +15,9 @@ import LogoXebiaVisMaVie from 'generated/assets/components/CallToActionLayer/Log
 
 export default {
 	name: 'CallToActionLayer',
+	props: {
+		zIndex: Number
+	},
 	computed: {
 		currentPage: function () {
 			return this.$route.name;

@@ -1,6 +1,6 @@
 const path = require('path');
 
-const timelineItems = require('data/home/timeline-items.json').data;
+const timelineItems = require('data/about/timeline-items.json').data;
 
 const svgComponents = {};
 
