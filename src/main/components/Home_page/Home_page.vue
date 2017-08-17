@@ -8,9 +8,8 @@
 					.Home_page-header-useful-width
 						.Home_page-header-margin-constraints
 							.Home_page-header-content
-								.Home_page-header-logo
-									.Home_page-header-logo-offset
-									LogoXebiaVisMaVie
+								.Home_page-header-title-offset
+								HeaderTitle.Home_page-header-title(:title="header.title", :titleLevel="1", :description="header.subtitle")
 								.Home_page-header-characters-scroll-view-pagination
 									button.Home_page-header-characters-scroll-view-pagination-link(v-for="(c, i) in characters", @click="buttonClick($event, 'paginationLink'+i, scrollToSlideClick, i)", :ref="'paginationLink'+i", rel="button", :class="i === currentSlide ? 'is--active' : ''")
 								.Home_page-header-characters-scroll-view(:style="{bottom:scrollViewBottomStyle}", ref="characterScrollView")
@@ -53,6 +52,8 @@
 	import ParallaxedLayer from 'xebia-web-common/components/ParallaxedLayersGroup/ParallaxedLayer';
 
 	import ScreenFillerBlock from 'xebia-web-common/components/ScreenFillerBlock';
+	import HeaderTitle from 'xebia-web-common/components/HeaderTitle';
+
 	import LogoXebiaVisMaVie from 'generated/assets/components/Home_page/LogoXebiaVisMaVie';
 	import ArrowBottom from 'generated/assets/components/Home_page/ArrowBottom';
 	import CallToActionLayer from 'components/CallToActionLayer';
@@ -146,7 +147,8 @@
 			ArrowBottom,
 			AppSection,
 			Timeline,
-			ContentBlock
+			ContentBlock,
+			HeaderTitle
 		},
 		methods: {
 			clickOnCharacter(event, character){
@@ -303,28 +305,11 @@
 
 		.size-class-not-width-compact.no-touchevents &
 			layout__centeredGridBox(28)
-
-	.Home_page-header-logo
-		height 100%
-		
-		.size-class-not-width-compact.no-touchevents &
-			layout__gridBox(8, gridNumberOfColumns: 28)
-		
-		.size-class-width-compact &,
-		.touchevents &
-			layout__gridBox(8, gridNumberOfColumns: 30)
-
-		> .LogoXebiaVisMaVie
-			width 100%
-			height (105 / 570 * 100%)
-			max-height 105px
-			max-width 260px
-			min-width 240px
-			min-height 100px
-			
-			filter__dropShadow 0px 0px 2px rgba(black, 0.62)
 	
-	.Home_page-header-logo-offset
+	.Home_page-header-title
+		text-shadow 0px 0px 15px black
+
+	.Home_page-header-title-offset
 		width 100%
 		height (130 / 570 * 100%)
 		
