@@ -15,8 +15,8 @@
 									button.Home_page-header-characters-scroll-view-pagination-link(v-for="(c, i) in characters", @click="buttonClick($event, 'paginationLink'+i, scrollToSlideClick, i)", :ref="'paginationLink'+i", rel="button", :class="i === currentSlide ? 'is--active' : ''")
 								.Home_page-header-characters-scroll-view(:style="{bottom:scrollViewBottomStyle}", ref="characterScrollView")
 									.Home_page-header-characters
-										.Home_page-header-characters-group(v-for="(charactersGroup, i) in charactersGroups")
-											a.Home_page-header-character(v-for="(character, index) in charactersGroup", :class="'index-'+(index+1+(i*4))", :href="character.url", @click="clickOnCharacter($event, character)")
+										.Home_page-header-characters-group(v-for="(charactersGroup, i) in charactersGroups", :class="((i === 0 && activeCharacter <= 4) || (i === 1 && activeCharacter > 4)) ? 'contains--active-character' : ''")
+											a.Home_page-header-character(v-for="(character, index) in charactersGroup", :class="((index+1+(i*4)) === activeCharacter ? 'is--active ' : '')+'index-'+(index+1+(i*4))", :href="character.url", @click="clickOnCharacter($event, character)")
 												.Home_page-header-character-image(:style="charactersStyles[index+(i*4)]")
 												.Home_page-header-character-widget
 													.Home_page-header-character-widget-outer-wrapper
@@ -71,10 +71,18 @@
 	import Timeline from 'components/Timeline';
 	import timelineItems from 'data/about/timeline-items.json';
 	import timelineIntroduction from 'data/about/timeline-introduction.yaml';
-
-	console.log(timelineIntroduction.block_content)
 	
 	import ContentBlock from 'components/ContentBlock'
+
+	function randomInt(min, max) {
+	    return Math.floor(Math.random() * (max - min + 1)) + min;
+	}
+
+	const numberOfCharacters = header.consultants.length;
+
+	function randomCharacterIndex(){
+		return randomInt(1, numberOfCharacters)
+	} 
 
 	export default {
 		name: 'Home_page',
@@ -90,7 +98,8 @@
 				slideWidth: 0,
 				needAdjust: false,
 				timelineItems,
-				timelineIntroduction
+				timelineIntroduction,
+				activeCharacter: randomCharacterIndex()
 			}
 		},
 		watch: {
@@ -263,6 +272,9 @@
 				})
 			})();
 		},
+		mounted(){
+			this.activeCharacter = randomCharacterIndex();
+		},
 		beforeDestroy(){
 			this.stopLoop = true;
 			this.getSizeClassHelper().off(...this.deviceChangeListenerArguments);
@@ -363,8 +375,15 @@
 		.size-class-not-width-compact.no-touchevents &
 			left -1.1vw
 		
-		&:hover
+		&:hover,
+		&.contains--active-character
 			z-index 6
+		
+		.Home_page-header-characters:hover &
+			z-index 5
+			
+			&:hover
+				z-index 6
 
 	.Home_page-header-character
 		display block
@@ -457,9 +476,27 @@
 			transform translateX(101%)
 		
 		.size-class-not-width-compact.no-touchevents .Home_page-header-character:hover &,
-		.size-class-not-width-compact.no-touchevents .Home_page-header-character:focus &
+		.size-class-not-width-compact.no-touchevents .Home_page-header-character:focus &,
+		.size-class-not-width-compact.no-touchevents .Home_page-header-character.is--active &
 			transform translateX(0)
 	
+
+		.size-class-not-width-compact.no-touchevents .Home_page-header-characters:hover .Home_page-header-character.index-1 &,
+		.size-class-not-width-compact.no-touchevents .Home_page-header-characters:hover .Home_page-header-character.index-2 &,
+		.size-class-not-width-compact.no-touchevents .Home_page-header-characters:hover .Home_page-header-character.index-3 &,
+		.size-class-not-width-compact.no-touchevents .Home_page-header-characters:hover .Home_page-header-character.index-4 &
+			transform translateX(-101%)
+			
+		.size-class-not-width-compact.no-touchevents .Home_page-header-characters:hover .Home_page-header-character.index-5 &,
+		.size-class-not-width-compact.no-touchevents .Home_page-header-characters:hover .Home_page-header-character.index-6 &,
+		.size-class-not-width-compact.no-touchevents .Home_page-header-characters:hover .Home_page-header-character.index-7 &,
+		.size-class-not-width-compact.no-touchevents .Home_page-header-characters:hover .Home_page-header-character.index-8 &
+			transform translateX(101%)
+		
+		.size-class-not-width-compact.no-touchevents .Home_page-header-characters:hover .Home_page-header-character:hover &,
+		.size-class-not-width-compact.no-touchevents .Home_page-header-characters:hover .Home_page-header-character:focus &
+			transform translateX(0)
+
 	.Home_page-header-character-info
 		background-color color__$blue
 		padding-right 15px
