@@ -20,6 +20,7 @@
     "@alexistessier/dom": "3.0.6",
     "babel-runtime": "6.26.0",
     "event-emitter": "0.3.4",
+    "instafeed.js": "1.4.1",
     "js-cookie": "2.1.4",
     "lodash": "4.17.4",
     "scrollbar-width": "3.1.1",

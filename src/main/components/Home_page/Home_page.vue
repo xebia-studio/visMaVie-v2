@@ -34,6 +34,8 @@
 				AppSection.AppSection-odd(:title="timelineItems.introductionTitle", :baseline="timelineItems.baseline")
 					ContentBlock.Home_page-introduction(:blocks="timelineIntroduction.block_content", slot="section-content")
 
+				Instagram_page_block(:credentials="instagram")
+
 				AppSection.AppSection-odd(:title="timelineItems.name")
 					Timeline(:items="timelineItems.data", slot="section-content").Home_page-timeline
 
@@ -74,7 +76,11 @@
 	import timelineItems from 'data/about/timeline-items.json';
 	import timelineIntroduction from 'data/about/timeline-introduction.yaml';
 	
-	import ContentBlock from 'components/ContentBlock'
+	import ContentBlock from 'components/ContentBlock';
+
+	import Instagram_page_block from 'components/Instagram_page_block';
+
+	import instagram from 'data/home/instagram.json';
 
 	function randomInt(min, max) {
 	    return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -91,6 +97,7 @@
 		mixins: [sizeClassHelper, fontLoader, uiNavigationButton],
 		data(){
 			return {
+				instagram,
 				header,
 				characters: header.consultants,
 				headerBackground: undefined,
@@ -149,7 +156,8 @@
 			AppSection,
 			Timeline,
 			ContentBlock,
-			HeaderTitle
+			HeaderTitle,
+			Instagram_page_block
 		},
 		methods: {
 			clickOnCharacter(event, character){
