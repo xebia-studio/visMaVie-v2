@@ -19,7 +19,7 @@
 												.Home_page-header-character-image(:style="charactersStyles[index+(i*4)]")
 												.Home_page-header-character-widget
 													.Home_page-header-character-widget-outer-wrapper
-														.Home_page-header-character-widget-inner-wrapper
+														.Home_page-header-character-widget-inner-wrapper(:class="slowWidgetOut ? 'is--slow' :  ''")
 															.Home_page-header-character-info
 																.Home_page-header-character-name {{character.name}}
 																.Home_page-header-character-job {{character.job}}
@@ -108,7 +108,8 @@
 				needAdjust: false,
 				timelineItems,
 				timelineIntroduction,
-				activeCharacter: randomCharacterIndex()
+				activeCharacter: randomCharacterIndex(),
+				slowWidgetOut: true
 			}
 		},
 		watch: {
@@ -140,7 +141,7 @@
 				}
 
 				return function(height){
-					return Math.max(fillerHeight(height), 425)+'px';
+					return Math.min(800, Math.max(fillerHeight(height), 425))+'px';
 				}
 			}
 		},
@@ -284,7 +285,15 @@
 			})();
 		},
 		mounted(){
+			this.slowWidgetOut = true;
 			this.activeCharacter = randomCharacterIndex();
+			setTimeout(()=>{
+				this.activeCharacter = -1;
+			}, 2000);
+
+			setTimeout(()=>{
+				this.slowWidgetOut = false;
+			}, 2800);
 
 			nextTick(()=>{
 				scrollBarWidth = getScrollBarWidth();
@@ -442,6 +451,17 @@
 			left 75%
 			width 25%
 			bottom 30px
+	
+	.size-class-not-width-compact.no-touchevents .Home_page-header-character
+		.Home_page-header-character-image
+			transform scale(1)
+			transform-origin 50% 50%
+			transition transform 220ms ease__outQuad()
+		
+		&:hover, &:focus
+			.Home_page-header-character-image
+				transition-timing-function ease__inQuad()
+				transform scale(1.06)
 
 	.Home_page-header-character-widget-outer-wrapper
 		position relative
@@ -460,8 +480,16 @@
 			left -300px
 	
 	.Home_page-header-character-widget-inner-wrapper
-		transition transform 220ms ease__outQuart()
+		transition transform 280ms ease__outQuad() 0ms
 		
+		&.is--slow
+			transition-timing-function ease__inQuad() !important
+		
+		.size-class-not-width-compact.no-touchevents .Home_page-header-character:hover &,
+		.size-class-not-width-compact.no-touchevents .Home_page-header-character:focus &
+			transition-duration 260ms
+			transition-delay 180ms
+
 		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-1 &,
 		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-2 &,
 		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-3 &,
@@ -478,8 +506,7 @@
 		.size-class-not-width-compact.no-touchevents .Home_page-header-character:focus &,
 		.size-class-not-width-compact.no-touchevents .Home_page-header-character.is--active &
 			transform translateX(0)
-	
-
+			
 		.size-class-not-width-compact.no-touchevents .Home_page-header-characters:hover .Home_page-header-character.index-1 &,
 		.size-class-not-width-compact.no-touchevents .Home_page-header-characters:hover .Home_page-header-character.index-2 &,
 		.size-class-not-width-compact.no-touchevents .Home_page-header-characters:hover .Home_page-header-character.index-3 &,
