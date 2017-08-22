@@ -287,11 +287,11 @@
 		mounted(){
 			this.slowWidgetOut = true;
 			this.activeCharacter = randomCharacterIndex();
-			setTimeout(()=>{
+			this.activeCharacterTimeOut = setTimeout(()=>{
 				this.activeCharacter = -1;
 			}, 2000);
 
-			setTimeout(()=>{
+			this.slowWidgetOutTimeOut = setTimeout(()=>{
 				this.slowWidgetOut = false;
 			}, 2800);
 
@@ -304,6 +304,14 @@
 			this.stopLoop = true;
 			this.getSizeClassHelper().off(...this.deviceChangeListenerArguments);
 			this.getSizeClassHelper().off(...this.resizeListenerArguments);
+
+			if (this.activeCharacterTimeOut) {
+				clearTimeout(this.activeCharacterTimeOut)
+			}
+
+			if (this.slowWidgetOutTimeOut) {
+				clearTimeout(this.slowWidgetOutTimeOut)
+			}
 		}
 	}
 </script>
