@@ -298,11 +298,11 @@
 			this.activeCharacter = randomCharacterIndex();
 			this.activeCharacterTimeOut = setTimeout(()=>{
 				this.activeCharacter = -1;
-			}, 2000);
+			}, 4000);
 
 			this.slowWidgetOutTimeOut = setTimeout(()=>{
 				this.slowWidgetOut = false;
-			}, 2800);
+			}, 4800);
 
 			nextTick(()=>{
 				scrollBarWidth = getScrollBarWidth();
