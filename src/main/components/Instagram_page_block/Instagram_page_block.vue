@@ -1,5 +1,8 @@
 <template lang="jade">
 	.Instagram_page_block
+		.Instagram_page_block-navigation
+			.Instagram_page_block-navigation-hitbox-left(:class="leftNavigationDisabled ? 'is--disabled' : ''", @mouseover="moveTo('left')", @mouseleave="stopMoving()") LEFT
+			.Instagram_page_block-navigation-hitbox-right(:class="rightNavigationDisabled ? 'is--disabled' : ''", @mouseover="moveTo('right')", @mouseleave="stopMoving()") RIGHT
 		.Instagram_page_block-main-width-useful-width
 			.Instagram_page_block-main-width-margin-width
 				a.Instagram_page_block-instagram-link(target="_blank", :href="instagramUrl")
@@ -60,7 +63,9 @@
 				photos: [],
 				screenWidth: 0,
 				mainWidth: 0,
-				widthCompact: false
+				widthCompact: false,
+				leftNavigationDisabled: false,
+				rightNavigationDisabled: false
 			}
 		},
 		created: function(){
@@ -95,9 +100,33 @@
 			});
 
 			this.feed.run();
+
+			this.stopLoop = false;
+
+			let previousTime = Date.now();
+
+			const _this = this;
+
+			(function loop() {
+				const currentTime = Date.now();
+				let deltaTime = currentTime - previousTime;
+
+				if (deltaTime > 100) {
+					deltaTime = 0;
+				}
+
+				_this.loopEvent(deltaTime);
+
+				previousTime = currentTime;
+
+				if (!_this.stopLoop) {
+					requestAnimationFrame(()=>{loop()})
+				}
+			})()
 		},
 		beforeDestroy: function () {
 			this.getSizeClassHelper().off(...this.resizeListenerArguments);
+			this.stopLoop = true;
 		},
 		computed: {
 			offsetWidth: function () {
@@ -121,6 +150,35 @@
 			}
 		},
 		methods: {
+			loopEvent: function (deltaTime) {
+				const moveBy = 620*(this.isMoving || 0)*deltaTime/1000;
+				
+				const scrollView = this.$refs.scrollView;
+
+				if (scrollView) {
+					const actualPosition = scrollView.scrollLeft;
+
+					scrollView.scrollBy({
+						behavior: 'instant',
+						left: moveBy,
+						top: 0
+					});
+
+					this.leftNavigationDisabled = actualPosition === 0;
+					this.rightNavigationDisabled = actualPosition === (this.photosListWidth - domWidth(scrollView));
+				}
+			},
+			moveTo: function (direction) {
+				if (direction) {
+					this.isMoving = ({
+						right: 1,
+						left: -1
+					})[direction];
+				}
+			},
+			stopMoving: function () {
+				this.isMoving = 0;
+			},
 			updateLayoutOnResize: function () {
 				const helper = this.getSizeClassHelper();
 				this.screenWidth = helper.size.width;
@@ -139,11 +197,14 @@
 				});
 			},
 			scrollToLast: function () {
+				this.scrollTo(this.photosListWidth);
+			},
+			scrollTo: function (position) {
 				if (this.$refs.scrollView) {
 					nextTick(()=>{
 						this.$refs.scrollView.scroll({
 							behavior: 'instant',
-							left: this.photosListWidth,
+							left: position,
 							top: 0
 						});
 					});
@@ -161,6 +222,56 @@
 <style lang="stylus">
 	Instagram_page_block__colorHover = color__$uiImportantClickable
 	
+	.Instagram_page_block-navigation
+		display none
+
+	.no-touchevents
+		.Instagram_page_block-navigation
+			layout__outerBox()
+			position relative
+			z-index 20
+			
+		&.size-class-width-compact
+			.Instagram_page_block-navigation
+				top 50px
+
+		.Instagram_page_block-navigation-hitbox-left,
+		.Instagram_page_block-navigation-hitbox-right
+			display block
+			position absolute
+			width 20%
+			height 200px
+			top 0
+			z-index 20
+			font-size 0px
+
+			&:after
+				content ''
+				display block
+				position absolute
+				top 0
+				height 100%
+				width 1000px
+				
+			&.is--disabled
+				display none
+
+	.Instagram_page_block-navigation-hitbox-left
+		left 0
+		&:after
+			right 100%
+		
+		&:hover
+			cursor: w-resize;
+	
+	.Instagram_page_block-navigation-hitbox-right
+		right 0
+		&:after
+			left 100%
+		
+		&:hover
+			cursor: e-resize;
+
 	.Instagram_page_block-scroll-view-wrapper
 		height 200px
 		width 100%
@@ -260,7 +371,11 @@
 	.Instagram_page_block-photo-xebia-picto-label
 		line-height 30px
 		margin-left 12px
+		font__useTextRegular 18
 	
+	.Instagram_page_block-photo-caption
+		font__useTextLight 14
+		font__line-height 18
 	
 	.Instagram_page_block-xebia-instagram
 		display block
@@ -316,6 +431,7 @@
 	.Instagram_page_block-xebia-instagram-link-picto-label
 		margin-left 20px
 		line-height 60px
+		font__useTextRegular 30
 	
 	.Instagram_page_block-offset
 		display block
@@ -360,4 +476,5 @@
 	.Instagram_page_block-instagram-link-picto-label
 		line-height 35px
 		margin-left 20px
+		font__useTextRegular 18
 </style>

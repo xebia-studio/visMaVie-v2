@@ -34,7 +34,11 @@
 				AppSection.AppSection-odd(:title="timelineItems.introductionTitle", :baseline="timelineItems.baseline")
 					ContentBlock.Home_page-introduction(:blocks="timelineIntroduction.block_content", slot="section-content")
 
-				Instagram_page_block(:credentials="instagram")
+				Instagram_page_block.Home_page-instagram-block(:credentials="instagram")
+				.Home_page-instagram-link-useful-width
+					.Home_page-instagram-link-margin-constraints
+						.Home_page-instagram-link
+							ArrowLink(external=true, :label="instagram.link_label", :url="instagramUrl")
 
 				AppSection.AppSection-odd(:title="timelineItems.name")
 					Timeline(:items="timelineItems.data", slot="section-content").Home_page-timeline
@@ -56,6 +60,7 @@
 
 	import ScreenFillerBlock from 'xebia-web-common/components/ScreenFillerBlock';
 	import HeaderTitle from 'xebia-web-common/components/HeaderTitle';
+	import ArrowLink from 'xebia-web-common/components/ArrowLink';
 
 	import LogoXebiaVisMaVie from 'generated/assets/components/Home_page/LogoXebiaVisMaVie';
 	import ArrowBottom from 'generated/assets/components/Home_page/ArrowBottom';
@@ -143,6 +148,9 @@
 				return function(height){
 					return Math.min(800, Math.max(fillerHeight(height), 425))+'px';
 				}
+			},
+			instagramUrl: function () {
+				return `https://www.instagram.com/${this.instagram.id}/`;
 			}
 		},
 		components: {
@@ -158,7 +166,8 @@
 			Timeline,
 			ContentBlock,
 			HeaderTitle,
-			Instagram_page_block
+			Instagram_page_block,
+			ArrowLink
 		},
 		methods: {
 			clickOnCharacter(event, character){
@@ -675,4 +684,14 @@
 	
 	.Home_page-timeline
 		margin-top 30px
+	
+	.Home_page-instagram-link-useful-width
+		layout__outerBox()
+	.Home_page-instagram-link-margin-constraints
+		layout__innerBox()
+	.Home_page-instagram-link
+		layout__centeredGridBox(28)
+	
+	.Home_page-instagram-block+.Home_page-instagram-link-useful-width
+		margin-top 35px
 </style>
