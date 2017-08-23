@@ -40,7 +40,8 @@
 						.Home_page-instagram-link
 							ArrowLink(external=true, :label="instagram.link_label", :url="instagramUrl")
 
-				AppSection.AppSection-odd(:title="timelineItems.name")
+				AppSection.AppSection-even(:title="timelineItems.name")
+					YoutubeVideosList_thumbnails_list(slot="section-content")
 					Timeline(:items="timelineItems.data", slot="section-content").Home_page-timeline
 
 			VisMaVie_footer_layer
@@ -84,6 +85,7 @@
 	import ContentBlock from 'components/ContentBlock';
 
 	import Instagram_page_block from 'components/Instagram_page_block';
+	import YoutubeVideosList_thumbnails_list from 'components/YoutubeVideosList_thumbnails_list';
 
 	import instagram from 'data/home/instagram.json';
 
@@ -167,6 +169,7 @@
 			ContentBlock,
 			HeaderTitle,
 			Instagram_page_block,
+			YoutubeVideosList_thumbnails_list,
 			ArrowLink
 		},
 		methods: {
@@ -687,6 +690,8 @@
 	
 	.Home_page-instagram-link-useful-width
 		layout__outerBox()
+		padding-bottom 35px
+
 	.Home_page-instagram-link-margin-constraints
 		layout__innerBox()
 	.Home_page-instagram-link

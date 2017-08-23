@@ -276,6 +276,7 @@
 		height 200px
 		width 100%
 		position relative
+		overflow hidden
 		
 		&:before
 			display block
@@ -306,6 +307,7 @@
 		overflow-x scroll
 		overflow-y hidden
 		clearfix()
+		-webkit-overflow-scrolling: touch;
 	
 	.Instagram_page_block-photos-list
 		clearfix()
