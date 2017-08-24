@@ -40,8 +40,10 @@
 						.Home_page-instagram-link
 							ArrowLink(external=true, :label="instagram.link_label", :url="instagramUrl")
 
-				AppSection.AppSection-even(:title="timelineItems.name")
+				AppSection.AppSection-even(:title="xebiaTV.name", :baseline="xebiaTV.baseline")
 					YoutubeVideosList_thumbnails_list(v-bind="youtube", slot="section-content")
+					.Home_page-youtube-link(slot="section-content")
+						ArrowLink(external=true, :label="youtube.link_label", :url="youtubeUrl")
 					//-Timeline(:items="timelineItems.data", slot="section-content").Home_page-timeline
 
 			VisMaVie_footer_layer
@@ -79,6 +81,9 @@
 
 	import AppSection from 'components/AppSection';
 	import Timeline from 'components/Timeline';
+
+	import xebiaTV from 'data/home/xebia-tv.json';
+
 	import timelineItems from 'data/about/timeline-items.json';
 	import timelineIntroduction from 'data/about/timeline-introduction.yaml';
 	
@@ -118,7 +123,8 @@
 				timelineItems,
 				timelineIntroduction,
 				activeCharacter: randomCharacterIndex(),
-				slowWidgetOut: true
+				slowWidgetOut: true,
+				xebiaTV
 			}
 		},
 		watch: {
@@ -155,6 +161,9 @@
 			},
 			instagramUrl: function () {
 				return `https://www.instagram.com/${this.instagram.id}/`;
+			},
+			youtubeUrl: function () {
+				return `https://www.youtube.com/user/${this.youtube.user}`;
 			}
 		},
 		components: {
@@ -699,6 +708,7 @@
 	.Home_page-instagram-link
 		layout__centeredGridBox(28)
 	
-	.Home_page-instagram-block+.Home_page-instagram-link-useful-width
+	.Home_page-instagram-block+.Home_page-instagram-link-useful-width,
+	.Home_page-youtube-link
 		margin-top 35px
 </style>

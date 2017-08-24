@@ -90,7 +90,7 @@ generateModernizr(path.join(__dirname, 'src/generated/tools/modernizr.js'), {
     // "css/objectfit",
     // "css/opacity",
     // "css/overflow-scrolling",
-    // "css/pointerevents",
+    "css/pointerevents",
     // "css/positionsticky",
     // "css/pseudoanimations",
     // "css/pseudotransitions",
