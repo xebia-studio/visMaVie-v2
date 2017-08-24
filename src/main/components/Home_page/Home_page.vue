@@ -41,8 +41,8 @@
 							ArrowLink(external=true, :label="instagram.link_label", :url="instagramUrl")
 
 				AppSection.AppSection-even(:title="timelineItems.name")
-					YoutubeVideosList_thumbnails_list(slot="section-content")
-					Timeline(:items="timelineItems.data", slot="section-content").Home_page-timeline
+					YoutubeVideosList_thumbnails_list(v-bind="youtube", slot="section-content")
+					//-Timeline(:items="timelineItems.data", slot="section-content").Home_page-timeline
 
 			VisMaVie_footer_layer
 </template>
@@ -88,6 +88,7 @@
 	import YoutubeVideosList_thumbnails_list from 'components/YoutubeVideosList_thumbnails_list';
 
 	import instagram from 'data/home/instagram.json';
+	import youtube from 'data/home/youtube.json';
 
 	function randomInt(min, max) {
 	    return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -105,6 +106,7 @@
 		data(){
 			return {
 				instagram,
+				youtube,
 				header,
 				characters: header.consultants,
 				headerBackground: undefined,
