@@ -373,6 +373,7 @@
 		width 60px
 		height 60px
 		transform translate(-50%, -50%)
+		z-index 4
 	
 	.YoutubeVideosList_thumbnails_list-videos-list+.YoutubeVideosList_thumbnails_list-slider-pagination
 		margin-top 30px
