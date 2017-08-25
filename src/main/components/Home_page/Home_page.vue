@@ -31,8 +31,8 @@
 			CallToActionLayer(ref="callToActionLayer", :zIndex="6", style="position:relative")
 
 			ParallaxedLayer
-				AppSection.AppSection-odd(:title="timelineItems.introductionTitle", :baseline="timelineItems.baseline")
-					ContentBlock.Home_page-introduction(:blocks="timelineIntroduction.block_content", slot="section-content")
+				AppSection.AppSection-odd(:title="introduction.title", :baseline="introduction.baseline")
+					ContentBlock.Home_page-introduction(:blocks="introduction.block_content", slot="section-content")
 
 				Instagram_page_block.Home_page-instagram-block(:credentials="instagram")
 				.Home_page-instagram-link-useful-width
@@ -44,7 +44,6 @@
 					YoutubeVideosList_thumbnails_list(v-bind="youtube", slot="section-content")
 					.Home_page-youtube-link(slot="section-content")
 						ArrowLink(external=true, :label="youtube.link_label", :url="youtubeUrl")
-					//-Timeline(:items="timelineItems.data", slot="section-content").Home_page-timeline
 
 			VisMaVie_footer_layer
 </template>
@@ -80,12 +79,8 @@
 	import {mixin as uiNavigationButton} from 'xebia-web-common/tools/ui-navigation-button';
 
 	import AppSection from 'components/AppSection';
-	import Timeline from 'components/Timeline';
 
 	import xebiaTV from 'data/home/xebia-tv.json';
-
-	import timelineItems from 'data/about/timeline-items.json';
-	import timelineIntroduction from 'data/about/timeline-introduction.yaml';
 	
 	import ContentBlock from 'components/ContentBlock';
 
@@ -94,6 +89,8 @@
 
 	import instagram from 'data/home/instagram.json';
 	import youtube from 'data/home/youtube.json';
+
+	import introduction from 'data/home/introduction.yaml'
 
 	function randomInt(min, max) {
 	    return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -120,11 +117,10 @@
 				currentSlide: 0,
 				slideWidth: 0,
 				needAdjust: false,
-				timelineItems,
-				timelineIntroduction,
 				activeCharacter: randomCharacterIndex(),
 				slowWidgetOut: true,
-				xebiaTV
+				xebiaTV,
+				introduction
 			}
 		},
 		watch: {
@@ -176,7 +172,6 @@
 			CallToActionLayer,
 			ArrowBottom,
 			AppSection,
-			Timeline,
 			ContentBlock,
 			HeaderTitle,
 			Instagram_page_block,
@@ -695,9 +690,6 @@
 	
 	.Home_page-header-characters-scroll-view-pagination-link+.Home_page-header-characters-scroll-view-pagination-link
 		margin-left 8px
-	
-	.Home_page-timeline
-		margin-top 30px
 	
 	.Home_page-instagram-link-useful-width
 		layout__outerBox()

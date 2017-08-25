@@ -1,7 +1,9 @@
 <template lang="jade">
-	AppPage.About_page(:header="header")
-		AppSection.AppSection-even(:title="quelquesChiffres.name")
-			QuelquesChiffres(:statCards="quelquesChiffres.data", slot="section-content")
+  AppPage.About_page(:header="header")
+    AppSection.AppSection-even(:title="quelquesChiffres.name")
+      QuelquesChiffres(:statCards="quelquesChiffres.data", slot="section-content")
+    AppSection.AppSection-odd(:title="timelineItems.name", :baseline="timelineItems.baseline")
+      Timeline(:items="timelineItems.data", slot="section-content").About_page-timeline
 </template>
 
 <script>
@@ -19,6 +21,10 @@
 
   import headerImageCacheSetter from 'generated/tools/components/About_page/blurryHeaderImageCacheSetter';
 
+  import timelineItems from 'data/about/timeline-items.json';
+
+  import Timeline from 'components/Timeline';
+
   export default {
     name: 'About_page',
     mixins: [fontLoader, sizeClassHelper],
@@ -27,7 +33,8 @@
         header: Object.assign({}, header, {
           imageCacheSetter: headerImageCacheSetter
         }),
-        quelquesChiffres
+        quelquesChiffres,
+        timelineItems
       };
     },
     created : function() {
@@ -44,7 +51,8 @@
     components: {
       AppPage,
       AppSection,
-      QuelquesChiffres
+      QuelquesChiffres,
+      Timeline
     }
   };
 </script>
