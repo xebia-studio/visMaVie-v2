@@ -46,8 +46,7 @@
 
 	import LogoInstagram from 'generated/assets/components/Instagram_page_block/LogoInstagram';
 
-	import getScrollBarWidth from 'tools/get-scroll-bar-width'
-	let scrollBarWidth = getScrollBarWidth();
+	import getScrollBarWidth from 'tools/get-scroll-bar-width';
 
 	export default {
 		name: "Instagram_page_block",
@@ -69,9 +68,7 @@
 				widthCompact: false,
 				leftNavigationDisabled: false,
 				rightNavigationDisabled: false,
-				scrollViewWrapperStyle: {
-					height: (200 - scrollBarWidth)+'px'
-				}
+				scrollViewWrapperStyle: {}
 			}
 		},
 		created: function(){
@@ -221,6 +218,10 @@
 		mounted: function () {
 			this.updateLayoutOnResize();
 			this.scrollToLast();
+			this.scrollViewWrapperStyle = {
+				alert(getScrollBarWidth())
+				height: (200 - getScrollBarWidth())+'px'
+			};
 		}
 	}
 </script>
@@ -309,7 +310,7 @@
 		position relative
 		z-index 5
 		width 100%
-		height 100%
+		height 200px
 		overflow-x scroll
 		overflow-y hidden
 		clearfix()
