@@ -211,7 +211,6 @@
 							top: 0
 						});
 					});
-					
 				}
 			}
 		},
@@ -219,7 +218,6 @@
 			this.updateLayoutOnResize();
 			this.scrollToLast();
 			this.scrollViewWrapperStyle = {
-				alert(getScrollBarWidth())
 				height: (200 - getScrollBarWidth())+'px'
 			};
 		}
