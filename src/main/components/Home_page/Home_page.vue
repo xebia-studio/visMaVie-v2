@@ -462,6 +462,7 @@
 			width 160px
 			height 20vw
 			max-height 300px
+			max-width 200px
 			width 15vw
 			background-size auto 100%
 			background-position center bottom

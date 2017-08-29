@@ -11,7 +11,7 @@
 							LogoInstagram
 						.Instagram_page_block-instagram-link-picto-label {{credentials.id}}
 				.Instagram_page_block-main-width(ref="mainWidth")
-		.Instagram_page_block-scroll-view-wrapper
+		.Instagram_page_block-scroll-view-wrapper(:style="scrollViewWrapperStyle")
 			.Instagram_page_block-photos-scroll-view(ref="scrollView")
 				ul.Instagram_page_block-photos-list(:style="'width:'+photosListWidth+'px'")
 					li.Instagram_page_block-photo(v-for="photo in ordererPhotos")
@@ -46,6 +46,9 @@
 
 	import LogoInstagram from 'generated/assets/components/Instagram_page_block/LogoInstagram';
 
+	import getScrollBarWidth from 'tools/get-scroll-bar-width'
+	let scrollBarWidth = getScrollBarWidth();
+
 	export default {
 		name: "Instagram_page_block",
 		mixins: [sizeClassHelper, fontLoader],
@@ -65,7 +68,10 @@
 				mainWidth: 0,
 				widthCompact: false,
 				leftNavigationDisabled: false,
-				rightNavigationDisabled: false
+				rightNavigationDisabled: false,
+				scrollViewWrapperStyle: {
+					height: (200 - scrollBarWidth)+'px'
+				}
 			}
 		},
 		created: function(){
