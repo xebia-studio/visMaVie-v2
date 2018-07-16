@@ -3,17 +3,17 @@
   "data": [
     {
       "picto": "picto-hand-money-pig",
-      "stat": "17,5",
-      "text": "millions de CA en 2016"
+      "stat": "24",
+      "text": "millions de CA en 2018"
     },
     {
       "picto": "picto-hand-couple",
-      "stat": "150",
+      "stat": "175",
       "text": "personnes"
     },
     {
       "picto": "picto-hand-balloons",
-      "stat": "12",
+      "stat": "15",
       "text": "ans de passion"
     },
     {
@@ -28,8 +28,8 @@
     },
     {
       "picto": "pic-degree",
-      "stat": "2 032",
-      "text": "clients formés en 2016"
+      "stat": "3 150",
+      "text": "personnes formées en 2017"
     },
     {
       "picto": "picto-heart",
@@ -38,8 +38,8 @@
     },
     {
       "picto": "picto-xebicon",
-      "stat": "+ 60",
-      "text": "Xebians ont assisté à une conférence en 2016"
+      "stat": "+ 110",
+      "text": "Xebians ont assisté à une conférence en 2017"
     }
   ]
 }
