@@ -5,7 +5,7 @@ const xebiaCommonColors = require('xebia-web-common/settings/colors');
 const orchid = '#C7B299';
 const orange = '#FBB03B';
 const flashOrange = '#ff6444';
-const blue = '#424661';
+const blue = '#2C374C';
 const purple = '#6b215f';
 
 const lightBlue = '#3fa9f5';
