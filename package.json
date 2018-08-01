@@ -31,7 +31,7 @@
     "vue": "2.4.2",
     "vue-router": "2.7.0",
     "webfontloader": "github:alexistessier/webfontloader#d7f1c5e",
-    "xebia-web-common": "github:xebia-france/xebia-web-common#6e56f86",
+    "xebia-web-common": "github:xebia-france/xebia-web-common#c989ce0",
     "youtube-player": "5.4.0"
   },
   "devDependencies": {
