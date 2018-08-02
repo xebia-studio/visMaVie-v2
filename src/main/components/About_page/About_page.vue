@@ -1,5 +1,7 @@
 <template lang="jade">
-  AppPage.About_page(:header="header")
+  AppSimplePage.About_page(:header="header")
+    CallToActionLayer(ref="inHeader", slot='inHeader')
+
     AppSection.AppSection-even(:title="quelquesChiffres.name")
       QuelquesChiffres(:statCards="quelquesChiffres.data", slot="section-content")
     AppSection.AppSection-odd(:title="timelineItems.name", :baseline="timelineItems.baseline")
@@ -7,7 +9,9 @@
 </template>
 
 <script>
-  import AppPage from 'components/AppPage';
+  import AppSimplePage from 'components/AppSimplePage';
+  import CallToActionLayer from 'components/CallToActionLayer'
+
   import AppSection from 'components/AppSection';
 
   import {mixin as fontLoader} from 'tools/font-loader';
@@ -49,7 +53,8 @@
       }
     },
     components: {
-      AppPage,
+      AppSimplePage,
+       CallToActionLayer,
       AppSection,
       QuelquesChiffres,
       Timeline

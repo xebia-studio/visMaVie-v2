@@ -1,7 +1,8 @@
 <template lang="jade">
-	AppPage.GenericPage(:header="header")
-		.GenericPage-header-content-layer(slot='headerContent')
-			VisMaVieCommonHeaderContent
+	AppPage.GenericPage(:scrollPositionToReachBeforeLightBackground="scrollPositionToReachBeforeLightBackground")
+		BlurryHeaderLayer(:configScreenFiller="configScreenFiller", @resize="headerResize", :image="header.image", :description_image="header.image_description", :headerImageCacheSetter="header.imageCacheSetter").GenericPage-header
+			VisMaVieCommonHeaderContent.GenericPage-header-content
+
 		ParallaxedLayer.GenericPage-content-layer
 			.GenericPage-usefull-width-box
 				.GenericPage-margin-box
@@ -18,10 +19,13 @@ import VisMaVieCommonHeaderContent from 'components/VisMaVieCommonHeaderContent'
 
 import AppPage from 'components/AppPage';
 import TitleBlock from 'components/TitleBlock';
-import ContentBlock from 'components/ContentBlock';
+import ContentBlock from 'xebia-web-common/components/ContentBlock'
+
+import layoutSettings from 'settings/layout'
 
 export default {
 	name: 'GenericPage',
+    mixins: AppPage.mixins,
 	components: {
 		AppPage,
 		VisMaVieCommonHeaderContent,
@@ -31,6 +35,18 @@ export default {
 		ParallaxedLayer
 	},
 	props: {
+        configScreenFiller: {
+            type: Object,
+            default: function () {
+                return {
+                    'width-compact & height-ultra-compact': 70,
+                    'width-compact': 60,
+                    'default': (height) => {
+                        return (layoutSettings.headerBlockHeight/layoutSettings.screenHeightIdeal*height)+'px';
+                    }
+                }
+            }
+        },
 		header: {
 			type: Object,
 			required: true
@@ -52,10 +68,11 @@ export default {
 	methods: {
 		headerResize: function (headerHeight) {
 			this.scrollPositionToReachBeforeLightBackground = parseInt(headerHeight, 10);
-		}	
+		}
 	}
 };
 </script>
+
 
 <style lang="stylus">
 	xebiaUI__simplePageLayout('.GenericPage')
@@ -66,11 +83,35 @@ export default {
 
 	.GenericPage-title+.GenericPage-content
 		margin-top 60px
-	
+
 	.GenericPage-header .BlurryHeader-content
 		padding-top 0 !important
-		
+
 	.GenericPage-header .XebiaCommonHeaderContent-inner-box
 		margin-left 0 !important
 		margin-right 0 !important
+
+	.Cookies_page
+		.ContentBlock-list-element-content
+			width calc(97% - 20px)
+
+		.size-class-width-compact &
+			.ContentBlock-list-element-content
+				width calc(90% - 20px)
+
+	.MentionsLegales_page
+		.ContentBlock-list-element-content
+			width calc(97% - 20px)
+
+		.size-class-width-compact &
+			.ContentBlock-list-element-content
+				width calc(90% - 20px)
+
+	.PolitiqueDeConfidentialite_page
+		.ContentBlock-list-element-content
+			width calc(97% - 20px)
+
+		.size-class-width-compact &
+			.ContentBlock-list-element-content
+				width calc(90% - 20px)
 </style>

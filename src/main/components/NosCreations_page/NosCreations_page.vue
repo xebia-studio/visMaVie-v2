@@ -1,5 +1,7 @@
 <template lang="jade">
-  AppPage.NosCreations_page(:header="header")
+  AppSimplePage.NosCreations_page(:header="header")
+      CallToActionLayer(ref="inHeader", slot='inHeader')
+
       AppSection.AppSection-even(:title="partagerConnaissance.name", :baseline="partagerBaseline")
         PartagerConnaissance(:statCards="partagerConnaissance.data", slot="section-content")
       AppSection.AppSection-even(:title="projetsVaries.name")
@@ -7,7 +9,9 @@
 </template>
 
 <script>
-import AppPage from 'components/AppPage';
+import AppSimplePage from 'components/AppSimplePage';
+import CallToActionLayer from 'components/CallToActionLayer'
+
 import header from 'data/nos-creations/header.json';
 
 import AppSection from 'components/AppSection';
@@ -41,7 +45,8 @@ export default {
             });
     },
     components: {
-        AppPage,
+        AppSimplePage,
+        CallToActionLayer,
         AppSection,
         PartagerConnaissance,
         CardSlider

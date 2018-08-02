@@ -16,5 +16,6 @@ module.exports = {
   sectionMargin: 100,
   sectionMarginBig: 100,
   screenHeightIdeal: 800,
-  headerBlockHeight: 500
+  headerBlockHeight: 500,
+
 };
