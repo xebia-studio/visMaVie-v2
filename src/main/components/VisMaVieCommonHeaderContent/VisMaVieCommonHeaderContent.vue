@@ -40,13 +40,13 @@
 
 <style lang="stylus">
 	_contentNumberOfColumns = 12
-	
+
 	_screenHeightIdeal = 800
 	_heightHeader = 500
 	_marginTopLogoXebia = 140
 	_marginBottomLogoXebia = 75
 	_heightLogo = 55
-	
+
 	.VisMaVieCommonHeaderContent
 		layout__outerBox()
 		height 100%
@@ -55,11 +55,11 @@
 		layout__innerBox()
 		height 100%
 		//position relative
-	
+
 	/*------------*/
 	/* Logo Xebia */
 	/*------------*/
-		
+
 	.VisMaVieCommonHeaderContent-header-logo-outer-wrapper
 		display block
 		position absolute
@@ -70,17 +70,17 @@
 
 		.size-class-width-compact &
 			display none
-	
+
 	.VisMaVieCommonHeaderContent-header-logo-inner-wrapper
 		layout__centeredGridBox(numberOfColumns: _contentNumberOfColumns)
 		height 100%
-	
+
 	.VisMaVieCommonHeaderContent-header-logo
 		position relative
 		left -25px
 		height 100%
 		filter__dropShadow(blur:15px)
-		
+
 		g
 			fill white
 
@@ -88,7 +88,7 @@
 		layout__centeredGridBox(numberOfColumns: _contentNumberOfColumns)
 		color white
 		text-shadow 0px 0px 15px black
-	
+
 	.size-class-not-width-compact
 		.VisMaVieCommonHeaderContent-header-baseline br
 			//display none
@@ -101,26 +101,26 @@
 		font__useTextLight 18px
 		font__line-height 20px
 		display block
-	
+
 	.size-class-not-width-compact
 		.VisMaVieCommonHeaderContent-header-baseline-main,
 		.VisMaVieCommonHeaderContent-header-baseline-secondary
 			white-space nowrap
-	
+
 	.VisMaVieCommonHeaderContent-header-baseline-main+.VisMaVieCommonHeaderContent-header-baseline-secondary
 		margin-top 10px
-	
+
 	.VisMaVieCommonHeaderContent-header-logo-outer-wrapper+.VisMaVieCommonHeaderContent-header-baseline
 		margin-top 80px
-	
+
 	.size-class-width-compact
 		.VisMaVieCommonHeaderContent-header-baseline-margin-top
 			height 85px
-		
+
 		.VisMaVieCommonHeaderContent-header-baseline
 			max-width 100%
 			width auto
-		
+
 		.VisMaVieCommonHeaderContent-header-baseline-main+.VisMaVieCommonHeaderContent-header-baseline-secondary
 			margin-top 20px
 </style>
