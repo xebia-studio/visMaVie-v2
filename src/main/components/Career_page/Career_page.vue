@@ -1,5 +1,7 @@
 <template lang="jade">
-  AppPage.Career_page(:header="header")
+  AppSimplePage.Career_page(:header="header")
+    CallToActionLayer(ref="inHeader", slot='inHeader')
+
     AppSection.Career_page-top-section.AppSection-odd(:title="content.name", :baseline="content.baseline")
         .Career_page-menu(slot='section-content')
             .Career_page-menu-title(v-html="content.menu_title")
@@ -50,7 +52,7 @@
                 .Career_page-profile-interventions(v-if="currentCareer.interventions")
                     .Career_page-profile-title Ses dernières interventions
                     ul.Career_page-profile-interventions-list
-                        li.Career_page-profile-intervention(v-for="(link, label) in currentCareer.interventions") 
+                        li.Career_page-profile-intervention(v-for="(link, label) in currentCareer.interventions")
                             span(v-if="link === true") {{label}}
                             a(v-else, :href="link", target="_blank") {{label}}
                 .Career_page-profile-creations
@@ -74,7 +76,9 @@
 
 import {nextTick} from 'vue';
 
-import AppPage from 'components/AppPage';
+import AppSimplePage from 'components/AppSimplePage';
+import CallToActionLayer from 'components/CallToActionLayer'
+
 import header from 'data/carriere/header.json';
 import content from 'data/carriere/content.json';
 import settings from 'data/carriere/$settings.json';
@@ -105,7 +109,8 @@ export default {
     name: 'Career_page',
     mixins: [fontLoader, uiNavigationButton, sizeClassHelper, scrollController],
     components: {
-        AppPage,
+        AppSimplePage,
+        CallToActionLayer,
         AppSection,
         ArrowBottom,
         CallToActionButton,
@@ -255,7 +260,7 @@ export default {
             if (profileScrollViewInnerView) {
                 this.profileScrollViewInnerViewWidth = domWidth(profileScrollViewInnerView);
             }
-            
+
             this.menuScrollToCurrent("instant");
         },
         loop: function () {
@@ -331,7 +336,7 @@ export default {
 <style lang="stylus">
     _mobileFirstColumnWidth = 298px
     _mobileLastColumnsWidth = (760px / 2)
-    
+
     _mobileNewWorkBaseWidth = 545/2
     _mobileNewWorkGutterWidth = 75/2
     _mobileNewWorkColumnWidth = ( ( _mobileNewWorkBaseWidth - _mobileNewWorkGutterWidth ) / 2 )
@@ -343,18 +348,18 @@ export default {
     .Career_page-top-section.AppSection-odd
         border-bottom 0
         padding-bottom 0 !important
-        
+
     .Career_page-menu-title
         font__useTitleMedium 32
         color color__$blue
 
     .Career_page-top-section+.Career_page-menu-nav-outer-wrapper
         margin-top 25px
-        
+
     .Career_page-menu-nav-outer-wrapper
         .size-class-not-width-compact &
             layout__outerBox()
-        
+
         .size-class-width-compact &
             position relative
             overflow hidden
@@ -366,16 +371,16 @@ export default {
                 width 100%
                 height 1px
                 background-color color__$neutral50
-            
+
             &:before
                 bottom 0
             &:after
                 top 0
-    
+
     .Career_page-menu-nav-inner-wrapper
         .size-class-not-width-compact &
             layout__innerBox()
-    
+
     menuLinkHeight = 94
     menuLinkPaddingTop = 18
 
@@ -385,7 +390,7 @@ export default {
         .size-class-width-compact &
             height (menuLinkHeight + menuLinkPaddingTop) px
             position relative
-    
+
     .Career_page-menu-scroll-view
         .size-class-width-compact &
             overflow-x scroll
@@ -395,22 +400,22 @@ export default {
             -webkit-overflow-scrolling: touch;
             position relative
             z-index 5
-    
+
     .Career_page-menu-links-list
         .size-class-not-width-compact &
             layout__grid('.Career_page-menu-link', 28, 8, 1)
-        
+
         .size-class-width-compact &
             width (92px * 8)
             width calc(100% / 3 * 8)
             clearfix()
-    
+
     .Career_page-menu-link
         text-align center
         color color__$neutral50
         text-decoration none
         float left
-        
+
         .size-class-width-compact &
             width 92px !important
             padding-top menuLinkPaddingTop px
@@ -421,11 +426,11 @@ export default {
             cursor pointer
             _hover_color = darken(color__$neutral50, 30%)
             color _hover_color
-            
+
             > .Career_page-menu-link-picto
                 path
                     fill _hover_color
-    
+
     .Career_page-menu-link+.Career_page-menu-link
         .size-class-width-compact &
             position relative
@@ -438,23 +443,23 @@ export default {
                 width 1px
                 height 100%
                 background-color color__$neutral50
-    
+
     .Career_page-menu-link-picto
         display block
         width 100%
         path
             fill color__$neutral50
-        
+
         .size-class-width-compact &
             width 70px
             height 51px
             max-width 100%
             margin-left auto
             margin-right auto
-    
+
     .Career_page-menu-link-picto+.Career_page-menu-link-label
         margin-top 5px
-        
+
         .size-class-width-compact &
             margin-top 13px
 
@@ -466,7 +471,7 @@ export default {
         > .Career_page-menu-link-picto
             path
                 fill color__$flashOrange
-    
+
     .size-class-not-width-compact
         .Career_page-menu-nav-previous,
         .Career_page-menu-nav-next
@@ -482,14 +487,14 @@ export default {
             background-color white
             width 46px
             z-index 8
-            
+
             &:hover, &:focus
                 cursor pointer
-                
+
                 > .ArrowBottom
                     path
                         fill darken(color__$neutral50, 30%)
-            
+
             > .ArrowBottom
                 width 32px
                 height 10px
@@ -498,26 +503,26 @@ export default {
                 margin-right auto
                 path
                     fill color__$neutral50
-            
+
         .Career_page-menu-nav-previous
             left 0
             border-right 1px solid color__$neutral50
-            
+
             > .ArrowBottom
                 transform rotate(90deg)
-        
+
         .Career_page-menu-nav-next
             right 0
             border-left 1px solid color__$neutral50
 
             > .ArrowBottom
                 transform rotate(-90deg)
-    
-    .Career_page-menu-nav-outer-wrapper+.Career_page-profile    
+
+    .Career_page-menu-nav-outer-wrapper+.Career_page-profile
         .size-class-not-width-compact &
             margin-top 20px
             border-top 1px solid color__$neutral50
-    
+
     _mobileProfileHeight = 525
 
     .Career_page-profile
@@ -529,32 +534,32 @@ export default {
             overflow hidden
             height _mobileProfileHeight px
             position relative
-            
+
     .Career_page-profile-useful-width
         .size-class-not-width-compact &
             layout__outerBox()
-        
+
         .size-class-width-compact &
             overflow-y hidden
             overflow-x scroll
             -webkit-overflow-scrolling: touch;
             layout__innerBox()
             position relative
-            
+
             border-left 1px solid color__$neutral50
             border-right 1px solid color__$neutral50
 
     .Career_page-profile-margin-constraint
         position relative
-        
+
         .size-class-not-width-compact &
             layout__innerBox()
             min-height 450px
-        
+
         .size-class-width-compact &
             clearfix()
             height _mobileProfileHeight px
-            
+
             fullWidth(col)
                 return (_mobileFirstColumnWidth + _mobileLastColumnsWidth + _mobileNewWorkWidth(col) + (_mobileExpertiseListMarginHorizontal*2) )
 
@@ -563,19 +568,19 @@ export default {
             &.contains--3-expertises,
             &.contains--4-expertises
                 width fullWidth(2)
-            
+
             &.contains--5-expertises,
             &.contains--6-expertises
                 width fullWidth(3)
-                
+
             &.contains--7-expertises,
             &.contains--8-expertises
                 width fullWidth(4)
-            
+
             &.contains--9-expertises,
             &.contains--10-expertises
                 width fullWidth(5)
-    
+
     .Career_page-profile-shadow
         .size-class-width-compact &
             position absolute
@@ -586,14 +591,14 @@ export default {
             left 0
             pointer-events none
             z-index 5
-    
+
     .Career_page-profile-shadow-inner-wrapper
         .size-class-width-compact &
             layout__innerBox()
             height 100%
             position relative
             overflow hidden
-            
+
             &:before, &:after
                 display block
                 content ''
@@ -604,7 +609,7 @@ export default {
                 box-shadow 0px 0px 45px rgba(black, 0.42)
                 border-radius 50%
                 opacity 1
-            
+
             &:before
                 left -50px
             &:after
@@ -616,7 +621,7 @@ export default {
             &.position--end
                 &:after
                     opacity 0
-    
+
     .Career_page-chart-handswipe
         display block
         width 40px
@@ -624,22 +629,22 @@ export default {
         position absolute
         top 10px
         left 10px
-        
+
         .size-class-not-width-compact &,
         .Career_page-shadow-inner-wrapper.position--end.position--start &
             display none
-        
+
     .Career_page-chart-handswipe-picto
         display block
         width 100%
         height 100%
-        
+
     .Career_page-profile-mobile-first-column
         .size-class-width-compact &
             float left
             height 100%
             position relative
-            
+
             &:after
                 content ''
                 display block
@@ -649,16 +654,16 @@ export default {
                 right 0
                 top 0
                 background-color color__$neutral50
-    
-    .Career_page-profile-contact-card    
+
+    .Career_page-profile-contact-card
         float left
         position relative
-        
+
         .size-class-width-compact &
             width _mobileFirstColumnWidth
             padding-bottom 60px
             border-bottom 1px solid color__$neutral50
-            
+
         .size-class-not-width-compact &
             layout__gridBox(9)
             layout__gridTab(1)
@@ -672,15 +677,15 @@ export default {
                 right 0
                 top 0
                 background-color color__$neutral50
-    
+
     .Career_page-profile-contact-card-inner-wrapper
         padding-top 24px
         .size-class-not-width-compact &
             layout__gridBox(7, gridNumberOfColumns: 9)
-        
+
         .size-class-width-compact &
             layout__centeredGridBox(22)
-    
+
     .Career_page-profile-contact-card-photo
         height 160px
         border-bottom 1px solid color__$neutral50
@@ -688,21 +693,21 @@ export default {
         background-repeat no-repeat
         background-size auto 100%
         background-size contain
-        
+
         .size-class-width-compact &
             height 150px
-    
+
     .Career_page-profile-contact-card-photo+.Career_page-profile-contact-name
         margin-top 25px
-    
+
     .Career_page-profile-contact-name,
     .Career_page-profile-contact-job
         text-align center
         font__useTextLight()
-        
+
         > strong
             font__useTextRegular()
-    
+
     .Career_page-profile-contact-name
         font__rem-size 20
 
@@ -711,46 +716,46 @@ export default {
 
     .Career_page-profile-contact-name
         color color__$blue
-        
+
     .Career_page-profile-contact-sep
         display block
         margin 10px auto
         width 40px
         background-color color__$neutral50
         height 1px
-    
+
     .Career_page-profile-contact-job
         color color__$text
-    
+
     .Career_page-profile-contact-job+.Career_page-profile-contact-button
         margin-top 60px
-        
+
         .size-class-width-compact &
             margin-top 30px
-    
-    .Career_page-profile-contact-button        
+
+    .Career_page-profile-contact-button
         .size-class-not-width-compact &
             layout__centeredGridBox(5, gridNumberOfColumns: 7)
             padding-bottom 30px
-        
+
         .size-class-width-compact &
             position absolute
             left 0
             bottom 0
             width 100%
             transform translateY(50%)
-    
+
     .Career_page-profile-contact-button-inner-wrapper
         .size-class-width-compact &
             layout__centeredGridBox(5, gridNumberOfColumns: 7)
-    
+
     .Career_page-profile-starts-at-xebia,
     .Career_page-profile-new-works
         .size-class-not-width-compact &
             padding-bottom 30px
             float right
             position relative
-            
+
             &:after
                 display block
                 content ''
@@ -760,10 +765,10 @@ export default {
                 top 0
                 left -1px
                 background-color color__$neutral50
-    
+
     .Career_page-profile-starts-at-xebia
         padding-top 35px
-        
+
         .size-class-width-compact &
             padding-top 60px
             > .Career_page-profile-title
@@ -775,7 +780,7 @@ export default {
             > .Career_page-profile-title
                 margin-left (2 / 20 * 100%)
                 margin-right (1 / 20 * 100%)
-                
+
     .Career_page-profile-starts-at-xebia-outer-wrapper
         .size-class-width-compact &
             width 298px
@@ -787,21 +792,21 @@ export default {
 
     .Career_page-profile-start-expertise,
     .Career_page-profile-expertise-list
-        .size-class-not-width-compact & 
+        .size-class-not-width-compact &
             margin-left (2 / 20 * 100%)
             margin-right (2 / 20 * 100%)
-        
+
     .Career_page-profile-new-works
         .size-class-width-compact &
             float left
             position relative
             height 100%
-            
+
             > .Career_page-profile-title
                 margin-top 25px
                 margin-left 30px
                 margin-right 30px
-            
+
             &:after
                 display block
                 content ''
@@ -811,16 +816,16 @@ export default {
                 top 0
                 right -1px
                 background-color color__$neutral50
-        
+
         .size-class-not-width-compact &
             padding-top 20px
             layout__gridBox(20)
             position relative
-            
+
             > .Career_page-profile-title
                 margin-left (2 / 20 * 100%)
                 margin-right (1 / 20 * 100%)
-            
+
             &:before
                 content ''
                 display block
@@ -834,15 +839,15 @@ export default {
     .Career_page-profile-title
         font__useTitleRegular 24
         color color__$blue
-        
+
     .Career_page-profile-title+.Career_page-profile-start-expertise
     .Career_page-profile-title+.Career_page-profile-expertise-list
         margin-top 20px
-        
+
     .Career_page-profile-title+.Career_page-profile-expertise-list
         .size-class-width-compact &
             margin-top 70px
-    
+
     .Career_page-profile-start-expertise,
     .Career_page-profile-expertise
         clearfix()
@@ -853,21 +858,21 @@ export default {
         margin-left 10px
         text-align center
         width 70px
-    
+
     .Career_page-profile-expertise-picto-wrapper
         .size-class-width-compact &
             margin-left auto
             margin-right auto
-        
+
     .Career_page-profile-start-expertise-picto,
     .Career_page-profile-expertise-picto
         display block
         width 100%
-    
+
     .Career_page-profile-start-expertise-picto
         path
             fill color__$flashOrange
-        
+
     .Career_page-profile-start-expertise-picto+.Career_page-profile-start-expertise-name,
     .Career_page-profile-expertise-picto+.Career_page-profile-expertise-name
         margin-top 10px
@@ -876,12 +881,12 @@ export default {
     .Career_page-profile-expertise-name
         font__useTextLight 14
         color #B3B3B3
-    
+
     .Career_page-profile-expertise-name+.Career_page-profile-expertise-skills-list
         .size-class-width-compact &
             margin-top 15px
             position relative
-            
+
             &:before
                 display block
                 content ''
@@ -892,25 +897,25 @@ export default {
                 background-color color__$neutral50
                 left 50%
                 transform translateX(-50%)
-    
+
     .Career_page-profile-start-expertise-description
         position absolute
         top 50%
         left 0
         width 100%
         transform translateY(-50%)
-        
+
         > span
             display block
             padding-left 105px
-            
+
             .size-class-not-width-compact &
                 transform translateY(-10px)
-            
+
             > strong
                 font__useTextRegular()
                 color color__$flashOrange
-    
+
     .Career_page-profile-expertise-skills-list
         .size-class-not-width-compact &
             position absolute
@@ -922,25 +927,25 @@ export default {
         .size-class-width-compact &
             transform translateX(-50%)
             margin-left 50%
-        
+
     .Career_page-profile-expertise-skill
         display block
-        
+
         .size-class-not-width-compact &
             padding-left 105px
             transform translateY(-10px)
             display block
             width 75%
-        
+
         .size-class-width-compact &
             text-align center
-            
+
             &:before
                 display none
-            
+
             > span
                 position relative
-                
+
                 &:before
                     display block
                     content ''
@@ -948,14 +953,14 @@ export default {
                     top 8px
                     shape__circle(4px, color__$text)
                     left -10px
-    
+
     .Career_page-profile-start-expertise-description,
     .Career_page-profile-expertise-skill,
     .Career_page-profile-intervention
         font__useTextLight 15
         font__line-height 20
         color color__$text
-        
+
         a
             color color__$text
             text-decoration underline
@@ -975,19 +980,19 @@ export default {
             margin-right 8px
             float left
             shape__circle(4px, color__$text)
-    
+
     .Career_page-profile-expertise-list
         .size-class-not-width-compact &
             layout__grid('.Career_page-profile-expertise', 16, 2, 2, 20px)
         .size-class-width-compact &
             margin-left _mobileExpertiseListMarginHorizontal
             margin-right _mobileExpertiseListMarginHorizontal
-        
+
     .size-class-width-compact
         baseWidth = _mobileNewWorkBaseWidth
         gutterWidth = _mobileNewWorkGutterWidth
         colWidth = _mobileNewWorkColumnWidth
-        
+
         styleExpertiseList(col)
             fullWidth = _mobileNewWorkWidth(col)
             layout__grid('.Career_page-profile-expertise', fullWidth, col, gutterWidth, 35px)
@@ -995,26 +1000,26 @@ export default {
 
             .Career_page-profile-expertise-skills-list
                 width colWidth px
-        
+
         .Career_page-profile-expertise-list
             &.contains--1-expertises,
             &.contains--2-expertises,
             &.contains--3-expertises,
             &.contains--4-expertises
                 styleExpertiseList(2)
-            
+
             &.contains--5-expertises,
             &.contains--6-expertises
                 styleExpertiseList(3)
-            
+
             &.contains--7-expertises,
             &.contains--8-expertises
                 styleExpertiseList(4)
-            
+
             &.contains--9-expertises,
             &.contains--10-expertises
                 styleExpertiseList(5)
-    
+
     .Career_page-profile-expertise-picto
         path
             fill color__$lightBlue
@@ -1027,16 +1032,16 @@ export default {
     .Career_page-profile-creations
         padding-top 20px
         padding-bottom 30px
-        
+
         .size-class-not-width-compact &
             float left
             border-top 1px solid color__$neutral50
-        
+
         .size-class-width-compact &
             width _mobileLastColumnsWidth
             padding-top 25px
             float left
-    
+
             > .Career_page-profile-title,
             > .Career_page-profile-interventions-list,
             > .Career_page-profile-creations-list
@@ -1047,29 +1052,29 @@ export default {
         .size-class-not-width-compact &
             layout__gridBox(10)
             position relative
-            
+
             > .Career_page-profile-title
                 margin-left (1 / 10 * 100)%
                 margin-right (1 / 10 * 100)%
-            
+
             &:before, &:after
                 display block
                 content ''
                 background-color color__$neutral50
                 position absolute
-            
+
             &:before
                 top -1px
                 right 100%
                 width 200%
                 height 1px
-            
+
             &:after
                 width 1px
                 height 100%
                 right 0
                 top 0
-        
+
         .size-class-width-compact &
             bottom 0
 
@@ -1081,41 +1086,41 @@ export default {
         .size-class-not-width-compact &
             margin-left (1 / 10 * 100)%
             margin-right (1 / 10 * 100)%
-    
+
     .Career_page-profile-creations
         border-top 1px solid color__$neutral50
-        
+
         .size-class-not-width-compact &
             position relative
             layout__gridBox(20)
-            
+
             > .Career_page-profile-title
                 margin-left (2 / 20 * 100%)
                 margin-right (1 / 20 * 100%)
-            
+
             &:before, &:after
                 display block
                 content ''
                 background-color color__$neutral50
                 position absolute
-            
+
             &:before
                 top -1px
                 left 100%
                 width 200%
                 height 1px
-            
+
             &:after
                 width 1px
                 height 100%
                 left -1px
                 top 0
-    
+
     .Career_page-profile-creations-list
         .size-class-not-width-compact &
             margin-left (2 / 20 * 100%)
             margin-right (1 / 20 * 100%)
-    
+
     .Career_page-profile-creation
         display inline-block
         background-color color__$neutral50
@@ -1126,10 +1131,10 @@ export default {
         padding 4px 12px
         font__line-height 16
         border-radius font__pxToRem(16)
-        
+
         &.is--active
             background-color color__$lightBlue
-    
+
     .Career_page-profile-passions
         background-color color__$sectionEven
         padding-top 25px
@@ -1138,14 +1143,14 @@ export default {
 
     .Career_page-profile-passions-useful-width
         layout__outerBox()
-    
+
     .Career_page-profile-passions-margin-constraint
         layout__innerBox()
-        
+
     .Career_page-profile-passions-margin-constraint > .Career_page-profile-title,
     .Career_page-profile-passions-list
         layout__centeredGridBox(28)
-    
+
     .Career_page-profile-title+.Career_page-profile-passions-list
         margin-top 20px
 
@@ -1154,7 +1159,7 @@ export default {
             layout__grid('.Career_page-profile-passion', 28, 7, 1)
         .size-class-width-compact &
             layout__grid('.Career_page-profile-passion', 28, 3, 2, 20px)
-    
+
     .Career_page-profile-passion-picto
         xebiaUI__logoFilter()
 </style>

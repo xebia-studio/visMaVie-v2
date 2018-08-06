@@ -1,5 +1,7 @@
 <template lang="jade">
-	AppPage.NosValeurs_page(:header="header")
+	AppSimplePage.NosValeurs_page(:header="header")
+		CallToActionLayer(ref="inHeader", slot='inHeader')
+
 		PeopleFirst_section.NosValeurs_page-section
 		SharingKnowledge_section.NosValeurs_page-section
 		QualityWithoutCompromise_section.NosValeurs_page-section
@@ -7,9 +9,11 @@
 </template>
 
 <script>
-	import AppPage from 'components/AppPage';
+	import AppSimplePage from 'components/AppSimplePage';
+    import CallToActionLayer from 'components/CallToActionLayer'
 
-	import PeopleFirst_section from 'components/PeopleFirst_section'
+
+    import PeopleFirst_section from 'components/PeopleFirst_section'
 	import SharingKnowledge_section from 'components/SharingKnowledge_section'
 	import QualityWithoutCompromise_section from 'components/QualityWithoutCompromise_section'
 	import CustomerIntimacy_section from 'components/CustomerIntimacy_section'
@@ -27,7 +31,8 @@
 			};
 		},
 		components: {
-			AppPage,
+            AppSimplePage,
+            CallToActionLayer,
 			PeopleFirst_section,
 			SharingKnowledge_section,
 			QualityWithoutCompromise_section,

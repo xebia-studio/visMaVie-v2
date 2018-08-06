@@ -1,4 +1,4 @@
-import App from 'components/App';
+/*import App from 'components/App';
 
 const routes = require('./app-routes');
 
@@ -8,4 +8,6 @@ module.exports = [
 		component: App,
 		children : routes
 	}
-];
+];*/
+
+module.exports = require('./app-routes');

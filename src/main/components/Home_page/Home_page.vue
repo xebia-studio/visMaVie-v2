@@ -8,19 +8,18 @@
 					.Home_page-header-useful-width
 						.Home_page-header-margin-constraints
 							.Home_page-header-content
-								.Home_page-header-logo
-									.Home_page-header-logo-offset
-									LogoXebiaVisMaVie
+								.Home_page-header-title-offset
+								HeaderTitle.Home_page-header-title(:title="header.title", :titleLevel="1", :description="header.subtitle")
 								.Home_page-header-characters-scroll-view-pagination
 									button.Home_page-header-characters-scroll-view-pagination-link(v-for="(c, i) in characters", @click="buttonClick($event, 'paginationLink'+i, scrollToSlideClick, i)", :ref="'paginationLink'+i", rel="button", :class="i === currentSlide ? 'is--active' : ''")
 								.Home_page-header-characters-scroll-view(:style="{bottom:scrollViewBottomStyle}", ref="characterScrollView")
 									.Home_page-header-characters
-										.Home_page-header-characters-group(v-for="(charactersGroup, i) in charactersGroups")
-											a.Home_page-header-character(v-for="(character, index) in charactersGroup", :class="'index-'+(index+1+(i*4))", :href="character.url", @click="clickOnCharacter($event, character)")
+										.Home_page-header-characters-group(v-for="(charactersGroup, i) in charactersGroups", :class="((i === 0 && activeCharacter <= 4) || (i === 1 && activeCharacter > 4)) ? 'contains--active-character' : ''")
+											a.Home_page-header-character(v-for="(character, index) in charactersGroup", :class="((index+1+(i*4)) === activeCharacter ? 'is--active ' : '')+'index-'+(index+1+(i*4))", :href="character.url", @click="clickOnCharacter($event, character)")
 												.Home_page-header-character-image(:style="charactersStyles[index+(i*4)]")
 												.Home_page-header-character-widget
 													.Home_page-header-character-widget-outer-wrapper
-														.Home_page-header-character-widget-inner-wrapper
+														.Home_page-header-character-widget-inner-wrapper(:class="slowWidgetOut ? 'is--slow' :  ''")
 															.Home_page-header-character-info
 																.Home_page-header-character-name {{character.name}}
 																.Home_page-header-character-job {{character.job}}
@@ -32,19 +31,28 @@
 			CallToActionLayer(ref="callToActionLayer", :zIndex="6", style="position:relative")
 
 			ParallaxedLayer
-				AppSection.AppSection-odd(:title="timelineItems.introductionTitle", :baseline="timelineItems.baseline")
-					ContentBlock.Home_page-introduction(:blocks="timelineIntroduction.block_content", slot="section-content")
+				AppSection.AppSection-odd(:title="introduction.title", :baseline="introduction.baseline")
+					ContentBlock.Home_page-introduction(:blocks="introduction.block_content", slot="section-content")
 
-				AppSection.AppSection-odd(:title="timelineItems.name")
-					Timeline(:items="timelineItems.data", slot="section-content").Home_page-timeline
+				Instagram_page_block.Home_page-instagram-block(:credentials="instagram")
+				.Home_page-instagram-link-useful-width
+					.Home_page-instagram-link-margin-constraints
+						.Home_page-instagram-link
+							ArrowLink(external=true, :label="instagram.link_label", :url="instagramUrl")
+
+				AppSection.AppSection-even(:title="xebiaTV.name", :baseline="xebiaTV.baseline")
+					YoutubeVideosList_thumbnails_list(v-bind="youtube", slot="section-content")
+					.Home_page-youtube-link(slot="section-content")
+						ArrowLink(external=true, :label="youtube.link_label", :url="youtubeUrl")
 
 			VisMaVie_footer_layer
 </template>
 
 <script>
 	import getScrollBarWidth from 'tools/get-scroll-bar-width'
-	const scrollBarWidth = getScrollBarWidth();
+	let scrollBarWidth = getScrollBarWidth();
 
+	import {nextTick} from 'vue';
 	import {domHeight, domWidth} from '@alexistessier/dom';
 
 	import scrollBehaviorScrollToCareerObject from 'tools/scroll-behavior-scroll-to-career-object';
@@ -53,6 +61,9 @@
 	import ParallaxedLayer from 'xebia-web-common/components/ParallaxedLayersGroup/ParallaxedLayer';
 
 	import ScreenFillerBlock from 'xebia-web-common/components/ScreenFillerBlock';
+	import HeaderTitle from 'xebia-web-common/components/HeaderTitle';
+	import ArrowLink from 'xebia-web-common/components/ArrowLink';
+
 	import LogoXebiaVisMaVie from 'generated/assets/components/Home_page/LogoXebiaVisMaVie';
 	import ArrowBottom from 'generated/assets/components/Home_page/ArrowBottom';
 	import CallToActionLayer from 'components/CallToActionLayer';
@@ -68,19 +79,36 @@
 	import {mixin as uiNavigationButton} from 'xebia-web-common/tools/ui-navigation-button';
 
 	import AppSection from 'components/AppSection';
-	import Timeline from 'components/Timeline';
-	import timelineItems from 'data/about/timeline-items.json';
-	import timelineIntroduction from 'data/about/timeline-introduction.yaml';
 
-	console.log(timelineIntroduction.block_content)
+	import xebiaTV from 'data/home/xebia-tv.json';
 	
-	import ContentBlock from 'components/ContentBlock'
+	import ContentBlock from 'components/ContentBlock';
+
+	import Instagram_page_block from 'components/Instagram_page_block';
+	import YoutubeVideosList_thumbnails_list from 'components/YoutubeVideosList_thumbnails_list';
+
+	import instagram from 'data/home/instagram.json';
+	import youtube from 'data/home/youtube.json';
+
+	import introduction from 'data/home/introduction.yaml'
+
+	function randomInt(min, max) {
+	    return Math.floor(Math.random() * (max - min + 1)) + min;
+	}
+
+	const numberOfCharacters = header.consultants.length;
+
+	function randomCharacterIndex(){
+		return randomInt(1, numberOfCharacters)
+	} 
 
 	export default {
 		name: 'Home_page',
 		mixins: [sizeClassHelper, fontLoader, uiNavigationButton],
 		data(){
 			return {
+				instagram,
+				youtube,
 				header,
 				characters: header.consultants,
 				headerBackground: undefined,
@@ -89,8 +117,10 @@
 				currentSlide: 0,
 				slideWidth: 0,
 				needAdjust: false,
-				timelineItems,
-				timelineIntroduction
+				activeCharacter: randomCharacterIndex(),
+				slowWidgetOut: true,
+				xebiaTV,
+				introduction
 			}
 		},
 		watch: {
@@ -122,8 +152,14 @@
 				}
 
 				return function(height){
-					return Math.max(fillerHeight(height), 425)+'px';
+					return Math.min(800, Math.max(fillerHeight(height), 425))+'px';
 				}
+			},
+			instagramUrl: function () {
+				return `https://www.instagram.com/${this.instagram.id}/`;
+			},
+			youtubeUrl: function () {
+				return `https://www.youtube.com/user/${this.youtube.user}`;
 			}
 		},
 		components: {
@@ -136,8 +172,11 @@
 			CallToActionLayer,
 			ArrowBottom,
 			AppSection,
-			Timeline,
-			ContentBlock
+			ContentBlock,
+			HeaderTitle,
+			Instagram_page_block,
+			YoutubeVideosList_thumbnails_list,
+			ArrowLink
 		},
 		methods: {
 			clickOnCharacter(event, character){
@@ -263,10 +302,34 @@
 				})
 			})();
 		},
+		mounted(){
+			this.slowWidgetOut = true;
+			this.activeCharacter = randomCharacterIndex();
+			this.activeCharacterTimeOut = setTimeout(()=>{
+				this.activeCharacter = -1;
+			}, 4000);
+
+			this.slowWidgetOutTimeOut = setTimeout(()=>{
+				this.slowWidgetOut = false;
+			}, 4800);
+
+			nextTick(()=>{
+				scrollBarWidth = getScrollBarWidth();
+				this.scrollViewBottomStyle = `-${scrollBarWidth}px`;
+			});
+		},
 		beforeDestroy(){
 			this.stopLoop = true;
 			this.getSizeClassHelper().off(...this.deviceChangeListenerArguments);
 			this.getSizeClassHelper().off(...this.resizeListenerArguments);
+
+			if (this.activeCharacterTimeOut) {
+				clearTimeout(this.activeCharacterTimeOut)
+			}
+
+			if (this.slowWidgetOutTimeOut) {
+				clearTimeout(this.slowWidgetOutTimeOut)
+			}
 		}
 	}
 </script>
@@ -291,28 +354,11 @@
 
 		.size-class-not-width-compact.no-touchevents &
 			layout__centeredGridBox(28)
-
-	.Home_page-header-logo
-		height 100%
-		
-		.size-class-not-width-compact.no-touchevents &
-			layout__gridBox(8, gridNumberOfColumns: 28)
-		
-		.size-class-width-compact &,
-		.touchevents &
-			layout__gridBox(8, gridNumberOfColumns: 30)
-
-		> .LogoXebiaVisMaVie
-			width 100%
-			height (105 / 570 * 100%)
-			max-height 105px
-			max-width 260px
-			min-width 240px
-			min-height 100px
-			
-			filter__dropShadow 0px 0px 2px rgba(black, 0.62)
 	
-	.Home_page-header-logo-offset
+	.Home_page-header-title
+		text-shadow 0px 0px 15px black
+
+	.Home_page-header-title-offset
 		width 100%
 		height (130 / 570 * 100%)
 		
@@ -363,8 +409,15 @@
 		.size-class-not-width-compact.no-touchevents &
 			left -1.1vw
 		
-		&:hover
+		&:hover,
+		&.contains--active-character
 			z-index 6
+		
+		.Home_page-header-characters:hover &
+			z-index 5
+			
+			&:hover
+				z-index 6
 
 	.Home_page-header-character
 		display block
@@ -409,6 +462,7 @@
 			width 160px
 			height 20vw
 			max-height 300px
+			max-width 200px
 			width 15vw
 			background-size auto 100%
 			background-position center bottom
@@ -424,6 +478,17 @@
 			left 75%
 			width 25%
 			bottom 30px
+	
+	.size-class-not-width-compact.no-touchevents .Home_page-header-character
+		.Home_page-header-character-image
+			transform scale(1)
+			transform-origin 50% 50%
+			transition transform 220ms ease__outQuad()
+		
+		&:hover, &:focus
+			.Home_page-header-character-image
+				transition-timing-function ease__inQuad()
+				transform scale(1.06)
 
 	.Home_page-header-character-widget-outer-wrapper
 		position relative
@@ -442,8 +507,16 @@
 			left -300px
 	
 	.Home_page-header-character-widget-inner-wrapper
-		transition transform 220ms ease__outQuart()
+		transition transform 280ms ease__outQuad() 0ms
 		
+		&.is--slow
+			transition-timing-function ease__inQuad() !important
+		
+		.size-class-not-width-compact.no-touchevents .Home_page-header-character:hover &,
+		.size-class-not-width-compact.no-touchevents .Home_page-header-character:focus &
+			transition-duration 260ms
+			transition-delay 180ms
+
 		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-1 &,
 		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-2 &,
 		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-3 &,
@@ -457,9 +530,26 @@
 			transform translateX(101%)
 		
 		.size-class-not-width-compact.no-touchevents .Home_page-header-character:hover &,
-		.size-class-not-width-compact.no-touchevents .Home_page-header-character:focus &
+		.size-class-not-width-compact.no-touchevents .Home_page-header-character:focus &,
+		.size-class-not-width-compact.no-touchevents .Home_page-header-character.is--active &
 			transform translateX(0)
-	
+			
+		.size-class-not-width-compact.no-touchevents .Home_page-header-characters:hover .Home_page-header-character.index-1 &,
+		.size-class-not-width-compact.no-touchevents .Home_page-header-characters:hover .Home_page-header-character.index-2 &,
+		.size-class-not-width-compact.no-touchevents .Home_page-header-characters:hover .Home_page-header-character.index-3 &,
+		.size-class-not-width-compact.no-touchevents .Home_page-header-characters:hover .Home_page-header-character.index-4 &
+			transform translateX(-101%)
+			
+		.size-class-not-width-compact.no-touchevents .Home_page-header-characters:hover .Home_page-header-character.index-5 &,
+		.size-class-not-width-compact.no-touchevents .Home_page-header-characters:hover .Home_page-header-character.index-6 &,
+		.size-class-not-width-compact.no-touchevents .Home_page-header-characters:hover .Home_page-header-character.index-7 &,
+		.size-class-not-width-compact.no-touchevents .Home_page-header-characters:hover .Home_page-header-character.index-8 &
+			transform translateX(101%)
+		
+		.size-class-not-width-compact.no-touchevents .Home_page-header-characters:hover .Home_page-header-character:hover &,
+		.size-class-not-width-compact.no-touchevents .Home_page-header-characters:hover .Home_page-header-character:focus &
+			transform translateX(0)
+
 	.Home_page-header-character-info
 		background-color color__$blue
 		padding-right 15px
@@ -602,6 +692,16 @@
 	.Home_page-header-characters-scroll-view-pagination-link+.Home_page-header-characters-scroll-view-pagination-link
 		margin-left 8px
 	
-	.Home_page-timeline
-		margin-top 30px
+	.Home_page-instagram-link-useful-width
+		layout__outerBox()
+		padding-bottom 35px
+
+	.Home_page-instagram-link-margin-constraints
+		layout__innerBox()
+	.Home_page-instagram-link
+		layout__centeredGridBox(28)
+	
+	.Home_page-instagram-block+.Home_page-instagram-link-useful-width,
+	.Home_page-youtube-link
+		margin-top 35px
 </style>

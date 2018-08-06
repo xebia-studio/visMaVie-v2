@@ -1,4 +1,6 @@
 require('generic/polyfill');
+require('generic/reset.js');
+require('generic/reset.styl');
 require('src/generated/tools/modernizr');
 
 /*--------------*/

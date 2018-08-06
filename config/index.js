@@ -4,7 +4,7 @@ const path = require('path');
 const currentBranchName = require('../branchname');
 const distDirectory = path.join(path.resolve(__dirname, '../dist'), currentBranchName);
 
-const devPort = 8080;
+const devPort = 8081;
 
 module.exports = {
   host: {

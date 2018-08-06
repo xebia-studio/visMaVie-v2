@@ -1,5 +1,7 @@
 <template lang="jade">
-    AppPage.NousRejoindre_page(:header="header")
+    AppSimplePage.NousRejoindre_page(:header="header")
+        CallToActionLayer(ref="inHeader", slot='inHeader')
+
         AppSection.AppSection-even(:title="annonces.name")
             OfferAccordion(:jobs="annonces.data", :talentButtonLabel="talentButtonLabel", :jobButtonLabel="jobButtonLabel", slot="section-content")
         AppSection.AppSection-even.AppSection-no-padding
@@ -18,7 +20,9 @@
 </template>
 
 <script>
-import AppPage from 'components/AppPage';
+import AppSimplePage from 'components/AppSimplePage';
+import CallToActionLayer from 'components/CallToActionLayer'
+
 import header from 'data/nous-rejoindre/header.json';
 
 import AppSection from 'components/AppSection';
@@ -70,7 +74,8 @@ export default {
     });
   },
   components : {
-    AppPage,
+    AppSimplePage,
+    CallToActionLayer,
     AppSection,
     OfferAccordion,
     NosTechnos,

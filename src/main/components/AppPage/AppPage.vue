@@ -2,10 +2,7 @@
     .AppPage
         ParallaxedLayersGroup
             VisMaVie_navigation_bar_layer(:scrollPositionToReachBeforeLightBackground="scrollPositionToReachBeforeLightBackground")
-            BlurryHeaderLayer(@resize="headerResize", :title="header.title", :description="header.description", :image="header.image", :description_image="header.image_description", ref="blurryHeader", :titleLevel="header.titleLevel", :configScreenFiller="configScreenFiller", :headerImageCacheSetter="header.imageCacheSetter")
-                slot(name='headerContent')
-            .AppPage-in-header-block(ref='inHeaderContainer')
-                CallToActionLayer(ref="inHeader")
+
 
             slot
 
@@ -13,7 +10,7 @@
 </template>
 
 <script>
-    import ParallaxedLayersGroup from 'xebia-web-common/components/ParallaxedLayersGroup/ParallaxedLayersGroup';
+    import { mixin as layout } from 'tools/page-layout'
 
     import VisMaVie_navigation_bar_layer from 'components/VisMaVie_navigation_bar_layer';
     import VisMaVie_footer_layer from 'components/VisMaVie_footer_layer'
@@ -28,6 +25,7 @@
 
     export default {
         name: 'AppPage',
+        mixins: [layout],
         props: {
             header: {
                 type: Object,
@@ -51,7 +49,6 @@
             }
         },
         components: {
-            ParallaxedLayersGroup,
             VisMaVie_navigation_bar_layer,
             BlurryHeaderLayer,
             CallToActionLayer,

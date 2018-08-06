@@ -1,11 +1,17 @@
 <template lang="jade">
-	AppPage.About_page(:header="header")
-		AppSection.AppSection-even(:title="quelquesChiffres.name")
-			QuelquesChiffres(:statCards="quelquesChiffres.data", slot="section-content")
+  AppSimplePage.About_page(:header="header")
+    CallToActionLayer(ref="inHeader", slot='inHeader')
+
+    AppSection.AppSection-even(:title="quelquesChiffres.name")
+      QuelquesChiffres(:statCards="quelquesChiffres.data", slot="section-content")
+    AppSection.AppSection-odd(:title="timelineItems.name", :baseline="timelineItems.baseline")
+      Timeline(:items="timelineItems.data", slot="section-content").About_page-timeline
 </template>
 
 <script>
-  import AppPage from 'components/AppPage';
+  import AppSimplePage from 'components/AppSimplePage';
+  import CallToActionLayer from 'components/CallToActionLayer'
+
   import AppSection from 'components/AppSection';
 
   import {mixin as fontLoader} from 'tools/font-loader';
@@ -19,6 +25,10 @@
 
   import headerImageCacheSetter from 'generated/tools/components/About_page/blurryHeaderImageCacheSetter';
 
+  import timelineItems from 'data/about/timeline-items.json';
+
+  import Timeline from 'components/Timeline';
+
   export default {
     name: 'About_page',
     mixins: [fontLoader, sizeClassHelper],
@@ -27,7 +37,8 @@
         header: Object.assign({}, header, {
           imageCacheSetter: headerImageCacheSetter
         }),
-        quelquesChiffres
+        quelquesChiffres,
+        timelineItems
       };
     },
     created : function() {
@@ -42,9 +53,11 @@
       }
     },
     components: {
-      AppPage,
+      AppSimplePage,
+       CallToActionLayer,
       AppSection,
-      QuelquesChiffres
+      QuelquesChiffres,
+      Timeline
     }
   };
 </script>
