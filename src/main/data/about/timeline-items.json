@@ -2,16 +2,22 @@
   "name": "Xebia en quelques faits",
   "data": [
     {
+      "year": 2018,
+      "image": "logo-dataxday",
+      "description": "Xebia organise la première conférence qui allie <strong>Data Science</strong> et <strong>Data Engineering</strong>.",
+      "link": "https://dataxday.fr/"
+    },
+    {
       "year": 2016,
       "image": "logo-frenchkit",
       "description": "Xebia co-organise la <strong>première conférence iOS</strong> française, <strong>FrenchKit</strong>.",
-      "link": "http://frenchkit.fr/"
+      "link": "https://frenchkit.fr/"
     },
     {
       "year": "",
       "image": "logo-paris-container-day",
       "description": "Xebia organise la première édition du <strong>Paris Container Day</strong>.",
-      "link": "http://paris-container-day.fr/"
+      "link": "https://paris-container-day.fr/"
     },
     {
       "year": "",
@@ -23,7 +29,7 @@
       "year": 2015,
       "image": "logo-xebicon",
       "description": "Xebia organise la première <strong>XebiCon France</strong>.",
-      "link": "http://xebicon.fr/"
+      "link": "https://xebicon.fr/"
     },
     {
       "year": 2014,
