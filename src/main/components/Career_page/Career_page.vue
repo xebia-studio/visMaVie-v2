@@ -684,7 +684,7 @@ export default {
             layout__gridBox(7, gridNumberOfColumns: 9)
 
         .size-class-width-compact &
-            layout__centeredGridBox(22)
+            layout__centeredGridBox(26)
 
     .Career_page-profile-contact-card-photo
         height 160px
@@ -770,9 +770,13 @@ export default {
         padding-top 35px
 
         .size-class-width-compact &
-            padding-top 60px
+            top 35px
+            position relative
+            z-index 1
+
             > .Career_page-profile-title
                 text-align center
+                padding-top 35px
 
         .size-class-not-width-compact &
             layout__gridBox(20)
@@ -788,7 +792,7 @@ export default {
     .Career_page-profile-starts-at-xebia > .Career_page-profile-title,
     .Career_page-profile-start-expertise
         .size-class-width-compact &
-            layout__centeredGridBox(22)
+            layout__centeredGridBox(26)
 
     .Career_page-profile-start-expertise,
     .Career_page-profile-expertise-list
@@ -1162,4 +1166,10 @@ export default {
 
     .Career_page-profile-passion-picto
         xebiaUI__logoFilter()
+
+
+    .Career_page-profile-contact-button-inner-wrapper &
+        .CallToActionButton.is--important .CallToActionButton-link
+            padding-top 0.9em
+            padding-bottom 0.8em
 </style>

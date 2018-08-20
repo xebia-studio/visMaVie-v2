@@ -34,8 +34,10 @@ export default {
 <style lang="stylus">
 	.CallToActionLayer-button-outer-wrapper
 		padding-top 12px
-		layout__gridBox(5, gridNumberOfColumns: 28)
-		min-width : (284px / 2)
+		min-width (284px / 2)
+
+		.size-class-not-width-compact &
+			layout__gridBox(5, gridNumberOfColumns: 28)
 
 	.size-class-width-compact
 		.CallToActionLayer-button
@@ -43,6 +45,12 @@ export default {
 				padding-top 1.1em !important
 				padding-bottom 0.9em !important
 				font-size 14px !important
+
+    .size-class-width-compact &
+        .CallToActionButton.is--important
+            .CallToActionButton-link
+                padding-top 0.9 !important
+                padding-bottom 0.8 !important
 
 	.CallToActionLayer-logo
 		position relative
