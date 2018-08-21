@@ -42,7 +42,10 @@
 	.VisMaVie_navigation_bar_layer .NavigationBar.menu--is-open
 		.NavigationBar-logo > .NavigationBar-logo-svg.LogoVisMaVie path
 			fill color__$flashOrange !important
-	
+
+		.chaport-container
+			z-index -1
+
 	.size-class-navigation-bar-width-compact
 		.VisMaVie_navigation_bar_layer .NavigationBar-logo
 			> .NavigationBar-logo-svg.LogoVisMaVie

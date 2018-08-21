@@ -41,7 +41,7 @@
         "Speaker", "Formateur", "Organisateur d'évènement", "Auteur article presse", "Auteur livre blanc", "Rédacteur billet blog"
       ],
       "passions": [
-        "logo-less","logo-safe"
+        "logo-less","logo-safe", "srumban", "facilitation-graphique", "storymapping"
       ]
     },
     "Front End": {
@@ -82,7 +82,7 @@
         "Sites Web", "Librairies open source", "Speaker", "Auteur", "Projets"
       ],
       "passions": [
-        "logo-progressive-web-app"
+        "progressive-webapp", "logo-graphql", "logo-kotlin", "logo-data", "logo-devops"
       ]
     },
     "IoT": {
@@ -121,7 +121,7 @@
         "Speaker", "Recruteur", "Porte-parole", "Organisateur d'évènement", "Contributeur open source", "Auteur livre blanc", "Porteur de projet", "Rédacteur billet blog"
       ],
       "passions": [
-        "logo-arduino", "logo-sigfox", "logo-lora", "logo-android","logo-deep-learning"
+        "logo-arduino", "logo-sigfox", "logo-lora", "logo-android", "depp-learning", "on-device-machinelearning"
       ]
     },
     "Mobile": {
@@ -307,7 +307,7 @@
         "Speaker", "Recruteur", "Porte-parole", "Rédacteur billet blog", "Organisateur d'évènement", "Auteur livre blanc","Porteur de projet"
       ],
       "passions": [
-        "logo-puppet", "logo-docker", "logo-jenkins"
+        "logo-puppet", "logo-docker", "logo-jenkins", "congtainer-serveless", "casser-lessilos"
       ]
     }
   }
