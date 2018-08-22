@@ -15,19 +15,19 @@
 		},
 		{
 			"name": "Pablo Lopez",
-			"job": "CTO chez Xebia",
+			"job": "CTO",
 			"url": "carriere/backend",
 			"image": "portrait-home-pablo.png"
 		},
 		{
-			"name": "Alban Dauleu",
-			"job": "Consultant Manageur",
+			"name": "Paul Guillaume Dejardin",
+			"job": "Consultant",
 			"url": "carriere/frontend",
-			"image": "portrait-home-alban.png"
+			"image": "portrait-home-paul-guillaume.png"
 		},
 		{
 			"name": "Jean-Louis Rigau",
-			"job": "Porteur d'offre Conteneurs",
+			"job": "Coach DevOps / Expert Continuous Delivery",
 			"url": "carriere/devops",
 			"image": "portrait-home-jean-louis.png"
 		},
@@ -39,7 +39,7 @@
 		},
 		{
 			"name": "Alexis Kinsella",
-			"job": "CTO chez Xebia",
+			"job": "CTO",
 			"url": "carriere/cloud",
 			"image": "portrait-home-alexis.png"
 		},

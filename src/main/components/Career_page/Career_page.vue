@@ -17,8 +17,8 @@
                         a.Career_page-menu-link(v-for="(career, label) in carrieres", :href="career.url", :class="menuButtonIsActiveModifier[career.url]", @click="clickOnCareerItem($event, career.url)", :ref="'link_'+career.url")
                             .Career_page-menu-link-picto(:is="getSvgComponentCareer(career.svg_picto)")
                             .Career_page-menu-link-label(v-html="label")
-    .Career_page-profile(v-if="currentCareer")
-        .Career_page-profile-useful-width(ref="profileScrollView")
+    .Career_page-profile(v-if="currentCareer", ref="careerView")
+        .Career_page-profile-useful-width(ref="profileScrollView", v-on:scroll="onScrollEvent")
             .Career_page-profile-margin-constraint(:class="'contains--'+currentCareer.new_works.length+'-expertises'", ref="profileScrollViewInnerView")
                 .Career_page-profile-mobile-first-column
                     .Career_page-profile-contact-card
@@ -195,6 +195,7 @@ export default {
                     left: 0,
                     top: 0
                 });
+
             }
         },
         currentCareer(){
@@ -204,6 +205,20 @@ export default {
     methods: {
         getSvgComponentTechno,
         getSvgComponentCareer,
+        onScrollEvent: function(){
+            console.log('scrollY : ', this.$refs.profileScrollView.scrollLeft);
+            console.log(this.$refs.careerView.querySelector('.Career_page-chart-handswipe'));
+
+            if( (this.$refs.profileScrollView.scrollLeft) > 10){
+                const hand = this.$refs.careerView.querySelector('.Career_page-chart-handswipe');
+                hand.classList.add('is--hidden');
+                console.log(hand.classList);
+            }else{
+                const hand = this.$refs.careerView.querySelector('.Career_page-chart-handswipe');
+                hand.classList.remove('is--hidden');
+                console.log(hand.classList);
+            }
+        },
         clickOnCareerItem: function (e, careerPath) {
             e.preventDefault();
             scrollBehaviorUseSavedPositionObject.value = true;
@@ -252,6 +267,9 @@ export default {
                     left: target.offsetLeft - domWidth(target),
                     top: 0
                 });
+
+
+
             }
         },
         updateLayoutOnResize(){
@@ -323,7 +341,16 @@ export default {
                     this.getScrollController().scrollToNode(this.$refs.profileScrollView, -140);
                 }
             })
+
+
+
         }
+
+        nextTick(()=>{
+            console.log('scrollY : ', this.$refs.profileScrollViewInnerView.scrollLeft);
+        })
+
+
     },
     beforeDestroy(){
         this.stopLoop = true;
@@ -629,10 +656,15 @@ export default {
         position absolute
         top 10px
         left 10px
+        opacity 1
+        transition opacity 0.3s ease
 
         .size-class-not-width-compact &,
         .Career_page-shadow-inner-wrapper.position--end.position--start &
             display none
+
+        &.is--hidden
+            opacity 0
 
     .Career_page-chart-handswipe-picto
         display block
@@ -684,7 +716,7 @@ export default {
             layout__gridBox(7, gridNumberOfColumns: 9)
 
         .size-class-width-compact &
-            layout__centeredGridBox(22)
+            layout__centeredGridBox(26)
 
     .Career_page-profile-contact-card-photo
         height 160px
@@ -770,9 +802,13 @@ export default {
         padding-top 35px
 
         .size-class-width-compact &
-            padding-top 60px
+            top 35px
+            position relative
+            z-index 1
+
             > .Career_page-profile-title
                 text-align center
+                padding-top 35px
 
         .size-class-not-width-compact &
             layout__gridBox(20)
@@ -788,7 +824,7 @@ export default {
     .Career_page-profile-starts-at-xebia > .Career_page-profile-title,
     .Career_page-profile-start-expertise
         .size-class-width-compact &
-            layout__centeredGridBox(22)
+            layout__centeredGridBox(26)
 
     .Career_page-profile-start-expertise,
     .Career_page-profile-expertise-list
@@ -1162,4 +1198,10 @@ export default {
 
     .Career_page-profile-passion-picto
         xebiaUI__logoFilter()
+
+
+    .Career_page-profile-contact-button-inner-wrapper &
+        .CallToActionButton.is--important .CallToActionButton-link
+            padding-top 0.9em
+            padding-bottom 0.8em
 </style>

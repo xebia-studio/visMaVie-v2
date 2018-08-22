@@ -20,7 +20,7 @@
       "svg_picto": "expertise-agile",
       "photo": "laurenethenoz.png",
       "name": "Laurène <strong>Thénoz</strong>",
-      "job": "Studio Delivery Manager",
+      "job": "Agile Delivery Manager",
       "svg_picto_expertise": "expertise-agile",
       "expertise_name": "Agile",
       "expertise_description": "Rentrée chez Xebia en tant que <strong>Scrum Master</strong> en 2012",
@@ -29,10 +29,11 @@
         "name": "Agile",
         "skills": [
           "Coach",
-          "Studio Team Leader"
+          "Agile Delivery Manager "
         ]
       }],
       "interventions": {
+        "Si les Feature Teams m’étaient contées - XebiCon'17": "https://www.youtube.com/watch?v=ZyyXUI1VXSc",
         "Speaker Devoxx": true,
         "Speaker XebiCon'16": "http://www.xebia.tv/vod?videoId=V4l1RYSr7Hw"
       },
@@ -40,15 +41,15 @@
         "Speaker", "Formateur", "Organisateur d'évènement", "Auteur article presse", "Auteur livre blanc", "Rédacteur billet blog"
       ],
       "passions": [
-        "logo-less","logo-safe"
+        "logo-less","logo-safe", "srumban", "facilitation-graphique", "storymapping"
       ]
     },
     "Front End": {
       "url": "frontend",
       "svg_picto": "expertise-frontend",
-      "name": "Alban <strong>Dauleu</strong>",
-      "job": "Consultant Manageur",
-      "photo": "alban-dauleu.jpg",
+      "name": "Paul Guillaume <strong>Dejardin</strong>",
+      "job": "Développeur Fullstack React / Java",
+      "photo": "paul-guillaume.png",
       "svg_picto_expertise": "expertise-frontend",
       "expertise_name": "Front End",
       "expertise_description": "Rentré en tant que <strong>Développeur Front End</strong> en 2015",
@@ -56,32 +57,34 @@
         "svg_picto": "expertise-frontend",
         "name": "Front End",
         "skills": [
-          "Lead Tech"
+          "Lead Tech",
+          "Expert React"
         ]
       },{
         "svg_picto": "expertise-backend",
         "name": "Back End",
         "skills": [
-          "Développeur"
+          "Lead Tech",
+          "Coding Architect"
         ]
       }],
       "interventions": {
-        "Article de blog DOTJS 2016": "http://blog.xebia.fr/2017/01/02/dotjs-2016-notre-compte-rendu/",          
-        "Organisateur du Mois du JS": true
+        "Progressive Web Apps, au-delà du buzzword à MIX-IT": "https://www.infoq.com/fr/presentations/progressive-web-apps-au-dela-du-buzzword-dejardin-taxin",
+        "Speaker XebiCon'16": "https://www.youtube.com/watch?v=tBzluo2guqk&index=20&list=PL-Wbj9VN8zDSdEBpm-QNTxaSwEytxzwv"
       },
       "creations": [
-        "Porte-parole", "Recruteur", "Rédacteur billet blog", "Organisateur d'évènement", "Porteur de projet"
+        "Sites Web", "Contributeur open source", "Speaker", "Auteur livre blanc", "Porteur de projet"
       ],
       "passions": [
-        "logo-progressive-web-app"
+        "logo-tensorflow","progressive-webapp","logo-webassembly", "logo-graphql", "logo-kotlin", "programmation-fonctionnelle"
       ]
     },
     "IoT": {
       "url": "iot",
-      "contact_button_label": "La contacter",    
+      "contact_button_label": "La contacter",
       "svg_picto": "expertise-iot",
       "name": "Qian <strong>Jin</strong>",
-      "job": "Consultante",
+      "job": "Technical Officer & développeuse Android",
       "photo": "qian.png",
       "svg_picto_expertise": "expertise-iot",
       "expertise_name": "IoT",
@@ -97,19 +100,22 @@
           "svg_picto": "expertise-iot",
           "name": "IoT",
           "skills": [
-            "Développeuse"
+            "Google Developer Expert",
+            "Professeur Vacataire pour EPF"
           ]
         }
       ],
       "interventions": {
-        "Speaker Conférence AndroidMakers 2017": "https://speakerdeck.com/jinqian/heat-the-neurons-of-your-smartphone-with-deep-learning",
-        "Speaker Conférence XebiCon 2016": "http://www.xebia.tv/vod?videoId=axHaBOwv1SM"
-      },
+          "Speaker AndroidMakers 2018": "https://www.youtube.com/watch?v=w3bOfxYNY8o&feature=youtu.be",
+          "Speaker DroidCon London 2017": " https://skillsmatter.com/skillscasts/10700-heat-the-neurons-of-your-smartphone-with-deep-learning",
+          "Speaker DevFest Nantes 2017": "https://www.youtube.com/watch?v=8WOs-_zmG7M&list=PLuZ_sYdawLiXzoAZVGFoxToXp6onOzY3_&index=21$",
+          "Speaker Conférence AndroidMakers 2017": "https://speakerdeck.com/jinqian/heat-the-neurons-of-your-smartphone-with-deep-learning"
+       },
       "creations": [
         "Speaker", "Recruteur", "Porte-parole", "Organisateur d'évènement", "Contributeur open source", "Auteur livre blanc", "Porteur de projet", "Rédacteur billet blog"
       ],
       "passions": [
-        "logo-arduino", "logo-sigfox", "logo-lora", "logo-android","logo-deep-learning"
+        "logo-arduino", "logo-sigfox", "logo-lora", "logo-android", "depp-learning", "on-device-machinelearning"
       ]
     },
     "Mobile": {
@@ -133,7 +139,7 @@
           "name": "Mobile",
           "skills": [
             "Lead Tech",
-            "Expert"       
+            "Expert"
           ]
         }
       ],
@@ -145,7 +151,7 @@
         "Speaker", "Porte-parole", "Recruteur", "Contributeur open source", "Rédacteur billet blog", "Organisateur d'évènement", "Auteur livre blanc", "Porteur de projet", "Auteur article presse", "Auteur article presse"
       ],
       "passions": [
-        "logo-arduino", "logo-sigfox", "logo-lora", "logo-swift"
+        "logo-arduino", "logo-sigfox", "logo-lora", "logo-swift", "realite-augmentee"
       ]
     },
     "Cloud": {
@@ -181,7 +187,7 @@
           "name": "Back",
           "skills": [
             "Coding Architect",
-            "Lead Tech"  
+            "Lead Tech"
           ]
         }, {
           "svg_picto": "expertise-agile",
@@ -217,13 +223,13 @@
           "name": "Back End",
           "skills": [
             "Coding Architect",
-            "Lead Tech"              
+            "Lead Tech"
           ]
         }, {
           "svg_picto": "expertise-iot",
           "name": "IoT",
           "skills": [
-            "Développeur"         
+            "Développeur"
           ]
         }
       ],
@@ -236,7 +242,7 @@
         "Speaker", "Recruteur", "Rédacteur billet blog", "Organisateur d'évènement", "Auteur livre blanc", "Formateur", "Porteur de projet", "Auteur article presse"
       ],
       "passions": [
-        "logo-arduino", "logo-spark", "logo-sigfox", "logo-lora", "logo-server-less", "logo-assistants-vocaux"
+        "logo-arduino", "logo-spark", "logo-sigfox", "logo-lora", "logo-server-less", "assistants-vocaux"
       ]
     },
     "Data": {
@@ -271,7 +277,7 @@
       "url": "devops",
       "svg_picto": "expertise-devops",
       "name": "Jean-Louis <strong>Rigau</strong>",
-      "job": "Porteur d'offre Conteneurs",
+      "job": "Coach DevOps / Expert Continuous Delivery",
       "photo": "jeanlouisrigau.png",
       "svg_picto_expertise": "expertise-devops",
       "expertise_name": "DevOps",
@@ -280,21 +286,22 @@
         "svg_picto": "expertise-devops",
         "name": "DevOps",
         "skills": [
-          "Lead Tech",
-          "Coach DevOps",
-          "Expert Continuous Delivery"             
+          "Coaching DevOps",
+          "Pratiques du Continuous Delivery"
         ]
       }],
       "interventions": {
+        "Speaker Conférence Devoxx France 2017": "https://youtu.be/UhrIOMuA3_w",
+        "Speaker Conférence Paris Container Day 2016 ": "https://youtu.be/wfj8qWuwrw4",
+        "Retour d’expérience sur le projet Libon d’Orange Vallée - Paris Container Day 2016": "https://youtu.be/Va8P9IqtmNE",
         "Organisateur du Paris Container Day": "http://paris-container-day.fr/",
-        "Auteur billet de blog DockerCon'16": "http://blog.xebia.fr/2016/06/27/xebia-etait-present-a-la-dockercon-16/",
-        "Formation Sensibilisation à DevOps": "http://training.xebia.fr/formation/devops-developpeurs/"       
+        "Formation Sensibilisation à DevOps": "http://training.xebia.fr/formation/devops-developpeurs/"
       },
       "creations": [
         "Speaker", "Recruteur", "Porte-parole", "Rédacteur billet blog", "Organisateur d'évènement", "Auteur livre blanc","Porteur de projet"
       ],
       "passions": [
-        "logo-puppet", "logo-docker", "logo-jenkins"
+        "logo-puppet", "logo-docker", "logo-jenkins", "congtainer-serveless", "casser-lessilos"
       ]
     }
   }
