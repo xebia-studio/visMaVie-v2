@@ -46,11 +46,11 @@ export default {
 				padding-bottom 0.9em !important
 				font-size 14px !important
 
-    .size-class-width-compact &
-        .CallToActionButton.is--important
-            .CallToActionButton-link
-                padding-top 0.9 !important
-                padding-bottom 0.8 !important
+	.size-class-width-compact &
+		.CallToActionButton.is--important
+			.CallToActionButton-link
+				padding-top 0.9 !important
+				padding-bottom 0.8 !important
 
 	.CallToActionLayer-logo
 		position relative

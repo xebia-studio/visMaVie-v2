@@ -57,21 +57,15 @@
         "svg_picto": "expertise-frontend",
         "name": "Front End",
         "skills": [
-          "Programmation Fonctionnelle en JS"
+          "Lead Tech",
+          "Expert React"
         ]
       },{
         "svg_picto": "expertise-backend",
         "name": "Back End",
         "skills": [
-          "Kotlin",
-          "Programmation Fonctionnelle en JS",
-          "GraphQL"
-        ]
-      },{
-        "svg_picto": "expertise-bigdata",
-        "name": "Data",
-        "skills": [
-          "Tensorflow.js"
+          "Lead Tech",
+          "Coding Architect"
         ]
       }],
       "interventions": {
@@ -79,10 +73,10 @@
         "Speaker XebiCon'16": "https://www.youtube.com/watch?v=tBzluo2guqk&index=20&list=PL-Wbj9VN8zDSdEBpm-QNTxaSwEytxzwv"
       },
       "creations": [
-        "Sites Web", "Librairies open source", "Speaker", "Auteur", "Projets"
+        "Sites Web", "Contributeur open source", "Speaker", "Auteur livre blanc", "Porteur de projet"
       ],
       "passions": [
-        "progressive-webapp", "logo-graphql", "logo-kotlin", "logo-data", "logo-devops"
+        "logo-tensorflow","progressive-webapp","logo-webassembly", "logo-graphql", "logo-kotlin", "programmation-fonctionnelle"
       ]
     },
     "IoT": {
@@ -157,7 +151,7 @@
         "Speaker", "Porte-parole", "Recruteur", "Contributeur open source", "Rédacteur billet blog", "Organisateur d'évènement", "Auteur livre blanc", "Porteur de projet", "Auteur article presse", "Auteur article presse"
       ],
       "passions": [
-        "logo-arduino", "logo-sigfox", "logo-lora", "logo-swift"
+        "logo-arduino", "logo-sigfox", "logo-lora", "logo-swift", "realite-augmentee"
       ]
     },
     "Cloud": {
@@ -248,7 +242,7 @@
         "Speaker", "Recruteur", "Rédacteur billet blog", "Organisateur d'évènement", "Auteur livre blanc", "Formateur", "Porteur de projet", "Auteur article presse"
       ],
       "passions": [
-        "logo-arduino", "logo-spark", "logo-sigfox", "logo-lora", "logo-server-less", "logo-assistants-vocaux"
+        "logo-arduino", "logo-spark", "logo-sigfox", "logo-lora", "logo-server-less", "assistants-vocaux"
       ]
     },
     "Data": {
