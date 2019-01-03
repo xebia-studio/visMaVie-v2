@@ -57,4 +57,6 @@ export default {
 }
 </script>
 <style lang="stylus">
+    .size-class-width-compact .BlurryHeader-content
+        padding-top 145px !important
 </style>

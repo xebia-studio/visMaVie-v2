@@ -1,53 +1,71 @@
-<template lang="jade">
-	.Home_page
-		ParallaxedLayersGroup
-			VisMaVie_navigation_bar_layer
+<template>
+<div class="Home_page">
+  <ParallaxedLayersGroup>
+      <div class="announcement"><p>Depuis le 15 novembre 2018, <span>Xebia</span> a rejoint <span>Publicis Sapient</span>, leader de la Digital Business Transformation.</p></div>
 
-			ParallaxedLayer.Home_page-header-layer(:zIndex="5")
-				ScreenFillerBlock.Home_page-header(:style="{backgroundImage: headerBackgroundUrl}", :percentageOfScreenFilled="configScreenFiller")
-					.Home_page-header-useful-width
-						.Home_page-header-margin-constraints
-							.Home_page-header-content
-								.Home_page-header-title-offset
-								HeaderTitle.Home_page-header-title(:title="header.title", :titleLevel="1", :description="header.subtitle")
-								.Home_page-header-characters-scroll-view-pagination
-									button.Home_page-header-characters-scroll-view-pagination-link(v-for="(c, i) in characters", @click="buttonClick($event, 'paginationLink'+i, scrollToSlideClick, i)", :ref="'paginationLink'+i", rel="button", :class="i === currentSlide ? 'is--active' : ''")
-								.Home_page-header-characters-scroll-view(:style="{bottom:scrollViewBottomStyle}", ref="characterScrollView")
-									.Home_page-header-characters
-										.Home_page-header-characters-group(v-for="(charactersGroup, i) in charactersGroups", :class="((i === 0 && activeCharacter <= 4) || (i === 1 && activeCharacter > 4)) ? 'contains--active-character' : ''")
-											a.Home_page-header-character(v-for="(character, index) in charactersGroup", :class="((index+1+(i*4)) === activeCharacter ? 'is--active ' : '')+'index-'+(index+1+(i*4))", :href="character.url", @click="clickOnCharacter($event, character)")
-												.Home_page-header-character-image(:style="charactersStyles[index+(i*4)]")
-												.Home_page-header-character-widget
-													.Home_page-header-character-widget-outer-wrapper
-														.Home_page-header-character-widget-inner-wrapper(:class="slowWidgetOut ? 'is--slow' :  ''")
-															.Home_page-header-character-info
-																.Home_page-header-character-name {{character.name}}
-																.Home_page-header-character-job {{character.job}}
-															.Home_page-header-character-link
-																.Home_page-header-character-link-label {{header.consultants_evolution_label}}
-																.Home_page-header-character-link-label-picto
-																	ArrowBottom
+      <VisMaVie_navigation_bar_layer></VisMaVie_navigation_bar_layer>
+    <ParallaxedLayer class="Home_page-header-layer" :zIndex="5">
+      <ScreenFillerBlock class="Home_page-header" :style="{backgroundImage: headerBackgroundUrl}" :percentageOfScreenFilled="configScreenFiller">
+        <div class="Home_page-header-useful-width">
+          <div class="Home_page-header-margin-constraints">
+            <div class="Home_page-header-content">
+              <div class="Home_page-header-title-offset"></div>
+              <HeaderTitle class="Home_page-header-title" :title="header.title" :titleLevel="1" :description="header.subtitle"></HeaderTitle>
+              <div class="Home_page-header-characters-scroll-view-pagination">
+                <button class="Home_page-header-characters-scroll-view-pagination-link" v-for="(c, i) in characters" @click="buttonClick($event, 'paginationLink'+i, scrollToSlideClick, i)" :ref="'paginationLink'+i" rel="button" :class="i === currentSlide ? 'is--active' : ''"></button>
+              </div>
+              <div class="Home_page-header-characters-scroll-view" :style="{bottom:scrollViewBottomStyle}" ref="characterScrollView">
+                <div class="Home_page-header-characters">
+                  <div class="Home_page-header-characters-group" v-for="(charactersGroup, i) in charactersGroups" :class="((i === 0 && activeCharacter <= 4) || (i === 1 && activeCharacter > 4)) ? 'contains--active-character' : ''"><a class="Home_page-header-character" v-for="(character, index) in charactersGroup" :class="((index+1+(i*4)) === activeCharacter ? 'is--active ' : '')+'index-'+(index+1+(i*4))" :href="character.url" @click="clickOnCharacter($event, character)">
+                      <div class="Home_page-header-character-image" :style="charactersStyles[index+(i*4)]"></div>
+                      <div class="Home_page-header-character-widget">
+                        <div class="Home_page-header-character-widget-outer-wrapper">
+                          <div class="Home_page-header-character-widget-inner-wrapper" :class="slowWidgetOut ? 'is--slow' :  ''">
+                            <div class="Home_page-header-character-info">
+                              <div class="Home_page-header-character-name">{{character.name}}</div>
+                              <div class="Home_page-header-character-job">{{character.job}}</div>
+                            </div>
+                            <div class="Home_page-header-character-link">
+                              <div class="Home_page-header-character-link-label">{{header.consultants_evolution_label}}</div>
+                              <div class="Home_page-header-character-link-label-picto">
+                                <ArrowBottom></ArrowBottom>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div></a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ScreenFillerBlock>
+    </ParallaxedLayer>
+    <CallToActionLayer ref="callToActionLayer" :zIndex="6" style="position:relative"></CallToActionLayer>
+    <ParallaxedLayer>
+      <AppSection class="AppSection-odd" :title="introduction.title" :baseline="introduction.baseline">
+        <ContentBlock class="Home_page-introduction" :blocks="introduction.block_content" slot="section-content"></ContentBlock>
+      </AppSection>
+      <Instagram_page_block class="Home_page-instagram-block" :credentials="instagram"></Instagram_page_block>
+      <div class="Home_page-instagram-link-useful-width">
+        <div class="Home_page-instagram-link-margin-constraints">
+          <div class="Home_page-instagram-link">
+            <ArrowLink external="external" :label="instagram.link_label" :url="instagramUrl"></ArrowLink>
+          </div>
+        </div>
+      </div>
+      <AppSection class="AppSection-even" :title="xebiaTV.name" :baseline="xebiaTV.baseline">
+        <YoutubeVideosList_thumbnails_list v-bind="youtube" slot="section-content"></YoutubeVideosList_thumbnails_list>
+        <div class="Home_page-youtube-link" slot="section-content">
+          <ArrowLink external="external" :label="youtube.link_label" :url="youtubeUrl"></ArrowLink>
+        </div>
+      </AppSection>
+    </ParallaxedLayer>
+    <VisMaVie_footer_layer></VisMaVie_footer_layer>
+  </ParallaxedLayersGroup>
+</div>
 
-			CallToActionLayer(ref="callToActionLayer", :zIndex="6", style="position:relative")
-
-			ParallaxedLayer
-				AppSection.AppSection-odd(:title="introduction.title", :baseline="introduction.baseline")
-					ContentBlock.Home_page-introduction(:blocks="introduction.block_content", slot="section-content")
-
-				Instagram_page_block.Home_page-instagram-block(:credentials="instagram")
-				.Home_page-instagram-link-useful-width
-					.Home_page-instagram-link-margin-constraints
-						.Home_page-instagram-link
-							ArrowLink(external=true, :label="instagram.link_label", :url="instagramUrl")
-
-				AppSection.AppSection-even(:title="xebiaTV.name", :baseline="xebiaTV.baseline")
-					YoutubeVideosList_thumbnails_list(v-bind="youtube", slot="section-content")
-					.Home_page-youtube-link(slot="section-content")
-						ArrowLink(external=true, :label="youtube.link_label", :url="youtubeUrl")
-
-			VisMaVie_footer_layer
 </template>
-
 <script>
 	import getScrollBarWidth from 'tools/get-scroll-bar-width'
 	let scrollBarWidth = getScrollBarWidth();
@@ -81,7 +99,7 @@
 	import AppSection from 'components/AppSection';
 
 	import xebiaTV from 'data/home/xebia-tv.json';
-	
+
 	import ContentBlock from 'components/ContentBlock';
 
 	import Instagram_page_block from 'components/Instagram_page_block';
@@ -100,7 +118,7 @@
 
 	function randomCharacterIndex(){
 		return randomInt(1, numberOfCharacters)
-	} 
+	}
 
 	export default {
 		name: 'Home_page',
@@ -272,7 +290,7 @@
 							const slideWidth = self.slideWidth;
 							const fullWidth = slideWidth*8;
 							const position = scrollView.scrollLeft;
-						
+
 							const currentSlide = (slideWidth ? parseInt((position+slideWidth/2)/slideWidth) : 0);
 
 							self.currentSlide = currentSlide;
@@ -294,7 +312,7 @@
 							previousPosition = position;
 						}
 					}
-					
+
 
 					if (!self.stopLoop) {
 						loop();
@@ -341,7 +359,7 @@
 	.Home_page-header-margin-constraints
 		layout__innerBox()
 		height 100%
-	
+
 	.Home_page-header
 		background-repeat no-repeat
 		background-size 100% 100%
@@ -354,18 +372,18 @@
 
 		.size-class-not-width-compact.no-touchevents &
 			layout__centeredGridBox(28)
-	
+
 	.Home_page-header-title
 		text-shadow 0px 0px 15px black
 
 	.Home_page-header-title-offset
 		width 100%
 		height (130 / 570 * 100%)
-		
+
 		.size-class-width-compact &,
 		.touchevents &
-			height 80px
-	
+			height 125px
+
 	.Home_page-header-characters-scroll-view
 		width 100%
 		width calc(100% + 40px)
@@ -373,14 +391,14 @@
 		position absolute
 		bottom 0
 		left -20px
-		
+
 		.size-class-width-compact &,
 		.touchevents &
 			overflow-y hidden
 			overflow-x scroll
 			pointer-events auto
 			-webkit-overflow-scrolling: touch;
-		
+
 		.size-class-not-width-compact.no-touchevents &
 			height (250 / 570 * 100%)
 			width 100%
@@ -393,7 +411,7 @@
 		bottom 0
 		left 0
 		height 55%
-		
+
 		.size-class-not-width-compact.no-touchevents &
 			width 100%
 			height (250 / 570 * 100%)
@@ -405,17 +423,17 @@
 		position relative
 		z-index 5
 		width 50%
-		
+
 		.size-class-not-width-compact.no-touchevents &
 			left -1.1vw
-		
+
 		&:hover,
 		&.contains--active-character
 			z-index 6
-		
+
 		.Home_page-header-characters:hover &
 			z-index 5
-			
+
 			&:hover
 				z-index 6
 
@@ -425,10 +443,10 @@
 		width (100% / 4)
 		float left
 		position relative
-		
+
 		&:hover
 			cursor pointer
-		
+
 		.size-class-not-width-compact.no-touchevents &.index-1
 			left -1vw
 
@@ -440,13 +458,13 @@
 			z-index 4
 		&.index-4, &.index-5
 			z-index 2
-			
+
 			&:hover, &:focus
 				z-index 3
-		
+
 		.size-class-not-width-compact.no-touchevents &.index-4
 			left -0.5vw
-	
+
 	.Home_page-header-character-image
 		position absolute
 		bottom 0
@@ -456,7 +474,7 @@
 		z-index 5
 		height 120%
 		width 100%
-		
+
 		.size-class-not-width-compact.no-touchevents &
 			height 270px
 			width 160px
@@ -466,7 +484,7 @@
 			width 15vw
 			background-size auto 100%
 			background-position center bottom
-	
+
 	.Home_page-header-character-widget
 		width 67%
 		position absolute
@@ -478,13 +496,13 @@
 			left 75%
 			width 25%
 			bottom 30px
-	
+
 	.size-class-not-width-compact.no-touchevents .Home_page-header-character
 		.Home_page-header-character-image
 			transform scale(1)
 			transform-origin 50% 50%
 			transition transform 220ms ease__outQuad()
-		
+
 		&:hover, &:focus
 			.Home_page-header-character-image
 				transition-timing-function ease__inQuad()
@@ -495,23 +513,23 @@
 		overflow hidden
 		pointer-events none
 		width 100%
-		
+
 		.size-class-not-width-compact.no-touchevents &
 			width 250px
 			width calc(250px + 4vw)
-		
+
 		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-5 &,
 		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-6 &,
 		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-7 &,
 		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-8 &
 			left -300px
-	
+
 	.Home_page-header-character-widget-inner-wrapper
 		transition transform 280ms ease__outQuad() 0ms
-		
+
 		&.is--slow
 			transition-timing-function ease__inQuad() !important
-		
+
 		.size-class-not-width-compact.no-touchevents .Home_page-header-character:hover &,
 		.size-class-not-width-compact.no-touchevents .Home_page-header-character:focus &
 			transition-duration 260ms
@@ -522,30 +540,30 @@
 		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-3 &,
 		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-4 &
 			transform translateX(-101%)
-		
+
 		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-5 &,
 		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-6 &,
 		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-7 &,
 		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-8 &
 			transform translateX(101%)
-		
+
 		.size-class-not-width-compact.no-touchevents .Home_page-header-character:hover &,
 		.size-class-not-width-compact.no-touchevents .Home_page-header-character:focus &,
 		.size-class-not-width-compact.no-touchevents .Home_page-header-character.is--active &
 			transform translateX(0)
-			
+
 		.size-class-not-width-compact.no-touchevents .Home_page-header-characters:hover .Home_page-header-character.index-1 &,
 		.size-class-not-width-compact.no-touchevents .Home_page-header-characters:hover .Home_page-header-character.index-2 &,
 		.size-class-not-width-compact.no-touchevents .Home_page-header-characters:hover .Home_page-header-character.index-3 &,
 		.size-class-not-width-compact.no-touchevents .Home_page-header-characters:hover .Home_page-header-character.index-4 &
 			transform translateX(-101%)
-			
+
 		.size-class-not-width-compact.no-touchevents .Home_page-header-characters:hover .Home_page-header-character.index-5 &,
 		.size-class-not-width-compact.no-touchevents .Home_page-header-characters:hover .Home_page-header-character.index-6 &,
 		.size-class-not-width-compact.no-touchevents .Home_page-header-characters:hover .Home_page-header-character.index-7 &,
 		.size-class-not-width-compact.no-touchevents .Home_page-header-characters:hover .Home_page-header-character.index-8 &
 			transform translateX(101%)
-		
+
 		.size-class-not-width-compact.no-touchevents .Home_page-header-characters:hover .Home_page-header-character:hover &,
 		.size-class-not-width-compact.no-touchevents .Home_page-header-characters:hover .Home_page-header-character:focus &
 			transform translateX(0)
@@ -553,13 +571,13 @@
 	.Home_page-header-character-info
 		background-color color__$blue
 		padding-right 15px
-	
+
 	_characterWidgetMarginMacro()
 		pxValue = 80px
 		vwValue = 6.5vw
-		
+
 		margin-left 90px
-		
+
 		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-1 &,
 		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-2 &,
 		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-3 &,
@@ -567,7 +585,7 @@
 			margin-left pxValue
 			margin-left vwValue
 			text-align left
-			
+
 		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-5 &,
 		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-6 &,
 		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-7 &,
@@ -581,7 +599,7 @@
 	.Home_page-header-character-job
 		_characterWidgetMarginMacro()
 		color white
-	
+
 	.Home_page-header-character-link
 		display block
 		background-color color__$flashOrange
@@ -591,53 +609,53 @@
 		font__useTextRegular 12
 		pointer-events auto
 		font__line-height 15
-		
+
 		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-5 &,
 		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-6 &,
 		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-7 &,
 		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-8 &
 			clearfix()
-	
+
 	.Home_page-header-character-link-label
 		_characterWidgetMarginMacro()
 		display block
 		width 120px
-		
+
 		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-5 &,
 		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-6 &,
 		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-7 &,
 		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-8 &
 			float right
-	
+
 	.Home_page-header-character-info,
 	.Home_page-header-character-link
 		margin-top 5px
 		padding-top 8px
 		padding-bottom 8px
-		
+
 		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-1 &,
 		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-2 &,
 		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-3 &,
 		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-4 &
 			padding-right 12px
-		
+
 		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-5 &,
 		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-6 &,
 		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-7 &,
 		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-8 &
 			padding-left 12px
-	
+
 	.Home_page-header-character-name
 		font__useTitleBold 21
 		font__line-height 23
-	
+
 	.Home_page-header-character-name+.Home_page-header-character-job
 		margin-top 5px
 
 	.Home_page-header-character-job
 		font__useTextRegular 14
 		font__line-height 16
-	
+
 	.Home_page-header-character-link
 		position relative
 
@@ -648,21 +666,21 @@
 		top 15px
 		transform rotate(-90deg)
 		right 6px
-		
+
 		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-1 &,
 		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-2 &,
 		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-3 &,
 		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-4 &
 			transform rotate(-90deg)
 			right 15px
-		
+
 		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-5 &,
 		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-6 &,
 		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-7 &,
 		.size-class-not-width-compact.no-touchevents .Home_page-header-character.index-8 &
 			transform rotate(90deg)
 			left 15px
-	
+
 	.Home_page-header-characters-scroll-view-pagination
 		height 12px
 		clearfix()
@@ -670,10 +688,10 @@
 		bottom 10px
 		right 0
 		z-index 8
-		
+
 		.size-class-not-width-compact.no-touchevents &
 			display none
-	
+
 	.Home_page-header-characters-scroll-view-pagination-link
 		button__resetStyle()
 		float left
@@ -681,17 +699,17 @@
 		shape__circle(8px)
 		border 1px solid white
 		pointer-events auto
-		
+
 		&:hover, &:focus
 			cursor pointer
 			background-color rgba(white, 0.5)
-		
+
 		&.is--active
 			background-color white
-	
+
 	.Home_page-header-characters-scroll-view-pagination-link+.Home_page-header-characters-scroll-view-pagination-link
 		margin-left 8px
-	
+
 	.Home_page-instagram-link-useful-width
 		layout__outerBox()
 		padding-bottom 35px
@@ -700,7 +718,7 @@
 		layout__innerBox()
 	.Home_page-instagram-link
 		layout__centeredGridBox(28)
-	
+
 	.Home_page-instagram-block+.Home_page-instagram-link-useful-width,
 	.Home_page-youtube-link
 		margin-top 35px

@@ -1,12 +1,13 @@
-<template lang="jade">
-    .AppPage
-        ParallaxedLayersGroup
-            VisMaVie_navigation_bar_layer(:scrollPositionToReachBeforeLightBackground="scrollPositionToReachBeforeLightBackground")
+<template>
+    <div class="AppPage">
+      <ParallaxedLayersGroup>
+          <div class="announcement"><p>Depuis le 15 novembre 2018, <span>Xebia</span> a rejoint <span>Publicis Sapient</span>, leader de la Digital Business Transformation.</p></div>
 
-
-            slot
-
-            VisMaVie_footer_layer.AppPage-footer-layer
+          <VisMaVie_navigation_bar_layer :scrollPositionToReachBeforeLightBackground="scrollPositionToReachBeforeLightBackground"></VisMaVie_navigation_bar_layer>
+        <slot></slot>
+        <VisMaVie_footer_layer class="AppPage-footer-layer"></VisMaVie_footer_layer>
+      </ParallaxedLayersGroup>
+    </div>
 </template>
 
 <script>
@@ -57,3 +58,32 @@
     }
 </script>
 
+<style lang="stylus">
+    .announcement
+        position absolute
+        width 100%
+        background white
+        min-height 40px
+        top 40px
+        z-index  10
+        opacity 0.8
+
+        & p
+            width auto
+            text-align center
+            font__useTitleRegular 16
+            padding 20px 0
+
+            & span
+                font__useTitleBold 16
+
+        .size-class-navigation-bar-width-compact &
+            top 50px
+            & p
+                line-height 18px
+
+        .size-class-width-compact &
+            display block
+
+
+ </style>
